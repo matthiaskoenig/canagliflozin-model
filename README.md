@@ -1,4 +1,4 @@
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.13758627.svg)](https://doi.org/10.5281/zenodo.13758627)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.13759839.svg)](https://doi.org/10.5281/zenodo.13759839)
 
 # canagliflozin model
 This repository provides the canagliflozin physiologically based pharmacokinetics (PBPK) model.
@@ -20,11 +20,11 @@ The whole-body submodel is available from [`canagliflozin_body.xml`](./models/ca
 [https://sbml4humans.de/model_url?url=https://raw.githubusercontent.com/matthiaskoenig/canagliflozin-model/main/models/canagliflozin_body.xml](https://sbml4humans.de/model_url?url=https://raw.githubusercontent.com/matthiaskoenig/canagliflozin-model/main/models/canagliflozin_body.xml) and equations from [`canagliflozin_body.md`](./models/canagliflozin_body.md).
 
 ## How to cite
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.13758627.svg)](https://doi.org/10.5281/zenodo.13758627)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.13759839.svg)](https://doi.org/10.5281/zenodo.13759839)
 
-> Tereshchuk, V. & König, M. (2024).
+> Tereshchuk, V., & König, M. (2024).
 > *Physiologically based pharmacokinetic (PBPK) model of canagliflozin.*   
-> Zenodo. [https://doi.org/10.5281/zenodo.13758627](https://doi.org/10.5281/zenodo.13758627)
+> Zenodo. [https://doi.org/10.5281/zenodo.13759839](https://doi.org/10.5281/zenodo.13759839)
 
 ## License
 
