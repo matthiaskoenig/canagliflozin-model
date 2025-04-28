@@ -1,0 +1,1056 @@
+{
+  "experiment_id": "Kinoshita2015",
+  "base_path": "/home/mkoenig/git/pkdb_models/pkdb_models/models/canagliflozin",
+  "data_path": "[PosixPath('/home/mkoenig/git/pkdb_data/studies/canagliflozin')]",
+  "models": {
+    "model": {
+      "sid": null,
+      "name": null,
+      "language": "SBML",
+      "language_type": "SBML",
+      "source": {
+        "source": "/home/mkoenig/git/pkdb_models/pkdb_models/models/canagliflozin/models/results/models/canagliflozin_body_flat.xml",
+        "path": "/home/mkoenig/git/pkdb_models/pkdb_models/models/canagliflozin/models/results/models/canagliflozin_body_flat.xml",
+        "content": "None"
+      },
+      "changes": {}
+    }
+  },
+  "tasks": {
+    "task_po_can200_single": {
+      "model": "model",
+      "simulation": "po_can200_single"
+    },
+    "task_po_can200_tnl40_multi": {
+      "model": "model",
+      "simulation": "po_can200_tnl40_multi"
+    }
+  },
+  "simulations": {
+    "po_can200_single": {
+      "type": "TimecourseSim",
+      "selections": null,
+      "reset": true,
+      "time_offset": 0.0,
+      "timecourses": [
+        {
+          "start": 0,
+          "end": 4800,
+          "steps": 500,
+          "changes": {
+            "ftissue_can": {
+              "_magnitude": 0.5907025360669715,
+              "_units": "l_per_min"
+            },
+            "Kp_can": {
+              "_magnitude": 1.002186894659328,
+              "_units": "dimensionless"
+            },
+            "LI__CANIM_Vmax": {
+              "_magnitude": 0.6724144350621387,
+              "_units": "LI__mmole_per_min_l"
+            },
+            "KI__CANEX_k": {
+              "_magnitude": 0.003620232018677586,
+              "_units": "KI__per_min"
+            },
+            "GU__CANABS_k": {
+              "_magnitude": 0.014857823531040652,
+              "_units": "GU__per_min"
+            },
+            "LI__CAN2M5_Vmax": {
+              "_magnitude": 0.004471516434657664,
+              "_units": "LI__mmole_per_min_l"
+            },
+            "LI__CAN2M5_Km_can": {
+              "_magnitude": 0.29493539325204393,
+              "_units": "LI__mM"
+            },
+            "LI__M5EX_Km_m5": {
+              "_magnitude": 0.18169494628559774,
+              "_units": "LI__mM"
+            },
+            "LI__M5EX_Vmax": {
+              "_magnitude": 0.448042513666378,
+              "_units": "LI__mmole_per_min_l"
+            },
+            "KI__M5EX_k": {
+              "_magnitude": 0.10556919062775157,
+              "_units": "KI__per_min"
+            },
+            "ftissue_m5": {
+              "_magnitude": 0.0034928983363240276,
+              "_units": "l_per_min"
+            },
+            "Kp_m5": {
+              "_magnitude": 3.9832348764531975,
+              "_units": "dimensionless"
+            },
+            "LI__CAN2M7_Vmax": {
+              "_magnitude": 0.002145888093579888,
+              "_units": "LI__mmole_per_min_l"
+            },
+            "LI__M7EX_Vmax": {
+              "_magnitude": 0.1258350901232781,
+              "_units": "LI__mmole_per_min_l"
+            },
+            "KI__M7EX_k": {
+              "_magnitude": 0.18975923261901775,
+              "_units": "KI__per_min"
+            },
+            "ftissue_m7": {
+              "_magnitude": 0.00012251814828952693,
+              "_units": "l_per_min"
+            },
+            "Kp_m7": {
+              "_magnitude": 2.7484358268874036,
+              "_units": "dimensionless"
+            },
+            "LI__CAN2M9_Vmax": {
+              "_magnitude": 0.005649017628006681,
+              "_units": "LI__mmole_per_min_l"
+            },
+            "KI__RTG_E50": {
+              "_magnitude": 1.7058500169355005e-05,
+              "_units": "KI__mM"
+            },
+            "KI__RTG_base": {
+              "_magnitude": 9.00528652661515,
+              "_units": "KI__mM"
+            },
+            "KI__RTG_max_inhibition": {
+              "_magnitude": 0.6244535441073977,
+              "_units": "dimensionless"
+            },
+            "KI__RTG_m_fpg": {
+              "_magnitude": 0.7189836466732434,
+              "_units": "dimensionless"
+            },
+            "BW": {
+              "_magnitude": 61.57,
+              "_units": "kilogram"
+            },
+            "[KI__fpg]": {
+              "_magnitude": 5.000000000000001,
+              "_units": "KI__mmole / liter"
+            },
+            "PODOSE_can": {
+              "_magnitude": 200,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        }
+      ]
+    },
+    "po_can200_tnl40_multi": {
+      "type": "TimecourseSim",
+      "selections": null,
+      "reset": true,
+      "time_offset": -34560,
+      "timecourses": [
+        {
+          "start": 0,
+          "end": 4320,
+          "steps": 500,
+          "changes": {
+            "ftissue_can": {
+              "_magnitude": 0.5907025360669715,
+              "_units": "l_per_min"
+            },
+            "Kp_can": {
+              "_magnitude": 1.002186894659328,
+              "_units": "dimensionless"
+            },
+            "LI__CANIM_Vmax": {
+              "_magnitude": 0.6724144350621387,
+              "_units": "LI__mmole_per_min_l"
+            },
+            "KI__CANEX_k": {
+              "_magnitude": 0.003620232018677586,
+              "_units": "KI__per_min"
+            },
+            "GU__CANABS_k": {
+              "_magnitude": 0.014857823531040652,
+              "_units": "GU__per_min"
+            },
+            "LI__CAN2M5_Vmax": {
+              "_magnitude": 0.004471516434657664,
+              "_units": "LI__mmole_per_min_l"
+            },
+            "LI__CAN2M5_Km_can": {
+              "_magnitude": 0.29493539325204393,
+              "_units": "LI__mM"
+            },
+            "LI__M5EX_Km_m5": {
+              "_magnitude": 0.18169494628559774,
+              "_units": "LI__mM"
+            },
+            "LI__M5EX_Vmax": {
+              "_magnitude": 0.448042513666378,
+              "_units": "LI__mmole_per_min_l"
+            },
+            "KI__M5EX_k": {
+              "_magnitude": 0.10556919062775157,
+              "_units": "KI__per_min"
+            },
+            "ftissue_m5": {
+              "_magnitude": 0.0034928983363240276,
+              "_units": "l_per_min"
+            },
+            "Kp_m5": {
+              "_magnitude": 3.9832348764531975,
+              "_units": "dimensionless"
+            },
+            "LI__CAN2M7_Vmax": {
+              "_magnitude": 0.002145888093579888,
+              "_units": "LI__mmole_per_min_l"
+            },
+            "LI__M7EX_Vmax": {
+              "_magnitude": 0.1258350901232781,
+              "_units": "LI__mmole_per_min_l"
+            },
+            "KI__M7EX_k": {
+              "_magnitude": 0.18975923261901775,
+              "_units": "KI__per_min"
+            },
+            "ftissue_m7": {
+              "_magnitude": 0.00012251814828952693,
+              "_units": "l_per_min"
+            },
+            "Kp_m7": {
+              "_magnitude": 2.7484358268874036,
+              "_units": "dimensionless"
+            },
+            "LI__CAN2M9_Vmax": {
+              "_magnitude": 0.005649017628006681,
+              "_units": "LI__mmole_per_min_l"
+            },
+            "KI__RTG_E50": {
+              "_magnitude": 1.7058500169355005e-05,
+              "_units": "KI__mM"
+            },
+            "KI__RTG_base": {
+              "_magnitude": 9.00528652661515,
+              "_units": "KI__mM"
+            },
+            "KI__RTG_max_inhibition": {
+              "_magnitude": 0.6244535441073977,
+              "_units": "dimensionless"
+            },
+            "KI__RTG_m_fpg": {
+              "_magnitude": 0.7189836466732434,
+              "_units": "dimensionless"
+            },
+            "BW": {
+              "_magnitude": 61.57,
+              "_units": "kilogram"
+            },
+            "[KI__fpg]": {
+              "_magnitude": 5.000000000000001,
+              "_units": "KI__mmole / liter"
+            },
+            "PODOSE_can": {
+              "_magnitude": 0,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        },
+        {
+          "start": 0,
+          "end": 4320,
+          "steps": 500,
+          "changes": {
+            "BW": {
+              "_magnitude": 61.57,
+              "_units": "kilogram"
+            },
+            "[KI__fpg]": {
+              "_magnitude": 5.000000000000001,
+              "_units": "KI__mmole / liter"
+            },
+            "PODOSE_can": {
+              "_magnitude": 200,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        },
+        {
+          "start": 0,
+          "end": 4320,
+          "steps": 500,
+          "changes": {
+            "BW": {
+              "_magnitude": 61.57,
+              "_units": "kilogram"
+            },
+            "[KI__fpg]": {
+              "_magnitude": 5.000000000000001,
+              "_units": "KI__mmole / liter"
+            },
+            "PODOSE_can": {
+              "_magnitude": 200,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        },
+        {
+          "start": 0,
+          "end": 4320,
+          "steps": 500,
+          "changes": {
+            "BW": {
+              "_magnitude": 61.57,
+              "_units": "kilogram"
+            },
+            "[KI__fpg]": {
+              "_magnitude": 5.000000000000001,
+              "_units": "KI__mmole / liter"
+            },
+            "PODOSE_can": {
+              "_magnitude": 200,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        },
+        {
+          "start": 0,
+          "end": 4320,
+          "steps": 500,
+          "changes": {
+            "BW": {
+              "_magnitude": 61.57,
+              "_units": "kilogram"
+            },
+            "[KI__fpg]": {
+              "_magnitude": 5.000000000000001,
+              "_units": "KI__mmole / liter"
+            },
+            "PODOSE_can": {
+              "_magnitude": 200,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        },
+        {
+          "start": 0,
+          "end": 4320,
+          "steps": 500,
+          "changes": {
+            "BW": {
+              "_magnitude": 61.57,
+              "_units": "kilogram"
+            },
+            "[KI__fpg]": {
+              "_magnitude": 5.000000000000001,
+              "_units": "KI__mmole / liter"
+            },
+            "PODOSE_can": {
+              "_magnitude": 200,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        },
+        {
+          "start": 0,
+          "end": 4320,
+          "steps": 500,
+          "changes": {
+            "BW": {
+              "_magnitude": 61.57,
+              "_units": "kilogram"
+            },
+            "[KI__fpg]": {
+              "_magnitude": 5.000000000000001,
+              "_units": "KI__mmole / liter"
+            },
+            "PODOSE_can": {
+              "_magnitude": 200,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        },
+        {
+          "start": 0,
+          "end": 4320,
+          "steps": 500,
+          "changes": {
+            "BW": {
+              "_magnitude": 61.57,
+              "_units": "kilogram"
+            },
+            "[KI__fpg]": {
+              "_magnitude": 5.000000000000001,
+              "_units": "KI__mmole / liter"
+            },
+            "PODOSE_can": {
+              "_magnitude": 200,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        },
+        {
+          "start": 0,
+          "end": 4380,
+          "steps": 500,
+          "changes": {
+            "BW": {
+              "_magnitude": 61.57,
+              "_units": "kilogram"
+            },
+            "[KI__fpg]": {
+              "_magnitude": 5.000000000000001,
+              "_units": "KI__mmole / liter"
+            },
+            "PODOSE_can": {
+              "_magnitude": 200,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        }
+      ]
+    }
+  },
+  "data": {
+    "task_po_can200_single__time": {
+      "type": "TASK",
+      "index": "time",
+      "unit": null,
+      "task": "task_po_can200_single",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can200_single__IVDOSE_can": {
+      "type": "TASK",
+      "index": "IVDOSE_can",
+      "unit": null,
+      "task": "task_po_can200_single",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can200_single__PODOSE_can": {
+      "type": "TASK",
+      "index": "PODOSE_can",
+      "unit": null,
+      "task": "task_po_can200_single",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can200_single__Cve_can": {
+      "type": "TASK",
+      "index": "Cve_can",
+      "unit": null,
+      "task": "task_po_can200_single",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can200_single__Cve_cantot": {
+      "type": "TASK",
+      "index": "Cve_cantot",
+      "unit": null,
+      "task": "task_po_can200_single",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can200_single__Cve_m5": {
+      "type": "TASK",
+      "index": "Cve_m5",
+      "unit": null,
+      "task": "task_po_can200_single",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can200_single__Cve_m7": {
+      "type": "TASK",
+      "index": "Cve_m7",
+      "unit": null,
+      "task": "task_po_can200_single",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can200_single__KI__fpg": {
+      "type": "TASK",
+      "index": "KI__fpg",
+      "unit": null,
+      "task": "task_po_can200_single",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can200_single__Aurine_can": {
+      "type": "TASK",
+      "index": "Aurine_can",
+      "unit": null,
+      "task": "task_po_can200_single",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can200_single__Aurine_cantot": {
+      "type": "TASK",
+      "index": "Aurine_cantot",
+      "unit": null,
+      "task": "task_po_can200_single",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can200_single__Aurine_m7": {
+      "type": "TASK",
+      "index": "Aurine_m7",
+      "unit": null,
+      "task": "task_po_can200_single",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can200_single__Aurine_m5": {
+      "type": "TASK",
+      "index": "Aurine_m5",
+      "unit": null,
+      "task": "task_po_can200_single",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can200_single__KI__glc_urine": {
+      "type": "TASK",
+      "index": "KI__glc_urine",
+      "unit": null,
+      "task": "task_po_can200_single",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can200_single__KI__GLCEX": {
+      "type": "TASK",
+      "index": "KI__GLCEX",
+      "unit": null,
+      "task": "task_po_can200_single",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can200_single__KI__UGE": {
+      "type": "TASK",
+      "index": "KI__UGE",
+      "unit": null,
+      "task": "task_po_can200_single",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can200_single__KI__RTG": {
+      "type": "TASK",
+      "index": "KI__RTG",
+      "unit": null,
+      "task": "task_po_can200_single",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can200_single__Afeces_can": {
+      "type": "TASK",
+      "index": "Afeces_can",
+      "unit": null,
+      "task": "task_po_can200_single",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can200_single__Afeces_m7": {
+      "type": "TASK",
+      "index": "Afeces_m7",
+      "unit": null,
+      "task": "task_po_can200_single",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can200_single__Afeces_m9": {
+      "type": "TASK",
+      "index": "Afeces_m9",
+      "unit": null,
+      "task": "task_po_can200_single",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can200_single__Afeces_cantot": {
+      "type": "TASK",
+      "index": "Afeces_cantot",
+      "unit": null,
+      "task": "task_po_can200_single",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can200_single__KI__CANEX": {
+      "type": "TASK",
+      "index": "KI__CANEX",
+      "unit": null,
+      "task": "task_po_can200_single",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can200_single__KI__f_renal_function": {
+      "type": "TASK",
+      "index": "KI__f_renal_function",
+      "unit": null,
+      "task": "task_po_can200_single",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can200_single__f_cirrhosis": {
+      "type": "TASK",
+      "index": "f_cirrhosis",
+      "unit": null,
+      "task": "task_po_can200_single",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can200_single__GU__f_absorption": {
+      "type": "TASK",
+      "index": "GU__f_absorption",
+      "unit": null,
+      "task": "task_po_can200_single",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can200_tnl40_multi__time": {
+      "type": "TASK",
+      "index": "time",
+      "unit": null,
+      "task": "task_po_can200_tnl40_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can200_tnl40_multi__IVDOSE_can": {
+      "type": "TASK",
+      "index": "IVDOSE_can",
+      "unit": null,
+      "task": "task_po_can200_tnl40_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can200_tnl40_multi__PODOSE_can": {
+      "type": "TASK",
+      "index": "PODOSE_can",
+      "unit": null,
+      "task": "task_po_can200_tnl40_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can200_tnl40_multi__Cve_can": {
+      "type": "TASK",
+      "index": "Cve_can",
+      "unit": null,
+      "task": "task_po_can200_tnl40_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can200_tnl40_multi__Cve_cantot": {
+      "type": "TASK",
+      "index": "Cve_cantot",
+      "unit": null,
+      "task": "task_po_can200_tnl40_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can200_tnl40_multi__Cve_m5": {
+      "type": "TASK",
+      "index": "Cve_m5",
+      "unit": null,
+      "task": "task_po_can200_tnl40_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can200_tnl40_multi__Cve_m7": {
+      "type": "TASK",
+      "index": "Cve_m7",
+      "unit": null,
+      "task": "task_po_can200_tnl40_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can200_tnl40_multi__KI__fpg": {
+      "type": "TASK",
+      "index": "KI__fpg",
+      "unit": null,
+      "task": "task_po_can200_tnl40_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can200_tnl40_multi__Aurine_can": {
+      "type": "TASK",
+      "index": "Aurine_can",
+      "unit": null,
+      "task": "task_po_can200_tnl40_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can200_tnl40_multi__Aurine_cantot": {
+      "type": "TASK",
+      "index": "Aurine_cantot",
+      "unit": null,
+      "task": "task_po_can200_tnl40_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can200_tnl40_multi__Aurine_m7": {
+      "type": "TASK",
+      "index": "Aurine_m7",
+      "unit": null,
+      "task": "task_po_can200_tnl40_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can200_tnl40_multi__Aurine_m5": {
+      "type": "TASK",
+      "index": "Aurine_m5",
+      "unit": null,
+      "task": "task_po_can200_tnl40_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can200_tnl40_multi__KI__glc_urine": {
+      "type": "TASK",
+      "index": "KI__glc_urine",
+      "unit": null,
+      "task": "task_po_can200_tnl40_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can200_tnl40_multi__KI__GLCEX": {
+      "type": "TASK",
+      "index": "KI__GLCEX",
+      "unit": null,
+      "task": "task_po_can200_tnl40_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can200_tnl40_multi__KI__UGE": {
+      "type": "TASK",
+      "index": "KI__UGE",
+      "unit": null,
+      "task": "task_po_can200_tnl40_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can200_tnl40_multi__KI__RTG": {
+      "type": "TASK",
+      "index": "KI__RTG",
+      "unit": null,
+      "task": "task_po_can200_tnl40_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can200_tnl40_multi__Afeces_can": {
+      "type": "TASK",
+      "index": "Afeces_can",
+      "unit": null,
+      "task": "task_po_can200_tnl40_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can200_tnl40_multi__Afeces_m7": {
+      "type": "TASK",
+      "index": "Afeces_m7",
+      "unit": null,
+      "task": "task_po_can200_tnl40_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can200_tnl40_multi__Afeces_m9": {
+      "type": "TASK",
+      "index": "Afeces_m9",
+      "unit": null,
+      "task": "task_po_can200_tnl40_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can200_tnl40_multi__Afeces_cantot": {
+      "type": "TASK",
+      "index": "Afeces_cantot",
+      "unit": null,
+      "task": "task_po_can200_tnl40_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can200_tnl40_multi__KI__CANEX": {
+      "type": "TASK",
+      "index": "KI__CANEX",
+      "unit": null,
+      "task": "task_po_can200_tnl40_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can200_tnl40_multi__KI__f_renal_function": {
+      "type": "TASK",
+      "index": "KI__f_renal_function",
+      "unit": null,
+      "task": "task_po_can200_tnl40_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can200_tnl40_multi__f_cirrhosis": {
+      "type": "TASK",
+      "index": "f_cirrhosis",
+      "unit": null,
+      "task": "task_po_can200_tnl40_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can200_tnl40_multi__GU__f_absorption": {
+      "type": "TASK",
+      "index": "GU__f_absorption",
+      "unit": null,
+      "task": "task_po_can200_tnl40_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    }
+  },
+  "figures": {
+    "Fig1": {
+      "sid": "Fig1",
+      "name": "Kinoshita2015 (healthy)",
+      "num_rows": 1,
+      "num_cols": 1,
+      "width": 7.0,
+      "height": 5.0,
+      "subplots": [
+        {
+          "sid": null,
+          "name": null,
+          "plot": {
+            "sid": "Fig1__plot0",
+            "name": null,
+            "xaxis": {
+              "sid": "Fig1__plot0_xaxis",
+              "name": "time [hr]",
+              "label": "time",
+              "unit": "hr",
+              "scale": "LINEAR",
+              "min": -80,
+              "max": 80,
+              "grid": false,
+              "label_visible": true,
+              "ticks_visible": true
+            },
+            "yaxis": {
+              "sid": "Fig1__plot0_yaxis",
+              "name": "canagliflozin [\u00b5M]",
+              "label": "canagliflozin",
+              "unit": "\u00b5M",
+              "scale": "LINEAR",
+              "min": null,
+              "max": null,
+              "grid": false,
+              "label_visible": true,
+              "ticks_visible": true
+            },
+            "yaxis_right": null,
+            "legend": true,
+            "facecolor": "#ffffffff",
+            "title_visible": true,
+            "curves": [
+              {
+                "sid": "Fig1__plot0_curve0",
+                "name": "Sim can 200",
+                "x": "task_po_can200_single__time",
+                "y": "task_po_can200_single__Cve_can",
+                "xerr": null,
+                "yerr": null,
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "SOLID",
+                    "color": "#000000ff",
+                    "thickness": 2.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "NONE",
+                    "fill": "#000000ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#000000ff",
+                    "second_color": null
+                  }
+                },
+                "order": 0
+              },
+              {
+                "sid": "Fig1__plot0_curve1",
+                "name": "CAN200\u00b1SD (n=25)",
+                "x": "canagliflozin_CAN200__time",
+                "y": "canagliflozin_CAN200__mean",
+                "xerr": null,
+                "yerr": "canagliflozin_CAN200__mean_sd",
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "DASH",
+                    "color": "#000000ff",
+                    "thickness": 1.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "SQUARE",
+                    "fill": "#000000ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#000000ff",
+                    "second_color": null
+                  }
+                },
+                "order": 1
+              },
+              {
+                "sid": "Fig1__plot0_curve2",
+                "name": "Sim can 200",
+                "x": "task_po_can200_tnl40_multi__time",
+                "y": "task_po_can200_tnl40_multi__Cve_can",
+                "xerr": null,
+                "yerr": null,
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "SOLID",
+                    "color": "#d62728ff",
+                    "thickness": 2.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "NONE",
+                    "fill": "#d62728ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#d62728ff",
+                    "second_color": null
+                  }
+                },
+                "order": 2
+              },
+              {
+                "sid": "Fig1__plot0_curve3",
+                "name": "CAN200_TNL40\u00b1SD (n=25)",
+                "x": "canagliflozin_CAN200_TNL40__time",
+                "y": "canagliflozin_CAN200_TNL40__mean",
+                "xerr": null,
+                "yerr": "canagliflozin_CAN200_TNL40__mean_sd",
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "DASH",
+                    "color": "#d62728ff",
+                    "thickness": 1.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "SQUARE",
+                    "fill": "#d62728ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#d62728ff",
+                    "second_color": null
+                  }
+                },
+                "order": 3
+              }
+            ],
+            "areas": []
+          },
+          "row": 1,
+          "col": 1,
+          "row_span": 1,
+          "col_span": 1
+        }
+      ]
+    }
+  }
+}

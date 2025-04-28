@@ -1,0 +1,6355 @@
+{
+  "experiment_id": "Devineni2013",
+  "base_path": "/home/mkoenig/git/pkdb_models/pkdb_models/models/canagliflozin",
+  "data_path": "[PosixPath('/home/mkoenig/git/pkdb_data/studies/canagliflozin')]",
+  "models": {
+    "model": {
+      "sid": null,
+      "name": null,
+      "language": "SBML",
+      "language_type": "SBML",
+      "source": {
+        "source": "/home/mkoenig/git/pkdb_models/pkdb_models/models/canagliflozin/models/results/models/canagliflozin_body_flat.xml",
+        "path": "/home/mkoenig/git/pkdb_models/pkdb_models/models/canagliflozin/models/results/models/canagliflozin_body_flat.xml",
+        "content": "None"
+      },
+      "changes": {}
+    }
+  },
+  "tasks": {
+    "task_po_can0_single": {
+      "model": "model",
+      "simulation": "po_can0_single"
+    },
+    "task_po_can50_single": {
+      "model": "model",
+      "simulation": "po_can50_single"
+    },
+    "task_po_can100_single": {
+      "model": "model",
+      "simulation": "po_can100_single"
+    },
+    "task_po_can300_single": {
+      "model": "model",
+      "simulation": "po_can300_single"
+    },
+    "task_po_can0_multi": {
+      "model": "model",
+      "simulation": "po_can0_multi"
+    },
+    "task_po_can50_multi": {
+      "model": "model",
+      "simulation": "po_can50_multi"
+    },
+    "task_po_can100_multi": {
+      "model": "model",
+      "simulation": "po_can100_multi"
+    },
+    "task_po_can300_multi": {
+      "model": "model",
+      "simulation": "po_can300_multi"
+    }
+  },
+  "simulations": {
+    "po_can0_single": {
+      "type": "TimecourseSim",
+      "selections": null,
+      "reset": true,
+      "time_offset": 0.0,
+      "timecourses": [
+        {
+          "start": 0,
+          "end": 1500,
+          "steps": 500,
+          "changes": {
+            "ftissue_can": {
+              "_magnitude": 0.5907025360669715,
+              "_units": "l_per_min"
+            },
+            "Kp_can": {
+              "_magnitude": 1.002186894659328,
+              "_units": "dimensionless"
+            },
+            "LI__CANIM_Vmax": {
+              "_magnitude": 0.6724144350621387,
+              "_units": "LI__mmole_per_min_l"
+            },
+            "KI__CANEX_k": {
+              "_magnitude": 0.003620232018677586,
+              "_units": "KI__per_min"
+            },
+            "GU__CANABS_k": {
+              "_magnitude": 0.014857823531040652,
+              "_units": "GU__per_min"
+            },
+            "LI__CAN2M5_Vmax": {
+              "_magnitude": 0.004471516434657664,
+              "_units": "LI__mmole_per_min_l"
+            },
+            "LI__CAN2M5_Km_can": {
+              "_magnitude": 0.29493539325204393,
+              "_units": "LI__mM"
+            },
+            "LI__M5EX_Km_m5": {
+              "_magnitude": 0.18169494628559774,
+              "_units": "LI__mM"
+            },
+            "LI__M5EX_Vmax": {
+              "_magnitude": 0.448042513666378,
+              "_units": "LI__mmole_per_min_l"
+            },
+            "KI__M5EX_k": {
+              "_magnitude": 0.10556919062775157,
+              "_units": "KI__per_min"
+            },
+            "ftissue_m5": {
+              "_magnitude": 0.0034928983363240276,
+              "_units": "l_per_min"
+            },
+            "Kp_m5": {
+              "_magnitude": 3.9832348764531975,
+              "_units": "dimensionless"
+            },
+            "LI__CAN2M7_Vmax": {
+              "_magnitude": 0.002145888093579888,
+              "_units": "LI__mmole_per_min_l"
+            },
+            "LI__M7EX_Vmax": {
+              "_magnitude": 0.1258350901232781,
+              "_units": "LI__mmole_per_min_l"
+            },
+            "KI__M7EX_k": {
+              "_magnitude": 0.18975923261901775,
+              "_units": "KI__per_min"
+            },
+            "ftissue_m7": {
+              "_magnitude": 0.00012251814828952693,
+              "_units": "l_per_min"
+            },
+            "Kp_m7": {
+              "_magnitude": 2.7484358268874036,
+              "_units": "dimensionless"
+            },
+            "LI__CAN2M9_Vmax": {
+              "_magnitude": 0.005649017628006681,
+              "_units": "LI__mmole_per_min_l"
+            },
+            "KI__RTG_E50": {
+              "_magnitude": 1.7058500169355005e-05,
+              "_units": "KI__mM"
+            },
+            "KI__RTG_base": {
+              "_magnitude": 9.00528652661515,
+              "_units": "KI__mM"
+            },
+            "KI__RTG_max_inhibition": {
+              "_magnitude": 0.6244535441073977,
+              "_units": "dimensionless"
+            },
+            "KI__RTG_m_fpg": {
+              "_magnitude": 0.7189836466732434,
+              "_units": "dimensionless"
+            },
+            "BW": {
+              "_magnitude": 84.2,
+              "_units": "kilogram"
+            },
+            "[KI__fpg]": {
+              "_magnitude": 10.111111111111112,
+              "_units": "KI__mmole / liter"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 1.179,
+              "_units": "dimensionless"
+            },
+            "PODOSE_can": {
+              "_magnitude": 0,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        }
+      ]
+    },
+    "po_can50_single": {
+      "type": "TimecourseSim",
+      "selections": null,
+      "reset": true,
+      "time_offset": 0.0,
+      "timecourses": [
+        {
+          "start": 0,
+          "end": 1500,
+          "steps": 500,
+          "changes": {
+            "ftissue_can": {
+              "_magnitude": 0.5907025360669715,
+              "_units": "l_per_min"
+            },
+            "Kp_can": {
+              "_magnitude": 1.002186894659328,
+              "_units": "dimensionless"
+            },
+            "LI__CANIM_Vmax": {
+              "_magnitude": 0.6724144350621387,
+              "_units": "LI__mmole_per_min_l"
+            },
+            "KI__CANEX_k": {
+              "_magnitude": 0.003620232018677586,
+              "_units": "KI__per_min"
+            },
+            "GU__CANABS_k": {
+              "_magnitude": 0.014857823531040652,
+              "_units": "GU__per_min"
+            },
+            "LI__CAN2M5_Vmax": {
+              "_magnitude": 0.004471516434657664,
+              "_units": "LI__mmole_per_min_l"
+            },
+            "LI__CAN2M5_Km_can": {
+              "_magnitude": 0.29493539325204393,
+              "_units": "LI__mM"
+            },
+            "LI__M5EX_Km_m5": {
+              "_magnitude": 0.18169494628559774,
+              "_units": "LI__mM"
+            },
+            "LI__M5EX_Vmax": {
+              "_magnitude": 0.448042513666378,
+              "_units": "LI__mmole_per_min_l"
+            },
+            "KI__M5EX_k": {
+              "_magnitude": 0.10556919062775157,
+              "_units": "KI__per_min"
+            },
+            "ftissue_m5": {
+              "_magnitude": 0.0034928983363240276,
+              "_units": "l_per_min"
+            },
+            "Kp_m5": {
+              "_magnitude": 3.9832348764531975,
+              "_units": "dimensionless"
+            },
+            "LI__CAN2M7_Vmax": {
+              "_magnitude": 0.002145888093579888,
+              "_units": "LI__mmole_per_min_l"
+            },
+            "LI__M7EX_Vmax": {
+              "_magnitude": 0.1258350901232781,
+              "_units": "LI__mmole_per_min_l"
+            },
+            "KI__M7EX_k": {
+              "_magnitude": 0.18975923261901775,
+              "_units": "KI__per_min"
+            },
+            "ftissue_m7": {
+              "_magnitude": 0.00012251814828952693,
+              "_units": "l_per_min"
+            },
+            "Kp_m7": {
+              "_magnitude": 2.7484358268874036,
+              "_units": "dimensionless"
+            },
+            "LI__CAN2M9_Vmax": {
+              "_magnitude": 0.005649017628006681,
+              "_units": "LI__mmole_per_min_l"
+            },
+            "KI__RTG_E50": {
+              "_magnitude": 1.7058500169355005e-05,
+              "_units": "KI__mM"
+            },
+            "KI__RTG_base": {
+              "_magnitude": 9.00528652661515,
+              "_units": "KI__mM"
+            },
+            "KI__RTG_max_inhibition": {
+              "_magnitude": 0.6244535441073977,
+              "_units": "dimensionless"
+            },
+            "KI__RTG_m_fpg": {
+              "_magnitude": 0.7189836466732434,
+              "_units": "dimensionless"
+            },
+            "BW": {
+              "_magnitude": 82.9,
+              "_units": "kilogram"
+            },
+            "[KI__fpg]": {
+              "_magnitude": 10.500000000000002,
+              "_units": "KI__mmole / liter"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 1.101,
+              "_units": "dimensionless"
+            },
+            "PODOSE_can": {
+              "_magnitude": 50,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        }
+      ]
+    },
+    "po_can100_single": {
+      "type": "TimecourseSim",
+      "selections": null,
+      "reset": true,
+      "time_offset": 0.0,
+      "timecourses": [
+        {
+          "start": 0,
+          "end": 1500,
+          "steps": 500,
+          "changes": {
+            "ftissue_can": {
+              "_magnitude": 0.5907025360669715,
+              "_units": "l_per_min"
+            },
+            "Kp_can": {
+              "_magnitude": 1.002186894659328,
+              "_units": "dimensionless"
+            },
+            "LI__CANIM_Vmax": {
+              "_magnitude": 0.6724144350621387,
+              "_units": "LI__mmole_per_min_l"
+            },
+            "KI__CANEX_k": {
+              "_magnitude": 0.003620232018677586,
+              "_units": "KI__per_min"
+            },
+            "GU__CANABS_k": {
+              "_magnitude": 0.014857823531040652,
+              "_units": "GU__per_min"
+            },
+            "LI__CAN2M5_Vmax": {
+              "_magnitude": 0.004471516434657664,
+              "_units": "LI__mmole_per_min_l"
+            },
+            "LI__CAN2M5_Km_can": {
+              "_magnitude": 0.29493539325204393,
+              "_units": "LI__mM"
+            },
+            "LI__M5EX_Km_m5": {
+              "_magnitude": 0.18169494628559774,
+              "_units": "LI__mM"
+            },
+            "LI__M5EX_Vmax": {
+              "_magnitude": 0.448042513666378,
+              "_units": "LI__mmole_per_min_l"
+            },
+            "KI__M5EX_k": {
+              "_magnitude": 0.10556919062775157,
+              "_units": "KI__per_min"
+            },
+            "ftissue_m5": {
+              "_magnitude": 0.0034928983363240276,
+              "_units": "l_per_min"
+            },
+            "Kp_m5": {
+              "_magnitude": 3.9832348764531975,
+              "_units": "dimensionless"
+            },
+            "LI__CAN2M7_Vmax": {
+              "_magnitude": 0.002145888093579888,
+              "_units": "LI__mmole_per_min_l"
+            },
+            "LI__M7EX_Vmax": {
+              "_magnitude": 0.1258350901232781,
+              "_units": "LI__mmole_per_min_l"
+            },
+            "KI__M7EX_k": {
+              "_magnitude": 0.18975923261901775,
+              "_units": "KI__per_min"
+            },
+            "ftissue_m7": {
+              "_magnitude": 0.00012251814828952693,
+              "_units": "l_per_min"
+            },
+            "Kp_m7": {
+              "_magnitude": 2.7484358268874036,
+              "_units": "dimensionless"
+            },
+            "LI__CAN2M9_Vmax": {
+              "_magnitude": 0.005649017628006681,
+              "_units": "LI__mmole_per_min_l"
+            },
+            "KI__RTG_E50": {
+              "_magnitude": 1.7058500169355005e-05,
+              "_units": "KI__mM"
+            },
+            "KI__RTG_base": {
+              "_magnitude": 9.00528652661515,
+              "_units": "KI__mM"
+            },
+            "KI__RTG_max_inhibition": {
+              "_magnitude": 0.6244535441073977,
+              "_units": "dimensionless"
+            },
+            "KI__RTG_m_fpg": {
+              "_magnitude": 0.7189836466732434,
+              "_units": "dimensionless"
+            },
+            "BW": {
+              "_magnitude": 82.2,
+              "_units": "kilogram"
+            },
+            "[KI__fpg]": {
+              "_magnitude": 10.111111111111112,
+              "_units": "KI__mmole / liter"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 1.063,
+              "_units": "dimensionless"
+            },
+            "PODOSE_can": {
+              "_magnitude": 100,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        }
+      ]
+    },
+    "po_can300_single": {
+      "type": "TimecourseSim",
+      "selections": null,
+      "reset": true,
+      "time_offset": 0.0,
+      "timecourses": [
+        {
+          "start": 0,
+          "end": 1500,
+          "steps": 500,
+          "changes": {
+            "ftissue_can": {
+              "_magnitude": 0.5907025360669715,
+              "_units": "l_per_min"
+            },
+            "Kp_can": {
+              "_magnitude": 1.002186894659328,
+              "_units": "dimensionless"
+            },
+            "LI__CANIM_Vmax": {
+              "_magnitude": 0.6724144350621387,
+              "_units": "LI__mmole_per_min_l"
+            },
+            "KI__CANEX_k": {
+              "_magnitude": 0.003620232018677586,
+              "_units": "KI__per_min"
+            },
+            "GU__CANABS_k": {
+              "_magnitude": 0.014857823531040652,
+              "_units": "GU__per_min"
+            },
+            "LI__CAN2M5_Vmax": {
+              "_magnitude": 0.004471516434657664,
+              "_units": "LI__mmole_per_min_l"
+            },
+            "LI__CAN2M5_Km_can": {
+              "_magnitude": 0.29493539325204393,
+              "_units": "LI__mM"
+            },
+            "LI__M5EX_Km_m5": {
+              "_magnitude": 0.18169494628559774,
+              "_units": "LI__mM"
+            },
+            "LI__M5EX_Vmax": {
+              "_magnitude": 0.448042513666378,
+              "_units": "LI__mmole_per_min_l"
+            },
+            "KI__M5EX_k": {
+              "_magnitude": 0.10556919062775157,
+              "_units": "KI__per_min"
+            },
+            "ftissue_m5": {
+              "_magnitude": 0.0034928983363240276,
+              "_units": "l_per_min"
+            },
+            "Kp_m5": {
+              "_magnitude": 3.9832348764531975,
+              "_units": "dimensionless"
+            },
+            "LI__CAN2M7_Vmax": {
+              "_magnitude": 0.002145888093579888,
+              "_units": "LI__mmole_per_min_l"
+            },
+            "LI__M7EX_Vmax": {
+              "_magnitude": 0.1258350901232781,
+              "_units": "LI__mmole_per_min_l"
+            },
+            "KI__M7EX_k": {
+              "_magnitude": 0.18975923261901775,
+              "_units": "KI__per_min"
+            },
+            "ftissue_m7": {
+              "_magnitude": 0.00012251814828952693,
+              "_units": "l_per_min"
+            },
+            "Kp_m7": {
+              "_magnitude": 2.7484358268874036,
+              "_units": "dimensionless"
+            },
+            "LI__CAN2M9_Vmax": {
+              "_magnitude": 0.005649017628006681,
+              "_units": "LI__mmole_per_min_l"
+            },
+            "KI__RTG_E50": {
+              "_magnitude": 1.7058500169355005e-05,
+              "_units": "KI__mM"
+            },
+            "KI__RTG_base": {
+              "_magnitude": 9.00528652661515,
+              "_units": "KI__mM"
+            },
+            "KI__RTG_max_inhibition": {
+              "_magnitude": 0.6244535441073977,
+              "_units": "dimensionless"
+            },
+            "KI__RTG_m_fpg": {
+              "_magnitude": 0.7189836466732434,
+              "_units": "dimensionless"
+            },
+            "BW": {
+              "_magnitude": 83.2,
+              "_units": "kilogram"
+            },
+            "[KI__fpg]": {
+              "_magnitude": 10.27777777777778,
+              "_units": "KI__mmole / liter"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 1.218,
+              "_units": "dimensionless"
+            },
+            "PODOSE_can": {
+              "_magnitude": 300,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        }
+      ]
+    },
+    "po_can0_multi": {
+      "type": "TimecourseSim",
+      "selections": null,
+      "reset": true,
+      "time_offset": -10080,
+      "timecourses": [
+        {
+          "start": 0,
+          "end": 1440,
+          "steps": 500,
+          "changes": {
+            "ftissue_can": {
+              "_magnitude": 0.5907025360669715,
+              "_units": "l_per_min"
+            },
+            "Kp_can": {
+              "_magnitude": 1.002186894659328,
+              "_units": "dimensionless"
+            },
+            "LI__CANIM_Vmax": {
+              "_magnitude": 0.6724144350621387,
+              "_units": "LI__mmole_per_min_l"
+            },
+            "KI__CANEX_k": {
+              "_magnitude": 0.003620232018677586,
+              "_units": "KI__per_min"
+            },
+            "GU__CANABS_k": {
+              "_magnitude": 0.014857823531040652,
+              "_units": "GU__per_min"
+            },
+            "LI__CAN2M5_Vmax": {
+              "_magnitude": 0.004471516434657664,
+              "_units": "LI__mmole_per_min_l"
+            },
+            "LI__CAN2M5_Km_can": {
+              "_magnitude": 0.29493539325204393,
+              "_units": "LI__mM"
+            },
+            "LI__M5EX_Km_m5": {
+              "_magnitude": 0.18169494628559774,
+              "_units": "LI__mM"
+            },
+            "LI__M5EX_Vmax": {
+              "_magnitude": 0.448042513666378,
+              "_units": "LI__mmole_per_min_l"
+            },
+            "KI__M5EX_k": {
+              "_magnitude": 0.10556919062775157,
+              "_units": "KI__per_min"
+            },
+            "ftissue_m5": {
+              "_magnitude": 0.0034928983363240276,
+              "_units": "l_per_min"
+            },
+            "Kp_m5": {
+              "_magnitude": 3.9832348764531975,
+              "_units": "dimensionless"
+            },
+            "LI__CAN2M7_Vmax": {
+              "_magnitude": 0.002145888093579888,
+              "_units": "LI__mmole_per_min_l"
+            },
+            "LI__M7EX_Vmax": {
+              "_magnitude": 0.1258350901232781,
+              "_units": "LI__mmole_per_min_l"
+            },
+            "KI__M7EX_k": {
+              "_magnitude": 0.18975923261901775,
+              "_units": "KI__per_min"
+            },
+            "ftissue_m7": {
+              "_magnitude": 0.00012251814828952693,
+              "_units": "l_per_min"
+            },
+            "Kp_m7": {
+              "_magnitude": 2.7484358268874036,
+              "_units": "dimensionless"
+            },
+            "LI__CAN2M9_Vmax": {
+              "_magnitude": 0.005649017628006681,
+              "_units": "LI__mmole_per_min_l"
+            },
+            "KI__RTG_E50": {
+              "_magnitude": 1.7058500169355005e-05,
+              "_units": "KI__mM"
+            },
+            "KI__RTG_base": {
+              "_magnitude": 9.00528652661515,
+              "_units": "KI__mM"
+            },
+            "KI__RTG_max_inhibition": {
+              "_magnitude": 0.6244535441073977,
+              "_units": "dimensionless"
+            },
+            "KI__RTG_m_fpg": {
+              "_magnitude": 0.7189836466732434,
+              "_units": "dimensionless"
+            },
+            "PODOSE_can": {
+              "_magnitude": 0,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        },
+        {
+          "start": 0,
+          "end": 1440,
+          "steps": 500,
+          "changes": {
+            "BW": {
+              "_magnitude": 84.2,
+              "_units": "kilogram"
+            },
+            "[KI__fpg]": {
+              "_magnitude": 10.111111111111112,
+              "_units": "KI__mmole / liter"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 1.179,
+              "_units": "dimensionless"
+            },
+            "KI__glc_urine": {
+              "_magnitude": 0.0,
+              "_units": "KI__mmole"
+            },
+            "Aurine_can": {
+              "_magnitude": 0,
+              "_units": "millimole"
+            },
+            "Aurine_m5": {
+              "_magnitude": 0,
+              "_units": "millimole"
+            },
+            "Aurine_m7": {
+              "_magnitude": 0,
+              "_units": "millimole"
+            },
+            "PODOSE_can": {
+              "_magnitude": 0,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        },
+        {
+          "start": 0,
+          "end": 1440,
+          "steps": 500,
+          "changes": {
+            "BW": {
+              "_magnitude": 84.2,
+              "_units": "kilogram"
+            },
+            "[KI__fpg]": {
+              "_magnitude": 10.111111111111112,
+              "_units": "KI__mmole / liter"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 1.179,
+              "_units": "dimensionless"
+            },
+            "KI__glc_urine": {
+              "_magnitude": 0.0,
+              "_units": "KI__mmole"
+            },
+            "Aurine_can": {
+              "_magnitude": 0,
+              "_units": "millimole"
+            },
+            "Aurine_m5": {
+              "_magnitude": 0,
+              "_units": "millimole"
+            },
+            "Aurine_m7": {
+              "_magnitude": 0,
+              "_units": "millimole"
+            },
+            "PODOSE_can": {
+              "_magnitude": 0,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        },
+        {
+          "start": 0,
+          "end": 1440,
+          "steps": 500,
+          "changes": {
+            "BW": {
+              "_magnitude": 84.2,
+              "_units": "kilogram"
+            },
+            "[KI__fpg]": {
+              "_magnitude": 10.111111111111112,
+              "_units": "KI__mmole / liter"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 1.179,
+              "_units": "dimensionless"
+            },
+            "KI__glc_urine": {
+              "_magnitude": 0.0,
+              "_units": "KI__mmole"
+            },
+            "Aurine_can": {
+              "_magnitude": 0,
+              "_units": "millimole"
+            },
+            "Aurine_m5": {
+              "_magnitude": 0,
+              "_units": "millimole"
+            },
+            "Aurine_m7": {
+              "_magnitude": 0,
+              "_units": "millimole"
+            },
+            "PODOSE_can": {
+              "_magnitude": 0,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        },
+        {
+          "start": 0,
+          "end": 1440,
+          "steps": 500,
+          "changes": {
+            "BW": {
+              "_magnitude": 84.2,
+              "_units": "kilogram"
+            },
+            "[KI__fpg]": {
+              "_magnitude": 10.111111111111112,
+              "_units": "KI__mmole / liter"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 1.179,
+              "_units": "dimensionless"
+            },
+            "KI__glc_urine": {
+              "_magnitude": 0.0,
+              "_units": "KI__mmole"
+            },
+            "Aurine_can": {
+              "_magnitude": 0,
+              "_units": "millimole"
+            },
+            "Aurine_m5": {
+              "_magnitude": 0,
+              "_units": "millimole"
+            },
+            "Aurine_m7": {
+              "_magnitude": 0,
+              "_units": "millimole"
+            },
+            "PODOSE_can": {
+              "_magnitude": 0,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        },
+        {
+          "start": 0,
+          "end": 1440,
+          "steps": 500,
+          "changes": {
+            "BW": {
+              "_magnitude": 84.2,
+              "_units": "kilogram"
+            },
+            "[KI__fpg]": {
+              "_magnitude": 10.111111111111112,
+              "_units": "KI__mmole / liter"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 1.179,
+              "_units": "dimensionless"
+            },
+            "KI__glc_urine": {
+              "_magnitude": 0.0,
+              "_units": "KI__mmole"
+            },
+            "Aurine_can": {
+              "_magnitude": 0,
+              "_units": "millimole"
+            },
+            "Aurine_m5": {
+              "_magnitude": 0,
+              "_units": "millimole"
+            },
+            "Aurine_m7": {
+              "_magnitude": 0,
+              "_units": "millimole"
+            },
+            "PODOSE_can": {
+              "_magnitude": 0,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        },
+        {
+          "start": 0,
+          "end": 1440,
+          "steps": 500,
+          "changes": {
+            "BW": {
+              "_magnitude": 84.2,
+              "_units": "kilogram"
+            },
+            "[KI__fpg]": {
+              "_magnitude": 10.111111111111112,
+              "_units": "KI__mmole / liter"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 1.179,
+              "_units": "dimensionless"
+            },
+            "KI__glc_urine": {
+              "_magnitude": 0.0,
+              "_units": "KI__mmole"
+            },
+            "Aurine_can": {
+              "_magnitude": 0,
+              "_units": "millimole"
+            },
+            "Aurine_m5": {
+              "_magnitude": 0,
+              "_units": "millimole"
+            },
+            "Aurine_m7": {
+              "_magnitude": 0,
+              "_units": "millimole"
+            },
+            "PODOSE_can": {
+              "_magnitude": 0,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        },
+        {
+          "start": 0,
+          "end": 1500,
+          "steps": 500,
+          "changes": {
+            "BW": {
+              "_magnitude": 84.2,
+              "_units": "kilogram"
+            },
+            "[KI__fpg]": {
+              "_magnitude": 10.111111111111112,
+              "_units": "KI__mmole / liter"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 1.179,
+              "_units": "dimensionless"
+            },
+            "KI__glc_urine": {
+              "_magnitude": 0.0,
+              "_units": "KI__mmole"
+            },
+            "Aurine_can": {
+              "_magnitude": 0,
+              "_units": "millimole"
+            },
+            "Aurine_m5": {
+              "_magnitude": 0,
+              "_units": "millimole"
+            },
+            "Aurine_m7": {
+              "_magnitude": 0,
+              "_units": "millimole"
+            },
+            "PODOSE_can": {
+              "_magnitude": 0,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        }
+      ]
+    },
+    "po_can50_multi": {
+      "type": "TimecourseSim",
+      "selections": null,
+      "reset": true,
+      "time_offset": -10080,
+      "timecourses": [
+        {
+          "start": 0,
+          "end": 1440,
+          "steps": 500,
+          "changes": {
+            "ftissue_can": {
+              "_magnitude": 0.5907025360669715,
+              "_units": "l_per_min"
+            },
+            "Kp_can": {
+              "_magnitude": 1.002186894659328,
+              "_units": "dimensionless"
+            },
+            "LI__CANIM_Vmax": {
+              "_magnitude": 0.6724144350621387,
+              "_units": "LI__mmole_per_min_l"
+            },
+            "KI__CANEX_k": {
+              "_magnitude": 0.003620232018677586,
+              "_units": "KI__per_min"
+            },
+            "GU__CANABS_k": {
+              "_magnitude": 0.014857823531040652,
+              "_units": "GU__per_min"
+            },
+            "LI__CAN2M5_Vmax": {
+              "_magnitude": 0.004471516434657664,
+              "_units": "LI__mmole_per_min_l"
+            },
+            "LI__CAN2M5_Km_can": {
+              "_magnitude": 0.29493539325204393,
+              "_units": "LI__mM"
+            },
+            "LI__M5EX_Km_m5": {
+              "_magnitude": 0.18169494628559774,
+              "_units": "LI__mM"
+            },
+            "LI__M5EX_Vmax": {
+              "_magnitude": 0.448042513666378,
+              "_units": "LI__mmole_per_min_l"
+            },
+            "KI__M5EX_k": {
+              "_magnitude": 0.10556919062775157,
+              "_units": "KI__per_min"
+            },
+            "ftissue_m5": {
+              "_magnitude": 0.0034928983363240276,
+              "_units": "l_per_min"
+            },
+            "Kp_m5": {
+              "_magnitude": 3.9832348764531975,
+              "_units": "dimensionless"
+            },
+            "LI__CAN2M7_Vmax": {
+              "_magnitude": 0.002145888093579888,
+              "_units": "LI__mmole_per_min_l"
+            },
+            "LI__M7EX_Vmax": {
+              "_magnitude": 0.1258350901232781,
+              "_units": "LI__mmole_per_min_l"
+            },
+            "KI__M7EX_k": {
+              "_magnitude": 0.18975923261901775,
+              "_units": "KI__per_min"
+            },
+            "ftissue_m7": {
+              "_magnitude": 0.00012251814828952693,
+              "_units": "l_per_min"
+            },
+            "Kp_m7": {
+              "_magnitude": 2.7484358268874036,
+              "_units": "dimensionless"
+            },
+            "LI__CAN2M9_Vmax": {
+              "_magnitude": 0.005649017628006681,
+              "_units": "LI__mmole_per_min_l"
+            },
+            "KI__RTG_E50": {
+              "_magnitude": 1.7058500169355005e-05,
+              "_units": "KI__mM"
+            },
+            "KI__RTG_base": {
+              "_magnitude": 9.00528652661515,
+              "_units": "KI__mM"
+            },
+            "KI__RTG_max_inhibition": {
+              "_magnitude": 0.6244535441073977,
+              "_units": "dimensionless"
+            },
+            "KI__RTG_m_fpg": {
+              "_magnitude": 0.7189836466732434,
+              "_units": "dimensionless"
+            },
+            "PODOSE_can": {
+              "_magnitude": 0,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        },
+        {
+          "start": 0,
+          "end": 1440,
+          "steps": 500,
+          "changes": {
+            "BW": {
+              "_magnitude": 82.9,
+              "_units": "kilogram"
+            },
+            "[KI__fpg]": {
+              "_magnitude": 10.500000000000002,
+              "_units": "KI__mmole / liter"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 1.101,
+              "_units": "dimensionless"
+            },
+            "KI__glc_urine": {
+              "_magnitude": 0.0,
+              "_units": "KI__mmole"
+            },
+            "Aurine_can": {
+              "_magnitude": 0,
+              "_units": "millimole"
+            },
+            "Aurine_m5": {
+              "_magnitude": 0,
+              "_units": "millimole"
+            },
+            "Aurine_m7": {
+              "_magnitude": 0,
+              "_units": "millimole"
+            },
+            "PODOSE_can": {
+              "_magnitude": 50,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        },
+        {
+          "start": 0,
+          "end": 1440,
+          "steps": 500,
+          "changes": {
+            "BW": {
+              "_magnitude": 82.9,
+              "_units": "kilogram"
+            },
+            "[KI__fpg]": {
+              "_magnitude": 10.500000000000002,
+              "_units": "KI__mmole / liter"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 1.101,
+              "_units": "dimensionless"
+            },
+            "KI__glc_urine": {
+              "_magnitude": 0.0,
+              "_units": "KI__mmole"
+            },
+            "Aurine_can": {
+              "_magnitude": 0,
+              "_units": "millimole"
+            },
+            "Aurine_m5": {
+              "_magnitude": 0,
+              "_units": "millimole"
+            },
+            "Aurine_m7": {
+              "_magnitude": 0,
+              "_units": "millimole"
+            },
+            "PODOSE_can": {
+              "_magnitude": 50,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        },
+        {
+          "start": 0,
+          "end": 1440,
+          "steps": 500,
+          "changes": {
+            "BW": {
+              "_magnitude": 82.9,
+              "_units": "kilogram"
+            },
+            "[KI__fpg]": {
+              "_magnitude": 10.500000000000002,
+              "_units": "KI__mmole / liter"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 1.101,
+              "_units": "dimensionless"
+            },
+            "KI__glc_urine": {
+              "_magnitude": 0.0,
+              "_units": "KI__mmole"
+            },
+            "Aurine_can": {
+              "_magnitude": 0,
+              "_units": "millimole"
+            },
+            "Aurine_m5": {
+              "_magnitude": 0,
+              "_units": "millimole"
+            },
+            "Aurine_m7": {
+              "_magnitude": 0,
+              "_units": "millimole"
+            },
+            "PODOSE_can": {
+              "_magnitude": 50,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        },
+        {
+          "start": 0,
+          "end": 1440,
+          "steps": 500,
+          "changes": {
+            "BW": {
+              "_magnitude": 82.9,
+              "_units": "kilogram"
+            },
+            "[KI__fpg]": {
+              "_magnitude": 10.500000000000002,
+              "_units": "KI__mmole / liter"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 1.101,
+              "_units": "dimensionless"
+            },
+            "KI__glc_urine": {
+              "_magnitude": 0.0,
+              "_units": "KI__mmole"
+            },
+            "Aurine_can": {
+              "_magnitude": 0,
+              "_units": "millimole"
+            },
+            "Aurine_m5": {
+              "_magnitude": 0,
+              "_units": "millimole"
+            },
+            "Aurine_m7": {
+              "_magnitude": 0,
+              "_units": "millimole"
+            },
+            "PODOSE_can": {
+              "_magnitude": 50,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        },
+        {
+          "start": 0,
+          "end": 1440,
+          "steps": 500,
+          "changes": {
+            "BW": {
+              "_magnitude": 82.9,
+              "_units": "kilogram"
+            },
+            "[KI__fpg]": {
+              "_magnitude": 10.500000000000002,
+              "_units": "KI__mmole / liter"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 1.101,
+              "_units": "dimensionless"
+            },
+            "KI__glc_urine": {
+              "_magnitude": 0.0,
+              "_units": "KI__mmole"
+            },
+            "Aurine_can": {
+              "_magnitude": 0,
+              "_units": "millimole"
+            },
+            "Aurine_m5": {
+              "_magnitude": 0,
+              "_units": "millimole"
+            },
+            "Aurine_m7": {
+              "_magnitude": 0,
+              "_units": "millimole"
+            },
+            "PODOSE_can": {
+              "_magnitude": 50,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        },
+        {
+          "start": 0,
+          "end": 1440,
+          "steps": 500,
+          "changes": {
+            "BW": {
+              "_magnitude": 82.9,
+              "_units": "kilogram"
+            },
+            "[KI__fpg]": {
+              "_magnitude": 10.500000000000002,
+              "_units": "KI__mmole / liter"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 1.101,
+              "_units": "dimensionless"
+            },
+            "KI__glc_urine": {
+              "_magnitude": 0.0,
+              "_units": "KI__mmole"
+            },
+            "Aurine_can": {
+              "_magnitude": 0,
+              "_units": "millimole"
+            },
+            "Aurine_m5": {
+              "_magnitude": 0,
+              "_units": "millimole"
+            },
+            "Aurine_m7": {
+              "_magnitude": 0,
+              "_units": "millimole"
+            },
+            "PODOSE_can": {
+              "_magnitude": 50,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        },
+        {
+          "start": 0,
+          "end": 1500,
+          "steps": 500,
+          "changes": {
+            "BW": {
+              "_magnitude": 82.9,
+              "_units": "kilogram"
+            },
+            "[KI__fpg]": {
+              "_magnitude": 10.500000000000002,
+              "_units": "KI__mmole / liter"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 1.101,
+              "_units": "dimensionless"
+            },
+            "KI__glc_urine": {
+              "_magnitude": 0.0,
+              "_units": "KI__mmole"
+            },
+            "Aurine_can": {
+              "_magnitude": 0,
+              "_units": "millimole"
+            },
+            "Aurine_m5": {
+              "_magnitude": 0,
+              "_units": "millimole"
+            },
+            "Aurine_m7": {
+              "_magnitude": 0,
+              "_units": "millimole"
+            },
+            "PODOSE_can": {
+              "_magnitude": 50,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        }
+      ]
+    },
+    "po_can100_multi": {
+      "type": "TimecourseSim",
+      "selections": null,
+      "reset": true,
+      "time_offset": -10080,
+      "timecourses": [
+        {
+          "start": 0,
+          "end": 1440,
+          "steps": 500,
+          "changes": {
+            "ftissue_can": {
+              "_magnitude": 0.5907025360669715,
+              "_units": "l_per_min"
+            },
+            "Kp_can": {
+              "_magnitude": 1.002186894659328,
+              "_units": "dimensionless"
+            },
+            "LI__CANIM_Vmax": {
+              "_magnitude": 0.6724144350621387,
+              "_units": "LI__mmole_per_min_l"
+            },
+            "KI__CANEX_k": {
+              "_magnitude": 0.003620232018677586,
+              "_units": "KI__per_min"
+            },
+            "GU__CANABS_k": {
+              "_magnitude": 0.014857823531040652,
+              "_units": "GU__per_min"
+            },
+            "LI__CAN2M5_Vmax": {
+              "_magnitude": 0.004471516434657664,
+              "_units": "LI__mmole_per_min_l"
+            },
+            "LI__CAN2M5_Km_can": {
+              "_magnitude": 0.29493539325204393,
+              "_units": "LI__mM"
+            },
+            "LI__M5EX_Km_m5": {
+              "_magnitude": 0.18169494628559774,
+              "_units": "LI__mM"
+            },
+            "LI__M5EX_Vmax": {
+              "_magnitude": 0.448042513666378,
+              "_units": "LI__mmole_per_min_l"
+            },
+            "KI__M5EX_k": {
+              "_magnitude": 0.10556919062775157,
+              "_units": "KI__per_min"
+            },
+            "ftissue_m5": {
+              "_magnitude": 0.0034928983363240276,
+              "_units": "l_per_min"
+            },
+            "Kp_m5": {
+              "_magnitude": 3.9832348764531975,
+              "_units": "dimensionless"
+            },
+            "LI__CAN2M7_Vmax": {
+              "_magnitude": 0.002145888093579888,
+              "_units": "LI__mmole_per_min_l"
+            },
+            "LI__M7EX_Vmax": {
+              "_magnitude": 0.1258350901232781,
+              "_units": "LI__mmole_per_min_l"
+            },
+            "KI__M7EX_k": {
+              "_magnitude": 0.18975923261901775,
+              "_units": "KI__per_min"
+            },
+            "ftissue_m7": {
+              "_magnitude": 0.00012251814828952693,
+              "_units": "l_per_min"
+            },
+            "Kp_m7": {
+              "_magnitude": 2.7484358268874036,
+              "_units": "dimensionless"
+            },
+            "LI__CAN2M9_Vmax": {
+              "_magnitude": 0.005649017628006681,
+              "_units": "LI__mmole_per_min_l"
+            },
+            "KI__RTG_E50": {
+              "_magnitude": 1.7058500169355005e-05,
+              "_units": "KI__mM"
+            },
+            "KI__RTG_base": {
+              "_magnitude": 9.00528652661515,
+              "_units": "KI__mM"
+            },
+            "KI__RTG_max_inhibition": {
+              "_magnitude": 0.6244535441073977,
+              "_units": "dimensionless"
+            },
+            "KI__RTG_m_fpg": {
+              "_magnitude": 0.7189836466732434,
+              "_units": "dimensionless"
+            },
+            "PODOSE_can": {
+              "_magnitude": 0,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        },
+        {
+          "start": 0,
+          "end": 1440,
+          "steps": 500,
+          "changes": {
+            "BW": {
+              "_magnitude": 82.2,
+              "_units": "kilogram"
+            },
+            "[KI__fpg]": {
+              "_magnitude": 10.111111111111112,
+              "_units": "KI__mmole / liter"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 1.063,
+              "_units": "dimensionless"
+            },
+            "KI__glc_urine": {
+              "_magnitude": 0.0,
+              "_units": "KI__mmole"
+            },
+            "Aurine_can": {
+              "_magnitude": 0,
+              "_units": "millimole"
+            },
+            "Aurine_m5": {
+              "_magnitude": 0,
+              "_units": "millimole"
+            },
+            "Aurine_m7": {
+              "_magnitude": 0,
+              "_units": "millimole"
+            },
+            "PODOSE_can": {
+              "_magnitude": 100,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        },
+        {
+          "start": 0,
+          "end": 1440,
+          "steps": 500,
+          "changes": {
+            "BW": {
+              "_magnitude": 82.2,
+              "_units": "kilogram"
+            },
+            "[KI__fpg]": {
+              "_magnitude": 10.111111111111112,
+              "_units": "KI__mmole / liter"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 1.063,
+              "_units": "dimensionless"
+            },
+            "KI__glc_urine": {
+              "_magnitude": 0.0,
+              "_units": "KI__mmole"
+            },
+            "Aurine_can": {
+              "_magnitude": 0,
+              "_units": "millimole"
+            },
+            "Aurine_m5": {
+              "_magnitude": 0,
+              "_units": "millimole"
+            },
+            "Aurine_m7": {
+              "_magnitude": 0,
+              "_units": "millimole"
+            },
+            "PODOSE_can": {
+              "_magnitude": 100,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        },
+        {
+          "start": 0,
+          "end": 1440,
+          "steps": 500,
+          "changes": {
+            "BW": {
+              "_magnitude": 82.2,
+              "_units": "kilogram"
+            },
+            "[KI__fpg]": {
+              "_magnitude": 10.111111111111112,
+              "_units": "KI__mmole / liter"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 1.063,
+              "_units": "dimensionless"
+            },
+            "KI__glc_urine": {
+              "_magnitude": 0.0,
+              "_units": "KI__mmole"
+            },
+            "Aurine_can": {
+              "_magnitude": 0,
+              "_units": "millimole"
+            },
+            "Aurine_m5": {
+              "_magnitude": 0,
+              "_units": "millimole"
+            },
+            "Aurine_m7": {
+              "_magnitude": 0,
+              "_units": "millimole"
+            },
+            "PODOSE_can": {
+              "_magnitude": 100,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        },
+        {
+          "start": 0,
+          "end": 1440,
+          "steps": 500,
+          "changes": {
+            "BW": {
+              "_magnitude": 82.2,
+              "_units": "kilogram"
+            },
+            "[KI__fpg]": {
+              "_magnitude": 10.111111111111112,
+              "_units": "KI__mmole / liter"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 1.063,
+              "_units": "dimensionless"
+            },
+            "KI__glc_urine": {
+              "_magnitude": 0.0,
+              "_units": "KI__mmole"
+            },
+            "Aurine_can": {
+              "_magnitude": 0,
+              "_units": "millimole"
+            },
+            "Aurine_m5": {
+              "_magnitude": 0,
+              "_units": "millimole"
+            },
+            "Aurine_m7": {
+              "_magnitude": 0,
+              "_units": "millimole"
+            },
+            "PODOSE_can": {
+              "_magnitude": 100,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        },
+        {
+          "start": 0,
+          "end": 1440,
+          "steps": 500,
+          "changes": {
+            "BW": {
+              "_magnitude": 82.2,
+              "_units": "kilogram"
+            },
+            "[KI__fpg]": {
+              "_magnitude": 10.111111111111112,
+              "_units": "KI__mmole / liter"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 1.063,
+              "_units": "dimensionless"
+            },
+            "KI__glc_urine": {
+              "_magnitude": 0.0,
+              "_units": "KI__mmole"
+            },
+            "Aurine_can": {
+              "_magnitude": 0,
+              "_units": "millimole"
+            },
+            "Aurine_m5": {
+              "_magnitude": 0,
+              "_units": "millimole"
+            },
+            "Aurine_m7": {
+              "_magnitude": 0,
+              "_units": "millimole"
+            },
+            "PODOSE_can": {
+              "_magnitude": 100,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        },
+        {
+          "start": 0,
+          "end": 1440,
+          "steps": 500,
+          "changes": {
+            "BW": {
+              "_magnitude": 82.2,
+              "_units": "kilogram"
+            },
+            "[KI__fpg]": {
+              "_magnitude": 10.111111111111112,
+              "_units": "KI__mmole / liter"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 1.063,
+              "_units": "dimensionless"
+            },
+            "KI__glc_urine": {
+              "_magnitude": 0.0,
+              "_units": "KI__mmole"
+            },
+            "Aurine_can": {
+              "_magnitude": 0,
+              "_units": "millimole"
+            },
+            "Aurine_m5": {
+              "_magnitude": 0,
+              "_units": "millimole"
+            },
+            "Aurine_m7": {
+              "_magnitude": 0,
+              "_units": "millimole"
+            },
+            "PODOSE_can": {
+              "_magnitude": 100,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        },
+        {
+          "start": 0,
+          "end": 1500,
+          "steps": 500,
+          "changes": {
+            "BW": {
+              "_magnitude": 82.2,
+              "_units": "kilogram"
+            },
+            "[KI__fpg]": {
+              "_magnitude": 10.111111111111112,
+              "_units": "KI__mmole / liter"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 1.063,
+              "_units": "dimensionless"
+            },
+            "KI__glc_urine": {
+              "_magnitude": 0.0,
+              "_units": "KI__mmole"
+            },
+            "Aurine_can": {
+              "_magnitude": 0,
+              "_units": "millimole"
+            },
+            "Aurine_m5": {
+              "_magnitude": 0,
+              "_units": "millimole"
+            },
+            "Aurine_m7": {
+              "_magnitude": 0,
+              "_units": "millimole"
+            },
+            "PODOSE_can": {
+              "_magnitude": 100,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        }
+      ]
+    },
+    "po_can300_multi": {
+      "type": "TimecourseSim",
+      "selections": null,
+      "reset": true,
+      "time_offset": -10080,
+      "timecourses": [
+        {
+          "start": 0,
+          "end": 1440,
+          "steps": 500,
+          "changes": {
+            "ftissue_can": {
+              "_magnitude": 0.5907025360669715,
+              "_units": "l_per_min"
+            },
+            "Kp_can": {
+              "_magnitude": 1.002186894659328,
+              "_units": "dimensionless"
+            },
+            "LI__CANIM_Vmax": {
+              "_magnitude": 0.6724144350621387,
+              "_units": "LI__mmole_per_min_l"
+            },
+            "KI__CANEX_k": {
+              "_magnitude": 0.003620232018677586,
+              "_units": "KI__per_min"
+            },
+            "GU__CANABS_k": {
+              "_magnitude": 0.014857823531040652,
+              "_units": "GU__per_min"
+            },
+            "LI__CAN2M5_Vmax": {
+              "_magnitude": 0.004471516434657664,
+              "_units": "LI__mmole_per_min_l"
+            },
+            "LI__CAN2M5_Km_can": {
+              "_magnitude": 0.29493539325204393,
+              "_units": "LI__mM"
+            },
+            "LI__M5EX_Km_m5": {
+              "_magnitude": 0.18169494628559774,
+              "_units": "LI__mM"
+            },
+            "LI__M5EX_Vmax": {
+              "_magnitude": 0.448042513666378,
+              "_units": "LI__mmole_per_min_l"
+            },
+            "KI__M5EX_k": {
+              "_magnitude": 0.10556919062775157,
+              "_units": "KI__per_min"
+            },
+            "ftissue_m5": {
+              "_magnitude": 0.0034928983363240276,
+              "_units": "l_per_min"
+            },
+            "Kp_m5": {
+              "_magnitude": 3.9832348764531975,
+              "_units": "dimensionless"
+            },
+            "LI__CAN2M7_Vmax": {
+              "_magnitude": 0.002145888093579888,
+              "_units": "LI__mmole_per_min_l"
+            },
+            "LI__M7EX_Vmax": {
+              "_magnitude": 0.1258350901232781,
+              "_units": "LI__mmole_per_min_l"
+            },
+            "KI__M7EX_k": {
+              "_magnitude": 0.18975923261901775,
+              "_units": "KI__per_min"
+            },
+            "ftissue_m7": {
+              "_magnitude": 0.00012251814828952693,
+              "_units": "l_per_min"
+            },
+            "Kp_m7": {
+              "_magnitude": 2.7484358268874036,
+              "_units": "dimensionless"
+            },
+            "LI__CAN2M9_Vmax": {
+              "_magnitude": 0.005649017628006681,
+              "_units": "LI__mmole_per_min_l"
+            },
+            "KI__RTG_E50": {
+              "_magnitude": 1.7058500169355005e-05,
+              "_units": "KI__mM"
+            },
+            "KI__RTG_base": {
+              "_magnitude": 9.00528652661515,
+              "_units": "KI__mM"
+            },
+            "KI__RTG_max_inhibition": {
+              "_magnitude": 0.6244535441073977,
+              "_units": "dimensionless"
+            },
+            "KI__RTG_m_fpg": {
+              "_magnitude": 0.7189836466732434,
+              "_units": "dimensionless"
+            },
+            "PODOSE_can": {
+              "_magnitude": 0,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        },
+        {
+          "start": 0,
+          "end": 1440,
+          "steps": 500,
+          "changes": {
+            "BW": {
+              "_magnitude": 83.2,
+              "_units": "kilogram"
+            },
+            "[KI__fpg]": {
+              "_magnitude": 10.27777777777778,
+              "_units": "KI__mmole / liter"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 1.218,
+              "_units": "dimensionless"
+            },
+            "KI__glc_urine": {
+              "_magnitude": 0.0,
+              "_units": "KI__mmole"
+            },
+            "Aurine_can": {
+              "_magnitude": 0,
+              "_units": "millimole"
+            },
+            "Aurine_m5": {
+              "_magnitude": 0,
+              "_units": "millimole"
+            },
+            "Aurine_m7": {
+              "_magnitude": 0,
+              "_units": "millimole"
+            },
+            "PODOSE_can": {
+              "_magnitude": 300,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        },
+        {
+          "start": 0,
+          "end": 1440,
+          "steps": 500,
+          "changes": {
+            "BW": {
+              "_magnitude": 83.2,
+              "_units": "kilogram"
+            },
+            "[KI__fpg]": {
+              "_magnitude": 10.27777777777778,
+              "_units": "KI__mmole / liter"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 1.218,
+              "_units": "dimensionless"
+            },
+            "KI__glc_urine": {
+              "_magnitude": 0.0,
+              "_units": "KI__mmole"
+            },
+            "Aurine_can": {
+              "_magnitude": 0,
+              "_units": "millimole"
+            },
+            "Aurine_m5": {
+              "_magnitude": 0,
+              "_units": "millimole"
+            },
+            "Aurine_m7": {
+              "_magnitude": 0,
+              "_units": "millimole"
+            },
+            "PODOSE_can": {
+              "_magnitude": 300,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        },
+        {
+          "start": 0,
+          "end": 1440,
+          "steps": 500,
+          "changes": {
+            "BW": {
+              "_magnitude": 83.2,
+              "_units": "kilogram"
+            },
+            "[KI__fpg]": {
+              "_magnitude": 10.27777777777778,
+              "_units": "KI__mmole / liter"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 1.218,
+              "_units": "dimensionless"
+            },
+            "KI__glc_urine": {
+              "_magnitude": 0.0,
+              "_units": "KI__mmole"
+            },
+            "Aurine_can": {
+              "_magnitude": 0,
+              "_units": "millimole"
+            },
+            "Aurine_m5": {
+              "_magnitude": 0,
+              "_units": "millimole"
+            },
+            "Aurine_m7": {
+              "_magnitude": 0,
+              "_units": "millimole"
+            },
+            "PODOSE_can": {
+              "_magnitude": 300,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        },
+        {
+          "start": 0,
+          "end": 1440,
+          "steps": 500,
+          "changes": {
+            "BW": {
+              "_magnitude": 83.2,
+              "_units": "kilogram"
+            },
+            "[KI__fpg]": {
+              "_magnitude": 10.27777777777778,
+              "_units": "KI__mmole / liter"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 1.218,
+              "_units": "dimensionless"
+            },
+            "KI__glc_urine": {
+              "_magnitude": 0.0,
+              "_units": "KI__mmole"
+            },
+            "Aurine_can": {
+              "_magnitude": 0,
+              "_units": "millimole"
+            },
+            "Aurine_m5": {
+              "_magnitude": 0,
+              "_units": "millimole"
+            },
+            "Aurine_m7": {
+              "_magnitude": 0,
+              "_units": "millimole"
+            },
+            "PODOSE_can": {
+              "_magnitude": 300,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        },
+        {
+          "start": 0,
+          "end": 1440,
+          "steps": 500,
+          "changes": {
+            "BW": {
+              "_magnitude": 83.2,
+              "_units": "kilogram"
+            },
+            "[KI__fpg]": {
+              "_magnitude": 10.27777777777778,
+              "_units": "KI__mmole / liter"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 1.218,
+              "_units": "dimensionless"
+            },
+            "KI__glc_urine": {
+              "_magnitude": 0.0,
+              "_units": "KI__mmole"
+            },
+            "Aurine_can": {
+              "_magnitude": 0,
+              "_units": "millimole"
+            },
+            "Aurine_m5": {
+              "_magnitude": 0,
+              "_units": "millimole"
+            },
+            "Aurine_m7": {
+              "_magnitude": 0,
+              "_units": "millimole"
+            },
+            "PODOSE_can": {
+              "_magnitude": 300,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        },
+        {
+          "start": 0,
+          "end": 1440,
+          "steps": 500,
+          "changes": {
+            "BW": {
+              "_magnitude": 83.2,
+              "_units": "kilogram"
+            },
+            "[KI__fpg]": {
+              "_magnitude": 10.27777777777778,
+              "_units": "KI__mmole / liter"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 1.218,
+              "_units": "dimensionless"
+            },
+            "KI__glc_urine": {
+              "_magnitude": 0.0,
+              "_units": "KI__mmole"
+            },
+            "Aurine_can": {
+              "_magnitude": 0,
+              "_units": "millimole"
+            },
+            "Aurine_m5": {
+              "_magnitude": 0,
+              "_units": "millimole"
+            },
+            "Aurine_m7": {
+              "_magnitude": 0,
+              "_units": "millimole"
+            },
+            "PODOSE_can": {
+              "_magnitude": 300,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        },
+        {
+          "start": 0,
+          "end": 1500,
+          "steps": 500,
+          "changes": {
+            "BW": {
+              "_magnitude": 83.2,
+              "_units": "kilogram"
+            },
+            "[KI__fpg]": {
+              "_magnitude": 10.27777777777778,
+              "_units": "KI__mmole / liter"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 1.218,
+              "_units": "dimensionless"
+            },
+            "KI__glc_urine": {
+              "_magnitude": 0.0,
+              "_units": "KI__mmole"
+            },
+            "Aurine_can": {
+              "_magnitude": 0,
+              "_units": "millimole"
+            },
+            "Aurine_m5": {
+              "_magnitude": 0,
+              "_units": "millimole"
+            },
+            "Aurine_m7": {
+              "_magnitude": 0,
+              "_units": "millimole"
+            },
+            "PODOSE_can": {
+              "_magnitude": 300,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        }
+      ]
+    }
+  },
+  "data": {
+    "task_po_can0_single__time": {
+      "type": "TASK",
+      "index": "time",
+      "unit": null,
+      "task": "task_po_can0_single",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can0_single__IVDOSE_can": {
+      "type": "TASK",
+      "index": "IVDOSE_can",
+      "unit": null,
+      "task": "task_po_can0_single",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can0_single__PODOSE_can": {
+      "type": "TASK",
+      "index": "PODOSE_can",
+      "unit": null,
+      "task": "task_po_can0_single",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can0_single__Cve_can": {
+      "type": "TASK",
+      "index": "Cve_can",
+      "unit": null,
+      "task": "task_po_can0_single",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can0_single__Cve_cantot": {
+      "type": "TASK",
+      "index": "Cve_cantot",
+      "unit": null,
+      "task": "task_po_can0_single",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can0_single__Cve_m5": {
+      "type": "TASK",
+      "index": "Cve_m5",
+      "unit": null,
+      "task": "task_po_can0_single",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can0_single__Cve_m7": {
+      "type": "TASK",
+      "index": "Cve_m7",
+      "unit": null,
+      "task": "task_po_can0_single",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can0_single__KI__fpg": {
+      "type": "TASK",
+      "index": "KI__fpg",
+      "unit": null,
+      "task": "task_po_can0_single",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can0_single__Aurine_can": {
+      "type": "TASK",
+      "index": "Aurine_can",
+      "unit": null,
+      "task": "task_po_can0_single",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can0_single__Aurine_cantot": {
+      "type": "TASK",
+      "index": "Aurine_cantot",
+      "unit": null,
+      "task": "task_po_can0_single",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can0_single__Aurine_m7": {
+      "type": "TASK",
+      "index": "Aurine_m7",
+      "unit": null,
+      "task": "task_po_can0_single",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can0_single__Aurine_m5": {
+      "type": "TASK",
+      "index": "Aurine_m5",
+      "unit": null,
+      "task": "task_po_can0_single",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can0_single__KI__glc_urine": {
+      "type": "TASK",
+      "index": "KI__glc_urine",
+      "unit": null,
+      "task": "task_po_can0_single",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can0_single__KI__GLCEX": {
+      "type": "TASK",
+      "index": "KI__GLCEX",
+      "unit": null,
+      "task": "task_po_can0_single",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can0_single__KI__UGE": {
+      "type": "TASK",
+      "index": "KI__UGE",
+      "unit": null,
+      "task": "task_po_can0_single",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can0_single__KI__RTG": {
+      "type": "TASK",
+      "index": "KI__RTG",
+      "unit": null,
+      "task": "task_po_can0_single",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can0_single__Afeces_can": {
+      "type": "TASK",
+      "index": "Afeces_can",
+      "unit": null,
+      "task": "task_po_can0_single",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can0_single__Afeces_m7": {
+      "type": "TASK",
+      "index": "Afeces_m7",
+      "unit": null,
+      "task": "task_po_can0_single",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can0_single__Afeces_m9": {
+      "type": "TASK",
+      "index": "Afeces_m9",
+      "unit": null,
+      "task": "task_po_can0_single",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can0_single__Afeces_cantot": {
+      "type": "TASK",
+      "index": "Afeces_cantot",
+      "unit": null,
+      "task": "task_po_can0_single",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can0_single__KI__CANEX": {
+      "type": "TASK",
+      "index": "KI__CANEX",
+      "unit": null,
+      "task": "task_po_can0_single",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can0_single__KI__f_renal_function": {
+      "type": "TASK",
+      "index": "KI__f_renal_function",
+      "unit": null,
+      "task": "task_po_can0_single",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can0_single__f_cirrhosis": {
+      "type": "TASK",
+      "index": "f_cirrhosis",
+      "unit": null,
+      "task": "task_po_can0_single",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can0_single__GU__f_absorption": {
+      "type": "TASK",
+      "index": "GU__f_absorption",
+      "unit": null,
+      "task": "task_po_can0_single",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can50_single__time": {
+      "type": "TASK",
+      "index": "time",
+      "unit": null,
+      "task": "task_po_can50_single",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can50_single__IVDOSE_can": {
+      "type": "TASK",
+      "index": "IVDOSE_can",
+      "unit": null,
+      "task": "task_po_can50_single",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can50_single__PODOSE_can": {
+      "type": "TASK",
+      "index": "PODOSE_can",
+      "unit": null,
+      "task": "task_po_can50_single",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can50_single__Cve_can": {
+      "type": "TASK",
+      "index": "Cve_can",
+      "unit": null,
+      "task": "task_po_can50_single",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can50_single__Cve_cantot": {
+      "type": "TASK",
+      "index": "Cve_cantot",
+      "unit": null,
+      "task": "task_po_can50_single",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can50_single__Cve_m5": {
+      "type": "TASK",
+      "index": "Cve_m5",
+      "unit": null,
+      "task": "task_po_can50_single",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can50_single__Cve_m7": {
+      "type": "TASK",
+      "index": "Cve_m7",
+      "unit": null,
+      "task": "task_po_can50_single",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can50_single__KI__fpg": {
+      "type": "TASK",
+      "index": "KI__fpg",
+      "unit": null,
+      "task": "task_po_can50_single",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can50_single__Aurine_can": {
+      "type": "TASK",
+      "index": "Aurine_can",
+      "unit": null,
+      "task": "task_po_can50_single",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can50_single__Aurine_cantot": {
+      "type": "TASK",
+      "index": "Aurine_cantot",
+      "unit": null,
+      "task": "task_po_can50_single",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can50_single__Aurine_m7": {
+      "type": "TASK",
+      "index": "Aurine_m7",
+      "unit": null,
+      "task": "task_po_can50_single",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can50_single__Aurine_m5": {
+      "type": "TASK",
+      "index": "Aurine_m5",
+      "unit": null,
+      "task": "task_po_can50_single",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can50_single__KI__glc_urine": {
+      "type": "TASK",
+      "index": "KI__glc_urine",
+      "unit": null,
+      "task": "task_po_can50_single",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can50_single__KI__GLCEX": {
+      "type": "TASK",
+      "index": "KI__GLCEX",
+      "unit": null,
+      "task": "task_po_can50_single",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can50_single__KI__UGE": {
+      "type": "TASK",
+      "index": "KI__UGE",
+      "unit": null,
+      "task": "task_po_can50_single",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can50_single__KI__RTG": {
+      "type": "TASK",
+      "index": "KI__RTG",
+      "unit": null,
+      "task": "task_po_can50_single",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can50_single__Afeces_can": {
+      "type": "TASK",
+      "index": "Afeces_can",
+      "unit": null,
+      "task": "task_po_can50_single",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can50_single__Afeces_m7": {
+      "type": "TASK",
+      "index": "Afeces_m7",
+      "unit": null,
+      "task": "task_po_can50_single",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can50_single__Afeces_m9": {
+      "type": "TASK",
+      "index": "Afeces_m9",
+      "unit": null,
+      "task": "task_po_can50_single",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can50_single__Afeces_cantot": {
+      "type": "TASK",
+      "index": "Afeces_cantot",
+      "unit": null,
+      "task": "task_po_can50_single",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can50_single__KI__CANEX": {
+      "type": "TASK",
+      "index": "KI__CANEX",
+      "unit": null,
+      "task": "task_po_can50_single",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can50_single__KI__f_renal_function": {
+      "type": "TASK",
+      "index": "KI__f_renal_function",
+      "unit": null,
+      "task": "task_po_can50_single",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can50_single__f_cirrhosis": {
+      "type": "TASK",
+      "index": "f_cirrhosis",
+      "unit": null,
+      "task": "task_po_can50_single",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can50_single__GU__f_absorption": {
+      "type": "TASK",
+      "index": "GU__f_absorption",
+      "unit": null,
+      "task": "task_po_can50_single",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can100_single__time": {
+      "type": "TASK",
+      "index": "time",
+      "unit": null,
+      "task": "task_po_can100_single",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can100_single__IVDOSE_can": {
+      "type": "TASK",
+      "index": "IVDOSE_can",
+      "unit": null,
+      "task": "task_po_can100_single",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can100_single__PODOSE_can": {
+      "type": "TASK",
+      "index": "PODOSE_can",
+      "unit": null,
+      "task": "task_po_can100_single",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can100_single__Cve_can": {
+      "type": "TASK",
+      "index": "Cve_can",
+      "unit": null,
+      "task": "task_po_can100_single",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can100_single__Cve_cantot": {
+      "type": "TASK",
+      "index": "Cve_cantot",
+      "unit": null,
+      "task": "task_po_can100_single",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can100_single__Cve_m5": {
+      "type": "TASK",
+      "index": "Cve_m5",
+      "unit": null,
+      "task": "task_po_can100_single",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can100_single__Cve_m7": {
+      "type": "TASK",
+      "index": "Cve_m7",
+      "unit": null,
+      "task": "task_po_can100_single",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can100_single__KI__fpg": {
+      "type": "TASK",
+      "index": "KI__fpg",
+      "unit": null,
+      "task": "task_po_can100_single",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can100_single__Aurine_can": {
+      "type": "TASK",
+      "index": "Aurine_can",
+      "unit": null,
+      "task": "task_po_can100_single",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can100_single__Aurine_cantot": {
+      "type": "TASK",
+      "index": "Aurine_cantot",
+      "unit": null,
+      "task": "task_po_can100_single",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can100_single__Aurine_m7": {
+      "type": "TASK",
+      "index": "Aurine_m7",
+      "unit": null,
+      "task": "task_po_can100_single",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can100_single__Aurine_m5": {
+      "type": "TASK",
+      "index": "Aurine_m5",
+      "unit": null,
+      "task": "task_po_can100_single",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can100_single__KI__glc_urine": {
+      "type": "TASK",
+      "index": "KI__glc_urine",
+      "unit": null,
+      "task": "task_po_can100_single",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can100_single__KI__GLCEX": {
+      "type": "TASK",
+      "index": "KI__GLCEX",
+      "unit": null,
+      "task": "task_po_can100_single",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can100_single__KI__UGE": {
+      "type": "TASK",
+      "index": "KI__UGE",
+      "unit": null,
+      "task": "task_po_can100_single",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can100_single__KI__RTG": {
+      "type": "TASK",
+      "index": "KI__RTG",
+      "unit": null,
+      "task": "task_po_can100_single",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can100_single__Afeces_can": {
+      "type": "TASK",
+      "index": "Afeces_can",
+      "unit": null,
+      "task": "task_po_can100_single",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can100_single__Afeces_m7": {
+      "type": "TASK",
+      "index": "Afeces_m7",
+      "unit": null,
+      "task": "task_po_can100_single",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can100_single__Afeces_m9": {
+      "type": "TASK",
+      "index": "Afeces_m9",
+      "unit": null,
+      "task": "task_po_can100_single",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can100_single__Afeces_cantot": {
+      "type": "TASK",
+      "index": "Afeces_cantot",
+      "unit": null,
+      "task": "task_po_can100_single",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can100_single__KI__CANEX": {
+      "type": "TASK",
+      "index": "KI__CANEX",
+      "unit": null,
+      "task": "task_po_can100_single",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can100_single__KI__f_renal_function": {
+      "type": "TASK",
+      "index": "KI__f_renal_function",
+      "unit": null,
+      "task": "task_po_can100_single",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can100_single__f_cirrhosis": {
+      "type": "TASK",
+      "index": "f_cirrhosis",
+      "unit": null,
+      "task": "task_po_can100_single",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can100_single__GU__f_absorption": {
+      "type": "TASK",
+      "index": "GU__f_absorption",
+      "unit": null,
+      "task": "task_po_can100_single",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can300_single__time": {
+      "type": "TASK",
+      "index": "time",
+      "unit": null,
+      "task": "task_po_can300_single",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can300_single__IVDOSE_can": {
+      "type": "TASK",
+      "index": "IVDOSE_can",
+      "unit": null,
+      "task": "task_po_can300_single",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can300_single__PODOSE_can": {
+      "type": "TASK",
+      "index": "PODOSE_can",
+      "unit": null,
+      "task": "task_po_can300_single",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can300_single__Cve_can": {
+      "type": "TASK",
+      "index": "Cve_can",
+      "unit": null,
+      "task": "task_po_can300_single",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can300_single__Cve_cantot": {
+      "type": "TASK",
+      "index": "Cve_cantot",
+      "unit": null,
+      "task": "task_po_can300_single",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can300_single__Cve_m5": {
+      "type": "TASK",
+      "index": "Cve_m5",
+      "unit": null,
+      "task": "task_po_can300_single",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can300_single__Cve_m7": {
+      "type": "TASK",
+      "index": "Cve_m7",
+      "unit": null,
+      "task": "task_po_can300_single",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can300_single__KI__fpg": {
+      "type": "TASK",
+      "index": "KI__fpg",
+      "unit": null,
+      "task": "task_po_can300_single",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can300_single__Aurine_can": {
+      "type": "TASK",
+      "index": "Aurine_can",
+      "unit": null,
+      "task": "task_po_can300_single",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can300_single__Aurine_cantot": {
+      "type": "TASK",
+      "index": "Aurine_cantot",
+      "unit": null,
+      "task": "task_po_can300_single",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can300_single__Aurine_m7": {
+      "type": "TASK",
+      "index": "Aurine_m7",
+      "unit": null,
+      "task": "task_po_can300_single",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can300_single__Aurine_m5": {
+      "type": "TASK",
+      "index": "Aurine_m5",
+      "unit": null,
+      "task": "task_po_can300_single",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can300_single__KI__glc_urine": {
+      "type": "TASK",
+      "index": "KI__glc_urine",
+      "unit": null,
+      "task": "task_po_can300_single",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can300_single__KI__GLCEX": {
+      "type": "TASK",
+      "index": "KI__GLCEX",
+      "unit": null,
+      "task": "task_po_can300_single",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can300_single__KI__UGE": {
+      "type": "TASK",
+      "index": "KI__UGE",
+      "unit": null,
+      "task": "task_po_can300_single",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can300_single__KI__RTG": {
+      "type": "TASK",
+      "index": "KI__RTG",
+      "unit": null,
+      "task": "task_po_can300_single",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can300_single__Afeces_can": {
+      "type": "TASK",
+      "index": "Afeces_can",
+      "unit": null,
+      "task": "task_po_can300_single",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can300_single__Afeces_m7": {
+      "type": "TASK",
+      "index": "Afeces_m7",
+      "unit": null,
+      "task": "task_po_can300_single",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can300_single__Afeces_m9": {
+      "type": "TASK",
+      "index": "Afeces_m9",
+      "unit": null,
+      "task": "task_po_can300_single",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can300_single__Afeces_cantot": {
+      "type": "TASK",
+      "index": "Afeces_cantot",
+      "unit": null,
+      "task": "task_po_can300_single",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can300_single__KI__CANEX": {
+      "type": "TASK",
+      "index": "KI__CANEX",
+      "unit": null,
+      "task": "task_po_can300_single",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can300_single__KI__f_renal_function": {
+      "type": "TASK",
+      "index": "KI__f_renal_function",
+      "unit": null,
+      "task": "task_po_can300_single",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can300_single__f_cirrhosis": {
+      "type": "TASK",
+      "index": "f_cirrhosis",
+      "unit": null,
+      "task": "task_po_can300_single",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can300_single__GU__f_absorption": {
+      "type": "TASK",
+      "index": "GU__f_absorption",
+      "unit": null,
+      "task": "task_po_can300_single",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can0_multi__time": {
+      "type": "TASK",
+      "index": "time",
+      "unit": null,
+      "task": "task_po_can0_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can0_multi__IVDOSE_can": {
+      "type": "TASK",
+      "index": "IVDOSE_can",
+      "unit": null,
+      "task": "task_po_can0_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can0_multi__PODOSE_can": {
+      "type": "TASK",
+      "index": "PODOSE_can",
+      "unit": null,
+      "task": "task_po_can0_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can0_multi__Cve_can": {
+      "type": "TASK",
+      "index": "Cve_can",
+      "unit": null,
+      "task": "task_po_can0_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can0_multi__Cve_cantot": {
+      "type": "TASK",
+      "index": "Cve_cantot",
+      "unit": null,
+      "task": "task_po_can0_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can0_multi__Cve_m5": {
+      "type": "TASK",
+      "index": "Cve_m5",
+      "unit": null,
+      "task": "task_po_can0_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can0_multi__Cve_m7": {
+      "type": "TASK",
+      "index": "Cve_m7",
+      "unit": null,
+      "task": "task_po_can0_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can0_multi__KI__fpg": {
+      "type": "TASK",
+      "index": "KI__fpg",
+      "unit": null,
+      "task": "task_po_can0_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can0_multi__Aurine_can": {
+      "type": "TASK",
+      "index": "Aurine_can",
+      "unit": null,
+      "task": "task_po_can0_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can0_multi__Aurine_cantot": {
+      "type": "TASK",
+      "index": "Aurine_cantot",
+      "unit": null,
+      "task": "task_po_can0_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can0_multi__Aurine_m7": {
+      "type": "TASK",
+      "index": "Aurine_m7",
+      "unit": null,
+      "task": "task_po_can0_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can0_multi__Aurine_m5": {
+      "type": "TASK",
+      "index": "Aurine_m5",
+      "unit": null,
+      "task": "task_po_can0_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can0_multi__KI__glc_urine": {
+      "type": "TASK",
+      "index": "KI__glc_urine",
+      "unit": null,
+      "task": "task_po_can0_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can0_multi__KI__GLCEX": {
+      "type": "TASK",
+      "index": "KI__GLCEX",
+      "unit": null,
+      "task": "task_po_can0_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can0_multi__KI__UGE": {
+      "type": "TASK",
+      "index": "KI__UGE",
+      "unit": null,
+      "task": "task_po_can0_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can0_multi__KI__RTG": {
+      "type": "TASK",
+      "index": "KI__RTG",
+      "unit": null,
+      "task": "task_po_can0_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can0_multi__Afeces_can": {
+      "type": "TASK",
+      "index": "Afeces_can",
+      "unit": null,
+      "task": "task_po_can0_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can0_multi__Afeces_m7": {
+      "type": "TASK",
+      "index": "Afeces_m7",
+      "unit": null,
+      "task": "task_po_can0_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can0_multi__Afeces_m9": {
+      "type": "TASK",
+      "index": "Afeces_m9",
+      "unit": null,
+      "task": "task_po_can0_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can0_multi__Afeces_cantot": {
+      "type": "TASK",
+      "index": "Afeces_cantot",
+      "unit": null,
+      "task": "task_po_can0_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can0_multi__KI__CANEX": {
+      "type": "TASK",
+      "index": "KI__CANEX",
+      "unit": null,
+      "task": "task_po_can0_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can0_multi__KI__f_renal_function": {
+      "type": "TASK",
+      "index": "KI__f_renal_function",
+      "unit": null,
+      "task": "task_po_can0_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can0_multi__f_cirrhosis": {
+      "type": "TASK",
+      "index": "f_cirrhosis",
+      "unit": null,
+      "task": "task_po_can0_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can0_multi__GU__f_absorption": {
+      "type": "TASK",
+      "index": "GU__f_absorption",
+      "unit": null,
+      "task": "task_po_can0_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can50_multi__time": {
+      "type": "TASK",
+      "index": "time",
+      "unit": null,
+      "task": "task_po_can50_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can50_multi__IVDOSE_can": {
+      "type": "TASK",
+      "index": "IVDOSE_can",
+      "unit": null,
+      "task": "task_po_can50_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can50_multi__PODOSE_can": {
+      "type": "TASK",
+      "index": "PODOSE_can",
+      "unit": null,
+      "task": "task_po_can50_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can50_multi__Cve_can": {
+      "type": "TASK",
+      "index": "Cve_can",
+      "unit": null,
+      "task": "task_po_can50_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can50_multi__Cve_cantot": {
+      "type": "TASK",
+      "index": "Cve_cantot",
+      "unit": null,
+      "task": "task_po_can50_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can50_multi__Cve_m5": {
+      "type": "TASK",
+      "index": "Cve_m5",
+      "unit": null,
+      "task": "task_po_can50_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can50_multi__Cve_m7": {
+      "type": "TASK",
+      "index": "Cve_m7",
+      "unit": null,
+      "task": "task_po_can50_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can50_multi__KI__fpg": {
+      "type": "TASK",
+      "index": "KI__fpg",
+      "unit": null,
+      "task": "task_po_can50_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can50_multi__Aurine_can": {
+      "type": "TASK",
+      "index": "Aurine_can",
+      "unit": null,
+      "task": "task_po_can50_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can50_multi__Aurine_cantot": {
+      "type": "TASK",
+      "index": "Aurine_cantot",
+      "unit": null,
+      "task": "task_po_can50_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can50_multi__Aurine_m7": {
+      "type": "TASK",
+      "index": "Aurine_m7",
+      "unit": null,
+      "task": "task_po_can50_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can50_multi__Aurine_m5": {
+      "type": "TASK",
+      "index": "Aurine_m5",
+      "unit": null,
+      "task": "task_po_can50_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can50_multi__KI__glc_urine": {
+      "type": "TASK",
+      "index": "KI__glc_urine",
+      "unit": null,
+      "task": "task_po_can50_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can50_multi__KI__GLCEX": {
+      "type": "TASK",
+      "index": "KI__GLCEX",
+      "unit": null,
+      "task": "task_po_can50_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can50_multi__KI__UGE": {
+      "type": "TASK",
+      "index": "KI__UGE",
+      "unit": null,
+      "task": "task_po_can50_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can50_multi__KI__RTG": {
+      "type": "TASK",
+      "index": "KI__RTG",
+      "unit": null,
+      "task": "task_po_can50_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can50_multi__Afeces_can": {
+      "type": "TASK",
+      "index": "Afeces_can",
+      "unit": null,
+      "task": "task_po_can50_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can50_multi__Afeces_m7": {
+      "type": "TASK",
+      "index": "Afeces_m7",
+      "unit": null,
+      "task": "task_po_can50_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can50_multi__Afeces_m9": {
+      "type": "TASK",
+      "index": "Afeces_m9",
+      "unit": null,
+      "task": "task_po_can50_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can50_multi__Afeces_cantot": {
+      "type": "TASK",
+      "index": "Afeces_cantot",
+      "unit": null,
+      "task": "task_po_can50_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can50_multi__KI__CANEX": {
+      "type": "TASK",
+      "index": "KI__CANEX",
+      "unit": null,
+      "task": "task_po_can50_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can50_multi__KI__f_renal_function": {
+      "type": "TASK",
+      "index": "KI__f_renal_function",
+      "unit": null,
+      "task": "task_po_can50_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can50_multi__f_cirrhosis": {
+      "type": "TASK",
+      "index": "f_cirrhosis",
+      "unit": null,
+      "task": "task_po_can50_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can50_multi__GU__f_absorption": {
+      "type": "TASK",
+      "index": "GU__f_absorption",
+      "unit": null,
+      "task": "task_po_can50_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can100_multi__time": {
+      "type": "TASK",
+      "index": "time",
+      "unit": null,
+      "task": "task_po_can100_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can100_multi__IVDOSE_can": {
+      "type": "TASK",
+      "index": "IVDOSE_can",
+      "unit": null,
+      "task": "task_po_can100_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can100_multi__PODOSE_can": {
+      "type": "TASK",
+      "index": "PODOSE_can",
+      "unit": null,
+      "task": "task_po_can100_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can100_multi__Cve_can": {
+      "type": "TASK",
+      "index": "Cve_can",
+      "unit": null,
+      "task": "task_po_can100_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can100_multi__Cve_cantot": {
+      "type": "TASK",
+      "index": "Cve_cantot",
+      "unit": null,
+      "task": "task_po_can100_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can100_multi__Cve_m5": {
+      "type": "TASK",
+      "index": "Cve_m5",
+      "unit": null,
+      "task": "task_po_can100_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can100_multi__Cve_m7": {
+      "type": "TASK",
+      "index": "Cve_m7",
+      "unit": null,
+      "task": "task_po_can100_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can100_multi__KI__fpg": {
+      "type": "TASK",
+      "index": "KI__fpg",
+      "unit": null,
+      "task": "task_po_can100_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can100_multi__Aurine_can": {
+      "type": "TASK",
+      "index": "Aurine_can",
+      "unit": null,
+      "task": "task_po_can100_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can100_multi__Aurine_cantot": {
+      "type": "TASK",
+      "index": "Aurine_cantot",
+      "unit": null,
+      "task": "task_po_can100_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can100_multi__Aurine_m7": {
+      "type": "TASK",
+      "index": "Aurine_m7",
+      "unit": null,
+      "task": "task_po_can100_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can100_multi__Aurine_m5": {
+      "type": "TASK",
+      "index": "Aurine_m5",
+      "unit": null,
+      "task": "task_po_can100_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can100_multi__KI__glc_urine": {
+      "type": "TASK",
+      "index": "KI__glc_urine",
+      "unit": null,
+      "task": "task_po_can100_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can100_multi__KI__GLCEX": {
+      "type": "TASK",
+      "index": "KI__GLCEX",
+      "unit": null,
+      "task": "task_po_can100_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can100_multi__KI__UGE": {
+      "type": "TASK",
+      "index": "KI__UGE",
+      "unit": null,
+      "task": "task_po_can100_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can100_multi__KI__RTG": {
+      "type": "TASK",
+      "index": "KI__RTG",
+      "unit": null,
+      "task": "task_po_can100_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can100_multi__Afeces_can": {
+      "type": "TASK",
+      "index": "Afeces_can",
+      "unit": null,
+      "task": "task_po_can100_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can100_multi__Afeces_m7": {
+      "type": "TASK",
+      "index": "Afeces_m7",
+      "unit": null,
+      "task": "task_po_can100_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can100_multi__Afeces_m9": {
+      "type": "TASK",
+      "index": "Afeces_m9",
+      "unit": null,
+      "task": "task_po_can100_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can100_multi__Afeces_cantot": {
+      "type": "TASK",
+      "index": "Afeces_cantot",
+      "unit": null,
+      "task": "task_po_can100_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can100_multi__KI__CANEX": {
+      "type": "TASK",
+      "index": "KI__CANEX",
+      "unit": null,
+      "task": "task_po_can100_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can100_multi__KI__f_renal_function": {
+      "type": "TASK",
+      "index": "KI__f_renal_function",
+      "unit": null,
+      "task": "task_po_can100_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can100_multi__f_cirrhosis": {
+      "type": "TASK",
+      "index": "f_cirrhosis",
+      "unit": null,
+      "task": "task_po_can100_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can100_multi__GU__f_absorption": {
+      "type": "TASK",
+      "index": "GU__f_absorption",
+      "unit": null,
+      "task": "task_po_can100_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can300_multi__time": {
+      "type": "TASK",
+      "index": "time",
+      "unit": null,
+      "task": "task_po_can300_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can300_multi__IVDOSE_can": {
+      "type": "TASK",
+      "index": "IVDOSE_can",
+      "unit": null,
+      "task": "task_po_can300_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can300_multi__PODOSE_can": {
+      "type": "TASK",
+      "index": "PODOSE_can",
+      "unit": null,
+      "task": "task_po_can300_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can300_multi__Cve_can": {
+      "type": "TASK",
+      "index": "Cve_can",
+      "unit": null,
+      "task": "task_po_can300_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can300_multi__Cve_cantot": {
+      "type": "TASK",
+      "index": "Cve_cantot",
+      "unit": null,
+      "task": "task_po_can300_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can300_multi__Cve_m5": {
+      "type": "TASK",
+      "index": "Cve_m5",
+      "unit": null,
+      "task": "task_po_can300_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can300_multi__Cve_m7": {
+      "type": "TASK",
+      "index": "Cve_m7",
+      "unit": null,
+      "task": "task_po_can300_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can300_multi__KI__fpg": {
+      "type": "TASK",
+      "index": "KI__fpg",
+      "unit": null,
+      "task": "task_po_can300_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can300_multi__Aurine_can": {
+      "type": "TASK",
+      "index": "Aurine_can",
+      "unit": null,
+      "task": "task_po_can300_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can300_multi__Aurine_cantot": {
+      "type": "TASK",
+      "index": "Aurine_cantot",
+      "unit": null,
+      "task": "task_po_can300_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can300_multi__Aurine_m7": {
+      "type": "TASK",
+      "index": "Aurine_m7",
+      "unit": null,
+      "task": "task_po_can300_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can300_multi__Aurine_m5": {
+      "type": "TASK",
+      "index": "Aurine_m5",
+      "unit": null,
+      "task": "task_po_can300_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can300_multi__KI__glc_urine": {
+      "type": "TASK",
+      "index": "KI__glc_urine",
+      "unit": null,
+      "task": "task_po_can300_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can300_multi__KI__GLCEX": {
+      "type": "TASK",
+      "index": "KI__GLCEX",
+      "unit": null,
+      "task": "task_po_can300_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can300_multi__KI__UGE": {
+      "type": "TASK",
+      "index": "KI__UGE",
+      "unit": null,
+      "task": "task_po_can300_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can300_multi__KI__RTG": {
+      "type": "TASK",
+      "index": "KI__RTG",
+      "unit": null,
+      "task": "task_po_can300_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can300_multi__Afeces_can": {
+      "type": "TASK",
+      "index": "Afeces_can",
+      "unit": null,
+      "task": "task_po_can300_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can300_multi__Afeces_m7": {
+      "type": "TASK",
+      "index": "Afeces_m7",
+      "unit": null,
+      "task": "task_po_can300_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can300_multi__Afeces_m9": {
+      "type": "TASK",
+      "index": "Afeces_m9",
+      "unit": null,
+      "task": "task_po_can300_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can300_multi__Afeces_cantot": {
+      "type": "TASK",
+      "index": "Afeces_cantot",
+      "unit": null,
+      "task": "task_po_can300_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can300_multi__KI__CANEX": {
+      "type": "TASK",
+      "index": "KI__CANEX",
+      "unit": null,
+      "task": "task_po_can300_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can300_multi__KI__f_renal_function": {
+      "type": "TASK",
+      "index": "KI__f_renal_function",
+      "unit": null,
+      "task": "task_po_can300_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can300_multi__f_cirrhosis": {
+      "type": "TASK",
+      "index": "f_cirrhosis",
+      "unit": null,
+      "task": "task_po_can300_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can300_multi__GU__f_absorption": {
+      "type": "TASK",
+      "index": "GU__f_absorption",
+      "unit": null,
+      "task": "task_po_can300_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    }
+  },
+  "figures": {
+    "urine single": {
+      "sid": "urine single",
+      "name": "Devineni2013 (T2DM)",
+      "num_rows": 2,
+      "num_cols": 1,
+      "width": 7.0,
+      "height": 10.0,
+      "subplots": [
+        {
+          "sid": null,
+          "name": null,
+          "plot": {
+            "sid": "urine single__plot0",
+            "name": null,
+            "xaxis": {
+              "sid": "urine single__plot0_xaxis",
+              "name": "time [hr]",
+              "label": "time",
+              "unit": "hr",
+              "scale": "LINEAR",
+              "min": null,
+              "max": null,
+              "grid": false,
+              "label_visible": true,
+              "ticks_visible": true
+            },
+            "yaxis": {
+              "sid": "urine single__plot0_yaxis",
+              "name": "canagliflozin [\u00b5M]",
+              "label": "canagliflozin",
+              "unit": "\u00b5M",
+              "scale": "LINEAR",
+              "min": null,
+              "max": null,
+              "grid": false,
+              "label_visible": true,
+              "ticks_visible": true
+            },
+            "yaxis_right": null,
+            "legend": true,
+            "facecolor": "#ffffffff",
+            "title_visible": true,
+            "curves": [
+              {
+                "sid": "urine single__plot0_curve0",
+                "name": "Sim can (50)",
+                "x": "task_po_can50_single__time",
+                "y": "task_po_can50_single__Cve_can",
+                "xerr": null,
+                "yerr": null,
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "SOLID",
+                    "color": "#1f77b4ff",
+                    "thickness": 2.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "NONE",
+                    "fill": "#1f77b4ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#1f77b4ff",
+                    "second_color": null
+                  }
+                },
+                "order": 0
+              },
+              {
+                "sid": "urine single__plot0_curve1",
+                "name": "can 50\u00b1SD (n=9)",
+                "x": "canagliflozin_CAN50_d1__time",
+                "y": "canagliflozin_CAN50_d1__mean",
+                "xerr": null,
+                "yerr": "canagliflozin_CAN50_d1__mean_sd",
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "DASH",
+                    "color": "#1f77b4ff",
+                    "thickness": 1.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "SQUARE",
+                    "fill": "#1f77b4ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#1f77b4ff",
+                    "second_color": null
+                  }
+                },
+                "order": 1
+              },
+              {
+                "sid": "urine single__plot0_curve2",
+                "name": "Sim can (100)",
+                "x": "task_po_can100_single__time",
+                "y": "task_po_can100_single__Cve_can",
+                "xerr": null,
+                "yerr": null,
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "SOLID",
+                    "color": "#d62728ff",
+                    "thickness": 2.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "NONE",
+                    "fill": "#d62728ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#d62728ff",
+                    "second_color": null
+                  }
+                },
+                "order": 2
+              },
+              {
+                "sid": "urine single__plot0_curve3",
+                "name": "can 100\u00b1SD (n=8)",
+                "x": "canagliflozin_CAN100_d1__time",
+                "y": "canagliflozin_CAN100_d1__mean",
+                "xerr": null,
+                "yerr": "canagliflozin_CAN100_d1__mean_sd",
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "DASH",
+                    "color": "#d62728ff",
+                    "thickness": 1.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "SQUARE",
+                    "fill": "#d62728ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#d62728ff",
+                    "second_color": null
+                  }
+                },
+                "order": 3
+              },
+              {
+                "sid": "urine single__plot0_curve4",
+                "name": "Sim can (300)",
+                "x": "task_po_can300_single__time",
+                "y": "task_po_can300_single__Cve_can",
+                "xerr": null,
+                "yerr": null,
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "SOLID",
+                    "color": "#2ca02cff",
+                    "thickness": 2.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "NONE",
+                    "fill": "#2ca02cff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#2ca02cff",
+                    "second_color": null
+                  }
+                },
+                "order": 4
+              },
+              {
+                "sid": "urine single__plot0_curve5",
+                "name": "can 300\u00b1SD (n=10)",
+                "x": "canagliflozin_CAN300_d1__time",
+                "y": "canagliflozin_CAN300_d1__mean",
+                "xerr": null,
+                "yerr": "canagliflozin_CAN300_d1__mean_sd",
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "DASH",
+                    "color": "#2ca02cff",
+                    "thickness": 1.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "SQUARE",
+                    "fill": "#2ca02cff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#2ca02cff",
+                    "second_color": null
+                  }
+                },
+                "order": 5
+              }
+            ],
+            "areas": []
+          },
+          "row": 1,
+          "col": 1,
+          "row_span": 1,
+          "col_span": 1
+        },
+        {
+          "sid": null,
+          "name": null,
+          "plot": {
+            "sid": "urine single__plot1",
+            "name": null,
+            "xaxis": {
+              "sid": "urine single__plot1_xaxis",
+              "name": "time [hr]",
+              "label": "time",
+              "unit": "hr",
+              "scale": "LINEAR",
+              "min": null,
+              "max": null,
+              "grid": false,
+              "label_visible": true,
+              "ticks_visible": true
+            },
+            "yaxis": {
+              "sid": "urine single__plot1_yaxis",
+              "name": "canagliflozin [\u00b5M]",
+              "label": "canagliflozin",
+              "unit": "\u00b5M",
+              "scale": "LINEAR",
+              "min": null,
+              "max": null,
+              "grid": false,
+              "label_visible": true,
+              "ticks_visible": true
+            },
+            "yaxis_right": null,
+            "legend": true,
+            "facecolor": "#ffffffff",
+            "title_visible": true,
+            "curves": [
+              {
+                "sid": "urine single__plot1_curve0",
+                "name": "Sim can (50)",
+                "x": "task_po_can50_multi__time",
+                "y": "task_po_can50_multi__Cve_can",
+                "xerr": null,
+                "yerr": null,
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "SOLID",
+                    "color": "#1f77b4ff",
+                    "thickness": 2.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "NONE",
+                    "fill": "#1f77b4ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#1f77b4ff",
+                    "second_color": null
+                  }
+                },
+                "order": 0
+              },
+              {
+                "sid": "urine single__plot1_curve1",
+                "name": "can 50\u00b1SD (n=9)",
+                "x": "canagliflozin_CAN50_d7__time",
+                "y": "canagliflozin_CAN50_d7__mean",
+                "xerr": null,
+                "yerr": "canagliflozin_CAN50_d7__mean_sd",
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "DASH",
+                    "color": "#1f77b4ff",
+                    "thickness": 1.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "SQUARE",
+                    "fill": "#1f77b4ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#1f77b4ff",
+                    "second_color": null
+                  }
+                },
+                "order": 1
+              },
+              {
+                "sid": "urine single__plot1_curve2",
+                "name": "Sim can (100)",
+                "x": "task_po_can100_multi__time",
+                "y": "task_po_can100_multi__Cve_can",
+                "xerr": null,
+                "yerr": null,
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "SOLID",
+                    "color": "#d62728ff",
+                    "thickness": 2.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "NONE",
+                    "fill": "#d62728ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#d62728ff",
+                    "second_color": null
+                  }
+                },
+                "order": 2
+              },
+              {
+                "sid": "urine single__plot1_curve3",
+                "name": "can 100\u00b1SD (n=8)",
+                "x": "canagliflozin_CAN100_d7__time",
+                "y": "canagliflozin_CAN100_d7__mean",
+                "xerr": null,
+                "yerr": "canagliflozin_CAN100_d7__mean_sd",
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "DASH",
+                    "color": "#d62728ff",
+                    "thickness": 1.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "SQUARE",
+                    "fill": "#d62728ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#d62728ff",
+                    "second_color": null
+                  }
+                },
+                "order": 3
+              },
+              {
+                "sid": "urine single__plot1_curve4",
+                "name": "Sim can (300)",
+                "x": "task_po_can300_multi__time",
+                "y": "task_po_can300_multi__Cve_can",
+                "xerr": null,
+                "yerr": null,
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "SOLID",
+                    "color": "#2ca02cff",
+                    "thickness": 2.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "NONE",
+                    "fill": "#2ca02cff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#2ca02cff",
+                    "second_color": null
+                  }
+                },
+                "order": 4
+              },
+              {
+                "sid": "urine single__plot1_curve5",
+                "name": "can 300\u00b1SD (n=10)",
+                "x": "canagliflozin_CAN300_d7__time",
+                "y": "canagliflozin_CAN300_d7__mean",
+                "xerr": null,
+                "yerr": "canagliflozin_CAN300_d7__mean_sd",
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "DASH",
+                    "color": "#2ca02cff",
+                    "thickness": 1.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "SQUARE",
+                    "fill": "#2ca02cff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#2ca02cff",
+                    "second_color": null
+                  }
+                },
+                "order": 5
+              }
+            ],
+            "areas": []
+          },
+          "row": 2,
+          "col": 1,
+          "row_span": 1,
+          "col_span": 1
+        }
+      ]
+    },
+    "Fig_urine_single": {
+      "sid": "Fig_urine_single",
+      "name": "Devineni2013 (T2DM)",
+      "num_rows": 3,
+      "num_cols": 1,
+      "width": 7.0,
+      "height": 15.0,
+      "subplots": [
+        {
+          "sid": null,
+          "name": null,
+          "plot": {
+            "sid": "Fig_urine_single__plot0",
+            "name": null,
+            "xaxis": {
+              "sid": "Fig_urine_single__plot0_xaxis",
+              "name": "time [hr]",
+              "label": "time",
+              "unit": "hr",
+              "scale": "LINEAR",
+              "min": null,
+              "max": null,
+              "grid": false,
+              "label_visible": true,
+              "ticks_visible": true
+            },
+            "yaxis": {
+              "sid": "Fig_urine_single__plot0_yaxis",
+              "name": "canagliflozin urine [\u00b5mole]",
+              "label": "canagliflozin urine",
+              "unit": "\u00b5mole",
+              "scale": "LINEAR",
+              "min": null,
+              "max": null,
+              "grid": false,
+              "label_visible": true,
+              "ticks_visible": true
+            },
+            "yaxis_right": null,
+            "legend": true,
+            "facecolor": "#ffffffff",
+            "title_visible": true,
+            "curves": [
+              {
+                "sid": "Fig_urine_single__plot0_curve0",
+                "name": "Sim can 50 mg",
+                "x": "task_po_can50_single__time",
+                "y": "task_po_can50_single__Aurine_can",
+                "xerr": null,
+                "yerr": null,
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "SOLID",
+                    "color": "#1f77b4ff",
+                    "thickness": 2.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "NONE",
+                    "fill": "#1f77b4ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#1f77b4ff",
+                    "second_color": null
+                  }
+                },
+                "order": 0
+              },
+              {
+                "sid": "Fig_urine_single__plot0_curve1",
+                "name": "canagliflozin 50 mg\u00b1SD (n=9)",
+                "x": "canagliflozin_cumulative_amount_CAN50_d1__time",
+                "y": "canagliflozin_cumulative_amount_CAN50_d1__mean",
+                "xerr": null,
+                "yerr": "canagliflozin_cumulative_amount_CAN50_d1__mean_sd",
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "DASH",
+                    "color": "#1f77b4ff",
+                    "thickness": 1.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "SQUARE",
+                    "fill": "#1f77b4ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#1f77b4ff",
+                    "second_color": null
+                  }
+                },
+                "order": 1
+              },
+              {
+                "sid": "Fig_urine_single__plot0_curve2",
+                "name": "Sim can 100 mg",
+                "x": "task_po_can100_single__time",
+                "y": "task_po_can100_single__Aurine_can",
+                "xerr": null,
+                "yerr": null,
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "SOLID",
+                    "color": "#d62728ff",
+                    "thickness": 2.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "NONE",
+                    "fill": "#d62728ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#d62728ff",
+                    "second_color": null
+                  }
+                },
+                "order": 2
+              },
+              {
+                "sid": "Fig_urine_single__plot0_curve3",
+                "name": "canagliflozin 100 mg\u00b1SD (n=8)",
+                "x": "canagliflozin_cumulative_amount_CAN100_d1__time",
+                "y": "canagliflozin_cumulative_amount_CAN100_d1__mean",
+                "xerr": null,
+                "yerr": "canagliflozin_cumulative_amount_CAN100_d1__mean_sd",
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "DASH",
+                    "color": "#d62728ff",
+                    "thickness": 1.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "SQUARE",
+                    "fill": "#d62728ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#d62728ff",
+                    "second_color": null
+                  }
+                },
+                "order": 3
+              },
+              {
+                "sid": "Fig_urine_single__plot0_curve4",
+                "name": "Sim can 300 mg",
+                "x": "task_po_can300_single__time",
+                "y": "task_po_can300_single__Aurine_can",
+                "xerr": null,
+                "yerr": null,
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "SOLID",
+                    "color": "#2ca02cff",
+                    "thickness": 2.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "NONE",
+                    "fill": "#2ca02cff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#2ca02cff",
+                    "second_color": null
+                  }
+                },
+                "order": 4
+              },
+              {
+                "sid": "Fig_urine_single__plot0_curve5",
+                "name": "canagliflozin 300 mg\u00b1SD (n=10)",
+                "x": "canagliflozin_cumulative_amount_CAN300_d1__time",
+                "y": "canagliflozin_cumulative_amount_CAN300_d1__mean",
+                "xerr": null,
+                "yerr": "canagliflozin_cumulative_amount_CAN300_d1__mean_sd",
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "DASH",
+                    "color": "#2ca02cff",
+                    "thickness": 1.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "SQUARE",
+                    "fill": "#2ca02cff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#2ca02cff",
+                    "second_color": null
+                  }
+                },
+                "order": 5
+              }
+            ],
+            "areas": []
+          },
+          "row": 1,
+          "col": 1,
+          "row_span": 1,
+          "col_span": 1
+        },
+        {
+          "sid": null,
+          "name": null,
+          "plot": {
+            "sid": "Fig_urine_single__plot1",
+            "name": null,
+            "xaxis": {
+              "sid": "Fig_urine_single__plot1_xaxis",
+              "name": "time [hr]",
+              "label": "time",
+              "unit": "hr",
+              "scale": "LINEAR",
+              "min": null,
+              "max": null,
+              "grid": false,
+              "label_visible": true,
+              "ticks_visible": true
+            },
+            "yaxis": {
+              "sid": "Fig_urine_single__plot1_yaxis",
+              "name": "M5 urine [\u00b5mole]",
+              "label": "M5 urine",
+              "unit": "\u00b5mole",
+              "scale": "LINEAR",
+              "min": null,
+              "max": null,
+              "grid": false,
+              "label_visible": true,
+              "ticks_visible": true
+            },
+            "yaxis_right": null,
+            "legend": true,
+            "facecolor": "#ffffffff",
+            "title_visible": true,
+            "curves": [
+              {
+                "sid": "Fig_urine_single__plot1_curve0",
+                "name": "Sim m5 50 mg",
+                "x": "task_po_can50_single__time",
+                "y": "task_po_can50_single__Aurine_m5",
+                "xerr": null,
+                "yerr": null,
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "SOLID",
+                    "color": "#1f77b4ff",
+                    "thickness": 2.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "NONE",
+                    "fill": "#1f77b4ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#1f77b4ff",
+                    "second_color": null
+                  }
+                },
+                "order": 0
+              },
+              {
+                "sid": "Fig_urine_single__plot1_curve1",
+                "name": "M5 50 mg\u00b1SD (n=9)",
+                "x": "M5_cumulative_amount_CAN50_d1__time",
+                "y": "M5_cumulative_amount_CAN50_d1__mean",
+                "xerr": null,
+                "yerr": "M5_cumulative_amount_CAN50_d1__mean_sd",
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "DASH",
+                    "color": "#1f77b4ff",
+                    "thickness": 1.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "SQUARE",
+                    "fill": "#1f77b4ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#1f77b4ff",
+                    "second_color": null
+                  }
+                },
+                "order": 1
+              },
+              {
+                "sid": "Fig_urine_single__plot1_curve2",
+                "name": "Sim m5 100 mg",
+                "x": "task_po_can100_single__time",
+                "y": "task_po_can100_single__Aurine_m5",
+                "xerr": null,
+                "yerr": null,
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "SOLID",
+                    "color": "#d62728ff",
+                    "thickness": 2.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "NONE",
+                    "fill": "#d62728ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#d62728ff",
+                    "second_color": null
+                  }
+                },
+                "order": 2
+              },
+              {
+                "sid": "Fig_urine_single__plot1_curve3",
+                "name": "M5 100 mg\u00b1SD (n=8)",
+                "x": "M5_cumulative_amount_CAN100_d1__time",
+                "y": "M5_cumulative_amount_CAN100_d1__mean",
+                "xerr": null,
+                "yerr": "M5_cumulative_amount_CAN100_d1__mean_sd",
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "DASH",
+                    "color": "#d62728ff",
+                    "thickness": 1.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "SQUARE",
+                    "fill": "#d62728ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#d62728ff",
+                    "second_color": null
+                  }
+                },
+                "order": 3
+              },
+              {
+                "sid": "Fig_urine_single__plot1_curve4",
+                "name": "Sim m5 300 mg",
+                "x": "task_po_can300_single__time",
+                "y": "task_po_can300_single__Aurine_m5",
+                "xerr": null,
+                "yerr": null,
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "SOLID",
+                    "color": "#2ca02cff",
+                    "thickness": 2.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "NONE",
+                    "fill": "#2ca02cff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#2ca02cff",
+                    "second_color": null
+                  }
+                },
+                "order": 4
+              },
+              {
+                "sid": "Fig_urine_single__plot1_curve5",
+                "name": "M5 300 mg\u00b1SD (n=10)",
+                "x": "M5_cumulative_amount_CAN300_d1__time",
+                "y": "M5_cumulative_amount_CAN300_d1__mean",
+                "xerr": null,
+                "yerr": "M5_cumulative_amount_CAN300_d1__mean_sd",
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "DASH",
+                    "color": "#2ca02cff",
+                    "thickness": 1.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "SQUARE",
+                    "fill": "#2ca02cff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#2ca02cff",
+                    "second_color": null
+                  }
+                },
+                "order": 5
+              }
+            ],
+            "areas": []
+          },
+          "row": 2,
+          "col": 1,
+          "row_span": 1,
+          "col_span": 1
+        },
+        {
+          "sid": null,
+          "name": null,
+          "plot": {
+            "sid": "Fig_urine_single__plot2",
+            "name": null,
+            "xaxis": {
+              "sid": "Fig_urine_single__plot2_xaxis",
+              "name": "time [hr]",
+              "label": "time",
+              "unit": "hr",
+              "scale": "LINEAR",
+              "min": null,
+              "max": null,
+              "grid": false,
+              "label_visible": true,
+              "ticks_visible": true
+            },
+            "yaxis": {
+              "sid": "Fig_urine_single__plot2_yaxis",
+              "name": "M7 urine [\u00b5mole]",
+              "label": "M7 urine",
+              "unit": "\u00b5mole",
+              "scale": "LINEAR",
+              "min": null,
+              "max": null,
+              "grid": false,
+              "label_visible": true,
+              "ticks_visible": true
+            },
+            "yaxis_right": null,
+            "legend": true,
+            "facecolor": "#ffffffff",
+            "title_visible": true,
+            "curves": [
+              {
+                "sid": "Fig_urine_single__plot2_curve0",
+                "name": "Sim m7 50 mg",
+                "x": "task_po_can50_single__time",
+                "y": "task_po_can50_single__Aurine_m7",
+                "xerr": null,
+                "yerr": null,
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "SOLID",
+                    "color": "#1f77b4ff",
+                    "thickness": 2.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "NONE",
+                    "fill": "#1f77b4ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#1f77b4ff",
+                    "second_color": null
+                  }
+                },
+                "order": 0
+              },
+              {
+                "sid": "Fig_urine_single__plot2_curve1",
+                "name": "M7 50 mg\u00b1SD (n=9)",
+                "x": "M7_cumulative_amount_CAN50_d1__time",
+                "y": "M7_cumulative_amount_CAN50_d1__mean",
+                "xerr": null,
+                "yerr": "M7_cumulative_amount_CAN50_d1__mean_sd",
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "DASH",
+                    "color": "#1f77b4ff",
+                    "thickness": 1.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "SQUARE",
+                    "fill": "#1f77b4ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#1f77b4ff",
+                    "second_color": null
+                  }
+                },
+                "order": 1
+              },
+              {
+                "sid": "Fig_urine_single__plot2_curve2",
+                "name": "Sim m7 100 mg",
+                "x": "task_po_can100_single__time",
+                "y": "task_po_can100_single__Aurine_m7",
+                "xerr": null,
+                "yerr": null,
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "SOLID",
+                    "color": "#d62728ff",
+                    "thickness": 2.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "NONE",
+                    "fill": "#d62728ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#d62728ff",
+                    "second_color": null
+                  }
+                },
+                "order": 2
+              },
+              {
+                "sid": "Fig_urine_single__plot2_curve3",
+                "name": "M7 100 mg\u00b1SD (n=8)",
+                "x": "M7_cumulative_amount_CAN100_d1__time",
+                "y": "M7_cumulative_amount_CAN100_d1__mean",
+                "xerr": null,
+                "yerr": "M7_cumulative_amount_CAN100_d1__mean_sd",
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "DASH",
+                    "color": "#d62728ff",
+                    "thickness": 1.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "SQUARE",
+                    "fill": "#d62728ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#d62728ff",
+                    "second_color": null
+                  }
+                },
+                "order": 3
+              },
+              {
+                "sid": "Fig_urine_single__plot2_curve4",
+                "name": "Sim m7 300 mg",
+                "x": "task_po_can300_single__time",
+                "y": "task_po_can300_single__Aurine_m7",
+                "xerr": null,
+                "yerr": null,
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "SOLID",
+                    "color": "#2ca02cff",
+                    "thickness": 2.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "NONE",
+                    "fill": "#2ca02cff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#2ca02cff",
+                    "second_color": null
+                  }
+                },
+                "order": 4
+              },
+              {
+                "sid": "Fig_urine_single__plot2_curve5",
+                "name": "M7 300 mg\u00b1SD (n=10)",
+                "x": "M7_cumulative_amount_CAN300_d1__time",
+                "y": "M7_cumulative_amount_CAN300_d1__mean",
+                "xerr": null,
+                "yerr": "M7_cumulative_amount_CAN300_d1__mean_sd",
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "DASH",
+                    "color": "#2ca02cff",
+                    "thickness": 1.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "SQUARE",
+                    "fill": "#2ca02cff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#2ca02cff",
+                    "second_color": null
+                  }
+                },
+                "order": 5
+              }
+            ],
+            "areas": []
+          },
+          "row": 3,
+          "col": 1,
+          "row_span": 1,
+          "col_span": 1
+        }
+      ]
+    },
+    "Fig_urine_multi": {
+      "sid": "Fig_urine_multi",
+      "name": "Devineni2013 (T2DM)",
+      "num_rows": 3,
+      "num_cols": 1,
+      "width": 7.0,
+      "height": 15.0,
+      "subplots": [
+        {
+          "sid": null,
+          "name": null,
+          "plot": {
+            "sid": "Fig_urine_multi__plot0",
+            "name": null,
+            "xaxis": {
+              "sid": "Fig_urine_multi__plot0_xaxis",
+              "name": "time [hr]",
+              "label": "time",
+              "unit": "hr",
+              "scale": "LINEAR",
+              "min": null,
+              "max": null,
+              "grid": false,
+              "label_visible": true,
+              "ticks_visible": true
+            },
+            "yaxis": {
+              "sid": "Fig_urine_multi__plot0_yaxis",
+              "name": "canagliflozin urine [\u00b5mole]",
+              "label": "canagliflozin urine",
+              "unit": "\u00b5mole",
+              "scale": "LINEAR",
+              "min": null,
+              "max": null,
+              "grid": false,
+              "label_visible": true,
+              "ticks_visible": true
+            },
+            "yaxis_right": null,
+            "legend": true,
+            "facecolor": "#ffffffff",
+            "title_visible": true,
+            "curves": [
+              {
+                "sid": "Fig_urine_multi__plot0_curve0",
+                "name": "Sim can 50 mg",
+                "x": "task_po_can50_multi__time",
+                "y": "task_po_can50_multi__Aurine_can",
+                "xerr": null,
+                "yerr": null,
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "SOLID",
+                    "color": "#1f77b4ff",
+                    "thickness": 2.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "NONE",
+                    "fill": "#1f77b4ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#1f77b4ff",
+                    "second_color": null
+                  }
+                },
+                "order": 0
+              },
+              {
+                "sid": "Fig_urine_multi__plot0_curve1",
+                "name": "canagliflozin 50 mg\u00b1SD (n=9)",
+                "x": "canagliflozin_cumulative_amount_CAN50_d7__time",
+                "y": "canagliflozin_cumulative_amount_CAN50_d7__mean",
+                "xerr": null,
+                "yerr": "canagliflozin_cumulative_amount_CAN50_d7__mean_sd",
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "DASH",
+                    "color": "#1f77b4ff",
+                    "thickness": 1.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "SQUARE",
+                    "fill": "#1f77b4ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#1f77b4ff",
+                    "second_color": null
+                  }
+                },
+                "order": 1
+              },
+              {
+                "sid": "Fig_urine_multi__plot0_curve2",
+                "name": "Sim can 100 mg",
+                "x": "task_po_can100_multi__time",
+                "y": "task_po_can100_multi__Aurine_can",
+                "xerr": null,
+                "yerr": null,
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "SOLID",
+                    "color": "#d62728ff",
+                    "thickness": 2.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "NONE",
+                    "fill": "#d62728ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#d62728ff",
+                    "second_color": null
+                  }
+                },
+                "order": 2
+              },
+              {
+                "sid": "Fig_urine_multi__plot0_curve3",
+                "name": "canagliflozin 100 mg\u00b1SD (n=8)",
+                "x": "canagliflozin_cumulative_amount_CAN100_d7__time",
+                "y": "canagliflozin_cumulative_amount_CAN100_d7__mean",
+                "xerr": null,
+                "yerr": "canagliflozin_cumulative_amount_CAN100_d7__mean_sd",
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "DASH",
+                    "color": "#d62728ff",
+                    "thickness": 1.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "SQUARE",
+                    "fill": "#d62728ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#d62728ff",
+                    "second_color": null
+                  }
+                },
+                "order": 3
+              },
+              {
+                "sid": "Fig_urine_multi__plot0_curve4",
+                "name": "Sim can 300 mg",
+                "x": "task_po_can300_multi__time",
+                "y": "task_po_can300_multi__Aurine_can",
+                "xerr": null,
+                "yerr": null,
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "SOLID",
+                    "color": "#2ca02cff",
+                    "thickness": 2.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "NONE",
+                    "fill": "#2ca02cff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#2ca02cff",
+                    "second_color": null
+                  }
+                },
+                "order": 4
+              },
+              {
+                "sid": "Fig_urine_multi__plot0_curve5",
+                "name": "canagliflozin 300 mg\u00b1SD (n=10)",
+                "x": "canagliflozin_cumulative_amount_CAN300_d7__time",
+                "y": "canagliflozin_cumulative_amount_CAN300_d7__mean",
+                "xerr": null,
+                "yerr": "canagliflozin_cumulative_amount_CAN300_d7__mean_sd",
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "DASH",
+                    "color": "#2ca02cff",
+                    "thickness": 1.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "SQUARE",
+                    "fill": "#2ca02cff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#2ca02cff",
+                    "second_color": null
+                  }
+                },
+                "order": 5
+              }
+            ],
+            "areas": []
+          },
+          "row": 1,
+          "col": 1,
+          "row_span": 1,
+          "col_span": 1
+        },
+        {
+          "sid": null,
+          "name": null,
+          "plot": {
+            "sid": "Fig_urine_multi__plot1",
+            "name": null,
+            "xaxis": {
+              "sid": "Fig_urine_multi__plot1_xaxis",
+              "name": "time [hr]",
+              "label": "time",
+              "unit": "hr",
+              "scale": "LINEAR",
+              "min": null,
+              "max": null,
+              "grid": false,
+              "label_visible": true,
+              "ticks_visible": true
+            },
+            "yaxis": {
+              "sid": "Fig_urine_multi__plot1_yaxis",
+              "name": "M5 urine [\u00b5mole]",
+              "label": "M5 urine",
+              "unit": "\u00b5mole",
+              "scale": "LINEAR",
+              "min": null,
+              "max": null,
+              "grid": false,
+              "label_visible": true,
+              "ticks_visible": true
+            },
+            "yaxis_right": null,
+            "legend": true,
+            "facecolor": "#ffffffff",
+            "title_visible": true,
+            "curves": [
+              {
+                "sid": "Fig_urine_multi__plot1_curve0",
+                "name": "Sim m5 50 mg",
+                "x": "task_po_can50_multi__time",
+                "y": "task_po_can50_multi__Aurine_m5",
+                "xerr": null,
+                "yerr": null,
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "SOLID",
+                    "color": "#1f77b4ff",
+                    "thickness": 2.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "NONE",
+                    "fill": "#1f77b4ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#1f77b4ff",
+                    "second_color": null
+                  }
+                },
+                "order": 0
+              },
+              {
+                "sid": "Fig_urine_multi__plot1_curve1",
+                "name": "M5 50 mg\u00b1SD (n=9)",
+                "x": "M5_cumulative_amount_CAN50_d7__time",
+                "y": "M5_cumulative_amount_CAN50_d7__mean",
+                "xerr": null,
+                "yerr": "M5_cumulative_amount_CAN50_d7__mean_sd",
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "DASH",
+                    "color": "#1f77b4ff",
+                    "thickness": 1.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "SQUARE",
+                    "fill": "#1f77b4ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#1f77b4ff",
+                    "second_color": null
+                  }
+                },
+                "order": 1
+              },
+              {
+                "sid": "Fig_urine_multi__plot1_curve2",
+                "name": "Sim m5 100 mg",
+                "x": "task_po_can100_multi__time",
+                "y": "task_po_can100_multi__Aurine_m5",
+                "xerr": null,
+                "yerr": null,
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "SOLID",
+                    "color": "#d62728ff",
+                    "thickness": 2.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "NONE",
+                    "fill": "#d62728ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#d62728ff",
+                    "second_color": null
+                  }
+                },
+                "order": 2
+              },
+              {
+                "sid": "Fig_urine_multi__plot1_curve3",
+                "name": "M5 100 mg\u00b1SD (n=8)",
+                "x": "M5_cumulative_amount_CAN100_d7__time",
+                "y": "M5_cumulative_amount_CAN100_d7__mean",
+                "xerr": null,
+                "yerr": "M5_cumulative_amount_CAN100_d7__mean_sd",
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "DASH",
+                    "color": "#d62728ff",
+                    "thickness": 1.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "SQUARE",
+                    "fill": "#d62728ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#d62728ff",
+                    "second_color": null
+                  }
+                },
+                "order": 3
+              },
+              {
+                "sid": "Fig_urine_multi__plot1_curve4",
+                "name": "Sim m5 300 mg",
+                "x": "task_po_can300_multi__time",
+                "y": "task_po_can300_multi__Aurine_m5",
+                "xerr": null,
+                "yerr": null,
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "SOLID",
+                    "color": "#2ca02cff",
+                    "thickness": 2.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "NONE",
+                    "fill": "#2ca02cff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#2ca02cff",
+                    "second_color": null
+                  }
+                },
+                "order": 4
+              },
+              {
+                "sid": "Fig_urine_multi__plot1_curve5",
+                "name": "M5 300 mg\u00b1SD (n=10)",
+                "x": "M5_cumulative_amount_CAN300_d7__time",
+                "y": "M5_cumulative_amount_CAN300_d7__mean",
+                "xerr": null,
+                "yerr": "M5_cumulative_amount_CAN300_d7__mean_sd",
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "DASH",
+                    "color": "#2ca02cff",
+                    "thickness": 1.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "SQUARE",
+                    "fill": "#2ca02cff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#2ca02cff",
+                    "second_color": null
+                  }
+                },
+                "order": 5
+              }
+            ],
+            "areas": []
+          },
+          "row": 2,
+          "col": 1,
+          "row_span": 1,
+          "col_span": 1
+        },
+        {
+          "sid": null,
+          "name": null,
+          "plot": {
+            "sid": "Fig_urine_multi__plot2",
+            "name": null,
+            "xaxis": {
+              "sid": "Fig_urine_multi__plot2_xaxis",
+              "name": "time [hr]",
+              "label": "time",
+              "unit": "hr",
+              "scale": "LINEAR",
+              "min": null,
+              "max": null,
+              "grid": false,
+              "label_visible": true,
+              "ticks_visible": true
+            },
+            "yaxis": {
+              "sid": "Fig_urine_multi__plot2_yaxis",
+              "name": "M7 urine [\u00b5mole]",
+              "label": "M7 urine",
+              "unit": "\u00b5mole",
+              "scale": "LINEAR",
+              "min": null,
+              "max": null,
+              "grid": false,
+              "label_visible": true,
+              "ticks_visible": true
+            },
+            "yaxis_right": null,
+            "legend": true,
+            "facecolor": "#ffffffff",
+            "title_visible": true,
+            "curves": [
+              {
+                "sid": "Fig_urine_multi__plot2_curve0",
+                "name": "Sim m7 50 mg",
+                "x": "task_po_can50_multi__time",
+                "y": "task_po_can50_multi__Aurine_m7",
+                "xerr": null,
+                "yerr": null,
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "SOLID",
+                    "color": "#1f77b4ff",
+                    "thickness": 2.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "NONE",
+                    "fill": "#1f77b4ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#1f77b4ff",
+                    "second_color": null
+                  }
+                },
+                "order": 0
+              },
+              {
+                "sid": "Fig_urine_multi__plot2_curve1",
+                "name": "M7 50 mg\u00b1SD (n=9)",
+                "x": "M7_cumulative_amount_CAN50_d7__time",
+                "y": "M7_cumulative_amount_CAN50_d7__mean",
+                "xerr": null,
+                "yerr": "M7_cumulative_amount_CAN50_d7__mean_sd",
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "DASH",
+                    "color": "#1f77b4ff",
+                    "thickness": 1.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "SQUARE",
+                    "fill": "#1f77b4ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#1f77b4ff",
+                    "second_color": null
+                  }
+                },
+                "order": 1
+              },
+              {
+                "sid": "Fig_urine_multi__plot2_curve2",
+                "name": "Sim m7 100 mg",
+                "x": "task_po_can100_multi__time",
+                "y": "task_po_can100_multi__Aurine_m7",
+                "xerr": null,
+                "yerr": null,
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "SOLID",
+                    "color": "#d62728ff",
+                    "thickness": 2.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "NONE",
+                    "fill": "#d62728ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#d62728ff",
+                    "second_color": null
+                  }
+                },
+                "order": 2
+              },
+              {
+                "sid": "Fig_urine_multi__plot2_curve3",
+                "name": "M7 100 mg\u00b1SD (n=8)",
+                "x": "M7_cumulative_amount_CAN100_d7__time",
+                "y": "M7_cumulative_amount_CAN100_d7__mean",
+                "xerr": null,
+                "yerr": "M7_cumulative_amount_CAN100_d7__mean_sd",
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "DASH",
+                    "color": "#d62728ff",
+                    "thickness": 1.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "SQUARE",
+                    "fill": "#d62728ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#d62728ff",
+                    "second_color": null
+                  }
+                },
+                "order": 3
+              },
+              {
+                "sid": "Fig_urine_multi__plot2_curve4",
+                "name": "Sim m7 300 mg",
+                "x": "task_po_can300_multi__time",
+                "y": "task_po_can300_multi__Aurine_m7",
+                "xerr": null,
+                "yerr": null,
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "SOLID",
+                    "color": "#2ca02cff",
+                    "thickness": 2.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "NONE",
+                    "fill": "#2ca02cff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#2ca02cff",
+                    "second_color": null
+                  }
+                },
+                "order": 4
+              },
+              {
+                "sid": "Fig_urine_multi__plot2_curve5",
+                "name": "M7 300 mg\u00b1SD (n=10)",
+                "x": "M7_cumulative_amount_CAN300_d7__time",
+                "y": "M7_cumulative_amount_CAN300_d7__mean",
+                "xerr": null,
+                "yerr": "M7_cumulative_amount_CAN300_d7__mean_sd",
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "DASH",
+                    "color": "#2ca02cff",
+                    "thickness": 1.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "SQUARE",
+                    "fill": "#2ca02cff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#2ca02cff",
+                    "second_color": null
+                  }
+                },
+                "order": 5
+              }
+            ],
+            "areas": []
+          },
+          "row": 3,
+          "col": 1,
+          "row_span": 1,
+          "col_span": 1
+        }
+      ]
+    },
+    "Fig_uge": {
+      "sid": "Fig_uge",
+      "name": "Devineni2013 (T2DM)",
+      "num_rows": 1,
+      "num_cols": 1,
+      "width": 7.0,
+      "height": 5.0,
+      "subplots": [
+        {
+          "sid": null,
+          "name": null,
+          "plot": {
+            "sid": "Fig_uge__plot0",
+            "name": null,
+            "xaxis": {
+              "sid": "Fig_uge__plot0_xaxis",
+              "name": "time [day]",
+              "label": "time",
+              "unit": "day",
+              "scale": "LINEAR",
+              "min": null,
+              "max": null,
+              "grid": false,
+              "label_visible": true,
+              "ticks_visible": true
+            },
+            "yaxis": {
+              "sid": "Fig_uge__plot0_yaxis",
+              "name": "urinary glucose excretion\n(UGE) [g]",
+              "label": "urinary glucose excretion\n(UGE)",
+              "unit": "g",
+              "scale": "LINEAR",
+              "min": null,
+              "max": null,
+              "grid": false,
+              "label_visible": true,
+              "ticks_visible": true
+            },
+            "yaxis_right": null,
+            "legend": true,
+            "facecolor": "#ffffffff",
+            "title_visible": true,
+            "curves": [
+              {
+                "sid": "Fig_uge__plot0_curve0",
+                "name": "Sim 0 mg",
+                "x": "task_po_can0_multi__time",
+                "y": "task_po_can0_multi__KI__UGE",
+                "xerr": null,
+                "yerr": null,
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "SOLID",
+                    "color": "#000000ff",
+                    "thickness": 2.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "NONE",
+                    "fill": "#000000ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#000000ff",
+                    "second_color": null
+                  }
+                },
+                "order": 0
+              },
+              {
+                "sid": "Fig_uge__plot0_curve1",
+                "name": "UGE 0 mg\u00b1SD (n=9)",
+                "x": "glucose_cumulative_amount_CAN0__time",
+                "y": "glucose_cumulative_amount_CAN0__mean",
+                "xerr": null,
+                "yerr": "glucose_cumulative_amount_CAN0__mean_sd",
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "DASH",
+                    "color": "#000000ff",
+                    "thickness": 1.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "SQUARE",
+                    "fill": "#000000ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#000000ff",
+                    "second_color": null
+                  }
+                },
+                "order": 1
+              },
+              {
+                "sid": "Fig_uge__plot0_curve2",
+                "name": "Sim 50 mg",
+                "x": "task_po_can50_multi__time",
+                "y": "task_po_can50_multi__KI__UGE",
+                "xerr": null,
+                "yerr": null,
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "SOLID",
+                    "color": "#1f77b4ff",
+                    "thickness": 2.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "NONE",
+                    "fill": "#1f77b4ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#1f77b4ff",
+                    "second_color": null
+                  }
+                },
+                "order": 2
+              },
+              {
+                "sid": "Fig_uge__plot0_curve3",
+                "name": "UGE 50 mg\u00b1SD (n=9)",
+                "x": "glucose_cumulative_amount_CAN50__time",
+                "y": "glucose_cumulative_amount_CAN50__mean",
+                "xerr": null,
+                "yerr": "glucose_cumulative_amount_CAN50__mean_sd",
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "DASH",
+                    "color": "#1f77b4ff",
+                    "thickness": 1.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "SQUARE",
+                    "fill": "#1f77b4ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#1f77b4ff",
+                    "second_color": null
+                  }
+                },
+                "order": 3
+              },
+              {
+                "sid": "Fig_uge__plot0_curve4",
+                "name": "Sim 100 mg",
+                "x": "task_po_can100_multi__time",
+                "y": "task_po_can100_multi__KI__UGE",
+                "xerr": null,
+                "yerr": null,
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "SOLID",
+                    "color": "#d62728ff",
+                    "thickness": 2.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "NONE",
+                    "fill": "#d62728ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#d62728ff",
+                    "second_color": null
+                  }
+                },
+                "order": 4
+              },
+              {
+                "sid": "Fig_uge__plot0_curve5",
+                "name": "UGE 100 mg\u00b1SD (n=8)",
+                "x": "glucose_cumulative_amount_CAN100__time",
+                "y": "glucose_cumulative_amount_CAN100__mean",
+                "xerr": null,
+                "yerr": "glucose_cumulative_amount_CAN100__mean_sd",
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "DASH",
+                    "color": "#d62728ff",
+                    "thickness": 1.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "SQUARE",
+                    "fill": "#d62728ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#d62728ff",
+                    "second_color": null
+                  }
+                },
+                "order": 5
+              },
+              {
+                "sid": "Fig_uge__plot0_curve6",
+                "name": "Sim 300 mg",
+                "x": "task_po_can300_multi__time",
+                "y": "task_po_can300_multi__KI__UGE",
+                "xerr": null,
+                "yerr": null,
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "SOLID",
+                    "color": "#2ca02cff",
+                    "thickness": 2.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "NONE",
+                    "fill": "#2ca02cff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#2ca02cff",
+                    "second_color": null
+                  }
+                },
+                "order": 6
+              },
+              {
+                "sid": "Fig_uge__plot0_curve7",
+                "name": "UGE 300 mg\u00b1SD (n=10)",
+                "x": "glucose_cumulative_amount_CAN300__time",
+                "y": "glucose_cumulative_amount_CAN300__mean",
+                "xerr": null,
+                "yerr": "glucose_cumulative_amount_CAN300__mean_sd",
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "DASH",
+                    "color": "#2ca02cff",
+                    "thickness": 1.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "SQUARE",
+                    "fill": "#2ca02cff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#2ca02cff",
+                    "second_color": null
+                  }
+                },
+                "order": 7
+              }
+            ],
+            "areas": []
+          },
+          "row": 1,
+          "col": 1,
+          "row_span": 1,
+          "col_span": 1
+        }
+      ]
+    },
+    "Fig_rtg": {
+      "sid": "Fig_rtg",
+      "name": "Devineni2013 (T2DM)",
+      "num_rows": 1,
+      "num_cols": 1,
+      "width": 7.0,
+      "height": 5.0,
+      "subplots": [
+        {
+          "sid": null,
+          "name": null,
+          "plot": {
+            "sid": "Fig_rtg__plot0",
+            "name": null,
+            "xaxis": {
+              "sid": "Fig_rtg__plot0_xaxis",
+              "name": "time [hr]",
+              "label": "time",
+              "unit": "hr",
+              "scale": "LINEAR",
+              "min": null,
+              "max": null,
+              "grid": false,
+              "label_visible": true,
+              "ticks_visible": true
+            },
+            "yaxis": {
+              "sid": "Fig_rtg__plot0_yaxis",
+              "name": "renal threshold glucose\n(RTG) [mM]",
+              "label": "renal threshold glucose\n(RTG)",
+              "unit": "mM",
+              "scale": "LINEAR",
+              "min": null,
+              "max": null,
+              "grid": false,
+              "label_visible": true,
+              "ticks_visible": true
+            },
+            "yaxis_right": null,
+            "legend": true,
+            "facecolor": "#ffffffff",
+            "title_visible": true,
+            "curves": [
+              {
+                "sid": "Fig_rtg__plot0_curve0",
+                "name": "Sim 0 mg",
+                "x": "task_po_can0_multi__time",
+                "y": "task_po_can0_multi__KI__RTG",
+                "xerr": null,
+                "yerr": null,
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "SOLID",
+                    "color": "#000000ff",
+                    "thickness": 2.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "NONE",
+                    "fill": "#000000ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#000000ff",
+                    "second_color": null
+                  }
+                },
+                "order": 0
+              },
+              {
+                "sid": "Fig_rtg__plot0_curve1",
+                "name": "RTG 0 mg\u00b1SD (n=9)",
+                "x": "glucose_renal_threshold_CAN0__time",
+                "y": "glucose_renal_threshold_CAN0__mean",
+                "xerr": null,
+                "yerr": "glucose_renal_threshold_CAN0__mean_sd",
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "DASH",
+                    "color": "#000000ff",
+                    "thickness": 1.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "SQUARE",
+                    "fill": "#000000ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#000000ff",
+                    "second_color": null
+                  }
+                },
+                "order": 1
+              },
+              {
+                "sid": "Fig_rtg__plot0_curve2",
+                "name": "Sim 50 mg",
+                "x": "task_po_can50_multi__time",
+                "y": "task_po_can50_multi__KI__RTG",
+                "xerr": null,
+                "yerr": null,
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "SOLID",
+                    "color": "#1f77b4ff",
+                    "thickness": 2.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "NONE",
+                    "fill": "#1f77b4ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#1f77b4ff",
+                    "second_color": null
+                  }
+                },
+                "order": 2
+              },
+              {
+                "sid": "Fig_rtg__plot0_curve3",
+                "name": "RTG 50 mg\u00b1SD (n=9)",
+                "x": "glucose_renal_threshold_CAN50__time",
+                "y": "glucose_renal_threshold_CAN50__mean",
+                "xerr": null,
+                "yerr": "glucose_renal_threshold_CAN50__mean_sd",
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "DASH",
+                    "color": "#1f77b4ff",
+                    "thickness": 1.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "SQUARE",
+                    "fill": "#1f77b4ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#1f77b4ff",
+                    "second_color": null
+                  }
+                },
+                "order": 3
+              },
+              {
+                "sid": "Fig_rtg__plot0_curve4",
+                "name": "Sim 100 mg",
+                "x": "task_po_can100_multi__time",
+                "y": "task_po_can100_multi__KI__RTG",
+                "xerr": null,
+                "yerr": null,
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "SOLID",
+                    "color": "#d62728ff",
+                    "thickness": 2.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "NONE",
+                    "fill": "#d62728ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#d62728ff",
+                    "second_color": null
+                  }
+                },
+                "order": 4
+              },
+              {
+                "sid": "Fig_rtg__plot0_curve5",
+                "name": "RTG 100 mg\u00b1SD (n=8)",
+                "x": "glucose_renal_threshold_CAN100__time",
+                "y": "glucose_renal_threshold_CAN100__mean",
+                "xerr": null,
+                "yerr": "glucose_renal_threshold_CAN100__mean_sd",
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "DASH",
+                    "color": "#d62728ff",
+                    "thickness": 1.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "SQUARE",
+                    "fill": "#d62728ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#d62728ff",
+                    "second_color": null
+                  }
+                },
+                "order": 5
+              },
+              {
+                "sid": "Fig_rtg__plot0_curve6",
+                "name": "Sim 300 mg",
+                "x": "task_po_can300_multi__time",
+                "y": "task_po_can300_multi__KI__RTG",
+                "xerr": null,
+                "yerr": null,
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "SOLID",
+                    "color": "#2ca02cff",
+                    "thickness": 2.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "NONE",
+                    "fill": "#2ca02cff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#2ca02cff",
+                    "second_color": null
+                  }
+                },
+                "order": 6
+              },
+              {
+                "sid": "Fig_rtg__plot0_curve7",
+                "name": "RTG 300 mg\u00b1SD (n=10)",
+                "x": "glucose_renal_threshold_CAN300__time",
+                "y": "glucose_renal_threshold_CAN300__mean",
+                "xerr": null,
+                "yerr": "glucose_renal_threshold_CAN300__mean_sd",
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "DASH",
+                    "color": "#2ca02cff",
+                    "thickness": 1.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "SQUARE",
+                    "fill": "#2ca02cff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#2ca02cff",
+                    "second_color": null
+                  }
+                },
+                "order": 7
+              }
+            ],
+            "areas": []
+          },
+          "row": 1,
+          "col": 1,
+          "row_span": 1,
+          "col_span": 1
+        }
+      ]
+    }
+  }
+}

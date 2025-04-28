@@ -1,0 +1,6376 @@
+{
+  "experiment_id": "Sha2014",
+  "base_path": "/home/mkoenig/git/pkdb_models/pkdb_models/models/canagliflozin",
+  "data_path": "[PosixPath('/home/mkoenig/git/pkdb_data/studies/canagliflozin')]",
+  "models": {
+    "model": {
+      "sid": null,
+      "name": null,
+      "language": "SBML",
+      "language_type": "SBML",
+      "source": {
+        "source": "/home/mkoenig/git/pkdb_models/pkdb_models/models/canagliflozin/models/results/models/canagliflozin_body_flat.xml",
+        "path": "/home/mkoenig/git/pkdb_models/pkdb_models/models/canagliflozin/models/results/models/canagliflozin_body_flat.xml",
+        "content": "None"
+      },
+      "changes": {}
+    }
+  },
+  "tasks": {
+    "task_po_can0_multi": {
+      "model": "model",
+      "simulation": "po_can0_multi"
+    },
+    "task_po_can300_BID_multi": {
+      "model": "model",
+      "simulation": "po_can300_BID_multi"
+    },
+    "task_po_can30_multi": {
+      "model": "model",
+      "simulation": "po_can30_multi"
+    },
+    "task_po_can100_multi": {
+      "model": "model",
+      "simulation": "po_can100_multi"
+    },
+    "task_po_can200_multi": {
+      "model": "model",
+      "simulation": "po_can200_multi"
+    },
+    "task_po_can400_multi": {
+      "model": "model",
+      "simulation": "po_can400_multi"
+    }
+  },
+  "simulations": {
+    "po_can0_multi": {
+      "type": "TimecourseSim",
+      "selections": null,
+      "reset": true,
+      "time_offset": -23040,
+      "timecourses": [
+        {
+          "start": 0,
+          "end": 2880,
+          "steps": 500,
+          "changes": {
+            "ftissue_can": {
+              "_magnitude": 0.5907025360669715,
+              "_units": "l_per_min"
+            },
+            "Kp_can": {
+              "_magnitude": 1.002186894659328,
+              "_units": "dimensionless"
+            },
+            "LI__CANIM_Vmax": {
+              "_magnitude": 0.6724144350621387,
+              "_units": "LI__mmole_per_min_l"
+            },
+            "KI__CANEX_k": {
+              "_magnitude": 0.003620232018677586,
+              "_units": "KI__per_min"
+            },
+            "GU__CANABS_k": {
+              "_magnitude": 0.014857823531040652,
+              "_units": "GU__per_min"
+            },
+            "LI__CAN2M5_Vmax": {
+              "_magnitude": 0.004471516434657664,
+              "_units": "LI__mmole_per_min_l"
+            },
+            "LI__CAN2M5_Km_can": {
+              "_magnitude": 0.29493539325204393,
+              "_units": "LI__mM"
+            },
+            "LI__M5EX_Km_m5": {
+              "_magnitude": 0.18169494628559774,
+              "_units": "LI__mM"
+            },
+            "LI__M5EX_Vmax": {
+              "_magnitude": 0.448042513666378,
+              "_units": "LI__mmole_per_min_l"
+            },
+            "KI__M5EX_k": {
+              "_magnitude": 0.10556919062775157,
+              "_units": "KI__per_min"
+            },
+            "ftissue_m5": {
+              "_magnitude": 0.0034928983363240276,
+              "_units": "l_per_min"
+            },
+            "Kp_m5": {
+              "_magnitude": 3.9832348764531975,
+              "_units": "dimensionless"
+            },
+            "LI__CAN2M7_Vmax": {
+              "_magnitude": 0.002145888093579888,
+              "_units": "LI__mmole_per_min_l"
+            },
+            "LI__M7EX_Vmax": {
+              "_magnitude": 0.1258350901232781,
+              "_units": "LI__mmole_per_min_l"
+            },
+            "KI__M7EX_k": {
+              "_magnitude": 0.18975923261901775,
+              "_units": "KI__per_min"
+            },
+            "ftissue_m7": {
+              "_magnitude": 0.00012251814828952693,
+              "_units": "l_per_min"
+            },
+            "Kp_m7": {
+              "_magnitude": 2.7484358268874036,
+              "_units": "dimensionless"
+            },
+            "LI__CAN2M9_Vmax": {
+              "_magnitude": 0.005649017628006681,
+              "_units": "LI__mmole_per_min_l"
+            },
+            "KI__RTG_E50": {
+              "_magnitude": 1.7058500169355005e-05,
+              "_units": "KI__mM"
+            },
+            "KI__RTG_base": {
+              "_magnitude": 9.00528652661515,
+              "_units": "KI__mM"
+            },
+            "KI__RTG_max_inhibition": {
+              "_magnitude": 0.6244535441073977,
+              "_units": "dimensionless"
+            },
+            "KI__RTG_m_fpg": {
+              "_magnitude": 0.7189836466732434,
+              "_units": "dimensionless"
+            },
+            "BW": {
+              "_magnitude": 75.5,
+              "_units": "kilogram"
+            },
+            "[KI__fpg]": {
+              "_magnitude": 10.700000000000001,
+              "_units": "KI__mmole / liter"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 0.775,
+              "_units": "dimensionless"
+            },
+            "PODOSE_can": {
+              "_magnitude": 0,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        },
+        {
+          "start": 0,
+          "end": 1440,
+          "steps": 500,
+          "changes": {
+            "BW": {
+              "_magnitude": 75.5,
+              "_units": "kilogram"
+            },
+            "[KI__fpg]": {
+              "_magnitude": 10.700000000000001,
+              "_units": "KI__mmole / liter"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 0.775,
+              "_units": "dimensionless"
+            },
+            "KI__glc_urine": {
+              "_magnitude": 0.0,
+              "_units": "KI__mmole"
+            },
+            "PODOSE_can": {
+              "_magnitude": 0,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        },
+        {
+          "start": 0,
+          "end": 1440,
+          "steps": 500,
+          "changes": {
+            "BW": {
+              "_magnitude": 75.5,
+              "_units": "kilogram"
+            },
+            "[KI__fpg]": {
+              "_magnitude": 10.700000000000001,
+              "_units": "KI__mmole / liter"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 0.775,
+              "_units": "dimensionless"
+            },
+            "KI__glc_urine": {
+              "_magnitude": 0.0,
+              "_units": "KI__mmole"
+            },
+            "PODOSE_can": {
+              "_magnitude": 0,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        },
+        {
+          "start": 0,
+          "end": 1440,
+          "steps": 500,
+          "changes": {
+            "BW": {
+              "_magnitude": 75.5,
+              "_units": "kilogram"
+            },
+            "[KI__fpg]": {
+              "_magnitude": 10.700000000000001,
+              "_units": "KI__mmole / liter"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 0.775,
+              "_units": "dimensionless"
+            },
+            "KI__glc_urine": {
+              "_magnitude": 0.0,
+              "_units": "KI__mmole"
+            },
+            "PODOSE_can": {
+              "_magnitude": 0,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        },
+        {
+          "start": 0,
+          "end": 1440,
+          "steps": 500,
+          "changes": {
+            "BW": {
+              "_magnitude": 75.5,
+              "_units": "kilogram"
+            },
+            "[KI__fpg]": {
+              "_magnitude": 10.700000000000001,
+              "_units": "KI__mmole / liter"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 0.775,
+              "_units": "dimensionless"
+            },
+            "KI__glc_urine": {
+              "_magnitude": 0.0,
+              "_units": "KI__mmole"
+            },
+            "PODOSE_can": {
+              "_magnitude": 0,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        },
+        {
+          "start": 0,
+          "end": 1440,
+          "steps": 500,
+          "changes": {
+            "BW": {
+              "_magnitude": 75.5,
+              "_units": "kilogram"
+            },
+            "[KI__fpg]": {
+              "_magnitude": 10.700000000000001,
+              "_units": "KI__mmole / liter"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 0.775,
+              "_units": "dimensionless"
+            },
+            "KI__glc_urine": {
+              "_magnitude": 0.0,
+              "_units": "KI__mmole"
+            },
+            "PODOSE_can": {
+              "_magnitude": 0,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        },
+        {
+          "start": 0,
+          "end": 1440,
+          "steps": 500,
+          "changes": {
+            "BW": {
+              "_magnitude": 75.5,
+              "_units": "kilogram"
+            },
+            "[KI__fpg]": {
+              "_magnitude": 10.700000000000001,
+              "_units": "KI__mmole / liter"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 0.775,
+              "_units": "dimensionless"
+            },
+            "KI__glc_urine": {
+              "_magnitude": 0.0,
+              "_units": "KI__mmole"
+            },
+            "PODOSE_can": {
+              "_magnitude": 0,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        },
+        {
+          "start": 0,
+          "end": 1440,
+          "steps": 500,
+          "changes": {
+            "BW": {
+              "_magnitude": 75.5,
+              "_units": "kilogram"
+            },
+            "[KI__fpg]": {
+              "_magnitude": 10.700000000000001,
+              "_units": "KI__mmole / liter"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 0.775,
+              "_units": "dimensionless"
+            },
+            "KI__glc_urine": {
+              "_magnitude": 0.0,
+              "_units": "KI__mmole"
+            },
+            "PODOSE_can": {
+              "_magnitude": 0,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        },
+        {
+          "start": 0,
+          "end": 1440,
+          "steps": 500,
+          "changes": {
+            "BW": {
+              "_magnitude": 75.5,
+              "_units": "kilogram"
+            },
+            "[KI__fpg]": {
+              "_magnitude": 10.700000000000001,
+              "_units": "KI__mmole / liter"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 0.775,
+              "_units": "dimensionless"
+            },
+            "KI__glc_urine": {
+              "_magnitude": 0.0,
+              "_units": "KI__mmole"
+            },
+            "PODOSE_can": {
+              "_magnitude": 0,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        },
+        {
+          "start": 0,
+          "end": 1440,
+          "steps": 500,
+          "changes": {
+            "BW": {
+              "_magnitude": 75.5,
+              "_units": "kilogram"
+            },
+            "[KI__fpg]": {
+              "_magnitude": 10.700000000000001,
+              "_units": "KI__mmole / liter"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 0.775,
+              "_units": "dimensionless"
+            },
+            "KI__glc_urine": {
+              "_magnitude": 0.0,
+              "_units": "KI__mmole"
+            },
+            "PODOSE_can": {
+              "_magnitude": 0,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        },
+        {
+          "start": 0,
+          "end": 1440,
+          "steps": 500,
+          "changes": {
+            "BW": {
+              "_magnitude": 75.5,
+              "_units": "kilogram"
+            },
+            "[KI__fpg]": {
+              "_magnitude": 10.700000000000001,
+              "_units": "KI__mmole / liter"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 0.775,
+              "_units": "dimensionless"
+            },
+            "KI__glc_urine": {
+              "_magnitude": 0.0,
+              "_units": "KI__mmole"
+            },
+            "PODOSE_can": {
+              "_magnitude": 0,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        },
+        {
+          "start": 0,
+          "end": 1440,
+          "steps": 500,
+          "changes": {
+            "BW": {
+              "_magnitude": 75.5,
+              "_units": "kilogram"
+            },
+            "[KI__fpg]": {
+              "_magnitude": 10.700000000000001,
+              "_units": "KI__mmole / liter"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 0.775,
+              "_units": "dimensionless"
+            },
+            "KI__glc_urine": {
+              "_magnitude": 0.0,
+              "_units": "KI__mmole"
+            },
+            "PODOSE_can": {
+              "_magnitude": 0,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        },
+        {
+          "start": 0,
+          "end": 1440,
+          "steps": 500,
+          "changes": {
+            "BW": {
+              "_magnitude": 75.5,
+              "_units": "kilogram"
+            },
+            "[KI__fpg]": {
+              "_magnitude": 10.700000000000001,
+              "_units": "KI__mmole / liter"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 0.775,
+              "_units": "dimensionless"
+            },
+            "KI__glc_urine": {
+              "_magnitude": 0.0,
+              "_units": "KI__mmole"
+            },
+            "PODOSE_can": {
+              "_magnitude": 0,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        },
+        {
+          "start": 0,
+          "end": 1440,
+          "steps": 500,
+          "changes": {
+            "BW": {
+              "_magnitude": 75.5,
+              "_units": "kilogram"
+            },
+            "[KI__fpg]": {
+              "_magnitude": 10.700000000000001,
+              "_units": "KI__mmole / liter"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 0.775,
+              "_units": "dimensionless"
+            },
+            "KI__glc_urine": {
+              "_magnitude": 0.0,
+              "_units": "KI__mmole"
+            },
+            "PODOSE_can": {
+              "_magnitude": 0,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        },
+        {
+          "start": 0,
+          "end": 1440,
+          "steps": 500,
+          "changes": {
+            "BW": {
+              "_magnitude": 75.5,
+              "_units": "kilogram"
+            },
+            "[KI__fpg]": {
+              "_magnitude": 10.700000000000001,
+              "_units": "KI__mmole / liter"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 0.775,
+              "_units": "dimensionless"
+            },
+            "KI__glc_urine": {
+              "_magnitude": 0.0,
+              "_units": "KI__mmole"
+            },
+            "PODOSE_can": {
+              "_magnitude": 0,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        },
+        {
+          "start": 0,
+          "end": 4320,
+          "steps": 500,
+          "changes": {
+            "BW": {
+              "_magnitude": 75.5,
+              "_units": "kilogram"
+            },
+            "[KI__fpg]": {
+              "_magnitude": 10.700000000000001,
+              "_units": "KI__mmole / liter"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 0.775,
+              "_units": "dimensionless"
+            },
+            "KI__glc_urine": {
+              "_magnitude": 0.0,
+              "_units": "KI__mmole"
+            },
+            "PODOSE_can": {
+              "_magnitude": 0,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        }
+      ]
+    },
+    "po_can300_BID_multi": {
+      "type": "TimecourseSim",
+      "selections": null,
+      "reset": true,
+      "time_offset": -23040,
+      "timecourses": [
+        {
+          "start": 0,
+          "end": 720,
+          "steps": 500,
+          "changes": {
+            "ftissue_can": {
+              "_magnitude": 0.5907025360669715,
+              "_units": "l_per_min"
+            },
+            "Kp_can": {
+              "_magnitude": 1.002186894659328,
+              "_units": "dimensionless"
+            },
+            "LI__CANIM_Vmax": {
+              "_magnitude": 0.6724144350621387,
+              "_units": "LI__mmole_per_min_l"
+            },
+            "KI__CANEX_k": {
+              "_magnitude": 0.003620232018677586,
+              "_units": "KI__per_min"
+            },
+            "GU__CANABS_k": {
+              "_magnitude": 0.014857823531040652,
+              "_units": "GU__per_min"
+            },
+            "LI__CAN2M5_Vmax": {
+              "_magnitude": 0.004471516434657664,
+              "_units": "LI__mmole_per_min_l"
+            },
+            "LI__CAN2M5_Km_can": {
+              "_magnitude": 0.29493539325204393,
+              "_units": "LI__mM"
+            },
+            "LI__M5EX_Km_m5": {
+              "_magnitude": 0.18169494628559774,
+              "_units": "LI__mM"
+            },
+            "LI__M5EX_Vmax": {
+              "_magnitude": 0.448042513666378,
+              "_units": "LI__mmole_per_min_l"
+            },
+            "KI__M5EX_k": {
+              "_magnitude": 0.10556919062775157,
+              "_units": "KI__per_min"
+            },
+            "ftissue_m5": {
+              "_magnitude": 0.0034928983363240276,
+              "_units": "l_per_min"
+            },
+            "Kp_m5": {
+              "_magnitude": 3.9832348764531975,
+              "_units": "dimensionless"
+            },
+            "LI__CAN2M7_Vmax": {
+              "_magnitude": 0.002145888093579888,
+              "_units": "LI__mmole_per_min_l"
+            },
+            "LI__M7EX_Vmax": {
+              "_magnitude": 0.1258350901232781,
+              "_units": "LI__mmole_per_min_l"
+            },
+            "KI__M7EX_k": {
+              "_magnitude": 0.18975923261901775,
+              "_units": "KI__per_min"
+            },
+            "ftissue_m7": {
+              "_magnitude": 0.00012251814828952693,
+              "_units": "l_per_min"
+            },
+            "Kp_m7": {
+              "_magnitude": 2.7484358268874036,
+              "_units": "dimensionless"
+            },
+            "LI__CAN2M9_Vmax": {
+              "_magnitude": 0.005649017628006681,
+              "_units": "LI__mmole_per_min_l"
+            },
+            "KI__RTG_E50": {
+              "_magnitude": 1.7058500169355005e-05,
+              "_units": "KI__mM"
+            },
+            "KI__RTG_base": {
+              "_magnitude": 9.00528652661515,
+              "_units": "KI__mM"
+            },
+            "KI__RTG_max_inhibition": {
+              "_magnitude": 0.6244535441073977,
+              "_units": "dimensionless"
+            },
+            "KI__RTG_m_fpg": {
+              "_magnitude": 0.7189836466732434,
+              "_units": "dimensionless"
+            },
+            "BW": {
+              "_magnitude": 92.7,
+              "_units": "kilogram"
+            },
+            "[KI__fpg]": {
+              "_magnitude": 11.600000000000001,
+              "_units": "KI__mmole / liter"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 1.041,
+              "_units": "dimensionless"
+            },
+            "PODOSE_can": {
+              "_magnitude": 300,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        },
+        {
+          "start": 0,
+          "end": 2160,
+          "steps": 500,
+          "changes": {
+            "BW": {
+              "_magnitude": 92.7,
+              "_units": "kilogram"
+            },
+            "[KI__fpg]": {
+              "_magnitude": 11.600000000000001,
+              "_units": "KI__mmole / liter"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 1.041,
+              "_units": "dimensionless"
+            },
+            "PODOSE_can": {
+              "_magnitude": 300,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        },
+        {
+          "start": 0,
+          "end": 720,
+          "steps": 500,
+          "changes": {
+            "BW": {
+              "_magnitude": 92.7,
+              "_units": "kilogram"
+            },
+            "[KI__fpg]": {
+              "_magnitude": 11.600000000000001,
+              "_units": "KI__mmole / liter"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 1.041,
+              "_units": "dimensionless"
+            },
+            "KI__glc_urine": {
+              "_magnitude": 0.0,
+              "_units": "KI__mmole"
+            },
+            "PODOSE_can": {
+              "_magnitude": 300,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        },
+        {
+          "start": 0,
+          "end": 720,
+          "steps": 500,
+          "changes": {
+            "BW": {
+              "_magnitude": 92.7,
+              "_units": "kilogram"
+            },
+            "[KI__fpg]": {
+              "_magnitude": 11.600000000000001,
+              "_units": "KI__mmole / liter"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 1.041,
+              "_units": "dimensionless"
+            },
+            "KI__glc_urine": {
+              "_magnitude": 0.0,
+              "_units": "KI__mmole"
+            },
+            "PODOSE_can": {
+              "_magnitude": 300,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        },
+        {
+          "start": 0,
+          "end": 720,
+          "steps": 500,
+          "changes": {
+            "BW": {
+              "_magnitude": 92.7,
+              "_units": "kilogram"
+            },
+            "[KI__fpg]": {
+              "_magnitude": 11.600000000000001,
+              "_units": "KI__mmole / liter"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 1.041,
+              "_units": "dimensionless"
+            },
+            "KI__glc_urine": {
+              "_magnitude": 0.0,
+              "_units": "KI__mmole"
+            },
+            "PODOSE_can": {
+              "_magnitude": 300,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        },
+        {
+          "start": 0,
+          "end": 720,
+          "steps": 500,
+          "changes": {
+            "BW": {
+              "_magnitude": 92.7,
+              "_units": "kilogram"
+            },
+            "[KI__fpg]": {
+              "_magnitude": 11.600000000000001,
+              "_units": "KI__mmole / liter"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 1.041,
+              "_units": "dimensionless"
+            },
+            "KI__glc_urine": {
+              "_magnitude": 0.0,
+              "_units": "KI__mmole"
+            },
+            "PODOSE_can": {
+              "_magnitude": 300,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        },
+        {
+          "start": 0,
+          "end": 720,
+          "steps": 500,
+          "changes": {
+            "BW": {
+              "_magnitude": 92.7,
+              "_units": "kilogram"
+            },
+            "[KI__fpg]": {
+              "_magnitude": 11.600000000000001,
+              "_units": "KI__mmole / liter"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 1.041,
+              "_units": "dimensionless"
+            },
+            "KI__glc_urine": {
+              "_magnitude": 0.0,
+              "_units": "KI__mmole"
+            },
+            "PODOSE_can": {
+              "_magnitude": 300,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        },
+        {
+          "start": 0,
+          "end": 720,
+          "steps": 500,
+          "changes": {
+            "BW": {
+              "_magnitude": 92.7,
+              "_units": "kilogram"
+            },
+            "[KI__fpg]": {
+              "_magnitude": 11.600000000000001,
+              "_units": "KI__mmole / liter"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 1.041,
+              "_units": "dimensionless"
+            },
+            "KI__glc_urine": {
+              "_magnitude": 0.0,
+              "_units": "KI__mmole"
+            },
+            "PODOSE_can": {
+              "_magnitude": 300,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        },
+        {
+          "start": 0,
+          "end": 720,
+          "steps": 500,
+          "changes": {
+            "BW": {
+              "_magnitude": 92.7,
+              "_units": "kilogram"
+            },
+            "[KI__fpg]": {
+              "_magnitude": 11.600000000000001,
+              "_units": "KI__mmole / liter"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 1.041,
+              "_units": "dimensionless"
+            },
+            "KI__glc_urine": {
+              "_magnitude": 0.0,
+              "_units": "KI__mmole"
+            },
+            "PODOSE_can": {
+              "_magnitude": 300,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        },
+        {
+          "start": 0,
+          "end": 720,
+          "steps": 500,
+          "changes": {
+            "BW": {
+              "_magnitude": 92.7,
+              "_units": "kilogram"
+            },
+            "[KI__fpg]": {
+              "_magnitude": 11.600000000000001,
+              "_units": "KI__mmole / liter"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 1.041,
+              "_units": "dimensionless"
+            },
+            "KI__glc_urine": {
+              "_magnitude": 0.0,
+              "_units": "KI__mmole"
+            },
+            "PODOSE_can": {
+              "_magnitude": 300,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        },
+        {
+          "start": 0,
+          "end": 720,
+          "steps": 500,
+          "changes": {
+            "BW": {
+              "_magnitude": 92.7,
+              "_units": "kilogram"
+            },
+            "[KI__fpg]": {
+              "_magnitude": 11.600000000000001,
+              "_units": "KI__mmole / liter"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 1.041,
+              "_units": "dimensionless"
+            },
+            "KI__glc_urine": {
+              "_magnitude": 0.0,
+              "_units": "KI__mmole"
+            },
+            "PODOSE_can": {
+              "_magnitude": 300,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        },
+        {
+          "start": 0,
+          "end": 720,
+          "steps": 500,
+          "changes": {
+            "BW": {
+              "_magnitude": 92.7,
+              "_units": "kilogram"
+            },
+            "[KI__fpg]": {
+              "_magnitude": 11.600000000000001,
+              "_units": "KI__mmole / liter"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 1.041,
+              "_units": "dimensionless"
+            },
+            "KI__glc_urine": {
+              "_magnitude": 0.0,
+              "_units": "KI__mmole"
+            },
+            "PODOSE_can": {
+              "_magnitude": 300,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        },
+        {
+          "start": 0,
+          "end": 720,
+          "steps": 500,
+          "changes": {
+            "BW": {
+              "_magnitude": 92.7,
+              "_units": "kilogram"
+            },
+            "[KI__fpg]": {
+              "_magnitude": 11.600000000000001,
+              "_units": "KI__mmole / liter"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 1.041,
+              "_units": "dimensionless"
+            },
+            "KI__glc_urine": {
+              "_magnitude": 0.0,
+              "_units": "KI__mmole"
+            },
+            "PODOSE_can": {
+              "_magnitude": 300,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        },
+        {
+          "start": 0,
+          "end": 720,
+          "steps": 500,
+          "changes": {
+            "BW": {
+              "_magnitude": 92.7,
+              "_units": "kilogram"
+            },
+            "[KI__fpg]": {
+              "_magnitude": 11.600000000000001,
+              "_units": "KI__mmole / liter"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 1.041,
+              "_units": "dimensionless"
+            },
+            "KI__glc_urine": {
+              "_magnitude": 0.0,
+              "_units": "KI__mmole"
+            },
+            "PODOSE_can": {
+              "_magnitude": 300,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        },
+        {
+          "start": 0,
+          "end": 720,
+          "steps": 500,
+          "changes": {
+            "BW": {
+              "_magnitude": 92.7,
+              "_units": "kilogram"
+            },
+            "[KI__fpg]": {
+              "_magnitude": 11.600000000000001,
+              "_units": "KI__mmole / liter"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 1.041,
+              "_units": "dimensionless"
+            },
+            "KI__glc_urine": {
+              "_magnitude": 0.0,
+              "_units": "KI__mmole"
+            },
+            "PODOSE_can": {
+              "_magnitude": 300,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        },
+        {
+          "start": 0,
+          "end": 720,
+          "steps": 500,
+          "changes": {
+            "BW": {
+              "_magnitude": 92.7,
+              "_units": "kilogram"
+            },
+            "[KI__fpg]": {
+              "_magnitude": 11.600000000000001,
+              "_units": "KI__mmole / liter"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 1.041,
+              "_units": "dimensionless"
+            },
+            "KI__glc_urine": {
+              "_magnitude": 0.0,
+              "_units": "KI__mmole"
+            },
+            "PODOSE_can": {
+              "_magnitude": 300,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        },
+        {
+          "start": 0,
+          "end": 720,
+          "steps": 500,
+          "changes": {
+            "BW": {
+              "_magnitude": 92.7,
+              "_units": "kilogram"
+            },
+            "[KI__fpg]": {
+              "_magnitude": 11.600000000000001,
+              "_units": "KI__mmole / liter"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 1.041,
+              "_units": "dimensionless"
+            },
+            "KI__glc_urine": {
+              "_magnitude": 0.0,
+              "_units": "KI__mmole"
+            },
+            "PODOSE_can": {
+              "_magnitude": 300,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        },
+        {
+          "start": 0,
+          "end": 720,
+          "steps": 500,
+          "changes": {
+            "BW": {
+              "_magnitude": 92.7,
+              "_units": "kilogram"
+            },
+            "[KI__fpg]": {
+              "_magnitude": 11.600000000000001,
+              "_units": "KI__mmole / liter"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 1.041,
+              "_units": "dimensionless"
+            },
+            "KI__glc_urine": {
+              "_magnitude": 0.0,
+              "_units": "KI__mmole"
+            },
+            "PODOSE_can": {
+              "_magnitude": 300,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        },
+        {
+          "start": 0,
+          "end": 720,
+          "steps": 500,
+          "changes": {
+            "BW": {
+              "_magnitude": 92.7,
+              "_units": "kilogram"
+            },
+            "[KI__fpg]": {
+              "_magnitude": 11.600000000000001,
+              "_units": "KI__mmole / liter"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 1.041,
+              "_units": "dimensionless"
+            },
+            "KI__glc_urine": {
+              "_magnitude": 0.0,
+              "_units": "KI__mmole"
+            },
+            "PODOSE_can": {
+              "_magnitude": 300,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        },
+        {
+          "start": 0,
+          "end": 720,
+          "steps": 500,
+          "changes": {
+            "BW": {
+              "_magnitude": 92.7,
+              "_units": "kilogram"
+            },
+            "[KI__fpg]": {
+              "_magnitude": 11.600000000000001,
+              "_units": "KI__mmole / liter"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 1.041,
+              "_units": "dimensionless"
+            },
+            "KI__glc_urine": {
+              "_magnitude": 0.0,
+              "_units": "KI__mmole"
+            },
+            "PODOSE_can": {
+              "_magnitude": 300,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        },
+        {
+          "start": 0,
+          "end": 720,
+          "steps": 500,
+          "changes": {
+            "BW": {
+              "_magnitude": 92.7,
+              "_units": "kilogram"
+            },
+            "[KI__fpg]": {
+              "_magnitude": 11.600000000000001,
+              "_units": "KI__mmole / liter"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 1.041,
+              "_units": "dimensionless"
+            },
+            "KI__glc_urine": {
+              "_magnitude": 0.0,
+              "_units": "KI__mmole"
+            },
+            "PODOSE_can": {
+              "_magnitude": 300,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        },
+        {
+          "start": 0,
+          "end": 720,
+          "steps": 500,
+          "changes": {
+            "BW": {
+              "_magnitude": 92.7,
+              "_units": "kilogram"
+            },
+            "[KI__fpg]": {
+              "_magnitude": 11.600000000000001,
+              "_units": "KI__mmole / liter"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 1.041,
+              "_units": "dimensionless"
+            },
+            "KI__glc_urine": {
+              "_magnitude": 0.0,
+              "_units": "KI__mmole"
+            },
+            "PODOSE_can": {
+              "_magnitude": 300,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        },
+        {
+          "start": 0,
+          "end": 720,
+          "steps": 500,
+          "changes": {
+            "BW": {
+              "_magnitude": 92.7,
+              "_units": "kilogram"
+            },
+            "[KI__fpg]": {
+              "_magnitude": 11.600000000000001,
+              "_units": "KI__mmole / liter"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 1.041,
+              "_units": "dimensionless"
+            },
+            "KI__glc_urine": {
+              "_magnitude": 0.0,
+              "_units": "KI__mmole"
+            },
+            "PODOSE_can": {
+              "_magnitude": 300,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        },
+        {
+          "start": 0,
+          "end": 720,
+          "steps": 500,
+          "changes": {
+            "BW": {
+              "_magnitude": 92.7,
+              "_units": "kilogram"
+            },
+            "[KI__fpg]": {
+              "_magnitude": 11.600000000000001,
+              "_units": "KI__mmole / liter"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 1.041,
+              "_units": "dimensionless"
+            },
+            "KI__glc_urine": {
+              "_magnitude": 0.0,
+              "_units": "KI__mmole"
+            },
+            "PODOSE_can": {
+              "_magnitude": 300,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        },
+        {
+          "start": 0,
+          "end": 720,
+          "steps": 500,
+          "changes": {
+            "BW": {
+              "_magnitude": 92.7,
+              "_units": "kilogram"
+            },
+            "[KI__fpg]": {
+              "_magnitude": 11.600000000000001,
+              "_units": "KI__mmole / liter"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 1.041,
+              "_units": "dimensionless"
+            },
+            "KI__glc_urine": {
+              "_magnitude": 0.0,
+              "_units": "KI__mmole"
+            },
+            "PODOSE_can": {
+              "_magnitude": 300,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        },
+        {
+          "start": 0,
+          "end": 720,
+          "steps": 500,
+          "changes": {
+            "BW": {
+              "_magnitude": 92.7,
+              "_units": "kilogram"
+            },
+            "[KI__fpg]": {
+              "_magnitude": 11.600000000000001,
+              "_units": "KI__mmole / liter"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 1.041,
+              "_units": "dimensionless"
+            },
+            "KI__glc_urine": {
+              "_magnitude": 0.0,
+              "_units": "KI__mmole"
+            },
+            "PODOSE_can": {
+              "_magnitude": 300,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        },
+        {
+          "start": 0,
+          "end": 720,
+          "steps": 500,
+          "changes": {
+            "BW": {
+              "_magnitude": 92.7,
+              "_units": "kilogram"
+            },
+            "[KI__fpg]": {
+              "_magnitude": 11.600000000000001,
+              "_units": "KI__mmole / liter"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 1.041,
+              "_units": "dimensionless"
+            },
+            "KI__glc_urine": {
+              "_magnitude": 0.0,
+              "_units": "KI__mmole"
+            },
+            "PODOSE_can": {
+              "_magnitude": 300,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        },
+        {
+          "start": 0,
+          "end": 720,
+          "steps": 500,
+          "changes": {
+            "BW": {
+              "_magnitude": 92.7,
+              "_units": "kilogram"
+            },
+            "[KI__fpg]": {
+              "_magnitude": 11.600000000000001,
+              "_units": "KI__mmole / liter"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 1.041,
+              "_units": "dimensionless"
+            },
+            "KI__glc_urine": {
+              "_magnitude": 0.0,
+              "_units": "KI__mmole"
+            },
+            "PODOSE_can": {
+              "_magnitude": 300,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        },
+        {
+          "start": 0,
+          "end": 720,
+          "steps": 500,
+          "changes": {
+            "BW": {
+              "_magnitude": 92.7,
+              "_units": "kilogram"
+            },
+            "[KI__fpg]": {
+              "_magnitude": 11.600000000000001,
+              "_units": "KI__mmole / liter"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 1.041,
+              "_units": "dimensionless"
+            },
+            "KI__glc_urine": {
+              "_magnitude": 0.0,
+              "_units": "KI__mmole"
+            },
+            "PODOSE_can": {
+              "_magnitude": 300,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        },
+        {
+          "start": 0,
+          "end": 720,
+          "steps": 500,
+          "changes": {
+            "BW": {
+              "_magnitude": 92.7,
+              "_units": "kilogram"
+            },
+            "[KI__fpg]": {
+              "_magnitude": 11.600000000000001,
+              "_units": "KI__mmole / liter"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 1.041,
+              "_units": "dimensionless"
+            },
+            "KI__glc_urine": {
+              "_magnitude": 0.0,
+              "_units": "KI__mmole"
+            },
+            "PODOSE_can": {
+              "_magnitude": 300,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        },
+        {
+          "start": 0,
+          "end": 4320,
+          "steps": 500,
+          "changes": {
+            "BW": {
+              "_magnitude": 92.7,
+              "_units": "kilogram"
+            },
+            "[KI__fpg]": {
+              "_magnitude": 11.600000000000001,
+              "_units": "KI__mmole / liter"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 1.041,
+              "_units": "dimensionless"
+            },
+            "KI__glc_urine": {
+              "_magnitude": 0.0,
+              "_units": "KI__mmole"
+            },
+            "PODOSE_can": {
+              "_magnitude": 300,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        }
+      ]
+    },
+    "po_can30_multi": {
+      "type": "TimecourseSim",
+      "selections": null,
+      "reset": true,
+      "time_offset": -23040,
+      "timecourses": [
+        {
+          "start": 0,
+          "end": 2880,
+          "steps": 500,
+          "changes": {
+            "ftissue_can": {
+              "_magnitude": 0.5907025360669715,
+              "_units": "l_per_min"
+            },
+            "Kp_can": {
+              "_magnitude": 1.002186894659328,
+              "_units": "dimensionless"
+            },
+            "LI__CANIM_Vmax": {
+              "_magnitude": 0.6724144350621387,
+              "_units": "LI__mmole_per_min_l"
+            },
+            "KI__CANEX_k": {
+              "_magnitude": 0.003620232018677586,
+              "_units": "KI__per_min"
+            },
+            "GU__CANABS_k": {
+              "_magnitude": 0.014857823531040652,
+              "_units": "GU__per_min"
+            },
+            "LI__CAN2M5_Vmax": {
+              "_magnitude": 0.004471516434657664,
+              "_units": "LI__mmole_per_min_l"
+            },
+            "LI__CAN2M5_Km_can": {
+              "_magnitude": 0.29493539325204393,
+              "_units": "LI__mM"
+            },
+            "LI__M5EX_Km_m5": {
+              "_magnitude": 0.18169494628559774,
+              "_units": "LI__mM"
+            },
+            "LI__M5EX_Vmax": {
+              "_magnitude": 0.448042513666378,
+              "_units": "LI__mmole_per_min_l"
+            },
+            "KI__M5EX_k": {
+              "_magnitude": 0.10556919062775157,
+              "_units": "KI__per_min"
+            },
+            "ftissue_m5": {
+              "_magnitude": 0.0034928983363240276,
+              "_units": "l_per_min"
+            },
+            "Kp_m5": {
+              "_magnitude": 3.9832348764531975,
+              "_units": "dimensionless"
+            },
+            "LI__CAN2M7_Vmax": {
+              "_magnitude": 0.002145888093579888,
+              "_units": "LI__mmole_per_min_l"
+            },
+            "LI__M7EX_Vmax": {
+              "_magnitude": 0.1258350901232781,
+              "_units": "LI__mmole_per_min_l"
+            },
+            "KI__M7EX_k": {
+              "_magnitude": 0.18975923261901775,
+              "_units": "KI__per_min"
+            },
+            "ftissue_m7": {
+              "_magnitude": 0.00012251814828952693,
+              "_units": "l_per_min"
+            },
+            "Kp_m7": {
+              "_magnitude": 2.7484358268874036,
+              "_units": "dimensionless"
+            },
+            "LI__CAN2M9_Vmax": {
+              "_magnitude": 0.005649017628006681,
+              "_units": "LI__mmole_per_min_l"
+            },
+            "KI__RTG_E50": {
+              "_magnitude": 1.7058500169355005e-05,
+              "_units": "KI__mM"
+            },
+            "KI__RTG_base": {
+              "_magnitude": 9.00528652661515,
+              "_units": "KI__mM"
+            },
+            "KI__RTG_max_inhibition": {
+              "_magnitude": 0.6244535441073977,
+              "_units": "dimensionless"
+            },
+            "KI__RTG_m_fpg": {
+              "_magnitude": 0.7189836466732434,
+              "_units": "dimensionless"
+            },
+            "BW": {
+              "_magnitude": 66.2,
+              "_units": "kilogram"
+            },
+            "[KI__fpg]": {
+              "_magnitude": 9.900000000000002,
+              "_units": "KI__mmole / liter"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 0.778,
+              "_units": "dimensionless"
+            },
+            "PODOSE_can": {
+              "_magnitude": 30,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        },
+        {
+          "start": 0,
+          "end": 1440,
+          "steps": 500,
+          "changes": {
+            "BW": {
+              "_magnitude": 66.2,
+              "_units": "kilogram"
+            },
+            "[KI__fpg]": {
+              "_magnitude": 9.900000000000002,
+              "_units": "KI__mmole / liter"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 0.778,
+              "_units": "dimensionless"
+            },
+            "KI__glc_urine": {
+              "_magnitude": 0.0,
+              "_units": "KI__mmole"
+            },
+            "PODOSE_can": {
+              "_magnitude": 30,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        },
+        {
+          "start": 0,
+          "end": 1440,
+          "steps": 500,
+          "changes": {
+            "BW": {
+              "_magnitude": 66.2,
+              "_units": "kilogram"
+            },
+            "[KI__fpg]": {
+              "_magnitude": 9.900000000000002,
+              "_units": "KI__mmole / liter"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 0.778,
+              "_units": "dimensionless"
+            },
+            "KI__glc_urine": {
+              "_magnitude": 0.0,
+              "_units": "KI__mmole"
+            },
+            "PODOSE_can": {
+              "_magnitude": 30,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        },
+        {
+          "start": 0,
+          "end": 1440,
+          "steps": 500,
+          "changes": {
+            "BW": {
+              "_magnitude": 66.2,
+              "_units": "kilogram"
+            },
+            "[KI__fpg]": {
+              "_magnitude": 9.900000000000002,
+              "_units": "KI__mmole / liter"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 0.778,
+              "_units": "dimensionless"
+            },
+            "KI__glc_urine": {
+              "_magnitude": 0.0,
+              "_units": "KI__mmole"
+            },
+            "PODOSE_can": {
+              "_magnitude": 30,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        },
+        {
+          "start": 0,
+          "end": 1440,
+          "steps": 500,
+          "changes": {
+            "BW": {
+              "_magnitude": 66.2,
+              "_units": "kilogram"
+            },
+            "[KI__fpg]": {
+              "_magnitude": 9.900000000000002,
+              "_units": "KI__mmole / liter"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 0.778,
+              "_units": "dimensionless"
+            },
+            "KI__glc_urine": {
+              "_magnitude": 0.0,
+              "_units": "KI__mmole"
+            },
+            "PODOSE_can": {
+              "_magnitude": 30,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        },
+        {
+          "start": 0,
+          "end": 1440,
+          "steps": 500,
+          "changes": {
+            "BW": {
+              "_magnitude": 66.2,
+              "_units": "kilogram"
+            },
+            "[KI__fpg]": {
+              "_magnitude": 9.900000000000002,
+              "_units": "KI__mmole / liter"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 0.778,
+              "_units": "dimensionless"
+            },
+            "KI__glc_urine": {
+              "_magnitude": 0.0,
+              "_units": "KI__mmole"
+            },
+            "PODOSE_can": {
+              "_magnitude": 30,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        },
+        {
+          "start": 0,
+          "end": 1440,
+          "steps": 500,
+          "changes": {
+            "BW": {
+              "_magnitude": 66.2,
+              "_units": "kilogram"
+            },
+            "[KI__fpg]": {
+              "_magnitude": 9.900000000000002,
+              "_units": "KI__mmole / liter"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 0.778,
+              "_units": "dimensionless"
+            },
+            "KI__glc_urine": {
+              "_magnitude": 0.0,
+              "_units": "KI__mmole"
+            },
+            "PODOSE_can": {
+              "_magnitude": 30,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        },
+        {
+          "start": 0,
+          "end": 1440,
+          "steps": 500,
+          "changes": {
+            "BW": {
+              "_magnitude": 66.2,
+              "_units": "kilogram"
+            },
+            "[KI__fpg]": {
+              "_magnitude": 9.900000000000002,
+              "_units": "KI__mmole / liter"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 0.778,
+              "_units": "dimensionless"
+            },
+            "KI__glc_urine": {
+              "_magnitude": 0.0,
+              "_units": "KI__mmole"
+            },
+            "PODOSE_can": {
+              "_magnitude": 30,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        },
+        {
+          "start": 0,
+          "end": 1440,
+          "steps": 500,
+          "changes": {
+            "BW": {
+              "_magnitude": 66.2,
+              "_units": "kilogram"
+            },
+            "[KI__fpg]": {
+              "_magnitude": 9.900000000000002,
+              "_units": "KI__mmole / liter"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 0.778,
+              "_units": "dimensionless"
+            },
+            "KI__glc_urine": {
+              "_magnitude": 0.0,
+              "_units": "KI__mmole"
+            },
+            "PODOSE_can": {
+              "_magnitude": 30,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        },
+        {
+          "start": 0,
+          "end": 1440,
+          "steps": 500,
+          "changes": {
+            "BW": {
+              "_magnitude": 66.2,
+              "_units": "kilogram"
+            },
+            "[KI__fpg]": {
+              "_magnitude": 9.900000000000002,
+              "_units": "KI__mmole / liter"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 0.778,
+              "_units": "dimensionless"
+            },
+            "KI__glc_urine": {
+              "_magnitude": 0.0,
+              "_units": "KI__mmole"
+            },
+            "PODOSE_can": {
+              "_magnitude": 30,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        },
+        {
+          "start": 0,
+          "end": 1440,
+          "steps": 500,
+          "changes": {
+            "BW": {
+              "_magnitude": 66.2,
+              "_units": "kilogram"
+            },
+            "[KI__fpg]": {
+              "_magnitude": 9.900000000000002,
+              "_units": "KI__mmole / liter"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 0.778,
+              "_units": "dimensionless"
+            },
+            "KI__glc_urine": {
+              "_magnitude": 0.0,
+              "_units": "KI__mmole"
+            },
+            "PODOSE_can": {
+              "_magnitude": 30,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        },
+        {
+          "start": 0,
+          "end": 1440,
+          "steps": 500,
+          "changes": {
+            "BW": {
+              "_magnitude": 66.2,
+              "_units": "kilogram"
+            },
+            "[KI__fpg]": {
+              "_magnitude": 9.900000000000002,
+              "_units": "KI__mmole / liter"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 0.778,
+              "_units": "dimensionless"
+            },
+            "KI__glc_urine": {
+              "_magnitude": 0.0,
+              "_units": "KI__mmole"
+            },
+            "PODOSE_can": {
+              "_magnitude": 30,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        },
+        {
+          "start": 0,
+          "end": 1440,
+          "steps": 500,
+          "changes": {
+            "BW": {
+              "_magnitude": 66.2,
+              "_units": "kilogram"
+            },
+            "[KI__fpg]": {
+              "_magnitude": 9.900000000000002,
+              "_units": "KI__mmole / liter"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 0.778,
+              "_units": "dimensionless"
+            },
+            "KI__glc_urine": {
+              "_magnitude": 0.0,
+              "_units": "KI__mmole"
+            },
+            "PODOSE_can": {
+              "_magnitude": 30,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        },
+        {
+          "start": 0,
+          "end": 1440,
+          "steps": 500,
+          "changes": {
+            "BW": {
+              "_magnitude": 66.2,
+              "_units": "kilogram"
+            },
+            "[KI__fpg]": {
+              "_magnitude": 9.900000000000002,
+              "_units": "KI__mmole / liter"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 0.778,
+              "_units": "dimensionless"
+            },
+            "KI__glc_urine": {
+              "_magnitude": 0.0,
+              "_units": "KI__mmole"
+            },
+            "PODOSE_can": {
+              "_magnitude": 30,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        },
+        {
+          "start": 0,
+          "end": 1440,
+          "steps": 500,
+          "changes": {
+            "BW": {
+              "_magnitude": 66.2,
+              "_units": "kilogram"
+            },
+            "[KI__fpg]": {
+              "_magnitude": 9.900000000000002,
+              "_units": "KI__mmole / liter"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 0.778,
+              "_units": "dimensionless"
+            },
+            "KI__glc_urine": {
+              "_magnitude": 0.0,
+              "_units": "KI__mmole"
+            },
+            "PODOSE_can": {
+              "_magnitude": 30,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        },
+        {
+          "start": 0,
+          "end": 4320,
+          "steps": 500,
+          "changes": {
+            "BW": {
+              "_magnitude": 66.2,
+              "_units": "kilogram"
+            },
+            "[KI__fpg]": {
+              "_magnitude": 9.900000000000002,
+              "_units": "KI__mmole / liter"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 0.778,
+              "_units": "dimensionless"
+            },
+            "KI__glc_urine": {
+              "_magnitude": 0.0,
+              "_units": "KI__mmole"
+            },
+            "PODOSE_can": {
+              "_magnitude": 30,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        }
+      ]
+    },
+    "po_can100_multi": {
+      "type": "TimecourseSim",
+      "selections": null,
+      "reset": true,
+      "time_offset": -23040,
+      "timecourses": [
+        {
+          "start": 0,
+          "end": 2880,
+          "steps": 500,
+          "changes": {
+            "ftissue_can": {
+              "_magnitude": 0.5907025360669715,
+              "_units": "l_per_min"
+            },
+            "Kp_can": {
+              "_magnitude": 1.002186894659328,
+              "_units": "dimensionless"
+            },
+            "LI__CANIM_Vmax": {
+              "_magnitude": 0.6724144350621387,
+              "_units": "LI__mmole_per_min_l"
+            },
+            "KI__CANEX_k": {
+              "_magnitude": 0.003620232018677586,
+              "_units": "KI__per_min"
+            },
+            "GU__CANABS_k": {
+              "_magnitude": 0.014857823531040652,
+              "_units": "GU__per_min"
+            },
+            "LI__CAN2M5_Vmax": {
+              "_magnitude": 0.004471516434657664,
+              "_units": "LI__mmole_per_min_l"
+            },
+            "LI__CAN2M5_Km_can": {
+              "_magnitude": 0.29493539325204393,
+              "_units": "LI__mM"
+            },
+            "LI__M5EX_Km_m5": {
+              "_magnitude": 0.18169494628559774,
+              "_units": "LI__mM"
+            },
+            "LI__M5EX_Vmax": {
+              "_magnitude": 0.448042513666378,
+              "_units": "LI__mmole_per_min_l"
+            },
+            "KI__M5EX_k": {
+              "_magnitude": 0.10556919062775157,
+              "_units": "KI__per_min"
+            },
+            "ftissue_m5": {
+              "_magnitude": 0.0034928983363240276,
+              "_units": "l_per_min"
+            },
+            "Kp_m5": {
+              "_magnitude": 3.9832348764531975,
+              "_units": "dimensionless"
+            },
+            "LI__CAN2M7_Vmax": {
+              "_magnitude": 0.002145888093579888,
+              "_units": "LI__mmole_per_min_l"
+            },
+            "LI__M7EX_Vmax": {
+              "_magnitude": 0.1258350901232781,
+              "_units": "LI__mmole_per_min_l"
+            },
+            "KI__M7EX_k": {
+              "_magnitude": 0.18975923261901775,
+              "_units": "KI__per_min"
+            },
+            "ftissue_m7": {
+              "_magnitude": 0.00012251814828952693,
+              "_units": "l_per_min"
+            },
+            "Kp_m7": {
+              "_magnitude": 2.7484358268874036,
+              "_units": "dimensionless"
+            },
+            "LI__CAN2M9_Vmax": {
+              "_magnitude": 0.005649017628006681,
+              "_units": "LI__mmole_per_min_l"
+            },
+            "KI__RTG_E50": {
+              "_magnitude": 1.7058500169355005e-05,
+              "_units": "KI__mM"
+            },
+            "KI__RTG_base": {
+              "_magnitude": 9.00528652661515,
+              "_units": "KI__mM"
+            },
+            "KI__RTG_max_inhibition": {
+              "_magnitude": 0.6244535441073977,
+              "_units": "dimensionless"
+            },
+            "KI__RTG_m_fpg": {
+              "_magnitude": 0.7189836466732434,
+              "_units": "dimensionless"
+            },
+            "BW": {
+              "_magnitude": 66.2,
+              "_units": "kilogram"
+            },
+            "[KI__fpg]": {
+              "_magnitude": 10.300000000000002,
+              "_units": "KI__mmole / liter"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 1.024,
+              "_units": "dimensionless"
+            },
+            "PODOSE_can": {
+              "_magnitude": 100,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        },
+        {
+          "start": 0,
+          "end": 1440,
+          "steps": 500,
+          "changes": {
+            "BW": {
+              "_magnitude": 66.2,
+              "_units": "kilogram"
+            },
+            "[KI__fpg]": {
+              "_magnitude": 10.300000000000002,
+              "_units": "KI__mmole / liter"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 1.024,
+              "_units": "dimensionless"
+            },
+            "KI__glc_urine": {
+              "_magnitude": 0.0,
+              "_units": "KI__mmole"
+            },
+            "PODOSE_can": {
+              "_magnitude": 100,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        },
+        {
+          "start": 0,
+          "end": 1440,
+          "steps": 500,
+          "changes": {
+            "BW": {
+              "_magnitude": 66.2,
+              "_units": "kilogram"
+            },
+            "[KI__fpg]": {
+              "_magnitude": 10.300000000000002,
+              "_units": "KI__mmole / liter"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 1.024,
+              "_units": "dimensionless"
+            },
+            "KI__glc_urine": {
+              "_magnitude": 0.0,
+              "_units": "KI__mmole"
+            },
+            "PODOSE_can": {
+              "_magnitude": 100,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        },
+        {
+          "start": 0,
+          "end": 1440,
+          "steps": 500,
+          "changes": {
+            "BW": {
+              "_magnitude": 66.2,
+              "_units": "kilogram"
+            },
+            "[KI__fpg]": {
+              "_magnitude": 10.300000000000002,
+              "_units": "KI__mmole / liter"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 1.024,
+              "_units": "dimensionless"
+            },
+            "KI__glc_urine": {
+              "_magnitude": 0.0,
+              "_units": "KI__mmole"
+            },
+            "PODOSE_can": {
+              "_magnitude": 100,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        },
+        {
+          "start": 0,
+          "end": 1440,
+          "steps": 500,
+          "changes": {
+            "BW": {
+              "_magnitude": 66.2,
+              "_units": "kilogram"
+            },
+            "[KI__fpg]": {
+              "_magnitude": 10.300000000000002,
+              "_units": "KI__mmole / liter"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 1.024,
+              "_units": "dimensionless"
+            },
+            "KI__glc_urine": {
+              "_magnitude": 0.0,
+              "_units": "KI__mmole"
+            },
+            "PODOSE_can": {
+              "_magnitude": 100,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        },
+        {
+          "start": 0,
+          "end": 1440,
+          "steps": 500,
+          "changes": {
+            "BW": {
+              "_magnitude": 66.2,
+              "_units": "kilogram"
+            },
+            "[KI__fpg]": {
+              "_magnitude": 10.300000000000002,
+              "_units": "KI__mmole / liter"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 1.024,
+              "_units": "dimensionless"
+            },
+            "KI__glc_urine": {
+              "_magnitude": 0.0,
+              "_units": "KI__mmole"
+            },
+            "PODOSE_can": {
+              "_magnitude": 100,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        },
+        {
+          "start": 0,
+          "end": 1440,
+          "steps": 500,
+          "changes": {
+            "BW": {
+              "_magnitude": 66.2,
+              "_units": "kilogram"
+            },
+            "[KI__fpg]": {
+              "_magnitude": 10.300000000000002,
+              "_units": "KI__mmole / liter"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 1.024,
+              "_units": "dimensionless"
+            },
+            "KI__glc_urine": {
+              "_magnitude": 0.0,
+              "_units": "KI__mmole"
+            },
+            "PODOSE_can": {
+              "_magnitude": 100,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        },
+        {
+          "start": 0,
+          "end": 1440,
+          "steps": 500,
+          "changes": {
+            "BW": {
+              "_magnitude": 66.2,
+              "_units": "kilogram"
+            },
+            "[KI__fpg]": {
+              "_magnitude": 10.300000000000002,
+              "_units": "KI__mmole / liter"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 1.024,
+              "_units": "dimensionless"
+            },
+            "KI__glc_urine": {
+              "_magnitude": 0.0,
+              "_units": "KI__mmole"
+            },
+            "PODOSE_can": {
+              "_magnitude": 100,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        },
+        {
+          "start": 0,
+          "end": 1440,
+          "steps": 500,
+          "changes": {
+            "BW": {
+              "_magnitude": 66.2,
+              "_units": "kilogram"
+            },
+            "[KI__fpg]": {
+              "_magnitude": 10.300000000000002,
+              "_units": "KI__mmole / liter"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 1.024,
+              "_units": "dimensionless"
+            },
+            "KI__glc_urine": {
+              "_magnitude": 0.0,
+              "_units": "KI__mmole"
+            },
+            "PODOSE_can": {
+              "_magnitude": 100,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        },
+        {
+          "start": 0,
+          "end": 1440,
+          "steps": 500,
+          "changes": {
+            "BW": {
+              "_magnitude": 66.2,
+              "_units": "kilogram"
+            },
+            "[KI__fpg]": {
+              "_magnitude": 10.300000000000002,
+              "_units": "KI__mmole / liter"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 1.024,
+              "_units": "dimensionless"
+            },
+            "KI__glc_urine": {
+              "_magnitude": 0.0,
+              "_units": "KI__mmole"
+            },
+            "PODOSE_can": {
+              "_magnitude": 100,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        },
+        {
+          "start": 0,
+          "end": 1440,
+          "steps": 500,
+          "changes": {
+            "BW": {
+              "_magnitude": 66.2,
+              "_units": "kilogram"
+            },
+            "[KI__fpg]": {
+              "_magnitude": 10.300000000000002,
+              "_units": "KI__mmole / liter"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 1.024,
+              "_units": "dimensionless"
+            },
+            "KI__glc_urine": {
+              "_magnitude": 0.0,
+              "_units": "KI__mmole"
+            },
+            "PODOSE_can": {
+              "_magnitude": 100,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        },
+        {
+          "start": 0,
+          "end": 1440,
+          "steps": 500,
+          "changes": {
+            "BW": {
+              "_magnitude": 66.2,
+              "_units": "kilogram"
+            },
+            "[KI__fpg]": {
+              "_magnitude": 10.300000000000002,
+              "_units": "KI__mmole / liter"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 1.024,
+              "_units": "dimensionless"
+            },
+            "KI__glc_urine": {
+              "_magnitude": 0.0,
+              "_units": "KI__mmole"
+            },
+            "PODOSE_can": {
+              "_magnitude": 100,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        },
+        {
+          "start": 0,
+          "end": 1440,
+          "steps": 500,
+          "changes": {
+            "BW": {
+              "_magnitude": 66.2,
+              "_units": "kilogram"
+            },
+            "[KI__fpg]": {
+              "_magnitude": 10.300000000000002,
+              "_units": "KI__mmole / liter"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 1.024,
+              "_units": "dimensionless"
+            },
+            "KI__glc_urine": {
+              "_magnitude": 0.0,
+              "_units": "KI__mmole"
+            },
+            "PODOSE_can": {
+              "_magnitude": 100,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        },
+        {
+          "start": 0,
+          "end": 1440,
+          "steps": 500,
+          "changes": {
+            "BW": {
+              "_magnitude": 66.2,
+              "_units": "kilogram"
+            },
+            "[KI__fpg]": {
+              "_magnitude": 10.300000000000002,
+              "_units": "KI__mmole / liter"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 1.024,
+              "_units": "dimensionless"
+            },
+            "KI__glc_urine": {
+              "_magnitude": 0.0,
+              "_units": "KI__mmole"
+            },
+            "PODOSE_can": {
+              "_magnitude": 100,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        },
+        {
+          "start": 0,
+          "end": 1440,
+          "steps": 500,
+          "changes": {
+            "BW": {
+              "_magnitude": 66.2,
+              "_units": "kilogram"
+            },
+            "[KI__fpg]": {
+              "_magnitude": 10.300000000000002,
+              "_units": "KI__mmole / liter"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 1.024,
+              "_units": "dimensionless"
+            },
+            "KI__glc_urine": {
+              "_magnitude": 0.0,
+              "_units": "KI__mmole"
+            },
+            "PODOSE_can": {
+              "_magnitude": 100,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        },
+        {
+          "start": 0,
+          "end": 4320,
+          "steps": 500,
+          "changes": {
+            "BW": {
+              "_magnitude": 66.2,
+              "_units": "kilogram"
+            },
+            "[KI__fpg]": {
+              "_magnitude": 10.300000000000002,
+              "_units": "KI__mmole / liter"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 1.024,
+              "_units": "dimensionless"
+            },
+            "KI__glc_urine": {
+              "_magnitude": 0.0,
+              "_units": "KI__mmole"
+            },
+            "PODOSE_can": {
+              "_magnitude": 100,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        }
+      ]
+    },
+    "po_can200_multi": {
+      "type": "TimecourseSim",
+      "selections": null,
+      "reset": true,
+      "time_offset": -23040,
+      "timecourses": [
+        {
+          "start": 0,
+          "end": 2880,
+          "steps": 500,
+          "changes": {
+            "ftissue_can": {
+              "_magnitude": 0.5907025360669715,
+              "_units": "l_per_min"
+            },
+            "Kp_can": {
+              "_magnitude": 1.002186894659328,
+              "_units": "dimensionless"
+            },
+            "LI__CANIM_Vmax": {
+              "_magnitude": 0.6724144350621387,
+              "_units": "LI__mmole_per_min_l"
+            },
+            "KI__CANEX_k": {
+              "_magnitude": 0.003620232018677586,
+              "_units": "KI__per_min"
+            },
+            "GU__CANABS_k": {
+              "_magnitude": 0.014857823531040652,
+              "_units": "GU__per_min"
+            },
+            "LI__CAN2M5_Vmax": {
+              "_magnitude": 0.004471516434657664,
+              "_units": "LI__mmole_per_min_l"
+            },
+            "LI__CAN2M5_Km_can": {
+              "_magnitude": 0.29493539325204393,
+              "_units": "LI__mM"
+            },
+            "LI__M5EX_Km_m5": {
+              "_magnitude": 0.18169494628559774,
+              "_units": "LI__mM"
+            },
+            "LI__M5EX_Vmax": {
+              "_magnitude": 0.448042513666378,
+              "_units": "LI__mmole_per_min_l"
+            },
+            "KI__M5EX_k": {
+              "_magnitude": 0.10556919062775157,
+              "_units": "KI__per_min"
+            },
+            "ftissue_m5": {
+              "_magnitude": 0.0034928983363240276,
+              "_units": "l_per_min"
+            },
+            "Kp_m5": {
+              "_magnitude": 3.9832348764531975,
+              "_units": "dimensionless"
+            },
+            "LI__CAN2M7_Vmax": {
+              "_magnitude": 0.002145888093579888,
+              "_units": "LI__mmole_per_min_l"
+            },
+            "LI__M7EX_Vmax": {
+              "_magnitude": 0.1258350901232781,
+              "_units": "LI__mmole_per_min_l"
+            },
+            "KI__M7EX_k": {
+              "_magnitude": 0.18975923261901775,
+              "_units": "KI__per_min"
+            },
+            "ftissue_m7": {
+              "_magnitude": 0.00012251814828952693,
+              "_units": "l_per_min"
+            },
+            "Kp_m7": {
+              "_magnitude": 2.7484358268874036,
+              "_units": "dimensionless"
+            },
+            "LI__CAN2M9_Vmax": {
+              "_magnitude": 0.005649017628006681,
+              "_units": "LI__mmole_per_min_l"
+            },
+            "KI__RTG_E50": {
+              "_magnitude": 1.7058500169355005e-05,
+              "_units": "KI__mM"
+            },
+            "KI__RTG_base": {
+              "_magnitude": 9.00528652661515,
+              "_units": "KI__mM"
+            },
+            "KI__RTG_max_inhibition": {
+              "_magnitude": 0.6244535441073977,
+              "_units": "dimensionless"
+            },
+            "KI__RTG_m_fpg": {
+              "_magnitude": 0.7189836466732434,
+              "_units": "dimensionless"
+            },
+            "BW": {
+              "_magnitude": 92.2,
+              "_units": "kilogram"
+            },
+            "[KI__fpg]": {
+              "_magnitude": 11.200000000000001,
+              "_units": "KI__mmole / liter"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 0.92,
+              "_units": "dimensionless"
+            },
+            "PODOSE_can": {
+              "_magnitude": 200,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        },
+        {
+          "start": 0,
+          "end": 1440,
+          "steps": 500,
+          "changes": {
+            "BW": {
+              "_magnitude": 92.2,
+              "_units": "kilogram"
+            },
+            "[KI__fpg]": {
+              "_magnitude": 11.200000000000001,
+              "_units": "KI__mmole / liter"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 0.92,
+              "_units": "dimensionless"
+            },
+            "KI__glc_urine": {
+              "_magnitude": 0.0,
+              "_units": "KI__mmole"
+            },
+            "PODOSE_can": {
+              "_magnitude": 200,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        },
+        {
+          "start": 0,
+          "end": 1440,
+          "steps": 500,
+          "changes": {
+            "BW": {
+              "_magnitude": 92.2,
+              "_units": "kilogram"
+            },
+            "[KI__fpg]": {
+              "_magnitude": 11.200000000000001,
+              "_units": "KI__mmole / liter"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 0.92,
+              "_units": "dimensionless"
+            },
+            "KI__glc_urine": {
+              "_magnitude": 0.0,
+              "_units": "KI__mmole"
+            },
+            "PODOSE_can": {
+              "_magnitude": 200,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        },
+        {
+          "start": 0,
+          "end": 1440,
+          "steps": 500,
+          "changes": {
+            "BW": {
+              "_magnitude": 92.2,
+              "_units": "kilogram"
+            },
+            "[KI__fpg]": {
+              "_magnitude": 11.200000000000001,
+              "_units": "KI__mmole / liter"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 0.92,
+              "_units": "dimensionless"
+            },
+            "KI__glc_urine": {
+              "_magnitude": 0.0,
+              "_units": "KI__mmole"
+            },
+            "PODOSE_can": {
+              "_magnitude": 200,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        },
+        {
+          "start": 0,
+          "end": 1440,
+          "steps": 500,
+          "changes": {
+            "BW": {
+              "_magnitude": 92.2,
+              "_units": "kilogram"
+            },
+            "[KI__fpg]": {
+              "_magnitude": 11.200000000000001,
+              "_units": "KI__mmole / liter"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 0.92,
+              "_units": "dimensionless"
+            },
+            "KI__glc_urine": {
+              "_magnitude": 0.0,
+              "_units": "KI__mmole"
+            },
+            "PODOSE_can": {
+              "_magnitude": 200,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        },
+        {
+          "start": 0,
+          "end": 1440,
+          "steps": 500,
+          "changes": {
+            "BW": {
+              "_magnitude": 92.2,
+              "_units": "kilogram"
+            },
+            "[KI__fpg]": {
+              "_magnitude": 11.200000000000001,
+              "_units": "KI__mmole / liter"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 0.92,
+              "_units": "dimensionless"
+            },
+            "KI__glc_urine": {
+              "_magnitude": 0.0,
+              "_units": "KI__mmole"
+            },
+            "PODOSE_can": {
+              "_magnitude": 200,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        },
+        {
+          "start": 0,
+          "end": 1440,
+          "steps": 500,
+          "changes": {
+            "BW": {
+              "_magnitude": 92.2,
+              "_units": "kilogram"
+            },
+            "[KI__fpg]": {
+              "_magnitude": 11.200000000000001,
+              "_units": "KI__mmole / liter"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 0.92,
+              "_units": "dimensionless"
+            },
+            "KI__glc_urine": {
+              "_magnitude": 0.0,
+              "_units": "KI__mmole"
+            },
+            "PODOSE_can": {
+              "_magnitude": 200,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        },
+        {
+          "start": 0,
+          "end": 1440,
+          "steps": 500,
+          "changes": {
+            "BW": {
+              "_magnitude": 92.2,
+              "_units": "kilogram"
+            },
+            "[KI__fpg]": {
+              "_magnitude": 11.200000000000001,
+              "_units": "KI__mmole / liter"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 0.92,
+              "_units": "dimensionless"
+            },
+            "KI__glc_urine": {
+              "_magnitude": 0.0,
+              "_units": "KI__mmole"
+            },
+            "PODOSE_can": {
+              "_magnitude": 200,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        },
+        {
+          "start": 0,
+          "end": 1440,
+          "steps": 500,
+          "changes": {
+            "BW": {
+              "_magnitude": 92.2,
+              "_units": "kilogram"
+            },
+            "[KI__fpg]": {
+              "_magnitude": 11.200000000000001,
+              "_units": "KI__mmole / liter"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 0.92,
+              "_units": "dimensionless"
+            },
+            "KI__glc_urine": {
+              "_magnitude": 0.0,
+              "_units": "KI__mmole"
+            },
+            "PODOSE_can": {
+              "_magnitude": 200,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        },
+        {
+          "start": 0,
+          "end": 1440,
+          "steps": 500,
+          "changes": {
+            "BW": {
+              "_magnitude": 92.2,
+              "_units": "kilogram"
+            },
+            "[KI__fpg]": {
+              "_magnitude": 11.200000000000001,
+              "_units": "KI__mmole / liter"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 0.92,
+              "_units": "dimensionless"
+            },
+            "KI__glc_urine": {
+              "_magnitude": 0.0,
+              "_units": "KI__mmole"
+            },
+            "PODOSE_can": {
+              "_magnitude": 200,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        },
+        {
+          "start": 0,
+          "end": 1440,
+          "steps": 500,
+          "changes": {
+            "BW": {
+              "_magnitude": 92.2,
+              "_units": "kilogram"
+            },
+            "[KI__fpg]": {
+              "_magnitude": 11.200000000000001,
+              "_units": "KI__mmole / liter"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 0.92,
+              "_units": "dimensionless"
+            },
+            "KI__glc_urine": {
+              "_magnitude": 0.0,
+              "_units": "KI__mmole"
+            },
+            "PODOSE_can": {
+              "_magnitude": 200,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        },
+        {
+          "start": 0,
+          "end": 1440,
+          "steps": 500,
+          "changes": {
+            "BW": {
+              "_magnitude": 92.2,
+              "_units": "kilogram"
+            },
+            "[KI__fpg]": {
+              "_magnitude": 11.200000000000001,
+              "_units": "KI__mmole / liter"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 0.92,
+              "_units": "dimensionless"
+            },
+            "KI__glc_urine": {
+              "_magnitude": 0.0,
+              "_units": "KI__mmole"
+            },
+            "PODOSE_can": {
+              "_magnitude": 200,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        },
+        {
+          "start": 0,
+          "end": 1440,
+          "steps": 500,
+          "changes": {
+            "BW": {
+              "_magnitude": 92.2,
+              "_units": "kilogram"
+            },
+            "[KI__fpg]": {
+              "_magnitude": 11.200000000000001,
+              "_units": "KI__mmole / liter"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 0.92,
+              "_units": "dimensionless"
+            },
+            "KI__glc_urine": {
+              "_magnitude": 0.0,
+              "_units": "KI__mmole"
+            },
+            "PODOSE_can": {
+              "_magnitude": 200,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        },
+        {
+          "start": 0,
+          "end": 1440,
+          "steps": 500,
+          "changes": {
+            "BW": {
+              "_magnitude": 92.2,
+              "_units": "kilogram"
+            },
+            "[KI__fpg]": {
+              "_magnitude": 11.200000000000001,
+              "_units": "KI__mmole / liter"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 0.92,
+              "_units": "dimensionless"
+            },
+            "KI__glc_urine": {
+              "_magnitude": 0.0,
+              "_units": "KI__mmole"
+            },
+            "PODOSE_can": {
+              "_magnitude": 200,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        },
+        {
+          "start": 0,
+          "end": 1440,
+          "steps": 500,
+          "changes": {
+            "BW": {
+              "_magnitude": 92.2,
+              "_units": "kilogram"
+            },
+            "[KI__fpg]": {
+              "_magnitude": 11.200000000000001,
+              "_units": "KI__mmole / liter"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 0.92,
+              "_units": "dimensionless"
+            },
+            "KI__glc_urine": {
+              "_magnitude": 0.0,
+              "_units": "KI__mmole"
+            },
+            "PODOSE_can": {
+              "_magnitude": 200,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        },
+        {
+          "start": 0,
+          "end": 4320,
+          "steps": 500,
+          "changes": {
+            "BW": {
+              "_magnitude": 92.2,
+              "_units": "kilogram"
+            },
+            "[KI__fpg]": {
+              "_magnitude": 11.200000000000001,
+              "_units": "KI__mmole / liter"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 0.92,
+              "_units": "dimensionless"
+            },
+            "KI__glc_urine": {
+              "_magnitude": 0.0,
+              "_units": "KI__mmole"
+            },
+            "PODOSE_can": {
+              "_magnitude": 200,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        }
+      ]
+    },
+    "po_can400_multi": {
+      "type": "TimecourseSim",
+      "selections": null,
+      "reset": true,
+      "time_offset": -23040,
+      "timecourses": [
+        {
+          "start": 0,
+          "end": 2880,
+          "steps": 500,
+          "changes": {
+            "ftissue_can": {
+              "_magnitude": 0.5907025360669715,
+              "_units": "l_per_min"
+            },
+            "Kp_can": {
+              "_magnitude": 1.002186894659328,
+              "_units": "dimensionless"
+            },
+            "LI__CANIM_Vmax": {
+              "_magnitude": 0.6724144350621387,
+              "_units": "LI__mmole_per_min_l"
+            },
+            "KI__CANEX_k": {
+              "_magnitude": 0.003620232018677586,
+              "_units": "KI__per_min"
+            },
+            "GU__CANABS_k": {
+              "_magnitude": 0.014857823531040652,
+              "_units": "GU__per_min"
+            },
+            "LI__CAN2M5_Vmax": {
+              "_magnitude": 0.004471516434657664,
+              "_units": "LI__mmole_per_min_l"
+            },
+            "LI__CAN2M5_Km_can": {
+              "_magnitude": 0.29493539325204393,
+              "_units": "LI__mM"
+            },
+            "LI__M5EX_Km_m5": {
+              "_magnitude": 0.18169494628559774,
+              "_units": "LI__mM"
+            },
+            "LI__M5EX_Vmax": {
+              "_magnitude": 0.448042513666378,
+              "_units": "LI__mmole_per_min_l"
+            },
+            "KI__M5EX_k": {
+              "_magnitude": 0.10556919062775157,
+              "_units": "KI__per_min"
+            },
+            "ftissue_m5": {
+              "_magnitude": 0.0034928983363240276,
+              "_units": "l_per_min"
+            },
+            "Kp_m5": {
+              "_magnitude": 3.9832348764531975,
+              "_units": "dimensionless"
+            },
+            "LI__CAN2M7_Vmax": {
+              "_magnitude": 0.002145888093579888,
+              "_units": "LI__mmole_per_min_l"
+            },
+            "LI__M7EX_Vmax": {
+              "_magnitude": 0.1258350901232781,
+              "_units": "LI__mmole_per_min_l"
+            },
+            "KI__M7EX_k": {
+              "_magnitude": 0.18975923261901775,
+              "_units": "KI__per_min"
+            },
+            "ftissue_m7": {
+              "_magnitude": 0.00012251814828952693,
+              "_units": "l_per_min"
+            },
+            "Kp_m7": {
+              "_magnitude": 2.7484358268874036,
+              "_units": "dimensionless"
+            },
+            "LI__CAN2M9_Vmax": {
+              "_magnitude": 0.005649017628006681,
+              "_units": "LI__mmole_per_min_l"
+            },
+            "KI__RTG_E50": {
+              "_magnitude": 1.7058500169355005e-05,
+              "_units": "KI__mM"
+            },
+            "KI__RTG_base": {
+              "_magnitude": 9.00528652661515,
+              "_units": "KI__mM"
+            },
+            "KI__RTG_max_inhibition": {
+              "_magnitude": 0.6244535441073977,
+              "_units": "dimensionless"
+            },
+            "KI__RTG_m_fpg": {
+              "_magnitude": 0.7189836466732434,
+              "_units": "dimensionless"
+            },
+            "BW": {
+              "_magnitude": 92.7,
+              "_units": "kilogram"
+            },
+            "[KI__fpg]": {
+              "_magnitude": 11.600000000000001,
+              "_units": "KI__mmole / liter"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 1.041,
+              "_units": "dimensionless"
+            },
+            "PODOSE_can": {
+              "_magnitude": 400,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        },
+        {
+          "start": 0,
+          "end": 1440,
+          "steps": 500,
+          "changes": {
+            "BW": {
+              "_magnitude": 92.7,
+              "_units": "kilogram"
+            },
+            "[KI__fpg]": {
+              "_magnitude": 11.600000000000001,
+              "_units": "KI__mmole / liter"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 1.041,
+              "_units": "dimensionless"
+            },
+            "KI__glc_urine": {
+              "_magnitude": 0.0,
+              "_units": "KI__mmole"
+            },
+            "PODOSE_can": {
+              "_magnitude": 400,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        },
+        {
+          "start": 0,
+          "end": 1440,
+          "steps": 500,
+          "changes": {
+            "BW": {
+              "_magnitude": 92.7,
+              "_units": "kilogram"
+            },
+            "[KI__fpg]": {
+              "_magnitude": 11.600000000000001,
+              "_units": "KI__mmole / liter"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 1.041,
+              "_units": "dimensionless"
+            },
+            "KI__glc_urine": {
+              "_magnitude": 0.0,
+              "_units": "KI__mmole"
+            },
+            "PODOSE_can": {
+              "_magnitude": 400,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        },
+        {
+          "start": 0,
+          "end": 1440,
+          "steps": 500,
+          "changes": {
+            "BW": {
+              "_magnitude": 92.7,
+              "_units": "kilogram"
+            },
+            "[KI__fpg]": {
+              "_magnitude": 11.600000000000001,
+              "_units": "KI__mmole / liter"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 1.041,
+              "_units": "dimensionless"
+            },
+            "KI__glc_urine": {
+              "_magnitude": 0.0,
+              "_units": "KI__mmole"
+            },
+            "PODOSE_can": {
+              "_magnitude": 400,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        },
+        {
+          "start": 0,
+          "end": 1440,
+          "steps": 500,
+          "changes": {
+            "BW": {
+              "_magnitude": 92.7,
+              "_units": "kilogram"
+            },
+            "[KI__fpg]": {
+              "_magnitude": 11.600000000000001,
+              "_units": "KI__mmole / liter"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 1.041,
+              "_units": "dimensionless"
+            },
+            "KI__glc_urine": {
+              "_magnitude": 0.0,
+              "_units": "KI__mmole"
+            },
+            "PODOSE_can": {
+              "_magnitude": 400,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        },
+        {
+          "start": 0,
+          "end": 1440,
+          "steps": 500,
+          "changes": {
+            "BW": {
+              "_magnitude": 92.7,
+              "_units": "kilogram"
+            },
+            "[KI__fpg]": {
+              "_magnitude": 11.600000000000001,
+              "_units": "KI__mmole / liter"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 1.041,
+              "_units": "dimensionless"
+            },
+            "KI__glc_urine": {
+              "_magnitude": 0.0,
+              "_units": "KI__mmole"
+            },
+            "PODOSE_can": {
+              "_magnitude": 400,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        },
+        {
+          "start": 0,
+          "end": 1440,
+          "steps": 500,
+          "changes": {
+            "BW": {
+              "_magnitude": 92.7,
+              "_units": "kilogram"
+            },
+            "[KI__fpg]": {
+              "_magnitude": 11.600000000000001,
+              "_units": "KI__mmole / liter"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 1.041,
+              "_units": "dimensionless"
+            },
+            "KI__glc_urine": {
+              "_magnitude": 0.0,
+              "_units": "KI__mmole"
+            },
+            "PODOSE_can": {
+              "_magnitude": 400,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        },
+        {
+          "start": 0,
+          "end": 1440,
+          "steps": 500,
+          "changes": {
+            "BW": {
+              "_magnitude": 92.7,
+              "_units": "kilogram"
+            },
+            "[KI__fpg]": {
+              "_magnitude": 11.600000000000001,
+              "_units": "KI__mmole / liter"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 1.041,
+              "_units": "dimensionless"
+            },
+            "KI__glc_urine": {
+              "_magnitude": 0.0,
+              "_units": "KI__mmole"
+            },
+            "PODOSE_can": {
+              "_magnitude": 400,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        },
+        {
+          "start": 0,
+          "end": 1440,
+          "steps": 500,
+          "changes": {
+            "BW": {
+              "_magnitude": 92.7,
+              "_units": "kilogram"
+            },
+            "[KI__fpg]": {
+              "_magnitude": 11.600000000000001,
+              "_units": "KI__mmole / liter"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 1.041,
+              "_units": "dimensionless"
+            },
+            "KI__glc_urine": {
+              "_magnitude": 0.0,
+              "_units": "KI__mmole"
+            },
+            "PODOSE_can": {
+              "_magnitude": 400,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        },
+        {
+          "start": 0,
+          "end": 1440,
+          "steps": 500,
+          "changes": {
+            "BW": {
+              "_magnitude": 92.7,
+              "_units": "kilogram"
+            },
+            "[KI__fpg]": {
+              "_magnitude": 11.600000000000001,
+              "_units": "KI__mmole / liter"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 1.041,
+              "_units": "dimensionless"
+            },
+            "KI__glc_urine": {
+              "_magnitude": 0.0,
+              "_units": "KI__mmole"
+            },
+            "PODOSE_can": {
+              "_magnitude": 400,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        },
+        {
+          "start": 0,
+          "end": 1440,
+          "steps": 500,
+          "changes": {
+            "BW": {
+              "_magnitude": 92.7,
+              "_units": "kilogram"
+            },
+            "[KI__fpg]": {
+              "_magnitude": 11.600000000000001,
+              "_units": "KI__mmole / liter"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 1.041,
+              "_units": "dimensionless"
+            },
+            "KI__glc_urine": {
+              "_magnitude": 0.0,
+              "_units": "KI__mmole"
+            },
+            "PODOSE_can": {
+              "_magnitude": 400,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        },
+        {
+          "start": 0,
+          "end": 1440,
+          "steps": 500,
+          "changes": {
+            "BW": {
+              "_magnitude": 92.7,
+              "_units": "kilogram"
+            },
+            "[KI__fpg]": {
+              "_magnitude": 11.600000000000001,
+              "_units": "KI__mmole / liter"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 1.041,
+              "_units": "dimensionless"
+            },
+            "KI__glc_urine": {
+              "_magnitude": 0.0,
+              "_units": "KI__mmole"
+            },
+            "PODOSE_can": {
+              "_magnitude": 400,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        },
+        {
+          "start": 0,
+          "end": 1440,
+          "steps": 500,
+          "changes": {
+            "BW": {
+              "_magnitude": 92.7,
+              "_units": "kilogram"
+            },
+            "[KI__fpg]": {
+              "_magnitude": 11.600000000000001,
+              "_units": "KI__mmole / liter"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 1.041,
+              "_units": "dimensionless"
+            },
+            "KI__glc_urine": {
+              "_magnitude": 0.0,
+              "_units": "KI__mmole"
+            },
+            "PODOSE_can": {
+              "_magnitude": 400,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        },
+        {
+          "start": 0,
+          "end": 1440,
+          "steps": 500,
+          "changes": {
+            "BW": {
+              "_magnitude": 92.7,
+              "_units": "kilogram"
+            },
+            "[KI__fpg]": {
+              "_magnitude": 11.600000000000001,
+              "_units": "KI__mmole / liter"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 1.041,
+              "_units": "dimensionless"
+            },
+            "KI__glc_urine": {
+              "_magnitude": 0.0,
+              "_units": "KI__mmole"
+            },
+            "PODOSE_can": {
+              "_magnitude": 400,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        },
+        {
+          "start": 0,
+          "end": 1440,
+          "steps": 500,
+          "changes": {
+            "BW": {
+              "_magnitude": 92.7,
+              "_units": "kilogram"
+            },
+            "[KI__fpg]": {
+              "_magnitude": 11.600000000000001,
+              "_units": "KI__mmole / liter"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 1.041,
+              "_units": "dimensionless"
+            },
+            "KI__glc_urine": {
+              "_magnitude": 0.0,
+              "_units": "KI__mmole"
+            },
+            "PODOSE_can": {
+              "_magnitude": 400,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        },
+        {
+          "start": 0,
+          "end": 4320,
+          "steps": 500,
+          "changes": {
+            "BW": {
+              "_magnitude": 92.7,
+              "_units": "kilogram"
+            },
+            "[KI__fpg]": {
+              "_magnitude": 11.600000000000001,
+              "_units": "KI__mmole / liter"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 1.041,
+              "_units": "dimensionless"
+            },
+            "KI__glc_urine": {
+              "_magnitude": 0.0,
+              "_units": "KI__mmole"
+            },
+            "PODOSE_can": {
+              "_magnitude": 400,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        }
+      ]
+    }
+  },
+  "data": {
+    "task_po_can0_multi__time": {
+      "type": "TASK",
+      "index": "time",
+      "unit": null,
+      "task": "task_po_can0_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can0_multi__IVDOSE_can": {
+      "type": "TASK",
+      "index": "IVDOSE_can",
+      "unit": null,
+      "task": "task_po_can0_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can0_multi__PODOSE_can": {
+      "type": "TASK",
+      "index": "PODOSE_can",
+      "unit": null,
+      "task": "task_po_can0_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can0_multi__Cve_can": {
+      "type": "TASK",
+      "index": "Cve_can",
+      "unit": null,
+      "task": "task_po_can0_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can0_multi__Cve_cantot": {
+      "type": "TASK",
+      "index": "Cve_cantot",
+      "unit": null,
+      "task": "task_po_can0_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can0_multi__Cve_m5": {
+      "type": "TASK",
+      "index": "Cve_m5",
+      "unit": null,
+      "task": "task_po_can0_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can0_multi__Cve_m7": {
+      "type": "TASK",
+      "index": "Cve_m7",
+      "unit": null,
+      "task": "task_po_can0_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can0_multi__KI__fpg": {
+      "type": "TASK",
+      "index": "KI__fpg",
+      "unit": null,
+      "task": "task_po_can0_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can0_multi__Aurine_can": {
+      "type": "TASK",
+      "index": "Aurine_can",
+      "unit": null,
+      "task": "task_po_can0_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can0_multi__Aurine_cantot": {
+      "type": "TASK",
+      "index": "Aurine_cantot",
+      "unit": null,
+      "task": "task_po_can0_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can0_multi__Aurine_m7": {
+      "type": "TASK",
+      "index": "Aurine_m7",
+      "unit": null,
+      "task": "task_po_can0_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can0_multi__Aurine_m5": {
+      "type": "TASK",
+      "index": "Aurine_m5",
+      "unit": null,
+      "task": "task_po_can0_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can0_multi__KI__glc_urine": {
+      "type": "TASK",
+      "index": "KI__glc_urine",
+      "unit": null,
+      "task": "task_po_can0_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can0_multi__KI__GLCEX": {
+      "type": "TASK",
+      "index": "KI__GLCEX",
+      "unit": null,
+      "task": "task_po_can0_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can0_multi__KI__UGE": {
+      "type": "TASK",
+      "index": "KI__UGE",
+      "unit": null,
+      "task": "task_po_can0_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can0_multi__KI__RTG": {
+      "type": "TASK",
+      "index": "KI__RTG",
+      "unit": null,
+      "task": "task_po_can0_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can0_multi__Afeces_can": {
+      "type": "TASK",
+      "index": "Afeces_can",
+      "unit": null,
+      "task": "task_po_can0_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can0_multi__Afeces_m7": {
+      "type": "TASK",
+      "index": "Afeces_m7",
+      "unit": null,
+      "task": "task_po_can0_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can0_multi__Afeces_m9": {
+      "type": "TASK",
+      "index": "Afeces_m9",
+      "unit": null,
+      "task": "task_po_can0_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can0_multi__Afeces_cantot": {
+      "type": "TASK",
+      "index": "Afeces_cantot",
+      "unit": null,
+      "task": "task_po_can0_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can0_multi__KI__CANEX": {
+      "type": "TASK",
+      "index": "KI__CANEX",
+      "unit": null,
+      "task": "task_po_can0_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can0_multi__KI__f_renal_function": {
+      "type": "TASK",
+      "index": "KI__f_renal_function",
+      "unit": null,
+      "task": "task_po_can0_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can0_multi__f_cirrhosis": {
+      "type": "TASK",
+      "index": "f_cirrhosis",
+      "unit": null,
+      "task": "task_po_can0_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can0_multi__GU__f_absorption": {
+      "type": "TASK",
+      "index": "GU__f_absorption",
+      "unit": null,
+      "task": "task_po_can0_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can300_BID_multi__time": {
+      "type": "TASK",
+      "index": "time",
+      "unit": null,
+      "task": "task_po_can300_BID_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can300_BID_multi__IVDOSE_can": {
+      "type": "TASK",
+      "index": "IVDOSE_can",
+      "unit": null,
+      "task": "task_po_can300_BID_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can300_BID_multi__PODOSE_can": {
+      "type": "TASK",
+      "index": "PODOSE_can",
+      "unit": null,
+      "task": "task_po_can300_BID_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can300_BID_multi__Cve_can": {
+      "type": "TASK",
+      "index": "Cve_can",
+      "unit": null,
+      "task": "task_po_can300_BID_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can300_BID_multi__Cve_cantot": {
+      "type": "TASK",
+      "index": "Cve_cantot",
+      "unit": null,
+      "task": "task_po_can300_BID_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can300_BID_multi__Cve_m5": {
+      "type": "TASK",
+      "index": "Cve_m5",
+      "unit": null,
+      "task": "task_po_can300_BID_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can300_BID_multi__Cve_m7": {
+      "type": "TASK",
+      "index": "Cve_m7",
+      "unit": null,
+      "task": "task_po_can300_BID_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can300_BID_multi__KI__fpg": {
+      "type": "TASK",
+      "index": "KI__fpg",
+      "unit": null,
+      "task": "task_po_can300_BID_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can300_BID_multi__Aurine_can": {
+      "type": "TASK",
+      "index": "Aurine_can",
+      "unit": null,
+      "task": "task_po_can300_BID_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can300_BID_multi__Aurine_cantot": {
+      "type": "TASK",
+      "index": "Aurine_cantot",
+      "unit": null,
+      "task": "task_po_can300_BID_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can300_BID_multi__Aurine_m7": {
+      "type": "TASK",
+      "index": "Aurine_m7",
+      "unit": null,
+      "task": "task_po_can300_BID_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can300_BID_multi__Aurine_m5": {
+      "type": "TASK",
+      "index": "Aurine_m5",
+      "unit": null,
+      "task": "task_po_can300_BID_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can300_BID_multi__KI__glc_urine": {
+      "type": "TASK",
+      "index": "KI__glc_urine",
+      "unit": null,
+      "task": "task_po_can300_BID_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can300_BID_multi__KI__GLCEX": {
+      "type": "TASK",
+      "index": "KI__GLCEX",
+      "unit": null,
+      "task": "task_po_can300_BID_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can300_BID_multi__KI__UGE": {
+      "type": "TASK",
+      "index": "KI__UGE",
+      "unit": null,
+      "task": "task_po_can300_BID_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can300_BID_multi__KI__RTG": {
+      "type": "TASK",
+      "index": "KI__RTG",
+      "unit": null,
+      "task": "task_po_can300_BID_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can300_BID_multi__Afeces_can": {
+      "type": "TASK",
+      "index": "Afeces_can",
+      "unit": null,
+      "task": "task_po_can300_BID_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can300_BID_multi__Afeces_m7": {
+      "type": "TASK",
+      "index": "Afeces_m7",
+      "unit": null,
+      "task": "task_po_can300_BID_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can300_BID_multi__Afeces_m9": {
+      "type": "TASK",
+      "index": "Afeces_m9",
+      "unit": null,
+      "task": "task_po_can300_BID_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can300_BID_multi__Afeces_cantot": {
+      "type": "TASK",
+      "index": "Afeces_cantot",
+      "unit": null,
+      "task": "task_po_can300_BID_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can300_BID_multi__KI__CANEX": {
+      "type": "TASK",
+      "index": "KI__CANEX",
+      "unit": null,
+      "task": "task_po_can300_BID_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can300_BID_multi__KI__f_renal_function": {
+      "type": "TASK",
+      "index": "KI__f_renal_function",
+      "unit": null,
+      "task": "task_po_can300_BID_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can300_BID_multi__f_cirrhosis": {
+      "type": "TASK",
+      "index": "f_cirrhosis",
+      "unit": null,
+      "task": "task_po_can300_BID_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can300_BID_multi__GU__f_absorption": {
+      "type": "TASK",
+      "index": "GU__f_absorption",
+      "unit": null,
+      "task": "task_po_can300_BID_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can30_multi__time": {
+      "type": "TASK",
+      "index": "time",
+      "unit": null,
+      "task": "task_po_can30_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can30_multi__IVDOSE_can": {
+      "type": "TASK",
+      "index": "IVDOSE_can",
+      "unit": null,
+      "task": "task_po_can30_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can30_multi__PODOSE_can": {
+      "type": "TASK",
+      "index": "PODOSE_can",
+      "unit": null,
+      "task": "task_po_can30_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can30_multi__Cve_can": {
+      "type": "TASK",
+      "index": "Cve_can",
+      "unit": null,
+      "task": "task_po_can30_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can30_multi__Cve_cantot": {
+      "type": "TASK",
+      "index": "Cve_cantot",
+      "unit": null,
+      "task": "task_po_can30_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can30_multi__Cve_m5": {
+      "type": "TASK",
+      "index": "Cve_m5",
+      "unit": null,
+      "task": "task_po_can30_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can30_multi__Cve_m7": {
+      "type": "TASK",
+      "index": "Cve_m7",
+      "unit": null,
+      "task": "task_po_can30_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can30_multi__KI__fpg": {
+      "type": "TASK",
+      "index": "KI__fpg",
+      "unit": null,
+      "task": "task_po_can30_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can30_multi__Aurine_can": {
+      "type": "TASK",
+      "index": "Aurine_can",
+      "unit": null,
+      "task": "task_po_can30_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can30_multi__Aurine_cantot": {
+      "type": "TASK",
+      "index": "Aurine_cantot",
+      "unit": null,
+      "task": "task_po_can30_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can30_multi__Aurine_m7": {
+      "type": "TASK",
+      "index": "Aurine_m7",
+      "unit": null,
+      "task": "task_po_can30_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can30_multi__Aurine_m5": {
+      "type": "TASK",
+      "index": "Aurine_m5",
+      "unit": null,
+      "task": "task_po_can30_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can30_multi__KI__glc_urine": {
+      "type": "TASK",
+      "index": "KI__glc_urine",
+      "unit": null,
+      "task": "task_po_can30_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can30_multi__KI__GLCEX": {
+      "type": "TASK",
+      "index": "KI__GLCEX",
+      "unit": null,
+      "task": "task_po_can30_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can30_multi__KI__UGE": {
+      "type": "TASK",
+      "index": "KI__UGE",
+      "unit": null,
+      "task": "task_po_can30_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can30_multi__KI__RTG": {
+      "type": "TASK",
+      "index": "KI__RTG",
+      "unit": null,
+      "task": "task_po_can30_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can30_multi__Afeces_can": {
+      "type": "TASK",
+      "index": "Afeces_can",
+      "unit": null,
+      "task": "task_po_can30_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can30_multi__Afeces_m7": {
+      "type": "TASK",
+      "index": "Afeces_m7",
+      "unit": null,
+      "task": "task_po_can30_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can30_multi__Afeces_m9": {
+      "type": "TASK",
+      "index": "Afeces_m9",
+      "unit": null,
+      "task": "task_po_can30_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can30_multi__Afeces_cantot": {
+      "type": "TASK",
+      "index": "Afeces_cantot",
+      "unit": null,
+      "task": "task_po_can30_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can30_multi__KI__CANEX": {
+      "type": "TASK",
+      "index": "KI__CANEX",
+      "unit": null,
+      "task": "task_po_can30_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can30_multi__KI__f_renal_function": {
+      "type": "TASK",
+      "index": "KI__f_renal_function",
+      "unit": null,
+      "task": "task_po_can30_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can30_multi__f_cirrhosis": {
+      "type": "TASK",
+      "index": "f_cirrhosis",
+      "unit": null,
+      "task": "task_po_can30_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can30_multi__GU__f_absorption": {
+      "type": "TASK",
+      "index": "GU__f_absorption",
+      "unit": null,
+      "task": "task_po_can30_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can100_multi__time": {
+      "type": "TASK",
+      "index": "time",
+      "unit": null,
+      "task": "task_po_can100_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can100_multi__IVDOSE_can": {
+      "type": "TASK",
+      "index": "IVDOSE_can",
+      "unit": null,
+      "task": "task_po_can100_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can100_multi__PODOSE_can": {
+      "type": "TASK",
+      "index": "PODOSE_can",
+      "unit": null,
+      "task": "task_po_can100_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can100_multi__Cve_can": {
+      "type": "TASK",
+      "index": "Cve_can",
+      "unit": null,
+      "task": "task_po_can100_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can100_multi__Cve_cantot": {
+      "type": "TASK",
+      "index": "Cve_cantot",
+      "unit": null,
+      "task": "task_po_can100_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can100_multi__Cve_m5": {
+      "type": "TASK",
+      "index": "Cve_m5",
+      "unit": null,
+      "task": "task_po_can100_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can100_multi__Cve_m7": {
+      "type": "TASK",
+      "index": "Cve_m7",
+      "unit": null,
+      "task": "task_po_can100_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can100_multi__KI__fpg": {
+      "type": "TASK",
+      "index": "KI__fpg",
+      "unit": null,
+      "task": "task_po_can100_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can100_multi__Aurine_can": {
+      "type": "TASK",
+      "index": "Aurine_can",
+      "unit": null,
+      "task": "task_po_can100_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can100_multi__Aurine_cantot": {
+      "type": "TASK",
+      "index": "Aurine_cantot",
+      "unit": null,
+      "task": "task_po_can100_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can100_multi__Aurine_m7": {
+      "type": "TASK",
+      "index": "Aurine_m7",
+      "unit": null,
+      "task": "task_po_can100_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can100_multi__Aurine_m5": {
+      "type": "TASK",
+      "index": "Aurine_m5",
+      "unit": null,
+      "task": "task_po_can100_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can100_multi__KI__glc_urine": {
+      "type": "TASK",
+      "index": "KI__glc_urine",
+      "unit": null,
+      "task": "task_po_can100_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can100_multi__KI__GLCEX": {
+      "type": "TASK",
+      "index": "KI__GLCEX",
+      "unit": null,
+      "task": "task_po_can100_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can100_multi__KI__UGE": {
+      "type": "TASK",
+      "index": "KI__UGE",
+      "unit": null,
+      "task": "task_po_can100_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can100_multi__KI__RTG": {
+      "type": "TASK",
+      "index": "KI__RTG",
+      "unit": null,
+      "task": "task_po_can100_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can100_multi__Afeces_can": {
+      "type": "TASK",
+      "index": "Afeces_can",
+      "unit": null,
+      "task": "task_po_can100_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can100_multi__Afeces_m7": {
+      "type": "TASK",
+      "index": "Afeces_m7",
+      "unit": null,
+      "task": "task_po_can100_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can100_multi__Afeces_m9": {
+      "type": "TASK",
+      "index": "Afeces_m9",
+      "unit": null,
+      "task": "task_po_can100_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can100_multi__Afeces_cantot": {
+      "type": "TASK",
+      "index": "Afeces_cantot",
+      "unit": null,
+      "task": "task_po_can100_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can100_multi__KI__CANEX": {
+      "type": "TASK",
+      "index": "KI__CANEX",
+      "unit": null,
+      "task": "task_po_can100_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can100_multi__KI__f_renal_function": {
+      "type": "TASK",
+      "index": "KI__f_renal_function",
+      "unit": null,
+      "task": "task_po_can100_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can100_multi__f_cirrhosis": {
+      "type": "TASK",
+      "index": "f_cirrhosis",
+      "unit": null,
+      "task": "task_po_can100_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can100_multi__GU__f_absorption": {
+      "type": "TASK",
+      "index": "GU__f_absorption",
+      "unit": null,
+      "task": "task_po_can100_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can200_multi__time": {
+      "type": "TASK",
+      "index": "time",
+      "unit": null,
+      "task": "task_po_can200_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can200_multi__IVDOSE_can": {
+      "type": "TASK",
+      "index": "IVDOSE_can",
+      "unit": null,
+      "task": "task_po_can200_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can200_multi__PODOSE_can": {
+      "type": "TASK",
+      "index": "PODOSE_can",
+      "unit": null,
+      "task": "task_po_can200_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can200_multi__Cve_can": {
+      "type": "TASK",
+      "index": "Cve_can",
+      "unit": null,
+      "task": "task_po_can200_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can200_multi__Cve_cantot": {
+      "type": "TASK",
+      "index": "Cve_cantot",
+      "unit": null,
+      "task": "task_po_can200_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can200_multi__Cve_m5": {
+      "type": "TASK",
+      "index": "Cve_m5",
+      "unit": null,
+      "task": "task_po_can200_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can200_multi__Cve_m7": {
+      "type": "TASK",
+      "index": "Cve_m7",
+      "unit": null,
+      "task": "task_po_can200_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can200_multi__KI__fpg": {
+      "type": "TASK",
+      "index": "KI__fpg",
+      "unit": null,
+      "task": "task_po_can200_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can200_multi__Aurine_can": {
+      "type": "TASK",
+      "index": "Aurine_can",
+      "unit": null,
+      "task": "task_po_can200_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can200_multi__Aurine_cantot": {
+      "type": "TASK",
+      "index": "Aurine_cantot",
+      "unit": null,
+      "task": "task_po_can200_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can200_multi__Aurine_m7": {
+      "type": "TASK",
+      "index": "Aurine_m7",
+      "unit": null,
+      "task": "task_po_can200_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can200_multi__Aurine_m5": {
+      "type": "TASK",
+      "index": "Aurine_m5",
+      "unit": null,
+      "task": "task_po_can200_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can200_multi__KI__glc_urine": {
+      "type": "TASK",
+      "index": "KI__glc_urine",
+      "unit": null,
+      "task": "task_po_can200_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can200_multi__KI__GLCEX": {
+      "type": "TASK",
+      "index": "KI__GLCEX",
+      "unit": null,
+      "task": "task_po_can200_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can200_multi__KI__UGE": {
+      "type": "TASK",
+      "index": "KI__UGE",
+      "unit": null,
+      "task": "task_po_can200_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can200_multi__KI__RTG": {
+      "type": "TASK",
+      "index": "KI__RTG",
+      "unit": null,
+      "task": "task_po_can200_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can200_multi__Afeces_can": {
+      "type": "TASK",
+      "index": "Afeces_can",
+      "unit": null,
+      "task": "task_po_can200_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can200_multi__Afeces_m7": {
+      "type": "TASK",
+      "index": "Afeces_m7",
+      "unit": null,
+      "task": "task_po_can200_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can200_multi__Afeces_m9": {
+      "type": "TASK",
+      "index": "Afeces_m9",
+      "unit": null,
+      "task": "task_po_can200_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can200_multi__Afeces_cantot": {
+      "type": "TASK",
+      "index": "Afeces_cantot",
+      "unit": null,
+      "task": "task_po_can200_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can200_multi__KI__CANEX": {
+      "type": "TASK",
+      "index": "KI__CANEX",
+      "unit": null,
+      "task": "task_po_can200_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can200_multi__KI__f_renal_function": {
+      "type": "TASK",
+      "index": "KI__f_renal_function",
+      "unit": null,
+      "task": "task_po_can200_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can200_multi__f_cirrhosis": {
+      "type": "TASK",
+      "index": "f_cirrhosis",
+      "unit": null,
+      "task": "task_po_can200_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can200_multi__GU__f_absorption": {
+      "type": "TASK",
+      "index": "GU__f_absorption",
+      "unit": null,
+      "task": "task_po_can200_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can400_multi__time": {
+      "type": "TASK",
+      "index": "time",
+      "unit": null,
+      "task": "task_po_can400_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can400_multi__IVDOSE_can": {
+      "type": "TASK",
+      "index": "IVDOSE_can",
+      "unit": null,
+      "task": "task_po_can400_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can400_multi__PODOSE_can": {
+      "type": "TASK",
+      "index": "PODOSE_can",
+      "unit": null,
+      "task": "task_po_can400_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can400_multi__Cve_can": {
+      "type": "TASK",
+      "index": "Cve_can",
+      "unit": null,
+      "task": "task_po_can400_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can400_multi__Cve_cantot": {
+      "type": "TASK",
+      "index": "Cve_cantot",
+      "unit": null,
+      "task": "task_po_can400_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can400_multi__Cve_m5": {
+      "type": "TASK",
+      "index": "Cve_m5",
+      "unit": null,
+      "task": "task_po_can400_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can400_multi__Cve_m7": {
+      "type": "TASK",
+      "index": "Cve_m7",
+      "unit": null,
+      "task": "task_po_can400_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can400_multi__KI__fpg": {
+      "type": "TASK",
+      "index": "KI__fpg",
+      "unit": null,
+      "task": "task_po_can400_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can400_multi__Aurine_can": {
+      "type": "TASK",
+      "index": "Aurine_can",
+      "unit": null,
+      "task": "task_po_can400_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can400_multi__Aurine_cantot": {
+      "type": "TASK",
+      "index": "Aurine_cantot",
+      "unit": null,
+      "task": "task_po_can400_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can400_multi__Aurine_m7": {
+      "type": "TASK",
+      "index": "Aurine_m7",
+      "unit": null,
+      "task": "task_po_can400_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can400_multi__Aurine_m5": {
+      "type": "TASK",
+      "index": "Aurine_m5",
+      "unit": null,
+      "task": "task_po_can400_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can400_multi__KI__glc_urine": {
+      "type": "TASK",
+      "index": "KI__glc_urine",
+      "unit": null,
+      "task": "task_po_can400_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can400_multi__KI__GLCEX": {
+      "type": "TASK",
+      "index": "KI__GLCEX",
+      "unit": null,
+      "task": "task_po_can400_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can400_multi__KI__UGE": {
+      "type": "TASK",
+      "index": "KI__UGE",
+      "unit": null,
+      "task": "task_po_can400_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can400_multi__KI__RTG": {
+      "type": "TASK",
+      "index": "KI__RTG",
+      "unit": null,
+      "task": "task_po_can400_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can400_multi__Afeces_can": {
+      "type": "TASK",
+      "index": "Afeces_can",
+      "unit": null,
+      "task": "task_po_can400_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can400_multi__Afeces_m7": {
+      "type": "TASK",
+      "index": "Afeces_m7",
+      "unit": null,
+      "task": "task_po_can400_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can400_multi__Afeces_m9": {
+      "type": "TASK",
+      "index": "Afeces_m9",
+      "unit": null,
+      "task": "task_po_can400_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can400_multi__Afeces_cantot": {
+      "type": "TASK",
+      "index": "Afeces_cantot",
+      "unit": null,
+      "task": "task_po_can400_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can400_multi__KI__CANEX": {
+      "type": "TASK",
+      "index": "KI__CANEX",
+      "unit": null,
+      "task": "task_po_can400_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can400_multi__KI__f_renal_function": {
+      "type": "TASK",
+      "index": "KI__f_renal_function",
+      "unit": null,
+      "task": "task_po_can400_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can400_multi__f_cirrhosis": {
+      "type": "TASK",
+      "index": "f_cirrhosis",
+      "unit": null,
+      "task": "task_po_can400_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_can400_multi__GU__f_absorption": {
+      "type": "TASK",
+      "index": "GU__f_absorption",
+      "unit": null,
+      "task": "task_po_can400_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    }
+  },
+  "figures": {
+    "Fig_uge": {
+      "sid": "Fig_uge",
+      "name": "Sha2014 (T2DM)",
+      "num_rows": 1,
+      "num_cols": 1,
+      "width": 7.0,
+      "height": 5.0,
+      "subplots": [
+        {
+          "sid": null,
+          "name": null,
+          "plot": {
+            "sid": "Fig_uge__plot0",
+            "name": null,
+            "xaxis": {
+              "sid": "Fig_uge__plot0_xaxis",
+              "name": "time [day]",
+              "label": "time",
+              "unit": "day",
+              "scale": "LINEAR",
+              "min": null,
+              "max": null,
+              "grid": false,
+              "label_visible": true,
+              "ticks_visible": true
+            },
+            "yaxis": {
+              "sid": "Fig_uge__plot0_yaxis",
+              "name": "urinary glucose excretion\n(UGE) [g]",
+              "label": "urinary glucose excretion\n(UGE)",
+              "unit": "g",
+              "scale": "LINEAR",
+              "min": null,
+              "max": null,
+              "grid": false,
+              "label_visible": true,
+              "ticks_visible": true
+            },
+            "yaxis_right": null,
+            "legend": false,
+            "facecolor": "#ffffffff",
+            "title_visible": true,
+            "curves": [
+              {
+                "sid": "Fig_uge__plot0_curve0",
+                "name": "Sim 0 mg",
+                "x": "task_po_can0_multi__time",
+                "y": "task_po_can0_multi__KI__UGE",
+                "xerr": null,
+                "yerr": null,
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "SOLID",
+                    "color": "#000000ff",
+                    "thickness": 2.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "NONE",
+                    "fill": "#000000ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#000000ff",
+                    "second_color": null
+                  }
+                },
+                "order": 0
+              },
+              {
+                "sid": "Fig_uge__plot0_curve1",
+                "name": "Sim 0 mg",
+                "x": "task_po_can0_multi__time",
+                "y": "task_po_can0_multi__KI__UGE",
+                "xerr": null,
+                "yerr": null,
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "SOLID",
+                    "color": "#191970ff",
+                    "thickness": 2.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "NONE",
+                    "fill": "#191970ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#191970ff",
+                    "second_color": null
+                  }
+                },
+                "order": 1
+              },
+              {
+                "sid": "Fig_uge__plot0_curve2",
+                "name": "Sim 30 mg",
+                "x": "task_po_can30_multi__time",
+                "y": "task_po_can30_multi__KI__UGE",
+                "xerr": null,
+                "yerr": null,
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "SOLID",
+                    "color": "#0000FFff",
+                    "thickness": 2.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "NONE",
+                    "fill": "#0000FFff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#0000FFff",
+                    "second_color": null
+                  }
+                },
+                "order": 2
+              },
+              {
+                "sid": "Fig_uge__plot0_curve3",
+                "name": "Sim 30 mg",
+                "x": "task_po_can30_multi__time",
+                "y": "task_po_can30_multi__KI__UGE",
+                "xerr": null,
+                "yerr": null,
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "SOLID",
+                    "color": "#6495EDff",
+                    "thickness": 2.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "NONE",
+                    "fill": "#6495EDff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#6495EDff",
+                    "second_color": null
+                  }
+                },
+                "order": 3
+              },
+              {
+                "sid": "Fig_uge__plot0_curve4",
+                "name": "Sim 100 mg",
+                "x": "task_po_can100_multi__time",
+                "y": "task_po_can100_multi__KI__UGE",
+                "xerr": null,
+                "yerr": null,
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "SOLID",
+                    "color": "#87CEEBff",
+                    "thickness": 2.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "NONE",
+                    "fill": "#87CEEBff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#87CEEBff",
+                    "second_color": null
+                  }
+                },
+                "order": 4
+              },
+              {
+                "sid": "Fig_uge__plot0_curve5",
+                "name": "Sim 200 mg",
+                "x": "task_po_can200_multi__time",
+                "y": "task_po_can200_multi__KI__UGE",
+                "xerr": null,
+                "yerr": null,
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "SOLID",
+                    "color": "#00CED1ff",
+                    "thickness": 2.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "NONE",
+                    "fill": "#00CED1ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#00CED1ff",
+                    "second_color": null
+                  }
+                },
+                "order": 5
+              },
+              {
+                "sid": "Fig_uge__plot0_curve6",
+                "name": "Sim 400 mg",
+                "x": "task_po_can400_multi__time",
+                "y": "task_po_can400_multi__KI__UGE",
+                "xerr": null,
+                "yerr": null,
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "SOLID",
+                    "color": "#00FFFFff",
+                    "thickness": 2.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "NONE",
+                    "fill": "#00FFFFff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#00FFFFff",
+                    "second_color": null
+                  }
+                },
+                "order": 6
+              },
+              {
+                "sid": "Fig_uge__plot0_curve7",
+                "name": "UGE 0 mg\u00b1SD (n=19)",
+                "x": "glucose_cumulative_amount_PBO__time",
+                "y": "glucose_cumulative_amount_PBO__value",
+                "xerr": null,
+                "yerr": "glucose_cumulative_amount_PBO__mean_sd",
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "DASH",
+                    "color": "#000000ff",
+                    "thickness": 1.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "SQUARE",
+                    "fill": "#000000ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#000000ff",
+                    "second_color": null
+                  }
+                },
+                "order": 7
+              },
+              {
+                "sid": "Fig_uge__plot0_curve8",
+                "name": "UGE 0 mg\u00b1SD (n=4)",
+                "x": "glucose_cumulative_amount_PBO_K__time",
+                "y": "glucose_cumulative_amount_PBO_K__value",
+                "xerr": null,
+                "yerr": "glucose_cumulative_amount_PBO_K__mean_sd",
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "DASH",
+                    "color": "#191970ff",
+                    "thickness": 1.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "SQUARE",
+                    "fill": "#191970ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#191970ff",
+                    "second_color": null
+                  }
+                },
+                "order": 8
+              },
+              {
+                "sid": "Fig_uge__plot0_curve9",
+                "name": "UGE 30 mg\u00b1SD (n=16)",
+                "x": "glucose_cumulative_amount_CAN30__time",
+                "y": "glucose_cumulative_amount_CAN30__value",
+                "xerr": null,
+                "yerr": "glucose_cumulative_amount_CAN30__mean_sd",
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "DASH",
+                    "color": "#0000FFff",
+                    "thickness": 1.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "SQUARE",
+                    "fill": "#0000FFff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#0000FFff",
+                    "second_color": null
+                  }
+                },
+                "order": 9
+              },
+              {
+                "sid": "Fig_uge__plot0_curve10",
+                "name": "UGE 30 mg\u00b1SD (n=15)",
+                "x": "glucose_cumulative_amount_CAN30_K__time",
+                "y": "glucose_cumulative_amount_CAN30_K__value",
+                "xerr": null,
+                "yerr": "glucose_cumulative_amount_CAN30_K__mean_sd",
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "DASH",
+                    "color": "#6495EDff",
+                    "thickness": 1.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "SQUARE",
+                    "fill": "#6495EDff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#6495EDff",
+                    "second_color": null
+                  }
+                },
+                "order": 10
+              },
+              {
+                "sid": "Fig_uge__plot0_curve11",
+                "name": "UGE 100 mg\u00b1SD (n=16)",
+                "x": "glucose_cumulative_amount_CAN100__time",
+                "y": "glucose_cumulative_amount_CAN100__value",
+                "xerr": null,
+                "yerr": "glucose_cumulative_amount_CAN100__mean_sd",
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "DASH",
+                    "color": "#87CEEBff",
+                    "thickness": 1.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "SQUARE",
+                    "fill": "#87CEEBff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#87CEEBff",
+                    "second_color": null
+                  }
+                },
+                "order": 11
+              },
+              {
+                "sid": "Fig_uge__plot0_curve12",
+                "name": "UGE 200 mg\u00b1SD (n=16)",
+                "x": "glucose_cumulative_amount_CAN200__time",
+                "y": "glucose_cumulative_amount_CAN200__value",
+                "xerr": null,
+                "yerr": "glucose_cumulative_amount_CAN200__mean_sd",
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "DASH",
+                    "color": "#00CED1ff",
+                    "thickness": 1.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "SQUARE",
+                    "fill": "#00CED1ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#00CED1ff",
+                    "second_color": null
+                  }
+                },
+                "order": 12
+              },
+              {
+                "sid": "Fig_uge__plot0_curve13",
+                "name": "UGE 400 mg\u00b1SD (n=16)",
+                "x": "glucose_cumulative_amount_CAN400__time",
+                "y": "glucose_cumulative_amount_CAN400__value",
+                "xerr": null,
+                "yerr": "glucose_cumulative_amount_CAN400__mean_sd",
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "DASH",
+                    "color": "#00FFFFff",
+                    "thickness": 1.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "SQUARE",
+                    "fill": "#00FFFFff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#00FFFFff",
+                    "second_color": null
+                  }
+                },
+                "order": 13
+              }
+            ],
+            "areas": []
+          },
+          "row": 1,
+          "col": 1,
+          "row_span": 1,
+          "col_span": 1
+        }
+      ]
+    },
+    "Fig_uge_bid": {
+      "sid": "Fig_uge_bid",
+      "name": "Sha2014 (T2DM)",
+      "num_rows": 1,
+      "num_cols": 1,
+      "width": 7.0,
+      "height": 5.0,
+      "subplots": [
+        {
+          "sid": null,
+          "name": null,
+          "plot": {
+            "sid": "Fig_uge_bid__plot0",
+            "name": null,
+            "xaxis": {
+              "sid": "Fig_uge_bid__plot0_xaxis",
+              "name": "time [day]",
+              "label": "time",
+              "unit": "day",
+              "scale": "LINEAR",
+              "min": null,
+              "max": null,
+              "grid": false,
+              "label_visible": true,
+              "ticks_visible": true
+            },
+            "yaxis": {
+              "sid": "Fig_uge_bid__plot0_yaxis",
+              "name": "urinary glucose excretion\n(UGE) [g]",
+              "label": "urinary glucose excretion\n(UGE)",
+              "unit": "g",
+              "scale": "LINEAR",
+              "min": null,
+              "max": null,
+              "grid": false,
+              "label_visible": true,
+              "ticks_visible": true
+            },
+            "yaxis_right": null,
+            "legend": true,
+            "facecolor": "#ffffffff",
+            "title_visible": true,
+            "curves": [
+              {
+                "sid": "Fig_uge_bid__plot0_curve0",
+                "name": "Sim 300_BID mg",
+                "x": "task_po_can300_BID_multi__time",
+                "y": "task_po_can300_BID_multi__KI__UGE",
+                "xerr": null,
+                "yerr": null,
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "SOLID",
+                    "color": "#66CDAAff",
+                    "thickness": 2.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "NONE",
+                    "fill": "#66CDAAff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#66CDAAff",
+                    "second_color": null
+                  }
+                },
+                "order": 0
+              },
+              {
+                "sid": "Fig_uge_bid__plot0_curve1",
+                "name": "UGE 300_BID mg\u00b1SD (n=14)",
+                "x": "glucose_cumulative_amount_CAN300_BID__time",
+                "y": "glucose_cumulative_amount_CAN300_BID__value",
+                "xerr": null,
+                "yerr": "glucose_cumulative_amount_CAN300_BID__mean_sd",
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "DASH",
+                    "color": "#66CDAAff",
+                    "thickness": 1.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "SQUARE",
+                    "fill": "#66CDAAff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#66CDAAff",
+                    "second_color": null
+                  }
+                },
+                "order": 1
+              }
+            ],
+            "areas": []
+          },
+          "row": 1,
+          "col": 1,
+          "row_span": 1,
+          "col_span": 1
+        }
+      ]
+    },
+    "Fig_rtg": {
+      "sid": "Fig_rtg",
+      "name": "Sha2014 (T2DM)",
+      "num_rows": 1,
+      "num_cols": 1,
+      "width": 7.0,
+      "height": 5.0,
+      "subplots": [
+        {
+          "sid": null,
+          "name": null,
+          "plot": {
+            "sid": "Fig_rtg__plot0",
+            "name": null,
+            "xaxis": {
+              "sid": "Fig_rtg__plot0_xaxis",
+              "name": "time [day]",
+              "label": "time",
+              "unit": "day",
+              "scale": "LINEAR",
+              "min": null,
+              "max": null,
+              "grid": false,
+              "label_visible": true,
+              "ticks_visible": true
+            },
+            "yaxis": {
+              "sid": "Fig_rtg__plot0_yaxis",
+              "name": "renal threshold glucose\n(RTG) [mM]",
+              "label": "renal threshold glucose\n(RTG)",
+              "unit": "mM",
+              "scale": "LINEAR",
+              "min": null,
+              "max": null,
+              "grid": false,
+              "label_visible": true,
+              "ticks_visible": true
+            },
+            "yaxis_right": null,
+            "legend": false,
+            "facecolor": "#ffffffff",
+            "title_visible": true,
+            "curves": [
+              {
+                "sid": "Fig_rtg__plot0_curve0",
+                "name": "Sim 0 mg",
+                "x": "task_po_can0_multi__time",
+                "y": "task_po_can0_multi__KI__RTG",
+                "xerr": null,
+                "yerr": null,
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "SOLID",
+                    "color": "#000000ff",
+                    "thickness": 2.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "NONE",
+                    "fill": "#000000ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#000000ff",
+                    "second_color": null
+                  }
+                },
+                "order": 0
+              },
+              {
+                "sid": "Fig_rtg__plot0_curve1",
+                "name": "Sim 0 mg",
+                "x": "task_po_can0_multi__time",
+                "y": "task_po_can0_multi__KI__RTG",
+                "xerr": null,
+                "yerr": null,
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "SOLID",
+                    "color": "#191970ff",
+                    "thickness": 2.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "NONE",
+                    "fill": "#191970ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#191970ff",
+                    "second_color": null
+                  }
+                },
+                "order": 1
+              },
+              {
+                "sid": "Fig_rtg__plot0_curve2",
+                "name": "Sim 30 mg",
+                "x": "task_po_can30_multi__time",
+                "y": "task_po_can30_multi__KI__RTG",
+                "xerr": null,
+                "yerr": null,
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "SOLID",
+                    "color": "#0000FFff",
+                    "thickness": 2.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "NONE",
+                    "fill": "#0000FFff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#0000FFff",
+                    "second_color": null
+                  }
+                },
+                "order": 2
+              },
+              {
+                "sid": "Fig_rtg__plot0_curve3",
+                "name": "Sim 30 mg",
+                "x": "task_po_can30_multi__time",
+                "y": "task_po_can30_multi__KI__RTG",
+                "xerr": null,
+                "yerr": null,
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "SOLID",
+                    "color": "#6495EDff",
+                    "thickness": 2.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "NONE",
+                    "fill": "#6495EDff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#6495EDff",
+                    "second_color": null
+                  }
+                },
+                "order": 3
+              },
+              {
+                "sid": "Fig_rtg__plot0_curve4",
+                "name": "Sim 100 mg",
+                "x": "task_po_can100_multi__time",
+                "y": "task_po_can100_multi__KI__RTG",
+                "xerr": null,
+                "yerr": null,
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "SOLID",
+                    "color": "#87CEEBff",
+                    "thickness": 2.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "NONE",
+                    "fill": "#87CEEBff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#87CEEBff",
+                    "second_color": null
+                  }
+                },
+                "order": 4
+              },
+              {
+                "sid": "Fig_rtg__plot0_curve5",
+                "name": "Sim 200 mg",
+                "x": "task_po_can200_multi__time",
+                "y": "task_po_can200_multi__KI__RTG",
+                "xerr": null,
+                "yerr": null,
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "SOLID",
+                    "color": "#00CED1ff",
+                    "thickness": 2.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "NONE",
+                    "fill": "#00CED1ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#00CED1ff",
+                    "second_color": null
+                  }
+                },
+                "order": 5
+              },
+              {
+                "sid": "Fig_rtg__plot0_curve6",
+                "name": "Sim 400 mg",
+                "x": "task_po_can400_multi__time",
+                "y": "task_po_can400_multi__KI__RTG",
+                "xerr": null,
+                "yerr": null,
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "SOLID",
+                    "color": "#00FFFFff",
+                    "thickness": 2.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "NONE",
+                    "fill": "#00FFFFff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#00FFFFff",
+                    "second_color": null
+                  }
+                },
+                "order": 6
+              },
+              {
+                "sid": "Fig_rtg__plot0_curve7",
+                "name": "Sim 300_BID mg",
+                "x": "task_po_can300_BID_multi__time",
+                "y": "task_po_can300_BID_multi__KI__RTG",
+                "xerr": null,
+                "yerr": null,
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "SOLID",
+                    "color": "#66CDAAff",
+                    "thickness": 2.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "NONE",
+                    "fill": "#66CDAAff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#66CDAAff",
+                    "second_color": null
+                  }
+                },
+                "order": 7
+              },
+              {
+                "sid": "Fig_rtg__plot0_curve8",
+                "name": "RTG 0 mg\u00b1SD (n=18)",
+                "x": "glucose_renal_threshold_PBO__time",
+                "y": "glucose_renal_threshold_PBO__mean",
+                "xerr": null,
+                "yerr": "glucose_renal_threshold_PBO__mean_sd",
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "NONE",
+                    "color": "#000000ff",
+                    "thickness": 1.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "SQUARE",
+                    "fill": "#000000ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#000000ff",
+                    "second_color": null
+                  }
+                },
+                "order": 8
+              },
+              {
+                "sid": "Fig_rtg__plot0_curve9",
+                "name": "RTG 0 mg\u00b1SD (n=18)",
+                "x": "glucose_renal_threshold_PBO_K__time",
+                "y": "glucose_renal_threshold_PBO_K__mean",
+                "xerr": null,
+                "yerr": "glucose_renal_threshold_PBO_K__mean_sd",
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "NONE",
+                    "color": "#191970ff",
+                    "thickness": 1.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "SQUARE",
+                    "fill": "#191970ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#191970ff",
+                    "second_color": null
+                  }
+                },
+                "order": 9
+              },
+              {
+                "sid": "Fig_rtg__plot0_curve10",
+                "name": "RTG 30 mg\u00b1SD (n=18)",
+                "x": "glucose_renal_threshold_CAN30__time",
+                "y": "glucose_renal_threshold_CAN30__mean",
+                "xerr": null,
+                "yerr": "glucose_renal_threshold_CAN30__mean_sd",
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "NONE",
+                    "color": "#0000FFff",
+                    "thickness": 1.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "SQUARE",
+                    "fill": "#0000FFff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#0000FFff",
+                    "second_color": null
+                  }
+                },
+                "order": 10
+              },
+              {
+                "sid": "Fig_rtg__plot0_curve11",
+                "name": "RTG 30 mg\u00b1SD (n=18)",
+                "x": "glucose_renal_threshold_CAN30_K__time",
+                "y": "glucose_renal_threshold_CAN30_K__mean",
+                "xerr": null,
+                "yerr": "glucose_renal_threshold_CAN30_K__mean_sd",
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "NONE",
+                    "color": "#6495EDff",
+                    "thickness": 1.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "SQUARE",
+                    "fill": "#6495EDff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#6495EDff",
+                    "second_color": null
+                  }
+                },
+                "order": 11
+              },
+              {
+                "sid": "Fig_rtg__plot0_curve12",
+                "name": "RTG 100 mg\u00b1SD (n=18)",
+                "x": "glucose_renal_threshold_CAN100__time",
+                "y": "glucose_renal_threshold_CAN100__mean",
+                "xerr": null,
+                "yerr": "glucose_renal_threshold_CAN100__mean_sd",
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "NONE",
+                    "color": "#87CEEBff",
+                    "thickness": 1.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "SQUARE",
+                    "fill": "#87CEEBff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#87CEEBff",
+                    "second_color": null
+                  }
+                },
+                "order": 12
+              },
+              {
+                "sid": "Fig_rtg__plot0_curve13",
+                "name": "RTG 200 mg\u00b1SD (n=18)",
+                "x": "glucose_renal_threshold_CAN200__time",
+                "y": "glucose_renal_threshold_CAN200__mean",
+                "xerr": null,
+                "yerr": "glucose_renal_threshold_CAN200__mean_sd",
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "NONE",
+                    "color": "#00CED1ff",
+                    "thickness": 1.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "SQUARE",
+                    "fill": "#00CED1ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#00CED1ff",
+                    "second_color": null
+                  }
+                },
+                "order": 13
+              },
+              {
+                "sid": "Fig_rtg__plot0_curve14",
+                "name": "RTG 400 mg\u00b1SD (n=18)",
+                "x": "glucose_renal_threshold_CAN400__time",
+                "y": "glucose_renal_threshold_CAN400__mean",
+                "xerr": null,
+                "yerr": "glucose_renal_threshold_CAN400__mean_sd",
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "NONE",
+                    "color": "#00FFFFff",
+                    "thickness": 1.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "SQUARE",
+                    "fill": "#00FFFFff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#00FFFFff",
+                    "second_color": null
+                  }
+                },
+                "order": 14
+              },
+              {
+                "sid": "Fig_rtg__plot0_curve15",
+                "name": "RTG 300_BID mg\u00b1SD (n=18)",
+                "x": "glucose_renal_threshold_CAN300_BID__time",
+                "y": "glucose_renal_threshold_CAN300_BID__mean",
+                "xerr": null,
+                "yerr": "glucose_renal_threshold_CAN300_BID__mean_sd",
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "NONE",
+                    "color": "#66CDAAff",
+                    "thickness": 1.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "SQUARE",
+                    "fill": "#66CDAAff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#66CDAAff",
+                    "second_color": null
+                  }
+                },
+                "order": 15
+              }
+            ],
+            "areas": []
+          },
+          "row": 1,
+          "col": 1,
+          "row_span": 1,
+          "col_span": 1
+        }
+      ]
+    }
+  }
+}

@@ -11,11 +11,12 @@
     <notes>
       <body xmlns="http://www.w3.org/1999/xhtml">
         <h1>Canagliflozin body model</h1>
+        <p>Distribution of canagliflozin and metabolites M5 and M7 via the bloodflow.</p>
         <h2>Terms of use</h2>
         <p>The content of this model has been carefully created in a manual research effort.
 This file has been created by <a href="https://livermetabolism.com">Matthias König</a>
 using <a href="https://github.com/matthiaskoenig/sbmlutils">sbmlutils</a>.
-For questions contact <a href="mailto:koenigmx@hu-berlin.de">koenigmx@hu-berlin.de</a>. Copyright © 2024 Matthias König.</p>
+For questions contact <a href="mailto:koenigmx@hu-berlin.de">koenigmx@hu-berlin.de</a>. Copyright © 2025 Matthias König.</p>
         <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
           <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png"/>
         </a>
@@ -62,6 +63,18 @@ FOR A PARTICULAR PURPOSE.</p></body>
           <dcterms:modified rdf:parseType="Resource">
             <dcterms:W3CDTF>1900-01-01T00:00:00Z</dcterms:W3CDTF>
           </dcterms:modified>
+          <bqbiol:hasTaxon>
+            <rdf:Bag>
+              <rdf:li rdf:resource="http://identifiers.org/taxonomy/9606"/>
+              <rdf:li rdf:resource="http://identifiers.org/VTO:0011993"/>
+              <rdf:li rdf:resource="http://identifiers.org/snomed/337915000"/>
+            </rdf:Bag>
+          </bqbiol:hasTaxon>
+          <bqbiol:isDescribedBy>
+            <rdf:Bag>
+              <rdf:li rdf:resource="https://doi.org/10.5281/zenodo.13759839"/>
+            </rdf:Bag>
+          </bqbiol:isDescribedBy>
         </rdf:Description>
       </rdf:RDF>
     </annotation>
@@ -1145,6 +1158,36 @@ FOR A PARTICULAR PURPOSE.</p></body>
           </rdf:RDF>
         </annotation>
       </species>
+      <species metaid="meta_Clu_m5" sboTerm="SBO:0000247" id="Clu_m5" name="M5 (lung)" compartment="Vlu_tissue" initialConcentration="0" substanceUnits="mmole" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#meta_Clu_m5">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="http://identifiers.org/SBO:0000247"/>
+                  <rdf:li rdf:resource="http://identifiers.org/pubchem.compound/169502150"/>
+                  <rdf:li rdf:resource="http://identifiers.org/inchikey/TZIBMGFJORCASO-DUGGDNAASA-N"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+      </species>
+      <species metaid="meta_Cre_m5" sboTerm="SBO:0000247" id="Cre_m5" name="M5 (rest)" compartment="Vre_tissue" initialConcentration="0" substanceUnits="mmole" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#meta_Cre_m5">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="http://identifiers.org/SBO:0000247"/>
+                  <rdf:li rdf:resource="http://identifiers.org/pubchem.compound/169502150"/>
+                  <rdf:li rdf:resource="http://identifiers.org/inchikey/TZIBMGFJORCASO-DUGGDNAASA-N"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+      </species>
       <species metaid="meta_Aurine_m5" sboTerm="SBO:0000247" id="Aurine_m5" name="M5 (urine)" compartment="Vurine" initialConcentration="0" substanceUnits="mmole" hasOnlySubstanceUnits="true" boundaryCondition="false" constant="false">
         <annotation>
           <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
@@ -1293,6 +1336,36 @@ FOR A PARTICULAR PURPOSE.</p></body>
         <annotation>
           <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
             <rdf:Description rdf:about="#meta_Chv_m7">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="http://identifiers.org/SBO:0000247"/>
+                  <rdf:li rdf:resource="http://identifiers.org/pubchem.compound/169502148"/>
+                  <rdf:li rdf:resource="http://identifiers.org/inchikey/TYOYRLJPOYQWCE-OGMAXQODSA-N"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+      </species>
+      <species metaid="meta_Clu_m7" sboTerm="SBO:0000247" id="Clu_m7" name="M7 (lung)" compartment="Vlu_tissue" initialConcentration="0" substanceUnits="mmole" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#meta_Clu_m7">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="http://identifiers.org/SBO:0000247"/>
+                  <rdf:li rdf:resource="http://identifiers.org/pubchem.compound/169502148"/>
+                  <rdf:li rdf:resource="http://identifiers.org/inchikey/TYOYRLJPOYQWCE-OGMAXQODSA-N"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+      </species>
+      <species metaid="meta_Cre_m7" sboTerm="SBO:0000247" id="Cre_m7" name="M7 (rest)" compartment="Vre_tissue" initialConcentration="0" substanceUnits="mmole" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#meta_Cre_m7">
               <bqbiol:is>
                 <rdf:Bag>
                   <rdf:li rdf:resource="http://identifiers.org/SBO:0000247"/>
@@ -1909,7 +1982,7 @@ with FQgu=0.146, FQsp=0.017, FQpa=0.017</p>
           </rdf:RDF>
         </annotation>
       </parameter>
-      <parameter metaid="meta_ftissue_can" sboTerm="SBO:0000002" id="ftissue_can" name="tissue distribution can" value="0.165229545014157" units="l_per_min" constant="true">
+      <parameter metaid="meta_ftissue_can" sboTerm="SBO:0000002" id="ftissue_can" name="tissue distribution can" value="0.136901686327911" units="l_per_min" constant="true">
         <annotation>
           <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
             <rdf:Description rdf:about="#meta_ftissue_can">
@@ -1922,7 +1995,7 @@ with FQgu=0.146, FQsp=0.017, FQpa=0.017</p>
           </rdf:RDF>
         </annotation>
       </parameter>
-      <parameter metaid="meta_Kp_can" sboTerm="SBO:0000002" id="Kp_can" name="tissue/plasma partition coefficient can" value="1.00006647976807" units="dimensionless" constant="true">
+      <parameter metaid="meta_Kp_can" sboTerm="SBO:0000002" id="Kp_can" name="tissue/plasma partition coefficient can" value="1.00013863943875" units="dimensionless" constant="true">
         <annotation>
           <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
             <rdf:Description rdf:about="#meta_Kp_can">
@@ -2013,6 +2086,32 @@ with FQgu=0.146, FQsp=0.017, FQpa=0.017</p>
           </rdf:RDF>
         </annotation>
       </parameter>
+      <parameter metaid="meta_ftissue_m5" sboTerm="SBO:0000002" id="ftissue_m5" name="tissue distribution m5" value="0.00312771270926516" units="l_per_min" constant="true">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#meta_ftissue_m5">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="http://identifiers.org/SBO:0000002"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+      </parameter>
+      <parameter metaid="meta_Kp_m5" sboTerm="SBO:0000002" id="Kp_m5" name="tissue/plasma partition coefficient m5" value="11.5889029190723" units="dimensionless" constant="true">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#meta_Kp_m5">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="http://identifiers.org/SBO:0000002"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+      </parameter>
       <parameter metaid="meta_Mr_m7" sboTerm="SBO:0000647" id="Mr_m7" name="Molecular weight m7 [g/mole]" value="620.6" units="g_per_mole" constant="true">
         <annotation>
           <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
@@ -2026,6 +2125,32 @@ with FQgu=0.146, FQsp=0.017, FQpa=0.017</p>
           </rdf:RDF>
         </annotation>
       </parameter>
+      <parameter metaid="meta_ftissue_m7" sboTerm="SBO:0000002" id="ftissue_m7" name="tissue distribution m7" value="0.000100273331452754" units="l_per_min" constant="true">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#meta_ftissue_m7">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="http://identifiers.org/SBO:0000002"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+      </parameter>
+      <parameter metaid="meta_Kp_m7" sboTerm="SBO:0000002" id="Kp_m7" name="tissue/plasma partition coefficient m7" value="217.431752656108" units="dimensionless" constant="true">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#meta_Kp_m7">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="http://identifiers.org/SBO:0000002"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+      </parameter>
       <parameter id="Qgu" name="gut blood flow" value="NaN" units="l_per_min" constant="false"/>
       <parameter id="Qki" name="kidney blood flow" value="NaN" units="l_per_min" constant="false"/>
       <parameter id="Qh" name="hepatic (venous side) blood flow" value="NaN" units="l_per_min" constant="false"/>
@@ -2033,92 +2158,6 @@ with FQgu=0.146, FQsp=0.017, FQpa=0.017</p>
       <parameter id="Qlu" name="lung blood flow" value="NaN" units="l_per_min" constant="false"/>
       <parameter id="Qre" name="rest of body blood flow" value="NaN" units="l_per_min" constant="false"/>
       <parameter id="Qpo" name="portal blood flow" value="NaN" units="l_per_min" constant="false"/>
-      <parameter id="Aki_plasma_can" name="canagliflozin amount (kidney) [mmole]" value="NaN" units="mmole" constant="false"/>
-      <parameter id="Xki_plasma_can" name="canagliflozin amount (kidney) [mg]" value="NaN" units="mg" constant="false"/>
-      <parameter id="Mki_plasma_can" name="canagliflozin concentration (kidney) [mg/l]" value="NaN" units="mg_per_l" constant="false"/>
-      <parameter id="Ali_plasma_can" name="canagliflozin amount (liver) [mmole]" value="NaN" units="mmole" constant="false"/>
-      <parameter id="Xli_plasma_can" name="canagliflozin amount (liver) [mg]" value="NaN" units="mg" constant="false"/>
-      <parameter id="Mli_plasma_can" name="canagliflozin concentration (liver) [mg/l]" value="NaN" units="mg_per_l" constant="false"/>
-      <parameter id="Alu_plasma_can" name="canagliflozin amount (lung) [mmole]" value="NaN" units="mmole" constant="false"/>
-      <parameter id="Xlu_plasma_can" name="canagliflozin amount (lung) [mg]" value="NaN" units="mg" constant="false"/>
-      <parameter id="Mlu_plasma_can" name="canagliflozin concentration (lung) [mg/l]" value="NaN" units="mg_per_l" constant="false"/>
-      <parameter id="Agu_plasma_can" name="canagliflozin amount (gut) [mmole]" value="NaN" units="mmole" constant="false"/>
-      <parameter id="Xgu_plasma_can" name="canagliflozin amount (gut) [mg]" value="NaN" units="mg" constant="false"/>
-      <parameter id="Mgu_plasma_can" name="canagliflozin concentration (gut) [mg/l]" value="NaN" units="mg_per_l" constant="false"/>
-      <parameter id="Are_plasma_can" name="canagliflozin amount (rest) [mmole]" value="NaN" units="mmole" constant="false"/>
-      <parameter id="Xre_plasma_can" name="canagliflozin amount (rest) [mg]" value="NaN" units="mg" constant="false"/>
-      <parameter id="Mre_plasma_can" name="canagliflozin concentration (rest) [mg/l]" value="NaN" units="mg_per_l" constant="false"/>
-      <parameter id="Aar_can" name="canagliflozin amount (arterial blood) [mmole]" value="NaN" units="mmole" constant="false"/>
-      <parameter id="Xar_can" name="canagliflozin amount (arterial blood) [mg]" value="NaN" units="mg" constant="false"/>
-      <parameter id="Mar_can" name="canagliflozin concentration (arterial blood) [mg/l]" value="NaN" units="mg_per_l" constant="false"/>
-      <parameter id="Ave_can" name="canagliflozin amount (venous blood) [mmole]" value="NaN" units="mmole" constant="false"/>
-      <parameter id="Xve_can" name="canagliflozin amount (venous blood) [mg]" value="NaN" units="mg" constant="false"/>
-      <parameter id="Mve_can" name="canagliflozin concentration (venous blood) [mg/l]" value="NaN" units="mg_per_l" constant="false"/>
-      <parameter id="Apo_can" name="canagliflozin amount (portal vein) [mmole]" value="NaN" units="mmole" constant="false"/>
-      <parameter id="Xpo_can" name="canagliflozin amount (portal vein) [mg]" value="NaN" units="mg" constant="false"/>
-      <parameter id="Mpo_can" name="canagliflozin concentration (portal vein) [mg/l]" value="NaN" units="mg_per_l" constant="false"/>
-      <parameter id="Ahv_can" name="canagliflozin amount (hepatic vein) [mmole]" value="NaN" units="mmole" constant="false"/>
-      <parameter id="Xhv_can" name="canagliflozin amount (hepatic vein) [mg]" value="NaN" units="mg" constant="false"/>
-      <parameter id="Mhv_can" name="canagliflozin concentration (hepatic vein) [mg/l]" value="NaN" units="mg_per_l" constant="false"/>
-      <parameter id="Xurine_can" name="canagliflozin amount (urine) [mg]" value="NaN" units="mg" constant="false"/>
-      <parameter id="Xfeces_can" name="canagliflozin amount (feces)" value="NaN" units="mg" constant="false"/>
-      <parameter id="Aki_plasma_m5" name="M5 amount (kidney) [mmole]" value="NaN" units="mmole" constant="false"/>
-      <parameter id="Xki_plasma_m5" name="M5 amount (kidney) [mg]" value="NaN" units="mg" constant="false"/>
-      <parameter id="Mki_plasma_m5" name="M5 concentration (kidney) [mg/l]" value="NaN" units="mg_per_l" constant="false"/>
-      <parameter id="Ali_plasma_m5" name="M5 amount (liver) [mmole]" value="NaN" units="mmole" constant="false"/>
-      <parameter id="Xli_plasma_m5" name="M5 amount (liver) [mg]" value="NaN" units="mg" constant="false"/>
-      <parameter id="Mli_plasma_m5" name="M5 concentration (liver) [mg/l]" value="NaN" units="mg_per_l" constant="false"/>
-      <parameter id="Alu_plasma_m5" name="M5 amount (lung) [mmole]" value="NaN" units="mmole" constant="false"/>
-      <parameter id="Xlu_plasma_m5" name="M5 amount (lung) [mg]" value="NaN" units="mg" constant="false"/>
-      <parameter id="Mlu_plasma_m5" name="M5 concentration (lung) [mg/l]" value="NaN" units="mg_per_l" constant="false"/>
-      <parameter id="Agu_plasma_m5" name="M5 amount (gut) [mmole]" value="NaN" units="mmole" constant="false"/>
-      <parameter id="Xgu_plasma_m5" name="M5 amount (gut) [mg]" value="NaN" units="mg" constant="false"/>
-      <parameter id="Mgu_plasma_m5" name="M5 concentration (gut) [mg/l]" value="NaN" units="mg_per_l" constant="false"/>
-      <parameter id="Are_plasma_m5" name="M5 amount (rest) [mmole]" value="NaN" units="mmole" constant="false"/>
-      <parameter id="Xre_plasma_m5" name="M5 amount (rest) [mg]" value="NaN" units="mg" constant="false"/>
-      <parameter id="Mre_plasma_m5" name="M5 concentration (rest) [mg/l]" value="NaN" units="mg_per_l" constant="false"/>
-      <parameter id="Aar_m5" name="M5 amount (arterial blood) [mmole]" value="NaN" units="mmole" constant="false"/>
-      <parameter id="Xar_m5" name="M5 amount (arterial blood) [mg]" value="NaN" units="mg" constant="false"/>
-      <parameter id="Mar_m5" name="M5 concentration (arterial blood) [mg/l]" value="NaN" units="mg_per_l" constant="false"/>
-      <parameter id="Ave_m5" name="M5 amount (venous blood) [mmole]" value="NaN" units="mmole" constant="false"/>
-      <parameter id="Xve_m5" name="M5 amount (venous blood) [mg]" value="NaN" units="mg" constant="false"/>
-      <parameter id="Mve_m5" name="M5 concentration (venous blood) [mg/l]" value="NaN" units="mg_per_l" constant="false"/>
-      <parameter id="Apo_m5" name="M5 amount (portal vein) [mmole]" value="NaN" units="mmole" constant="false"/>
-      <parameter id="Xpo_m5" name="M5 amount (portal vein) [mg]" value="NaN" units="mg" constant="false"/>
-      <parameter id="Mpo_m5" name="M5 concentration (portal vein) [mg/l]" value="NaN" units="mg_per_l" constant="false"/>
-      <parameter id="Ahv_m5" name="M5 amount (hepatic vein) [mmole]" value="NaN" units="mmole" constant="false"/>
-      <parameter id="Xhv_m5" name="M5 amount (hepatic vein) [mg]" value="NaN" units="mg" constant="false"/>
-      <parameter id="Mhv_m5" name="M5 concentration (hepatic vein) [mg/l]" value="NaN" units="mg_per_l" constant="false"/>
-      <parameter id="Xurine_m5" name="M5 amount (urine) [mg]" value="NaN" units="mg" constant="false"/>
-      <parameter id="Aki_plasma_m7" name="M7 amount (kidney) [mmole]" value="NaN" units="mmole" constant="false"/>
-      <parameter id="Xki_plasma_m7" name="M7 amount (kidney) [mg]" value="NaN" units="mg" constant="false"/>
-      <parameter id="Mki_plasma_m7" name="M7 concentration (kidney) [mg/l]" value="NaN" units="mg_per_l" constant="false"/>
-      <parameter id="Ali_plasma_m7" name="M7 amount (liver) [mmole]" value="NaN" units="mmole" constant="false"/>
-      <parameter id="Xli_plasma_m7" name="M7 amount (liver) [mg]" value="NaN" units="mg" constant="false"/>
-      <parameter id="Mli_plasma_m7" name="M7 concentration (liver) [mg/l]" value="NaN" units="mg_per_l" constant="false"/>
-      <parameter id="Alu_plasma_m7" name="M7 amount (lung) [mmole]" value="NaN" units="mmole" constant="false"/>
-      <parameter id="Xlu_plasma_m7" name="M7 amount (lung) [mg]" value="NaN" units="mg" constant="false"/>
-      <parameter id="Mlu_plasma_m7" name="M7 concentration (lung) [mg/l]" value="NaN" units="mg_per_l" constant="false"/>
-      <parameter id="Agu_plasma_m7" name="M7 amount (gut) [mmole]" value="NaN" units="mmole" constant="false"/>
-      <parameter id="Xgu_plasma_m7" name="M7 amount (gut) [mg]" value="NaN" units="mg" constant="false"/>
-      <parameter id="Mgu_plasma_m7" name="M7 concentration (gut) [mg/l]" value="NaN" units="mg_per_l" constant="false"/>
-      <parameter id="Are_plasma_m7" name="M7 amount (rest) [mmole]" value="NaN" units="mmole" constant="false"/>
-      <parameter id="Xre_plasma_m7" name="M7 amount (rest) [mg]" value="NaN" units="mg" constant="false"/>
-      <parameter id="Mre_plasma_m7" name="M7 concentration (rest) [mg/l]" value="NaN" units="mg_per_l" constant="false"/>
-      <parameter id="Aar_m7" name="M7 amount (arterial blood) [mmole]" value="NaN" units="mmole" constant="false"/>
-      <parameter id="Xar_m7" name="M7 amount (arterial blood) [mg]" value="NaN" units="mg" constant="false"/>
-      <parameter id="Mar_m7" name="M7 concentration (arterial blood) [mg/l]" value="NaN" units="mg_per_l" constant="false"/>
-      <parameter id="Ave_m7" name="M7 amount (venous blood) [mmole]" value="NaN" units="mmole" constant="false"/>
-      <parameter id="Xve_m7" name="M7 amount (venous blood) [mg]" value="NaN" units="mg" constant="false"/>
-      <parameter id="Mve_m7" name="M7 concentration (venous blood) [mg/l]" value="NaN" units="mg_per_l" constant="false"/>
-      <parameter id="Apo_m7" name="M7 amount (portal vein) [mmole]" value="NaN" units="mmole" constant="false"/>
-      <parameter id="Xpo_m7" name="M7 amount (portal vein) [mg]" value="NaN" units="mg" constant="false"/>
-      <parameter id="Mpo_m7" name="M7 concentration (portal vein) [mg/l]" value="NaN" units="mg_per_l" constant="false"/>
-      <parameter id="Ahv_m7" name="M7 amount (hepatic vein) [mmole]" value="NaN" units="mmole" constant="false"/>
-      <parameter id="Xhv_m7" name="M7 amount (hepatic vein) [mg]" value="NaN" units="mg" constant="false"/>
-      <parameter id="Mhv_m7" name="M7 concentration (hepatic vein) [mg/l]" value="NaN" units="mg_per_l" constant="false"/>
-      <parameter id="Xurine_m7" name="M7 amount (urine) [mg]" value="NaN" units="mg" constant="false"/>
-      <parameter id="Xfeces_m7" name="M7 amount (feces)" value="NaN" units="mg" constant="false"/>
     </listOfParameters>
     <listOfRules>
       <assignmentRule variable="f_shunts">
@@ -2663,888 +2702,6 @@ injection rate.</p>
           </apply>
         </math>
       </assignmentRule>
-      <assignmentRule name="canagliflozin amount (kidney) [mmole]" variable="Aki_plasma_can">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <ci> Cki_plasma_can </ci>
-            <ci> Vki_plasma </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="canagliflozin amount (kidney) [mg]" variable="Xki_plasma_can">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <ci> Aki_plasma_can </ci>
-            <ci> Mr_can </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="canagliflozin concentration (kidney) [mg/l]" variable="Mki_plasma_can">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <apply>
-              <divide/>
-              <ci> Aki_plasma_can </ci>
-              <ci> Vki_plasma </ci>
-            </apply>
-            <ci> Mr_can </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="canagliflozin amount (liver) [mmole]" variable="Ali_plasma_can">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <ci> Cli_plasma_can </ci>
-            <ci> Vli_plasma </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="canagliflozin amount (liver) [mg]" variable="Xli_plasma_can">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <ci> Ali_plasma_can </ci>
-            <ci> Mr_can </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="canagliflozin concentration (liver) [mg/l]" variable="Mli_plasma_can">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <apply>
-              <divide/>
-              <ci> Ali_plasma_can </ci>
-              <ci> Vli_plasma </ci>
-            </apply>
-            <ci> Mr_can </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="canagliflozin amount (lung) [mmole]" variable="Alu_plasma_can">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <ci> Clu_plasma_can </ci>
-            <ci> Vlu_plasma </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="canagliflozin amount (lung) [mg]" variable="Xlu_plasma_can">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <ci> Alu_plasma_can </ci>
-            <ci> Mr_can </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="canagliflozin concentration (lung) [mg/l]" variable="Mlu_plasma_can">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <apply>
-              <divide/>
-              <ci> Alu_plasma_can </ci>
-              <ci> Vlu_plasma </ci>
-            </apply>
-            <ci> Mr_can </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="canagliflozin amount (gut) [mmole]" variable="Agu_plasma_can">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <ci> Cgu_plasma_can </ci>
-            <ci> Vgu_plasma </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="canagliflozin amount (gut) [mg]" variable="Xgu_plasma_can">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <ci> Agu_plasma_can </ci>
-            <ci> Mr_can </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="canagliflozin concentration (gut) [mg/l]" variable="Mgu_plasma_can">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <apply>
-              <divide/>
-              <ci> Agu_plasma_can </ci>
-              <ci> Vgu_plasma </ci>
-            </apply>
-            <ci> Mr_can </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="canagliflozin amount (rest) [mmole]" variable="Are_plasma_can">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <ci> Cre_plasma_can </ci>
-            <ci> Vre_plasma </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="canagliflozin amount (rest) [mg]" variable="Xre_plasma_can">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <ci> Are_plasma_can </ci>
-            <ci> Mr_can </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="canagliflozin concentration (rest) [mg/l]" variable="Mre_plasma_can">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <apply>
-              <divide/>
-              <ci> Are_plasma_can </ci>
-              <ci> Vre_plasma </ci>
-            </apply>
-            <ci> Mr_can </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="canagliflozin amount (arterial blood) [mmole]" variable="Aar_can">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <ci> Car_can </ci>
-            <ci> Var </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="canagliflozin amount (arterial blood) [mg]" variable="Xar_can">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <ci> Aar_can </ci>
-            <ci> Mr_can </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="canagliflozin concentration (arterial blood) [mg/l]" variable="Mar_can">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <apply>
-              <divide/>
-              <ci> Aar_can </ci>
-              <ci> Var </ci>
-            </apply>
-            <ci> Mr_can </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="canagliflozin amount (venous blood) [mmole]" variable="Ave_can">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <ci> Cve_can </ci>
-            <ci> Vve </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="canagliflozin amount (venous blood) [mg]" variable="Xve_can">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <ci> Ave_can </ci>
-            <ci> Mr_can </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="canagliflozin concentration (venous blood) [mg/l]" variable="Mve_can">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <apply>
-              <divide/>
-              <ci> Ave_can </ci>
-              <ci> Vve </ci>
-            </apply>
-            <ci> Mr_can </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="canagliflozin amount (portal vein) [mmole]" variable="Apo_can">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <ci> Cpo_can </ci>
-            <ci> Vpo </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="canagliflozin amount (portal vein) [mg]" variable="Xpo_can">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <ci> Apo_can </ci>
-            <ci> Mr_can </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="canagliflozin concentration (portal vein) [mg/l]" variable="Mpo_can">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <apply>
-              <divide/>
-              <ci> Apo_can </ci>
-              <ci> Vpo </ci>
-            </apply>
-            <ci> Mr_can </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="canagliflozin amount (hepatic vein) [mmole]" variable="Ahv_can">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <ci> Chv_can </ci>
-            <ci> Vhv </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="canagliflozin amount (hepatic vein) [mg]" variable="Xhv_can">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <ci> Ahv_can </ci>
-            <ci> Mr_can </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="canagliflozin concentration (hepatic vein) [mg/l]" variable="Mhv_can">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <apply>
-              <divide/>
-              <ci> Ahv_can </ci>
-              <ci> Vhv </ci>
-            </apply>
-            <ci> Mr_can </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="canagliflozin amount (urine) [mg]" variable="Xurine_can">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <ci> Aurine_can </ci>
-            <ci> Mr_can </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="canagliflozin amount (feces)" variable="Xfeces_can">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <ci> Afeces_can </ci>
-            <ci> Mr_can </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="M5 amount (kidney) [mmole]" variable="Aki_plasma_m5">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <ci> Cki_plasma_m5 </ci>
-            <ci> Vki_plasma </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="M5 amount (kidney) [mg]" variable="Xki_plasma_m5">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <ci> Aki_plasma_m5 </ci>
-            <ci> Mr_m5 </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="M5 concentration (kidney) [mg/l]" variable="Mki_plasma_m5">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <apply>
-              <divide/>
-              <ci> Aki_plasma_m5 </ci>
-              <ci> Vki_plasma </ci>
-            </apply>
-            <ci> Mr_m5 </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="M5 amount (liver) [mmole]" variable="Ali_plasma_m5">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <ci> Cli_plasma_m5 </ci>
-            <ci> Vli_plasma </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="M5 amount (liver) [mg]" variable="Xli_plasma_m5">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <ci> Ali_plasma_m5 </ci>
-            <ci> Mr_m5 </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="M5 concentration (liver) [mg/l]" variable="Mli_plasma_m5">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <apply>
-              <divide/>
-              <ci> Ali_plasma_m5 </ci>
-              <ci> Vli_plasma </ci>
-            </apply>
-            <ci> Mr_m5 </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="M5 amount (lung) [mmole]" variable="Alu_plasma_m5">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <ci> Clu_plasma_m5 </ci>
-            <ci> Vlu_plasma </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="M5 amount (lung) [mg]" variable="Xlu_plasma_m5">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <ci> Alu_plasma_m5 </ci>
-            <ci> Mr_m5 </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="M5 concentration (lung) [mg/l]" variable="Mlu_plasma_m5">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <apply>
-              <divide/>
-              <ci> Alu_plasma_m5 </ci>
-              <ci> Vlu_plasma </ci>
-            </apply>
-            <ci> Mr_m5 </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="M5 amount (gut) [mmole]" variable="Agu_plasma_m5">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <ci> Cgu_plasma_m5 </ci>
-            <ci> Vgu_plasma </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="M5 amount (gut) [mg]" variable="Xgu_plasma_m5">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <ci> Agu_plasma_m5 </ci>
-            <ci> Mr_m5 </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="M5 concentration (gut) [mg/l]" variable="Mgu_plasma_m5">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <apply>
-              <divide/>
-              <ci> Agu_plasma_m5 </ci>
-              <ci> Vgu_plasma </ci>
-            </apply>
-            <ci> Mr_m5 </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="M5 amount (rest) [mmole]" variable="Are_plasma_m5">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <ci> Cre_plasma_m5 </ci>
-            <ci> Vre_plasma </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="M5 amount (rest) [mg]" variable="Xre_plasma_m5">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <ci> Are_plasma_m5 </ci>
-            <ci> Mr_m5 </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="M5 concentration (rest) [mg/l]" variable="Mre_plasma_m5">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <apply>
-              <divide/>
-              <ci> Are_plasma_m5 </ci>
-              <ci> Vre_plasma </ci>
-            </apply>
-            <ci> Mr_m5 </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="M5 amount (arterial blood) [mmole]" variable="Aar_m5">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <ci> Car_m5 </ci>
-            <ci> Var </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="M5 amount (arterial blood) [mg]" variable="Xar_m5">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <ci> Aar_m5 </ci>
-            <ci> Mr_m5 </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="M5 concentration (arterial blood) [mg/l]" variable="Mar_m5">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <apply>
-              <divide/>
-              <ci> Aar_m5 </ci>
-              <ci> Var </ci>
-            </apply>
-            <ci> Mr_m5 </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="M5 amount (venous blood) [mmole]" variable="Ave_m5">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <ci> Cve_m5 </ci>
-            <ci> Vve </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="M5 amount (venous blood) [mg]" variable="Xve_m5">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <ci> Ave_m5 </ci>
-            <ci> Mr_m5 </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="M5 concentration (venous blood) [mg/l]" variable="Mve_m5">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <apply>
-              <divide/>
-              <ci> Ave_m5 </ci>
-              <ci> Vve </ci>
-            </apply>
-            <ci> Mr_m5 </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="M5 amount (portal vein) [mmole]" variable="Apo_m5">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <ci> Cpo_m5 </ci>
-            <ci> Vpo </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="M5 amount (portal vein) [mg]" variable="Xpo_m5">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <ci> Apo_m5 </ci>
-            <ci> Mr_m5 </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="M5 concentration (portal vein) [mg/l]" variable="Mpo_m5">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <apply>
-              <divide/>
-              <ci> Apo_m5 </ci>
-              <ci> Vpo </ci>
-            </apply>
-            <ci> Mr_m5 </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="M5 amount (hepatic vein) [mmole]" variable="Ahv_m5">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <ci> Chv_m5 </ci>
-            <ci> Vhv </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="M5 amount (hepatic vein) [mg]" variable="Xhv_m5">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <ci> Ahv_m5 </ci>
-            <ci> Mr_m5 </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="M5 concentration (hepatic vein) [mg/l]" variable="Mhv_m5">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <apply>
-              <divide/>
-              <ci> Ahv_m5 </ci>
-              <ci> Vhv </ci>
-            </apply>
-            <ci> Mr_m5 </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="M5 amount (urine) [mg]" variable="Xurine_m5">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <ci> Aurine_m5 </ci>
-            <ci> Mr_m5 </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="M7 amount (kidney) [mmole]" variable="Aki_plasma_m7">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <ci> Cki_plasma_m7 </ci>
-            <ci> Vki_plasma </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="M7 amount (kidney) [mg]" variable="Xki_plasma_m7">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <ci> Aki_plasma_m7 </ci>
-            <ci> Mr_m7 </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="M7 concentration (kidney) [mg/l]" variable="Mki_plasma_m7">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <apply>
-              <divide/>
-              <ci> Aki_plasma_m7 </ci>
-              <ci> Vki_plasma </ci>
-            </apply>
-            <ci> Mr_m7 </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="M7 amount (liver) [mmole]" variable="Ali_plasma_m7">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <ci> Cli_plasma_m7 </ci>
-            <ci> Vli_plasma </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="M7 amount (liver) [mg]" variable="Xli_plasma_m7">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <ci> Ali_plasma_m7 </ci>
-            <ci> Mr_m7 </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="M7 concentration (liver) [mg/l]" variable="Mli_plasma_m7">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <apply>
-              <divide/>
-              <ci> Ali_plasma_m7 </ci>
-              <ci> Vli_plasma </ci>
-            </apply>
-            <ci> Mr_m7 </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="M7 amount (lung) [mmole]" variable="Alu_plasma_m7">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <ci> Clu_plasma_m7 </ci>
-            <ci> Vlu_plasma </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="M7 amount (lung) [mg]" variable="Xlu_plasma_m7">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <ci> Alu_plasma_m7 </ci>
-            <ci> Mr_m7 </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="M7 concentration (lung) [mg/l]" variable="Mlu_plasma_m7">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <apply>
-              <divide/>
-              <ci> Alu_plasma_m7 </ci>
-              <ci> Vlu_plasma </ci>
-            </apply>
-            <ci> Mr_m7 </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="M7 amount (gut) [mmole]" variable="Agu_plasma_m7">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <ci> Cgu_plasma_m7 </ci>
-            <ci> Vgu_plasma </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="M7 amount (gut) [mg]" variable="Xgu_plasma_m7">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <ci> Agu_plasma_m7 </ci>
-            <ci> Mr_m7 </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="M7 concentration (gut) [mg/l]" variable="Mgu_plasma_m7">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <apply>
-              <divide/>
-              <ci> Agu_plasma_m7 </ci>
-              <ci> Vgu_plasma </ci>
-            </apply>
-            <ci> Mr_m7 </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="M7 amount (rest) [mmole]" variable="Are_plasma_m7">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <ci> Cre_plasma_m7 </ci>
-            <ci> Vre_plasma </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="M7 amount (rest) [mg]" variable="Xre_plasma_m7">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <ci> Are_plasma_m7 </ci>
-            <ci> Mr_m7 </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="M7 concentration (rest) [mg/l]" variable="Mre_plasma_m7">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <apply>
-              <divide/>
-              <ci> Are_plasma_m7 </ci>
-              <ci> Vre_plasma </ci>
-            </apply>
-            <ci> Mr_m7 </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="M7 amount (arterial blood) [mmole]" variable="Aar_m7">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <ci> Car_m7 </ci>
-            <ci> Var </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="M7 amount (arterial blood) [mg]" variable="Xar_m7">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <ci> Aar_m7 </ci>
-            <ci> Mr_m7 </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="M7 concentration (arterial blood) [mg/l]" variable="Mar_m7">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <apply>
-              <divide/>
-              <ci> Aar_m7 </ci>
-              <ci> Var </ci>
-            </apply>
-            <ci> Mr_m7 </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="M7 amount (venous blood) [mmole]" variable="Ave_m7">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <ci> Cve_m7 </ci>
-            <ci> Vve </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="M7 amount (venous blood) [mg]" variable="Xve_m7">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <ci> Ave_m7 </ci>
-            <ci> Mr_m7 </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="M7 concentration (venous blood) [mg/l]" variable="Mve_m7">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <apply>
-              <divide/>
-              <ci> Ave_m7 </ci>
-              <ci> Vve </ci>
-            </apply>
-            <ci> Mr_m7 </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="M7 amount (portal vein) [mmole]" variable="Apo_m7">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <ci> Cpo_m7 </ci>
-            <ci> Vpo </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="M7 amount (portal vein) [mg]" variable="Xpo_m7">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <ci> Apo_m7 </ci>
-            <ci> Mr_m7 </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="M7 concentration (portal vein) [mg/l]" variable="Mpo_m7">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <apply>
-              <divide/>
-              <ci> Apo_m7 </ci>
-              <ci> Vpo </ci>
-            </apply>
-            <ci> Mr_m7 </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="M7 amount (hepatic vein) [mmole]" variable="Ahv_m7">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <ci> Chv_m7 </ci>
-            <ci> Vhv </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="M7 amount (hepatic vein) [mg]" variable="Xhv_m7">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <ci> Ahv_m7 </ci>
-            <ci> Mr_m7 </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="M7 concentration (hepatic vein) [mg/l]" variable="Mhv_m7">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <apply>
-              <divide/>
-              <ci> Ahv_m7 </ci>
-              <ci> Vhv </ci>
-            </apply>
-            <ci> Mr_m7 </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="M7 amount (urine) [mg]" variable="Xurine_m7">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <ci> Aurine_m7 </ci>
-            <ci> Mr_m7 </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="M7 amount (feces)" variable="Xfeces_m7">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <ci> Afeces_m7 </ci>
-            <ci> Mr_m7 </ci>
-          </apply>
-        </math>
-      </assignmentRule>
       <rateRule variable="IVDOSE_can">
         <math xmlns="http://www.w3.org/1998/Math/MathML">
           <apply>
@@ -4083,6 +3240,78 @@ injection rate.</p>
           </math>
         </kineticLaw>
       </reaction>
+      <reaction metaid="meta_transport_lu_m5" sboTerm="SBO:0000655" id="transport_lu_m5" name="transport M5" reversible="true" compartment="Vlu_tissue">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#meta_transport_lu_m5">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="http://identifiers.org/SBO:0000655"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="Clu_plasma_m5" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="Clu_m5" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> ftissue_m5 </ci>
+              <apply>
+                <minus/>
+                <apply>
+                  <times/>
+                  <ci> Clu_plasma_m5 </ci>
+                  <ci> Kp_m5 </ci>
+                </apply>
+                <ci> Clu_m5 </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="meta_transport_re_m5" sboTerm="SBO:0000655" id="transport_re_m5" name="transport M5" reversible="true" compartment="Vre_tissue">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#meta_transport_re_m5">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="http://identifiers.org/SBO:0000655"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="Cre_plasma_m5" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="Cre_m5" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> ftissue_m5 </ci>
+              <apply>
+                <minus/>
+                <apply>
+                  <times/>
+                  <ci> Cre_plasma_m5 </ci>
+                  <ci> Kp_m5 </ci>
+                </apply>
+                <ci> Cre_m5 </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
       <reaction metaid="meta_Flow_ar_ki_m5" sboTerm="SBO:0000655" id="Flow_ar_ki_m5" name="inflow kidney M5" reversible="false">
         <annotation>
           <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
@@ -4492,6 +3721,78 @@ injection rate.</p>
               <times/>
               <ci> Qre </ci>
               <ci> Cre_plasma_m5 </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="meta_transport_lu_m7" sboTerm="SBO:0000655" id="transport_lu_m7" name="transport M7" reversible="true" compartment="Vlu_tissue">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#meta_transport_lu_m7">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="http://identifiers.org/SBO:0000655"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="Clu_plasma_m7" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="Clu_m7" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> ftissue_m7 </ci>
+              <apply>
+                <minus/>
+                <apply>
+                  <times/>
+                  <ci> Clu_plasma_m7 </ci>
+                  <ci> Kp_m7 </ci>
+                </apply>
+                <ci> Clu_m7 </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="meta_transport_re_m7" sboTerm="SBO:0000655" id="transport_re_m7" name="transport M7" reversible="true" compartment="Vre_tissue">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#meta_transport_re_m7">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="http://identifiers.org/SBO:0000655"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="Cre_plasma_m7" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="Cre_m7" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> ftissue_m7 </ci>
+              <apply>
+                <minus/>
+                <apply>
+                  <times/>
+                  <ci> Cre_plasma_m7 </ci>
+                  <ci> Kp_m7 </ci>
+                </apply>
+                <ci> Cre_m7 </ci>
+              </apply>
             </apply>
           </math>
         </kineticLaw>
@@ -4946,6 +4247,8 @@ injection rate.</p>
       <comp:port metaid="Cve_m5_port" sboTerm="SBO:0000599" comp:idRef="Cve_m5" comp:id="Cve_m5_port" comp:name="Port of Cve_m5"/>
       <comp:port metaid="Cpo_m5_port" sboTerm="SBO:0000599" comp:idRef="Cpo_m5" comp:id="Cpo_m5_port" comp:name="Port of Cpo_m5"/>
       <comp:port metaid="Chv_m5_port" sboTerm="SBO:0000599" comp:idRef="Chv_m5" comp:id="Chv_m5_port" comp:name="Port of Chv_m5"/>
+      <comp:port metaid="Clu_m5_port" sboTerm="SBO:0000599" comp:idRef="Clu_m5" comp:id="Clu_m5_port" comp:name="Port of Clu_m5"/>
+      <comp:port metaid="Cre_m5_port" sboTerm="SBO:0000599" comp:idRef="Cre_m5" comp:id="Cre_m5_port" comp:name="Port of Cre_m5"/>
       <comp:port metaid="Cki_plasma_m7_port" sboTerm="SBO:0000599" comp:idRef="Cki_plasma_m7" comp:id="Cki_plasma_m7_port" comp:name="Port of Cki_plasma_m7"/>
       <comp:port metaid="Cli_plasma_m7_port" sboTerm="SBO:0000599" comp:idRef="Cli_plasma_m7" comp:id="Cli_plasma_m7_port" comp:name="Port of Cli_plasma_m7"/>
       <comp:port metaid="Clu_plasma_m7_port" sboTerm="SBO:0000599" comp:idRef="Clu_plasma_m7" comp:id="Clu_plasma_m7_port" comp:name="Port of Clu_plasma_m7"/>
@@ -4955,6 +4258,8 @@ injection rate.</p>
       <comp:port metaid="Cve_m7_port" sboTerm="SBO:0000599" comp:idRef="Cve_m7" comp:id="Cve_m7_port" comp:name="Port of Cve_m7"/>
       <comp:port metaid="Cpo_m7_port" sboTerm="SBO:0000599" comp:idRef="Cpo_m7" comp:id="Cpo_m7_port" comp:name="Port of Cpo_m7"/>
       <comp:port metaid="Chv_m7_port" sboTerm="SBO:0000599" comp:idRef="Chv_m7" comp:id="Chv_m7_port" comp:name="Port of Chv_m7"/>
+      <comp:port metaid="Clu_m7_port" sboTerm="SBO:0000599" comp:idRef="Clu_m7" comp:id="Clu_m7_port" comp:name="Port of Clu_m7"/>
+      <comp:port metaid="Cre_m7_port" sboTerm="SBO:0000599" comp:idRef="Cre_m7" comp:id="Cre_m7_port" comp:name="Port of Cre_m7"/>
     </comp:listOfPorts>
   </model>
   <comp:listOfExternalModelDefinitions>

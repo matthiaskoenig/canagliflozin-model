@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+    <title>Devineni2015b</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet">
+    <!--<link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">-->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/styles/default.min.css">
+</head>
+
+<body>
+<div id="app">
+    <!-- Vue app-->
+    <v-app>
+        <v-content>
+
+            <a href="../index.html">Experiments</a>
+            <h1>Devineni2015b</h1>
+
+            <h2>Models</h2>
+            <p>
+            <ul>
+                <li><strong>model</strong>: <a href="../../../../models/results/models/canagliflozin_body_flat.xml">../../../../models/results/models/canagliflozin_body_flat.xml</a></li>
+            </ul>
+            </p>
+
+            <h2>Datasets</h2>
+            <p>
+            <ul>
+                <li><strong>canagliflozin_CAN300</strong>: <a href="Devineni2015b_canagliflozin_CAN300.tsv">Devineni2015b_canagliflozin_CAN300.tsv</a></li>
+                <li><strong>canagliflozin_total_C14CAN10</strong>: <a href="Devineni2015b_canagliflozin_total_C14CAN10.tsv">Devineni2015b_canagliflozin_total_C14CAN10.tsv</a></li>
+                <li><strong>canagliflozin_unchanged_C14CAN10</strong>: <a href="Devineni2015b_canagliflozin_unchanged_C14CAN10.tsv">Devineni2015b_canagliflozin_unchanged_C14CAN10.tsv</a></li>
+                <li><strong>canagliflozin_14C_CAN10_cumulative_amount_feces_total</strong>: <a href="Devineni2015b_canagliflozin_14C_CAN10_cumulative_amount_feces_total.tsv">Devineni2015b_canagliflozin_14C_CAN10_cumulative_amount_feces_total.tsv</a></li>
+                <li><strong>canagliflozin_14C_CAN10_cumulative_amount_feces_urine_total</strong>: <a href="Devineni2015b_canagliflozin_14C_CAN10_cumulative_amount_feces_urine_total.tsv">Devineni2015b_canagliflozin_14C_CAN10_cumulative_amount_feces_urine_total.tsv</a></li>
+                <li><strong>canagliflozin_14C_CAN10_cumulative_amount_urine_total</strong>: <a href="Devineni2015b_canagliflozin_14C_CAN10_cumulative_amount_urine_total.tsv">Devineni2015b_canagliflozin_14C_CAN10_cumulative_amount_urine_total.tsv</a></li>
+                <li><strong>canagliflozin_14C_CAN10_recovery_feces_total</strong>: <a href="Devineni2015b_canagliflozin_14C_CAN10_recovery_feces_total.tsv">Devineni2015b_canagliflozin_14C_CAN10_recovery_feces_total.tsv</a></li>
+                <li><strong>canagliflozin_14C_CAN10_recovery_feces_urine_total</strong>: <a href="Devineni2015b_canagliflozin_14C_CAN10_recovery_feces_urine_total.tsv">Devineni2015b_canagliflozin_14C_CAN10_recovery_feces_urine_total.tsv</a></li>
+                <li><strong>canagliflozin_14C_CAN10_recovery_urine_total</strong>: <a href="Devineni2015b_canagliflozin_14C_CAN10_recovery_urine_total.tsv">Devineni2015b_canagliflozin_14C_CAN10_recovery_urine_total.tsv</a></li>
+            </ul>
+            </p>
+
+            <h2>Figures</h2>
+            <p>
+            <ul>
+                <li><strong>Fig2</strong>: <a href="Devineni2015b_Fig2.svg">Devineni2015b_Fig2.svg</a></li>
+                <li><strong>urine and feces</strong>: <a href="Devineni2015b_urine and feces.svg">Devineni2015b_urine and feces.svg</a></li>
+            </ul>
+            </p>
+
+            <h3>Fig2</h3>
+            <p>
+            <table>
+                <tr>
+                    <td>
+                        <!--<v-img src="Devineni2015b_Fig2.svg" max-width="600" width="600"></v-img>-->
+                        <img src="Devineni2015b_Fig2.svg" width="600">
+                    </td>
+                    <!--
+                    <td>
+                    </td>
+                    -->
+                </tr>
+            </table>
+            </p>
+            <h3>urine and feces</h3>
+            <p>
+            <table>
+                <tr>
+                    <td>
+                        <!--<v-img src="Devineni2015b_urine and feces.svg" max-width="600" width="600"></v-img>-->
+                        <img src="Devineni2015b_urine and feces.svg" width="600">
+                    </td>
+                    <!--
+                    <td>
+                    </td>
+                    -->
+                </tr>
+            </table>
+            </p>
+
+            <h2>Code</h2>
+            <p>
+                <a href="../../../../experiments/studies/devineni2015b.py">../../../../experiments/studies/devineni2015b.py</a>
+            <pre>
+<code class="python">from typing import Dict
+
+from sbmlsim.data import DataSet, load_pkdb_dataframe
+from sbmlsim.fit import FitMapping, FitData
+from sbmlutils.console import console
+
+from pkdb_models.models.canagliflozin.experiments.base_experiment import (
+    CanagliflozinSimulationExperiment,
+)
+from pkdb_models.models.canagliflozin.experiments.metadata import Tissue, Route, Dosing, ApplicationForm, Health, \
+    Fasting, CanagliflozinMappingMetaData
+
+from sbmlsim.plot import Axis, Figure
+from sbmlsim.simulation import Timecourse, TimecourseSim
+
+from pkdb_models.models.canagliflozin.helpers import run_experiments
+
+
+class Devineni2015b(CanagliflozinSimulationExperiment):
+    """Simulation experiment of Devineni2015b."""
+
+    bodyweight = 78.2  # [kg]
+    fpg = 5  # mM (healthy)
+
+    simulation_keys = ["po_iv", "iv", "iv"]
+    interventions = ["CAN300", "unchanged_C14CAN10", "total_C14CAN10"]
+    colors = {"unchanged_C14CAN10": "red", "total_C14CAN10": "blue", "CAN300": "green"}
+
+    def datasets(self) -> Dict[str, DataSet]:
+        dsets = {}
+        for fig_id in ["Fig2", "Tab1A"]:
+            df = load_pkdb_dataframe(f"{self.sid}_{fig_id}", data_path=self.data_path)
+            for label, df_label in df.groupby("label"):
+                dset = DataSet.from_df(df_label, self.ureg)
+
+                # unit conversion to mole/l
+                if label.startswith("canagliflozin_"):
+                    dset.unit_conversion("mean", 1 / self.Mr.can)
+
+                dsets[f"{label}"] = dset
+
+        # console.print(dsets)
+        # console.print(dsets.keys())
+        return dsets
+
+    def simulations(self) -> Dict[str, TimecourseSim]:
+        Q_ = self.Q_
+        tcsims = {}
+
+        # po followed by iv
+        tc0 = Timecourse(
+            start=0,
+            end=105,  # [min]
+            steps=500,
+            changes={
+                **self.default_changes(),
+                "BW": Q_(self.bodyweight, "kg"),
+                "[KI__fpg]": Q_(self.fpg, "mM"),
+                "PODOSE_can": Q_(0, "mg"),
+            },
+        )
+        tc0_po = Timecourse(
+            start=0,
+            end=105,  # [min]
+            steps=500,
+            changes={
+                **self.default_changes(),
+                "BW": Q_(self.bodyweight, "kg"),
+                "[KI__fpg]": Q_(self.fpg, "mM"),
+                "PODOSE_can": Q_(300, "mg"),
+            },
+        )
+        tc1 = Timecourse(
+            start=0,
+            end=15,  # [min]
+            steps=500,
+            changes={
+                "BW": Q_(self.bodyweight, "kg"),
+                "[KI__fpg]": Q_(self.fpg, "mM"),
+                "Ri_can": Q_(10/15, "µg/min"),
+            },
+        )
+        tc2 = Timecourse(
+            start=0,
+            end=80 * 60,  # [min]
+            steps=500,
+            changes={
+                "BW": Q_(self.bodyweight, "kg"),
+                "[KI__fpg]": Q_(self.fpg, "mM"),
+                "Ri_can": Q_(0, "µg/min")
+            },
+        )
+        # total canagliflozin
+        tcsims[f"po_iv"] = TimecourseSim(
+            [tc0_po, tc1, tc2],
+        )
+        # only iv (radioactivity)
+        tcsims[f"iv"] = TimecourseSim(
+            [tc0, tc1, tc2],
+        )
+        return tcsims
+
+    def fit_mappings(self) -> Dict[str, FitMapping]:
+
+        mappings = {}
+
+        for intervention, sim_key in zip(self.interventions, self.simulation_keys):
+            mappings[f"fm_{intervention}_canagliflozin"] = FitMapping(
+                self,
+                reference=FitData(
+                    self,
+                    dataset=f"canagliflozin_{intervention}",
+                    xid="time",
+                    yid="mean",
+                    yid_sd="mean_sd",
+                    count="count",
+                ),
+                observable=FitData(
+                    self, task=f"task_{sim_key}", xid="time", yid=f"[Cve_cantot]",
+                ),
+                metadata=CanagliflozinMappingMetaData(
+                    tissue=Tissue.PLASMA,
+                    route=Route.PO if intervention == "CAN300" else Route.IV,
+                    application_form=ApplicationForm.MIXED if intervention == "CAN300" else ApplicationForm.SOLUTION,
+                    dosing=Dosing.SINGLE,
+                    health=Health.HEALTHY,
+                    fasting=Fasting.FASTED
+                ),
+            )
+
+        for name, sid in [
+            ('urine', 'Aurine_cantot'),
+            ('feces', 'Afeces_cantot'),
+
+        ]:
+            tissue = Tissue.URINE if "urine" in name else Tissue.FECES
+            mappings[f"fm_{name}_canagliflozin_total"] = FitMapping(
+                self,
+                reference=FitData(
+                    self,
+                    dataset=f"canagliflozin_14C_CAN10_cumulative_amount_{name}_total",
+                    xid="time",
+                    yid="mean",
+                    yid_sd="mean_sd",
+                    count="count",
+                ),
+                observable=FitData(
+                    self, task=f"task_iv", xid="time", yid=f"{sid}",
+                ),
+                metadata=CanagliflozinMappingMetaData(
+                    tissue=tissue,
+                    route=Route.IV,
+                    application_form=ApplicationForm.SOLUTION,
+                    dosing=Dosing.SINGLE,
+                    health=Health.HEALTHY,
+                    fasting=Fasting.FASTED
+                ),
+            )
+
+        # console.print(mappings)
+        return mappings
+
+    def figures(self) -> Dict[str, Figure]:
+        return {
+            **self.figure_conc(),
+            **self.figure_urine_feces(),
+        }
+
+    def figure_conc(self) -> Dict[str, Figure]:
+
+        fig = Figure(
+            experiment=self,
+            sid="Fig2",
+            num_rows=1,
+            num_cols=3,
+            name=f"{self.__class__.__name__} (healthy)",
+        )
+        plots = fig.create_plots(xaxis=Axis(self.label_time, unit=self.unit_time), legend=True)
+        plots[0].set_yaxis(self.label_can, unit=self.unit_can)
+        plots[1].set_yaxis(self.label_cantot, unit="nM")  # very small IV dose
+        plots[2].set_yaxis(self.label_cantot, unit="nM")  # very small IV dose
+
+        for k, intervention in enumerate(self.interventions):
+
+            sid = ["[Cve_can]", "[Cve_can]", "[Cve_cantot]"][k]
+
+            # simulation
+            plots[k].add_data(
+                task=f"task_{self.simulation_keys[k]}",
+                xid="time",
+                yid=f"{sid}",
+                label=f"sim can_{intervention}",
+                color=self.colors[intervention],
+            )
+            # data
+            plots[k].add_data(
+                dataset=f"canagliflozin_{intervention}",
+                xid="time",
+                yid="mean",
+                yid_sd="mean_sd",
+                count="count",
+                label=f"can_{intervention}",
+                color=self.colors[intervention],
+            )
+
+        return {
+            fig.sid: fig,
+        }
+
+    def figure_urine_feces(self):
+
+        fig = Figure(
+            experiment=self,
+            sid="urine and feces",
+            num_rows=2,
+            num_cols=1,
+            name=f"{self.__class__.__name__} (healthy)",
+        )
+        plots = fig.create_plots(xaxis=Axis(self.label_time, unit=self.unit_time), legend=True)
+        plots[0].set_yaxis(self.label_cantot_urine, unit="nmole")  # very small IV dose
+        plots[1].set_yaxis(self.label_cantot_feces, unit="nmole")  # very small IV dose
+
+        # simulation
+        for k, sid in enumerate(['Aurine_cantot', 'Afeces_cantot']):
+            tissue = ['urine', 'feces'][k]
+            # simulation
+            plots[k].add_data(
+                task=f"task_iv",
+                xid="time",
+                yid=sid,
+                label=f"sim total 14c-can {tissue} sim",
+                color=self.colors["total_C14CAN10"],
+            )
+            # data
+            plots[k].add_data(
+                dataset=f"canagliflozin_14C_CAN10_cumulative_amount_{tissue}_total",
+                xid="time",
+                yid="mean",
+                yid_sd="mean_sd",
+                count="count",
+                label=f"14C_can_{tissue}",
+                color=self.colors["total_C14CAN10"],
+            )
+        return {
+            fig.sid: fig,
+        }
+
+
+if __name__ == "__main__":
+    run_experiments(Devineni2015b, output_dir=Devineni2015b.__name__)</code>
+        </pre>
+            </p>
+
+        </v-content>
+    </v-app>
+</div>
+
+
+<!-- loading dependencies -->
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+<script src="https://cdn.jsdelivr.net/npm/vuetify@2.2.6/dist/vuetify.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<script>
+    const app = new Vue({
+        el: '#app',
+        vuetify: new Vuetify(),
+        delimiters: ['${', '}'],
+        data() {
+            return {}
+        }
+    })
+</script>
+
+
+</body>
+</html>

@@ -11,12 +11,9 @@ length: [m]
 
 ## Parameters `p`
 ```
-CANABS_k = 0.1  # [1/min] rate of canagliflozin absorption  
-CANEX_k = 1.0  # [1/min] rate feces excretion of canagliflozin  
+CANABS_k = 0.00587583148158321  # [1/min] rate of canagliflozin absorption  
 F_can_abs = 0.59  # [-] fraction absorbed canagliflozin  
 Ka_dis_can = 2.0  # [1/hr] Ka_dis [1/hr] dissolution canagliflozin  
-M7EX_k = 0.33  # [1/min] rate feces excretion of m7  
-M9EX_k = 0.33  # [1/min] rate feces excretion of m9  
 Mr_can = 444.518  # [g/mol] Molecular weight canagliflozin [g/mole]  
 Vapical = nan  # [m^2] apical membrane (intestinal membrane enterocytes)  
 Vbaso = nan  # [m^2] basolateral membrane (intestinal membrane enterocytes)  
@@ -54,13 +51,13 @@ CANABS = F_can_abs * absorption  # [mmol/min] absorption canagliflozin
 CANEXC = (1 - F_can_abs) * absorption  # [mmol/min] excretion canagliflozin (feces)  
 
 # odes
-d PODOSE_can/dt = -dissolution_can * Mr_can  # [mg/] oral dose canagliflozin [mg]  
-d can_ext/dt = CANABS / Vext  # [mmol/l/] canagliflozin (plasma)  
-d can_feces/dt = CANEXC  # [mmol/] canagliflozin (feces)  
-d can_lumen/dt = (-CANABS / Vlumen - CANEXC / Vlumen) + dissolution_can / Vlumen  # [mmol/l/] canagliflozin (intestinal volume)  
-d can_stomach/dt = 0  # [mmol/] canagliflozin (stomach)  
-d m7_feces/dt = M7EXC  # [mmol/] M7 (feces)  
-d m7_lumen/dt = -M7EXC / Vlumen  # [mmol/l/] M7 (intestinal volume)  
-d m9_feces/dt = M9EXC  # [mmol/] M9 (feces)  
-d m9_lumen/dt = -M9EXC / Vlumen  # [mmol/l/] M9 (intestinal volume)  
+d PODOSE_can/dt = -dissolution_can * Mr_can  # [mg/min] oral dose canagliflozin [mg]  
+d can_ext/dt = CANABS / Vext  # [mmol/l/min] canagliflozin (plasma)  
+d can_feces/dt = CANEXC  # [mmol/min] canagliflozin (feces)  
+d can_lumen/dt = (-CANABS / Vlumen - CANEXC / Vlumen) + dissolution_can / Vlumen  # [mmol/l/min] canagliflozin (intestinal volume)  
+d can_stomach/dt = 0  # [mmol/min] canagliflozin (stomach)  
+d m7_feces/dt = M7EXC  # [mmol/min] M7 (feces)  
+d m7_lumen/dt = -M7EXC / Vlumen  # [mmol/l/min] M7 (intestinal volume)  
+d m9_feces/dt = M9EXC  # [mmol/min] M9 (feces)  
+d m9_lumen/dt = -M9EXC / Vlumen  # [mmol/l/min] M9 (intestinal volume)  
 ```

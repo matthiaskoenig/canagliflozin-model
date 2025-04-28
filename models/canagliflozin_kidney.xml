@@ -29,7 +29,7 @@
           <p>The content of this model has been carefully created in a manual research effort.
 This file has been created by <a href="https://livermetabolism.com">Matthias König</a>
 using <a href="https://github.com/matthiaskoenig/sbmlutils">sbmlutils</a>.
-For questions contact <a href="mailto:koenigmx@hu-berlin.de">koenigmx@hu-berlin.de</a>. Copyright © 2024 Matthias König.</p>
+For questions contact <a href="mailto:koenigmx@hu-berlin.de">koenigmx@hu-berlin.de</a>. Copyright © 2025 Matthias König.</p>
           <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
             <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png"/>
           </a>
@@ -349,10 +349,20 @@ FOR A PARTICULAR PURPOSE.</p></body>
           </rdf:RDF>
         </annotation>
       </species>
-      <species metaid="meta_glc_ext" sboTerm="SBO:0000247" id="glc_ext" name="glucose (plasma)" compartment="Vext" initialConcentration="5" substanceUnits="mmole" hasOnlySubstanceUnits="false" boundaryCondition="true" constant="false">
+      <species metaid="meta_fpg" sboTerm="SBO:0000247" id="fpg" name="fasting plasma glucose (FPG)" compartment="Vext" initialConcentration="5" substanceUnits="mmole" hasOnlySubstanceUnits="false" boundaryCondition="true" constant="false">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <p>Fasting plasma glucose (FPG).
+Model depends on the fasting plasma glucose:</p>
+            <ul>
+              <li>as a proxy of the daily glucose variation in the glucose excretion</li>
+              <li>to set the glucose dependent RTG values (i.e. T2DM have higher SGLT2 amounts, and consequently higher RTG values)</li>
+            </ul>
+          </body>
+        </notes>
         <annotation>
           <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
-            <rdf:Description rdf:about="#meta_glc_ext">
+            <rdf:Description rdf:about="#meta_fpg">
               <bqbiol:is>
                 <rdf:Bag>
                   <rdf:li rdf:resource="http://identifiers.org/SBO:0000247"/>
@@ -415,6 +425,7 @@ FOR A PARTICULAR PURPOSE.</p></body>
       </parameter>
       <parameter id="cf_mg_per_g" name="Conversion factor mg per g" value="1000" units="mg_per_g" constant="true"/>
       <parameter id="cf_ml_per_l" name="Conversion factor ml per l" value="1000" units="ml_per_l" constant="true"/>
+      <parameter id="GFR_healthy" name="Glomerular filtration rate (healthy)" value="100" units="ml_per_min" constant="true"/>
       <parameter metaid="meta_RTG_E50" sboTerm="SBO:0000009" id="RTG_E50" name="EC50 reduction in RTG" value="7.19e-06" units="mM" constant="true">
         <notes>
           <body xmlns="http://www.w3.org/1999/xhtml">
@@ -449,19 +460,30 @@ FOR A PARTICULAR PURPOSE.</p></body>
       <parameter id="RTG_base" name="Baseline RTG value" value="12.5" units="mM" constant="true">
         <notes>
           <body xmlns="http://www.w3.org/1999/xhtml">
-            <p>typical RTG value without SGLT2 inhibitors in healthy subjects</p>
+            <p>Typical RTG value without SGLT2 inhibitors in healthy subjects.</p>
+            <pre>
+              <code>    This corresponds to the SGLT2 concentrations.
+</code>
+            </pre>
           </body>
         </notes>
       </parameter>
-      <parameter id="RTG_delta" name="RTG value" value="9" units="mM" constant="true">
+      <parameter id="RTG_m_fpg" name="FPG effect on RTG" value="0.5" units="dimensionless" constant="true">
         <notes>
           <body xmlns="http://www.w3.org/1999/xhtml">
-            <p>ΔRTG, maximum reduction in RTG due to SGLT2 inhibition</p>
+            <p>Effect of the FPG on the change in RTG_base.</p>
           </body>
         </notes>
       </parameter>
-      <parameter id="GFR_healthy" name="Glomerular filtration rate (healthy)" value="100" units="ml_per_min" constant="true"/>
-      <parameter metaid="meta_CANEX_k" sboTerm="SBO:0000009" id="CANEX_k" name="rate urinary excretion of canagliflozin" value="1" units="per_min" constant="true">
+      <parameter id="RTG_max_inhibition" name="RTG maximum inhibition" value="0.75" units="dimensionless" constant="true">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <p>maximum inhibition of RTG via SGLT2</p>
+          </body>
+        </notes>
+      </parameter>
+      <parameter id="fpg_healthy" name="fasting plasma glucose (healthy)" value="5" units="mM" constant="true"/>
+      <parameter metaid="meta_CANEX_k" sboTerm="SBO:0000009" id="CANEX_k" name="rate urinary excretion of canagliflozin" value="0.00373993861477588" units="per_min" constant="true">
         <annotation>
           <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
             <rdf:Description rdf:about="#meta_CANEX_k">
@@ -474,7 +496,7 @@ FOR A PARTICULAR PURPOSE.</p></body>
           </rdf:RDF>
         </annotation>
       </parameter>
-      <parameter metaid="meta_M5EX_k" sboTerm="SBO:0000009" id="M5EX_k" name="rate urinary excretion of m5" value="0.25" units="per_min" constant="true">
+      <parameter metaid="meta_M5EX_k" sboTerm="SBO:0000009" id="M5EX_k" name="rate urinary excretion of m5" value="0.0993999073054945" units="per_min" constant="true">
         <annotation>
           <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
             <rdf:Description rdf:about="#meta_M5EX_k">
@@ -487,7 +509,7 @@ FOR A PARTICULAR PURPOSE.</p></body>
           </rdf:RDF>
         </annotation>
       </parameter>
-      <parameter metaid="meta_M7EX_k" sboTerm="SBO:0000009" id="M7EX_k" name="rate urinary excretion of m7" value="0.25" units="per_min" constant="true">
+      <parameter metaid="meta_M7EX_k" sboTerm="SBO:0000009" id="M7EX_k" name="rate urinary excretion of m7" value="0.177112957435439" units="per_min" constant="true">
         <annotation>
           <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
             <rdf:Description rdf:about="#meta_M7EX_k">
@@ -500,6 +522,8 @@ FOR A PARTICULAR PURPOSE.</p></body>
           </rdf:RDF>
         </annotation>
       </parameter>
+      <parameter id="RTG_fpg" name="RTG value (FPG)" value="NaN" units="mM" constant="false"/>
+      <parameter id="RTG_delta" name="RTG value" value="NaN" units="mM" constant="false"/>
       <parameter id="RTG" name="renal threshold glucose (RTG)" value="NaN" units="mM" constant="false"/>
       <parameter id="GFR" name="glomerular filtration rate" value="NaN" units="ml_per_min" constant="false"/>
       <parameter id="UGE" name="urinary glucose excretion (UGE)" value="NaN" units="gram" constant="false"/>
@@ -512,6 +536,43 @@ FOR A PARTICULAR PURPOSE.</p></body>
             <ci> can_urine </ci>
             <ci> m5_urine </ci>
             <ci> m7_urine </ci>
+          </apply>
+        </math>
+      </assignmentRule>
+      <assignmentRule name="RTG value (FPG)" variable="RTG_fpg">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <p>FPG dependent base RTG value. SGLT2 is induced in T2DM [Rahmoune2005]</p>
+          </body>
+        </notes>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <plus/>
+            <ci> RTG_base </ci>
+            <apply>
+              <times/>
+              <ci> RTG_m_fpg </ci>
+              <apply>
+                <minus/>
+                <ci> fpg </ci>
+                <ci> fpg_healthy </ci>
+              </apply>
+            </apply>
+          </apply>
+        </math>
+      </assignmentRule>
+      <assignmentRule name="RTG value" variable="RTG_delta">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <p>ΔRTG, maximum reduction in RTG due to SGLT2 inhibition.
+Normally around 7 - 10 mM.</p>
+          </body>
+        </notes>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <times/>
+            <ci> RTG_fpg </ci>
+            <ci> RTG_max_inhibition </ci>
           </apply>
         </math>
       </assignmentRule>
@@ -528,7 +589,7 @@ to the glucose concentration above this threshold.
         <math xmlns="http://www.w3.org/1998/Math/MathML">
           <apply>
             <minus/>
-            <ci> RTG_base </ci>
+            <ci> RTG_fpg </ci>
             <apply>
               <divide/>
               <apply>
@@ -689,7 +750,7 @@ to the glucose concentration above this threshold.
           </rdf:RDF>
         </annotation>
         <listOfReactants>
-          <speciesReference species="glc_ext" stoichiometry="1" constant="true"/>
+          <speciesReference species="fpg" stoichiometry="1" constant="true"/>
         </listOfReactants>
         <listOfProducts>
           <speciesReference species="glc_urine" stoichiometry="1" constant="true"/>
@@ -710,13 +771,13 @@ to the glucose concentration above this threshold.
                   </apply>
                   <apply>
                     <minus/>
-                    <ci> glc_ext </ci>
+                    <ci> fpg </ci>
                     <ci> RTG </ci>
                   </apply>
                 </apply>
                 <apply>
                   <gt/>
-                  <ci> glc_ext </ci>
+                  <ci> fpg </ci>
                   <ci> RTG </ci>
                 </apply>
               </piece>
@@ -739,7 +800,6 @@ to the glucose concentration above this threshold.
       <comp:port metaid="m7_ext_port" sboTerm="SBO:0000599" comp:idRef="m7_ext" comp:id="m7_ext_port" comp:name="Port of m7_ext"/>
       <comp:port metaid="m7_urine_port" sboTerm="SBO:0000599" comp:idRef="m7_urine" comp:id="m7_urine_port" comp:name="Port of m7_urine"/>
       <comp:port metaid="cantot_urine_port" sboTerm="SBO:0000599" comp:idRef="cantot_urine" comp:id="cantot_urine_port" comp:name="Port of cantot_urine"/>
-      <comp:port metaid="glc_ext_port" sboTerm="SBO:0000599" comp:idRef="glc_ext" comp:id="glc_ext_port" comp:name="Port of glc_ext"/>
       <comp:port metaid="glc_urine_port" sboTerm="SBO:0000599" comp:idRef="glc_urine" comp:id="glc_urine_port" comp:name="Port of glc_urine"/>
     </comp:listOfPorts>
   </model>

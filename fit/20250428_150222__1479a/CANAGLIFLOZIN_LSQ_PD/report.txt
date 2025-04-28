@@ -1,0 +1,181 @@
+--------------------------------------------------------------------------------
+OptimizationProblem: all
+--------------------------------------------------------------------------------
+Experiments
+	*** FitExperiment ***
+experiment: Chen2015
+mappings: ['fm_po_can_CAN0_glucose_cumulative_amount', 'fm_po_can_CAN100_glucose_cumulative_amount', 'fm_po_can_CAN300_glucose_cumulative_amount', 'fm_po_can_CAN100_glucose_RT_MDRD', 'fm_po_can_CAN300_glucose_RT_MDRD', 'fm_po_can_CAN100_glucose_RT_McrCl', 'fm_po_can_CAN300_glucose_RT_McrCl']
+weights: [14, 14, 14, 14, 14, 14, 14]
+use_mapping_weights: True
+fit_parameters: {}
+	*** FitExperiment ***
+experiment: Devineni2012
+mappings: ['task_po_can0_glucose_cumulative_amount', 'task_po_can100_glucose_cumulative_amount', 'task_po_can300_glucose_cumulative_amount', 'task_po_can0_glucose_RT', 'task_po_can100_glucose_RT', 'task_po_can300_glucose_RT']
+weights: [10, 10, 10, 9, 10, 10]
+use_mapping_weights: True
+fit_parameters: {}
+	*** FitExperiment ***
+experiment: Devineni2013
+mappings: ['task_po_can0_glucose_cumulative_amount', 'task_po_can50_glucose_cumulative_amount', 'task_po_can100_glucose_cumulative_amount', 'task_po_can300_glucose_cumulative_amount', 'task_po_can0_glucose_renal_threshold', 'task_po_can50_glucose_renal_threshold', 'task_po_can100_glucose_renal_threshold', 'task_po_can300_glucose_renal_threshold']
+weights: [9, 9, 8, 10, 9, 9, 8, 10]
+use_mapping_weights: True
+fit_parameters: {}
+	*** FitExperiment ***
+experiment: Devineni2014
+mappings: ['task_po_can300_glucose_cumulative_amount', 'task_po_can300_glucose_renal_threshold']
+weights: [28, 28]
+use_mapping_weights: True
+fit_parameters: {}
+	*** FitExperiment ***
+experiment: Devineni2015a
+mappings: ['fm_po_can_50_glucose_cumulative_amount_multi', 'fm_po_can_100_glucose_cumulative_amount_multi', 'fm_po_can_300_glucose_cumulative_amount_multi', 'fm_po_can_50_glucose_renal_threshold_multi', 'fm_po_can_100_glucose_renal_threshold_multi', 'fm_po_can_300_glucose_renal_threshold_multi']
+weights: [9, 9, 9, 9, 9, 9]
+use_mapping_weights: True
+fit_parameters: {}
+	*** FitExperiment ***
+experiment: Devineni2015c
+mappings: ['fm_po_can200_normal_renal_glucose_RT_mean']
+weights: [8]
+use_mapping_weights: True
+fit_parameters: {}
+	*** FitExperiment ***
+experiment: Devineni2016
+mappings: ['task_po_can200_glucose_cumulative_amount', 'task_po_can300_glucose_cumulative_amount', 'task_po_can200_glucose_renal_threshold', 'task_po_can300_glucose_renal_threshold']
+weights: [15, 14, 15, 14]
+use_mapping_weights: True
+fit_parameters: {}
+	*** FitExperiment ***
+experiment: Iijima2015
+mappings: ['task_po_can25_glucose_cumulative_amount', 'task_po_can100_glucose_cumulative_amount', 'task_po_can200_glucose_cumulative_amount', 'task_po_can400_glucose_cumulative_amount']
+weights: [12, 12, 14, 13]
+use_mapping_weights: True
+fit_parameters: {}
+	*** FitExperiment ***
+experiment: Sha2011
+mappings: ['task_po_can0_cumulative_amount', 'task_po_can10_cumulative_amount', 'task_po_can30_cumulative_amount', 'task_po_can100_cumulative_amount', 'task_po_can200_cumulative_amount', 'task_po_can400_cumulative_amount', 'task_po_can600_cumulative_amount', 'task_po_can800_cumulative_amount', 'task_po_can10_renal_threshold', 'task_po_can30_renal_threshold', 'task_po_can100_renal_threshold', 'task_po_can200_renal_threshold', 'task_po_can400_renal_threshold', 'task_po_can600_renal_threshold', 'task_po_can800_renal_threshold']
+weights: [15, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6]
+use_mapping_weights: True
+fit_parameters: {}
+	*** FitExperiment ***
+experiment: Sha2014
+mappings: ['task_po_can0_glucose_renal_threshold', 'task_po_can30_glucose_renal_threshold', 'task_po_can100_glucose_renal_threshold', 'task_po_can200_glucose_renal_threshold', 'task_po_can400_glucose_renal_threshold', 'task_po_can300_glucose_renal_threshold']
+weights: [18, 18, 18, 18, 18, 18]
+use_mapping_weights: True
+fit_parameters: {}
+	*** FitExperiment ***
+experiment: Sha2015
+mappings: ['task_po_can300_glucose_cumulative_amount', 'task_po_can300_renal_threshold']
+weights: [54, 54]
+use_mapping_weights: True
+fit_parameters: {}
+	*** FitExperiment ***
+experiment: Tamborlane2018
+mappings: ['task_po_can100_glucose_cumulative_amount', 'task_po_can300_glucose_cumulative_amount', 'task_po_can100_renal_threshold', 'task_po_can300_renal_threshold']
+weights: [8, 9, 8, 9]
+use_mapping_weights: True
+fit_parameters: {}
+Parameters
+	FitParameter<KI__RTG_E50 = 2.5e-06 [1e-08 - 44]>
+	FitParameter<KI__RTG_base = 12.5 [9 - 14]>
+	FitParameter<KI__RTG_max_inhibition = 0.75 [0.2 - 1.0]>
+	FitParameter<KI__RTG_m_fpg = 1 [0.2 - 3]>
+Settings
+	residual_type: ResidualType.NORMALIZED
+	weighting_curves: [<WeightingCurvesType.MAPPING: 1>, <WeightingCurvesType.POINTS: 2>]
+	weighting_points: WeightingPointsType.ERROR_WEIGHTING
+Data
+	experiment_keys: ['Chen2015', 'Chen2015', 'Chen2015', 'Chen2015', 'Chen2015', 'Chen2015', 'Chen2015', 'Devineni2012', 'Devineni2012', 'Devineni2012', 'Devineni2012', 'Devineni2012', 'Devineni2012', 'Devineni2013', 'Devineni2013', 'Devineni2013', 'Devineni2013', 'Devineni2013', 'Devineni2013', 'Devineni2013', 'Devineni2013', 'Devineni2014', 'Devineni2014', 'Devineni2015a', 'Devineni2015a', 'Devineni2015a', 'Devineni2015a', 'Devineni2015a', 'Devineni2015a', 'Devineni2015c', 'Devineni2016', 'Devineni2016', 'Devineni2016', 'Devineni2016', 'Iijima2015', 'Iijima2015', 'Iijima2015', 'Iijima2015', 'Sha2011', 'Sha2011', 'Sha2011', 'Sha2011', 'Sha2011', 'Sha2011', 'Sha2011', 'Sha2011', 'Sha2011', 'Sha2011', 'Sha2011', 'Sha2011', 'Sha2011', 'Sha2011', 'Sha2011', 'Sha2014', 'Sha2014', 'Sha2014', 'Sha2014', 'Sha2014', 'Sha2014', 'Sha2015', 'Sha2015', 'Tamborlane2018', 'Tamborlane2018', 'Tamborlane2018', 'Tamborlane2018']
+	mapping_keys: ['fm_po_can_CAN0_glucose_cumulative_amount', 'fm_po_can_CAN100_glucose_cumulative_amount', 'fm_po_can_CAN300_glucose_cumulative_amount', 'fm_po_can_CAN100_glucose_RT_MDRD', 'fm_po_can_CAN300_glucose_RT_MDRD', 'fm_po_can_CAN100_glucose_RT_McrCl', 'fm_po_can_CAN300_glucose_RT_McrCl', 'task_po_can0_glucose_cumulative_amount', 'task_po_can100_glucose_cumulative_amount', 'task_po_can300_glucose_cumulative_amount', 'task_po_can0_glucose_RT', 'task_po_can100_glucose_RT', 'task_po_can300_glucose_RT', 'task_po_can0_glucose_cumulative_amount', 'task_po_can50_glucose_cumulative_amount', 'task_po_can100_glucose_cumulative_amount', 'task_po_can300_glucose_cumulative_amount', 'task_po_can0_glucose_renal_threshold', 'task_po_can50_glucose_renal_threshold', 'task_po_can100_glucose_renal_threshold', 'task_po_can300_glucose_renal_threshold', 'task_po_can300_glucose_cumulative_amount', 'task_po_can300_glucose_renal_threshold', 'fm_po_can_50_glucose_cumulative_amount_multi', 'fm_po_can_100_glucose_cumulative_amount_multi', 'fm_po_can_300_glucose_cumulative_amount_multi', 'fm_po_can_50_glucose_renal_threshold_multi', 'fm_po_can_100_glucose_renal_threshold_multi', 'fm_po_can_300_glucose_renal_threshold_multi', 'fm_po_can200_normal_renal_glucose_RT_mean', 'task_po_can200_glucose_cumulative_amount', 'task_po_can300_glucose_cumulative_amount', 'task_po_can200_glucose_renal_threshold', 'task_po_can300_glucose_renal_threshold', 'task_po_can25_glucose_cumulative_amount', 'task_po_can100_glucose_cumulative_amount', 'task_po_can200_glucose_cumulative_amount', 'task_po_can400_glucose_cumulative_amount', 'task_po_can0_cumulative_amount', 'task_po_can10_cumulative_amount', 'task_po_can30_cumulative_amount', 'task_po_can100_cumulative_amount', 'task_po_can200_cumulative_amount', 'task_po_can400_cumulative_amount', 'task_po_can600_cumulative_amount', 'task_po_can800_cumulative_amount', 'task_po_can10_renal_threshold', 'task_po_can30_renal_threshold', 'task_po_can100_renal_threshold', 'task_po_can200_renal_threshold', 'task_po_can400_renal_threshold', 'task_po_can600_renal_threshold', 'task_po_can800_renal_threshold', 'task_po_can0_glucose_renal_threshold', 'task_po_can30_glucose_renal_threshold', 'task_po_can100_glucose_renal_threshold', 'task_po_can200_glucose_renal_threshold', 'task_po_can400_glucose_renal_threshold', 'task_po_can300_glucose_renal_threshold', 'task_po_can300_glucose_cumulative_amount', 'task_po_can300_renal_threshold', 'task_po_can100_glucose_cumulative_amount', 'task_po_can300_glucose_cumulative_amount', 'task_po_can100_renal_threshold', 'task_po_can300_renal_threshold']
+	xid_observable: ['time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time']
+	yid_observable: ['KI__UGE', 'KI__UGE', 'KI__UGE', 'KI__RTG', 'KI__RTG', 'KI__RTG', 'KI__RTG', 'KI__UGE', 'KI__UGE', 'KI__UGE', 'KI__RTG', 'KI__RTG', 'KI__RTG', 'KI__UGE', 'KI__UGE', 'KI__UGE', 'KI__UGE', 'KI__RTG', 'KI__RTG', 'KI__RTG', 'KI__RTG', 'KI__UGE', 'KI__RTG', 'KI__UGE', 'KI__UGE', 'KI__UGE', 'KI__RTG', 'KI__RTG', 'KI__RTG', 'KI__RTG', 'KI__UGE', 'KI__UGE', 'KI__RTG', 'KI__RTG', 'KI__UGE', 'KI__UGE', 'KI__UGE', 'KI__UGE', 'KI__UGE', 'KI__UGE', 'KI__UGE', 'KI__UGE', 'KI__UGE', 'KI__UGE', 'KI__UGE', 'KI__UGE', 'KI__RTG', 'KI__RTG', 'KI__RTG', 'KI__RTG', 'KI__RTG', 'KI__RTG', 'KI__RTG', 'KI__RTG', 'KI__RTG', 'KI__RTG', 'KI__RTG', 'KI__RTG', 'KI__RTG', 'KI__UGE', 'KI__RTG', 'KI__UGE', 'KI__UGE', 'KI__RTG', 'KI__RTG']
+	x_references: [array([   0., 1440.]), array([   0., 1440.]), array([   0., 1440.]), array([1440.]), array([1440.]), array([1440.]), array([1440.]), array([   0., 1440.]), array([   0., 1440.]), array([   0., 1440.]), array([-37440., -36000.,   1440.]), array([-37440., -36000.,   1440.]), array([-37440., -36000.,   1440.]), array([-10080.,  -8640.,  -7200.,   1440.]), array([-10080.,  -8640.,  -7200.,   1440.]), array([-10080.,  -8640.,  -7200.,   1440.]), array([-10080.,  -8640.,  -7200.,   1440.]), array([-8640., -7200.,  1440.]), array([-8640., -7200.,  1440.]), array([-8640., -7200.,  1440.]), array([-8640., -7200.,  1440.]), array([   0., 1440.]), array([1440.]), array([-10080.,   1440.,   2880.]), array([-10080.,   1440.,   2880.]), array([-10080.,   1440.,   2880.]), array([-10080.,   1440.,   2880.]), array([-10080.,   1440.,   2880.]), array([-10080.,   1440.,   2880.]), array([1440.]), array([   0.,  120.,  240.,  420.,  600.,  780., 1440., 2880., 4320.]), array([   0.,  120.,  240.,  420.,  600.,  780., 1440., 2880., 4320.]), array([240.]), array([240.]), array([-23040., -21600., -20160., -18720., -17280., -15840., -14400.,
+            0.,   1440.,   2880.,   4320.]), array([-23040., -21600., -20160., -18720., -17280., -15840., -14400.,
+            0.,   1440.,   2880.,   4320.]), array([-23040., -21600., -20160., -18720., -17280., -15840., -14400.,
+            0.,   1440.,   2880.,   4320.]), array([-23040., -21600., -20160., -18720., -17280., -15840., -14400.,
+            0.,   1440.,   2880.,   4320.]), array([   0., 1440.]), array([   0., 1440.]), array([   0., 1440.]), array([   0., 1440.]), array([   0., 1440.]), array([   0., 1440.]), array([   0., 1440.]), array([   0., 1440.]), array([1440.]), array([1440.]), array([1440.]), array([1440.]), array([1440.]), array([1440.]), array([1440.]), array([-23040.,   4320.]), array([-23040.,   4320.]), array([-23040.,   4320.]), array([-23040.,   4320.]), array([-23040.,   4320.]), array([-23040.,   4320.]), array([   0.,  120.,  240.,  600.,  840., 1440.]), array([ 240.,  600.,  840., 1440.]), array([-20160., -19440., -18720.,      0.,    720.,   1440.]), array([-20160., -19440., -18720.,      0.,    720.,   1440.]), array([ 720., 1440.]), array([ 720., 1440.])]
+	y_references: [array([0.   , 0.009]), array([ 0. , 33.8]), array([ 0. , 42.9]), array([4.22957371]), array([3.74111901]), array([3.76887211]), array([3.36922735]), array([0. , 8.1]), array([ 0.  , 77.11]), array([  0. , 156.7]), array([12.7       , 12.4       , 13.23138833]), array([12.33320785,  5.9102136 ,  5.65355612]), array([12.27866085,  5.41297616,  4.17607558]), array([ 0. ,  9.8, 12.4, 16.2]), array([ 0. , 14.5, 80.8, 99.3]), array([  0. ,  15.6, 117.3, 119.1]), array([  0. ,  10.5, 113.1, 111.5]), array([13.04396092, 13.54351687, 13.04396092]), array([13.54351687,  7.93738899,  6.60523979]), array([11.76731794,  5.41185613,  4.26287744]), array([13.15497336,  5.77264654,  4.71802842]), array([ 0.  , 42.34]), array([3.22]), array([34.5, 28.9, 35.5]), array([48.1, 44.6, 67. ]), array([ 62. ,  60.9, 104.6]), array([4.18516874, 4.55706039, 5.63943162]), array([3.23046181, 3.49689165, 4.31838366]), array([2.51998224, 2.60879218, 3.39142984]), array([4.30173179]), array([3.07587150e-02, 2.82980178e+00, 6.92071087e+00, 1.46103896e+01,
+       1.98701299e+01, 2.57142857e+01, 3.78332194e+01, 5.95796309e+01,
+       6.53007519e+01]), array([ 0.        ,  2.03007519,  6.88995215, 15.31784005, 21.80792891,
+       28.17498291, 40.38619275, 69.4531784 , 77.81954887]), array([3.37477798]), array([3.39698046]), array([  0.        ,  57.5226122 ,  75.96097248,  60.93172434,
+        60.0507805 ,  57.7340179 ,  53.98054424,  63.00042171,
+       124.25814064, 143.84543849, 152.49793813]), array([  0.        ,  93.71425709, 151.21500743,  98.84644095,
+       100.83802693, 103.40456502,  93.61788642, 104.64942709,
+       202.67240454, 256.43968408, 283.76050441]), array([  0.        ,  83.3691343 , 144.3137973 ,  90.22528222,
+        82.16346   ,  82.71878106,  82.69959616,  67.30297019,
+       138.32104425, 194.95773048, 234.91455888]), array([  0.        , 110.08098463, 191.99243832, 100.5637126 ,
+        96.23528681,  95.06753615,  84.41999093,  80.22578508,
+       160.43327758, 233.72751363, 287.46891586]), array([0. , 0.1]), array([0., 8.]), array([ 0. , 17.5]), array([ 0. , 43.6]), array([ 0. , 48.6]), array([ 0. , 65.1]), array([ 0. , 69.2]), array([ 0. , 65.5]), array([6.30203081]), array([5.63621647]), array([3.87749864]), array([3.95568744]), array([3.73285582]), array([3.40055768]), array([3.42401357]), array([14.9, 14.4]), array([14.1,  7.6]), array([13. ,  5.6]), array([13.5,  4.9]), array([14.,  4.]), array([13.3,  4.8]), array([ 0.        ,  7.25395516, 12.82663677, 29.20842942, 40.14362241,
+       51.44661015]), array([3.33103448, 3.41517241, 3.9137931 , 4.13172414]), array([ 0. ,  4. ,  5.3,  0. , 50.8, 74.1]), array([ 0. ,  0.1,  0.1,  0. , 43.4, 68.6]), array([4.11364781, 4.68803423]), array([3.69472176, 3.82642056])]
+	y_errors: [array([0.01, 0.01]), array([10.4, 10.4]), array([6.67, 6.67]), array([0.48012877]), array([0.28530195]), array([0.78263766]), array([0.53174956]), array([15.64, 15.64]), array([33.85, 33.85]), array([65.89, 65.89]), array([1.64      , 1.77      , 1.54527163]), array([1.83380894, 1.32816845, 1.35969205]), array([0.85356583, 1.67599665, 1.23320907]), array([41. ,  6.6,  8.6, 41. ]), array([26.8, 19.1, 26.8, 17.5]), array([30.7, 12.4, 18.8, 30.7]), array([27.2,  9.2, 27.2, 24.3]), array([1.49866785, 1.44316163, 1.77619893]), array([1.94271758, 1.6651865 , 1.83170515]), array([1.22113677, 1.16563055, 0.88809947]), array([1.83170515, 1.49866785, 1.11012433]), None, None, array([10.3 ,  9.9 ,  7.01]), array([12.3 , 16.5 ,  6.59]), array([10.9 , 18.7 , 20.17]), array([0.29418295, 0.50510657, 0.68439165]), array([0.89920071, 1.11567496, 0.48234902]), array([0.84924512, 0.96025755, 1.02242451]), array([0.41629663]), array([0.92276145, 0.86124402, 0.67669173, 0.92276145, 1.04579631,
+       1.26110731, 0.92276145, 2.42993848, 3.0758715 ]), array([0.64593301, 0.6151743 , 0.43062201, 0.6151743 , 0.52289815,
+       1.4456596 , 1.99931647, 3.93711552, 4.33697881]), array([0.49400533]), array([0.39076377]), array([  2.73683561,   9.56171602,  71.11808164,  14.22850321,
+        17.33818432,  16.56577588,  13.74703153,  16.50098453,
+        79.60959701, 141.70311662, 164.43311461]), array([  2.42856923,  11.09847324,  76.9867065 ,  23.0508961 ,
+        23.48787935,  21.20974735,  20.58617507,  21.62840123,
+        84.35898804, 186.43989995, 233.34081681]), array([  2.73122292,  32.05184752, 100.65567817,  13.26532663,
+        29.67484729,  25.66186773,  19.24032674,  15.00130335,
+        80.53448079, 151.55434128, 213.5366735 ]), array([  1.81160471,  21.01469329,  91.48118981,  19.7996322 ,
+        15.55186259,  18.84250657,  18.46888083,  25.26046845,
+        50.98964352, 146.92073522, 211.07282007]), array([0.77459667, 0.77459667]), array([1.46969385, 1.46969385]), array([6.85857128, 6.85857128]), array([6.36867333, 6.36867333]), array([8.81816307, 8.81816307]), array([11.26765282, 11.26765282]), array([11.26765282, 11.26765282]), array([12.49239769, 12.49239769]), array([0.81577145]), array([0.4189392]), array([0.33515002]), array([0.26393257]), array([0.38124077]), array([0.38543525]), array([0.33934618]), array([2.6, 2.2]), array([1. , 1.4]), array([1.6, 1.4]), array([1.6, 1.5]), array([1.8, 1.2]), array([1.8, 1.3]), array([ 4.32423566,  4.63310301,  3.3974483 ,  7.72205452,  9.88366282,
+       12.66393225]), array([0.76018647, 0.67403201, 0.75511856, 0.4155686 ]), array([36.5958128 ,  7.28888889, 10.16666667, 36.5958128 , 28.6374114 ,
+       36.5958128 ]), array([25.05886452,  0.05      ,  0.05      , 25.05886452, 17.04509735,
+       25.05886452]), array([0.67825557, 0.7432451 ]), array([0.41426923, 0.52392453])]
+	y_errors_type: ['SD', 'SD', 'SD', 'SD', 'SD', 'SD', 'SD', 'SD', 'SD', 'SD', 'SD', 'SD', 'SD', 'SD', 'SD', 'SD', 'SD', 'SD', 'SD', 'SD', 'SD', None, None, 'SD', 'SD', 'SD', 'SD', 'SD', 'SD', 'SD', 'SD', 'SD', 'SD', 'SD', 'SD', 'SD', 'SD', 'SD', 'SD', 'SD', 'SD', 'SD', 'SD', 'SD', 'SD', 'SD', 'SD', 'SD', 'SD', 'SD', 'SD', 'SD', 'SD', 'SD', 'SD', 'SD', 'SD', 'SD', 'SD', 'SD', 'SD', 'SD', 'SD', 'SD', 'SD']
+	weights: [array([0. , 6.3]), array([ 0.  , 22.75]), array([ 0.        , 45.02248876]), array([123.32947977]), array([183.57976654]), array([67.41843972]), array([88.70563674]), array([0.        , 2.58951407]), array([ 0.        , 11.38995569]), array([ 0.        , 11.89103051]), array([23.23170732, 21.01694915, 25.6875    ]), array([22.41819851, 14.832992  , 13.85989354]), array([47.9504543 , 10.76568613, 11.28782806]), array([0.        , 3.34090909, 3.24418605, 0.88902439]), array([ 0.        ,  1.70811518,  6.78358209, 12.76714286]), array([ 0.        ,  2.51612903, 12.4787234 ,  7.75895765]), array([ 0.        ,  2.85326087, 10.39522059, 11.47119342]), array([26.11111111, 28.15384615, 22.03125   ]), array([20.91428571, 14.3       , 10.81818182]), array([25.6969697 , 12.38095238, 12.8       ]), array([23.93939394, 12.83950617, 14.16666667]), array([28., 28.]), array([56.]), array([10.04854369,  8.75757576, 15.19258203]), array([11.73170732,  8.10909091, 30.50075873]), array([17.06422018,  9.77005348, 15.55775905]), array([42.67924528, 27.06593407, 24.72019465]), array([10.77777778,  9.40298507, 26.858458  ]), array([8.90196078, 8.15028902, 9.95114007]), array([82.66666667]), array([5.55555556e-02, 5.47619048e+00, 1.70454545e+01, 2.63888889e+01,
+       3.16666667e+01, 3.39837398e+01, 6.83333333e+01, 4.08649789e+01,
+       3.53833333e+01]), array([ 0.        ,  5.13333333, 24.88888889, 38.73333333, 64.87581699,
+       30.31678487, 31.42222222, 27.44097222, 27.91174153]), array([102.47191011]), array([121.70454545]), array([0.        , 6.56283249, 1.16519616, 4.67167706, 3.77836232,
+       3.80196892, 4.28367872, 4.16506862, 1.70273862, 1.10740187,
+       1.01172679]), array([0.        , 9.2115134 , 2.14273131, 4.67801688, 4.68348456,
+       5.31854426, 4.9610286 , 5.2783842 , 2.62090826, 1.50049631,
+       1.32662994]), array([0.        , 3.31045413, 1.82475653, 8.65656614, 3.52391624,
+       4.10252479, 5.47049086, 5.7100589 , 2.18595766, 1.63722146,
+       1.40014434]), array([0.        , 6.19070225, 2.480293  , 6.00253696, 7.31311835,
+       5.96271745, 5.40201007, 3.75338611, 3.71846029, 1.88008469,
+       1.60956769]), array([0.        , 0.96824584]), array([ 0.        , 16.32993162]), array([0.        , 7.65465545]), array([ 0.        , 20.53802938]), array([ 0.        , 16.53405576]), array([ 0.        , 17.33280242]), array([ 0.        , 18.42442285]), array([ 0.        , 15.72956649]), array([46.35144415]), array([80.72125742]), array([69.41665095]), array([89.92495722]), array([58.74800622]), array([52.93585914]), array([60.54018825]), array([51.57692308, 58.90909091]), array([126.9       ,  48.85714286]), array([73.125, 36.   ]), array([75.9375, 29.4   ]), array([70., 30.]), array([66.5       , 33.23076923]), array([ 0.        , 14.09111696, 33.97836284, 34.04221818, 36.55452522,
+       36.56206321]), array([ 59.15517729,  68.40154064,  69.97074307, 134.22158277]), array([0.        , 0.73170732, 0.69508197, 0.        , 2.36520447,
+       2.69976242]), array([0.        , 3.        , 3.        , 0.        , 3.81928004,
+       4.10633131]), array([24.26016384, 25.23008479]), array([40.13391937, 32.86521518])]
+	weights_points: [array([0. , 0.9]), array([0.  , 3.25]), array([0.        , 6.43178411]), array([8.80924855]), array([13.11284047]), array([4.81560284]), array([6.33611691]), array([0.        , 0.51790281]), array([0.        , 2.27799114]), array([0.       , 2.3782061]), array([7.74390244, 7.00564972, 8.5625    ]), array([6.72545955, 4.4498976 , 4.15796806]), array([14.38513629,  3.22970584,  3.38634842]), array([0.        , 1.48484848, 1.44186047, 0.39512195]), array([0.        , 0.7591623 , 3.01492537, 5.67428571]), array([0.        , 1.25806452, 6.2393617 , 3.87947883]), array([0.        , 1.14130435, 4.15808824, 4.58847737]), array([8.7037037 , 9.38461538, 7.34375   ]), array([6.97142857, 4.76666667, 3.60606061]), array([9.63636364, 4.64285714, 4.8       ]), array([7.18181818, 3.85185185, 4.25      ]), array([2., 2.]), array([2.]), array([3.34951456, 2.91919192, 5.06419401]), array([ 3.91056911,  2.7030303 , 10.16691958]), array([5.68807339, 3.25668449, 5.18591968]), array([14.22641509,  9.02197802,  8.24006488]), array([3.59259259, 3.13432836, 8.95281933]), array([2.96732026, 2.71676301, 3.31704669]), array([10.33333333]), array([3.33333333e-02, 3.28571429e+00, 1.02272727e+01, 1.58333333e+01,
+       1.90000000e+01, 2.03902439e+01, 4.10000000e+01, 2.45189873e+01,
+       2.12300000e+01]), array([ 0.        ,  3.3       , 16.        , 24.9       , 41.70588235,
+       19.4893617 , 20.2       , 17.640625  , 17.94326241]), array([6.83146067]), array([8.69318182]), array([0.        , 6.01592978, 1.06809648, 4.28237064, 3.4634988 ,
+       3.48513817, 3.92670549, 3.81797956, 1.56084373, 1.01511838,
+       0.92741622]), array([0.        , 8.44388728, 1.96417037, 4.28818214, 4.29319418,
+       4.87533224, 4.54760955, 4.83851885, 2.40249924, 1.37545495,
+       1.21607745]), array([0.        , 2.6010711 , 1.43373727, 6.80158768, 2.76879133,
+       3.22341234, 4.29824282, 4.48647485, 1.71753816, 1.28638829,
+       1.10011341]), array([0.        , 5.23828652, 2.09870946, 5.07906973, 6.18802322,
+       5.0453763 , 4.5709316 , 3.1759421 , 3.14638947, 1.59084089,
+       1.36194189]), array([0.        , 0.12909944]), array([0.        , 5.44331054]), array([0.        , 2.55155182]), array([0.        , 6.84600979]), array([0.        , 5.51135192]), array([0.        , 5.77760081]), array([0.        , 6.14147428]), array([0.        , 5.24318883]), array([7.72524069]), array([13.4535429]), array([11.56944183]), array([14.98749287]), array([9.79133437]), array([8.82264319]), array([10.09003137]), array([5.73076923, 6.54545455]), array([14.1       ,  5.42857143]), array([8.125, 4.   ]), array([8.4375    , 3.26666667]), array([7.77777778, 3.33333333]), array([7.38888889, 3.69230769]), array([0.        , 1.56567966, 3.77537365, 3.78246869, 4.06161391,
+       4.06245147]), array([4.38186498, 5.06678079, 5.18301801, 9.94233946]), array([0.        , 0.54878049, 0.52131148, 0.        , 1.77390335,
+       2.02482181]), array([0.        , 2.        , 2.        , 0.        , 2.54618669,
+       2.73755421]), array([6.06504096, 6.3075212 ]), array([8.91864875, 7.30338115])]
+	weights_curves: [7.0, 7.0, 7.0, 14.0, 14.0, 14.0, 14.0, 5.0, 5.0, 5.0, 3.0, 3.3333333333333335, 3.3333333333333335, 2.25, 2.25, 2.0, 2.5, 3.0, 3.0, 2.6666666666666665, 3.3333333333333335, 14.0, 28.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 8.0, 1.6666666666666667, 1.5555555555555556, 15.0, 14.0, 1.0909090909090908, 1.0909090909090908, 1.2727272727272727, 1.1818181818181819, 7.5, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 6.0, 6.0, 6.0, 6.0, 6.0, 6.0, 6.0, 9.0, 9.0, 9.0, 9.0, 9.0, 9.0, 9.0, 13.5, 1.3333333333333333, 1.5, 4.0, 4.5]
+
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Optimization results: 20250428_150222__1479a
+--------------------------------------------------------------------------------
+    run  success    duration        cost  KI__RTG_E50  KI__RTG_base  KI__RTG_max_inhibition  KI__RTG_m_fpg                                     message                                                  x                                                 x0
+0    11     True  108.746987  255.585386     0.000017      9.005287                0.624454       0.718984  `xtol` termination condition is satisfied.  [1.7058500169355e-05, 9.005286526615148, 0.624...  [2.691967525059867, 11.643792035674815, 0.8450...
+1    33     True  104.623580  255.638347     0.000016      9.008814                0.622693       0.716267  `xtol` termination condition is satisfied.  [1.623480294507395e-05, 9.008813544535302, 0.6...  [7.034048300414367, 10.91037527997898, 0.36525...
+2    12     True  101.102304  255.650373     0.000017      9.006236                0.624065       0.726010  `xtol` termination condition is satisfied.  [1.688627080450941e-05, 9.006236192801332, 0.6...  [30.699919063843524, 10.448964621335637, 0.254...
+3    99     True  100.585241  255.682081     0.000017      9.014407                0.624896       0.719167  `xtol` termination condition is satisfied.  [1.7049447328303575e-05, 9.014407025812366, 0....  [0.0002587586204522231, 10.18780599709854, 0.9...
+4     6     True  150.705188  255.687893     0.000016      9.000004                0.622767       0.721873  `xtol` termination condition is satisfied.  [1.6395553423874068e-05, 9.000004110213002, 0....  [25.762832819061554, 13.436798688955585, 0.994...
+..  ...      ...         ...         ...          ...           ...                     ...            ...                                         ...                                                ...                                                ...
+95   53     True  113.074103  256.006211     0.000016      9.000000                0.620907       0.730910  `xtol` termination condition is satisfied.  [1.5663271289225533e-05, 9.000000034253674, 0....  [2.7464232367817648e-05, 10.63322487193726, 0....
+96   54     True   79.386381  256.013290     0.000016      9.000782                0.621022       0.736691  `xtol` termination condition is satisfied.  [1.5638038772097934e-05, 9.000781798617272, 0....  [5.188215918538932e-06, 9.849980190691555, 0.4...
+97   21     True  112.504723  256.015225     0.000016      9.000035                0.620883       0.721931  `xtol` termination condition is satisfied.  [1.5661966177654465e-05, 9.000035315291855, 0....  [8.130621361592726e-05, 12.26631465798175, 0.7...
+98   18     True  143.601217  256.018625     0.000016      9.000537                0.620553       0.720291  `xtol` termination condition is satisfied.  [1.5537428594684866e-05, 9.000537309844589, 0....  [9.439810420169149e-08, 13.591019128908314, 0....
+99   67     True  104.410310  256.036485     0.000015      9.000011                0.620085       0.720010  `xtol` termination condition is satisfied.  [1.5380560441138313e-05, 9.000010883173358, 0....  [0.0015079206925286022, 13.810975431005922, 0....
+
+[100 rows x 11 columns]
+--------------------------------------------------------------------------------
+Optimal parameters:
+	>>> !Optimal parameter 'KI__RTG_base' within 5% of lower bound! <<<
+	'KI__RTG_E50': Q_(1.7058500169355e-05, 'mM'),  # [1e-08 - 44]
+	'KI__RTG_base': Q_(9.005286526615148, 'mM'),  # [9 - 14]
+	'KI__RTG_max_inhibition': Q_(0.6244535441073977, 'dimensionless'),  # [0.2 - 1.0]
+	'KI__RTG_m_fpg': Q_(0.7189836466732434, 'dimensionless'),  # [0.2 - 3]
+--------------------------------------------------------------------------------

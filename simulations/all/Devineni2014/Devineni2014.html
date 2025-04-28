@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+    <title>Devineni2014</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet">
+    <!--<link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">-->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/styles/default.min.css">
+</head>
+
+<body>
+<div id="app">
+    <!-- Vue app-->
+    <v-app>
+        <v-content>
+
+            <a href="../index.html">Experiments</a>
+            <h1>Devineni2014</h1>
+
+            <h2>Models</h2>
+            <p>
+            <ul>
+                <li><strong>model</strong>: <a href="../../../../models/results/models/canagliflozin_body_flat.xml">../../../../models/results/models/canagliflozin_body_flat.xml</a></li>
+            </ul>
+            </p>
+
+            <h2>Datasets</h2>
+            <p>
+            <ul>
+                <li><strong>canagliflozin_CAN300</strong>: <a href="Devineni2014_canagliflozin_CAN300.tsv">Devineni2014_canagliflozin_CAN300.tsv</a></li>
+                <li><strong>canagliflozin_CAN300_HCTZ25</strong>: <a href="Devineni2014_canagliflozin_CAN300_HCTZ25.tsv">Devineni2014_canagliflozin_CAN300_HCTZ25.tsv</a></li>
+                <li><strong>glucose_cumulative_amount_CAN300</strong>: <a href="Devineni2014_glucose_cumulative_amount_CAN300.tsv">Devineni2014_glucose_cumulative_amount_CAN300.tsv</a></li>
+                <li><strong>glucose_cumulative_amount_CAN300_HCTZ25</strong>: <a href="Devineni2014_glucose_cumulative_amount_CAN300_HCTZ25.tsv">Devineni2014_glucose_cumulative_amount_CAN300_HCTZ25.tsv</a></li>
+                <li><strong>glucose_renal_threshold_CAN300</strong>: <a href="Devineni2014_glucose_renal_threshold_CAN300.tsv">Devineni2014_glucose_renal_threshold_CAN300.tsv</a></li>
+                <li><strong>glucose_renal_threshold_CAN300_HCTZ25</strong>: <a href="Devineni2014_glucose_renal_threshold_CAN300_HCTZ25.tsv">Devineni2014_glucose_renal_threshold_CAN300_HCTZ25.tsv</a></li>
+            </ul>
+            </p>
+
+            <h2>Figures</h2>
+            <p>
+            <ul>
+                <li><strong>can multi</strong>: <a href="Devineni2014_can multi.svg">Devineni2014_can multi.svg</a></li>
+                <li><strong>Fig_uge</strong>: <a href="Devineni2014_Fig_uge.svg">Devineni2014_Fig_uge.svg</a></li>
+                <li><strong>Fig_rtg</strong>: <a href="Devineni2014_Fig_rtg.svg">Devineni2014_Fig_rtg.svg</a></li>
+            </ul>
+            </p>
+
+            <h3>can multi</h3>
+            <p>
+            <table>
+                <tr>
+                    <td>
+                        <!--<v-img src="Devineni2014_can multi.svg" max-width="600" width="600"></v-img>-->
+                        <img src="Devineni2014_can multi.svg" width="600">
+                    </td>
+                    <!--
+                    <td>
+                    </td>
+                    -->
+                </tr>
+            </table>
+            </p>
+            <h3>Fig_uge</h3>
+            <p>
+            <table>
+                <tr>
+                    <td>
+                        <!--<v-img src="Devineni2014_Fig_uge.svg" max-width="600" width="600"></v-img>-->
+                        <img src="Devineni2014_Fig_uge.svg" width="600">
+                    </td>
+                    <!--
+                    <td>
+                    </td>
+                    -->
+                </tr>
+            </table>
+            </p>
+            <h3>Fig_rtg</h3>
+            <p>
+            <table>
+                <tr>
+                    <td>
+                        <!--<v-img src="Devineni2014_Fig_rtg.svg" max-width="600" width="600"></v-img>-->
+                        <img src="Devineni2014_Fig_rtg.svg" width="600">
+                    </td>
+                    <!--
+                    <td>
+                    </td>
+                    -->
+                </tr>
+            </table>
+            </p>
+
+            <h2>Code</h2>
+            <p>
+                <a href="../../../../experiments/studies/devineni2014.py">../../../../experiments/studies/devineni2014.py</a>
+            <pre>
+<code class="python">from typing import Dict
+
+from sbmlsim.data import DataSet, load_pkdb_dataframe
+from sbmlsim.fit import FitMapping, FitData
+from sbmlutils.console import console
+
+from pkdb_models.models.canagliflozin.experiments.base_experiment import (
+    CanagliflozinSimulationExperiment,
+)
+from pkdb_models.models.canagliflozin.experiments.metadata import Tissue, Route, Dosing, ApplicationForm, Health, \
+    Fasting, CanagliflozinMappingMetaData, Coadministration
+
+from sbmlsim.plot import Axis, Figure
+from sbmlsim.simulation import Timecourse, TimecourseSim
+
+from pkdb_models.models.canagliflozin.helpers import run_experiments
+
+
+class Devineni2014(CanagliflozinSimulationExperiment):
+    """Simulation experiment of Devineni2014."""
+
+    bodyweight = 75.6  # [kg]
+    fpg = 5  # mM (healthy)
+
+    info = {'can300': "CAN300", 'can300_hctz25': "CAN300_HCTZ25"}
+
+    colors = {"CAN300": "black", "CAN300_HCTZ25": "tab:red"}
+
+    def datasets(self) -> Dict[str, DataSet]:
+        dsets = {}
+        for fig_id in ["Fig2", "Tab2A"]:
+            df = load_pkdb_dataframe(f"{self.sid}_{fig_id}", data_path=self.data_path)
+            for label, df_label in df.groupby("label"):
+                dset = DataSet.from_df(df_label, self.ureg)
+
+                # unit conversion to mole/l
+                if label.startswith("canagliflozin_"):
+                    dset.unit_conversion("mean", 1 / self.Mr.can)
+
+                dsets[f"{label}"] = dset
+
+        # console.print(dsets)
+        # console.print(dsets.keys())
+        return dsets
+
+    def simulations(self) -> Dict[str, TimecourseSim]:
+        Q_ = self.Q_
+        tcsims = {}
+
+        # multiple dose
+        for sim in self.info.keys():
+            tc0 = Timecourse(
+                start=0,
+                end=24 * 60,  # [min]
+                steps=500,
+                changes={
+                    **self.default_changes(),
+                    "PODOSE_can": Q_(300, "mg"),
+                    "BW": Q_(self.bodyweight, "kg"),
+                    "[KI__fpg]": Q_(self.fpg, "mM"),
+                },
+            )
+            changes_multi = {
+                "BW": Q_(self.bodyweight, "kg"),
+                "[KI__fpg]": Q_(self.fpg, "mM"),
+                "KI__glc_urine": Q_(0, "mmole"),  # reset UGE
+                "PODOSE_can": Q_(300, "mg"),
+            }
+            tc1 = Timecourse(
+                start=0,
+                end=24 * 60,  # [min]
+                steps=500,
+                changes=changes_multi
+            )
+            tc2 = Timecourse(
+                start=0,
+                end=25 * 60,  # [min]
+                steps=500,
+                changes=changes_multi
+            )
+
+            tcsims[f"po_{sim}_multi"] = TimecourseSim(
+                [tc0] + [tc1 for _ in range(5)] + [tc2],
+                time_offset=-6 * 24 * 60,
+            )
+
+        return tcsims
+
+    def fit_mappings(self) -> Dict[str, FitMapping]:
+
+        mappings = {}
+
+        for name, sid in [
+            ('canagliflozin', '[Cve_can]'),
+            ('glucose_cumulative_amount', 'KI__UGE'),
+            ('glucose_renal_threshold', 'KI__RTG'),
+        ]:
+
+            for sim, group in self.info.items():
+
+                coadministration = Coadministration.HCTZ if "HCTZ25" in group else Coadministration.NONE
+
+                mappings[f"task_po_{sim}_{name}"] = FitMapping(
+                    self,
+                    reference=FitData(
+                        self,
+                        dataset=f"{name}_{group}",
+                        xid="time",
+                        yid="mean",
+                        yid_sd="mean_sd",
+                        count="count",
+                    ),
+                    observable=FitData(
+                        self, task=f"task_po_{sim}_multi", xid="time", yid=sid,
+                    ),
+                    metadata=CanagliflozinMappingMetaData(
+                        tissue=Tissue.URINE if "cumulative" in name else Tissue.PLASMA,
+                        route=Route.PO,
+                        application_form=ApplicationForm.TABLET,
+                        dosing=Dosing.MULTIPLE,
+                        health=Health.HEALTHY,
+                        fasting=Fasting.FASTED,
+                        coadministration=coadministration
+                    ),
+                )
+
+        # console.print(mappings)
+        return mappings
+
+    def figures(self) -> Dict[str, Figure]:
+        return {
+            **self.figure_multi(),
+            **self.figure_uge(),
+            **self.figure_rtg()
+        }
+
+    def figure_multi(self) -> Dict[str, Figure]:
+        fig = Figure(
+            experiment=self,
+            sid="can multi",
+            name=f"{self.__class__.__name__} (healthy)",
+        )
+        plots = fig.create_plots(xaxis=Axis(self.label_time, unit=self.unit_time), legend=True)
+        plots[0].set_yaxis(self.label_can, unit=self.unit_can)
+
+        # simulation
+        for sim, group in self.info.items():
+            plots[0].add_data(
+                task=f"task_po_{sim}_multi",
+                xid="time",
+                yid=f"[Cve_can]",
+                label=f"Sim can 300",
+                color=self.colors[group],
+            )
+
+        # data
+            plots[0].add_data(
+                dataset=f"canagliflozin_{group}",
+                xid="time",
+                yid="mean",
+                yid_sd="mean_sd",
+                count="count",
+                label=f"{group}",
+                color=self.colors[group],
+            )
+
+        return {
+            fig.sid: fig,
+        }
+
+    def figure_uge(self) -> Dict[str, Figure]:
+        fig = Figure(
+            experiment=self,
+            sid="Fig_uge",
+            name=f"{self.__class__.__name__} (healthy)",
+        )
+        plots = fig.create_plots(xaxis=Axis(self.label_time, unit="day"), legend=True)
+        plots[0].set_yaxis(self.label_uge, unit=self.unit_uge)
+
+        # simulation
+        for sim, group in self.info.items():
+            plots[0].add_data(
+                task=f"task_po_{sim}_multi",
+                xid="time",
+                yid=f"KI__UGE",
+                label=f"Sim 300 mg",
+                color=self.colors[group],
+            )
+            # data
+            plots[0].add_data(
+                dataset=f"glucose_cumulative_amount_{group}",
+                xid="time",
+                yid="mean",
+                yid_sd="mean_sd",
+                count="count",
+                label=f"UGE {group}",
+                color=self.colors[group],
+            )
+
+        return {
+            fig.sid: fig,
+        }
+
+    def figure_rtg(self) -> Dict[str, Figure]:
+        fig = Figure(
+            experiment=self,
+            sid="Fig_rtg",
+            name=f"{self.__class__.__name__} (healthy)",
+        )
+        plots = fig.create_plots(xaxis=Axis(self.label_time, unit=self.unit_time), legend=True)
+        plots[0].set_yaxis(self.label_rtg, unit=self.unit_rtg)
+
+        # simulation
+        for sim, group in self.info.items():
+            plots[0].add_data(
+                task=f"task_po_{sim}_multi",
+                xid="time",
+                yid=f"KI__RTG",
+                label=f"Sim 300 mg",
+                color=self.colors[group],
+            )
+
+            # data
+            plots[0].add_data(
+                dataset=f"glucose_renal_threshold_{group}",
+                xid="time",
+                yid="mean",
+                yid_sd="mean_sd",
+                count="count",
+                label=f"RTG {group}",
+                color=self.colors[group],
+            )
+
+        return {
+            fig.sid: fig,
+        }
+
+
+if __name__ == "__main__":
+    run_experiments(Devineni2014, output_dir=Devineni2014.__name__)
+</code>
+        </pre>
+            </p>
+
+        </v-content>
+    </v-app>
+</div>
+
+
+<!-- loading dependencies -->
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+<script src="https://cdn.jsdelivr.net/npm/vuetify@2.2.6/dist/vuetify.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<script>
+    const app = new Vue({
+        el: '#app',
+        vuetify: new Vuetify(),
+        delimiters: ['${', '}'],
+        data() {
+            return {}
+        }
+    })
+</script>
+
+
+</body>
+</html>
