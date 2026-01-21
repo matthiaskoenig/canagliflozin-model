@@ -121,7 +121,7 @@ def create_models(
     omex = Omex()
     for info in results.values():
         omex.add_entry(entry_path=info["path"], entry=info["entry"])
-    omex.to_omex(omex_path=model_output_dir / "canagliflozin_model.omex")
+    omex.to_omex(omex_path=model_output_dir.parent / "canagliflozin_model.omex")
 
     console.print(omex.manifest.model_dump())
 
