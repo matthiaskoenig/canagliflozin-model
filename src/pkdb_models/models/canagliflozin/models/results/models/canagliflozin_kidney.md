@@ -11,31 +11,31 @@ length: [m]
 
 ## Parameters `p`
 ```
-CAN2M7_Km_can = 0.1  # [mmol/l] Km canagliflozin UGT1A9 (kidney)  
-CAN2M7_Vmax = 0.0430642608  # [mmol/min/l] Vmax canagliflozin to M7 (kidney)  
-CANEX_k = 0.00373993861477588  # [1/min] rate urinary excretion of canagliflozin  
-CANIM_Km_can = 0.1  # [mmol/l] Km canagliflozin import (kidney)  
-CANIM_Vmax = 10.0  # [mmol/min/l] Vmax canagliflozin import (kidney)  
+CAN2M7_Km_can = 0.1  # [mmol/l] Km canagliflozin UGT1A9  
+CAN2M7_Vmax = 0.0387578347044511  # [mmol/min/l] Vmax canagliflozin to M7  
+CANEX_k = 0.00374581660737891  # [1/min] rate urinary excretion of canagliflozin  
+CANIM_Km_can = 0.1  # [mmol/l] Km canagliflozin import  
+CANIM_Vmax = 10.0  # [mmol/min/l] Vmax canagliflozin import  
 GFR_healthy = 100.0  # [ml/min] Glomerular filtration rate (healthy)  
-M5EX_k = 0.0993999073054945  # [1/min] rate urinary excretion of m5  
-M7EX_k = 0.177112957435439  # [1/min] rate urinary excretion of m7  
-M7IM_Km_m7 = 0.1  # [mmol/l] Km M7 transport (kidney)  
-M7IM_Vmax = 10.0  # [mmol/min/l] Vmax M7 transport (kidney)  
-Mr_glc = 180.0  # [g/mol] Molecular weight glc [g/mole]  
-RTG_E50 = 7.19e-06  # [mmol/l] EC50 reduction in RTG  
-RTG_base = 12.5  # [mmol/l] Baseline RTG value  
+M5EX_k = 0.110954456979074  # [1/min] rate urinary excretion of m5  
+M7EX_k = 0.186734796391971  # [1/min] rate urinary excretion of m7  
+M7IM_Km_m7 = 0.1  # [mmol/l] Km M7 transport  
+M7IM_Vmax = 10.0  # [mmol/min/l] Vmax M7 transport  
+Mr_glc = 180.0  # [g/mol] molecular weight glc  
+RTG_E50 = 1.67206914596964e-05  # [mmol/l] EC50 reduction in RTG  
+RTG_base = 9.00393167066264  # [mmol/l] Baseline RTG value  
 RTG_gamma = 1.0  # [-] hill coefficient reduction in RTG  
-RTG_m_fpg = 0.5  # [-] FPG effect on RTG  
-RTG_max_inhibition = 0.75  # [-] RTG maximum inhibition  
+RTG_m_fpg = 0.710409847698281  # [-] FPG effect on RTG  
+RTG_max_inhibition = 0.627269730954541  # [-] RTG maximum inhibition  
 Vext = 1.5  # [l] plasma  
 Vki = 0.3  # [l] kidney  
 Vmem = nan  # [m^2] plasma membrane  
 Vurine = 1.0  # [l] urine  
 cf_mg_per_g = 1000.0  # [mg/g] Conversion factor mg per g  
 cf_ml_per_l = 1000.0  # [ml/l] Conversion factor ml per l  
-f_CAN2M7 = 1.0  # [-] scaling factor CAN2M7 kidney vs liver  
-f_renal_function = 1.0  # [-] parameter for renal function  
-f_ugt1a9 = 1.0  # [-] scaling factor UGT1A9 activity (kidney)  
+f_CAN2M7 = 0.13941425128974  # [-] scaling factor CAN2M7 kidney vs liver  
+f_renal_function = 1.0  # [-] scaling factor renal function  
+f_ugt1a9 = 1.0  # [-] scaling factor UGT1A9 activity  
 fpg_healthy = 5.0  # [mmol/l] fasting plasma glucose (healthy)  
 ```
 

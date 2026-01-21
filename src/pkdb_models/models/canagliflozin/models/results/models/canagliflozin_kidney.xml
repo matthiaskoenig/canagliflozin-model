@@ -16,33 +16,24 @@
           <li>~33 % of the oral dose was excreted in urine (M5: 13.3 %, M7: 17.2 %, canagliflozin &lt;1%) [Devineni2015h]</li>
         </ul>
         <p>=&gt; mainly renal excretion of M5 and M7, small excretion of can</p>
-        <p>
-          <strong>version</strong> 3</p>
-          <h2>Changelog</h2>
-          <p>
-            <strong>version 1</strong>
-          </p>
-          <ul>
-            <li>initial model</li>
-          </ul>
-          <p>The content of this model has been carefully created in a manual research effort.</p>
-          <h2>Terms of use</h2>
-          <p>Copyright © 2025 <a href="https://livermetabolism.com" title="Matthias König" target="_blank">Matthias König</a>.</p>
-          <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
-            <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png"/>
-          </a>
-          <br/>This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+        <p>The content of this model has been carefully created in a manual research effort.</p>
+        <h2>Terms of use</h2>
+        <p>Copyright © 2026 <a href="https://livermetabolism.com" title="Matthias König" target="_blank">Matthias König</a>.</p>
+        <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
+          <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png"/>
+        </a>
+        <br/>This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
 <p>Redistribution and use of any part of this model, with or without modification, are permitted provided
 that the following conditions are met:</p>
-          <ul>
-            <li>Redistributions of this SBML file must retain the above copyright notice, this list of conditions and the following disclaimer.</li>
-            <li>Redistributions in a different form must reproduce the above copyright notice, this list of conditions
+        <ul>
+          <li>Redistributions of this SBML file must retain the above copyright notice, this list of conditions and the following disclaimer.</li>
+          <li>Redistributions in a different form must reproduce the above copyright notice, this list of conditions
 and the following disclaimer in the documentation and/or other materials provided
 with the distribution.</li>
-          </ul>
-          <p>This model is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the
+        </ul>
+        <p>This model is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the
 implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.</p></body>
-        </notes>
+      </notes>
     <annotation>
       <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
         <rdf:Description rdf:about="#meta_canagliflozin_kidney">
@@ -58,6 +49,14 @@ implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.</p></bo
               </rdf:li>
               <rdf:li rdf:parseType="Resource">
                 <vCard4:hasName rdf:parseType="Resource">
+                  <vCard4:family-name>Elias</vCard4:family-name>
+                  <vCard4:given-name>Michelle</vCard4:given-name>
+                </vCard4:hasName>
+                <vCard4:hasEmail>michelleelias66@gmail.com</vCard4:hasEmail>
+                <vCard4:organization-name>Humboldt-University Berlin, Institute for Biology</vCard4:organization-name>
+              </rdf:li>
+              <rdf:li rdf:parseType="Resource">
+                <vCard4:hasName rdf:parseType="Resource">
                   <vCard4:family-name>König</vCard4:family-name>
                   <vCard4:given-name>Matthias</vCard4:given-name>
                 </vCard4:hasName>
@@ -67,11 +66,41 @@ implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.</p></bo
             </rdf:Bag>
           </dcterms:creator>
           <dcterms:created rdf:parseType="Resource">
-            <dcterms:W3CDTF>2025-11-26T13:44:03Z</dcterms:W3CDTF>
+            <dcterms:W3CDTF>2026-01-21T21:10:25Z</dcterms:W3CDTF>
           </dcterms:created>
           <dcterms:modified rdf:parseType="Resource">
-            <dcterms:W3CDTF>2025-11-26T13:44:03Z</dcterms:W3CDTF>
+            <dcterms:W3CDTF>2026-01-21T21:10:25Z</dcterms:W3CDTF>
           </dcterms:modified>
+          <bqbiol:hasTaxon>
+            <rdf:Bag>
+              <rdf:li rdf:resource="https://identifiers.org/taxonomy/9606"/>
+              <rdf:li rdf:resource="https://identifiers.org/snomedct/337915000"/>
+            </rdf:Bag>
+          </bqbiol:hasTaxon>
+          <bqbiol:hasProperty>
+            <rdf:Bag>
+              <rdf:li rdf:resource="https://identifiers.org/mamo/MAMO_0000046"/>
+              <rdf:li rdf:resource="https://identifiers.org/ncit/C91018"/>
+              <rdf:li rdf:resource="https://identifiers.org/ncit/C98083"/>
+              <rdf:li rdf:resource="https://identifiers.org/ncit/C15299"/>
+              <rdf:li rdf:resource="https://identifiers.org/ncit/C2985"/>
+              <rdf:li rdf:resource="https://identifiers.org/ncit/C99532"/>
+              <rdf:li rdf:resource="https://identifiers.org/ncit/C79372"/>
+              <rdf:li rdf:resource="https://identifiers.org/ncit/C79371"/>
+            </rdf:Bag>
+          </bqbiol:hasProperty>
+          <bqbiol:isDescribedBy>
+            <rdf:Bag>
+              <rdf:li rdf:resource="https://identifiers.org/doi/10.5281/zenodo.13759839"/>
+            </rdf:Bag>
+          </bqbiol:isDescribedBy>
+          <bqbiol:occursIn>
+            <rdf:Bag>
+              <rdf:li rdf:resource="https://identifiers.org/FMA:7203"/>
+              <rdf:li rdf:resource="https://identifiers.org/BTO:0000671"/>
+              <rdf:li rdf:resource="https://identifiers.org/ncit/C12415"/>
+            </rdf:Bag>
+          </bqbiol:occursIn>
         </rdf:Description>
       </rdf:RDF>
     </annotation>
@@ -418,7 +447,7 @@ Model depends on the fasting plasma glucose:</p>
       </species>
     </listOfSpecies>
     <listOfParameters>
-      <parameter metaid="meta_f_renal_function" sboTerm="SBO:0000009" id="f_renal_function" name="parameter for renal function" value="1" units="dimensionless" constant="true">
+      <parameter metaid="meta_f_renal_function" sboTerm="SBO:0000009" id="f_renal_function" name="scaling factor renal function" value="1" units="dimensionless" constant="true">
         <notes>
           <body xmlns="http://www.w3.org/1999/xhtml">
             <p>scaling factor for renal function. 1.0: normal renal function;
@@ -437,7 +466,7 @@ Model depends on the fasting plasma glucose:</p>
           </rdf:RDF>
         </annotation>
       </parameter>
-      <parameter metaid="meta_f_ugt1a9" sboTerm="SBO:0000002" id="f_ugt1a9" name="scaling factor UGT1A9 activity (kidney)" value="1" units="dimensionless" constant="true">
+      <parameter metaid="meta_f_ugt1a9" sboTerm="SBO:0000002" id="f_ugt1a9" name="scaling factor UGT1A9 activity" value="1" units="dimensionless" constant="true">
         <notes>
           <body xmlns="http://www.w3.org/1999/xhtml">
             <p>Scaling factor to vary UGT1A9 activity in kidney.
@@ -456,7 +485,7 @@ Model depends on the fasting plasma glucose:</p>
           </rdf:RDF>
         </annotation>
       </parameter>
-      <parameter metaid="meta_CAN2M7_Vmax" sboTerm="SBO:0000186" id="CAN2M7_Vmax" name="Vmax canagliflozin to M7 (kidney)" value="0.0430642608" units="mmole_per_min_l" constant="true">
+      <parameter metaid="meta_CAN2M7_Vmax" sboTerm="SBO:0000186" id="CAN2M7_Vmax" name="Vmax canagliflozin to M7" value="0.0387578347044511" units="mmole_per_min_l" constant="true">
         <annotation>
           <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
             <rdf:Description rdf:about="#meta_CAN2M7_Vmax">
@@ -469,7 +498,7 @@ Model depends on the fasting plasma glucose:</p>
           </rdf:RDF>
         </annotation>
       </parameter>
-      <parameter metaid="meta_CAN2M7_Km_can" sboTerm="SBO:0000027" id="CAN2M7_Km_can" name="Km canagliflozin UGT1A9 (kidney)" value="0.1" units="mM" constant="true">
+      <parameter metaid="meta_CAN2M7_Km_can" sboTerm="SBO:0000027" id="CAN2M7_Km_can" name="Km canagliflozin UGT1A9" value="0.1" units="mM" constant="true">
         <annotation>
           <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
             <rdf:Description rdf:about="#meta_CAN2M7_Km_can">
@@ -482,7 +511,7 @@ Model depends on the fasting plasma glucose:</p>
           </rdf:RDF>
         </annotation>
       </parameter>
-      <parameter metaid="meta_Mr_glc" sboTerm="SBO:0000647" id="Mr_glc" name="Molecular weight glc [g/mole]" value="180" units="g_per_mole" constant="true">
+      <parameter metaid="meta_Mr_glc" sboTerm="SBO:0000647" id="Mr_glc" name="molecular weight glc" value="180" units="g_per_mole" constant="true">
         <annotation>
           <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
             <rdf:Description rdf:about="#meta_Mr_glc">
@@ -498,7 +527,7 @@ Model depends on the fasting plasma glucose:</p>
       <parameter id="cf_mg_per_g" name="Conversion factor mg per g" value="1000" units="mg_per_g" constant="true"/>
       <parameter id="cf_ml_per_l" name="Conversion factor ml per l" value="1000" units="ml_per_l" constant="true"/>
       <parameter id="GFR_healthy" name="Glomerular filtration rate (healthy)" value="100" units="ml_per_min" constant="true"/>
-      <parameter metaid="meta_RTG_E50" sboTerm="SBO:0000009" id="RTG_E50" name="EC50 reduction in RTG" value="7.19e-06" units="mM" constant="true">
+      <parameter metaid="meta_RTG_E50" sboTerm="SBO:0000009" id="RTG_E50" name="EC50 reduction in RTG" value="1.67206914596964e-05" units="mM" constant="true">
         <notes>
           <body xmlns="http://www.w3.org/1999/xhtml">
             <p>estimated EC50 value was 32 ng/mL (95% CI = 19–45 ng/mL). [Devineni2013]</p>
@@ -529,7 +558,7 @@ Model depends on the fasting plasma glucose:</p>
           </rdf:RDF>
         </annotation>
       </parameter>
-      <parameter id="RTG_base" name="Baseline RTG value" value="12.5" units="mM" constant="true">
+      <parameter id="RTG_base" name="Baseline RTG value" value="9.00393167066264" units="mM" constant="true">
         <notes>
           <body xmlns="http://www.w3.org/1999/xhtml">
             <p>Typical RTG value without SGLT2 inhibitors in healthy subjects.</p>
@@ -540,14 +569,14 @@ Model depends on the fasting plasma glucose:</p>
           </body>
         </notes>
       </parameter>
-      <parameter id="RTG_m_fpg" name="FPG effect on RTG" value="0.5" units="dimensionless" constant="true">
+      <parameter id="RTG_m_fpg" name="FPG effect on RTG" value="0.710409847698281" units="dimensionless" constant="true">
         <notes>
           <body xmlns="http://www.w3.org/1999/xhtml">
             <p>Effect of the FPG on the change in RTG_base.</p>
           </body>
         </notes>
       </parameter>
-      <parameter id="RTG_max_inhibition" name="RTG maximum inhibition" value="0.75" units="dimensionless" constant="true">
+      <parameter id="RTG_max_inhibition" name="RTG maximum inhibition" value="0.627269730954541" units="dimensionless" constant="true">
         <notes>
           <body xmlns="http://www.w3.org/1999/xhtml">
             <p>maximum inhibition of RTG via SGLT2</p>
@@ -555,7 +584,7 @@ Model depends on the fasting plasma glucose:</p>
         </notes>
       </parameter>
       <parameter id="fpg_healthy" name="fasting plasma glucose (healthy)" value="5" units="mM" constant="true"/>
-      <parameter metaid="meta_CANIM_Vmax" sboTerm="SBO:0000186" id="CANIM_Vmax" name="Vmax canagliflozin import (kidney)" value="10" units="mmole_per_min_l" constant="true">
+      <parameter metaid="meta_CANIM_Vmax" sboTerm="SBO:0000186" id="CANIM_Vmax" name="Vmax canagliflozin import" value="10" units="mmole_per_min_l" constant="true">
         <annotation>
           <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
             <rdf:Description rdf:about="#meta_CANIM_Vmax">
@@ -568,7 +597,7 @@ Model depends on the fasting plasma glucose:</p>
           </rdf:RDF>
         </annotation>
       </parameter>
-      <parameter metaid="meta_CANIM_Km_can" sboTerm="SBO:0000027" id="CANIM_Km_can" name="Km canagliflozin import (kidney)" value="0.1" units="mM" constant="true">
+      <parameter metaid="meta_CANIM_Km_can" sboTerm="SBO:0000027" id="CANIM_Km_can" name="Km canagliflozin import" value="0.1" units="mM" constant="true">
         <annotation>
           <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
             <rdf:Description rdf:about="#meta_CANIM_Km_can">
@@ -581,7 +610,7 @@ Model depends on the fasting plasma glucose:</p>
           </rdf:RDF>
         </annotation>
       </parameter>
-      <parameter metaid="meta_M7IM_Vmax" sboTerm="SBO:0000186" id="M7IM_Vmax" name="Vmax M7 transport (kidney)" value="10" units="mmole_per_min_l" constant="true">
+      <parameter metaid="meta_M7IM_Vmax" sboTerm="SBO:0000186" id="M7IM_Vmax" name="Vmax M7 transport" value="10" units="mmole_per_min_l" constant="true">
         <annotation>
           <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
             <rdf:Description rdf:about="#meta_M7IM_Vmax">
@@ -594,7 +623,7 @@ Model depends on the fasting plasma glucose:</p>
           </rdf:RDF>
         </annotation>
       </parameter>
-      <parameter metaid="meta_M7IM_Km_m7" sboTerm="SBO:0000027" id="M7IM_Km_m7" name="Km M7 transport (kidney)" value="0.1" units="mM" constant="true">
+      <parameter metaid="meta_M7IM_Km_m7" sboTerm="SBO:0000027" id="M7IM_Km_m7" name="Km M7 transport" value="0.1" units="mM" constant="true">
         <annotation>
           <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
             <rdf:Description rdf:about="#meta_M7IM_Km_m7">
@@ -607,7 +636,7 @@ Model depends on the fasting plasma glucose:</p>
           </rdf:RDF>
         </annotation>
       </parameter>
-      <parameter metaid="meta_f_CAN2M7" sboTerm="SBO:0000002" id="f_CAN2M7" name="scaling factor CAN2M7 kidney vs liver" value="1" units="dimensionless" constant="true">
+      <parameter metaid="meta_f_CAN2M7" sboTerm="SBO:0000002" id="f_CAN2M7" name="scaling factor CAN2M7 kidney vs liver" value="0.13941425128974" units="dimensionless" constant="true">
         <notes>
           <body xmlns="http://www.w3.org/1999/xhtml">
             <p>Scaling factor relative to liver UGT1A9 activity.
@@ -626,7 +655,7 @@ Model depends on the fasting plasma glucose:</p>
           </rdf:RDF>
         </annotation>
       </parameter>
-      <parameter metaid="meta_CANEX_k" sboTerm="SBO:0000009" id="CANEX_k" name="rate urinary excretion of canagliflozin" value="0.00373993861477588" units="per_min" constant="true">
+      <parameter metaid="meta_CANEX_k" sboTerm="SBO:0000009" id="CANEX_k" name="rate urinary excretion of canagliflozin" value="0.00374581660737891" units="per_min" constant="true">
         <annotation>
           <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
             <rdf:Description rdf:about="#meta_CANEX_k">
@@ -639,7 +668,7 @@ Model depends on the fasting plasma glucose:</p>
           </rdf:RDF>
         </annotation>
       </parameter>
-      <parameter metaid="meta_M5EX_k" sboTerm="SBO:0000009" id="M5EX_k" name="rate urinary excretion of m5" value="0.0993999073054945" units="per_min" constant="true">
+      <parameter metaid="meta_M5EX_k" sboTerm="SBO:0000009" id="M5EX_k" name="rate urinary excretion of m5" value="0.110954456979074" units="per_min" constant="true">
         <annotation>
           <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
             <rdf:Description rdf:about="#meta_M5EX_k">
@@ -652,7 +681,7 @@ Model depends on the fasting plasma glucose:</p>
           </rdf:RDF>
         </annotation>
       </parameter>
-      <parameter metaid="meta_M7EX_k" sboTerm="SBO:0000009" id="M7EX_k" name="rate urinary excretion of m7" value="0.177112957435439" units="per_min" constant="true">
+      <parameter metaid="meta_M7EX_k" sboTerm="SBO:0000009" id="M7EX_k" name="rate urinary excretion of m7" value="0.186734796391971" units="per_min" constant="true">
         <annotation>
           <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
             <rdf:Description rdf:about="#meta_M7EX_k">

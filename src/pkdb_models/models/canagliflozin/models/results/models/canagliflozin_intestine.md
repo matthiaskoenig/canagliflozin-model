@@ -11,9 +11,9 @@ length: [m]
 
 ## Parameters `p`
 ```
-CANABS_k = 0.00587583148158321  # [1/min] rate of canagliflozin absorption  
+CANABS_k = 0.0159322050133891  # [1/min] rate of canagliflozin absorption  
 F_can_abs = 0.59  # [-] fraction absorbed canagliflozin  
-Ka_dis_can = 2.0  # [1/hr] Ka_dis [1/hr] dissolution canagliflozin  
+Ka_dis_can = 2.0  # [1/hr] dissolution rate canagliflozin  
 Mr_can = 444.518  # [g/mol] Molecular weight canagliflozin [g/mole]  
 Vapical = nan  # [m^2] apical membrane (intestinal membrane enterocytes)  
 Vbaso = nan  # [m^2] basolateral membrane (intestinal membrane enterocytes)  
@@ -23,7 +23,7 @@ Vfeces = 1.0  # [l] feces
 Vgu = 1.2825  # [l] intestine  
 Vlumen = 1.15425  # [l] intestinal lumen (inner part of intestine)  
 Vstomach = 1.0  # [l] stomach  
-f_absorption = 1.0  # [-] scaling factor for absorption rate  
+f_absorption = 1.0  # [-] scaling factor absorption rate  
 ```
 
 ## Initial conditions `x0`

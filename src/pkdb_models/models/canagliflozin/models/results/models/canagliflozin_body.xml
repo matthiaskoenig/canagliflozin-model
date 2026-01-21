@@ -14,7 +14,7 @@
         <p>Distribution of canagliflozin and metabolites M5 and M7 via the bloodflow.</p>
         <p>The content of this model has been carefully created in a manual research effort.</p>
         <h2>Terms of use</h2>
-        <p>Copyright © 2025 <a href="https://livermetabolism.com" title="Matthias König" target="_blank">Matthias König</a>.</p>
+        <p>Copyright © 2026 <a href="https://livermetabolism.com" title="Matthias König" target="_blank">Matthias König</a>.</p>
         <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
           <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png"/>
         </a>
@@ -45,6 +45,14 @@ implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.</p></bo
               </rdf:li>
               <rdf:li rdf:parseType="Resource">
                 <vCard4:hasName rdf:parseType="Resource">
+                  <vCard4:family-name>Elias</vCard4:family-name>
+                  <vCard4:given-name>Michelle</vCard4:given-name>
+                </vCard4:hasName>
+                <vCard4:hasEmail>michelleelias66@gmail.com</vCard4:hasEmail>
+                <vCard4:organization-name>Humboldt-University Berlin, Institute for Biology</vCard4:organization-name>
+              </rdf:li>
+              <rdf:li rdf:parseType="Resource">
+                <vCard4:hasName rdf:parseType="Resource">
                   <vCard4:family-name>König</vCard4:family-name>
                   <vCard4:given-name>Matthias</vCard4:given-name>
                 </vCard4:hasName>
@@ -54,23 +62,42 @@ implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.</p></bo
             </rdf:Bag>
           </dcterms:creator>
           <dcterms:created rdf:parseType="Resource">
-            <dcterms:W3CDTF>2025-11-26T13:44:03Z</dcterms:W3CDTF>
+            <dcterms:W3CDTF>2026-01-21T21:10:25Z</dcterms:W3CDTF>
           </dcterms:created>
           <dcterms:modified rdf:parseType="Resource">
-            <dcterms:W3CDTF>2025-11-26T13:44:03Z</dcterms:W3CDTF>
+            <dcterms:W3CDTF>2026-01-21T21:10:25Z</dcterms:W3CDTF>
           </dcterms:modified>
           <bqbiol:hasTaxon>
             <rdf:Bag>
               <rdf:li rdf:resource="https://identifiers.org/taxonomy/9606"/>
-              <rdf:li rdf:resource="VTO:0011993"/>
               <rdf:li rdf:resource="https://identifiers.org/snomedct/337915000"/>
             </rdf:Bag>
           </bqbiol:hasTaxon>
+          <bqbiol:hasProperty>
+            <rdf:Bag>
+              <rdf:li rdf:resource="https://identifiers.org/mamo/MAMO_0000046"/>
+              <rdf:li rdf:resource="https://identifiers.org/ncit/C91018"/>
+              <rdf:li rdf:resource="https://identifiers.org/ncit/C98083"/>
+              <rdf:li rdf:resource="https://identifiers.org/ncit/C15299"/>
+              <rdf:li rdf:resource="https://identifiers.org/ncit/C2985"/>
+              <rdf:li rdf:resource="https://identifiers.org/ncit/C99532"/>
+              <rdf:li rdf:resource="https://identifiers.org/ncit/C79369"/>
+              <rdf:li rdf:resource="https://identifiers.org/ncit/C79371"/>
+              <rdf:li rdf:resource="https://identifiers.org/ncit/C79372"/>
+              <rdf:li rdf:resource="https://identifiers.org/ncit/C79370"/>
+            </rdf:Bag>
+          </bqbiol:hasProperty>
           <bqbiol:isDescribedBy>
             <rdf:Bag>
-              <rdf:li rdf:resource="zenodo.13759839"/>
+              <rdf:li rdf:resource="https://identifiers.org/doi/10.5281/zenodo.13759839"/>
             </rdf:Bag>
           </bqbiol:isDescribedBy>
+          <bqbiol:occursIn>
+            <rdf:Bag>
+              <rdf:li rdf:resource="https://identifiers.org/BTO:0001489"/>
+              <rdf:li rdf:resource="https://identifiers.org/FMA:256135"/>
+            </rdf:Bag>
+          </bqbiol:occursIn>
         </rdf:Description>
       </rdf:RDF>
     </annotation>
@@ -1531,7 +1558,7 @@ implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.</p></bo
       </species>
     </listOfSpecies>
     <listOfParameters>
-      <parameter metaid="meta_BW" sboTerm="SBO:0000002" id="BW" name="body weight [kg]" value="75" units="kg" constant="true">
+      <parameter metaid="meta_BW" sboTerm="SBO:0000002" id="BW" name="body weight" value="75" units="kg" constant="true">
         <annotation>
           <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
             <rdf:Description rdf:about="#meta_BW">
@@ -1544,72 +1571,7 @@ implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.</p></bo
           </rdf:RDF>
         </annotation>
       </parameter>
-      <parameter metaid="meta_HEIGHT" sboTerm="SBO:0000002" id="HEIGHT" name="height [cm]" value="170" units="cm" constant="true">
-        <annotation>
-          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
-            <rdf:Description rdf:about="#meta_HEIGHT">
-              <bqbiol:is>
-                <rdf:Bag>
-                  <rdf:li rdf:resource="https://identifiers.org/SBO:0000002"/>
-                </rdf:Bag>
-              </bqbiol:is>
-            </rdf:Description>
-          </rdf:RDF>
-        </annotation>
-      </parameter>
-      <parameter metaid="meta_HR" sboTerm="SBO:0000002" id="HR" name="heart rate [1/min]" value="70" units="per_min" constant="true">
-        <annotation>
-          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
-            <rdf:Description rdf:about="#meta_HR">
-              <bqbiol:is>
-                <rdf:Bag>
-                  <rdf:li rdf:resource="https://identifiers.org/SBO:0000002"/>
-                </rdf:Bag>
-              </bqbiol:is>
-            </rdf:Description>
-          </rdf:RDF>
-        </annotation>
-      </parameter>
-      <parameter metaid="meta_HRrest" sboTerm="SBO:0000002" id="HRrest" name="heart rate [1/min]" value="70" units="per_min" constant="true">
-        <annotation>
-          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
-            <rdf:Description rdf:about="#meta_HRrest">
-              <bqbiol:is>
-                <rdf:Bag>
-                  <rdf:li rdf:resource="https://identifiers.org/SBO:0000002"/>
-                </rdf:Bag>
-              </bqbiol:is>
-            </rdf:Description>
-          </rdf:RDF>
-        </annotation>
-      </parameter>
-      <parameter metaid="meta_MAP" sboTerm="SBO:0000002" id="MAP" name="mean arterial pressure [mmHg]" value="100" units="mmHg" constant="true">
-        <annotation>
-          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
-            <rdf:Description rdf:about="#meta_MAP">
-              <bqbiol:is>
-                <rdf:Bag>
-                  <rdf:li rdf:resource="https://identifiers.org/SBO:0000002"/>
-                </rdf:Bag>
-              </bqbiol:is>
-            </rdf:Description>
-          </rdf:RDF>
-        </annotation>
-      </parameter>
-      <parameter metaid="meta_BSA" sboTerm="SBO:0000002" id="BSA" name="body surface area [m^2]" value="0" units="m2" constant="false">
-        <annotation>
-          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
-            <rdf:Description rdf:about="#meta_BSA">
-              <bqbiol:is>
-                <rdf:Bag>
-                  <rdf:li rdf:resource="https://identifiers.org/SBO:0000002"/>
-                </rdf:Bag>
-              </bqbiol:is>
-            </rdf:Description>
-          </rdf:RDF>
-        </annotation>
-      </parameter>
-      <parameter metaid="meta_COBW" sboTerm="SBO:0000002" id="COBW" name="cardiac output per bodyweight [ml/s/kg]" value="1.548" units="ml_per_s_kg" constant="true">
+      <parameter metaid="meta_COBW" sboTerm="SBO:0000002" id="COBW" name="cardiac output per bodyweight" value="1.548" units="ml_per_s_kg" constant="true">
         <annotation>
           <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
             <rdf:Description rdf:about="#meta_COBW">
@@ -1658,19 +1620,6 @@ implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.</p></bo
         <annotation>
           <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
             <rdf:Description rdf:about="#meta_QC">
-              <bqbiol:is>
-                <rdf:Bag>
-                  <rdf:li rdf:resource="https://identifiers.org/SBO:0000002"/>
-                </rdf:Bag>
-              </bqbiol:is>
-            </rdf:Description>
-          </rdf:RDF>
-        </annotation>
-      </parameter>
-      <parameter metaid="meta_COHRI" sboTerm="SBO:0000002" id="COHRI" name="increase of cardiac output per heartbeat [ml/min*min]" value="150" units="ml" constant="true">
-        <annotation>
-          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
-            <rdf:Description rdf:about="#meta_COHRI">
               <bqbiol:is>
                 <rdf:Bag>
                   <rdf:li rdf:resource="https://identifiers.org/SBO:0000002"/>
@@ -1977,8 +1926,11 @@ with FQgu=0.146, FQsp=0.017, FQpa=0.017</p>
             </rdf:Description>
           </rdf:RDF>
         </annotation>
+        <comp:listOfReplacedElements>
+          <comp:replacedElement metaid="Mr_can_gu_RE" comp:portRef="Mr_can_port" comp:submodelRef="GU"/>
+        </comp:listOfReplacedElements>
       </parameter>
-      <parameter metaid="meta_ftissue_can" sboTerm="SBO:0000002" id="ftissue_can" name="tissue distribution can" value="0.136901686327911" units="l_per_min" constant="true">
+      <parameter metaid="meta_ftissue_can" sboTerm="SBO:0000002" id="ftissue_can" name="tissue distribution can" value="0.666866633812945" units="l_per_min" constant="true">
         <annotation>
           <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
             <rdf:Description rdf:about="#meta_ftissue_can">
@@ -1991,7 +1943,7 @@ with FQgu=0.146, FQsp=0.017, FQpa=0.017</p>
           </rdf:RDF>
         </annotation>
       </parameter>
-      <parameter metaid="meta_Kp_can" sboTerm="SBO:0000002" id="Kp_can" name="tissue/plasma partition coefficient can" value="1.00013863943875" units="dimensionless" constant="true">
+      <parameter metaid="meta_Kp_can" sboTerm="SBO:0000002" id="Kp_can" name="tissue/plasma partition coefficient can" value="1.0025087991468" units="dimensionless" constant="true">
         <annotation>
           <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
             <rdf:Description rdf:about="#meta_Kp_can">
@@ -2082,7 +2034,7 @@ with FQgu=0.146, FQsp=0.017, FQpa=0.017</p>
           </rdf:RDF>
         </annotation>
       </parameter>
-      <parameter metaid="meta_ftissue_m5" sboTerm="SBO:0000002" id="ftissue_m5" name="tissue distribution m5" value="0.00312771270926516" units="l_per_min" constant="true">
+      <parameter metaid="meta_ftissue_m5" sboTerm="SBO:0000002" id="ftissue_m5" name="tissue distribution m5" value="0.00713656054189705" units="l_per_min" constant="true">
         <annotation>
           <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
             <rdf:Description rdf:about="#meta_ftissue_m5">
@@ -2095,7 +2047,7 @@ with FQgu=0.146, FQsp=0.017, FQpa=0.017</p>
           </rdf:RDF>
         </annotation>
       </parameter>
-      <parameter metaid="meta_Kp_m5" sboTerm="SBO:0000002" id="Kp_m5" name="tissue/plasma partition coefficient m5" value="11.5889029190723" units="dimensionless" constant="true">
+      <parameter metaid="meta_Kp_m5" sboTerm="SBO:0000002" id="Kp_m5" name="tissue/plasma partition coefficient m5" value="2.54138207988493" units="dimensionless" constant="true">
         <annotation>
           <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
             <rdf:Description rdf:about="#meta_Kp_m5">
@@ -2121,7 +2073,7 @@ with FQgu=0.146, FQsp=0.017, FQpa=0.017</p>
           </rdf:RDF>
         </annotation>
       </parameter>
-      <parameter metaid="meta_ftissue_m7" sboTerm="SBO:0000002" id="ftissue_m7" name="tissue distribution m7" value="0.000100273331452754" units="l_per_min" constant="true">
+      <parameter metaid="meta_ftissue_m7" sboTerm="SBO:0000002" id="ftissue_m7" name="tissue distribution m7" value="0.000154070407063175" units="l_per_min" constant="true">
         <annotation>
           <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
             <rdf:Description rdf:about="#meta_ftissue_m7">
@@ -2134,7 +2086,7 @@ with FQgu=0.146, FQsp=0.017, FQpa=0.017</p>
           </rdf:RDF>
         </annotation>
       </parameter>
-      <parameter metaid="meta_Kp_m7" sboTerm="SBO:0000002" id="Kp_m7" name="tissue/plasma partition coefficient m7" value="217.431752656108" units="dimensionless" constant="true">
+      <parameter metaid="meta_Kp_m7" sboTerm="SBO:0000002" id="Kp_m7" name="tissue/plasma partition coefficient m7" value="39.878498027456" units="dimensionless" constant="true">
         <annotation>
           <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
             <rdf:Description rdf:about="#meta_Kp_m7">
@@ -2206,55 +2158,13 @@ with FQgu=0.146, FQsp=0.017, FQpa=0.017</p>
           </apply>
         </math>
       </assignmentRule>
-      <assignmentRule variable="BSA">
-        <math xmlns="http://www.w3.org/1998/Math/MathML" xmlns:sbml="http://www.sbml.org/sbml/level3/version2/core">
+      <assignmentRule variable="CO">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
           <apply>
             <times/>
-            <cn sbml:units="m2"> 0.024265 </cn>
-            <apply>
-              <power/>
-              <apply>
-                <divide/>
-                <ci> BW </ci>
-                <cn sbml:units="kg" type="integer"> 1 </cn>
-              </apply>
-              <cn> 0.5378 </cn>
-            </apply>
-            <apply>
-              <power/>
-              <apply>
-                <divide/>
-                <ci> HEIGHT </ci>
-                <cn sbml:units="cm" type="integer"> 1 </cn>
-              </apply>
-              <cn> 0.3964 </cn>
-            </apply>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule variable="CO">
-        <math xmlns="http://www.w3.org/1998/Math/MathML" xmlns:sbml="http://www.sbml.org/sbml/level3/version2/core">
-          <apply>
-            <plus/>
-            <apply>
-              <times/>
-              <ci> f_cardiac_function </ci>
-              <ci> BW </ci>
-              <ci> COBW </ci>
-            </apply>
-            <apply>
-              <divide/>
-              <apply>
-                <times/>
-                <apply>
-                  <minus/>
-                  <ci> HR </ci>
-                  <ci> HRrest </ci>
-                </apply>
-                <ci> COHRI </ci>
-              </apply>
-              <cn sbml:units="s_per_min" type="integer"> 60 </cn>
-            </apply>
+            <ci> f_cardiac_function </ci>
+            <ci> BW </ci>
+            <ci> COBW </ci>
           </apply>
         </math>
       </assignmentRule>

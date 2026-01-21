@@ -13,7 +13,7 @@
         <p>Model for canagliflozin metabolism.</p>
         <p>The content of this model has been carefully created in a manual research effort.</p>
         <h2>Terms of use</h2>
-        <p>Copyright © 2025 <a href="https://livermetabolism.com" title="Matthias König" target="_blank">Matthias König</a>.</p>
+        <p>Copyright © 2026 <a href="https://livermetabolism.com" title="Matthias König" target="_blank">Matthias König</a>.</p>
         <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
           <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png"/>
         </a>
@@ -44,6 +44,14 @@ implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.</p></bo
               </rdf:li>
               <rdf:li rdf:parseType="Resource">
                 <vCard4:hasName rdf:parseType="Resource">
+                  <vCard4:family-name>Elias</vCard4:family-name>
+                  <vCard4:given-name>Michelle</vCard4:given-name>
+                </vCard4:hasName>
+                <vCard4:hasEmail>michelleelias66@gmail.com</vCard4:hasEmail>
+                <vCard4:organization-name>Humboldt-University Berlin, Institute for Biology</vCard4:organization-name>
+              </rdf:li>
+              <rdf:li rdf:parseType="Resource">
+                <vCard4:hasName rdf:parseType="Resource">
                   <vCard4:family-name>König</vCard4:family-name>
                   <vCard4:given-name>Matthias</vCard4:given-name>
                 </vCard4:hasName>
@@ -53,11 +61,41 @@ implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.</p></bo
             </rdf:Bag>
           </dcterms:creator>
           <dcterms:created rdf:parseType="Resource">
-            <dcterms:W3CDTF>2025-11-26T13:44:03Z</dcterms:W3CDTF>
+            <dcterms:W3CDTF>2026-01-21T21:10:25Z</dcterms:W3CDTF>
           </dcterms:created>
           <dcterms:modified rdf:parseType="Resource">
-            <dcterms:W3CDTF>2025-11-26T13:44:03Z</dcterms:W3CDTF>
+            <dcterms:W3CDTF>2026-01-21T21:10:25Z</dcterms:W3CDTF>
           </dcterms:modified>
+          <bqbiol:hasTaxon>
+            <rdf:Bag>
+              <rdf:li rdf:resource="https://identifiers.org/taxonomy/9606"/>
+              <rdf:li rdf:resource="https://identifiers.org/snomedct/337915000"/>
+            </rdf:Bag>
+          </bqbiol:hasTaxon>
+          <bqbiol:hasProperty>
+            <rdf:Bag>
+              <rdf:li rdf:resource="https://identifiers.org/mamo/MAMO_0000046"/>
+              <rdf:li rdf:resource="https://identifiers.org/ncit/C91018"/>
+              <rdf:li rdf:resource="https://identifiers.org/ncit/C98083"/>
+              <rdf:li rdf:resource="https://identifiers.org/ncit/C15299"/>
+              <rdf:li rdf:resource="https://identifiers.org/ncit/C2985"/>
+              <rdf:li rdf:resource="https://identifiers.org/ncit/C99532"/>
+              <rdf:li rdf:resource="https://identifiers.org/ncit/C79371"/>
+              <rdf:li rdf:resource="https://identifiers.org/ncit/C79372"/>
+            </rdf:Bag>
+          </bqbiol:hasProperty>
+          <bqbiol:isDescribedBy>
+            <rdf:Bag>
+              <rdf:li rdf:resource="https://identifiers.org/doi/10.5281/zenodo.13759839"/>
+            </rdf:Bag>
+          </bqbiol:isDescribedBy>
+          <bqbiol:occursIn>
+            <rdf:Bag>
+              <rdf:li rdf:resource="https://identifiers.org/FMA:7197"/>
+              <rdf:li rdf:resource="https://identifiers.org/BTO:0000759"/>
+              <rdf:li rdf:resource="https://identifiers.org/ncit/C12392"/>
+            </rdf:Bag>
+          </bqbiol:occursIn>
         </rdf:Description>
       </rdf:RDF>
     </annotation>
@@ -411,7 +449,7 @@ implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.</p></bo
       </species>
     </listOfSpecies>
     <listOfParameters>
-      <parameter metaid="meta_CANIM_Vmax" sboTerm="SBO:0000186" id="CANIM_Vmax" name="Vmax canagliflozin import" value="0.00946628716549535" units="mmole_per_min_l" constant="true">
+      <parameter metaid="meta_CANIM_Vmax" sboTerm="SBO:0000186" id="CANIM_Vmax" name="Vmax canagliflozin import" value="4.02601953082094" units="mmole_per_min_l" constant="true">
         <annotation>
           <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
             <rdf:Description rdf:about="#meta_CANIM_Vmax">
@@ -437,7 +475,7 @@ implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.</p></bo
           </rdf:RDF>
         </annotation>
       </parameter>
-      <parameter metaid="meta_CAN2M5_Vmax" sboTerm="SBO:0000186" id="CAN2M5_Vmax" name="Vmax canagliflozin conversion" value="0.0385420217598341" units="mmole_per_min_l" constant="true">
+      <parameter metaid="meta_CAN2M5_Vmax" sboTerm="SBO:0000186" id="CAN2M5_Vmax" name="Vmax canagliflozin conversion" value="0.0545767793949823" units="mmole_per_min_l" constant="true">
         <annotation>
           <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
             <rdf:Description rdf:about="#meta_CAN2M5_Vmax">
@@ -450,7 +488,7 @@ implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.</p></bo
           </rdf:RDF>
         </annotation>
       </parameter>
-      <parameter metaid="meta_CAN2M5_Km_can" sboTerm="SBO:0000027" id="CAN2M5_Km_can" name="Km canagliflozin UGT2B4" value="0.0153033781969423" units="mM" constant="true">
+      <parameter metaid="meta_CAN2M5_Km_can" sboTerm="SBO:0000027" id="CAN2M5_Km_can" name="Km canagliflozin UGT2B4" value="3.49336492335385" units="mM" constant="true">
         <annotation>
           <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
             <rdf:Description rdf:about="#meta_CAN2M5_Km_can">
@@ -482,7 +520,7 @@ implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.</p></bo
           </rdf:RDF>
         </annotation>
       </parameter>
-      <parameter metaid="meta_CAN2M7_Vmax" sboTerm="SBO:0000186" id="CAN2M7_Vmax" name="Vmax canagliflozin conversion" value="0.387578347044511" units="mmole_per_min_l" constant="true">
+      <parameter metaid="meta_CAN2M7_Vmax" sboTerm="SBO:0000186" id="CAN2M7_Vmax" name="Vmax canagliflozin conversion" value="0.00128707038109908" units="mmole_per_min_l" constant="true">
         <annotation>
           <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
             <rdf:Description rdf:about="#meta_CAN2M7_Vmax">
@@ -527,7 +565,7 @@ implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.</p></bo
           </rdf:RDF>
         </annotation>
       </parameter>
-      <parameter metaid="meta_CAN2M9_Vmax" sboTerm="SBO:0000186" id="CAN2M9_Vmax" name="Vmax canagliflozin conversion" value="0.353165313526834" units="mmole_per_min_l" constant="true">
+      <parameter metaid="meta_CAN2M9_Vmax" sboTerm="SBO:0000186" id="CAN2M9_Vmax" name="Vmax canagliflozin conversion" value="0.00520907991201598" units="mmole_per_min_l" constant="true">
         <annotation>
           <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
             <rdf:Description rdf:about="#meta_CAN2M9_Vmax">
@@ -572,7 +610,7 @@ implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.</p></bo
           </rdf:RDF>
         </annotation>
       </parameter>
-      <parameter metaid="meta_M5EX_Vmax" sboTerm="SBO:0000186" id="M5EX_Vmax" name="Vmax M5 export" value="42.5965219576554" units="mmole_per_min_l" constant="true">
+      <parameter metaid="meta_M5EX_Vmax" sboTerm="SBO:0000186" id="M5EX_Vmax" name="Vmax M5 export" value="61.8741571292691" units="mmole_per_min_l" constant="true">
         <annotation>
           <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
             <rdf:Description rdf:about="#meta_M5EX_Vmax">
@@ -585,7 +623,7 @@ implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.</p></bo
           </rdf:RDF>
         </annotation>
       </parameter>
-      <parameter metaid="meta_M5EX_Km_m5" sboTerm="SBO:0000027" id="M5EX_Km_m5" name="Km M5 export" value="0.0628302366140825" units="mM" constant="true">
+      <parameter metaid="meta_M5EX_Km_m5" sboTerm="SBO:0000027" id="M5EX_Km_m5" name="Km M5 export" value="1.20833792136722" units="mM" constant="true">
         <annotation>
           <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
             <rdf:Description rdf:about="#meta_M5EX_Km_m5">
@@ -598,7 +636,7 @@ implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.</p></bo
           </rdf:RDF>
         </annotation>
       </parameter>
-      <parameter metaid="meta_M7EX_Vmax" sboTerm="SBO:0000186" id="M7EX_Vmax" name="Vmax M7 export" value="27.9277803462939" units="mmole_per_min_l" constant="true">
+      <parameter metaid="meta_M7EX_Vmax" sboTerm="SBO:0000186" id="M7EX_Vmax" name="Vmax M7 export" value="0.313852880688601" units="mmole_per_min_l" constant="true">
         <annotation>
           <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
             <rdf:Description rdf:about="#meta_M7EX_Vmax">
