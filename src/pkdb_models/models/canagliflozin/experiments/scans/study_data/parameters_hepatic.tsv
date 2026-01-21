@@ -1,0 +1,86 @@
+study	class	condition	parameter	dose	dose_unit	substance	n	mean	sd	median	Q1	Q3	min	max	unit	day	diabetes	hba1c	fpg
+Devineni2015c	hepatic	normal	cmax	300	mg	canagliflozin	8	2844	794						ng/ml		N		
+Devineni2015c	hepatic	normal	aucinf	300	mg	canagliflozin	8	24632	7132						ng/ml*hr		N		
+Devineni2015c	hepatic	normal	tmax	300	mg	canagliflozin	8			1.75			1	5	hr		N		
+Devineni2015c	hepatic	normal	thalf	300	mg	canagliflozin	8	14.8	2.72						hr		N		
+Devineni2015c	hepatic	normal	oral-clearance	300	mg	canagliflozin	8	13.1	3.7						l/hr		N		
+Devineni2015c	hepatic	normal	normal	300	mg	canagliflozin	8	0.5	0.12						percent		N		
+Devineni2015c	hepatic	normal	clearance_renal	300	mg	canagliflozin	8	0.06	15						l/hr		N		
+#																			
+Devineni2015c	hepatic	mild	cmax	300	mg	canagliflozin	8	3038	670						ng/ml		N		
+Devineni2015c	hepatic	mild	aucinf	300	mg	canagliflozin	8	27162	8609						ng/ml*hr		N		
+Devineni2015c	hepatic	mild	tmax	300	mg	canagliflozin	8			2			1	5	hr		N		
+Devineni2015c	hepatic	mild	thalf	300	mg	canagliflozin	8	17.6	4.17						hr		N		
+Devineni2015c	hepatic	mild	oral-clearance	300	mg	canagliflozin	8	12	3.62						l/hr		N		
+Devineni2015c	hepatic	mild	recovery_24hr_urine	300	mg	canagliflozin	8	0.5	0.13						percent		N		
+Devineni2015c	hepatic	mild	clearance_renal	300	mg	canagliflozin	8	0.07	15						l/hr		N		
+#																			
+Devineni2015c	hepatic	moderate	cmax	300	mg	canagliflozin	8	2810	1037						ng/ml		N		
+Devineni2015c	hepatic	moderate	aucinf	300	mg	canagliflozin	8	26866	5788						ng/ml*hr		N		
+Devineni2015c	hepatic	moderate	tmax	300	mg	canagliflozin	8			2			1	5	hr		N		
+Devineni2015c	hepatic	moderate	thalf	300	mg	canagliflozin	8	13.1	3.05						hr		N		
+Devineni2015c	hepatic	moderate	oral-clearance	300	mg	canagliflozin	8	11.6	2.4						l/hr		N		
+Devineni2015c	hepatic	moderate	recovery_24hr_urine	300	mg	canagliflozin	8	1.5	0.33						percent		N		
+Devineni2015c	hepatic	moderate	clearance_renal	300	mg	canagliflozin	8	0.17	46						l/hr		N		
+#																			
+Devineni2015c	hepatic	normal	cmax	300	mg	M7	8	1913	986						ng/ml		N		
+Devineni2015c	hepatic	normal	aucinf	300	mg	M7	8	19513	8979						ng/ml*hr		N		
+Devineni2015c	hepatic	normal	tmax	300	mg	M7	8			2.5			2	6	hr		N		
+Devineni2015c	hepatic	normal	thalf	300	mg	M7	8	15.6	2.93						hr		N		
+Devineni2015c	hepatic	normal	recovery_24hr_urine	300	mg	M7	8	17.2	4.01						percent		N		
+Devineni2015c	hepatic	normal	clearance_renal	300	mg	M7	8	4.2	1.6						l/hr		N		
+#																			
+Devineni2015c	hepatic	mild	cmax	300	mg	M7	8	2488	906						ng/ml		N		
+Devineni2015c	hepatic	mild	aucinf	300	mg	M7	8	31599	15477						ng/ml*hr		N		
+Devineni2015c	hepatic	mild	tmax	300	mg	M7	8			3			2	6	hr		N		
+Devineni2015c	hepatic	mild	thalf	300	mg	M7	8	18.4	4.18						hr		N		
+Devineni2015c	hepatic	mild	recovery_24hr_urine	300	mg	M7	8	22.9	4.27						percent		N		
+Devineni2015c	hepatic	mild	clearance_renal	300	mg	M7	8	4	1.81						l/hr		N		
+#																			
+Devineni2015c	hepatic	moderate	cmax	300	mg	M7	8	2903	1125						ng/ml		N		
+Devineni2015c	hepatic	moderate	aucinf	300	mg	M7	8	38953	7820						ng/ml*hr		N		
+Devineni2015c	hepatic	moderate	tmax	300	mg	M7	8			4.5			2	6	hr		N		
+Devineni2015c	hepatic	moderate	thalf	300	mg	M7	8	14	3.21						hr		N		
+Devineni2015c	hepatic	moderate	recovery_24hr_urine	300	mg	M7	8	34.5	15.5						percent		N		
+Devineni2015c	hepatic	moderate	clearance_renal	300	mg	M7	8	3.8	1.42						l/hr		N		
+#																			
+Devineni2015c	hepatic	normal	cmax	300	mg	M5	8	1565	884						ng/ml		N		
+Devineni2015c	hepatic	normal	aucinf	300	mg	M5	8	18939	7318						ng/ml*hr		N		
+Devineni2015c	hepatic	normal	tmax	300	mg	M5	8			4			2	6	hr		N		
+Devineni2015c	hepatic	normal	thalf	300	mg	M5	8	14.4	3.21						hr		N		
+Devineni2015c	hepatic	normal	recovery_24hr_urine	300	mg	M5	8	8.2	2.13						percent		N		
+Devineni2015c	hepatic	normal	clearance_renal	300	mg	M5	8	2	0.49						l/hr		N		
+#																			
+Devineni2015c	hepatic	mild	cmax	300	mg	M5	8	1387	517						ng/ml		N		
+Devineni2015c	hepatic	mild	aucinf	300	mg	M5	8	21028	11282						ng/ml*hr		N		
+Devineni2015c	hepatic	mild	tmax	300	mg	M5	8			4			1.5	6	hr		N		
+Devineni2015c	hepatic	mild	thalf	300	mg	M5	8	17.1	2.44						hr		N		
+Devineni2015c	hepatic	mild	recovery_24hr_urine	300	mg	M5	8	9.4	2.8						percent		N		
+Devineni2015c	hepatic	mild	clearance_renal	300	mg	M5	8	2.3	0.76						l/hr		N		
+#																			
+Devineni2015c	hepatic	moderate	cmax	300	mg	M5	8	1648	465						ng/ml		N		
+Devineni2015c	hepatic	moderate	aucinf	300	mg	M5	8	26117	8778						ng/ml*hr		N		
+Devineni2015c	hepatic	moderate	tmax	300	mg	M5	8			4.5			2	5	hr		N		
+Devineni2015c	hepatic	moderate	thalf	300	mg	M5	8	12.5	3.34						hr		N		
+Devineni2015c	hepatic	moderate	recovery_24hr_urine	300	mg	M5	8	10	2.65						percent		N		
+Devineni2015c	hepatic	moderate	clearance_renal	300	mg	M5	8	1.8	0.9						l/hr		N		
+#																			
+Devineni2015c	hepatic	normal	recovery_24hr_urine	300	mg	canagliflozin	8	0.5	0.12						percent		N		
+Devineni2015c	hepatic	mild	recovery_24hr_urine	300	mg	canagliflozin	8	0.5	0.13						percent		N		
+Devineni2015c	hepatic	moderate	recovery_24hr_urine	300	mg	canagliflozin	8	1.5	0.33						percent		N		
+Devineni2015c	hepatic	normal	recovery_24hr_urine	300	mg	M7	8	17.2	4.01						percent		N		
+Devineni2015c	hepatic	mild	recovery_24hr_urine	300	mg	M7	8	22.9	4.27						percent		N		
+Devineni2015c	hepatic	moderate	recovery_24hr_urine	300	mg	M7	8	34.5	15.5						percent		N		
+Devineni2015c	hepatic	normal	recovery_24hr_urine	300	mg	M5	8	8.2	2.13						percent		N		
+Devineni2015c	hepatic	mild	recovery_24hr_urine	300	mg	M5	8	9.4	2.8						percent		N		
+Devineni2015c	hepatic	moderate	recovery_24hr_urine	300	mg	M5	8	10	2.65						percent		N		
+#																			
+Devineni2015c	hepatic	normal	recovery_24hr_urine	300	mg	canagliflozin	8	1.5	0.36						mg		N		
+Devineni2015c	hepatic	mild	recovery_24hr_urine	300	mg	canagliflozin	8	1.5	0.39						mg		N		
+Devineni2015c	hepatic	moderate	recovery_24hr_urine	300	mg	canagliflozin	8	4.5	0.99						mg		N		
+Devineni2015c	hepatic	normal	recovery_24hr_urine	300	mg	M7	8	51.6	12.03						mg		N		
+Devineni2015c	hepatic	mild	recovery_24hr_urine	300	mg	M7	8	68.7	12.81						mg		N		
+Devineni2015c	hepatic	moderate	recovery_24hr_urine	300	mg	M7	8	103.5	46.5						mg		N		
+Devineni2015c	hepatic	normal	recovery_24hr_urine	300	mg	M5	8	24.6	6.39						mg		N		
+Devineni2015c	hepatic	mild	recovery_24hr_urine	300	mg	M5	8	28.2	8.4						mg		N		
+Devineni2015c	hepatic	moderate	recovery_24hr_urine	300	mg	M5	8	30	7.95						mg		N		

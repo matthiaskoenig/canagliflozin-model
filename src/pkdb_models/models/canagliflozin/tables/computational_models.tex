@@ -1,0 +1,60 @@
+\begin{landscape}
+\begin{table}[H]
+\centering
+\tabcolsep=3pt
+\renewcommand{\arraystretch}{1.3}
+\tiny
+\begin{threeparttable} 
+
+\caption{\scriptsize{\textbf{Summary of published computational models for canagliflozin.} 
+Overview of published computational models including model type, software/platform, 
+reproducibility criteria (open software, open model, open code, open data, open license,
+reproducibility, FAIR, long-term storage), resources, clinical data sources, and model scope.}}
+
+\begin{tabularx}{\linewidth}{
+    >{\raggedright\arraybackslash}p{1.5cm}  % Study
+    >{\centering\arraybackslash}p{0.8cm}    % PubMed ID
+    >{\raggedright\arraybackslash}p{1.0cm}  % Model Type
+    >{\raggedright\arraybackslash}p{1.6cm}  % Platform/Software
+    >{\centering\arraybackslash}p{0.8cm}    % Open Software
+    >{\centering\arraybackslash}p{0.8cm}    % Open Model
+    >{\centering\arraybackslash}p{0.8cm}    % Open Code
+    >{\centering\arraybackslash}p{0.8cm}    % Open Data
+    >{\centering\arraybackslash}p{0.8cm}    % Open License
+    >{\centering\arraybackslash}p{0.8cm}    % Reproducibility
+    >{\centering\arraybackslash}p{0.8cm}    % FAIR
+    >{\centering\arraybackslash}p{0.8cm}    % Longterm Storage
+    >{\centering\arraybackslash}p{2.3cm}    % Resources
+    >{\centering\arraybackslash}p{0.7cm}    % Studies
+    >{\raggedright\arraybackslash}p{3.0cm}  % Clinical Data Used
+    >{\raggedright\arraybackslash}p{4.3cm}  % Scope
+}
+\toprule
+\textbf{Study} & \textbf{PubMed ID} & \textbf{Model Type} & \textbf{Platform/Software} & \textbf{Open Software} & \textbf{Open Model} & \textbf{Open Code} & \textbf{Open Data} & \textbf{Open License} & \textbf{Reproducibility} & \textbf{FAIR} & \textbf{Longterm Storage} & \textbf{Resources} & \textbf{Studies} & \textbf{Clinical Data Used} & \textbf{Scope} \\
+\midrule
+DeWinter2017 \cite{DeWinter2017} & \href{https://pubmed.ncbi.nlm.nih.gov/28138980/}{28138980} & Population PK/PD & NONMEM, R & \cellcolor{red!20}No & \cellcolor{red!20}No & \cellcolor{red!20}No & \cellcolor{red!20}No & \cellcolor{red!20}No & \cellcolor{red!20}No & \cellcolor{red!20}No & \cellcolor{red!20}No & - & 3 & Phase II and III trials (not public) & Population PK/PD model linking canagliflozin exposure to HbA1c response to compare once daily vs twice daily dosing \\
+\addlinespace[1pt]
+Dunne2015 \cite{Dunne2015} & \href{https://pubmed.ncbi.nlm.nih.gov/26142076/}{26142076} & Methodological PK/PD example & NONMEM, FORTRAN & \cellcolor{red!20}No & \cellcolor{red!20}No & \cellcolor{red!20}No & \cellcolor{red!20}No & \cellcolor{red!20}No & \cellcolor{red!20}No & \cellcolor{red!20}No & \cellcolor{red!20}No & - & 1 & Trial subset & Demonstration of the method of averaging for indirect PK/PD models using canagliflozin as an example \\
+\addlinespace[1pt]
+Elenjickal2025 \cite{Elenjickal2025} & \href{https://pubmed.ncbi.nlm.nih.gov/40952584/}{40952584} & Population PK & NONMEM, R & \cellcolor{red!20}No & \cellcolor{red!20}No & \cellcolor{red!20}No & \cellcolor{red!20}No & \cellcolor{red!20}No & \cellcolor{red!20}No & \cellcolor{red!20}No & \cellcolor{red!20}No & - & 2 & Clinical study (data not shared) & Population PK model of canagliflozin in advanced CKD and hemodialysis patients to assess covariate effects on exposure \\
+\addlinespace[1pt]
+Guo2025 \cite{Guo2025} & \href{https://pubmed.ncbi.nlm.nih.gov/40230691/}{40230691} & PBPK/PD & PK-Sim, MoBi & \cellcolor{green!20}Yes & \cellcolor{red!20}No & \cellcolor{red!20}No & \cellcolor{red!20}No & \cellcolor{red!20}No & \cellcolor{red!20}No & \cellcolor{red!20}No & \cellcolor{red!20}No & - & Multiple & Published literature (digitized, not shared) & PBPK/PD model of SGLT2 inhibitors to assess UGE and dose optimization in renal impairment \\
+\addlinespace[1pt]
+Hoeben2016 \cite{Hoeben2016} & \href{https://pubmed.ncbi.nlm.nih.gov/26293616/}{26293616} & Population PK & NONMEM & \cellcolor{red!20}No & \cellcolor{red!20}No & \cellcolor{red!20}No & \cellcolor{red!20}No & \cellcolor{red!20}No & \cellcolor{red!20}No & \cellcolor{red!20}No & \cellcolor{red!20}No & - & 14 & Clinical trials (not public) & Population PK model of canagliflozin to characterize dose- and covariate-dependent exposure \\
+\addlinespace[1pt]
+Mamidi2017 \cite{Mamidi2017} & \href{https://pubmed.ncbi.nlm.nih.gov/27862160/}{27862160} & PBPK (DDI-focused) & Simcyp & \cellcolor{red!20}No & \cellcolor{red!20}No & \cellcolor{red!20}No & \cellcolor{red!20}No & \cellcolor{red!20}No & \cellcolor{red!20}No & \cellcolor{red!20}No & \cellcolor{red!20}No & - & Not explicitly enumerated as reusable datasets & Internal clinical studies + published literature & In vitro DDI assessment and PBPK-based DDI simulations for canagliflozin \\
+\addlinespace[1pt]
+Mori-Anai2020 \cite{Mori-Anai2020} & \href{https://pubmed.ncbi.nlm.nih.gov/33085977/}{33085977} & PBPK + QSP (HSGD model) & Simcyp (PBPK), MATLAB (QSP) & \cellcolor{red!20}No & \cellcolor{red!20}No & \cellcolor{red!20}No & \cellcolor{red!20}No & \cellcolor{red!20}No & \cellcolor{red!20}No & \cellcolor{red!20}No & \cellcolor{red!20}No & - & Multiple & Published literature (digitized, not shared) & Mechanistic PBPK-QSP model of SGLT2 inhibitors to quantify intestinal SGLT1 contribution to postprandial glucose control \\
+\addlinespace[1pt]
+Mori2016 \cite{Mori2016} & \href{https://pubmed.ncbi.nlm.nih.gov/27604638/}{27604638} & PBPK/PD & Simcyp, simBio & \cellcolor{red!20}No & \cellcolor{red!20}No & \cellcolor{red!20}No & \cellcolor{red!20}No & \cellcolor{red!20}No & \cellcolor{red!20}No & \cellcolor{red!20}No & \cellcolor{red!20}No & - & Multiple & Published literature (digitized, not shared) & Prediction of intestinal and renal target-site concentrations of canagliflozin and dapagliflozin and resulting SGLT1/2 inhibition using PBPK/PD modeling \\
+\addlinespace[1pt]
+Yao2023 \cite{Yao2023} & \href{https://pubmed.ncbi.nlm.nih.gov/36890732/}{36890732} & PK/PD/end-point model & NONMEM, PsN, R & \cellcolor{red!20}No & \cellcolor{red!20}No & \cellcolor{red!20}No & \cellcolor{red!20}No & \cellcolor{red!20}No & \cellcolor{red!20}No & \cellcolor{red!20}No & \cellcolor{red!20}No & - & 80 & Published literature (digitized, not shared) & Model-based meta-analysis linking PK, UGE-derived biomarker, FPG, and HbA1c across SGLT2 inhibitors; comparative and translational, not mechanistic PBPK \\
+\addlinespace[1pt]
+Tereshchuk2026 \cite{Tereshchuk2026} & - & PBPK/PD & SBML, Python & \cellcolor{green!20}Yes & \cellcolor{green!20}Yes & \cellcolor{green!20}Yes & \cellcolor{green!20}Yes & \cellcolor{green!20}Yes & \cellcolor{green!20}Yes & \cellcolor{green!20}Yes & \cellcolor{green!20}Yes & GitHub:  https://github.com/matthiaskoenig/canagliflozin-model  Zenodo: https://zenodo.org/records/15296961  & 22 & 22 clinical studies; digitized literature data & Whole-body mechanistic PBPK/PD model of canagliflozin linking ADME to SGLT2-mediated urinary glucose excretion and renal threshold for glucose, capturing dose dependency, renal and hepatic impairment, implemented in SBML with full FAIR compliance \\
+\addlinespace[1pt]
+\bottomrule
+\end{tabularx}
+
+\end{threeparttable} 
+\end{table}
+\end{landscape}

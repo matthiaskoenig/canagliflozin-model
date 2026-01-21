@@ -1,0 +1,414 @@
+study	parameter	dose	dose_unit	substance	n	mean	sd	median	Q1	Q3	min	max	unit	day	diabetes	hba1c	fpg
+Chen2015	cmax	100	mg	canagliflozin	14	1178	291						ng/ml				
+Chen2015	tmax	100	mg	canagliflozin	14			1			1	3	hr				
+Chen2015	aucinf	100	mg	canagliflozin	14	10521	1707						ng/ml*hr				
+Chen2015	thalf	100	mg	canagliflozin	14	16	4.13						hr				
+Chen2015	Ae	100	mg	canagliflozin	14	0.496	0.21						percent				
+Chen2015	oral-clearance	100	mg	canagliflozin	14	9.78	1.84						l/hr				
+Chen2015	clearance_renal	100	mg	canagliflozin	14	0.0514	0.02						l/hr				
+#																	
+Chen2015	cmax	300	mg	canagliflozin	14	4113	665						ng/ml				
+Chen2015	tmax	300	mg	canagliflozin	14			1.25			1	1.5	hr				
+Chen2015	aucinf	300	mg	canagliflozin	14	33583	6100						ng/ml*hr				
+Chen2015	thalf	300	mg	canagliflozin	14	16.2	4.79						hr				
+Chen2015	recovery	300	mg	canagliflozin	14	0.481	0.12						percent				
+Chen2015	oral-clearance	300	mg	canagliflozin	14	9.26	1.99						l/hr				
+Chen2015	clearance_renal	300	mg	canagliflozin	14	0.0472	0.01						l/hr				
+#																	
+Chen2015	cmax	100	mg	M7	14	745	265						ng/ml				
+Chen2015	tmax	100	mg	M7	14			2			1.5	6	hr				
+Chen2015	aucinf	100	mg	M7	14	9050	2502						ng/ml*hr				
+Chen2015	thalf	100	mg	M7	14	15.1	3.62						hr				
+Chen2015	recovery	100	mg	M7	14	17.5	5.23						percent				
+Chen2015	oral-clearance	100	mg	M7	14								l/hr				
+Chen2015	clearance_renal	100	mg	M7	14								l/hr				
+#																	
+Chen2015	cmax	300	mg	M7	14	2155	671						ng/ml				
+Chen2015	tmax	300	mg	M7	14			2			1.5	3	hr				
+Chen2015	aucinf	300	mg	M7	14	26302	6381						ng/ml*hr				
+Chen2015	thalf	300	mg	M7	14	15.5	4.25						hr				
+Chen2015	recovery	300	mg	M7	14	17	3.39						percent				
+Chen2015	oral-clearance	300	mg	M7	14								l/hr				
+Chen2015	clearance_renal	300	mg	M7	14								l/hr				
+#																	
+Chen2015	cmax	100	mg	M5	14	517	148						ng/ml				
+Chen2015	tmax	100	mg	M5	14			3.5			2	4	hr				
+Chen2015	aucinf	100	mg	M5	14	8006	2502						ng/ml*hr				
+Chen2015	thalf	100	mg	M5	14	14.2	3.21						hr				
+Chen2015	recovery	100	mg	M5	14	8.78	2.94						percent				
+Chen2015	oral-clearance	100	mg	M5	14								l/hr				
+Chen2015	clearance_renal	100	mg	M5	14								l/hr				
+#																	
+Chen2015	cmax	300	mg	M5	14	1553	474						ng/ml				
+Chen2015	tmax	300	mg	M5	14			3			1.5	4	hr				
+Chen2015	aucinf	300	mg	M5	14	25269	8859						ng/ml*hr				
+Chen2015	thalf	300	mg	M5	14	15.2	4.38						hr				
+Chen2015	recovery	300	mg	M5	14	8.83	2.47						percent				
+Chen2015	oral-clearance	300	mg	M5	14								l/hr				
+Chen2015	clearance_renal	300	mg	M5	14								l/hr				
+#																	
+Devineni2012	auc_end	100	mg	canagliflozin	10	5957	1580						ng/ml*hr				
+Devineni2012	cmax	100	mg	canagliflozin	10	773	213						ng/ml				
+Devineni2012	thalf	100	mg	canagliflozin	10	14.7	4.1						hr				
+Devineni2012	tmax	100	mg	canagliflozin	10			4			1.5	6	hr				
+#																	
+Devineni2012	auc_end	300	mg	canagliflozin	10	42308	6461						ng/ml*hr				
+Devineni2012	cmax	300	mg	canagliflozin	10	3556	945						ng/ml				
+Devineni2012	thalf	300	mg	canagliflozin	10	11.8	2.9						hr				
+Devineni2012	tmax	300	mg	canagliflozin	10			2.75			1.5	3	hr				
+#																	
+Devineni2013	cmax	50	mg	canagliflozin	9	426	106						ng/ml				
+Devineni2013	tmax	50	mg	canagliflozin	9			2			1	4	hr				
+Devineni2013	auc_end	50	mg	canagliflozin	9	3139	935						ng/ml*hr				
+Devineni2013	thalf	50	mg	canagliflozin	9								hr				
+Devineni2013	recovery	50	mg	canagliflozin	9	0.46	0.14						percent				
+#																	
+Devineni2013	cmax	50	mg	canagliflozin	9	536	174						ng/ml				
+Devineni2013	tmax	50	mg	canagliflozin	9			2			1	5	hr				
+Devineni2013	auc_end	50	mg	canagliflozin	9	4059	1105						ng/ml*hr				
+Devineni2013	thalf	50	mg	canagliflozin	9	16.3	4.8						hr				
+Devineni2013	recovery	50	mg	canagliflozin	9	0.83	0.29						percent				
+#																	
+Devineni2013	cmax	100	mg	canagliflozin	8	1096	444						ng/ml				
+Devineni2013	tmax	100	mg	canagliflozin	8			1.5			1	5	hr				
+Devineni2013	auc_end	100	mg	canagliflozin	8	6357	1431						ng/ml*hr				
+Devineni2013	thalf	100	mg	canagliflozin	8								hr				
+Devineni2013	recovery	100	mg	canagliflozin	8	0.55	0.1						percent				
+#																	
+Devineni2013	cmax	100	mg	canagliflozin	8	1227	481						ng/ml				
+Devineni2013	tmax	100	mg	canagliflozin	8			1.5			1	5	hr				
+Devineni2013	auc_end	100	mg	canagliflozin	8	8225	1947						ng/ml*hr				
+Devineni2013	thalf	100	mg	canagliflozin	8	13.7	2.1						hr				
+Devineni2013	recovery	100	mg	canagliflozin	8	0.75	0.23						percent				
+#																	
+Devineni2013	cmax	300	mg	canagliflozin	10	3480	844						ng/ml				
+Devineni2013	tmax	300	mg	canagliflozin	10			1.5			1	6	hr				
+Devineni2013	auc_end	300	mg	canagliflozin	10	22583	7343						ng/ml*hr				
+Devineni2013	thalf	300	mg	canagliflozin	10								hr				
+Devineni2013	recovery	300	mg	canagliflozin	10	0.4	0.13						percent				
+#																	
+Devineni2013	cmax	300	mg	canagliflozin	10	4678	1685						ng/ml				
+Devineni2013	tmax	300	mg	canagliflozin	10			1.5			1	2	hr				
+Devineni2013	auc_end	300	mg	canagliflozin	10	30995	11146						ng/ml*hr				
+Devineni2013	thalf	300	mg	canagliflozin	10	14.9	4.8						hr				
+Devineni2013	recovery	300	mg	canagliflozin	10	0.75	0.32						percent				
+#																	
+Devineni2013	cmax	50	mg	M5	9	290	144						ng/ml				
+Devineni2013	tmax	50	mg	M5	9			4			2	5	hr				
+Devineni2013	auc_end	50	mg	M5	9	2933	1796						ng/ml*hr				
+Devineni2013	thalf	50	mg	M5	9								hr				
+Devineni2013	recovery	50	mg	canagliflozin	9	6.99	2.2						percent				
+#																	
+Devineni2013	cmax	50	mg	M5	9	324	132						ng/ml				
+Devineni2013	tmax	50	mg	M5	9			4			1.5	6	hr				
+Devineni2013	auc_end	50	mg	M5	9	3607	2109						ng/ml*hr				
+Devineni2013	thalf	50	mg	M5	9	14.8	3.9						hr				
+Devineni2013	recovery	50	mg	canagliflozin	9	10.1	2.62						percent				
+#																	
+Devineni2013	cmax	100	mg	M5	8	503	177						ng/ml				
+Devineni2013	tmax	100	mg	M5	8			4.5			2	5	hr				
+Devineni2013	auc_end	100	mg	M5	8	4871	1303						ng/ml*hr				
+Devineni2013	thalf	100	mg	M5	8								hr				
+Devineni2013	recovery	100	mg	canagliflozin	8	8.11	1.61						percent				
+#																	
+Devineni2013	cmax	100	mg	M5	8	559	191						ng/ml				
+Devineni2013	tmax	100	mg	M5	8			3			1.5	6	hr				
+Devineni2013	auc_end	100	mg	M5	8	6003	1943						ng/ml*hr				
+Devineni2013	thalf	100	mg	M5	8	14.2	2.6						hr				
+Devineni2013	recovery	100	mg	canagliflozin	8	9.57	2.38						percent				
+#																	
+Devineni2013	cmax	300	mg	M5	10	1472	474						ng/ml				
+Devineni2013	tmax	300	mg	M5	10			4.5			1.5	8	hr				
+Devineni2013	auc_end	300	mg	M5	10	15307	4296						ng/ml*hr				
+Devineni2013	thalf	300	mg	M5	10								hr				
+Devineni2013	recovery	300	mg	canagliflozin	10	7.67	1.56						percent				
+#																	
+Devineni2013	cmax	300	mg	M5	10	1900	534						ng/ml				
+Devineni2013	tmax	300	mg	M5	10			2			1	4	hr				
+Devineni2013	auc_end	300	mg	M5	10	21911	7865						ng/ml*hr				
+Devineni2013	thalf	300	mg	M5	10	13.8	4.6						hr				
+Devineni2013	recovery	300	mg	canagliflozin	10	10.49	2.03						percent				
+#																	
+Devineni2013	cmax	50	mg	M7	9	547	225						ng/ml				
+Devineni2013	tmax	50	mg	M7	9			3			3	4	hr				
+Devineni2013	auc_end	50	mg	M7	9	4637	3048						ng/ml*hr				
+Devineni2013	thalf	50	mg	M7	9								hr				
+Devineni2013	recovery	50	mg	canagliflozin	9	21.24	4.39						percent				
+#																	
+Devineni2013	cmax	50	mg	M7	9	608	305						ng/ml				
+Devineni2013	tmax	50	mg	M7	9			3			2	5	hr				
+Devineni2013	auc_end	50	mg	M7	9	5765	3989						ng/ml*hr				
+Devineni2013	thalf	50	mg	M7	9	17.2	5						hr				
+Devineni2013	recovery	50	mg	canagliflozin	9	30.68	6.97						percent				
+#																	
+Devineni2013	cmax	100	mg	M7	8	1126	547						ng/ml				
+Devineni2013	tmax	100	mg	M7	8			3			2	6	hr				
+Devineni2013	auc_end	100	mg	M7	8	8721	4445						ng/ml*hr				
+Devineni2013	thalf	100	mg	M7	8								hr				
+Devineni2013	recovery	100	mg	canagliflozin	8	25.06	6.4						percent				
+#																	
+Devineni2013	cmax	100	mg	M7	8	1276	588						ng/ml				
+Devineni2013	tmax	100	mg	M7	8			2.5			2	5	hr				
+Devineni2013	auc_end	100	mg	M7	8	10819	5216						ng/ml*hr				
+Devineni2013	thalf	100	mg	M7	8	17.2	5						hr				
+Devineni2013	recovery	100	mg	canagliflozin	8	31.88	10.98						percent				
+#																	
+Devineni2013	cmax	300	mg	M7	10	2591	631						ng/ml				
+Devineni2013	tmax	300	mg	M7	10			3			1.5	6	hr				
+Devineni2013	auc_end	300	mg	M7	10	22036	5941						ng/ml*hr				
+Devineni2013	thalf	300	mg	M7	10								hr				
+Devineni2013	recovery	300	mg	canagliflozin	10	20.85	2.87						percent				
+#																	
+Devineni2013	cmax	300	mg	M7	10	3122	631						ng/ml				
+Devineni2013	tmax	300	mg	M7	10			2			1.5	3	hr				
+Devineni2013	auc_end	300	mg	M7	10	28110	7655						ng/ml*hr				
+Devineni2013	thalf	300	mg	M7	10	15	4.7						hr				
+Devineni2013	recovery	300	mg	canagliflozin	10	27.04	4.09						percent				
+#																	
+Devineni2015a	cmax	50	mg	canagliflozin	9	521	132						ng/ml				
+Devineni2015a	tmax	50	mg	canagliflozin	9			1			0.98	1.5	hr				
+Devineni2015a	auc_end	50	mg	canagliflozin	9	2678	1238						ng/ml*hr				
+Devineni2015a	aucinf	50	mg	canagliflozin	9	3087	1606						ng/ml*hr				
+Devineni2015a	thalf	50	mg	canagliflozin	9	9.3	2.42						hr				
+Devineni2015a	oral-clearance	50	mg	canagliflozin	9	18.6	5.56						l/hr				
+Devineni2015a	vd	50	mg	canagliflozin	9	243	93.7						l				
+Devineni2015a	recovery	50	mg	canagliflozin	9	0.41	0.215						percent				
+Devineni2015a	clearance_renal	50	mg	canagliflozin	9	0.076	0.0484						l/hr				
+																	
+Devineni2015a	cmax	100	mg	canagliflozin	9	1031	282						ng/ml				
+Devineni2015a	tmax	100	mg	canagliflozin	9			1			1	5	hr				
+Devineni2015a	auc_end	100	mg	canagliflozin	9	5519	565						ng/ml*hr				
+Devineni2015a	aucinf	100	mg	canagliflozin	9	6684	906						ng/ml*hr				
+Devineni2015a	thalf	100	mg	canagliflozin	9	11.7	2.49						hr				
+Devineni2015a	oral-clearance	100	mg	canagliflozin	9	15.2	2.05						l/hr				
+Devineni2015a	vd	100	mg	canagliflozin	9	254	5.1						l				
+Devineni2015a	recovery	100	mg	canagliflozin	9	0.36	0.129						percent				
+Devineni2015a	clearance_renal	100	mg	canagliflozin	9	0.056	0.0208						l/hr				
+																	
+Devineni2015a	cmax	300	mg	canagliflozin	9	2897	652						ng/ml				
+Devineni2015a	tmax	300	mg	canagliflozin	9			1			1	1.5	hr				
+Devineni2015a	auc_end	300	mg	canagliflozin	9	17149	3325						ng/ml*hr				
+Devineni2015a	aucinf	300	mg	canagliflozin	9	20732	4197						ng/ml*hr				
+Devineni2015a	thalf	300	mg	canagliflozin	9	11.5	1.16						hr				
+Devineni2015a	oral-clearance	300	mg	canagliflozin	9	14.9	2.71						l/hr				
+Devineni2015a	vd	300	mg	canagliflozin	9	250	59.2						l				
+Devineni2015a	recovery	300	mg	canagliflozin	9	0.41	0.118						percent				
+Devineni2015a	clearance_renal	300	mg	canagliflozin	9	0.062	0.0114						l/hr				
+																	
+Devineni2015a	cmax	50	mg	M7	9	345	84.7						ng/ml				
+Devineni2015a	tmax	50	mg	M7	9			2			1.45	3.03	hr				
+Devineni2015a	auc_end	50	mg	M7	9	2214	641						ng/ml*hr				
+Devineni2015a	aucinf	50	mg	M7	9	2376	769						ng/ml*hr				
+Devineni2015a	thalf	50	mg	M7	9	8.9	2.82						hr				
+Devineni2015a	oral-clearance	50	mg	M7	9								l/hr				
+Devineni2015a	vd	50	mg	M7	9								l				
+Devineni2015a	recovery	50	mg	M7	9	15.9	3.5						percent				
+Devineni2015a	clearance_renal	50	mg	M7	9	4.6	5.1						l/hr				
+																	
+Devineni2015a	cmax	100	mg	M7	9	655	300						ng/ml				
+Devineni2015a	tmax	100	mg	M7	9			2			1.5	6	hr				
+Devineni2015a	auc_end	100	mg	M7	9	4327	1465						ng/ml*hr				
+Devineni2015a	aucinf	100	mg	M7	9	5221	1738						ng/ml*hr				
+Devineni2015a	thalf	100	mg	M7	9	11.7	2.08						hr				
+Devineni2015a	oral-clearance	100	mg	M7	9								l/hr				
+Devineni2015a	vd	100	mg	M7	9								l				
+Devineni2015a	recovery	100	mg	M7	9	17.6	2.72						percent				
+Devineni2015a	clearance_renal	100	mg	M7	9	5.1	1.3						l/hr				
+																	
+Devineni2015a	cmax	300	mg	M7	9	1830	586						ng/ml				
+Devineni2015a	tmax	300	mg	M7	9			2			1.5	3	hr				
+Devineni2015a	auc_end	300	mg	M7	9	14216	5595						ng/ml*hr				
+Devineni2015a	aucinf	300	mg	M7	9	17743	7052						ng/ml*hr				
+Devineni2015a	thalf	300	mg	M7	9	11.9	1.29						hr				
+Devineni2015a	oral-clearance	300	mg	M7	9								l/hr				
+Devineni2015a	vd	300	mg	M7	9								l				
+Devineni2015a	recovery	300	mg	M7	9	16.3	3.14						percent				
+Devineni2015a	clearance_renal	300	mg	M7	9	4.5	1.51						l/hr				
+																	
+Devineni2015a	cmax	50	mg	M5	9	217	94.5						ng/ml				
+Devineni2015a	tmax	50	mg	M5	9			2			1.45	5.02	hr				
+Devineni2015a	auc_end	50	mg	M5	9	1772	972						ng/ml*hr				
+Devineni2015a	aucinf	50	mg	M5	9	2235	1320						ng/ml*hr				
+Devineni2015a	thalf	50	mg	M5	9	10	2.28						hr				
+Devineni2015a	oral-clearance	50	mg	M5	9								l/hr				
+Devineni2015a	vd	50	mg	M5	9								l				
+Devineni2015a	recovery	50	mg	M5	9	8	3.91						percent				
+Devineni2015a	clearance_renal	50	mg	M5	9	2.8	0.71						l/hr				
+																	
+Devineni2015a	cmax	100	mg	M5	9	405	95.3						ng/ml				
+Devineni2015a	tmax	100	mg	M5	9			2			1.5	5	hr				
+Devineni2015a	auc_end	100	mg	M5	9	3412	944						ng/ml*hr				
+Devineni2015a	aucinf	100	mg	M5	9	4464	1518						ng/ml*hr				
+Devineni2015a	thalf	100	mg	M5	9	12.3	2.92						hr				
+Devineni2015a	oral-clearance	100	mg	M5	9								l/hr				
+Devineni2015a	vd	100	mg	M5	9								l				
+Devineni2015a	recovery	100	mg	M5	9	8.21	1.84						percent				
+Devineni2015a	clearance_renal	100	mg	M5	9	2.8	0.57						l/hr				
+																	
+Devineni2015a	cmax	300	mg	M5	9	1177	488						ng/ml				
+Devineni2015a	tmax	300	mg	M5	9			2			1.5	4	hr				
+Devineni2015a	auc_end	300	mg	M5	9	10948	4608						ng/ml*hr				
+Devineni2015a	aucinf	300	mg	M5	9	14307	5829						ng/ml*hr				
+Devineni2015a	thalf	300	mg	M5	9	12	1.66						hr				
+Devineni2015a	oral-clearance	300	mg	M5	9								l/hr				
+Devineni2015a	vd	300	mg	M5	9								l				
+Devineni2015a	recovery	300	mg	M5	9	8.7	2.86						percent				
+Devineni2015a	clearance_renal	300	mg	M5	9	2.8	0.79						l/hr				
+#																	
+Devineni2016	cmax	200	mg	canagliflozin	15	1792	430						ng/ml				
+Devineni2016	auc_end	200	mg	canagliflozin	15	14524	2605						ng*hr/ml				
+Devineni2016	aucinf	200	mg	canagliflozin	15	18706	3818						ng*hr/ml				
+Devineni2016	tmax	200	mg	canagliflozin	15			1.5			1	5	hr				
+Devineni2016	thalf	200	mg	canagliflozin	15	13	3.6						hr				
+#																	
+Devineni2016	cmax	300	mg	canagliflozin	14	2789	941						ng/ml				
+Devineni2016	auc_end	300	mg	canagliflozin	14	21948	4268						ng*hr/ml				
+Devineni2016	aucinf	300	mg	canagliflozin	14	28207	5901						ng*hr/ml				
+Devineni2016	tmax	300	mg	canagliflozin	14			1.5			1	4	hr				
+Devineni2016	thalf	300	mg	canagliflozin	14	12.6	4.6						hr				
+#																	
+Iijima2015	cmax	25	mg	canagliflozin	12	248	55						ng/ml				
+Iijima2015	auc_end	25	mg	canagliflozin	12	1295	240						ng/ml*hr				
+Iijima2015	tmax	25	mg	canagliflozin	12			1			1	2	hr				
+Iijima2015	thalf	25	mg	canagliflozin	12	10.7	1.76						hr				
+Iijima2015	recovery	25	mg	canagliflozin	12	0.387	0.07						percent				
+Iijima2015	cumulative amount	25	mg	canagliflozin	12	0	0						g				
+Iijima2015	cumulative amount	25	mg	canagliflozin	12	0.09675	0.0175						g				
+#																	
+Iijima2015	cmax	100	mg	canagliflozin	12	1126	228						ng/ml				
+Iijima2015	auc_end	100	mg	canagliflozin	12	5468	899						ng/ml*hr				
+Iijima2015	tmax	100	mg	canagliflozin	12			1			1	1.5	hr				
+Iijima2015	thalf	100	mg	canagliflozin	12	10.22	1.89						hr				
+Iijima2015	recovery	100	mg	canagliflozin	12	0.384	0.084						percent				
+Iijima2015	cumulative amount	100	mg	canagliflozin	12	0	0						g				
+Iijima2015	cumulative amount	100	mg	canagliflozin	12	0.384	0.084						g				
+#																	
+Iijima2015	cmax	200	mg	canagliflozin	14	2304	539						ng/ml				
+Iijima2015	auc_end	200	mg	canagliflozin	14	11991	3042						ng/ml*hr				
+Iijima2015	tmax	200	mg	canagliflozin	14			1			1	1.5	hr				
+Iijima2015	thalf	200	mg	canagliflozin	14	13.26	4.96						hr				
+Iijima2015	recovery	200	mg	canagliflozin	14	0.424	0.107						percent				
+Iijima2015	cumulative amount	200	mg	canagliflozin	14	0	0						g				
+Iijima2015	cumulative amount	200	mg	canagliflozin	14	0.848	0.214						g				
+#																	
+Iijima2015	cmax	400	mg	canagliflozin	13	5028	1733						ng/ml				
+Iijima2015	auc_end	400	mg	canagliflozin	13	21836	4983						ng/ml*hr				
+Iijima2015	tmax	400	mg	canagliflozin	13			1			1	3	hr				
+Iijima2015	thalf	400	mg	canagliflozin	13	12.15	2.34						hr				
+Iijima2015	recovery	400	mg	canagliflozin	13	0.385	0.097						percent				
+Iijima2015	cumulative amount	400	mg	canagliflozin	13	0	0						g				
+Iijima2015	cumulative amount	400	mg	canagliflozin	13	1.54	0.388						g				
+#																	
+Iijima2015	cmax	25	mg	canagliflozin	12	263	91						ng/ml				
+Iijima2015	auc_end	25	mg	canagliflozin	12	1556	387						ng/ml*hr				
+Iijima2015	tmax	25	mg	canagliflozin	12			1			1	3	hr				
+Iijima2015	thalf	25	mg	canagliflozin	12	14.21	7.46						hr				
+Iijima2015	recovery	25	mg	canagliflozin	12	0.599	0.183						percent				
+Iijima2015	cumulative amount	25	mg	canagliflozin	12	0	0						g				
+Iijima2015	cumulative amount	25	mg	canagliflozin	12	0.14975	0.04575						g				
+#																	
+Iijima2015	cmax	100	mg	canagliflozin	12	1136	330						ng/ml				
+Iijima2015	auc_end	100	mg	canagliflozin	12	6635	1367						ng/ml*hr				
+Iijima2015	tmax	100	mg	canagliflozin	12			1			1	1.5	hr				
+Iijima2015	thalf	100	mg	canagliflozin	12	11.81	3.22						hr				
+Iijima2015	recovery	100	mg	canagliflozin	12	0.641	0.204						percent				
+Iijima2015	cumulative amount	100	mg	canagliflozin	12	0	0						g				
+Iijima2015	cumulative amount	100	mg	canagliflozin	12	0.641	0.204						g				
+#																	
+Iijima2015	cmax	200	mg	canagliflozin	14	2688	805						ng/ml				
+Iijima2015	auc_end	200	mg	canagliflozin	14	16716	5464						ng/ml*hr				
+Iijima2015	tmax	200	mg	canagliflozin	14			1.3			1	1.5	hr				
+Iijima2015	thalf	200	mg	canagliflozin	14	16.16	5.87						hr				
+Iijima2015	recovery	200	mg	canagliflozin	14	0.614	0.195						percent				
+Iijima2015	cumulative amount	200	mg	canagliflozin	14	0	0						g				
+Iijima2015	cumulative amount	200	mg	canagliflozin	14	1.228	0.39						g				
+#																	
+Iijima2015	cmax	400	mg	canagliflozin	13	5236	1123						ng/ml				
+Iijima2015	auc_end	400	mg	canagliflozin	13	30766	7916						ng/ml*hr				
+Iijima2015	tmax	400	mg	canagliflozin	13			1			1	1.5	hr				
+Iijima2015	thalf	400	mg	canagliflozin	13	15.76	5.56						hr				
+Iijima2015	recovery	400	mg	canagliflozin	13	0.495	0.153						percent				
+Iijima2015	cumulative amount	400	mg	canagliflozin	13	0	0						g				
+Iijima2015	cumulative amount	400	mg	canagliflozin	13	1.98	0.612						g				
+#																	
+Tamborlane2018	cmax	100	mg	canagliflozin	8	951	429						ng/ml				
+Tamborlane2018	tmax	100	mg	canagliflozin	8			1.6			1	2	hr				
+Tamborlane2018	auc_end	100	mg	canagliflozin	8	6190	1770						ng*hr/ml				
+Tamborlane2018	thalf	100	mg	canagliflozin	8	11.3	2.5						hr				
+Tamborlane2018	clearance	100	mg	canagliflozin	8	17.5	5.8						l/hr				
+#																	
+Tamborlane2018	cmax	100	mg	canagliflozin	8	3260	1330						ng/ml				
+Tamborlane2018	tmax	100	mg	canagliflozin	8			2.4			1	4	hr				
+Tamborlane2018	auc_end	100	mg	canagliflozin	8	28392	12412						ng*hr/ml				
+Tamborlane2018	thalf	100	mg	canagliflozin	8	15.2	6.9						hr				
+Tamborlane2018	clearance	100	mg	canagliflozin	8	12.3	6.9						l/hr				
+#																	
+Chen2015	UGE_24hr	100	mg	glucose	14	33.8	10.4						g	1	N		
+Chen2015	UGE_24hr	300	mg	glucose	14	42.9	6.67						g	1	N		
+#																	
+Devineni2013	UGE_24hr	50	mg	glucose	9	80.8	26.8						g	1	T2DM		
+Devineni2013	UGE_24hr	100	mg	glucose	8	117.3	18.8						g	1	T2DM		
+Devineni2013	UGE_24hr	300	mg	glucose	10	113.1	27.2						g	1	T2DM		
+#																	
+Devineni2015a	UGE_24hr	50	mg	glucose	9	34.5	10.3						g	1	N		
+Devineni2015a	UGE_24hr	100	mg	glucose	9	48.1	12.3						g	1	N		
+Devineni2015a	UGE_24hr	300	mg	glucose	9	62	10.9						g	1	N		
+#																	
+Devineni2016	UGE_24hr	200	mg	glucose	15	37.8	0.9						g	1	N		
+Devineni2016	UGE_24hr	300	mg	glucose	14	40.4	2						g	1	N		
+#																	
+Iijima2015	UGE_24hr	25	mg	glucose	12	57.5	9.6						g	1	T2DM		
+Iijima2015	UGE_24hr	100	mg	glucose	12	93.7	11.1						g	1	T2DM		
+Iijima2015	UGE_24hr	200	mg	glucose	14	83.4	32.1						g	1	T2DM		
+Iijima2015	UGE_24hr	300	mg	glucose	13	110.1	21						g	1	T2DM		
+#																	
+Sha2011	UGE_24hr	10	mg	glucose	6	8	1.5						g	1	N		
+Sha2011	UGE_24hr	30	mg	glucose	6	17.5	6.9						g	1	N		
+Sha2011	UGE_24hr	100	mg	glucose	6	43.6	6.4						g	1	N		
+Sha2011	UGE_24hr	200	mg	glucose	6	48.6	8.8						g	1	N		
+Sha2011	UGE_24hr	400	mg	glucose	6	65.1	11.3						g	1	N		
+Sha2011	UGE_24hr	600	mg	glucose	6	69.2	11.3						g	1	N		
+Sha2011	UGE_24hr	800	mg	glucose	6	65.5	12.5						g	1	N		
+#																	
+Sha2014	UGE_24hr	30	mg	glucose	16	64.2							g	1	T2DM		
+Sha2014	UGE_24hr	100	mg	glucose	16	85							g	1	T2DM		
+Sha2014	UGE_24hr	200	mg	glucose	16	107							g	1	T2DM		
+Sha2014	UGE_24hr	400	mg	glucose	16	126.1							g	1	T2DM		
+#																	
+Devineni2014	cmax	300	mg	canagliflozin	30	3820	767						ng/ml				
+Devineni2014	tmax	300	mg	canagliflozin	30			1			1	1.5	hr				
+Devineni2014	UGE_24hr	300	mg	glucose	28	42.34							g	1	N		
+#																	
+Devineni2015	cmax	300	mg	canagliflozin	17	2614	532						ng/ml				
+Devineni2015	tmax	300	mg	canagliflozin	17			1.5			1	6	hr				
+#																	
+Devineni2015b	tmax	300	mg	canagliflozin	9			1.5			1	3	hr				
+Devineni2015b	cmax	300	mg	canagliflozin	9	2504	482						ng/ml				
+Devineni2015b	aucinf	300	mg	canagliflozin	9	17375	3555						ng/ml*hr				
+Devineni2015b	thalf	300	mg	canagliflozin	9	11.6	0.7						hr				
+#																	
+Devineni2015d	cmax	300	mg	canagliflozin	14	2474	805						ng/ml				
+Devineni2015d	aucinf	300	mg	canagliflozin	14	21695	6151						ng*hr/ml				
+Devineni2015d	tmax	300	mg	canagliflozin	14			2			1	4	hr				
+Devineni2015d	thalf	300	mg	canagliflozin	14	12.9	2.42						hr				
+Devineni2015d	cmax	300	mg	M7	14	1905	943						ng/ml				
+Devineni2015d	aucinf	300	mg	M7	14	20771	10728						ng*hr/ml				
+Devineni2015d	tmax	300	mg	M7	14			3.5			2	6	hr				
+Devineni2015d	thalf	300	mg	M7	14	13.3	2.65						hr				
+Devineni2015d	cmax	300	mg	M5	14	2420	1196						ng/ml				
+Devineni2015d	aucinf	300	mg	M5	14	21903	9556						ng*hr/ml				
+Devineni2015d	tmax	300	mg	M5	14			4			3	10	hr				
+Devineni2015d	thalf	300	mg	M5	14	12.4	2.43						hr				
+#																	
+Devineni2015e	cmax	300	mg	canagliflozin	21	2975	559						ng/ml				
+Devineni2015e	aucinf	300	mg	canagliflozin	21	24400	4584						ng*hr/ml				
+Devineni2015e	tmax	300	mg	canagliflozin	21			2			1	4	hr				
+Devineni2015e	thalf	300	mg	canagliflozin	21	12.9	3.4						hr				
+#																	
+Kinoshita2015	cmax	200	mg	canagliflozin	25	2125	647						ng/ml				
+Kinoshita2015	tmax	200	mg	canagliflozin	25	1.6	0.7						hr				
+Kinoshita2015	aucinf	200	mg	canagliflozin	25	16063	2571						ng*hr/ml				
+Kinoshita2015	thalf	200	mg	canagliflozin	25	14.1	4.77						hr				
+#																	
+Sha2015	UGE_24hr	300	mg	glucose	54	51.4	12.66						g	1	N		
+Sha2015	UGE_24hr	10	mg	glucose	54	40.6	11.58						g	1	N		

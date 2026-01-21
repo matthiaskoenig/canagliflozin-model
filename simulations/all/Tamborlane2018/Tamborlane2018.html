@@ -120,8 +120,6 @@ class Tamborlane2018(CanagliflozinSimulationExperiment):
 
     doses = [100, 300]
     interventions = ["CAN100", "CAN300"]
-    colors = {100: "tab:red", 300: "tab:green"}
-
     bodyweights = {100: 116.8, 300: 98.6}  # [kg]
     fpg = {100: 134, 300: 106.3}  # mM (healthy)
     gfr = {100: 135.8, 300: 161.3}  # [ml/min/1.73*m^2]
@@ -242,7 +240,7 @@ class Tamborlane2018(CanagliflozinSimulationExperiment):
         fig = Figure(
             experiment=self,
             sid="canagliflozin plasma",
-            name=f"{self.__class__.__name__} (t2dm)",
+            name=f"{self.__class__.__name__} (T2DM)",
         )
         plots = fig.create_plots(xaxis=Axis(self.label_time, unit=self.unit_time), legend=True)
         plots[0].set_yaxis(self.label_can, unit=self.unit_can)
@@ -254,8 +252,8 @@ class Tamborlane2018(CanagliflozinSimulationExperiment):
                 task=f"task_po_can{dose}_multi",
                 xid="time",
                 yid=f"[Cve_can]",
-                label=f"Sim can ({dose})",
-                color=self.colors[dose],
+                label=f"{dose} mg PO",
+                color=self.dose_colors[dose],
             )
 
             # data
@@ -265,8 +263,8 @@ class Tamborlane2018(CanagliflozinSimulationExperiment):
                 yid="mean",
                 yid_sd="mean_sd",
                 count="count",
-                label=f"can {dose}",
-                color=self.colors[dose],
+                label=f"{dose} mg PO",
+                color=self.dose_colors[dose],
             )
 
         return {
@@ -277,7 +275,7 @@ class Tamborlane2018(CanagliflozinSimulationExperiment):
         fig = Figure(
             experiment=self,
             sid="Fig_uge",
-            name=f"{self.__class__.__name__} (t2dm)",
+            name=f"{self.__class__.__name__} (T2DM)",
         )
         plots = fig.create_plots(xaxis=Axis(self.label_time, unit=self.unit_time), legend=True)
         plots[0].set_yaxis(self.label_uge, unit=self.unit_uge)
@@ -288,8 +286,8 @@ class Tamborlane2018(CanagliflozinSimulationExperiment):
                 task=f"task_po_can{dose}_multi",
                 xid="time",
                 yid=f"KI__UGE",
-                label=f"Sim {dose} mg",
-                color=self.colors[dose],
+                label=f"{dose} mg PO",
+                color=self.dose_colors[dose],
             )
             # data
             plots[0].add_data(
@@ -298,8 +296,8 @@ class Tamborlane2018(CanagliflozinSimulationExperiment):
                 yid="mean",
                 yid_sd="mean_sd",
                 count="count",
-                label=f"UGE {dose} mg",
-                color=self.colors[dose],
+                label=f"{dose} mg PO",
+                color=self.dose_colors[dose],
             )
 
         return {
@@ -310,7 +308,7 @@ class Tamborlane2018(CanagliflozinSimulationExperiment):
         fig = Figure(
             experiment=self,
             sid="Fig_rtg",
-            name=f"{self.__class__.__name__} (t2dm)",
+            name=f"{self.__class__.__name__} (T2DM)",
         )
         plots = fig.create_plots(xaxis=Axis(self.label_time, unit=self.unit_time), legend=True)
         plots[0].set_yaxis(self.label_rtg, unit=self.unit_rtg)
@@ -321,8 +319,8 @@ class Tamborlane2018(CanagliflozinSimulationExperiment):
                 task=f"task_po_can{dose}_multi",
                 xid="time",
                 yid=f"KI__RTG",
-                label=f"Sim {dose} mg",
-                color=self.colors[dose],
+                label=f"{dose} mg PO",
+                color=self.dose_colors[dose],
             )
 
             # data
@@ -332,8 +330,8 @@ class Tamborlane2018(CanagliflozinSimulationExperiment):
                 yid="mean",
                 yid_sd="mean_sd",
                 count="count",
-                label=f"RTG {dose} mg",
-                color=self.colors[dose],
+                label=f"{dose} mg PO",
+                color=self.dose_colors[dose],
             )
 
         return {

@@ -40,17 +40,33 @@
             <h2>Figures</h2>
             <p>
             <ul>
-                <li><strong>Fig1 and Fig2</strong>: <a href="Devineni2015e_Fig1 and Fig2.svg">Devineni2015e_Fig1 and Fig2.svg</a></li>
+                <li><strong>Fig_fastvsfed</strong>: <a href="Devineni2015e_Fig_fastvsfed.svg">Devineni2015e_Fig_fastvsfed.svg</a></li>
+                <li><strong>Fig_dose</strong>: <a href="Devineni2015e_Fig_dose.svg">Devineni2015e_Fig_dose.svg</a></li>
             </ul>
             </p>
 
-            <h3>Fig1 and Fig2</h3>
+            <h3>Fig_fastvsfed</h3>
             <p>
             <table>
                 <tr>
                     <td>
-                        <!--<v-img src="Devineni2015e_Fig1 and Fig2.svg" max-width="600" width="600"></v-img>-->
-                        <img src="Devineni2015e_Fig1 and Fig2.svg" width="600">
+                        <!--<v-img src="Devineni2015e_Fig_fastvsfed.svg" max-width="600" width="600"></v-img>-->
+                        <img src="Devineni2015e_Fig_fastvsfed.svg" width="600">
+                    </td>
+                    <!--
+                    <td>
+                    </td>
+                    -->
+                </tr>
+            </table>
+            </p>
+            <h3>Fig_dose</h3>
+            <p>
+            <table>
+                <tr>
+                    <td>
+                        <!--<v-img src="Devineni2015e_Fig_dose.svg" max-width="600" width="600"></v-img>-->
+                        <img src="Devineni2015e_Fig_dose.svg" width="600">
                     </td>
                     <!--
                     <td>
@@ -65,11 +81,9 @@
                 <a href="../../../../experiments/studies/devineni2015e.py">../../../../experiments/studies/devineni2015e.py</a>
             <pre>
 <code class="python">from typing import Dict
-
 from sbmlsim.data import DataSet, load_pkdb_dataframe
 from sbmlsim.fit import FitMapping, FitData
 from sbmlutils.console import console
-
 from pkdb_models.models.canagliflozin.experiments.base_experiment import (
     CanagliflozinSimulationExperiment,
 )
@@ -90,9 +104,6 @@ class Devineni2015e(CanagliflozinSimulationExperiment):
     doses = [50, 100, 300]
 
     bodyweights = {50: 72.6, 100: 72.6, 300: 72.6}
-
-    fasted_colors = {50: "tab:blue", 100: "tab:green", 300: "tab:red"}
-    colors = {"fasted": "black", "fed": "tab:green"}
 
     def datasets(self) -> Dict[str, DataSet]:
         dsets = {}
@@ -197,62 +208,96 @@ class Devineni2015e(CanagliflozinSimulationExperiment):
                 )
         return mappings
 
-    def figures(self) -> Dict[str, Figure]:
+    def figure_fastvsfed(self) -> Dict[str, Figure]:
         fig = Figure(
             experiment=self,
-            sid="Fig1 and Fig2",
-            num_rows=2,
+            sid="Fig_fastvsfed",
+            num_rows=1,
             num_cols=1,
-            name=f"{self.__class__.__name__} (healthy)",
+            name=f"{self.__class__.__name__} (Healthy)",
         )
-        plots = fig.create_plots(xaxis=Axis(self.label_time, unit=self.unit_time), legend=True)
-        plots[0].set_yaxis(self.label_can, unit=self.unit_can)
-        plots[1].set_yaxis(self.label_can, unit=self.unit_can)
 
-        # simulation
+        plots = fig.create_plots(
+            xaxis=Axis(self.label_time, unit=self.unit_time),
+            legend=True,
+        )
+        plots[0].set_yaxis(self.label_can, unit=self.unit_can)
+
+        # Fasted vs Fed at 300 mg
         for condition in self.conditions:
+            label = "300 mg PO (fasted)" if condition == "fasted" else "300 mg PO (fed)"
+
+            # simulation
             plots[0].add_data(
                 task=f"task_po_can300_{condition}",
                 xid="time",
-                yid=f"[Cve_can]",
-                label=f"Sim can ({condition})",
-                color=self.colors[condition],
+                yid="[Cve_can]",
+                label=label,
+                color=self.fasting_colors[condition],
             )
 
-        for dose in self.doses:
-            plots[1].add_data(
-                task=f"task_po_can{dose}_fasted",
-                xid="time",
-                yid=f"[Cve_can]",
-                label=f"Sim can {dose} mg",
-                color=self.fasted_colors[dose],
-            )
-
-        # data
-        for condition in self.conditions:
+            # data
             plots[0].add_data(
                 dataset=f"canagliflozin_CAN300_{condition}",
                 xid="time",
                 yid="mean",
                 yid_sd="mean_sd",
                 count="count",
-                label=f"can 300 {condition}",
-                color=self.colors[condition],
+                label=label,
+                color=self.fasting_colors[condition],
             )
 
+        return {
+            fig.sid: fig,
+        }
+
+    def figure_dose(self) -> Dict[str, Figure]:
+        fig = Figure(
+            experiment=self,
+            sid="Fig_dose",
+            num_rows=1,
+            num_cols=1,
+            name=f"{self.__class__.__name__} (Healthy)",
+        )
+
+        plots = fig.create_plots(
+            xaxis=Axis(self.label_time, unit=self.unit_time),
+            legend=True,
+        )
+        plots[0].set_yaxis(self.label_can, unit=self.unit_can)
+
+        # Dose dependency under fasted conditions
         for dose in self.doses:
-            plots[1].add_data(
+            label = f"{dose} mg PO"
+
+            # simulation
+            plots[0].add_data(
+                task=f"task_po_can{dose}_fasted",
+                xid="time",
+                yid="[Cve_can]",
+                label=label,
+                color=self.dose_colors[dose],
+            )
+
+            # data
+            plots[0].add_data(
                 dataset=f"canagliflozin_CAN{dose}",
                 xid="time",
                 yid="mean",
                 yid_sd="mean_sd",
                 count="count",
-                label=f"can {dose}",
-                color=self.fasted_colors[dose],
+                label=label,
+                color=self.dose_colors[dose],
             )
 
         return {
             fig.sid: fig,
+        }
+
+    def figures(self) -> Dict[str, Figure]:
+        return {
+            **self.figure_fastvsfed(),
+            **self.figure_dose(),
         }
 
 

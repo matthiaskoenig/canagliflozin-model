@@ -1,0 +1,16 @@
+study	name	group_count	parent	measurement_type	count	substance	choice	mean	median	sd	se	min	max	unit	comments
+Sha2011	all	63.0	NA	species	63.0	NA	homo sapiens	NA	NA	NA	NA	NA	NA	NA	NA
+Sha2011	all	63.0	NA	healthy	63.0	NA	Y	NA	NA	NA	NA	NA	NA	NA	NA
+Sha2011	all	63.0	NA	sex	63.0	NA	M	NA	NA	NA	NA	NA	NA	NA	NA
+Sha2011	all	63.0	NA	age	63.0	NA	NA	37.1	NA	NA	NA	19.0	55.0	yr	NA
+Sha2011	all	63.0	NA	gfr	63.0	NA	NA	97.1	NA	NA	NA	69.7	138.0	ml/min/(1.73*m^2)	NA
+Sha2011	all	63.0	NA	bmi	63.0	NA	NA	24.0	NA	NA	NA	20.4	29.8	kg/m^2	NA
+Sha2011	CAN0	15.0	all	age	15.0	NA	NA	NA	NA	NA	NA	19.0	55.0	yr	NA
+Sha2011	CAN10	6.0	all	age	6.0	NA	NA	NA	NA	NA	NA	19.0	55.0	yr	NA
+Sha2011	CAN30	6.0	all	age	6.0	NA	NA	NA	NA	NA	NA	19.0	55.0	yr	NA
+Sha2011	CAN100	6.0	all	age	6.0	NA	NA	NA	NA	NA	NA	19.0	55.0	yr	NA
+Sha2011	CAN200	6.0	all	age	6.0	NA	NA	NA	NA	NA	NA	19.0	55.0	yr	NA
+Sha2011	CAN400	6.0	all	age	6.0	NA	NA	NA	NA	NA	NA	19.0	55.0	yr	NA
+Sha2011	CAN600	6.0	all	age	6.0	NA	NA	NA	NA	NA	NA	19.0	55.0	yr	NA
+Sha2011	CAN800	6.0	all	age	6.0	NA	NA	NA	NA	NA	NA	19.0	55.0	yr	NA
+Sha2011	CAN400_BID	6.0	all	age	6.0	NA	NA	NA	NA	NA	NA	19.0	55.0	yr	NA

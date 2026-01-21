@@ -11,34 +11,44 @@ length: [m]
 
 ## Parameters `p`
 ```
-CANEX_k = 0.00373993861477588  # [1/min] rate urinary excretion of canagliflozin  
+CAN2M7_Km_can = 0.1  # [mmol/l] Km canagliflozin UGT1A9  
+CAN2M7_Vmax = 0.0387578347044511  # [mmol/min/l] Vmax canagliflozin to M7  
+CANEX_k = 0.00374581660737891  # [1/min] rate urinary excretion of canagliflozin  
+CANIM_Km_can = 0.1  # [mmol/l] Km canagliflozin import  
+CANIM_Vmax = 10.0  # [mmol/min/l] Vmax canagliflozin import  
 GFR_healthy = 100.0  # [ml/min] Glomerular filtration rate (healthy)  
-M5EX_k = 0.0993999073054945  # [1/min] rate urinary excretion of m5  
-M7EX_k = 0.177112957435439  # [1/min] rate urinary excretion of m7  
-Mr_glc = 180.0  # [g/mol] Molecular weight glc [g/mole]  
-RTG_E50 = 7.19e-06  # [mmol/l] EC50 reduction in RTG  
-RTG_base = 12.5  # [mmol/l] Baseline RTG value  
+M5EX_k = 0.110954456979074  # [1/min] rate urinary excretion of m5  
+M7EX_k = 0.186734796391971  # [1/min] rate urinary excretion of m7  
+M7IM_Km_m7 = 0.1  # [mmol/l] Km M7 transport  
+M7IM_Vmax = 10.0  # [mmol/min/l] Vmax M7 transport  
+Mr_glc = 180.0  # [g/mol] molecular weight glc  
+RTG_E50 = 1.67206914596964e-05  # [mmol/l] EC50 reduction in RTG  
+RTG_base = 9.00393167066264  # [mmol/l] Baseline RTG value  
 RTG_gamma = 1.0  # [-] hill coefficient reduction in RTG  
-RTG_m_fpg = 0.5  # [-] FPG effect on RTG  
-RTG_max_inhibition = 0.75  # [-] RTG maximum inhibition  
+RTG_m_fpg = 0.710409847698281  # [-] FPG effect on RTG  
+RTG_max_inhibition = 0.627269730954541  # [-] RTG maximum inhibition  
 Vext = 1.5  # [l] plasma  
 Vki = 0.3  # [l] kidney  
 Vmem = nan  # [m^2] plasma membrane  
 Vurine = 1.0  # [l] urine  
 cf_mg_per_g = 1000.0  # [mg/g] Conversion factor mg per g  
 cf_ml_per_l = 1000.0  # [ml/l] Conversion factor ml per l  
-f_renal_function = 1.0  # [-] parameter for renal function  
+f_CAN2M7 = 0.13941425128974  # [-] scaling factor CAN2M7 kidney vs liver  
+f_renal_function = 1.0  # [-] scaling factor renal function  
+f_ugt1a9 = 1.0  # [-] scaling factor UGT1A9 activity  
 fpg_healthy = 5.0  # [mmol/l] fasting plasma glucose (healthy)  
 ```
 
 ## Initial conditions `x0`
 ```
+can = 0.0  # [mmol/l] canagliflozin (kidney) in Vki  
 can_ext = 0.0  # [mmol/l] canagliflozin (plasma) in Vext  
 can_urine = 0.0  # [mmol] canagliflozin (urine) in Vurine  
 fpg = 5.0  # [mmol/l] fasting plasma glucose (FPG) in Vext  
 glc_urine = 0.0  # [mmol] glucose (urine) in Vurine  
 m5_ext = 0.0  # [mmol/l] M5 (plasma) in Vext  
 m5_urine = 0.0  # [mmol] M5 (urine) in Vurine  
+m7 = 0.0  # [mmol/l] M7 (kidney) in Vki  
 m7_ext = 0.0  # [mmol/l] M7 (plasma) in Vext  
 m7_urine = 0.0  # [mmol] M7 (urine) in Vurine  
 ```
@@ -46,10 +56,13 @@ m7_urine = 0.0  # [mmol] M7 (urine) in Vurine
 ## ODE system
 ```
 # y
+CAN2M7 = f_renal_function * f_ugt1a9 * f_CAN2M7 * CAN2M7_Vmax * Vki * can / (can + CAN2M7_Km_can)  # [mmol/min] UGT1A9 (can -> m7)  
 CANEX = f_renal_function * CANEX_k * Vki * can_ext  # [mmol/min] canagliflozin excretion (CANEX)  
+CANIM = (f_renal_function * CANIM_Vmax / CANIM_Km_can) * Vki * (can_ext - can) / (1 + can_ext / CANIM_Km_can + can / CANIM_Km_can)  # [mmol/min] CANIM  
 GFR = f_renal_function * GFR_healthy  # [ml/min] glomerular filtration rate  
 M5EX = f_renal_function * M5EX_k * Vki * m5_ext  # [mmol/min] M5 excretion (M5EX)  
 M7EX = f_renal_function * M7EX_k * Vki * m7_ext  # [mmol/min] M7 excretion (M7EX)  
+M7IM = (f_renal_function * M7IM_Vmax / M7IM_Km_m7) * Vki * (m7_ext - m7) / (1 + m7_ext / M7IM_Km_m7 + m7 / M7IM_Km_m7)  # [mmol/min] M7IM  
 RTG_fpg = RTG_base + RTG_m_fpg * (fpg - fpg_healthy)  # [mmol/l] RTG value (FPG)  
 UGE = glc_urine * Mr_glc / cf_mg_per_g  # [gram] urinary glucose excretion (UGE)  
 cantot_urine = can_urine + m5_urine + m7_urine  # [mmol] total canagliflozin (urine)  
@@ -58,12 +71,14 @@ RTG = RTG_fpg - RTG_delta * can_ext**RTG_gamma / (RTG_E50**RTG_gamma + can_ext**
 GLCEX = piecewise((GFR / cf_ml_per_l) * (fpg - RTG), fpg > RTG, 0)  # [mmol/min] glucose excretion (GLCEX)  
 
 # odes
-d can_ext/dt = -CANEX / Vext  # [mmol/l/min] canagliflozin (plasma)  
+d can/dt = CANIM / Vki - CAN2M7 / Vki  # [mmol/l/min] canagliflozin (kidney)  
+d can_ext/dt = -CANIM / Vext - CANEX / Vext  # [mmol/l/min] canagliflozin (plasma)  
 d can_urine/dt = CANEX  # [mmol/min] canagliflozin (urine)  
 d fpg/dt = 0  # [mmol/l/min] fasting plasma glucose (FPG)  
 d glc_urine/dt = GLCEX  # [mmol/min] glucose (urine)  
 d m5_ext/dt = -M5EX / Vext  # [mmol/l/min] M5 (plasma)  
 d m5_urine/dt = M5EX  # [mmol/min] M5 (urine)  
-d m7_ext/dt = -M7EX / Vext  # [mmol/l/min] M7 (plasma)  
+d m7/dt = M7IM / Vki + CAN2M7 / Vki  # [mmol/l/min] M7 (kidney)  
+d m7_ext/dt = -M7IM / Vext - M7EX / Vext  # [mmol/l/min] M7 (plasma)  
 d m7_urine/dt = M7EX  # [mmol/min] M7 (urine)  
 ```

@@ -209,7 +209,7 @@ class Sha2015(CanagliflozinSimulationExperiment):
         fig = Figure(
             experiment=self,
             sid="canagliflozin plasma",
-            name=f"{self.__class__.__name__} (healthy)",
+            name=f"{self.__class__.__name__} (Healthy)",
         )
         plots = fig.create_plots(xaxis=Axis(self.label_time, unit=self.unit_time), legend=True)
         plots[0].set_yaxis(self.label_can, unit=self.unit_can)
@@ -219,8 +219,8 @@ class Sha2015(CanagliflozinSimulationExperiment):
             task=f"task_po_can300_single",
             xid="time",
             yid=f"[Cve_can]",
-            label=f"sim can 300 mg",
-            color=self.colors[300],
+            label=f"300 mg PO",
+            color="black",
         )
 
         # data
@@ -230,8 +230,8 @@ class Sha2015(CanagliflozinSimulationExperiment):
             yid="mean",
             yid_sd="mean_sd",
             count="count",
-            label=f"can 300 mg",
-            color=self.colors[300],
+            label=f"300 mg PO",
+            color="black",
         )
 
         return {
@@ -242,7 +242,7 @@ class Sha2015(CanagliflozinSimulationExperiment):
         fig = Figure(
             experiment=self,
             sid="Fig_uge",
-            name=f"{self.__class__.__name__} (healthy)",
+            name=f"{self.__class__.__name__} (Healthy)",
         )
         plots = fig.create_plots(xaxis=Axis(self.label_time, unit=self.unit_time), legend=True)
         plots[0].set_yaxis(self.label_uge, unit=self.unit_uge)
@@ -252,8 +252,8 @@ class Sha2015(CanagliflozinSimulationExperiment):
             task=f"task_po_can300_single",
             xid="time",
             yid=f"KI__UGE",
-            label=f"Sim 300 mg",
-            color=self.colors[300],
+            label=f"300 mg PO",
+            color="black",
         )
         # data
         plots[0].add_data(
@@ -262,8 +262,8 @@ class Sha2015(CanagliflozinSimulationExperiment):
             yid="mean",
             yid_sd="mean_sd",
             count="count",
-            label=f"UGE 300 mg",
-            color=self.colors[300],
+            label=f"300 mg PO",
+            color="black",
         )
 
         return {
@@ -274,7 +274,7 @@ class Sha2015(CanagliflozinSimulationExperiment):
         fig = Figure(
             experiment=self,
             sid="Fig_rtg",
-            name=f"{self.__class__.__name__} (healthy)",
+            name=f"{self.__class__.__name__} (Healthy)",
         )
         plots = fig.create_plots(xaxis=Axis(self.label_time, unit=self.unit_time), legend=True)
         plots[0].set_yaxis(self.label_rtg, unit=self.unit_rtg)
@@ -284,8 +284,8 @@ class Sha2015(CanagliflozinSimulationExperiment):
             task=f"task_po_can300_single",
             xid="time",
             yid=f"KI__RTG",
-            label=f"Sim 300 mg",
-            color=self.colors[300],
+            label=f"300 mg PO",
+            color="black",
         )
 
         # data
@@ -295,14 +295,13 @@ class Sha2015(CanagliflozinSimulationExperiment):
             yid="mean",
             yid_sd="mean_sd",
             count="count",
-            label=f"RTG 300 mg",
-            color=self.colors[300],
+            label=f"300 mg PO",
+            color="black",
         )
 
         return {
             fig.sid: fig,
         }
-
 
 if __name__ == "__main__":
     run_experiments(Sha2015, output_dir=Sha2015.__name__)</code>

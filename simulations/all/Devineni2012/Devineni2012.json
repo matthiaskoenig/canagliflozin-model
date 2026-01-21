@@ -1,7 +1,7 @@
 {
   "experiment_id": "Devineni2012",
   "base_path": "/home/mkoenig/git/pkdb_models/pkdb_models/models/canagliflozin",
-  "data_path": "[PosixPath('/home/mkoenig/git/pkdb_data/studies/canagliflozin')]",
+  "data_path": "[PosixPath('/home/mkoenig/git/pkdb_models/pkdb_models/models/canagliflozin/data/canagliflozin')]",
   "models": {
     "model": {
       "sid": null,
@@ -42,100 +42,12 @@
           "end": 41760,
           "steps": 500,
           "changes": {
-            "ftissue_can": {
-              "_magnitude": 0.5907025360669715,
-              "_units": "l_per_min"
-            },
-            "Kp_can": {
-              "_magnitude": 1.002186894659328,
-              "_units": "dimensionless"
-            },
-            "LI__CANIM_Vmax": {
-              "_magnitude": 0.6724144350621387,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "KI__CANEX_k": {
-              "_magnitude": 0.003620232018677586,
-              "_units": "KI__per_min"
-            },
-            "GU__CANABS_k": {
-              "_magnitude": 0.014857823531040652,
-              "_units": "GU__per_min"
-            },
-            "LI__CAN2M5_Vmax": {
-              "_magnitude": 0.004471516434657664,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "LI__CAN2M5_Km_can": {
-              "_magnitude": 0.29493539325204393,
-              "_units": "LI__mM"
-            },
-            "LI__M5EX_Km_m5": {
-              "_magnitude": 0.18169494628559774,
-              "_units": "LI__mM"
-            },
-            "LI__M5EX_Vmax": {
-              "_magnitude": 0.448042513666378,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "KI__M5EX_k": {
-              "_magnitude": 0.10556919062775157,
-              "_units": "KI__per_min"
-            },
-            "ftissue_m5": {
-              "_magnitude": 0.0034928983363240276,
-              "_units": "l_per_min"
-            },
-            "Kp_m5": {
-              "_magnitude": 3.9832348764531975,
-              "_units": "dimensionless"
-            },
-            "LI__CAN2M7_Vmax": {
-              "_magnitude": 0.002145888093579888,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "LI__M7EX_Vmax": {
-              "_magnitude": 0.1258350901232781,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "KI__M7EX_k": {
-              "_magnitude": 0.18975923261901775,
-              "_units": "KI__per_min"
-            },
-            "ftissue_m7": {
-              "_magnitude": 0.00012251814828952693,
-              "_units": "l_per_min"
-            },
-            "Kp_m7": {
-              "_magnitude": 2.7484358268874036,
-              "_units": "dimensionless"
-            },
-            "LI__CAN2M9_Vmax": {
-              "_magnitude": 0.005649017628006681,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "KI__RTG_E50": {
-              "_magnitude": 1.7058500169355005e-05,
-              "_units": "KI__mM"
-            },
-            "KI__RTG_base": {
-              "_magnitude": 9.00528652661515,
-              "_units": "KI__mM"
-            },
-            "KI__RTG_max_inhibition": {
-              "_magnitude": 0.6244535441073977,
-              "_units": "dimensionless"
-            },
-            "KI__RTG_m_fpg": {
-              "_magnitude": 0.7189836466732434,
-              "_units": "dimensionless"
-            },
             "BW": {
               "_magnitude": 95.1,
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 8.700000000000001,
+              "_magnitude": 8.7,
               "_units": "KI__mmole / liter"
             },
             "PODOSE_can": {
@@ -160,100 +72,12 @@
           "end": 1440,
           "steps": 500,
           "changes": {
-            "ftissue_can": {
-              "_magnitude": 0.5907025360669715,
-              "_units": "l_per_min"
-            },
-            "Kp_can": {
-              "_magnitude": 1.002186894659328,
-              "_units": "dimensionless"
-            },
-            "LI__CANIM_Vmax": {
-              "_magnitude": 0.6724144350621387,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "KI__CANEX_k": {
-              "_magnitude": 0.003620232018677586,
-              "_units": "KI__per_min"
-            },
-            "GU__CANABS_k": {
-              "_magnitude": 0.014857823531040652,
-              "_units": "GU__per_min"
-            },
-            "LI__CAN2M5_Vmax": {
-              "_magnitude": 0.004471516434657664,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "LI__CAN2M5_Km_can": {
-              "_magnitude": 0.29493539325204393,
-              "_units": "LI__mM"
-            },
-            "LI__M5EX_Km_m5": {
-              "_magnitude": 0.18169494628559774,
-              "_units": "LI__mM"
-            },
-            "LI__M5EX_Vmax": {
-              "_magnitude": 0.448042513666378,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "KI__M5EX_k": {
-              "_magnitude": 0.10556919062775157,
-              "_units": "KI__per_min"
-            },
-            "ftissue_m5": {
-              "_magnitude": 0.0034928983363240276,
-              "_units": "l_per_min"
-            },
-            "Kp_m5": {
-              "_magnitude": 3.9832348764531975,
-              "_units": "dimensionless"
-            },
-            "LI__CAN2M7_Vmax": {
-              "_magnitude": 0.002145888093579888,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "LI__M7EX_Vmax": {
-              "_magnitude": 0.1258350901232781,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "KI__M7EX_k": {
-              "_magnitude": 0.18975923261901775,
-              "_units": "KI__per_min"
-            },
-            "ftissue_m7": {
-              "_magnitude": 0.00012251814828952693,
-              "_units": "l_per_min"
-            },
-            "Kp_m7": {
-              "_magnitude": 2.7484358268874036,
-              "_units": "dimensionless"
-            },
-            "LI__CAN2M9_Vmax": {
-              "_magnitude": 0.005649017628006681,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "KI__RTG_E50": {
-              "_magnitude": 1.7058500169355005e-05,
-              "_units": "KI__mM"
-            },
-            "KI__RTG_base": {
-              "_magnitude": 9.00528652661515,
-              "_units": "KI__mM"
-            },
-            "KI__RTG_max_inhibition": {
-              "_magnitude": 0.6244535441073977,
-              "_units": "dimensionless"
-            },
-            "KI__RTG_m_fpg": {
-              "_magnitude": 0.7189836466732434,
-              "_units": "dimensionless"
-            },
             "BW": {
               "_magnitude": 107.8,
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 9.000000000000002,
+              "_magnitude": 9.0,
               "_units": "KI__mmole / liter"
             },
             "PODOSE_can": {
@@ -275,11 +99,11 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 9.000000000000002,
+              "_magnitude": 9.0,
               "_units": "KI__mmole / liter"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -301,11 +125,11 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 9.000000000000002,
+              "_magnitude": 9.0,
               "_units": "KI__mmole / liter"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -327,11 +151,11 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 9.000000000000002,
+              "_magnitude": 9.0,
               "_units": "KI__mmole / liter"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -353,11 +177,11 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 9.000000000000002,
+              "_magnitude": 9.0,
               "_units": "KI__mmole / liter"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -379,11 +203,11 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 9.000000000000002,
+              "_magnitude": 9.0,
               "_units": "KI__mmole / liter"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -405,11 +229,11 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 9.000000000000002,
+              "_magnitude": 9.0,
               "_units": "KI__mmole / liter"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -431,11 +255,11 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 9.000000000000002,
+              "_magnitude": 9.0,
               "_units": "KI__mmole / liter"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -457,11 +281,11 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 9.000000000000002,
+              "_magnitude": 9.0,
               "_units": "KI__mmole / liter"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -483,11 +307,11 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 9.000000000000002,
+              "_magnitude": 9.0,
               "_units": "KI__mmole / liter"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -509,11 +333,11 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 9.000000000000002,
+              "_magnitude": 9.0,
               "_units": "KI__mmole / liter"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -535,11 +359,11 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 9.000000000000002,
+              "_magnitude": 9.0,
               "_units": "KI__mmole / liter"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -561,11 +385,11 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 9.000000000000002,
+              "_magnitude": 9.0,
               "_units": "KI__mmole / liter"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -587,11 +411,11 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 9.000000000000002,
+              "_magnitude": 9.0,
               "_units": "KI__mmole / liter"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -613,11 +437,11 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 9.000000000000002,
+              "_magnitude": 9.0,
               "_units": "KI__mmole / liter"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -639,11 +463,11 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 9.000000000000002,
+              "_magnitude": 9.0,
               "_units": "KI__mmole / liter"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -665,11 +489,11 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 9.000000000000002,
+              "_magnitude": 9.0,
               "_units": "KI__mmole / liter"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -691,11 +515,11 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 9.000000000000002,
+              "_magnitude": 9.0,
               "_units": "KI__mmole / liter"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -717,11 +541,11 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 9.000000000000002,
+              "_magnitude": 9.0,
               "_units": "KI__mmole / liter"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -743,11 +567,11 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 9.000000000000002,
+              "_magnitude": 9.0,
               "_units": "KI__mmole / liter"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -769,11 +593,11 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 9.000000000000002,
+              "_magnitude": 9.0,
               "_units": "KI__mmole / liter"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -795,11 +619,11 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 9.000000000000002,
+              "_magnitude": 9.0,
               "_units": "KI__mmole / liter"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -821,11 +645,11 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 9.000000000000002,
+              "_magnitude": 9.0,
               "_units": "KI__mmole / liter"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -847,11 +671,11 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 9.000000000000002,
+              "_magnitude": 9.0,
               "_units": "KI__mmole / liter"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -873,11 +697,11 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 9.000000000000002,
+              "_magnitude": 9.0,
               "_units": "KI__mmole / liter"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -899,11 +723,11 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 9.000000000000002,
+              "_magnitude": 9.0,
               "_units": "KI__mmole / liter"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -925,11 +749,11 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 9.000000000000002,
+              "_magnitude": 9.0,
               "_units": "KI__mmole / liter"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -954,100 +778,12 @@
           "end": 720,
           "steps": 500,
           "changes": {
-            "ftissue_can": {
-              "_magnitude": 0.5907025360669715,
-              "_units": "l_per_min"
-            },
-            "Kp_can": {
-              "_magnitude": 1.002186894659328,
-              "_units": "dimensionless"
-            },
-            "LI__CANIM_Vmax": {
-              "_magnitude": 0.6724144350621387,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "KI__CANEX_k": {
-              "_magnitude": 0.003620232018677586,
-              "_units": "KI__per_min"
-            },
-            "GU__CANABS_k": {
-              "_magnitude": 0.014857823531040652,
-              "_units": "GU__per_min"
-            },
-            "LI__CAN2M5_Vmax": {
-              "_magnitude": 0.004471516434657664,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "LI__CAN2M5_Km_can": {
-              "_magnitude": 0.29493539325204393,
-              "_units": "LI__mM"
-            },
-            "LI__M5EX_Km_m5": {
-              "_magnitude": 0.18169494628559774,
-              "_units": "LI__mM"
-            },
-            "LI__M5EX_Vmax": {
-              "_magnitude": 0.448042513666378,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "KI__M5EX_k": {
-              "_magnitude": 0.10556919062775157,
-              "_units": "KI__per_min"
-            },
-            "ftissue_m5": {
-              "_magnitude": 0.0034928983363240276,
-              "_units": "l_per_min"
-            },
-            "Kp_m5": {
-              "_magnitude": 3.9832348764531975,
-              "_units": "dimensionless"
-            },
-            "LI__CAN2M7_Vmax": {
-              "_magnitude": 0.002145888093579888,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "LI__M7EX_Vmax": {
-              "_magnitude": 0.1258350901232781,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "KI__M7EX_k": {
-              "_magnitude": 0.18975923261901775,
-              "_units": "KI__per_min"
-            },
-            "ftissue_m7": {
-              "_magnitude": 0.00012251814828952693,
-              "_units": "l_per_min"
-            },
-            "Kp_m7": {
-              "_magnitude": 2.7484358268874036,
-              "_units": "dimensionless"
-            },
-            "LI__CAN2M9_Vmax": {
-              "_magnitude": 0.005649017628006681,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "KI__RTG_E50": {
-              "_magnitude": 1.7058500169355005e-05,
-              "_units": "KI__mM"
-            },
-            "KI__RTG_base": {
-              "_magnitude": 9.00528652661515,
-              "_units": "KI__mM"
-            },
-            "KI__RTG_max_inhibition": {
-              "_magnitude": 0.6244535441073977,
-              "_units": "dimensionless"
-            },
-            "KI__RTG_m_fpg": {
-              "_magnitude": 0.7189836466732434,
-              "_units": "dimensionless"
-            },
             "BW": {
               "_magnitude": 94.1,
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 9.600000000000001,
+              "_magnitude": 9.6,
               "_units": "KI__mmole / liter"
             },
             "PODOSE_can": {
@@ -1069,11 +805,11 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 9.600000000000001,
+              "_magnitude": 9.6,
               "_units": "KI__mmole / liter"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -1095,11 +831,11 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 9.600000000000001,
+              "_magnitude": 9.6,
               "_units": "KI__mmole / liter"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -1121,11 +857,11 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 9.600000000000001,
+              "_magnitude": 9.6,
               "_units": "KI__mmole / liter"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -1147,11 +883,11 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 9.600000000000001,
+              "_magnitude": 9.6,
               "_units": "KI__mmole / liter"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -1173,11 +909,11 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 9.600000000000001,
+              "_magnitude": 9.6,
               "_units": "KI__mmole / liter"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -1199,11 +935,11 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 9.600000000000001,
+              "_magnitude": 9.6,
               "_units": "KI__mmole / liter"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -1225,11 +961,11 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 9.600000000000001,
+              "_magnitude": 9.6,
               "_units": "KI__mmole / liter"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -1251,11 +987,11 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 9.600000000000001,
+              "_magnitude": 9.6,
               "_units": "KI__mmole / liter"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -1277,11 +1013,11 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 9.600000000000001,
+              "_magnitude": 9.6,
               "_units": "KI__mmole / liter"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -1303,11 +1039,11 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 9.600000000000001,
+              "_magnitude": 9.6,
               "_units": "KI__mmole / liter"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -1329,11 +1065,11 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 9.600000000000001,
+              "_magnitude": 9.6,
               "_units": "KI__mmole / liter"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -1355,11 +1091,11 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 9.600000000000001,
+              "_magnitude": 9.6,
               "_units": "KI__mmole / liter"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -1381,11 +1117,11 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 9.600000000000001,
+              "_magnitude": 9.6,
               "_units": "KI__mmole / liter"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -1407,11 +1143,11 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 9.600000000000001,
+              "_magnitude": 9.6,
               "_units": "KI__mmole / liter"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -1433,11 +1169,11 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 9.600000000000001,
+              "_magnitude": 9.6,
               "_units": "KI__mmole / liter"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -1459,11 +1195,11 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 9.600000000000001,
+              "_magnitude": 9.6,
               "_units": "KI__mmole / liter"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -1485,11 +1221,11 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 9.600000000000001,
+              "_magnitude": 9.6,
               "_units": "KI__mmole / liter"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -1511,11 +1247,11 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 9.600000000000001,
+              "_magnitude": 9.6,
               "_units": "KI__mmole / liter"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -1537,11 +1273,11 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 9.600000000000001,
+              "_magnitude": 9.6,
               "_units": "KI__mmole / liter"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -1563,11 +1299,11 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 9.600000000000001,
+              "_magnitude": 9.6,
               "_units": "KI__mmole / liter"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -1589,11 +1325,11 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 9.600000000000001,
+              "_magnitude": 9.6,
               "_units": "KI__mmole / liter"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -1615,11 +1351,11 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 9.600000000000001,
+              "_magnitude": 9.6,
               "_units": "KI__mmole / liter"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -1641,11 +1377,11 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 9.600000000000001,
+              "_magnitude": 9.6,
               "_units": "KI__mmole / liter"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -1667,11 +1403,11 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 9.600000000000001,
+              "_magnitude": 9.6,
               "_units": "KI__mmole / liter"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -1693,11 +1429,11 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 9.600000000000001,
+              "_magnitude": 9.6,
               "_units": "KI__mmole / liter"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -1719,11 +1455,11 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 9.600000000000001,
+              "_magnitude": 9.6,
               "_units": "KI__mmole / liter"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -1745,11 +1481,11 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 9.600000000000001,
+              "_magnitude": 9.6,
               "_units": "KI__mmole / liter"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -1771,11 +1507,11 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 9.600000000000001,
+              "_magnitude": 9.6,
               "_units": "KI__mmole / liter"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -1797,11 +1533,11 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 9.600000000000001,
+              "_magnitude": 9.6,
               "_units": "KI__mmole / liter"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -1823,11 +1559,11 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 9.600000000000001,
+              "_magnitude": 9.6,
               "_units": "KI__mmole / liter"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -1849,11 +1585,11 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 9.600000000000001,
+              "_magnitude": 9.6,
               "_units": "KI__mmole / liter"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -1875,11 +1611,11 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 9.600000000000001,
+              "_magnitude": 9.6,
               "_units": "KI__mmole / liter"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -1901,11 +1637,11 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 9.600000000000001,
+              "_magnitude": 9.6,
               "_units": "KI__mmole / liter"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -1927,11 +1663,11 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 9.600000000000001,
+              "_magnitude": 9.6,
               "_units": "KI__mmole / liter"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -1953,11 +1689,11 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 9.600000000000001,
+              "_magnitude": 9.6,
               "_units": "KI__mmole / liter"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -1979,11 +1715,11 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 9.600000000000001,
+              "_magnitude": 9.6,
               "_units": "KI__mmole / liter"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -2005,11 +1741,11 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 9.600000000000001,
+              "_magnitude": 9.6,
               "_units": "KI__mmole / liter"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -2031,11 +1767,11 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 9.600000000000001,
+              "_magnitude": 9.6,
               "_units": "KI__mmole / liter"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -2057,11 +1793,11 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 9.600000000000001,
+              "_magnitude": 9.6,
               "_units": "KI__mmole / liter"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -2083,11 +1819,11 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 9.600000000000001,
+              "_magnitude": 9.6,
               "_units": "KI__mmole / liter"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -2109,11 +1845,11 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 9.600000000000001,
+              "_magnitude": 9.6,
               "_units": "KI__mmole / liter"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -2135,11 +1871,11 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 9.600000000000001,
+              "_magnitude": 9.6,
               "_units": "KI__mmole / liter"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -2161,11 +1897,11 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 9.600000000000001,
+              "_magnitude": 9.6,
               "_units": "KI__mmole / liter"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -2187,11 +1923,11 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 9.600000000000001,
+              "_magnitude": 9.6,
               "_units": "KI__mmole / liter"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -2213,11 +1949,11 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 9.600000000000001,
+              "_magnitude": 9.6,
               "_units": "KI__mmole / liter"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -2239,11 +1975,11 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 9.600000000000001,
+              "_magnitude": 9.6,
               "_units": "KI__mmole / liter"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -2265,11 +2001,11 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 9.600000000000001,
+              "_magnitude": 9.6,
               "_units": "KI__mmole / liter"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -2291,11 +2027,11 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 9.600000000000001,
+              "_magnitude": 9.6,
               "_units": "KI__mmole / liter"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -2317,11 +2053,11 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 9.600000000000001,
+              "_magnitude": 9.6,
               "_units": "KI__mmole / liter"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -2343,11 +2079,11 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 9.600000000000001,
+              "_magnitude": 9.6,
               "_units": "KI__mmole / liter"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -2369,11 +2105,11 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 9.600000000000001,
+              "_magnitude": 9.6,
               "_units": "KI__mmole / liter"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -2395,11 +2131,11 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 9.600000000000001,
+              "_magnitude": 9.6,
               "_units": "KI__mmole / liter"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -2421,7 +2157,7 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 9.600000000000001,
+              "_magnitude": 9.6,
               "_units": "KI__mmole / liter"
             },
             "PODOSE_can": {
@@ -3103,8 +2839,8 @@
             "name": null,
             "xaxis": {
               "sid": "multi__plot0_xaxis",
-              "name": "time [hr]",
-              "label": "time",
+              "name": "Time [hr]",
+              "label": "Time",
               "unit": "hr",
               "scale": "LINEAR",
               "min": -48,
@@ -3115,8 +2851,8 @@
             },
             "yaxis": {
               "sid": "multi__plot0_yaxis",
-              "name": "canagliflozin [\u00b5M]",
-              "label": "canagliflozin",
+              "name": "Canagliflozin [\u00b5M]",
+              "label": "Canagliflozin",
               "unit": "\u00b5M",
               "scale": "LINEAR",
               "min": null,
@@ -3132,7 +2868,7 @@
             "curves": [
               {
                 "sid": "multi__plot0_curve0",
-                "name": "Sim can (100)",
+                "name": "100 mg PO",
                 "x": "task_po_can100_multi__time",
                 "y": "task_po_can100_multi__Cve_can",
                 "xerr": null,
@@ -3144,18 +2880,18 @@
                   "base_style": null,
                   "line": {
                     "type": "SOLID",
-                    "color": "#d62728ff",
+                    "color": "#FF931Fff",
                     "thickness": 2.0
                   },
                   "marker": {
                     "size": null,
                     "type": "NONE",
-                    "fill": "#d62728ff",
+                    "fill": "#FF931Fff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#d62728ff",
+                    "color": "#FF931Fff",
                     "second_color": null
                   }
                 },
@@ -3163,7 +2899,7 @@
               },
               {
                 "sid": "multi__plot0_curve1",
-                "name": "can 100\u00b1SD (n=10)",
+                "name": "100 mg PO\u00b1SD (n=10)",
                 "x": "canagliflozin_QD100_d27__time",
                 "y": "canagliflozin_QD100_d27__mean",
                 "xerr": null,
@@ -3175,18 +2911,18 @@
                   "base_style": null,
                   "line": {
                     "type": "DASH",
-                    "color": "#d62728ff",
+                    "color": "#FF931Fff",
                     "thickness": 1.0
                   },
                   "marker": {
                     "size": null,
                     "type": "SQUARE",
-                    "fill": "#d62728ff",
+                    "fill": "#FF931Fff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#d62728ff",
+                    "color": "#FF931Fff",
                     "second_color": null
                   }
                 },
@@ -3194,7 +2930,7 @@
               },
               {
                 "sid": "multi__plot0_curve2",
-                "name": "Sim can (300)",
+                "name": "300 mg PO",
                 "x": "task_po_can300_multi__time",
                 "y": "task_po_can300_multi__Cve_can",
                 "xerr": null,
@@ -3206,18 +2942,18 @@
                   "base_style": null,
                   "line": {
                     "type": "SOLID",
-                    "color": "#2ca02cff",
+                    "color": "#FF660Dff",
                     "thickness": 2.0
                   },
                   "marker": {
                     "size": null,
                     "type": "NONE",
-                    "fill": "#2ca02cff",
+                    "fill": "#FF660Dff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#2ca02cff",
+                    "color": "#FF660Dff",
                     "second_color": null
                   }
                 },
@@ -3225,7 +2961,7 @@
               },
               {
                 "sid": "multi__plot0_curve3",
-                "name": "can 300\u00b1SD (n=10)",
+                "name": "300 mg PO\u00b1SD (n=10)",
                 "x": "canagliflozin_BID300_d27__time",
                 "y": "canagliflozin_BID300_d27__mean",
                 "xerr": null,
@@ -3237,18 +2973,18 @@
                   "base_style": null,
                   "line": {
                     "type": "DASH",
-                    "color": "#2ca02cff",
+                    "color": "#FF660Dff",
                     "thickness": 1.0
                   },
                   "marker": {
                     "size": null,
                     "type": "SQUARE",
-                    "fill": "#2ca02cff",
+                    "fill": "#FF660Dff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#2ca02cff",
+                    "color": "#FF660Dff",
                     "second_color": null
                   }
                 },
@@ -3280,8 +3016,8 @@
             "name": null,
             "xaxis": {
               "sid": "Fig_uge__plot0_xaxis",
-              "name": "time [hr]",
-              "label": "time",
+              "name": "Time [hr]",
+              "label": "Time",
               "unit": "hr",
               "scale": "LINEAR",
               "min": -48,
@@ -3292,8 +3028,8 @@
             },
             "yaxis": {
               "sid": "Fig_uge__plot0_yaxis",
-              "name": "urinary glucose excretion\n(UGE) [g]",
-              "label": "urinary glucose excretion\n(UGE)",
+              "name": "UGE [g]",
+              "label": "UGE",
               "unit": "g",
               "scale": "LINEAR",
               "min": null,
@@ -3309,7 +3045,7 @@
             "curves": [
               {
                 "sid": "Fig_uge__plot0_curve0",
-                "name": "Sim uge 0 mg",
+                "name": "0 mg PO",
                 "x": "task_po_can0_multi__time",
                 "y": "task_po_can0_multi__KI__UGE",
                 "xerr": null,
@@ -3340,7 +3076,7 @@
               },
               {
                 "sid": "Fig_uge__plot0_curve1",
-                "name": "UGE 0 mg\u00b1SD (n=10)",
+                "name": "0 mg PO\u00b1SD (n=10)",
                 "x": "glucose_cumulative_amount_CAN0_d27__time",
                 "y": "glucose_cumulative_amount_CAN0_d27__mean",
                 "xerr": null,
@@ -3371,7 +3107,7 @@
               },
               {
                 "sid": "Fig_uge__plot0_curve2",
-                "name": "Sim uge 100 mg",
+                "name": "100 mg PO",
                 "x": "task_po_can100_multi__time",
                 "y": "task_po_can100_multi__KI__UGE",
                 "xerr": null,
@@ -3383,18 +3119,18 @@
                   "base_style": null,
                   "line": {
                     "type": "SOLID",
-                    "color": "#d62728ff",
+                    "color": "#FF931Fff",
                     "thickness": 2.0
                   },
                   "marker": {
                     "size": null,
                     "type": "NONE",
-                    "fill": "#d62728ff",
+                    "fill": "#FF931Fff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#d62728ff",
+                    "color": "#FF931Fff",
                     "second_color": null
                   }
                 },
@@ -3402,7 +3138,7 @@
               },
               {
                 "sid": "Fig_uge__plot0_curve3",
-                "name": "UGE 100 mg\u00b1SD (n=10)",
+                "name": "100 mg PO\u00b1SD (n=10)",
                 "x": "glucose_cumulative_amount_QD100_d27__time",
                 "y": "glucose_cumulative_amount_QD100_d27__mean",
                 "xerr": null,
@@ -3414,18 +3150,18 @@
                   "base_style": null,
                   "line": {
                     "type": "DASH",
-                    "color": "#d62728ff",
+                    "color": "#FF931Fff",
                     "thickness": 1.0
                   },
                   "marker": {
                     "size": null,
                     "type": "SQUARE",
-                    "fill": "#d62728ff",
+                    "fill": "#FF931Fff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#d62728ff",
+                    "color": "#FF931Fff",
                     "second_color": null
                   }
                 },
@@ -3433,7 +3169,7 @@
               },
               {
                 "sid": "Fig_uge__plot0_curve4",
-                "name": "Sim uge 300 mg",
+                "name": "300 mg PO",
                 "x": "task_po_can300_multi__time",
                 "y": "task_po_can300_multi__KI__UGE",
                 "xerr": null,
@@ -3445,18 +3181,18 @@
                   "base_style": null,
                   "line": {
                     "type": "SOLID",
-                    "color": "#2ca02cff",
+                    "color": "#FF660Dff",
                     "thickness": 2.0
                   },
                   "marker": {
                     "size": null,
                     "type": "NONE",
-                    "fill": "#2ca02cff",
+                    "fill": "#FF660Dff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#2ca02cff",
+                    "color": "#FF660Dff",
                     "second_color": null
                   }
                 },
@@ -3464,7 +3200,7 @@
               },
               {
                 "sid": "Fig_uge__plot0_curve5",
-                "name": "UGE 300 mg\u00b1SD (n=10)",
+                "name": "300 mg PO\u00b1SD (n=10)",
                 "x": "glucose_cumulative_amount_BID300_d27__time",
                 "y": "glucose_cumulative_amount_BID300_d27__mean",
                 "xerr": null,
@@ -3476,18 +3212,18 @@
                   "base_style": null,
                   "line": {
                     "type": "DASH",
-                    "color": "#2ca02cff",
+                    "color": "#FF660Dff",
                     "thickness": 1.0
                   },
                   "marker": {
                     "size": null,
                     "type": "SQUARE",
-                    "fill": "#2ca02cff",
+                    "fill": "#FF660Dff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#2ca02cff",
+                    "color": "#FF660Dff",
                     "second_color": null
                   }
                 },
@@ -3519,8 +3255,8 @@
             "name": null,
             "xaxis": {
               "sid": "Fig_rtg__plot0_xaxis",
-              "name": "time [day]",
-              "label": "time",
+              "name": "Time [day]",
+              "label": "Time",
               "unit": "day",
               "scale": "LINEAR",
               "min": null,
@@ -3531,8 +3267,8 @@
             },
             "yaxis": {
               "sid": "Fig_rtg__plot0_yaxis",
-              "name": "renal threshold glucose\n(RTG) [mM]",
-              "label": "renal threshold glucose\n(RTG)",
+              "name": "RTG [mM]",
+              "label": "RTG",
               "unit": "mM",
               "scale": "LINEAR",
               "min": null,
@@ -3548,7 +3284,7 @@
             "curves": [
               {
                 "sid": "Fig_rtg__plot0_curve0",
-                "name": "Sim 0 mg",
+                "name": "0 mg PO",
                 "x": "task_po_can0_multi__time",
                 "y": "task_po_can0_multi__KI__RTG",
                 "xerr": null,
@@ -3579,7 +3315,7 @@
               },
               {
                 "sid": "Fig_rtg__plot0_curve1",
-                "name": "RTG 0 mg\u00b1SD (n=9)",
+                "name": "0 mg PO\u00b1SD (n=9)",
                 "x": "glucose_RT_CAN0_d27__time",
                 "y": "glucose_RT_CAN0_d27__mean",
                 "xerr": null,
@@ -3590,7 +3326,7 @@
                   "name": null,
                   "base_style": null,
                   "line": {
-                    "type": "DASH",
+                    "type": "NONE",
                     "color": "#000000ff",
                     "thickness": 1.0
                   },
@@ -3610,7 +3346,7 @@
               },
               {
                 "sid": "Fig_rtg__plot0_curve2",
-                "name": "Sim 100 mg",
+                "name": "100 mg PO",
                 "x": "task_po_can100_multi__time",
                 "y": "task_po_can100_multi__KI__RTG",
                 "xerr": null,
@@ -3622,18 +3358,18 @@
                   "base_style": null,
                   "line": {
                     "type": "SOLID",
-                    "color": "#d62728ff",
+                    "color": "#FF931Fff",
                     "thickness": 2.0
                   },
                   "marker": {
                     "size": null,
                     "type": "NONE",
-                    "fill": "#d62728ff",
+                    "fill": "#FF931Fff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#d62728ff",
+                    "color": "#FF931Fff",
                     "second_color": null
                   }
                 },
@@ -3641,7 +3377,7 @@
               },
               {
                 "sid": "Fig_rtg__plot0_curve3",
-                "name": "RTG 100 mg\u00b1SD (n=10)",
+                "name": "100 mg PO\u00b1SD (n=10)",
                 "x": "glucose_RT_QD100_d27__time",
                 "y": "glucose_RT_QD100_d27__mean",
                 "xerr": null,
@@ -3652,19 +3388,19 @@
                   "name": null,
                   "base_style": null,
                   "line": {
-                    "type": "DASH",
-                    "color": "#d62728ff",
+                    "type": "NONE",
+                    "color": "#FF931Fff",
                     "thickness": 1.0
                   },
                   "marker": {
                     "size": null,
                     "type": "SQUARE",
-                    "fill": "#d62728ff",
+                    "fill": "#FF931Fff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#d62728ff",
+                    "color": "#FF931Fff",
                     "second_color": null
                   }
                 },
@@ -3672,7 +3408,7 @@
               },
               {
                 "sid": "Fig_rtg__plot0_curve4",
-                "name": "Sim 300 mg",
+                "name": "300 mg PO",
                 "x": "task_po_can300_multi__time",
                 "y": "task_po_can300_multi__KI__RTG",
                 "xerr": null,
@@ -3684,18 +3420,18 @@
                   "base_style": null,
                   "line": {
                     "type": "SOLID",
-                    "color": "#2ca02cff",
+                    "color": "#FF660Dff",
                     "thickness": 2.0
                   },
                   "marker": {
                     "size": null,
                     "type": "NONE",
-                    "fill": "#2ca02cff",
+                    "fill": "#FF660Dff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#2ca02cff",
+                    "color": "#FF660Dff",
                     "second_color": null
                   }
                 },
@@ -3703,7 +3439,7 @@
               },
               {
                 "sid": "Fig_rtg__plot0_curve5",
-                "name": "RTG 300 mg\u00b1SD (n=10)",
+                "name": "300 mg PO\u00b1SD (n=10)",
                 "x": "glucose_RT_BID300_d27__time",
                 "y": "glucose_RT_BID300_d27__mean",
                 "xerr": null,
@@ -3714,19 +3450,19 @@
                   "name": null,
                   "base_style": null,
                   "line": {
-                    "type": "DASH",
-                    "color": "#2ca02cff",
+                    "type": "NONE",
+                    "color": "#FF660Dff",
                     "thickness": 1.0
                   },
                   "marker": {
                     "size": null,
                     "type": "SQUARE",
-                    "fill": "#2ca02cff",
+                    "fill": "#FF660Dff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#2ca02cff",
+                    "color": "#FF660Dff",
                     "second_color": null
                   }
                 },

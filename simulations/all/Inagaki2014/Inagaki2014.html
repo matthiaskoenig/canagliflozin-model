@@ -150,7 +150,7 @@ class Inagaki2014(CanagliflozinSimulationExperiment):
     }
     markers = {
         100: "s",
-        200: "o",
+        200: "D",
     }
 
     doses = [100, 200]
@@ -263,8 +263,8 @@ class Inagaki2014(CanagliflozinSimulationExperiment):
         fig = Figure(
             experiment=self,
             sid="Fig_single",
-            num_rows=3,
-            num_cols=1,
+            num_rows=1,
+            num_cols=3,
             name=f"{self.__class__.__name__} (T2DM)",
         )
         plots = fig.create_plots(xaxis=Axis(self.label_time, unit=self.unit_time), legend=True)
@@ -280,8 +280,9 @@ class Inagaki2014(CanagliflozinSimulationExperiment):
                         task=f"task_po_can{dose}_{condition}",
                         xid="time",
                         yid=f"[Cve_{sid}]",
-                        label=f"Sim {self.labels[condition]} {dose} mg",
+                        label=f"{dose} mg PO ({self.labels[condition]})",
                         color=self.renal_colors[renal_class],
+                        linewidth=3 if dose == 200 else 2,
                     )
 
                     # data
@@ -292,7 +293,7 @@ class Inagaki2014(CanagliflozinSimulationExperiment):
                         yid="mean",
                         yid_sd="mean_sd",
                         count="count",
-                        label=f"{self.labels[condition]} {dose} mg",
+                        label=f"{dose} mg PO ({self.labels[condition]})",
                         color=self.renal_colors[renal_class],
                         marker=self.markers[dose],
                     )
@@ -318,8 +319,9 @@ class Inagaki2014(CanagliflozinSimulationExperiment):
                     task=f"task_po_can{dose}_{condition}",
                     xid="time",
                     yid=f"Aurine_can",
-                    label=f"Sim {self.labels[condition]} {dose} mg",
+                    label=f"{dose} mg PO ({self.labels[condition]})",
                     color=self.renal_colors[renal_class],
+                    linewidth=3 if dose == 200 else 2,
                 )
 
                 # data
@@ -329,9 +331,10 @@ class Inagaki2014(CanagliflozinSimulationExperiment):
                     yid="mean",
                     yid_sd="mean_sd",
                     count="count",
-                    label=f"{self.labels[condition]} {dose} mg",
+                    label=f"{dose} mg PO ({self.labels[condition]})",
                     color=self.renal_colors[renal_class],
                     marker=self.markers[dose],
+                    linestyle="",
                 )
 
         return {
@@ -354,8 +357,9 @@ class Inagaki2014(CanagliflozinSimulationExperiment):
                     task=f"task_po_can{dose}_{condition}",
                     xid="time",
                     yid=f"KI__UGE",
-                    label=f"Sim {condition} {dose} mg",
+                    label=f"{dose} mg PO ({self.labels[condition]})",
                     color=self.renal_colors[renal_class],
+                    linewidth=3 if dose == 200 else 2,
                 )
                 # data
                 plots[0].add_data(
@@ -364,7 +368,7 @@ class Inagaki2014(CanagliflozinSimulationExperiment):
                     yid="mean",
                     yid_sd="mean_sd",
                     count="count",
-                    label=f"can {condition} {dose} mg",
+                    label=f"{dose} mg PO ({self.labels[condition]})",
                     color=self.renal_colors[renal_class],
                     marker=self.markers[dose],
                 )

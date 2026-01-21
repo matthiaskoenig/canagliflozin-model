@@ -452,9 +452,9 @@ class Devineni2015c(CanagliflozinSimulationExperiment):
         fig = Figure(
             experiment=self,
             sid="Fig_renal",
-            num_rows=3,
-            num_cols=1,
-            name=f"{self.__class__.__name__} (nondiabetic)",
+            num_rows=1,
+            num_cols=3,
+            name=f"{self.__class__.__name__} (Nondiabetic)",
         )
         plots = fig.create_plots(xaxis=Axis(self.label_time, unit=self.unit_time), legend=True)
         plots[0].set_yaxis(self.label_can, unit=self.unit_can)
@@ -463,12 +463,13 @@ class Devineni2015c(CanagliflozinSimulationExperiment):
 
         # simulation
         for condition, impairment in self.conditions_renal.items():
+            label_short = impairment.split()[0]
             for k, sid in enumerate(self.info):
                 plots[k].add_data(
                     task=f"task_po_can200_{condition}",
                     xid="time",
                     yid=f"[Cve_{sid}]",
-                    label=f"Sim {condition}",
+                    label=f"200 mg PO ({label_short})",
                     color=self.renal_colors[impairment],
                 )
 
@@ -480,7 +481,7 @@ class Devineni2015c(CanagliflozinSimulationExperiment):
                     yid="mean",
                     yid_sd="mean_sd",
                     count="count",
-                    label=condition,
+                    label=f"200 mg PO ({label_short})",
                     color=self.renal_colors[impairment],
                 )
 
@@ -492,9 +493,9 @@ class Devineni2015c(CanagliflozinSimulationExperiment):
         fig = Figure(
             experiment=self,
             sid="Fig_hepatic",
-            num_rows=3,
-            num_cols=1,
-            name=f"{self.__class__.__name__} (nondiabetic)",
+            num_rows=1,
+            num_cols=3,
+            name=f"{self.__class__.__name__} (Nondiabetic)",
         )
         plots = fig.create_plots(xaxis=Axis(self.label_time, unit=self.unit_time), legend=True)
         plots[0].set_yaxis(self.label_can, unit=self.unit_can)
@@ -503,12 +504,13 @@ class Devineni2015c(CanagliflozinSimulationExperiment):
 
         # simulation
         for condition, hepatic_class in self.conditions_hepatic.items():
+            label_short = hepatic_class.split()[0] if hepatic_class != "Control" else "Normal"
             for k, sid in enumerate(self.info):
                 plots[k].add_data(
                     task=f"task_po_can300_{condition}",
                     xid="time",
                     yid=f"[Cve_{sid}]",
-                    label=f"Sim {condition}",
+                    label=f"300 mg PO ({label_short})",
                     color=self.cirrhosis_colors[hepatic_class],
                 )
 
@@ -520,7 +522,7 @@ class Devineni2015c(CanagliflozinSimulationExperiment):
                     yid="mean",
                     yid_sd="mean_sd",
                     count="count",
-                    label=f"Sim {condition}",
+                    label=f"300 mg PO ({label_short})",
                     color=self.cirrhosis_colors[hepatic_class],
                 )
 
@@ -532,9 +534,9 @@ class Devineni2015c(CanagliflozinSimulationExperiment):
         fig = Figure(
             experiment=self,
             sid="Fig_urine_renal",
-            num_rows=3,
-            num_cols=1,
-            name=f"{self.__class__.__name__} (nondiabetic)",
+            num_rows=1,
+            num_cols=3,
+            name=f"{self.__class__.__name__} (Nondiabetic)",
         )
         plots = fig.create_plots(xaxis=Axis(self.label_time, unit=self.unit_time), legend=True)
         plots[0].set_yaxis(self.label_can_urine, unit=self.unit_can_urine)
@@ -542,13 +544,14 @@ class Devineni2015c(CanagliflozinSimulationExperiment):
         plots[2].set_yaxis(self.label_m7_urine, unit=self.unit_m7_urine)
 
         for condition, impairment in self.conditions_renal.items():
+            label_short = impairment.split()[0]
             for k, sid in enumerate(self.info):
                 # simulation
                 plots[k].add_data(
                     task=f"task_po_can200_{condition}",
                     xid="time",
                     yid=f"Aurine_{sid}",
-                    label=f"Sim {condition}",
+                    label=f"200 mg PO ({label_short})",
                     color=self.renal_colors[impairment],
                 )
 
@@ -560,7 +563,7 @@ class Devineni2015c(CanagliflozinSimulationExperiment):
                     yid="mean",
                     yid_sd="mean_sd",
                     count="count",
-                    label=condition,
+                    label=f"200 mg PO ({label_short})",
                     color=self.renal_colors[impairment],
                 )
 
@@ -572,9 +575,9 @@ class Devineni2015c(CanagliflozinSimulationExperiment):
         fig = Figure(
             experiment=self,
             sid="Fig_urine_hepatic",
-            num_rows=3,
-            num_cols=1,
-            name=f"{self.__class__.__name__} (nondiabetic)",
+            num_rows=1,
+            num_cols=3,
+            name=f"{self.__class__.__name__} (Nondiabetic)",
         )
         plots = fig.create_plots(xaxis=Axis(self.label_time, unit=self.unit_time), legend=True)
         plots[0].set_yaxis(self.label_can_urine, unit=self.unit_can_urine)
@@ -582,13 +585,14 @@ class Devineni2015c(CanagliflozinSimulationExperiment):
         plots[2].set_yaxis(self.label_m7_urine, unit=self.unit_m7_urine)
 
         for condition, hepatic_class in self.conditions_hepatic.items():
+            label_short = hepatic_class.split()[0] if hepatic_class != "Control" else "Normal"
             for k, sid in enumerate(self.info):
                 # simulation
                 plots[k].add_data(
                     task=f"task_po_can300_{condition}",
                     xid="time",
                     yid=f"Aurine_{sid}",
-                    label=f"Sim {condition}",
+                    label=f"300 mg PO ({label_short})",
                     color=self.cirrhosis_colors[hepatic_class],
                 )
 
@@ -600,7 +604,7 @@ class Devineni2015c(CanagliflozinSimulationExperiment):
                     yid="mean",
                     yid_sd="mean_sd",
                     count="count",
-                    label=condition,
+                    label=f"300 mg PO ({label_short})",
                     color=self.cirrhosis_colors[hepatic_class],
                 )
 
@@ -614,19 +618,20 @@ class Devineni2015c(CanagliflozinSimulationExperiment):
             sid="Fig_rtg",
             num_rows=1,
             num_cols=1,
-            name=f"{self.__class__.__name__} (nondiabetic)",
+            name=f"{self.__class__.__name__} (Nondiabetic)",
         )
         plots = fig.create_plots(xaxis=Axis(self.label_time, unit=self.unit_time), legend=True)
         plots[0].set_yaxis(self.label_rtg, unit=self.unit_rtg)
 
         for condition, impairment in self.conditions_rtg.items():
+            label_short = impairment.split()[0]
 
             # simulation
             plots[0].add_data(
                 task=f"task_po_can200_{condition}",
                 xid="time",
                 yid=f"KI__RTG",
-                label=f"Sim {condition} 200 mg",
+                label=f"200 mg PO ({label_short})",
                 color=self.renal_colors[impairment],
             )
 
@@ -637,7 +642,7 @@ class Devineni2015c(CanagliflozinSimulationExperiment):
                 yid="mean",
                 yid_sd="mean_sd",
                 count="count",
-                label=f"RTG {condition} 200 mg",
+                label=f"200 mg PO ({label_short})",
                 color=self.renal_colors[impairment],
             )
 
@@ -649,22 +654,23 @@ class Devineni2015c(CanagliflozinSimulationExperiment):
         fig = Figure(
             experiment=self,
             sid="Fig_uge",
-            num_rows=2,
-            num_cols=1,
-            name=f"{self.__class__.__name__} (nondiabetic)",
+            num_rows=1,
+            num_cols=2,
+            name=f"{self.__class__.__name__} (Nondiabetic)",
         )
         plots = fig.create_plots(xaxis=Axis(self.label_time, unit=self.unit_time), legend=True)
         plots[0].set_yaxis(self.label_uge, unit=self.unit_uge)
         plots[1].set_yaxis(self.label_rtg, unit=self.unit_rtg)
 
         for condition, impairment in self.conditions_rtg.items():
+            label_short = impairment.split()[0]
 
             # simulation
             plots[0].add_data(
                 task=f"task_po_can200_{condition}",
                 xid="time",
                 yid=f"KI__UGE",
-                label=f"Sim {condition} 200 g",
+                label=f"200 mg PO ({label_short})",
                 color=self.renal_colors[impairment],
             )
 
@@ -672,18 +678,18 @@ class Devineni2015c(CanagliflozinSimulationExperiment):
                 task=f"task_po_can200_{condition}",
                 xid="time",
                 yid=f"KI__RTG",
-                label=f"Sim {condition} 200 mg",
+                label=f"200 mg PO ({label_short})",
                 color=self.renal_colors[impairment],
             )
 
-            #data
+            # data
             plots[0].add_data(
                 dataset=f"glucose_cumulative_amount_CAN200_{condition}",
                 xid="time",
                 yid="mean",
                 yid_sd="mean_sd",
                 count="count",
-                label=f"UGE {condition} 200 mg",
+                label=f"200 mg PO ({label_short})",
                 color=self.renal_colors[impairment],
             )
 
@@ -693,7 +699,7 @@ class Devineni2015c(CanagliflozinSimulationExperiment):
                 yid="mean",
                 yid_sd="mean_sd",
                 count="count",
-                label=f"RTG {condition} 200 mg",
+                label=f"200 mg PO ({label_short})",
                 color=self.renal_colors[impairment],
             )
 

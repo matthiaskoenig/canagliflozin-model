@@ -1,7 +1,7 @@
 {
   "experiment_id": "Sha2014",
   "base_path": "/home/mkoenig/git/pkdb_models/pkdb_models/models/canagliflozin",
-  "data_path": "[PosixPath('/home/mkoenig/git/pkdb_data/studies/canagliflozin')]",
+  "data_path": "[PosixPath('/home/mkoenig/git/pkdb_models/pkdb_models/models/canagliflozin/data/canagliflozin')]",
   "models": {
     "model": {
       "sid": null,
@@ -54,100 +54,12 @@
           "end": 2880,
           "steps": 500,
           "changes": {
-            "ftissue_can": {
-              "_magnitude": 0.5907025360669715,
-              "_units": "l_per_min"
-            },
-            "Kp_can": {
-              "_magnitude": 1.002186894659328,
-              "_units": "dimensionless"
-            },
-            "LI__CANIM_Vmax": {
-              "_magnitude": 0.6724144350621387,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "KI__CANEX_k": {
-              "_magnitude": 0.003620232018677586,
-              "_units": "KI__per_min"
-            },
-            "GU__CANABS_k": {
-              "_magnitude": 0.014857823531040652,
-              "_units": "GU__per_min"
-            },
-            "LI__CAN2M5_Vmax": {
-              "_magnitude": 0.004471516434657664,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "LI__CAN2M5_Km_can": {
-              "_magnitude": 0.29493539325204393,
-              "_units": "LI__mM"
-            },
-            "LI__M5EX_Km_m5": {
-              "_magnitude": 0.18169494628559774,
-              "_units": "LI__mM"
-            },
-            "LI__M5EX_Vmax": {
-              "_magnitude": 0.448042513666378,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "KI__M5EX_k": {
-              "_magnitude": 0.10556919062775157,
-              "_units": "KI__per_min"
-            },
-            "ftissue_m5": {
-              "_magnitude": 0.0034928983363240276,
-              "_units": "l_per_min"
-            },
-            "Kp_m5": {
-              "_magnitude": 3.9832348764531975,
-              "_units": "dimensionless"
-            },
-            "LI__CAN2M7_Vmax": {
-              "_magnitude": 0.002145888093579888,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "LI__M7EX_Vmax": {
-              "_magnitude": 0.1258350901232781,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "KI__M7EX_k": {
-              "_magnitude": 0.18975923261901775,
-              "_units": "KI__per_min"
-            },
-            "ftissue_m7": {
-              "_magnitude": 0.00012251814828952693,
-              "_units": "l_per_min"
-            },
-            "Kp_m7": {
-              "_magnitude": 2.7484358268874036,
-              "_units": "dimensionless"
-            },
-            "LI__CAN2M9_Vmax": {
-              "_magnitude": 0.005649017628006681,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "KI__RTG_E50": {
-              "_magnitude": 1.7058500169355005e-05,
-              "_units": "KI__mM"
-            },
-            "KI__RTG_base": {
-              "_magnitude": 9.00528652661515,
-              "_units": "KI__mM"
-            },
-            "KI__RTG_max_inhibition": {
-              "_magnitude": 0.6244535441073977,
-              "_units": "dimensionless"
-            },
-            "KI__RTG_m_fpg": {
-              "_magnitude": 0.7189836466732434,
-              "_units": "dimensionless"
-            },
             "BW": {
               "_magnitude": 75.5,
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 10.700000000000001,
+              "_magnitude": 10.7,
               "_units": "KI__mmole / liter"
             },
             "KI__f_renal_function": {
@@ -173,7 +85,7 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 10.700000000000001,
+              "_magnitude": 10.7,
               "_units": "KI__mmole / liter"
             },
             "KI__f_renal_function": {
@@ -181,7 +93,7 @@
               "_units": "dimensionless"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -203,7 +115,7 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 10.700000000000001,
+              "_magnitude": 10.7,
               "_units": "KI__mmole / liter"
             },
             "KI__f_renal_function": {
@@ -211,7 +123,7 @@
               "_units": "dimensionless"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -233,7 +145,7 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 10.700000000000001,
+              "_magnitude": 10.7,
               "_units": "KI__mmole / liter"
             },
             "KI__f_renal_function": {
@@ -241,7 +153,7 @@
               "_units": "dimensionless"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -263,7 +175,7 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 10.700000000000001,
+              "_magnitude": 10.7,
               "_units": "KI__mmole / liter"
             },
             "KI__f_renal_function": {
@@ -271,7 +183,7 @@
               "_units": "dimensionless"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -293,7 +205,7 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 10.700000000000001,
+              "_magnitude": 10.7,
               "_units": "KI__mmole / liter"
             },
             "KI__f_renal_function": {
@@ -301,7 +213,7 @@
               "_units": "dimensionless"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -323,7 +235,7 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 10.700000000000001,
+              "_magnitude": 10.7,
               "_units": "KI__mmole / liter"
             },
             "KI__f_renal_function": {
@@ -331,7 +243,7 @@
               "_units": "dimensionless"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -353,7 +265,7 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 10.700000000000001,
+              "_magnitude": 10.7,
               "_units": "KI__mmole / liter"
             },
             "KI__f_renal_function": {
@@ -361,7 +273,7 @@
               "_units": "dimensionless"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -383,7 +295,7 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 10.700000000000001,
+              "_magnitude": 10.7,
               "_units": "KI__mmole / liter"
             },
             "KI__f_renal_function": {
@@ -391,7 +303,7 @@
               "_units": "dimensionless"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -413,7 +325,7 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 10.700000000000001,
+              "_magnitude": 10.7,
               "_units": "KI__mmole / liter"
             },
             "KI__f_renal_function": {
@@ -421,7 +333,7 @@
               "_units": "dimensionless"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -443,7 +355,7 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 10.700000000000001,
+              "_magnitude": 10.7,
               "_units": "KI__mmole / liter"
             },
             "KI__f_renal_function": {
@@ -451,7 +363,7 @@
               "_units": "dimensionless"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -473,7 +385,7 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 10.700000000000001,
+              "_magnitude": 10.7,
               "_units": "KI__mmole / liter"
             },
             "KI__f_renal_function": {
@@ -481,7 +393,7 @@
               "_units": "dimensionless"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -503,7 +415,7 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 10.700000000000001,
+              "_magnitude": 10.7,
               "_units": "KI__mmole / liter"
             },
             "KI__f_renal_function": {
@@ -511,7 +423,7 @@
               "_units": "dimensionless"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -533,7 +445,7 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 10.700000000000001,
+              "_magnitude": 10.7,
               "_units": "KI__mmole / liter"
             },
             "KI__f_renal_function": {
@@ -541,7 +453,7 @@
               "_units": "dimensionless"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -563,7 +475,7 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 10.700000000000001,
+              "_magnitude": 10.7,
               "_units": "KI__mmole / liter"
             },
             "KI__f_renal_function": {
@@ -571,7 +483,7 @@
               "_units": "dimensionless"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -593,7 +505,7 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 10.700000000000001,
+              "_magnitude": 10.7,
               "_units": "KI__mmole / liter"
             },
             "KI__f_renal_function": {
@@ -601,7 +513,7 @@
               "_units": "dimensionless"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -626,100 +538,12 @@
           "end": 720,
           "steps": 500,
           "changes": {
-            "ftissue_can": {
-              "_magnitude": 0.5907025360669715,
-              "_units": "l_per_min"
-            },
-            "Kp_can": {
-              "_magnitude": 1.002186894659328,
-              "_units": "dimensionless"
-            },
-            "LI__CANIM_Vmax": {
-              "_magnitude": 0.6724144350621387,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "KI__CANEX_k": {
-              "_magnitude": 0.003620232018677586,
-              "_units": "KI__per_min"
-            },
-            "GU__CANABS_k": {
-              "_magnitude": 0.014857823531040652,
-              "_units": "GU__per_min"
-            },
-            "LI__CAN2M5_Vmax": {
-              "_magnitude": 0.004471516434657664,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "LI__CAN2M5_Km_can": {
-              "_magnitude": 0.29493539325204393,
-              "_units": "LI__mM"
-            },
-            "LI__M5EX_Km_m5": {
-              "_magnitude": 0.18169494628559774,
-              "_units": "LI__mM"
-            },
-            "LI__M5EX_Vmax": {
-              "_magnitude": 0.448042513666378,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "KI__M5EX_k": {
-              "_magnitude": 0.10556919062775157,
-              "_units": "KI__per_min"
-            },
-            "ftissue_m5": {
-              "_magnitude": 0.0034928983363240276,
-              "_units": "l_per_min"
-            },
-            "Kp_m5": {
-              "_magnitude": 3.9832348764531975,
-              "_units": "dimensionless"
-            },
-            "LI__CAN2M7_Vmax": {
-              "_magnitude": 0.002145888093579888,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "LI__M7EX_Vmax": {
-              "_magnitude": 0.1258350901232781,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "KI__M7EX_k": {
-              "_magnitude": 0.18975923261901775,
-              "_units": "KI__per_min"
-            },
-            "ftissue_m7": {
-              "_magnitude": 0.00012251814828952693,
-              "_units": "l_per_min"
-            },
-            "Kp_m7": {
-              "_magnitude": 2.7484358268874036,
-              "_units": "dimensionless"
-            },
-            "LI__CAN2M9_Vmax": {
-              "_magnitude": 0.005649017628006681,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "KI__RTG_E50": {
-              "_magnitude": 1.7058500169355005e-05,
-              "_units": "KI__mM"
-            },
-            "KI__RTG_base": {
-              "_magnitude": 9.00528652661515,
-              "_units": "KI__mM"
-            },
-            "KI__RTG_max_inhibition": {
-              "_magnitude": 0.6244535441073977,
-              "_units": "dimensionless"
-            },
-            "KI__RTG_m_fpg": {
-              "_magnitude": 0.7189836466732434,
-              "_units": "dimensionless"
-            },
             "BW": {
               "_magnitude": 92.7,
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 11.600000000000001,
+              "_magnitude": 11.6,
               "_units": "KI__mmole / liter"
             },
             "KI__f_renal_function": {
@@ -745,7 +569,7 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 11.600000000000001,
+              "_magnitude": 11.6,
               "_units": "KI__mmole / liter"
             },
             "KI__f_renal_function": {
@@ -771,7 +595,7 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 11.600000000000001,
+              "_magnitude": 11.6,
               "_units": "KI__mmole / liter"
             },
             "KI__f_renal_function": {
@@ -779,7 +603,7 @@
               "_units": "dimensionless"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -801,7 +625,7 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 11.600000000000001,
+              "_magnitude": 11.6,
               "_units": "KI__mmole / liter"
             },
             "KI__f_renal_function": {
@@ -809,7 +633,7 @@
               "_units": "dimensionless"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -831,7 +655,7 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 11.600000000000001,
+              "_magnitude": 11.6,
               "_units": "KI__mmole / liter"
             },
             "KI__f_renal_function": {
@@ -839,7 +663,7 @@
               "_units": "dimensionless"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -861,7 +685,7 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 11.600000000000001,
+              "_magnitude": 11.6,
               "_units": "KI__mmole / liter"
             },
             "KI__f_renal_function": {
@@ -869,7 +693,7 @@
               "_units": "dimensionless"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -891,7 +715,7 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 11.600000000000001,
+              "_magnitude": 11.6,
               "_units": "KI__mmole / liter"
             },
             "KI__f_renal_function": {
@@ -899,7 +723,7 @@
               "_units": "dimensionless"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -921,7 +745,7 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 11.600000000000001,
+              "_magnitude": 11.6,
               "_units": "KI__mmole / liter"
             },
             "KI__f_renal_function": {
@@ -929,7 +753,7 @@
               "_units": "dimensionless"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -951,7 +775,7 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 11.600000000000001,
+              "_magnitude": 11.6,
               "_units": "KI__mmole / liter"
             },
             "KI__f_renal_function": {
@@ -959,7 +783,7 @@
               "_units": "dimensionless"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -981,7 +805,7 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 11.600000000000001,
+              "_magnitude": 11.6,
               "_units": "KI__mmole / liter"
             },
             "KI__f_renal_function": {
@@ -989,7 +813,7 @@
               "_units": "dimensionless"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -1011,7 +835,7 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 11.600000000000001,
+              "_magnitude": 11.6,
               "_units": "KI__mmole / liter"
             },
             "KI__f_renal_function": {
@@ -1019,7 +843,7 @@
               "_units": "dimensionless"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -1041,7 +865,7 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 11.600000000000001,
+              "_magnitude": 11.6,
               "_units": "KI__mmole / liter"
             },
             "KI__f_renal_function": {
@@ -1049,7 +873,7 @@
               "_units": "dimensionless"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -1071,7 +895,7 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 11.600000000000001,
+              "_magnitude": 11.6,
               "_units": "KI__mmole / liter"
             },
             "KI__f_renal_function": {
@@ -1079,7 +903,7 @@
               "_units": "dimensionless"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -1101,7 +925,7 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 11.600000000000001,
+              "_magnitude": 11.6,
               "_units": "KI__mmole / liter"
             },
             "KI__f_renal_function": {
@@ -1109,7 +933,7 @@
               "_units": "dimensionless"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -1131,7 +955,7 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 11.600000000000001,
+              "_magnitude": 11.6,
               "_units": "KI__mmole / liter"
             },
             "KI__f_renal_function": {
@@ -1139,7 +963,7 @@
               "_units": "dimensionless"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -1161,7 +985,7 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 11.600000000000001,
+              "_magnitude": 11.6,
               "_units": "KI__mmole / liter"
             },
             "KI__f_renal_function": {
@@ -1169,7 +993,7 @@
               "_units": "dimensionless"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -1191,7 +1015,7 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 11.600000000000001,
+              "_magnitude": 11.6,
               "_units": "KI__mmole / liter"
             },
             "KI__f_renal_function": {
@@ -1199,7 +1023,7 @@
               "_units": "dimensionless"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -1221,7 +1045,7 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 11.600000000000001,
+              "_magnitude": 11.6,
               "_units": "KI__mmole / liter"
             },
             "KI__f_renal_function": {
@@ -1229,7 +1053,7 @@
               "_units": "dimensionless"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -1251,7 +1075,7 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 11.600000000000001,
+              "_magnitude": 11.6,
               "_units": "KI__mmole / liter"
             },
             "KI__f_renal_function": {
@@ -1259,7 +1083,7 @@
               "_units": "dimensionless"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -1281,7 +1105,7 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 11.600000000000001,
+              "_magnitude": 11.6,
               "_units": "KI__mmole / liter"
             },
             "KI__f_renal_function": {
@@ -1289,7 +1113,7 @@
               "_units": "dimensionless"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -1311,7 +1135,7 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 11.600000000000001,
+              "_magnitude": 11.6,
               "_units": "KI__mmole / liter"
             },
             "KI__f_renal_function": {
@@ -1319,7 +1143,7 @@
               "_units": "dimensionless"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -1341,7 +1165,7 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 11.600000000000001,
+              "_magnitude": 11.6,
               "_units": "KI__mmole / liter"
             },
             "KI__f_renal_function": {
@@ -1349,7 +1173,7 @@
               "_units": "dimensionless"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -1371,7 +1195,7 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 11.600000000000001,
+              "_magnitude": 11.6,
               "_units": "KI__mmole / liter"
             },
             "KI__f_renal_function": {
@@ -1379,7 +1203,7 @@
               "_units": "dimensionless"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -1401,7 +1225,7 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 11.600000000000001,
+              "_magnitude": 11.6,
               "_units": "KI__mmole / liter"
             },
             "KI__f_renal_function": {
@@ -1409,7 +1233,7 @@
               "_units": "dimensionless"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -1431,7 +1255,7 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 11.600000000000001,
+              "_magnitude": 11.6,
               "_units": "KI__mmole / liter"
             },
             "KI__f_renal_function": {
@@ -1439,7 +1263,7 @@
               "_units": "dimensionless"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -1461,7 +1285,7 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 11.600000000000001,
+              "_magnitude": 11.6,
               "_units": "KI__mmole / liter"
             },
             "KI__f_renal_function": {
@@ -1469,7 +1293,7 @@
               "_units": "dimensionless"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -1491,7 +1315,7 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 11.600000000000001,
+              "_magnitude": 11.6,
               "_units": "KI__mmole / liter"
             },
             "KI__f_renal_function": {
@@ -1499,7 +1323,7 @@
               "_units": "dimensionless"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -1521,7 +1345,7 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 11.600000000000001,
+              "_magnitude": 11.6,
               "_units": "KI__mmole / liter"
             },
             "KI__f_renal_function": {
@@ -1529,7 +1353,7 @@
               "_units": "dimensionless"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -1551,7 +1375,7 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 11.600000000000001,
+              "_magnitude": 11.6,
               "_units": "KI__mmole / liter"
             },
             "KI__f_renal_function": {
@@ -1559,7 +1383,7 @@
               "_units": "dimensionless"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -1581,7 +1405,7 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 11.600000000000001,
+              "_magnitude": 11.6,
               "_units": "KI__mmole / liter"
             },
             "KI__f_renal_function": {
@@ -1589,7 +1413,7 @@
               "_units": "dimensionless"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -1611,7 +1435,7 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 11.600000000000001,
+              "_magnitude": 11.6,
               "_units": "KI__mmole / liter"
             },
             "KI__f_renal_function": {
@@ -1619,7 +1443,7 @@
               "_units": "dimensionless"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -1644,100 +1468,12 @@
           "end": 2880,
           "steps": 500,
           "changes": {
-            "ftissue_can": {
-              "_magnitude": 0.5907025360669715,
-              "_units": "l_per_min"
-            },
-            "Kp_can": {
-              "_magnitude": 1.002186894659328,
-              "_units": "dimensionless"
-            },
-            "LI__CANIM_Vmax": {
-              "_magnitude": 0.6724144350621387,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "KI__CANEX_k": {
-              "_magnitude": 0.003620232018677586,
-              "_units": "KI__per_min"
-            },
-            "GU__CANABS_k": {
-              "_magnitude": 0.014857823531040652,
-              "_units": "GU__per_min"
-            },
-            "LI__CAN2M5_Vmax": {
-              "_magnitude": 0.004471516434657664,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "LI__CAN2M5_Km_can": {
-              "_magnitude": 0.29493539325204393,
-              "_units": "LI__mM"
-            },
-            "LI__M5EX_Km_m5": {
-              "_magnitude": 0.18169494628559774,
-              "_units": "LI__mM"
-            },
-            "LI__M5EX_Vmax": {
-              "_magnitude": 0.448042513666378,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "KI__M5EX_k": {
-              "_magnitude": 0.10556919062775157,
-              "_units": "KI__per_min"
-            },
-            "ftissue_m5": {
-              "_magnitude": 0.0034928983363240276,
-              "_units": "l_per_min"
-            },
-            "Kp_m5": {
-              "_magnitude": 3.9832348764531975,
-              "_units": "dimensionless"
-            },
-            "LI__CAN2M7_Vmax": {
-              "_magnitude": 0.002145888093579888,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "LI__M7EX_Vmax": {
-              "_magnitude": 0.1258350901232781,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "KI__M7EX_k": {
-              "_magnitude": 0.18975923261901775,
-              "_units": "KI__per_min"
-            },
-            "ftissue_m7": {
-              "_magnitude": 0.00012251814828952693,
-              "_units": "l_per_min"
-            },
-            "Kp_m7": {
-              "_magnitude": 2.7484358268874036,
-              "_units": "dimensionless"
-            },
-            "LI__CAN2M9_Vmax": {
-              "_magnitude": 0.005649017628006681,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "KI__RTG_E50": {
-              "_magnitude": 1.7058500169355005e-05,
-              "_units": "KI__mM"
-            },
-            "KI__RTG_base": {
-              "_magnitude": 9.00528652661515,
-              "_units": "KI__mM"
-            },
-            "KI__RTG_max_inhibition": {
-              "_magnitude": 0.6244535441073977,
-              "_units": "dimensionless"
-            },
-            "KI__RTG_m_fpg": {
-              "_magnitude": 0.7189836466732434,
-              "_units": "dimensionless"
-            },
             "BW": {
               "_magnitude": 66.2,
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 9.900000000000002,
+              "_magnitude": 9.9,
               "_units": "KI__mmole / liter"
             },
             "KI__f_renal_function": {
@@ -1763,7 +1499,7 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 9.900000000000002,
+              "_magnitude": 9.9,
               "_units": "KI__mmole / liter"
             },
             "KI__f_renal_function": {
@@ -1771,7 +1507,7 @@
               "_units": "dimensionless"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -1793,7 +1529,7 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 9.900000000000002,
+              "_magnitude": 9.9,
               "_units": "KI__mmole / liter"
             },
             "KI__f_renal_function": {
@@ -1801,7 +1537,7 @@
               "_units": "dimensionless"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -1823,7 +1559,7 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 9.900000000000002,
+              "_magnitude": 9.9,
               "_units": "KI__mmole / liter"
             },
             "KI__f_renal_function": {
@@ -1831,7 +1567,7 @@
               "_units": "dimensionless"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -1853,7 +1589,7 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 9.900000000000002,
+              "_magnitude": 9.9,
               "_units": "KI__mmole / liter"
             },
             "KI__f_renal_function": {
@@ -1861,7 +1597,7 @@
               "_units": "dimensionless"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -1883,7 +1619,7 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 9.900000000000002,
+              "_magnitude": 9.9,
               "_units": "KI__mmole / liter"
             },
             "KI__f_renal_function": {
@@ -1891,7 +1627,7 @@
               "_units": "dimensionless"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -1913,7 +1649,7 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 9.900000000000002,
+              "_magnitude": 9.9,
               "_units": "KI__mmole / liter"
             },
             "KI__f_renal_function": {
@@ -1921,7 +1657,7 @@
               "_units": "dimensionless"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -1943,7 +1679,7 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 9.900000000000002,
+              "_magnitude": 9.9,
               "_units": "KI__mmole / liter"
             },
             "KI__f_renal_function": {
@@ -1951,7 +1687,7 @@
               "_units": "dimensionless"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -1973,7 +1709,7 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 9.900000000000002,
+              "_magnitude": 9.9,
               "_units": "KI__mmole / liter"
             },
             "KI__f_renal_function": {
@@ -1981,7 +1717,7 @@
               "_units": "dimensionless"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -2003,7 +1739,7 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 9.900000000000002,
+              "_magnitude": 9.9,
               "_units": "KI__mmole / liter"
             },
             "KI__f_renal_function": {
@@ -2011,7 +1747,7 @@
               "_units": "dimensionless"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -2033,7 +1769,7 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 9.900000000000002,
+              "_magnitude": 9.9,
               "_units": "KI__mmole / liter"
             },
             "KI__f_renal_function": {
@@ -2041,7 +1777,7 @@
               "_units": "dimensionless"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -2063,7 +1799,7 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 9.900000000000002,
+              "_magnitude": 9.9,
               "_units": "KI__mmole / liter"
             },
             "KI__f_renal_function": {
@@ -2071,7 +1807,7 @@
               "_units": "dimensionless"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -2093,7 +1829,7 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 9.900000000000002,
+              "_magnitude": 9.9,
               "_units": "KI__mmole / liter"
             },
             "KI__f_renal_function": {
@@ -2101,7 +1837,7 @@
               "_units": "dimensionless"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -2123,7 +1859,7 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 9.900000000000002,
+              "_magnitude": 9.9,
               "_units": "KI__mmole / liter"
             },
             "KI__f_renal_function": {
@@ -2131,7 +1867,7 @@
               "_units": "dimensionless"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -2153,7 +1889,7 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 9.900000000000002,
+              "_magnitude": 9.9,
               "_units": "KI__mmole / liter"
             },
             "KI__f_renal_function": {
@@ -2161,7 +1897,7 @@
               "_units": "dimensionless"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -2183,7 +1919,7 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 9.900000000000002,
+              "_magnitude": 9.9,
               "_units": "KI__mmole / liter"
             },
             "KI__f_renal_function": {
@@ -2191,7 +1927,7 @@
               "_units": "dimensionless"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -2216,100 +1952,12 @@
           "end": 2880,
           "steps": 500,
           "changes": {
-            "ftissue_can": {
-              "_magnitude": 0.5907025360669715,
-              "_units": "l_per_min"
-            },
-            "Kp_can": {
-              "_magnitude": 1.002186894659328,
-              "_units": "dimensionless"
-            },
-            "LI__CANIM_Vmax": {
-              "_magnitude": 0.6724144350621387,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "KI__CANEX_k": {
-              "_magnitude": 0.003620232018677586,
-              "_units": "KI__per_min"
-            },
-            "GU__CANABS_k": {
-              "_magnitude": 0.014857823531040652,
-              "_units": "GU__per_min"
-            },
-            "LI__CAN2M5_Vmax": {
-              "_magnitude": 0.004471516434657664,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "LI__CAN2M5_Km_can": {
-              "_magnitude": 0.29493539325204393,
-              "_units": "LI__mM"
-            },
-            "LI__M5EX_Km_m5": {
-              "_magnitude": 0.18169494628559774,
-              "_units": "LI__mM"
-            },
-            "LI__M5EX_Vmax": {
-              "_magnitude": 0.448042513666378,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "KI__M5EX_k": {
-              "_magnitude": 0.10556919062775157,
-              "_units": "KI__per_min"
-            },
-            "ftissue_m5": {
-              "_magnitude": 0.0034928983363240276,
-              "_units": "l_per_min"
-            },
-            "Kp_m5": {
-              "_magnitude": 3.9832348764531975,
-              "_units": "dimensionless"
-            },
-            "LI__CAN2M7_Vmax": {
-              "_magnitude": 0.002145888093579888,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "LI__M7EX_Vmax": {
-              "_magnitude": 0.1258350901232781,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "KI__M7EX_k": {
-              "_magnitude": 0.18975923261901775,
-              "_units": "KI__per_min"
-            },
-            "ftissue_m7": {
-              "_magnitude": 0.00012251814828952693,
-              "_units": "l_per_min"
-            },
-            "Kp_m7": {
-              "_magnitude": 2.7484358268874036,
-              "_units": "dimensionless"
-            },
-            "LI__CAN2M9_Vmax": {
-              "_magnitude": 0.005649017628006681,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "KI__RTG_E50": {
-              "_magnitude": 1.7058500169355005e-05,
-              "_units": "KI__mM"
-            },
-            "KI__RTG_base": {
-              "_magnitude": 9.00528652661515,
-              "_units": "KI__mM"
-            },
-            "KI__RTG_max_inhibition": {
-              "_magnitude": 0.6244535441073977,
-              "_units": "dimensionless"
-            },
-            "KI__RTG_m_fpg": {
-              "_magnitude": 0.7189836466732434,
-              "_units": "dimensionless"
-            },
             "BW": {
               "_magnitude": 66.2,
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 10.300000000000002,
+              "_magnitude": 10.3,
               "_units": "KI__mmole / liter"
             },
             "KI__f_renal_function": {
@@ -2335,7 +1983,7 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 10.300000000000002,
+              "_magnitude": 10.3,
               "_units": "KI__mmole / liter"
             },
             "KI__f_renal_function": {
@@ -2343,7 +1991,7 @@
               "_units": "dimensionless"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -2365,7 +2013,7 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 10.300000000000002,
+              "_magnitude": 10.3,
               "_units": "KI__mmole / liter"
             },
             "KI__f_renal_function": {
@@ -2373,7 +2021,7 @@
               "_units": "dimensionless"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -2395,7 +2043,7 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 10.300000000000002,
+              "_magnitude": 10.3,
               "_units": "KI__mmole / liter"
             },
             "KI__f_renal_function": {
@@ -2403,7 +2051,7 @@
               "_units": "dimensionless"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -2425,7 +2073,7 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 10.300000000000002,
+              "_magnitude": 10.3,
               "_units": "KI__mmole / liter"
             },
             "KI__f_renal_function": {
@@ -2433,7 +2081,7 @@
               "_units": "dimensionless"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -2455,7 +2103,7 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 10.300000000000002,
+              "_magnitude": 10.3,
               "_units": "KI__mmole / liter"
             },
             "KI__f_renal_function": {
@@ -2463,7 +2111,7 @@
               "_units": "dimensionless"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -2485,7 +2133,7 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 10.300000000000002,
+              "_magnitude": 10.3,
               "_units": "KI__mmole / liter"
             },
             "KI__f_renal_function": {
@@ -2493,7 +2141,7 @@
               "_units": "dimensionless"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -2515,7 +2163,7 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 10.300000000000002,
+              "_magnitude": 10.3,
               "_units": "KI__mmole / liter"
             },
             "KI__f_renal_function": {
@@ -2523,7 +2171,7 @@
               "_units": "dimensionless"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -2545,7 +2193,7 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 10.300000000000002,
+              "_magnitude": 10.3,
               "_units": "KI__mmole / liter"
             },
             "KI__f_renal_function": {
@@ -2553,7 +2201,7 @@
               "_units": "dimensionless"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -2575,7 +2223,7 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 10.300000000000002,
+              "_magnitude": 10.3,
               "_units": "KI__mmole / liter"
             },
             "KI__f_renal_function": {
@@ -2583,7 +2231,7 @@
               "_units": "dimensionless"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -2605,7 +2253,7 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 10.300000000000002,
+              "_magnitude": 10.3,
               "_units": "KI__mmole / liter"
             },
             "KI__f_renal_function": {
@@ -2613,7 +2261,7 @@
               "_units": "dimensionless"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -2635,7 +2283,7 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 10.300000000000002,
+              "_magnitude": 10.3,
               "_units": "KI__mmole / liter"
             },
             "KI__f_renal_function": {
@@ -2643,7 +2291,7 @@
               "_units": "dimensionless"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -2665,7 +2313,7 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 10.300000000000002,
+              "_magnitude": 10.3,
               "_units": "KI__mmole / liter"
             },
             "KI__f_renal_function": {
@@ -2673,7 +2321,7 @@
               "_units": "dimensionless"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -2695,7 +2343,7 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 10.300000000000002,
+              "_magnitude": 10.3,
               "_units": "KI__mmole / liter"
             },
             "KI__f_renal_function": {
@@ -2703,7 +2351,7 @@
               "_units": "dimensionless"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -2725,7 +2373,7 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 10.300000000000002,
+              "_magnitude": 10.3,
               "_units": "KI__mmole / liter"
             },
             "KI__f_renal_function": {
@@ -2733,7 +2381,7 @@
               "_units": "dimensionless"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -2755,7 +2403,7 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 10.300000000000002,
+              "_magnitude": 10.3,
               "_units": "KI__mmole / liter"
             },
             "KI__f_renal_function": {
@@ -2763,7 +2411,7 @@
               "_units": "dimensionless"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -2788,100 +2436,12 @@
           "end": 2880,
           "steps": 500,
           "changes": {
-            "ftissue_can": {
-              "_magnitude": 0.5907025360669715,
-              "_units": "l_per_min"
-            },
-            "Kp_can": {
-              "_magnitude": 1.002186894659328,
-              "_units": "dimensionless"
-            },
-            "LI__CANIM_Vmax": {
-              "_magnitude": 0.6724144350621387,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "KI__CANEX_k": {
-              "_magnitude": 0.003620232018677586,
-              "_units": "KI__per_min"
-            },
-            "GU__CANABS_k": {
-              "_magnitude": 0.014857823531040652,
-              "_units": "GU__per_min"
-            },
-            "LI__CAN2M5_Vmax": {
-              "_magnitude": 0.004471516434657664,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "LI__CAN2M5_Km_can": {
-              "_magnitude": 0.29493539325204393,
-              "_units": "LI__mM"
-            },
-            "LI__M5EX_Km_m5": {
-              "_magnitude": 0.18169494628559774,
-              "_units": "LI__mM"
-            },
-            "LI__M5EX_Vmax": {
-              "_magnitude": 0.448042513666378,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "KI__M5EX_k": {
-              "_magnitude": 0.10556919062775157,
-              "_units": "KI__per_min"
-            },
-            "ftissue_m5": {
-              "_magnitude": 0.0034928983363240276,
-              "_units": "l_per_min"
-            },
-            "Kp_m5": {
-              "_magnitude": 3.9832348764531975,
-              "_units": "dimensionless"
-            },
-            "LI__CAN2M7_Vmax": {
-              "_magnitude": 0.002145888093579888,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "LI__M7EX_Vmax": {
-              "_magnitude": 0.1258350901232781,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "KI__M7EX_k": {
-              "_magnitude": 0.18975923261901775,
-              "_units": "KI__per_min"
-            },
-            "ftissue_m7": {
-              "_magnitude": 0.00012251814828952693,
-              "_units": "l_per_min"
-            },
-            "Kp_m7": {
-              "_magnitude": 2.7484358268874036,
-              "_units": "dimensionless"
-            },
-            "LI__CAN2M9_Vmax": {
-              "_magnitude": 0.005649017628006681,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "KI__RTG_E50": {
-              "_magnitude": 1.7058500169355005e-05,
-              "_units": "KI__mM"
-            },
-            "KI__RTG_base": {
-              "_magnitude": 9.00528652661515,
-              "_units": "KI__mM"
-            },
-            "KI__RTG_max_inhibition": {
-              "_magnitude": 0.6244535441073977,
-              "_units": "dimensionless"
-            },
-            "KI__RTG_m_fpg": {
-              "_magnitude": 0.7189836466732434,
-              "_units": "dimensionless"
-            },
             "BW": {
               "_magnitude": 92.2,
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 11.200000000000001,
+              "_magnitude": 11.2,
               "_units": "KI__mmole / liter"
             },
             "KI__f_renal_function": {
@@ -2907,7 +2467,7 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 11.200000000000001,
+              "_magnitude": 11.2,
               "_units": "KI__mmole / liter"
             },
             "KI__f_renal_function": {
@@ -2915,7 +2475,7 @@
               "_units": "dimensionless"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -2937,7 +2497,7 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 11.200000000000001,
+              "_magnitude": 11.2,
               "_units": "KI__mmole / liter"
             },
             "KI__f_renal_function": {
@@ -2945,7 +2505,7 @@
               "_units": "dimensionless"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -2967,7 +2527,7 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 11.200000000000001,
+              "_magnitude": 11.2,
               "_units": "KI__mmole / liter"
             },
             "KI__f_renal_function": {
@@ -2975,7 +2535,7 @@
               "_units": "dimensionless"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -2997,7 +2557,7 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 11.200000000000001,
+              "_magnitude": 11.2,
               "_units": "KI__mmole / liter"
             },
             "KI__f_renal_function": {
@@ -3005,7 +2565,7 @@
               "_units": "dimensionless"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -3027,7 +2587,7 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 11.200000000000001,
+              "_magnitude": 11.2,
               "_units": "KI__mmole / liter"
             },
             "KI__f_renal_function": {
@@ -3035,7 +2595,7 @@
               "_units": "dimensionless"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -3057,7 +2617,7 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 11.200000000000001,
+              "_magnitude": 11.2,
               "_units": "KI__mmole / liter"
             },
             "KI__f_renal_function": {
@@ -3065,7 +2625,7 @@
               "_units": "dimensionless"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -3087,7 +2647,7 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 11.200000000000001,
+              "_magnitude": 11.2,
               "_units": "KI__mmole / liter"
             },
             "KI__f_renal_function": {
@@ -3095,7 +2655,7 @@
               "_units": "dimensionless"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -3117,7 +2677,7 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 11.200000000000001,
+              "_magnitude": 11.2,
               "_units": "KI__mmole / liter"
             },
             "KI__f_renal_function": {
@@ -3125,7 +2685,7 @@
               "_units": "dimensionless"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -3147,7 +2707,7 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 11.200000000000001,
+              "_magnitude": 11.2,
               "_units": "KI__mmole / liter"
             },
             "KI__f_renal_function": {
@@ -3155,7 +2715,7 @@
               "_units": "dimensionless"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -3177,7 +2737,7 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 11.200000000000001,
+              "_magnitude": 11.2,
               "_units": "KI__mmole / liter"
             },
             "KI__f_renal_function": {
@@ -3185,7 +2745,7 @@
               "_units": "dimensionless"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -3207,7 +2767,7 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 11.200000000000001,
+              "_magnitude": 11.2,
               "_units": "KI__mmole / liter"
             },
             "KI__f_renal_function": {
@@ -3215,7 +2775,7 @@
               "_units": "dimensionless"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -3237,7 +2797,7 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 11.200000000000001,
+              "_magnitude": 11.2,
               "_units": "KI__mmole / liter"
             },
             "KI__f_renal_function": {
@@ -3245,7 +2805,7 @@
               "_units": "dimensionless"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -3267,7 +2827,7 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 11.200000000000001,
+              "_magnitude": 11.2,
               "_units": "KI__mmole / liter"
             },
             "KI__f_renal_function": {
@@ -3275,7 +2835,7 @@
               "_units": "dimensionless"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -3297,7 +2857,7 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 11.200000000000001,
+              "_magnitude": 11.2,
               "_units": "KI__mmole / liter"
             },
             "KI__f_renal_function": {
@@ -3305,7 +2865,7 @@
               "_units": "dimensionless"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -3327,7 +2887,7 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 11.200000000000001,
+              "_magnitude": 11.2,
               "_units": "KI__mmole / liter"
             },
             "KI__f_renal_function": {
@@ -3335,7 +2895,7 @@
               "_units": "dimensionless"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -3360,100 +2920,12 @@
           "end": 2880,
           "steps": 500,
           "changes": {
-            "ftissue_can": {
-              "_magnitude": 0.5907025360669715,
-              "_units": "l_per_min"
-            },
-            "Kp_can": {
-              "_magnitude": 1.002186894659328,
-              "_units": "dimensionless"
-            },
-            "LI__CANIM_Vmax": {
-              "_magnitude": 0.6724144350621387,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "KI__CANEX_k": {
-              "_magnitude": 0.003620232018677586,
-              "_units": "KI__per_min"
-            },
-            "GU__CANABS_k": {
-              "_magnitude": 0.014857823531040652,
-              "_units": "GU__per_min"
-            },
-            "LI__CAN2M5_Vmax": {
-              "_magnitude": 0.004471516434657664,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "LI__CAN2M5_Km_can": {
-              "_magnitude": 0.29493539325204393,
-              "_units": "LI__mM"
-            },
-            "LI__M5EX_Km_m5": {
-              "_magnitude": 0.18169494628559774,
-              "_units": "LI__mM"
-            },
-            "LI__M5EX_Vmax": {
-              "_magnitude": 0.448042513666378,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "KI__M5EX_k": {
-              "_magnitude": 0.10556919062775157,
-              "_units": "KI__per_min"
-            },
-            "ftissue_m5": {
-              "_magnitude": 0.0034928983363240276,
-              "_units": "l_per_min"
-            },
-            "Kp_m5": {
-              "_magnitude": 3.9832348764531975,
-              "_units": "dimensionless"
-            },
-            "LI__CAN2M7_Vmax": {
-              "_magnitude": 0.002145888093579888,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "LI__M7EX_Vmax": {
-              "_magnitude": 0.1258350901232781,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "KI__M7EX_k": {
-              "_magnitude": 0.18975923261901775,
-              "_units": "KI__per_min"
-            },
-            "ftissue_m7": {
-              "_magnitude": 0.00012251814828952693,
-              "_units": "l_per_min"
-            },
-            "Kp_m7": {
-              "_magnitude": 2.7484358268874036,
-              "_units": "dimensionless"
-            },
-            "LI__CAN2M9_Vmax": {
-              "_magnitude": 0.005649017628006681,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "KI__RTG_E50": {
-              "_magnitude": 1.7058500169355005e-05,
-              "_units": "KI__mM"
-            },
-            "KI__RTG_base": {
-              "_magnitude": 9.00528652661515,
-              "_units": "KI__mM"
-            },
-            "KI__RTG_max_inhibition": {
-              "_magnitude": 0.6244535441073977,
-              "_units": "dimensionless"
-            },
-            "KI__RTG_m_fpg": {
-              "_magnitude": 0.7189836466732434,
-              "_units": "dimensionless"
-            },
             "BW": {
               "_magnitude": 92.7,
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 11.600000000000001,
+              "_magnitude": 11.6,
               "_units": "KI__mmole / liter"
             },
             "KI__f_renal_function": {
@@ -3479,7 +2951,7 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 11.600000000000001,
+              "_magnitude": 11.6,
               "_units": "KI__mmole / liter"
             },
             "KI__f_renal_function": {
@@ -3487,7 +2959,7 @@
               "_units": "dimensionless"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -3509,7 +2981,7 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 11.600000000000001,
+              "_magnitude": 11.6,
               "_units": "KI__mmole / liter"
             },
             "KI__f_renal_function": {
@@ -3517,7 +2989,7 @@
               "_units": "dimensionless"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -3539,7 +3011,7 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 11.600000000000001,
+              "_magnitude": 11.6,
               "_units": "KI__mmole / liter"
             },
             "KI__f_renal_function": {
@@ -3547,7 +3019,7 @@
               "_units": "dimensionless"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -3569,7 +3041,7 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 11.600000000000001,
+              "_magnitude": 11.6,
               "_units": "KI__mmole / liter"
             },
             "KI__f_renal_function": {
@@ -3577,7 +3049,7 @@
               "_units": "dimensionless"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -3599,7 +3071,7 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 11.600000000000001,
+              "_magnitude": 11.6,
               "_units": "KI__mmole / liter"
             },
             "KI__f_renal_function": {
@@ -3607,7 +3079,7 @@
               "_units": "dimensionless"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -3629,7 +3101,7 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 11.600000000000001,
+              "_magnitude": 11.6,
               "_units": "KI__mmole / liter"
             },
             "KI__f_renal_function": {
@@ -3637,7 +3109,7 @@
               "_units": "dimensionless"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -3659,7 +3131,7 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 11.600000000000001,
+              "_magnitude": 11.6,
               "_units": "KI__mmole / liter"
             },
             "KI__f_renal_function": {
@@ -3667,7 +3139,7 @@
               "_units": "dimensionless"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -3689,7 +3161,7 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 11.600000000000001,
+              "_magnitude": 11.6,
               "_units": "KI__mmole / liter"
             },
             "KI__f_renal_function": {
@@ -3697,7 +3169,7 @@
               "_units": "dimensionless"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -3719,7 +3191,7 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 11.600000000000001,
+              "_magnitude": 11.6,
               "_units": "KI__mmole / liter"
             },
             "KI__f_renal_function": {
@@ -3727,7 +3199,7 @@
               "_units": "dimensionless"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -3749,7 +3221,7 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 11.600000000000001,
+              "_magnitude": 11.6,
               "_units": "KI__mmole / liter"
             },
             "KI__f_renal_function": {
@@ -3757,7 +3229,7 @@
               "_units": "dimensionless"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -3779,7 +3251,7 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 11.600000000000001,
+              "_magnitude": 11.6,
               "_units": "KI__mmole / liter"
             },
             "KI__f_renal_function": {
@@ -3787,7 +3259,7 @@
               "_units": "dimensionless"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -3809,7 +3281,7 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 11.600000000000001,
+              "_magnitude": 11.6,
               "_units": "KI__mmole / liter"
             },
             "KI__f_renal_function": {
@@ -3817,7 +3289,7 @@
               "_units": "dimensionless"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -3839,7 +3311,7 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 11.600000000000001,
+              "_magnitude": 11.6,
               "_units": "KI__mmole / liter"
             },
             "KI__f_renal_function": {
@@ -3847,7 +3319,7 @@
               "_units": "dimensionless"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -3869,7 +3341,7 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 11.600000000000001,
+              "_magnitude": 11.6,
               "_units": "KI__mmole / liter"
             },
             "KI__f_renal_function": {
@@ -3877,7 +3349,7 @@
               "_units": "dimensionless"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -3899,7 +3371,7 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 11.600000000000001,
+              "_magnitude": 11.6,
               "_units": "KI__mmole / liter"
             },
             "KI__f_renal_function": {
@@ -3907,7 +3379,7 @@
               "_units": "dimensionless"
             },
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_can": {
@@ -5237,8 +4709,8 @@
             "name": null,
             "xaxis": {
               "sid": "Fig_uge__plot0_xaxis",
-              "name": "time [day]",
-              "label": "time",
+              "name": "Time [day]",
+              "label": "Time",
               "unit": "day",
               "scale": "LINEAR",
               "min": null,
@@ -5249,8 +4721,8 @@
             },
             "yaxis": {
               "sid": "Fig_uge__plot0_yaxis",
-              "name": "urinary glucose excretion\n(UGE) [g]",
-              "label": "urinary glucose excretion\n(UGE)",
+              "name": "UGE [g]",
+              "label": "UGE",
               "unit": "g",
               "scale": "LINEAR",
               "min": null,
@@ -5260,13 +4732,13 @@
               "ticks_visible": true
             },
             "yaxis_right": null,
-            "legend": false,
+            "legend": true,
             "facecolor": "#ffffffff",
             "title_visible": true,
             "curves": [
               {
                 "sid": "Fig_uge__plot0_curve0",
-                "name": "Sim 0 mg",
+                "name": "0 mg PO",
                 "x": "task_po_can0_multi__time",
                 "y": "task_po_can0_multi__KI__UGE",
                 "xerr": null,
@@ -5297,7 +4769,7 @@
               },
               {
                 "sid": "Fig_uge__plot0_curve1",
-                "name": "Sim 0 mg",
+                "name": "0 mg PO",
                 "x": "task_po_can0_multi__time",
                 "y": "task_po_can0_multi__KI__UGE",
                 "xerr": null,
@@ -5309,18 +4781,18 @@
                   "base_style": null,
                   "line": {
                     "type": "SOLID",
-                    "color": "#191970ff",
+                    "color": "#000000ff",
                     "thickness": 2.0
                   },
                   "marker": {
                     "size": null,
                     "type": "NONE",
-                    "fill": "#191970ff",
+                    "fill": "#000000ff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#191970ff",
+                    "color": "#000000ff",
                     "second_color": null
                   }
                 },
@@ -5328,7 +4800,7 @@
               },
               {
                 "sid": "Fig_uge__plot0_curve2",
-                "name": "Sim 30 mg",
+                "name": "30 mg PO",
                 "x": "task_po_can30_multi__time",
                 "y": "task_po_can30_multi__KI__UGE",
                 "xerr": null,
@@ -5340,18 +4812,18 @@
                   "base_style": null,
                   "line": {
                     "type": "SOLID",
-                    "color": "#0000FFff",
+                    "color": "#FFBD66ff",
                     "thickness": 2.0
                   },
                   "marker": {
                     "size": null,
                     "type": "NONE",
-                    "fill": "#0000FFff",
+                    "fill": "#FFBD66ff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#0000FFff",
+                    "color": "#FFBD66ff",
                     "second_color": null
                   }
                 },
@@ -5359,7 +4831,7 @@
               },
               {
                 "sid": "Fig_uge__plot0_curve3",
-                "name": "Sim 30 mg",
+                "name": "30 mg PO",
                 "x": "task_po_can30_multi__time",
                 "y": "task_po_can30_multi__KI__UGE",
                 "xerr": null,
@@ -5371,18 +4843,18 @@
                   "base_style": null,
                   "line": {
                     "type": "SOLID",
-                    "color": "#6495EDff",
+                    "color": "#FFBD66ff",
                     "thickness": 2.0
                   },
                   "marker": {
                     "size": null,
                     "type": "NONE",
-                    "fill": "#6495EDff",
+                    "fill": "#FFBD66ff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#6495EDff",
+                    "color": "#FFBD66ff",
                     "second_color": null
                   }
                 },
@@ -5390,7 +4862,7 @@
               },
               {
                 "sid": "Fig_uge__plot0_curve4",
-                "name": "Sim 100 mg",
+                "name": "100 mg PO",
                 "x": "task_po_can100_multi__time",
                 "y": "task_po_can100_multi__KI__UGE",
                 "xerr": null,
@@ -5402,18 +4874,18 @@
                   "base_style": null,
                   "line": {
                     "type": "SOLID",
-                    "color": "#87CEEBff",
+                    "color": "#FF931Fff",
                     "thickness": 2.0
                   },
                   "marker": {
                     "size": null,
                     "type": "NONE",
-                    "fill": "#87CEEBff",
+                    "fill": "#FF931Fff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#87CEEBff",
+                    "color": "#FF931Fff",
                     "second_color": null
                   }
                 },
@@ -5421,7 +4893,7 @@
               },
               {
                 "sid": "Fig_uge__plot0_curve5",
-                "name": "Sim 200 mg",
+                "name": "200 mg PO",
                 "x": "task_po_can200_multi__time",
                 "y": "task_po_can200_multi__KI__UGE",
                 "xerr": null,
@@ -5433,18 +4905,18 @@
                   "base_style": null,
                   "line": {
                     "type": "SOLID",
-                    "color": "#00CED1ff",
+                    "color": "#FF7A16ff",
                     "thickness": 2.0
                   },
                   "marker": {
                     "size": null,
                     "type": "NONE",
-                    "fill": "#00CED1ff",
+                    "fill": "#FF7A16ff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#00CED1ff",
+                    "color": "#FF7A16ff",
                     "second_color": null
                   }
                 },
@@ -5452,7 +4924,7 @@
               },
               {
                 "sid": "Fig_uge__plot0_curve6",
-                "name": "Sim 400 mg",
+                "name": "400 mg PO",
                 "x": "task_po_can400_multi__time",
                 "y": "task_po_can400_multi__KI__UGE",
                 "xerr": null,
@@ -5464,18 +4936,18 @@
                   "base_style": null,
                   "line": {
                     "type": "SOLID",
-                    "color": "#00FFFFff",
+                    "color": "#F4530Aff",
                     "thickness": 2.0
                   },
                   "marker": {
                     "size": null,
                     "type": "NONE",
-                    "fill": "#00FFFFff",
+                    "fill": "#F4530Aff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#00FFFFff",
+                    "color": "#F4530Aff",
                     "second_color": null
                   }
                 },
@@ -5483,7 +4955,7 @@
               },
               {
                 "sid": "Fig_uge__plot0_curve7",
-                "name": "UGE 0 mg\u00b1SD (n=19)",
+                "name": "0 mg PO\u00b1SD (n=19)",
                 "x": "glucose_cumulative_amount_PBO__time",
                 "y": "glucose_cumulative_amount_PBO__value",
                 "xerr": null,
@@ -5494,7 +4966,7 @@
                   "name": null,
                   "base_style": null,
                   "line": {
-                    "type": "DASH",
+                    "type": "NONE",
                     "color": "#000000ff",
                     "thickness": 1.0
                   },
@@ -5514,7 +4986,7 @@
               },
               {
                 "sid": "Fig_uge__plot0_curve8",
-                "name": "UGE 0 mg\u00b1SD (n=4)",
+                "name": "0 mg PO\u00b1SD (n=4)",
                 "x": "glucose_cumulative_amount_PBO_K__time",
                 "y": "glucose_cumulative_amount_PBO_K__value",
                 "xerr": null,
@@ -5525,19 +4997,19 @@
                   "name": null,
                   "base_style": null,
                   "line": {
-                    "type": "DASH",
-                    "color": "#191970ff",
+                    "type": "NONE",
+                    "color": "#000000ff",
                     "thickness": 1.0
                   },
                   "marker": {
                     "size": null,
                     "type": "SQUARE",
-                    "fill": "#191970ff",
+                    "fill": "#000000ff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#191970ff",
+                    "color": "#000000ff",
                     "second_color": null
                   }
                 },
@@ -5545,7 +5017,7 @@
               },
               {
                 "sid": "Fig_uge__plot0_curve9",
-                "name": "UGE 30 mg\u00b1SD (n=16)",
+                "name": "30 mg PO\u00b1SD (n=16)",
                 "x": "glucose_cumulative_amount_CAN30__time",
                 "y": "glucose_cumulative_amount_CAN30__value",
                 "xerr": null,
@@ -5556,19 +5028,19 @@
                   "name": null,
                   "base_style": null,
                   "line": {
-                    "type": "DASH",
-                    "color": "#0000FFff",
+                    "type": "NONE",
+                    "color": "#FFBD66ff",
                     "thickness": 1.0
                   },
                   "marker": {
                     "size": null,
                     "type": "SQUARE",
-                    "fill": "#0000FFff",
+                    "fill": "#FFBD66ff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#0000FFff",
+                    "color": "#FFBD66ff",
                     "second_color": null
                   }
                 },
@@ -5576,7 +5048,7 @@
               },
               {
                 "sid": "Fig_uge__plot0_curve10",
-                "name": "UGE 30 mg\u00b1SD (n=15)",
+                "name": "30 mg PO\u00b1SD (n=15)",
                 "x": "glucose_cumulative_amount_CAN30_K__time",
                 "y": "glucose_cumulative_amount_CAN30_K__value",
                 "xerr": null,
@@ -5587,19 +5059,19 @@
                   "name": null,
                   "base_style": null,
                   "line": {
-                    "type": "DASH",
-                    "color": "#6495EDff",
+                    "type": "NONE",
+                    "color": "#FFBD66ff",
                     "thickness": 1.0
                   },
                   "marker": {
                     "size": null,
                     "type": "SQUARE",
-                    "fill": "#6495EDff",
+                    "fill": "#FFBD66ff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#6495EDff",
+                    "color": "#FFBD66ff",
                     "second_color": null
                   }
                 },
@@ -5607,7 +5079,7 @@
               },
               {
                 "sid": "Fig_uge__plot0_curve11",
-                "name": "UGE 100 mg\u00b1SD (n=16)",
+                "name": "100 mg PO\u00b1SD (n=16)",
                 "x": "glucose_cumulative_amount_CAN100__time",
                 "y": "glucose_cumulative_amount_CAN100__value",
                 "xerr": null,
@@ -5618,19 +5090,19 @@
                   "name": null,
                   "base_style": null,
                   "line": {
-                    "type": "DASH",
-                    "color": "#87CEEBff",
+                    "type": "NONE",
+                    "color": "#FF931Fff",
                     "thickness": 1.0
                   },
                   "marker": {
                     "size": null,
                     "type": "SQUARE",
-                    "fill": "#87CEEBff",
+                    "fill": "#FF931Fff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#87CEEBff",
+                    "color": "#FF931Fff",
                     "second_color": null
                   }
                 },
@@ -5638,7 +5110,7 @@
               },
               {
                 "sid": "Fig_uge__plot0_curve12",
-                "name": "UGE 200 mg\u00b1SD (n=16)",
+                "name": "200 mg PO\u00b1SD (n=16)",
                 "x": "glucose_cumulative_amount_CAN200__time",
                 "y": "glucose_cumulative_amount_CAN200__value",
                 "xerr": null,
@@ -5649,19 +5121,19 @@
                   "name": null,
                   "base_style": null,
                   "line": {
-                    "type": "DASH",
-                    "color": "#00CED1ff",
+                    "type": "NONE",
+                    "color": "#FF7A16ff",
                     "thickness": 1.0
                   },
                   "marker": {
                     "size": null,
                     "type": "SQUARE",
-                    "fill": "#00CED1ff",
+                    "fill": "#FF7A16ff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#00CED1ff",
+                    "color": "#FF7A16ff",
                     "second_color": null
                   }
                 },
@@ -5669,7 +5141,7 @@
               },
               {
                 "sid": "Fig_uge__plot0_curve13",
-                "name": "UGE 400 mg\u00b1SD (n=16)",
+                "name": "400 mg PO\u00b1SD (n=16)",
                 "x": "glucose_cumulative_amount_CAN400__time",
                 "y": "glucose_cumulative_amount_CAN400__value",
                 "xerr": null,
@@ -5680,19 +5152,19 @@
                   "name": null,
                   "base_style": null,
                   "line": {
-                    "type": "DASH",
-                    "color": "#00FFFFff",
+                    "type": "NONE",
+                    "color": "#F4530Aff",
                     "thickness": 1.0
                   },
                   "marker": {
                     "size": null,
                     "type": "SQUARE",
-                    "fill": "#00FFFFff",
+                    "fill": "#F4530Aff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#00FFFFff",
+                    "color": "#F4530Aff",
                     "second_color": null
                   }
                 },
@@ -5724,8 +5196,8 @@
             "name": null,
             "xaxis": {
               "sid": "Fig_uge_bid__plot0_xaxis",
-              "name": "time [day]",
-              "label": "time",
+              "name": "Time [day]",
+              "label": "Time",
               "unit": "day",
               "scale": "LINEAR",
               "min": null,
@@ -5736,8 +5208,8 @@
             },
             "yaxis": {
               "sid": "Fig_uge_bid__plot0_yaxis",
-              "name": "urinary glucose excretion\n(UGE) [g]",
-              "label": "urinary glucose excretion\n(UGE)",
+              "name": "UGE [g]",
+              "label": "UGE",
               "unit": "g",
               "scale": "LINEAR",
               "min": null,
@@ -5753,7 +5225,7 @@
             "curves": [
               {
                 "sid": "Fig_uge_bid__plot0_curve0",
-                "name": "Sim 300_BID mg",
+                "name": "300 mg PO BID",
                 "x": "task_po_can300_BID_multi__time",
                 "y": "task_po_can300_BID_multi__KI__UGE",
                 "xerr": null,
@@ -5765,18 +5237,18 @@
                   "base_style": null,
                   "line": {
                     "type": "SOLID",
-                    "color": "#66CDAAff",
+                    "color": "#FF660Dff",
                     "thickness": 2.0
                   },
                   "marker": {
                     "size": null,
                     "type": "NONE",
-                    "fill": "#66CDAAff",
+                    "fill": "#FF660Dff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#66CDAAff",
+                    "color": "#FF660Dff",
                     "second_color": null
                   }
                 },
@@ -5784,7 +5256,7 @@
               },
               {
                 "sid": "Fig_uge_bid__plot0_curve1",
-                "name": "UGE 300_BID mg\u00b1SD (n=14)",
+                "name": "300 mg PO BID\u00b1SD (n=14)",
                 "x": "glucose_cumulative_amount_CAN300_BID__time",
                 "y": "glucose_cumulative_amount_CAN300_BID__value",
                 "xerr": null,
@@ -5795,19 +5267,19 @@
                   "name": null,
                   "base_style": null,
                   "line": {
-                    "type": "DASH",
-                    "color": "#66CDAAff",
+                    "type": "NONE",
+                    "color": "#FF660Dff",
                     "thickness": 1.0
                   },
                   "marker": {
                     "size": null,
                     "type": "SQUARE",
-                    "fill": "#66CDAAff",
+                    "fill": "#FF660Dff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#66CDAAff",
+                    "color": "#FF660Dff",
                     "second_color": null
                   }
                 },
@@ -5839,8 +5311,8 @@
             "name": null,
             "xaxis": {
               "sid": "Fig_rtg__plot0_xaxis",
-              "name": "time [day]",
-              "label": "time",
+              "name": "Time [day]",
+              "label": "Time",
               "unit": "day",
               "scale": "LINEAR",
               "min": null,
@@ -5851,8 +5323,8 @@
             },
             "yaxis": {
               "sid": "Fig_rtg__plot0_yaxis",
-              "name": "renal threshold glucose\n(RTG) [mM]",
-              "label": "renal threshold glucose\n(RTG)",
+              "name": "RTG [mM]",
+              "label": "RTG",
               "unit": "mM",
               "scale": "LINEAR",
               "min": null,
@@ -5862,13 +5334,13 @@
               "ticks_visible": true
             },
             "yaxis_right": null,
-            "legend": false,
+            "legend": true,
             "facecolor": "#ffffffff",
             "title_visible": true,
             "curves": [
               {
                 "sid": "Fig_rtg__plot0_curve0",
-                "name": "Sim 0 mg",
+                "name": "0 mg PO",
                 "x": "task_po_can0_multi__time",
                 "y": "task_po_can0_multi__KI__RTG",
                 "xerr": null,
@@ -5899,7 +5371,7 @@
               },
               {
                 "sid": "Fig_rtg__plot0_curve1",
-                "name": "Sim 0 mg",
+                "name": "0 mg PO",
                 "x": "task_po_can0_multi__time",
                 "y": "task_po_can0_multi__KI__RTG",
                 "xerr": null,
@@ -5911,18 +5383,18 @@
                   "base_style": null,
                   "line": {
                     "type": "SOLID",
-                    "color": "#191970ff",
+                    "color": "#000000ff",
                     "thickness": 2.0
                   },
                   "marker": {
                     "size": null,
                     "type": "NONE",
-                    "fill": "#191970ff",
+                    "fill": "#000000ff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#191970ff",
+                    "color": "#000000ff",
                     "second_color": null
                   }
                 },
@@ -5930,7 +5402,7 @@
               },
               {
                 "sid": "Fig_rtg__plot0_curve2",
-                "name": "Sim 30 mg",
+                "name": "30 mg PO",
                 "x": "task_po_can30_multi__time",
                 "y": "task_po_can30_multi__KI__RTG",
                 "xerr": null,
@@ -5942,18 +5414,18 @@
                   "base_style": null,
                   "line": {
                     "type": "SOLID",
-                    "color": "#0000FFff",
+                    "color": "#FFBD66ff",
                     "thickness": 2.0
                   },
                   "marker": {
                     "size": null,
                     "type": "NONE",
-                    "fill": "#0000FFff",
+                    "fill": "#FFBD66ff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#0000FFff",
+                    "color": "#FFBD66ff",
                     "second_color": null
                   }
                 },
@@ -5961,7 +5433,7 @@
               },
               {
                 "sid": "Fig_rtg__plot0_curve3",
-                "name": "Sim 30 mg",
+                "name": "30 mg PO",
                 "x": "task_po_can30_multi__time",
                 "y": "task_po_can30_multi__KI__RTG",
                 "xerr": null,
@@ -5973,18 +5445,18 @@
                   "base_style": null,
                   "line": {
                     "type": "SOLID",
-                    "color": "#6495EDff",
+                    "color": "#FFBD66ff",
                     "thickness": 2.0
                   },
                   "marker": {
                     "size": null,
                     "type": "NONE",
-                    "fill": "#6495EDff",
+                    "fill": "#FFBD66ff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#6495EDff",
+                    "color": "#FFBD66ff",
                     "second_color": null
                   }
                 },
@@ -5992,7 +5464,7 @@
               },
               {
                 "sid": "Fig_rtg__plot0_curve4",
-                "name": "Sim 100 mg",
+                "name": "100 mg PO",
                 "x": "task_po_can100_multi__time",
                 "y": "task_po_can100_multi__KI__RTG",
                 "xerr": null,
@@ -6004,18 +5476,18 @@
                   "base_style": null,
                   "line": {
                     "type": "SOLID",
-                    "color": "#87CEEBff",
+                    "color": "#FF931Fff",
                     "thickness": 2.0
                   },
                   "marker": {
                     "size": null,
                     "type": "NONE",
-                    "fill": "#87CEEBff",
+                    "fill": "#FF931Fff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#87CEEBff",
+                    "color": "#FF931Fff",
                     "second_color": null
                   }
                 },
@@ -6023,7 +5495,7 @@
               },
               {
                 "sid": "Fig_rtg__plot0_curve5",
-                "name": "Sim 200 mg",
+                "name": "200 mg PO",
                 "x": "task_po_can200_multi__time",
                 "y": "task_po_can200_multi__KI__RTG",
                 "xerr": null,
@@ -6035,18 +5507,18 @@
                   "base_style": null,
                   "line": {
                     "type": "SOLID",
-                    "color": "#00CED1ff",
+                    "color": "#FF7A16ff",
                     "thickness": 2.0
                   },
                   "marker": {
                     "size": null,
                     "type": "NONE",
-                    "fill": "#00CED1ff",
+                    "fill": "#FF7A16ff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#00CED1ff",
+                    "color": "#FF7A16ff",
                     "second_color": null
                   }
                 },
@@ -6054,7 +5526,7 @@
               },
               {
                 "sid": "Fig_rtg__plot0_curve6",
-                "name": "Sim 400 mg",
+                "name": "400 mg PO",
                 "x": "task_po_can400_multi__time",
                 "y": "task_po_can400_multi__KI__RTG",
                 "xerr": null,
@@ -6066,18 +5538,18 @@
                   "base_style": null,
                   "line": {
                     "type": "SOLID",
-                    "color": "#00FFFFff",
+                    "color": "#F4530Aff",
                     "thickness": 2.0
                   },
                   "marker": {
                     "size": null,
                     "type": "NONE",
-                    "fill": "#00FFFFff",
+                    "fill": "#F4530Aff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#00FFFFff",
+                    "color": "#F4530Aff",
                     "second_color": null
                   }
                 },
@@ -6085,7 +5557,7 @@
               },
               {
                 "sid": "Fig_rtg__plot0_curve7",
-                "name": "Sim 300_BID mg",
+                "name": "300 mg PO BID",
                 "x": "task_po_can300_BID_multi__time",
                 "y": "task_po_can300_BID_multi__KI__RTG",
                 "xerr": null,
@@ -6096,19 +5568,19 @@
                   "name": null,
                   "base_style": null,
                   "line": {
-                    "type": "SOLID",
-                    "color": "#66CDAAff",
+                    "type": "DASH",
+                    "color": "#FF660Dff",
                     "thickness": 2.0
                   },
                   "marker": {
                     "size": null,
                     "type": "NONE",
-                    "fill": "#66CDAAff",
+                    "fill": "#FF660Dff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#66CDAAff",
+                    "color": "#FF660Dff",
                     "second_color": null
                   }
                 },
@@ -6116,7 +5588,7 @@
               },
               {
                 "sid": "Fig_rtg__plot0_curve8",
-                "name": "RTG 0 mg\u00b1SD (n=18)",
+                "name": "0 mg PO\u00b1SD (n=18)",
                 "x": "glucose_renal_threshold_PBO__time",
                 "y": "glucose_renal_threshold_PBO__mean",
                 "xerr": null,
@@ -6147,7 +5619,7 @@
               },
               {
                 "sid": "Fig_rtg__plot0_curve9",
-                "name": "RTG 0 mg\u00b1SD (n=18)",
+                "name": "0 mg PO\u00b1SD (n=18)",
                 "x": "glucose_renal_threshold_PBO_K__time",
                 "y": "glucose_renal_threshold_PBO_K__mean",
                 "xerr": null,
@@ -6159,18 +5631,18 @@
                   "base_style": null,
                   "line": {
                     "type": "NONE",
-                    "color": "#191970ff",
+                    "color": "#000000ff",
                     "thickness": 1.0
                   },
                   "marker": {
                     "size": null,
                     "type": "SQUARE",
-                    "fill": "#191970ff",
+                    "fill": "#000000ff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#191970ff",
+                    "color": "#000000ff",
                     "second_color": null
                   }
                 },
@@ -6178,7 +5650,7 @@
               },
               {
                 "sid": "Fig_rtg__plot0_curve10",
-                "name": "RTG 30 mg\u00b1SD (n=18)",
+                "name": "30 mg PO\u00b1SD (n=18)",
                 "x": "glucose_renal_threshold_CAN30__time",
                 "y": "glucose_renal_threshold_CAN30__mean",
                 "xerr": null,
@@ -6190,18 +5662,18 @@
                   "base_style": null,
                   "line": {
                     "type": "NONE",
-                    "color": "#0000FFff",
+                    "color": "#FFBD66ff",
                     "thickness": 1.0
                   },
                   "marker": {
                     "size": null,
                     "type": "SQUARE",
-                    "fill": "#0000FFff",
+                    "fill": "#FFBD66ff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#0000FFff",
+                    "color": "#FFBD66ff",
                     "second_color": null
                   }
                 },
@@ -6209,7 +5681,7 @@
               },
               {
                 "sid": "Fig_rtg__plot0_curve11",
-                "name": "RTG 30 mg\u00b1SD (n=18)",
+                "name": "30 mg PO\u00b1SD (n=18)",
                 "x": "glucose_renal_threshold_CAN30_K__time",
                 "y": "glucose_renal_threshold_CAN30_K__mean",
                 "xerr": null,
@@ -6221,18 +5693,18 @@
                   "base_style": null,
                   "line": {
                     "type": "NONE",
-                    "color": "#6495EDff",
+                    "color": "#FFBD66ff",
                     "thickness": 1.0
                   },
                   "marker": {
                     "size": null,
                     "type": "SQUARE",
-                    "fill": "#6495EDff",
+                    "fill": "#FFBD66ff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#6495EDff",
+                    "color": "#FFBD66ff",
                     "second_color": null
                   }
                 },
@@ -6240,7 +5712,7 @@
               },
               {
                 "sid": "Fig_rtg__plot0_curve12",
-                "name": "RTG 100 mg\u00b1SD (n=18)",
+                "name": "100 mg PO\u00b1SD (n=18)",
                 "x": "glucose_renal_threshold_CAN100__time",
                 "y": "glucose_renal_threshold_CAN100__mean",
                 "xerr": null,
@@ -6252,18 +5724,18 @@
                   "base_style": null,
                   "line": {
                     "type": "NONE",
-                    "color": "#87CEEBff",
+                    "color": "#FF931Fff",
                     "thickness": 1.0
                   },
                   "marker": {
                     "size": null,
                     "type": "SQUARE",
-                    "fill": "#87CEEBff",
+                    "fill": "#FF931Fff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#87CEEBff",
+                    "color": "#FF931Fff",
                     "second_color": null
                   }
                 },
@@ -6271,7 +5743,7 @@
               },
               {
                 "sid": "Fig_rtg__plot0_curve13",
-                "name": "RTG 200 mg\u00b1SD (n=18)",
+                "name": "200 mg PO\u00b1SD (n=18)",
                 "x": "glucose_renal_threshold_CAN200__time",
                 "y": "glucose_renal_threshold_CAN200__mean",
                 "xerr": null,
@@ -6283,18 +5755,18 @@
                   "base_style": null,
                   "line": {
                     "type": "NONE",
-                    "color": "#00CED1ff",
+                    "color": "#FF7A16ff",
                     "thickness": 1.0
                   },
                   "marker": {
                     "size": null,
                     "type": "SQUARE",
-                    "fill": "#00CED1ff",
+                    "fill": "#FF7A16ff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#00CED1ff",
+                    "color": "#FF7A16ff",
                     "second_color": null
                   }
                 },
@@ -6302,7 +5774,7 @@
               },
               {
                 "sid": "Fig_rtg__plot0_curve14",
-                "name": "RTG 400 mg\u00b1SD (n=18)",
+                "name": "400 mg PO\u00b1SD (n=18)",
                 "x": "glucose_renal_threshold_CAN400__time",
                 "y": "glucose_renal_threshold_CAN400__mean",
                 "xerr": null,
@@ -6314,18 +5786,18 @@
                   "base_style": null,
                   "line": {
                     "type": "NONE",
-                    "color": "#00FFFFff",
+                    "color": "#F4530Aff",
                     "thickness": 1.0
                   },
                   "marker": {
                     "size": null,
                     "type": "SQUARE",
-                    "fill": "#00FFFFff",
+                    "fill": "#F4530Aff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#00FFFFff",
+                    "color": "#F4530Aff",
                     "second_color": null
                   }
                 },
@@ -6333,7 +5805,7 @@
               },
               {
                 "sid": "Fig_rtg__plot0_curve15",
-                "name": "RTG 300_BID mg\u00b1SD (n=18)",
+                "name": "300 mg PO BID\u00b1SD (n=18)",
                 "x": "glucose_renal_threshold_CAN300_BID__time",
                 "y": "glucose_renal_threshold_CAN300_BID__mean",
                 "xerr": null,
@@ -6345,18 +5817,18 @@
                   "base_style": null,
                   "line": {
                     "type": "NONE",
-                    "color": "#66CDAAff",
+                    "color": "#FF660Dff",
                     "thickness": 1.0
                   },
                   "marker": {
                     "size": null,
                     "type": "SQUARE",
-                    "fill": "#66CDAAff",
+                    "fill": "#FF660Dff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#66CDAAff",
+                    "color": "#FF660Dff",
                     "second_color": null
                   }
                 },

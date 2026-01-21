@@ -318,8 +318,8 @@ class Iijima2015(CanagliflozinSimulationExperiment):
         fig = Figure(
             experiment=self,
             sid="urine single and multi",
-            num_rows=2,
-            num_cols=1,
+            num_rows=1,
+            num_cols=2,
             name=f"{self.__class__.__name__} (T2DM)",
         )
         plots = fig.create_plots(xaxis=Axis(self.label_time, unit=self.unit_time), legend=True)
@@ -334,8 +334,8 @@ class Iijima2015(CanagliflozinSimulationExperiment):
                     task=f"task_po_can{dose}_{type_dosing}",
                     xid="time",
                     yid=f"[Cve_can]",
-                    label=f"Sim can ({dose})",
-                    color=self.colors[dose],
+                    label=f"{dose} mg PO",
+                    color=self.dose_colors[dose],
                 )
 
                 # data
@@ -345,8 +345,8 @@ class Iijima2015(CanagliflozinSimulationExperiment):
                     yid="mean",
                     yid_sd="mean_sd",
                     count="count",
-                    label=f"{dose}",
-                    color=self.colors[dose],
+                    label=f"{dose} mg PO",
+                    color=self.dose_colors[dose],
                 )
 
         return {
@@ -370,18 +370,19 @@ class Iijima2015(CanagliflozinSimulationExperiment):
                 task=f"task_po_can{dose}_multi",
                 xid="time",
                 yid=f"KI__UGE",
-                label=f"Sim {dose} g",
-                color=self.colors[dose],
+                label=f"{dose} mg PO",
+                color=self.dose_colors[dose],
             )
-        # data
+            # data
             plots[0].add_data(
                 dataset=f"glucose_cumulative_amount_CAN{dose}_d16",
                 xid="time",
                 yid="mean",
                 yid_sd="mean_sd",
                 count="count",
-                label=f"UGE {dose} mg",
-                color=self.colors[dose],
+                label=f"{dose} mg PO",
+                color=self.dose_colors[dose],
+                linestyle=""
             )
 
         return {
@@ -393,8 +394,8 @@ class Iijima2015(CanagliflozinSimulationExperiment):
         fig = Figure(
             experiment=self,
             sid="Fig_urine",
-            num_rows=2,
-            num_cols=1,
+            num_rows=1,
+            num_cols=2,
             name=f"{self.__class__.__name__} (T2DM)",
         )
         plots = fig.create_plots(xaxis=Axis(self.label_time, unit=self.unit_time), legend=True)
@@ -409,8 +410,8 @@ class Iijima2015(CanagliflozinSimulationExperiment):
                     task=f"task_po_can{dose}_{type_dosing}",
                     xid="time",
                     yid=f"Aurine_can",
-                    label=f"Sim can {dose} mg",
-                    color=self.colors[dose],
+                    label=f"{dose} mg PO",
+                    color=self.dose_colors[dose],
                 )
 
                 # data
@@ -420,8 +421,9 @@ class Iijima2015(CanagliflozinSimulationExperiment):
                     yid="mean",
                     yid_sd="mean_sd",
                     count="count",
-                    label=f"canagliflozin {dose} mg",
-                    color=self.colors[dose],
+                    label=f"{dose} mg PO",
+                    color=self.dose_colors[dose],
+                    linestyle=""
                 )
 
         return {
@@ -440,14 +442,13 @@ class Iijima2015(CanagliflozinSimulationExperiment):
         plots[0].set_yaxis(self.label_rtg, unit=self.unit_rtg)
 
         for dose in self.doses:
-
             # simulation
             plots[0].add_data(
                 task=f"task_po_can{dose}_multi",
                 xid="time",
                 yid=f"KI__RTG",
-                label=f"Sim {dose} mg",
-                color=self.colors[dose],
+                label=f"{dose} mg PO",
+                color=self.dose_colors[dose],
             )
 
             # data
@@ -457,8 +458,8 @@ class Iijima2015(CanagliflozinSimulationExperiment):
                 yid="mean",
                 yid_sd="mean_sd",
                 count="count",
-                label=f"RTG {dose} mg",
-                color=self.colors[dose],
+                label=f"{dose} mg PO",
+                color=self.dose_colors[dose],
                 linestyle=""
             )
 

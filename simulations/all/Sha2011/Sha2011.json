@@ -1,7 +1,7 @@
 {
   "experiment_id": "Sha2011",
   "base_path": "/home/mkoenig/git/pkdb_models/pkdb_models/models/canagliflozin",
-  "data_path": "[PosixPath('/home/mkoenig/git/pkdb_data/studies/canagliflozin')]",
+  "data_path": "[PosixPath('/home/mkoenig/git/pkdb_models/pkdb_models/models/canagliflozin/data/canagliflozin')]",
   "models": {
     "model": {
       "sid": null,
@@ -66,100 +66,12 @@
           "end": 1440,
           "steps": 500,
           "changes": {
-            "ftissue_can": {
-              "_magnitude": 0.5907025360669715,
-              "_units": "l_per_min"
-            },
-            "Kp_can": {
-              "_magnitude": 1.002186894659328,
-              "_units": "dimensionless"
-            },
-            "LI__CANIM_Vmax": {
-              "_magnitude": 0.6724144350621387,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "KI__CANEX_k": {
-              "_magnitude": 0.003620232018677586,
-              "_units": "KI__per_min"
-            },
-            "GU__CANABS_k": {
-              "_magnitude": 0.014857823531040652,
-              "_units": "GU__per_min"
-            },
-            "LI__CAN2M5_Vmax": {
-              "_magnitude": 0.004471516434657664,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "LI__CAN2M5_Km_can": {
-              "_magnitude": 0.29493539325204393,
-              "_units": "LI__mM"
-            },
-            "LI__M5EX_Km_m5": {
-              "_magnitude": 0.18169494628559774,
-              "_units": "LI__mM"
-            },
-            "LI__M5EX_Vmax": {
-              "_magnitude": 0.448042513666378,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "KI__M5EX_k": {
-              "_magnitude": 0.10556919062775157,
-              "_units": "KI__per_min"
-            },
-            "ftissue_m5": {
-              "_magnitude": 0.0034928983363240276,
-              "_units": "l_per_min"
-            },
-            "Kp_m5": {
-              "_magnitude": 3.9832348764531975,
-              "_units": "dimensionless"
-            },
-            "LI__CAN2M7_Vmax": {
-              "_magnitude": 0.002145888093579888,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "LI__M7EX_Vmax": {
-              "_magnitude": 0.1258350901232781,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "KI__M7EX_k": {
-              "_magnitude": 0.18975923261901775,
-              "_units": "KI__per_min"
-            },
-            "ftissue_m7": {
-              "_magnitude": 0.00012251814828952693,
-              "_units": "l_per_min"
-            },
-            "Kp_m7": {
-              "_magnitude": 2.7484358268874036,
-              "_units": "dimensionless"
-            },
-            "LI__CAN2M9_Vmax": {
-              "_magnitude": 0.005649017628006681,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "KI__RTG_E50": {
-              "_magnitude": 1.7058500169355005e-05,
-              "_units": "KI__mM"
-            },
-            "KI__RTG_base": {
-              "_magnitude": 9.00528652661515,
-              "_units": "KI__mM"
-            },
-            "KI__RTG_max_inhibition": {
-              "_magnitude": 0.6244535441073977,
-              "_units": "dimensionless"
-            },
-            "KI__RTG_m_fpg": {
-              "_magnitude": 0.7189836466732434,
-              "_units": "dimensionless"
-            },
             "BW": {
               "_magnitude": 75,
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 5.000000000000001,
+              "_magnitude": 5.0,
               "_units": "KI__mmole / liter"
             },
             "KI__f_renal_function": {
@@ -188,100 +100,12 @@
           "end": 720,
           "steps": 500,
           "changes": {
-            "ftissue_can": {
-              "_magnitude": 0.5907025360669715,
-              "_units": "l_per_min"
-            },
-            "Kp_can": {
-              "_magnitude": 1.002186894659328,
-              "_units": "dimensionless"
-            },
-            "LI__CANIM_Vmax": {
-              "_magnitude": 0.6724144350621387,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "KI__CANEX_k": {
-              "_magnitude": 0.003620232018677586,
-              "_units": "KI__per_min"
-            },
-            "GU__CANABS_k": {
-              "_magnitude": 0.014857823531040652,
-              "_units": "GU__per_min"
-            },
-            "LI__CAN2M5_Vmax": {
-              "_magnitude": 0.004471516434657664,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "LI__CAN2M5_Km_can": {
-              "_magnitude": 0.29493539325204393,
-              "_units": "LI__mM"
-            },
-            "LI__M5EX_Km_m5": {
-              "_magnitude": 0.18169494628559774,
-              "_units": "LI__mM"
-            },
-            "LI__M5EX_Vmax": {
-              "_magnitude": 0.448042513666378,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "KI__M5EX_k": {
-              "_magnitude": 0.10556919062775157,
-              "_units": "KI__per_min"
-            },
-            "ftissue_m5": {
-              "_magnitude": 0.0034928983363240276,
-              "_units": "l_per_min"
-            },
-            "Kp_m5": {
-              "_magnitude": 3.9832348764531975,
-              "_units": "dimensionless"
-            },
-            "LI__CAN2M7_Vmax": {
-              "_magnitude": 0.002145888093579888,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "LI__M7EX_Vmax": {
-              "_magnitude": 0.1258350901232781,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "KI__M7EX_k": {
-              "_magnitude": 0.18975923261901775,
-              "_units": "KI__per_min"
-            },
-            "ftissue_m7": {
-              "_magnitude": 0.00012251814828952693,
-              "_units": "l_per_min"
-            },
-            "Kp_m7": {
-              "_magnitude": 2.7484358268874036,
-              "_units": "dimensionless"
-            },
-            "LI__CAN2M9_Vmax": {
-              "_magnitude": 0.005649017628006681,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "KI__RTG_E50": {
-              "_magnitude": 1.7058500169355005e-05,
-              "_units": "KI__mM"
-            },
-            "KI__RTG_base": {
-              "_magnitude": 9.00528652661515,
-              "_units": "KI__mM"
-            },
-            "KI__RTG_max_inhibition": {
-              "_magnitude": 0.6244535441073977,
-              "_units": "dimensionless"
-            },
-            "KI__RTG_m_fpg": {
-              "_magnitude": 0.7189836466732434,
-              "_units": "dimensionless"
-            },
             "BW": {
               "_magnitude": 75,
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 5.000000000000001,
+              "_magnitude": 5.0,
               "_units": "KI__mmole / liter"
             },
             "KI__f_renal_function": {
@@ -307,7 +131,7 @@
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 5.000000000000001,
+              "_magnitude": 5.0,
               "_units": "KI__mmole / liter"
             },
             "KI__f_renal_function": {
@@ -336,100 +160,12 @@
           "end": 1440,
           "steps": 500,
           "changes": {
-            "ftissue_can": {
-              "_magnitude": 0.5907025360669715,
-              "_units": "l_per_min"
-            },
-            "Kp_can": {
-              "_magnitude": 1.002186894659328,
-              "_units": "dimensionless"
-            },
-            "LI__CANIM_Vmax": {
-              "_magnitude": 0.6724144350621387,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "KI__CANEX_k": {
-              "_magnitude": 0.003620232018677586,
-              "_units": "KI__per_min"
-            },
-            "GU__CANABS_k": {
-              "_magnitude": 0.014857823531040652,
-              "_units": "GU__per_min"
-            },
-            "LI__CAN2M5_Vmax": {
-              "_magnitude": 0.004471516434657664,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "LI__CAN2M5_Km_can": {
-              "_magnitude": 0.29493539325204393,
-              "_units": "LI__mM"
-            },
-            "LI__M5EX_Km_m5": {
-              "_magnitude": 0.18169494628559774,
-              "_units": "LI__mM"
-            },
-            "LI__M5EX_Vmax": {
-              "_magnitude": 0.448042513666378,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "KI__M5EX_k": {
-              "_magnitude": 0.10556919062775157,
-              "_units": "KI__per_min"
-            },
-            "ftissue_m5": {
-              "_magnitude": 0.0034928983363240276,
-              "_units": "l_per_min"
-            },
-            "Kp_m5": {
-              "_magnitude": 3.9832348764531975,
-              "_units": "dimensionless"
-            },
-            "LI__CAN2M7_Vmax": {
-              "_magnitude": 0.002145888093579888,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "LI__M7EX_Vmax": {
-              "_magnitude": 0.1258350901232781,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "KI__M7EX_k": {
-              "_magnitude": 0.18975923261901775,
-              "_units": "KI__per_min"
-            },
-            "ftissue_m7": {
-              "_magnitude": 0.00012251814828952693,
-              "_units": "l_per_min"
-            },
-            "Kp_m7": {
-              "_magnitude": 2.7484358268874036,
-              "_units": "dimensionless"
-            },
-            "LI__CAN2M9_Vmax": {
-              "_magnitude": 0.005649017628006681,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "KI__RTG_E50": {
-              "_magnitude": 1.7058500169355005e-05,
-              "_units": "KI__mM"
-            },
-            "KI__RTG_base": {
-              "_magnitude": 9.00528652661515,
-              "_units": "KI__mM"
-            },
-            "KI__RTG_max_inhibition": {
-              "_magnitude": 0.6244535441073977,
-              "_units": "dimensionless"
-            },
-            "KI__RTG_m_fpg": {
-              "_magnitude": 0.7189836466732434,
-              "_units": "dimensionless"
-            },
             "BW": {
               "_magnitude": 75,
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 5.000000000000001,
+              "_magnitude": 5.0,
               "_units": "KI__mmole / liter"
             },
             "KI__f_renal_function": {
@@ -458,100 +194,12 @@
           "end": 1440,
           "steps": 500,
           "changes": {
-            "ftissue_can": {
-              "_magnitude": 0.5907025360669715,
-              "_units": "l_per_min"
-            },
-            "Kp_can": {
-              "_magnitude": 1.002186894659328,
-              "_units": "dimensionless"
-            },
-            "LI__CANIM_Vmax": {
-              "_magnitude": 0.6724144350621387,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "KI__CANEX_k": {
-              "_magnitude": 0.003620232018677586,
-              "_units": "KI__per_min"
-            },
-            "GU__CANABS_k": {
-              "_magnitude": 0.014857823531040652,
-              "_units": "GU__per_min"
-            },
-            "LI__CAN2M5_Vmax": {
-              "_magnitude": 0.004471516434657664,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "LI__CAN2M5_Km_can": {
-              "_magnitude": 0.29493539325204393,
-              "_units": "LI__mM"
-            },
-            "LI__M5EX_Km_m5": {
-              "_magnitude": 0.18169494628559774,
-              "_units": "LI__mM"
-            },
-            "LI__M5EX_Vmax": {
-              "_magnitude": 0.448042513666378,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "KI__M5EX_k": {
-              "_magnitude": 0.10556919062775157,
-              "_units": "KI__per_min"
-            },
-            "ftissue_m5": {
-              "_magnitude": 0.0034928983363240276,
-              "_units": "l_per_min"
-            },
-            "Kp_m5": {
-              "_magnitude": 3.9832348764531975,
-              "_units": "dimensionless"
-            },
-            "LI__CAN2M7_Vmax": {
-              "_magnitude": 0.002145888093579888,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "LI__M7EX_Vmax": {
-              "_magnitude": 0.1258350901232781,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "KI__M7EX_k": {
-              "_magnitude": 0.18975923261901775,
-              "_units": "KI__per_min"
-            },
-            "ftissue_m7": {
-              "_magnitude": 0.00012251814828952693,
-              "_units": "l_per_min"
-            },
-            "Kp_m7": {
-              "_magnitude": 2.7484358268874036,
-              "_units": "dimensionless"
-            },
-            "LI__CAN2M9_Vmax": {
-              "_magnitude": 0.005649017628006681,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "KI__RTG_E50": {
-              "_magnitude": 1.7058500169355005e-05,
-              "_units": "KI__mM"
-            },
-            "KI__RTG_base": {
-              "_magnitude": 9.00528652661515,
-              "_units": "KI__mM"
-            },
-            "KI__RTG_max_inhibition": {
-              "_magnitude": 0.6244535441073977,
-              "_units": "dimensionless"
-            },
-            "KI__RTG_m_fpg": {
-              "_magnitude": 0.7189836466732434,
-              "_units": "dimensionless"
-            },
             "BW": {
               "_magnitude": 75,
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 5.000000000000001,
+              "_magnitude": 5.0,
               "_units": "KI__mmole / liter"
             },
             "KI__f_renal_function": {
@@ -580,100 +228,12 @@
           "end": 1440,
           "steps": 500,
           "changes": {
-            "ftissue_can": {
-              "_magnitude": 0.5907025360669715,
-              "_units": "l_per_min"
-            },
-            "Kp_can": {
-              "_magnitude": 1.002186894659328,
-              "_units": "dimensionless"
-            },
-            "LI__CANIM_Vmax": {
-              "_magnitude": 0.6724144350621387,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "KI__CANEX_k": {
-              "_magnitude": 0.003620232018677586,
-              "_units": "KI__per_min"
-            },
-            "GU__CANABS_k": {
-              "_magnitude": 0.014857823531040652,
-              "_units": "GU__per_min"
-            },
-            "LI__CAN2M5_Vmax": {
-              "_magnitude": 0.004471516434657664,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "LI__CAN2M5_Km_can": {
-              "_magnitude": 0.29493539325204393,
-              "_units": "LI__mM"
-            },
-            "LI__M5EX_Km_m5": {
-              "_magnitude": 0.18169494628559774,
-              "_units": "LI__mM"
-            },
-            "LI__M5EX_Vmax": {
-              "_magnitude": 0.448042513666378,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "KI__M5EX_k": {
-              "_magnitude": 0.10556919062775157,
-              "_units": "KI__per_min"
-            },
-            "ftissue_m5": {
-              "_magnitude": 0.0034928983363240276,
-              "_units": "l_per_min"
-            },
-            "Kp_m5": {
-              "_magnitude": 3.9832348764531975,
-              "_units": "dimensionless"
-            },
-            "LI__CAN2M7_Vmax": {
-              "_magnitude": 0.002145888093579888,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "LI__M7EX_Vmax": {
-              "_magnitude": 0.1258350901232781,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "KI__M7EX_k": {
-              "_magnitude": 0.18975923261901775,
-              "_units": "KI__per_min"
-            },
-            "ftissue_m7": {
-              "_magnitude": 0.00012251814828952693,
-              "_units": "l_per_min"
-            },
-            "Kp_m7": {
-              "_magnitude": 2.7484358268874036,
-              "_units": "dimensionless"
-            },
-            "LI__CAN2M9_Vmax": {
-              "_magnitude": 0.005649017628006681,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "KI__RTG_E50": {
-              "_magnitude": 1.7058500169355005e-05,
-              "_units": "KI__mM"
-            },
-            "KI__RTG_base": {
-              "_magnitude": 9.00528652661515,
-              "_units": "KI__mM"
-            },
-            "KI__RTG_max_inhibition": {
-              "_magnitude": 0.6244535441073977,
-              "_units": "dimensionless"
-            },
-            "KI__RTG_m_fpg": {
-              "_magnitude": 0.7189836466732434,
-              "_units": "dimensionless"
-            },
             "BW": {
               "_magnitude": 75,
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 5.000000000000001,
+              "_magnitude": 5.0,
               "_units": "KI__mmole / liter"
             },
             "KI__f_renal_function": {
@@ -702,100 +262,12 @@
           "end": 1440,
           "steps": 500,
           "changes": {
-            "ftissue_can": {
-              "_magnitude": 0.5907025360669715,
-              "_units": "l_per_min"
-            },
-            "Kp_can": {
-              "_magnitude": 1.002186894659328,
-              "_units": "dimensionless"
-            },
-            "LI__CANIM_Vmax": {
-              "_magnitude": 0.6724144350621387,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "KI__CANEX_k": {
-              "_magnitude": 0.003620232018677586,
-              "_units": "KI__per_min"
-            },
-            "GU__CANABS_k": {
-              "_magnitude": 0.014857823531040652,
-              "_units": "GU__per_min"
-            },
-            "LI__CAN2M5_Vmax": {
-              "_magnitude": 0.004471516434657664,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "LI__CAN2M5_Km_can": {
-              "_magnitude": 0.29493539325204393,
-              "_units": "LI__mM"
-            },
-            "LI__M5EX_Km_m5": {
-              "_magnitude": 0.18169494628559774,
-              "_units": "LI__mM"
-            },
-            "LI__M5EX_Vmax": {
-              "_magnitude": 0.448042513666378,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "KI__M5EX_k": {
-              "_magnitude": 0.10556919062775157,
-              "_units": "KI__per_min"
-            },
-            "ftissue_m5": {
-              "_magnitude": 0.0034928983363240276,
-              "_units": "l_per_min"
-            },
-            "Kp_m5": {
-              "_magnitude": 3.9832348764531975,
-              "_units": "dimensionless"
-            },
-            "LI__CAN2M7_Vmax": {
-              "_magnitude": 0.002145888093579888,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "LI__M7EX_Vmax": {
-              "_magnitude": 0.1258350901232781,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "KI__M7EX_k": {
-              "_magnitude": 0.18975923261901775,
-              "_units": "KI__per_min"
-            },
-            "ftissue_m7": {
-              "_magnitude": 0.00012251814828952693,
-              "_units": "l_per_min"
-            },
-            "Kp_m7": {
-              "_magnitude": 2.7484358268874036,
-              "_units": "dimensionless"
-            },
-            "LI__CAN2M9_Vmax": {
-              "_magnitude": 0.005649017628006681,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "KI__RTG_E50": {
-              "_magnitude": 1.7058500169355005e-05,
-              "_units": "KI__mM"
-            },
-            "KI__RTG_base": {
-              "_magnitude": 9.00528652661515,
-              "_units": "KI__mM"
-            },
-            "KI__RTG_max_inhibition": {
-              "_magnitude": 0.6244535441073977,
-              "_units": "dimensionless"
-            },
-            "KI__RTG_m_fpg": {
-              "_magnitude": 0.7189836466732434,
-              "_units": "dimensionless"
-            },
             "BW": {
               "_magnitude": 75,
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 5.000000000000001,
+              "_magnitude": 5.0,
               "_units": "KI__mmole / liter"
             },
             "KI__f_renal_function": {
@@ -824,100 +296,12 @@
           "end": 1440,
           "steps": 500,
           "changes": {
-            "ftissue_can": {
-              "_magnitude": 0.5907025360669715,
-              "_units": "l_per_min"
-            },
-            "Kp_can": {
-              "_magnitude": 1.002186894659328,
-              "_units": "dimensionless"
-            },
-            "LI__CANIM_Vmax": {
-              "_magnitude": 0.6724144350621387,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "KI__CANEX_k": {
-              "_magnitude": 0.003620232018677586,
-              "_units": "KI__per_min"
-            },
-            "GU__CANABS_k": {
-              "_magnitude": 0.014857823531040652,
-              "_units": "GU__per_min"
-            },
-            "LI__CAN2M5_Vmax": {
-              "_magnitude": 0.004471516434657664,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "LI__CAN2M5_Km_can": {
-              "_magnitude": 0.29493539325204393,
-              "_units": "LI__mM"
-            },
-            "LI__M5EX_Km_m5": {
-              "_magnitude": 0.18169494628559774,
-              "_units": "LI__mM"
-            },
-            "LI__M5EX_Vmax": {
-              "_magnitude": 0.448042513666378,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "KI__M5EX_k": {
-              "_magnitude": 0.10556919062775157,
-              "_units": "KI__per_min"
-            },
-            "ftissue_m5": {
-              "_magnitude": 0.0034928983363240276,
-              "_units": "l_per_min"
-            },
-            "Kp_m5": {
-              "_magnitude": 3.9832348764531975,
-              "_units": "dimensionless"
-            },
-            "LI__CAN2M7_Vmax": {
-              "_magnitude": 0.002145888093579888,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "LI__M7EX_Vmax": {
-              "_magnitude": 0.1258350901232781,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "KI__M7EX_k": {
-              "_magnitude": 0.18975923261901775,
-              "_units": "KI__per_min"
-            },
-            "ftissue_m7": {
-              "_magnitude": 0.00012251814828952693,
-              "_units": "l_per_min"
-            },
-            "Kp_m7": {
-              "_magnitude": 2.7484358268874036,
-              "_units": "dimensionless"
-            },
-            "LI__CAN2M9_Vmax": {
-              "_magnitude": 0.005649017628006681,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "KI__RTG_E50": {
-              "_magnitude": 1.7058500169355005e-05,
-              "_units": "KI__mM"
-            },
-            "KI__RTG_base": {
-              "_magnitude": 9.00528652661515,
-              "_units": "KI__mM"
-            },
-            "KI__RTG_max_inhibition": {
-              "_magnitude": 0.6244535441073977,
-              "_units": "dimensionless"
-            },
-            "KI__RTG_m_fpg": {
-              "_magnitude": 0.7189836466732434,
-              "_units": "dimensionless"
-            },
             "BW": {
               "_magnitude": 75,
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 5.000000000000001,
+              "_magnitude": 5.0,
               "_units": "KI__mmole / liter"
             },
             "KI__f_renal_function": {
@@ -946,100 +330,12 @@
           "end": 1440,
           "steps": 500,
           "changes": {
-            "ftissue_can": {
-              "_magnitude": 0.5907025360669715,
-              "_units": "l_per_min"
-            },
-            "Kp_can": {
-              "_magnitude": 1.002186894659328,
-              "_units": "dimensionless"
-            },
-            "LI__CANIM_Vmax": {
-              "_magnitude": 0.6724144350621387,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "KI__CANEX_k": {
-              "_magnitude": 0.003620232018677586,
-              "_units": "KI__per_min"
-            },
-            "GU__CANABS_k": {
-              "_magnitude": 0.014857823531040652,
-              "_units": "GU__per_min"
-            },
-            "LI__CAN2M5_Vmax": {
-              "_magnitude": 0.004471516434657664,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "LI__CAN2M5_Km_can": {
-              "_magnitude": 0.29493539325204393,
-              "_units": "LI__mM"
-            },
-            "LI__M5EX_Km_m5": {
-              "_magnitude": 0.18169494628559774,
-              "_units": "LI__mM"
-            },
-            "LI__M5EX_Vmax": {
-              "_magnitude": 0.448042513666378,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "KI__M5EX_k": {
-              "_magnitude": 0.10556919062775157,
-              "_units": "KI__per_min"
-            },
-            "ftissue_m5": {
-              "_magnitude": 0.0034928983363240276,
-              "_units": "l_per_min"
-            },
-            "Kp_m5": {
-              "_magnitude": 3.9832348764531975,
-              "_units": "dimensionless"
-            },
-            "LI__CAN2M7_Vmax": {
-              "_magnitude": 0.002145888093579888,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "LI__M7EX_Vmax": {
-              "_magnitude": 0.1258350901232781,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "KI__M7EX_k": {
-              "_magnitude": 0.18975923261901775,
-              "_units": "KI__per_min"
-            },
-            "ftissue_m7": {
-              "_magnitude": 0.00012251814828952693,
-              "_units": "l_per_min"
-            },
-            "Kp_m7": {
-              "_magnitude": 2.7484358268874036,
-              "_units": "dimensionless"
-            },
-            "LI__CAN2M9_Vmax": {
-              "_magnitude": 0.005649017628006681,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "KI__RTG_E50": {
-              "_magnitude": 1.7058500169355005e-05,
-              "_units": "KI__mM"
-            },
-            "KI__RTG_base": {
-              "_magnitude": 9.00528652661515,
-              "_units": "KI__mM"
-            },
-            "KI__RTG_max_inhibition": {
-              "_magnitude": 0.6244535441073977,
-              "_units": "dimensionless"
-            },
-            "KI__RTG_m_fpg": {
-              "_magnitude": 0.7189836466732434,
-              "_units": "dimensionless"
-            },
             "BW": {
               "_magnitude": 75,
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 5.000000000000001,
+              "_magnitude": 5.0,
               "_units": "KI__mmole / liter"
             },
             "KI__f_renal_function": {
@@ -1068,100 +364,12 @@
           "end": 1440,
           "steps": 500,
           "changes": {
-            "ftissue_can": {
-              "_magnitude": 0.5907025360669715,
-              "_units": "l_per_min"
-            },
-            "Kp_can": {
-              "_magnitude": 1.002186894659328,
-              "_units": "dimensionless"
-            },
-            "LI__CANIM_Vmax": {
-              "_magnitude": 0.6724144350621387,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "KI__CANEX_k": {
-              "_magnitude": 0.003620232018677586,
-              "_units": "KI__per_min"
-            },
-            "GU__CANABS_k": {
-              "_magnitude": 0.014857823531040652,
-              "_units": "GU__per_min"
-            },
-            "LI__CAN2M5_Vmax": {
-              "_magnitude": 0.004471516434657664,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "LI__CAN2M5_Km_can": {
-              "_magnitude": 0.29493539325204393,
-              "_units": "LI__mM"
-            },
-            "LI__M5EX_Km_m5": {
-              "_magnitude": 0.18169494628559774,
-              "_units": "LI__mM"
-            },
-            "LI__M5EX_Vmax": {
-              "_magnitude": 0.448042513666378,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "KI__M5EX_k": {
-              "_magnitude": 0.10556919062775157,
-              "_units": "KI__per_min"
-            },
-            "ftissue_m5": {
-              "_magnitude": 0.0034928983363240276,
-              "_units": "l_per_min"
-            },
-            "Kp_m5": {
-              "_magnitude": 3.9832348764531975,
-              "_units": "dimensionless"
-            },
-            "LI__CAN2M7_Vmax": {
-              "_magnitude": 0.002145888093579888,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "LI__M7EX_Vmax": {
-              "_magnitude": 0.1258350901232781,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "KI__M7EX_k": {
-              "_magnitude": 0.18975923261901775,
-              "_units": "KI__per_min"
-            },
-            "ftissue_m7": {
-              "_magnitude": 0.00012251814828952693,
-              "_units": "l_per_min"
-            },
-            "Kp_m7": {
-              "_magnitude": 2.7484358268874036,
-              "_units": "dimensionless"
-            },
-            "LI__CAN2M9_Vmax": {
-              "_magnitude": 0.005649017628006681,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "KI__RTG_E50": {
-              "_magnitude": 1.7058500169355005e-05,
-              "_units": "KI__mM"
-            },
-            "KI__RTG_base": {
-              "_magnitude": 9.00528652661515,
-              "_units": "KI__mM"
-            },
-            "KI__RTG_max_inhibition": {
-              "_magnitude": 0.6244535441073977,
-              "_units": "dimensionless"
-            },
-            "KI__RTG_m_fpg": {
-              "_magnitude": 0.7189836466732434,
-              "_units": "dimensionless"
-            },
             "BW": {
               "_magnitude": 75,
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 5.000000000000001,
+              "_magnitude": 5.0,
               "_units": "KI__mmole / liter"
             },
             "KI__f_renal_function": {
@@ -3129,7 +2337,7 @@
   "figures": {
     "Fig_uge": {
       "sid": "Fig_uge",
-      "name": "Sha2011 (healthy)",
+      "name": "Sha2011 (Healthy)",
       "num_rows": 1,
       "num_cols": 1,
       "width": 7.0,
@@ -3143,8 +2351,8 @@
             "name": null,
             "xaxis": {
               "sid": "Fig_uge__plot0_xaxis",
-              "name": "time [hr]",
-              "label": "time",
+              "name": "Time [hr]",
+              "label": "Time",
               "unit": "hr",
               "scale": "LINEAR",
               "min": null,
@@ -3155,8 +2363,8 @@
             },
             "yaxis": {
               "sid": "Fig_uge__plot0_yaxis",
-              "name": "urinary glucose excretion\n(UGE) [g]",
-              "label": "urinary glucose excretion\n(UGE)",
+              "name": "UGE [g]",
+              "label": "UGE",
               "unit": "g",
               "scale": "LINEAR",
               "min": null,
@@ -3166,13 +2374,13 @@
               "ticks_visible": true
             },
             "yaxis_right": null,
-            "legend": false,
+            "legend": true,
             "facecolor": "#ffffffff",
             "title_visible": true,
             "curves": [
               {
                 "sid": "Fig_uge__plot0_curve0",
-                "name": "Sim 0 mg",
+                "name": "0 mg PO",
                 "x": "task_po_can0_single__time",
                 "y": "task_po_can0_single__KI__UGE",
                 "xerr": null,
@@ -3203,7 +2411,7 @@
               },
               {
                 "sid": "Fig_uge__plot0_curve1",
-                "name": "Sim 10 mg",
+                "name": "10 mg PO",
                 "x": "task_po_can10_single__time",
                 "y": "task_po_can10_single__KI__UGE",
                 "xerr": null,
@@ -3215,18 +2423,18 @@
                   "base_style": null,
                   "line": {
                     "type": "SOLID",
-                    "color": "#191970ff",
+                    "color": "#FFE5B4ff",
                     "thickness": 2.0
                   },
                   "marker": {
                     "size": null,
                     "type": "NONE",
-                    "fill": "#191970ff",
+                    "fill": "#FFE5B4ff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#191970ff",
+                    "color": "#FFE5B4ff",
                     "second_color": null
                   }
                 },
@@ -3234,7 +2442,7 @@
               },
               {
                 "sid": "Fig_uge__plot0_curve2",
-                "name": "Sim 30 mg",
+                "name": "30 mg PO",
                 "x": "task_po_can30_single__time",
                 "y": "task_po_can30_single__KI__UGE",
                 "xerr": null,
@@ -3246,18 +2454,18 @@
                   "base_style": null,
                   "line": {
                     "type": "SOLID",
-                    "color": "#0000FFff",
+                    "color": "#FFBD66ff",
                     "thickness": 2.0
                   },
                   "marker": {
                     "size": null,
                     "type": "NONE",
-                    "fill": "#0000FFff",
+                    "fill": "#FFBD66ff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#0000FFff",
+                    "color": "#FFBD66ff",
                     "second_color": null
                   }
                 },
@@ -3265,7 +2473,7 @@
               },
               {
                 "sid": "Fig_uge__plot0_curve3",
-                "name": "Sim 100 mg",
+                "name": "100 mg PO",
                 "x": "task_po_can100_single__time",
                 "y": "task_po_can100_single__KI__UGE",
                 "xerr": null,
@@ -3277,18 +2485,18 @@
                   "base_style": null,
                   "line": {
                     "type": "SOLID",
-                    "color": "#6495EDff",
+                    "color": "#FF931Fff",
                     "thickness": 2.0
                   },
                   "marker": {
                     "size": null,
                     "type": "NONE",
-                    "fill": "#6495EDff",
+                    "fill": "#FF931Fff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#6495EDff",
+                    "color": "#FF931Fff",
                     "second_color": null
                   }
                 },
@@ -3296,7 +2504,7 @@
               },
               {
                 "sid": "Fig_uge__plot0_curve4",
-                "name": "Sim 200 mg",
+                "name": "200 mg PO",
                 "x": "task_po_can200_single__time",
                 "y": "task_po_can200_single__KI__UGE",
                 "xerr": null,
@@ -3308,18 +2516,18 @@
                   "base_style": null,
                   "line": {
                     "type": "SOLID",
-                    "color": "#87CEEBff",
+                    "color": "#FF7A16ff",
                     "thickness": 2.0
                   },
                   "marker": {
                     "size": null,
                     "type": "NONE",
-                    "fill": "#87CEEBff",
+                    "fill": "#FF7A16ff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#87CEEBff",
+                    "color": "#FF7A16ff",
                     "second_color": null
                   }
                 },
@@ -3327,7 +2535,7 @@
               },
               {
                 "sid": "Fig_uge__plot0_curve5",
-                "name": "Sim 400 mg",
+                "name": "400 mg PO",
                 "x": "task_po_can400_single__time",
                 "y": "task_po_can400_single__KI__UGE",
                 "xerr": null,
@@ -3339,18 +2547,18 @@
                   "base_style": null,
                   "line": {
                     "type": "SOLID",
-                    "color": "#00CED1ff",
+                    "color": "#F4530Aff",
                     "thickness": 2.0
                   },
                   "marker": {
                     "size": null,
                     "type": "NONE",
-                    "fill": "#00CED1ff",
+                    "fill": "#F4530Aff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#00CED1ff",
+                    "color": "#F4530Aff",
                     "second_color": null
                   }
                 },
@@ -3358,7 +2566,7 @@
               },
               {
                 "sid": "Fig_uge__plot0_curve6",
-                "name": "Sim 600 mg",
+                "name": "600 mg PO",
                 "x": "task_po_can600_single__time",
                 "y": "task_po_can600_single__KI__UGE",
                 "xerr": null,
@@ -3370,18 +2578,18 @@
                   "base_style": null,
                   "line": {
                     "type": "SOLID",
-                    "color": "#00FFFFff",
+                    "color": "#E04407ff",
                     "thickness": 2.0
                   },
                   "marker": {
                     "size": null,
                     "type": "NONE",
-                    "fill": "#00FFFFff",
+                    "fill": "#E04407ff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#00FFFFff",
+                    "color": "#E04407ff",
                     "second_color": null
                   }
                 },
@@ -3389,7 +2597,7 @@
               },
               {
                 "sid": "Fig_uge__plot0_curve7",
-                "name": "Sim 800 mg",
+                "name": "800 mg PO",
                 "x": "task_po_can800_single__time",
                 "y": "task_po_can800_single__KI__UGE",
                 "xerr": null,
@@ -3401,18 +2609,18 @@
                   "base_style": null,
                   "line": {
                     "type": "SOLID",
-                    "color": "#66CDAAff",
+                    "color": "#CC3705ff",
                     "thickness": 2.0
                   },
                   "marker": {
                     "size": null,
                     "type": "NONE",
-                    "fill": "#66CDAAff",
+                    "fill": "#CC3705ff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#66CDAAff",
+                    "color": "#CC3705ff",
                     "second_color": null
                   }
                 },
@@ -3420,7 +2628,7 @@
               },
               {
                 "sid": "Fig_uge__plot0_curve8",
-                "name": "Sim 400_BID mg",
+                "name": "400 mg PO BID",
                 "x": "task_po_can400_multi__time",
                 "y": "task_po_can400_multi__KI__UGE",
                 "xerr": null,
@@ -3431,19 +2639,19 @@
                   "name": null,
                   "base_style": null,
                   "line": {
-                    "type": "SOLID",
-                    "color": "#00FA9Aff",
+                    "type": "DASH",
+                    "color": "#F4530Aff",
                     "thickness": 2.0
                   },
                   "marker": {
                     "size": null,
                     "type": "NONE",
-                    "fill": "#00FA9Aff",
+                    "fill": "#F4530Aff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#00FA9Aff",
+                    "color": "#F4530Aff",
                     "second_color": null
                   }
                 },
@@ -3451,7 +2659,7 @@
               },
               {
                 "sid": "Fig_uge__plot0_curve9",
-                "name": "UGE 0 mg\u00b1SD (n=15)",
+                "name": "0 mg PO\u00b1SD (n=15)",
                 "x": "cumulative_amount_CAN0__time",
                 "y": "cumulative_amount_CAN0__mean",
                 "xerr": null,
@@ -3482,7 +2690,7 @@
               },
               {
                 "sid": "Fig_uge__plot0_curve10",
-                "name": "UGE 10 mg\u00b1SD (n=6)",
+                "name": "10 mg PO\u00b1SD (n=6)",
                 "x": "cumulative_amount_CAN10__time",
                 "y": "cumulative_amount_CAN10__mean",
                 "xerr": null,
@@ -3494,18 +2702,18 @@
                   "base_style": null,
                   "line": {
                     "type": "DASH",
-                    "color": "#191970ff",
+                    "color": "#FFE5B4ff",
                     "thickness": 1.0
                   },
                   "marker": {
                     "size": null,
                     "type": "SQUARE",
-                    "fill": "#191970ff",
+                    "fill": "#FFE5B4ff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#191970ff",
+                    "color": "#FFE5B4ff",
                     "second_color": null
                   }
                 },
@@ -3513,7 +2721,7 @@
               },
               {
                 "sid": "Fig_uge__plot0_curve11",
-                "name": "UGE 30 mg\u00b1SD (n=6)",
+                "name": "30 mg PO\u00b1SD (n=6)",
                 "x": "cumulative_amount_CAN30__time",
                 "y": "cumulative_amount_CAN30__mean",
                 "xerr": null,
@@ -3525,18 +2733,18 @@
                   "base_style": null,
                   "line": {
                     "type": "DASH",
-                    "color": "#0000FFff",
+                    "color": "#FFBD66ff",
                     "thickness": 1.0
                   },
                   "marker": {
                     "size": null,
                     "type": "SQUARE",
-                    "fill": "#0000FFff",
+                    "fill": "#FFBD66ff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#0000FFff",
+                    "color": "#FFBD66ff",
                     "second_color": null
                   }
                 },
@@ -3544,7 +2752,7 @@
               },
               {
                 "sid": "Fig_uge__plot0_curve12",
-                "name": "UGE 100 mg\u00b1SD (n=6)",
+                "name": "100 mg PO\u00b1SD (n=6)",
                 "x": "cumulative_amount_CAN100__time",
                 "y": "cumulative_amount_CAN100__mean",
                 "xerr": null,
@@ -3556,18 +2764,18 @@
                   "base_style": null,
                   "line": {
                     "type": "DASH",
-                    "color": "#6495EDff",
+                    "color": "#FF931Fff",
                     "thickness": 1.0
                   },
                   "marker": {
                     "size": null,
                     "type": "SQUARE",
-                    "fill": "#6495EDff",
+                    "fill": "#FF931Fff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#6495EDff",
+                    "color": "#FF931Fff",
                     "second_color": null
                   }
                 },
@@ -3575,7 +2783,7 @@
               },
               {
                 "sid": "Fig_uge__plot0_curve13",
-                "name": "UGE 200 mg\u00b1SD (n=6)",
+                "name": "200 mg PO\u00b1SD (n=6)",
                 "x": "cumulative_amount_CAN200__time",
                 "y": "cumulative_amount_CAN200__mean",
                 "xerr": null,
@@ -3587,18 +2795,18 @@
                   "base_style": null,
                   "line": {
                     "type": "DASH",
-                    "color": "#87CEEBff",
+                    "color": "#FF7A16ff",
                     "thickness": 1.0
                   },
                   "marker": {
                     "size": null,
                     "type": "SQUARE",
-                    "fill": "#87CEEBff",
+                    "fill": "#FF7A16ff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#87CEEBff",
+                    "color": "#FF7A16ff",
                     "second_color": null
                   }
                 },
@@ -3606,7 +2814,7 @@
               },
               {
                 "sid": "Fig_uge__plot0_curve14",
-                "name": "UGE 400 mg\u00b1SD (n=6)",
+                "name": "400 mg PO\u00b1SD (n=6)",
                 "x": "cumulative_amount_CAN400__time",
                 "y": "cumulative_amount_CAN400__mean",
                 "xerr": null,
@@ -3618,18 +2826,18 @@
                   "base_style": null,
                   "line": {
                     "type": "DASH",
-                    "color": "#00CED1ff",
+                    "color": "#F4530Aff",
                     "thickness": 1.0
                   },
                   "marker": {
                     "size": null,
                     "type": "SQUARE",
-                    "fill": "#00CED1ff",
+                    "fill": "#F4530Aff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#00CED1ff",
+                    "color": "#F4530Aff",
                     "second_color": null
                   }
                 },
@@ -3637,7 +2845,7 @@
               },
               {
                 "sid": "Fig_uge__plot0_curve15",
-                "name": "UGE 600 mg\u00b1SD (n=6)",
+                "name": "600 mg PO\u00b1SD (n=6)",
                 "x": "cumulative_amount_CAN600__time",
                 "y": "cumulative_amount_CAN600__mean",
                 "xerr": null,
@@ -3649,18 +2857,18 @@
                   "base_style": null,
                   "line": {
                     "type": "DASH",
-                    "color": "#00FFFFff",
+                    "color": "#E04407ff",
                     "thickness": 1.0
                   },
                   "marker": {
                     "size": null,
                     "type": "SQUARE",
-                    "fill": "#00FFFFff",
+                    "fill": "#E04407ff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#00FFFFff",
+                    "color": "#E04407ff",
                     "second_color": null
                   }
                 },
@@ -3668,7 +2876,7 @@
               },
               {
                 "sid": "Fig_uge__plot0_curve16",
-                "name": "UGE 800 mg\u00b1SD (n=6)",
+                "name": "800 mg PO\u00b1SD (n=6)",
                 "x": "cumulative_amount_CAN800__time",
                 "y": "cumulative_amount_CAN800__mean",
                 "xerr": null,
@@ -3680,18 +2888,18 @@
                   "base_style": null,
                   "line": {
                     "type": "DASH",
-                    "color": "#66CDAAff",
+                    "color": "#CC3705ff",
                     "thickness": 1.0
                   },
                   "marker": {
                     "size": null,
                     "type": "SQUARE",
-                    "fill": "#66CDAAff",
+                    "fill": "#CC3705ff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#66CDAAff",
+                    "color": "#CC3705ff",
                     "second_color": null
                   }
                 },
@@ -3699,7 +2907,7 @@
               },
               {
                 "sid": "Fig_uge__plot0_curve17",
-                "name": "UGE 400_BID mg\u00b1SD (n=6)",
+                "name": "400 mg PO BID\u00b1SD (n=6)",
                 "x": "cumulative_amount_CAN400_BID__time",
                 "y": "cumulative_amount_CAN400_BID__mean",
                 "xerr": null,
@@ -3711,18 +2919,18 @@
                   "base_style": null,
                   "line": {
                     "type": "DASH",
-                    "color": "#00FA9Aff",
+                    "color": "#F4530Aff",
                     "thickness": 1.0
                   },
                   "marker": {
                     "size": null,
                     "type": "SQUARE",
-                    "fill": "#00FA9Aff",
+                    "fill": "#F4530Aff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#00FA9Aff",
+                    "color": "#F4530Aff",
                     "second_color": null
                   }
                 },
@@ -3740,7 +2948,7 @@
     },
     "Fig_rtg": {
       "sid": "Fig_rtg",
-      "name": "Sha2011 (healthy)",
+      "name": "Sha2011 (Healthy)",
       "num_rows": 1,
       "num_cols": 1,
       "width": 7.0,
@@ -3754,8 +2962,8 @@
             "name": null,
             "xaxis": {
               "sid": "Fig_rtg__plot0_xaxis",
-              "name": "time [hr]",
-              "label": "time",
+              "name": "Time [hr]",
+              "label": "Time",
               "unit": "hr",
               "scale": "LINEAR",
               "min": null,
@@ -3766,8 +2974,8 @@
             },
             "yaxis": {
               "sid": "Fig_rtg__plot0_yaxis",
-              "name": "renal threshold glucose\n(RTG) [mM]",
-              "label": "renal threshold glucose\n(RTG)",
+              "name": "RTG [mM]",
+              "label": "RTG",
               "unit": "mM",
               "scale": "LINEAR",
               "min": null,
@@ -3777,13 +2985,13 @@
               "ticks_visible": true
             },
             "yaxis_right": null,
-            "legend": false,
+            "legend": true,
             "facecolor": "#ffffffff",
             "title_visible": true,
             "curves": [
               {
                 "sid": "Fig_rtg__plot0_curve0",
-                "name": "Sim 10 mg",
+                "name": "10 mg PO",
                 "x": "task_po_can10_single__time",
                 "y": "task_po_can10_single__KI__RTG",
                 "xerr": null,
@@ -3795,18 +3003,18 @@
                   "base_style": null,
                   "line": {
                     "type": "SOLID",
-                    "color": "#191970ff",
+                    "color": "#FFE5B4ff",
                     "thickness": 2.0
                   },
                   "marker": {
                     "size": null,
                     "type": "NONE",
-                    "fill": "#191970ff",
+                    "fill": "#FFE5B4ff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#191970ff",
+                    "color": "#FFE5B4ff",
                     "second_color": null
                   }
                 },
@@ -3814,7 +3022,7 @@
               },
               {
                 "sid": "Fig_rtg__plot0_curve1",
-                "name": "Sim 30 mg",
+                "name": "30 mg PO",
                 "x": "task_po_can30_single__time",
                 "y": "task_po_can30_single__KI__RTG",
                 "xerr": null,
@@ -3826,18 +3034,18 @@
                   "base_style": null,
                   "line": {
                     "type": "SOLID",
-                    "color": "#0000FFff",
+                    "color": "#FFBD66ff",
                     "thickness": 2.0
                   },
                   "marker": {
                     "size": null,
                     "type": "NONE",
-                    "fill": "#0000FFff",
+                    "fill": "#FFBD66ff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#0000FFff",
+                    "color": "#FFBD66ff",
                     "second_color": null
                   }
                 },
@@ -3845,7 +3053,7 @@
               },
               {
                 "sid": "Fig_rtg__plot0_curve2",
-                "name": "Sim 100 mg",
+                "name": "100 mg PO",
                 "x": "task_po_can100_single__time",
                 "y": "task_po_can100_single__KI__RTG",
                 "xerr": null,
@@ -3857,18 +3065,18 @@
                   "base_style": null,
                   "line": {
                     "type": "SOLID",
-                    "color": "#6495EDff",
+                    "color": "#FF931Fff",
                     "thickness": 2.0
                   },
                   "marker": {
                     "size": null,
                     "type": "NONE",
-                    "fill": "#6495EDff",
+                    "fill": "#FF931Fff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#6495EDff",
+                    "color": "#FF931Fff",
                     "second_color": null
                   }
                 },
@@ -3876,7 +3084,7 @@
               },
               {
                 "sid": "Fig_rtg__plot0_curve3",
-                "name": "Sim 200 mg",
+                "name": "200 mg PO",
                 "x": "task_po_can200_single__time",
                 "y": "task_po_can200_single__KI__RTG",
                 "xerr": null,
@@ -3888,18 +3096,18 @@
                   "base_style": null,
                   "line": {
                     "type": "SOLID",
-                    "color": "#87CEEBff",
+                    "color": "#FF7A16ff",
                     "thickness": 2.0
                   },
                   "marker": {
                     "size": null,
                     "type": "NONE",
-                    "fill": "#87CEEBff",
+                    "fill": "#FF7A16ff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#87CEEBff",
+                    "color": "#FF7A16ff",
                     "second_color": null
                   }
                 },
@@ -3907,7 +3115,7 @@
               },
               {
                 "sid": "Fig_rtg__plot0_curve4",
-                "name": "Sim 400 mg",
+                "name": "400 mg PO",
                 "x": "task_po_can400_single__time",
                 "y": "task_po_can400_single__KI__RTG",
                 "xerr": null,
@@ -3919,18 +3127,18 @@
                   "base_style": null,
                   "line": {
                     "type": "SOLID",
-                    "color": "#00CED1ff",
+                    "color": "#F4530Aff",
                     "thickness": 2.0
                   },
                   "marker": {
                     "size": null,
                     "type": "NONE",
-                    "fill": "#00CED1ff",
+                    "fill": "#F4530Aff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#00CED1ff",
+                    "color": "#F4530Aff",
                     "second_color": null
                   }
                 },
@@ -3938,7 +3146,7 @@
               },
               {
                 "sid": "Fig_rtg__plot0_curve5",
-                "name": "Sim 600 mg",
+                "name": "600 mg PO",
                 "x": "task_po_can600_single__time",
                 "y": "task_po_can600_single__KI__RTG",
                 "xerr": null,
@@ -3950,18 +3158,18 @@
                   "base_style": null,
                   "line": {
                     "type": "SOLID",
-                    "color": "#00FFFFff",
+                    "color": "#E04407ff",
                     "thickness": 2.0
                   },
                   "marker": {
                     "size": null,
                     "type": "NONE",
-                    "fill": "#00FFFFff",
+                    "fill": "#E04407ff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#00FFFFff",
+                    "color": "#E04407ff",
                     "second_color": null
                   }
                 },
@@ -3969,7 +3177,7 @@
               },
               {
                 "sid": "Fig_rtg__plot0_curve6",
-                "name": "Sim 800 mg",
+                "name": "800 mg PO",
                 "x": "task_po_can800_single__time",
                 "y": "task_po_can800_single__KI__RTG",
                 "xerr": null,
@@ -3981,18 +3189,18 @@
                   "base_style": null,
                   "line": {
                     "type": "SOLID",
-                    "color": "#66CDAAff",
+                    "color": "#CC3705ff",
                     "thickness": 2.0
                   },
                   "marker": {
                     "size": null,
                     "type": "NONE",
-                    "fill": "#66CDAAff",
+                    "fill": "#CC3705ff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#66CDAAff",
+                    "color": "#CC3705ff",
                     "second_color": null
                   }
                 },
@@ -4000,7 +3208,7 @@
               },
               {
                 "sid": "Fig_rtg__plot0_curve7",
-                "name": "Sim 400_BID mg",
+                "name": "400 mg PO BID",
                 "x": "task_po_can400_multi__time",
                 "y": "task_po_can400_multi__KI__RTG",
                 "xerr": null,
@@ -4011,19 +3219,19 @@
                   "name": null,
                   "base_style": null,
                   "line": {
-                    "type": "SOLID",
-                    "color": "#00FA9Aff",
+                    "type": "DASH",
+                    "color": "#F4530Aff",
                     "thickness": 2.0
                   },
                   "marker": {
                     "size": null,
                     "type": "NONE",
-                    "fill": "#00FA9Aff",
+                    "fill": "#F4530Aff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#00FA9Aff",
+                    "color": "#F4530Aff",
                     "second_color": null
                   }
                 },
@@ -4031,7 +3239,7 @@
               },
               {
                 "sid": "Fig_rtg__plot0_curve8",
-                "name": "RTG 10 mg\u00b1SD (n=6)",
+                "name": "10 mg PO\u00b1SD (n=6)",
                 "x": "renal_threshold_CAN10__time",
                 "y": "renal_threshold_CAN10__mean",
                 "xerr": null,
@@ -4043,18 +3251,18 @@
                   "base_style": null,
                   "line": {
                     "type": "DASH",
-                    "color": "#191970ff",
+                    "color": "#FFE5B4ff",
                     "thickness": 1.0
                   },
                   "marker": {
                     "size": null,
                     "type": "SQUARE",
-                    "fill": "#191970ff",
+                    "fill": "#FFE5B4ff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#191970ff",
+                    "color": "#FFE5B4ff",
                     "second_color": null
                   }
                 },
@@ -4062,7 +3270,7 @@
               },
               {
                 "sid": "Fig_rtg__plot0_curve9",
-                "name": "RTG 30 mg\u00b1SD (n=6)",
+                "name": "30 mg PO\u00b1SD (n=6)",
                 "x": "renal_threshold_CAN30__time",
                 "y": "renal_threshold_CAN30__mean",
                 "xerr": null,
@@ -4074,18 +3282,18 @@
                   "base_style": null,
                   "line": {
                     "type": "DASH",
-                    "color": "#0000FFff",
+                    "color": "#FFBD66ff",
                     "thickness": 1.0
                   },
                   "marker": {
                     "size": null,
                     "type": "SQUARE",
-                    "fill": "#0000FFff",
+                    "fill": "#FFBD66ff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#0000FFff",
+                    "color": "#FFBD66ff",
                     "second_color": null
                   }
                 },
@@ -4093,7 +3301,7 @@
               },
               {
                 "sid": "Fig_rtg__plot0_curve10",
-                "name": "RTG 100 mg\u00b1SD (n=6)",
+                "name": "100 mg PO\u00b1SD (n=6)",
                 "x": "renal_threshold_CAN100__time",
                 "y": "renal_threshold_CAN100__mean",
                 "xerr": null,
@@ -4105,18 +3313,18 @@
                   "base_style": null,
                   "line": {
                     "type": "DASH",
-                    "color": "#6495EDff",
+                    "color": "#FF931Fff",
                     "thickness": 1.0
                   },
                   "marker": {
                     "size": null,
                     "type": "SQUARE",
-                    "fill": "#6495EDff",
+                    "fill": "#FF931Fff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#6495EDff",
+                    "color": "#FF931Fff",
                     "second_color": null
                   }
                 },
@@ -4124,7 +3332,7 @@
               },
               {
                 "sid": "Fig_rtg__plot0_curve11",
-                "name": "RTG 200 mg\u00b1SD (n=6)",
+                "name": "200 mg PO\u00b1SD (n=6)",
                 "x": "renal_threshold_CAN200__time",
                 "y": "renal_threshold_CAN200__mean",
                 "xerr": null,
@@ -4136,18 +3344,18 @@
                   "base_style": null,
                   "line": {
                     "type": "DASH",
-                    "color": "#87CEEBff",
+                    "color": "#FF7A16ff",
                     "thickness": 1.0
                   },
                   "marker": {
                     "size": null,
                     "type": "SQUARE",
-                    "fill": "#87CEEBff",
+                    "fill": "#FF7A16ff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#87CEEBff",
+                    "color": "#FF7A16ff",
                     "second_color": null
                   }
                 },
@@ -4155,7 +3363,7 @@
               },
               {
                 "sid": "Fig_rtg__plot0_curve12",
-                "name": "RTG 400 mg\u00b1SD (n=6)",
+                "name": "400 mg PO\u00b1SD (n=6)",
                 "x": "renal_threshold_CAN400__time",
                 "y": "renal_threshold_CAN400__mean",
                 "xerr": null,
@@ -4167,18 +3375,18 @@
                   "base_style": null,
                   "line": {
                     "type": "DASH",
-                    "color": "#00CED1ff",
+                    "color": "#F4530Aff",
                     "thickness": 1.0
                   },
                   "marker": {
                     "size": null,
                     "type": "SQUARE",
-                    "fill": "#00CED1ff",
+                    "fill": "#F4530Aff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#00CED1ff",
+                    "color": "#F4530Aff",
                     "second_color": null
                   }
                 },
@@ -4186,7 +3394,7 @@
               },
               {
                 "sid": "Fig_rtg__plot0_curve13",
-                "name": "RTG 600 mg\u00b1SD (n=6)",
+                "name": "600 mg PO\u00b1SD (n=6)",
                 "x": "renal_threshold_CAN600__time",
                 "y": "renal_threshold_CAN600__mean",
                 "xerr": null,
@@ -4198,18 +3406,18 @@
                   "base_style": null,
                   "line": {
                     "type": "DASH",
-                    "color": "#00FFFFff",
+                    "color": "#E04407ff",
                     "thickness": 1.0
                   },
                   "marker": {
                     "size": null,
                     "type": "SQUARE",
-                    "fill": "#00FFFFff",
+                    "fill": "#E04407ff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#00FFFFff",
+                    "color": "#E04407ff",
                     "second_color": null
                   }
                 },
@@ -4217,7 +3425,7 @@
               },
               {
                 "sid": "Fig_rtg__plot0_curve14",
-                "name": "RTG 800 mg\u00b1SD (n=6)",
+                "name": "800 mg PO\u00b1SD (n=6)",
                 "x": "renal_threshold_CAN800__time",
                 "y": "renal_threshold_CAN800__mean",
                 "xerr": null,
@@ -4229,18 +3437,18 @@
                   "base_style": null,
                   "line": {
                     "type": "DASH",
-                    "color": "#66CDAAff",
+                    "color": "#CC3705ff",
                     "thickness": 1.0
                   },
                   "marker": {
                     "size": null,
                     "type": "SQUARE",
-                    "fill": "#66CDAAff",
+                    "fill": "#CC3705ff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#66CDAAff",
+                    "color": "#CC3705ff",
                     "second_color": null
                   }
                 },
@@ -4248,7 +3456,7 @@
               },
               {
                 "sid": "Fig_rtg__plot0_curve15",
-                "name": "RTG 400_BID mg\u00b1SD (n=6)",
+                "name": "400 mg PO BID\u00b1SD (n=6)",
                 "x": "renal_threshold_CAN400__time",
                 "y": "renal_threshold_CAN400__mean",
                 "xerr": null,
@@ -4260,18 +3468,18 @@
                   "base_style": null,
                   "line": {
                     "type": "DASH",
-                    "color": "#00FA9Aff",
+                    "color": "#F4530Aff",
                     "thickness": 1.0
                   },
                   "marker": {
                     "size": null,
                     "type": "SQUARE",
-                    "fill": "#00FA9Aff",
+                    "fill": "#F4530Aff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#00FA9Aff",
+                    "color": "#F4530Aff",
                     "second_color": null
                   }
                 },

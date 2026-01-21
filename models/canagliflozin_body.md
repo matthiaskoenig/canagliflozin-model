@@ -11,9 +11,8 @@ length: [m]
 
 ## Parameters `p`
 ```
-BW = 75.0  # [kg] body weight [kg]  
-COBW = 1.548  # [ml/s/kg] cardiac output per bodyweight [ml/s/kg]  
-COHRI = 150.0  # [ml] increase of cardiac output per heartbeat [ml/min*min]  
+BW = 75.0  # [kg] body weight  
+COBW = 1.548  # [ml/s/kg] cardiac output per bodyweight  
 FQgu = 0.18  # [-] gut fractional tissue blood flow  
 FQh = 0.215  # [-] hepatic (venous side) fractional tissue blood flow  
 FQki = 0.19  # [-] kidney fractional tissue blood flow  
@@ -28,13 +27,9 @@ FVpo = 0.001  # [l/kg] portal fractional tissue volume
 FVve = 0.0514  # [l/kg] venous fractional tissue volume  
 Fblood = 0.02  # [-] blood fraction of organ volume  
 HCT = 0.51  # [-] hematocrit  
-HEIGHT = 170.0  # [cm] height [cm]  
-HR = 70.0  # [1/min] heart rate [1/min]  
-HRrest = 70.0  # [1/min] heart rate [1/min]  
-Kp_can = 1.00013863943875  # [-] tissue/plasma partition coefficient can  
-Kp_m5 = 11.5889029190723  # [-] tissue/plasma partition coefficient m5  
-Kp_m7 = 217.431752656108  # [-] tissue/plasma partition coefficient m7  
-MAP = 100.0  # [133.32239 N/m^2] mean arterial pressure [mmHg]  
+Kp_can = 1.0025087991468  # [-] tissue/plasma partition coefficient can  
+Kp_m5 = 2.54138207988493  # [-] tissue/plasma partition coefficient m5  
+Kp_m7 = 39.878498027456  # [-] tissue/plasma partition coefficient m7  
 Mr_can = 444.518  # [g/mol] Molecular weight can [g/mole]  
 Mr_m5 = 620.6  # [g/mol] Molecular weight m5 [g/mole]  
 Mr_m7 = 620.6  # [g/mol] Molecular weight m7 [g/mole]  
@@ -46,9 +41,9 @@ Vurine = 1.0  # [l] urine
 conversion_min_per_day = 1440.0  # [min/day] Conversion factor min to hours  
 f_cardiac_function = 1.0  # [-] heart function  
 f_cirrhosis = 0.0  # [-] severity of cirrhosis [0, 0.95]  
-ftissue_can = 0.136901686327911  # [l/min] tissue distribution can  
-ftissue_m5 = 0.00312771270926516  # [l/min] tissue distribution m5  
-ftissue_m7 = 0.000100273331452754  # [l/min] tissue distribution m7  
+ftissue_can = 0.666866633812945  # [l/min] tissue distribution can  
+ftissue_m5 = 0.00713656054189705  # [l/min] tissue distribution m5  
+ftissue_m7 = 0.000154070407063175  # [l/min] tissue distribution m7  
 ti_can = 10.0  # [s] injection time can [s]  
 ```
 
@@ -105,8 +100,7 @@ cum_dose_can = 0.0  # [mg] Cumulative dose due to infusion can
 ## ODE system
 ```
 # y
-BSA = 0.024265 * (BW / 1)**0.5378 * (HEIGHT / 1)**0.3964  # [m^2] body surface area [m^2]  
-CO = f_cardiac_function * BW * COBW + (HR - HRrest) * COHRI / 60  # [ml/s] cardiac output [ml/s]  
+CO = f_cardiac_function * BW * COBW  # [ml/s] cardiac output [ml/s]  
 Cve_cantot = Cve_can + Cve_m5 + Cve_m7  # [mmol/l] Sum of unchanged canagliflozin and M5, M7, M9  
 FQre = 1 - (FQki + FQh)  # [-] rest of body fractional tissue blood flow  
 FVre = 1 - (FVgu + FVki + FVli + FVlu + FVve + FVar)  # [l/kg] rest of body fractional tissue volume  

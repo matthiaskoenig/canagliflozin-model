@@ -174,20 +174,14 @@
                 <a href="../../../../experiments/studies/devineni2013.py">../../../../experiments/studies/devineni2013.py</a>
             <pre>
 <code class="python">from typing import Dict
-
 from sbmlsim.data import DataSet, load_pkdb_dataframe
 from sbmlsim.fit import FitMapping, FitData
-from sbmlutils.console import console
-
-from pkdb_models.models.canagliflozin.experiments.base_experiment import (
-    CanagliflozinSimulationExperiment,
-)
-from pkdb_models.models.canagliflozin.experiments.metadata import Tissue, Route, Dosing, ApplicationForm, Health, \
-    Fasting, CanagliflozinMappingMetaData
-
 from sbmlsim.plot import Axis, Figure
 from sbmlsim.simulation import Timecourse, TimecourseSim
-
+from sbmlutils.console import console
+from pkdb_models.models.canagliflozin.experiments.base_experiment import CanagliflozinSimulationExperiment
+from pkdb_models.models.canagliflozin.experiments.metadata import Tissue, Route, Dosing, ApplicationForm, Health, \
+    Fasting, CanagliflozinMappingMetaData
 from pkdb_models.models.canagliflozin.helpers import run_experiments
 
 
@@ -200,7 +194,6 @@ class Devineni2013(CanagliflozinSimulationExperiment):
 
     doses = [0, 50, 100, 300]
     interventions = ["CAN0", "CAN50", "CAN100", "CAN300"]
-    colors = {0: "black", 50: "tab:blue", 100: "tab:red", 300: "tab:green"}
 
     info = {
         "can": "canagliflozin",
@@ -223,9 +216,7 @@ class Devineni2013(CanagliflozinSimulationExperiment):
                     dset.unit_conversion("mean", 1 / self.Mr.m7)
                 elif label.startswith("glucose_renal_threshold"):
                     dset.unit_conversion("mean", 1 / self.Mr.glc)
-
                 dsets[f"{label}"] = dset
-
         # console.print(dsets)
         # console.print(dsets.keys())
         return dsets
@@ -372,8 +363,8 @@ class Devineni2013(CanagliflozinSimulationExperiment):
         fig = Figure(
             experiment=self,
             sid="urine single",
-            num_rows=2,
-            num_cols=1,
+            num_rows=1,
+            num_cols=2,
             name=f"{self.__class__.__name__} (T2DM)",
         )
         plots = fig.create_plots(xaxis=Axis(self.label_time, unit=self.unit_time), legend=True)
@@ -382,7 +373,6 @@ class Devineni2013(CanagliflozinSimulationExperiment):
 
         for dose in self.doses[1:]:
             for k, day in enumerate(['d1', 'd7']):
-
                 type_dosing = 'single' if day == 'd1' else 'multi'
 
                 # simulation
@@ -390,8 +380,8 @@ class Devineni2013(CanagliflozinSimulationExperiment):
                     task=f"task_po_can{dose}_{type_dosing}",
                     xid="time",
                     yid=f"[Cve_can]",
-                    label=f"Sim can ({dose})",
-                    color=self.colors[dose],
+                    label=f"{dose} mg PO",
+                    color=self.dose_colors[dose],
                 )
 
                 # data
@@ -401,8 +391,8 @@ class Devineni2013(CanagliflozinSimulationExperiment):
                     yid="mean",
                     yid_sd="mean_sd",
                     count="count",
-                    label=f"can {dose}",
-                    color=self.colors[dose],
+                    label=f"{dose} mg PO",
+                    color=self.dose_colors[dose],
                 )
 
         return {
@@ -417,8 +407,8 @@ class Devineni2013(CanagliflozinSimulationExperiment):
             fig = Figure(
                 experiment=self,
                 sid=f"Fig_urine_{dosing}",
-                num_rows=3,
-                num_cols=1,
+                num_rows=1,
+                num_cols=3,
                 name=f"{self.__class__.__name__} (T2DM)",
             )
             plots = fig.create_plots(xaxis=Axis(self.label_time, unit=self.unit_time), legend=True)
@@ -428,14 +418,13 @@ class Devineni2013(CanagliflozinSimulationExperiment):
 
             for dose in self.doses[1:]:
                 for k, sid in enumerate(self.info):
-
                     # simulation
                     plots[k].add_data(
                         task=f"task_po_can{dose}_{dosing}",
                         xid="time",
                         yid=f"Aurine_{sid}",
-                        label=f"Sim {sid} {dose} mg",
-                        color=self.colors[dose],
+                        label=f"{dose} mg PO",
+                        color=self.dose_colors[dose],
                     )
 
                     # data
@@ -446,8 +435,9 @@ class Devineni2013(CanagliflozinSimulationExperiment):
                         yid="mean",
                         yid_sd="mean_sd",
                         count="count",
-                        label=f"{did} {dose} mg",
-                        color=self.colors[dose],
+                        label=f"{dose} mg PO",
+                        color=self.dose_colors[dose],
+                        linestyle="",
                     )
             figures[fig.sid] = fig
 
@@ -468,8 +458,8 @@ class Devineni2013(CanagliflozinSimulationExperiment):
                 task=f"task_po_can{dose}_multi",
                 xid="time",
                 yid=f"KI__UGE",
-                label=f"Sim {dose} mg",
-                color=self.colors[dose],
+                label=f"{dose} mg PO",
+                color=self.dose_colors[dose],
             )
             # data
             plots[0].add_data(
@@ -478,8 +468,9 @@ class Devineni2013(CanagliflozinSimulationExperiment):
                 yid="mean",
                 yid_sd="mean_sd",
                 count="count",
-                label=f"UGE {dose} mg",
-                color=self.colors[dose],
+                label=f"{dose} mg PO",
+                color=self.dose_colors[dose],
+                linestyle="",
             )
 
         return {
@@ -501,8 +492,8 @@ class Devineni2013(CanagliflozinSimulationExperiment):
                 task=f"task_po_can{dose}_multi",
                 xid="time",
                 yid=f"KI__RTG",
-                label=f"Sim {dose} mg",
-                color=self.colors[dose],
+                label=f"{dose} mg PO",
+                color=self.dose_colors[dose],
             )
 
             # data
@@ -512,8 +503,9 @@ class Devineni2013(CanagliflozinSimulationExperiment):
                 yid="mean",
                 yid_sd="mean_sd",
                 count="count",
-                label=f"RTG {dose} mg",
-                color=self.colors[dose],
+                label=f"{dose} mg PO",
+                color=self.dose_colors[dose],
+                linestyle="",
             )
 
         return {

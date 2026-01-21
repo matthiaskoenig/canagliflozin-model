@@ -1,1 +1,7 @@
+.venv
 .idea
+*.pyc
+__pycache__
+results/
+src/pkdb_models/models/canagliflozin/results/
+src/pkdb_models/models/canagliflozin/models/results/canagliflozin_model.omex

@@ -130,9 +130,6 @@ class Sha2014(CanagliflozinSimulationExperiment):
 
     groups = {"PBO": 0, "PBO_K": 0, "CAN30": 30, "CAN30_K": 30, "CAN100": 100, "CAN200": 200, "CAN400": 400}
 
-    colors = {"PBO": "black", "PBO_K": "#191970", "CAN30": "#0000FF", "CAN30_K": "#6495ED",
-              "CAN100": "#87CEEB", "CAN200": "#00CED1", "CAN400": "#00FFFF", "CAN300_BID": "#66CDAA"}
-
     bodyweights = {"PBO": 94.2, "PBO_K": 75.5, "CAN30": 88.9, "CAN30_K": 66.2, "CAN100": 66.2,
                    "CAN200": 92.2, "CAN400": 92.7, "CAN300_BID": 94.8}
 
@@ -339,7 +336,8 @@ class Sha2014(CanagliflozinSimulationExperiment):
             sid="Fig_uge",
             name=f"{self.__class__.__name__} (T2DM)",
         )
-        plots = fig.create_plots(xaxis=Axis(self.label_time, unit="day"), legend=False)
+        Figure.legend_fontsize = 9
+        plots = fig.create_plots(xaxis=Axis(self.label_time, unit="day"), legend=True)
         plots[0].set_yaxis(self.label_uge, unit=self.unit_uge)
 
         for group, dose in self.groups.items():
@@ -348,8 +346,8 @@ class Sha2014(CanagliflozinSimulationExperiment):
                 task=f"task_po_can{dose}_multi",
                 xid="time",
                 yid=f"KI__UGE",
-                label=f"Sim {dose} mg",
-                color=self.colors[group],
+                label=f"{dose} mg PO",
+                color=self.dose_colors[dose],
             )
 
         for group, dose in self.groups.items():
@@ -360,8 +358,9 @@ class Sha2014(CanagliflozinSimulationExperiment):
                 yid="value",
                 yid_sd="mean_sd",
                 count="count",
-                label=f"UGE {dose} mg",
-                color=self.colors[group],
+                label=f"{dose} mg PO",
+                color=self.dose_colors[dose],
+                linestyle=""
             )
 
         return {
@@ -381,9 +380,9 @@ class Sha2014(CanagliflozinSimulationExperiment):
             task=f"task_po_can300_BID_multi",
             xid="time",
             yid=f"KI__UGE",
-            label=f"Sim 300_BID mg",
-            color=self.colors["CAN300_BID"],
-            )
+            label=f"300 mg PO BID",
+            color=self.dose_colors[300],
+        )
 
         plots[0].add_data(
             dataset=f"glucose_cumulative_amount_CAN300_BID",
@@ -391,8 +390,9 @@ class Sha2014(CanagliflozinSimulationExperiment):
             yid="value",
             yid_sd="mean_sd",
             count="count",
-            label=f"UGE 300_BID mg",
-            color=self.colors["CAN300_BID"],
+            label=f"300 mg PO BID",
+            color=self.dose_colors[300],
+            linestyle=""
         )
 
         return {
@@ -405,7 +405,8 @@ class Sha2014(CanagliflozinSimulationExperiment):
             sid="Fig_rtg",
             name=f"{self.__class__.__name__} (T2DM)",
         )
-        plots = fig.create_plots(xaxis=Axis(self.label_time, unit="day"), legend=False)
+        Figure.legend_fontsize=9
+        plots = fig.create_plots(xaxis=Axis(self.label_time, unit="day"), legend=True)
         plots[0].set_yaxis(self.label_rtg, unit=self.unit_rtg)
 
         for group, dose in self.groups.items():
@@ -414,16 +415,17 @@ class Sha2014(CanagliflozinSimulationExperiment):
                 task=f"task_po_can{dose}_multi",
                 xid="time",
                 yid=f"KI__RTG",
-                label=f"Sim {dose} mg",
-                color=self.colors[group],
+                label=f"{dose} mg PO",
+                color=self.dose_colors[dose],
             )
 
         plots[0].add_data(
             task=f"task_po_can300_BID_multi",
             xid="time",
             yid=f"KI__RTG",
-            label=f"Sim 300_BID mg",
-            color=self.colors["CAN300_BID"],
+            label=f"300 mg PO BID",
+            color=self.dose_colors[300],
+            linestyle="--",
         )
 
         for group, dose in self.groups.items():
@@ -434,8 +436,8 @@ class Sha2014(CanagliflozinSimulationExperiment):
                 yid="mean",
                 yid_sd="mean_sd",
                 count="count",
-                label=f"RTG {dose} mg",
-                color=self.colors[group],
+                label=f"{dose} mg PO",
+                color=self.dose_colors[dose],
                 linestyle="",
             )
 
@@ -445,8 +447,8 @@ class Sha2014(CanagliflozinSimulationExperiment):
             yid="mean",
             yid_sd="mean_sd",
             count="count",
-            label=f"RTG 300_BID mg",
-            color=self.colors["CAN300_BID"],
+            label=f"300 mg PO BID",
+            color=self.dose_colors[300],
             linestyle="",
         )
 

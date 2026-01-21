@@ -156,7 +156,7 @@ class Wattamwar2020(CanagliflozinSimulationExperiment):
         fig = Figure(
             experiment=self,
             sid="can concentration",
-            name=f"{self.__class__.__name__}",
+            name=f"{self.__class__.__name__} (Healthy)",
         )
         plots = fig.create_plots(xaxis=Axis(self.label_time, unit=self.unit_time), legend=True)
         plots[0].set_yaxis(self.label_can, unit=self.unit_can)
@@ -167,7 +167,7 @@ class Wattamwar2020(CanagliflozinSimulationExperiment):
                 task=f"task_po_can150_{condition}",
                 xid="time",
                 yid=f"[Cve_can]",
-                label=f"Sim can ({condition})",
+                label=f"150 mg PO ({condition})",
                 color=self.fasting_colors[condition],
             )
             # data
@@ -177,7 +177,7 @@ class Wattamwar2020(CanagliflozinSimulationExperiment):
                 yid="mean",
                 yid_sd="mean_sd",
                 count="count",
-                label=f"{condition}",
+                label=f"150 mg PO ({condition})",
                 color=self.fasting_colors[condition],
             )
 

@@ -1,0 +1,28 @@
+study	group	count	intervention	measurement_type	substance	tissue	method	time	time_unit	mean	median	min	max	sd	se	cv	unit	comments
+Devineni2015b	all	9.0	CAN300	tmax	canagliflozin	plasma	LC MS/MS	NA	NA	NA	1.5	1.0	3.0	NA	NA	NA	hr	NA
+Devineni2015b	all	9.0	CAN300	cmax	canagliflozin	plasma	LC MS/MS	NA	NA	2504.0	NA	NA	NA	482.0	NA	NA	ng/ml	NA
+Devineni2015b	all	9.0	CAN300	auc_end	canagliflozin	plasma	LC MS/MS	70.25	hr	17160.0	NA	NA	NA	3478.0	NA	NA	ng/ml*hr	NA
+Devineni2015b	all	9.0	CAN300	auc_inf	canagliflozin	plasma	LC MS/MS	NA	NA	17375.0	NA	NA	NA	3555.0	NA	NA	ng/ml*hr	NA
+Devineni2015b	all	9.0	CAN300	thalf	canagliflozin	plasma	LC MS/MS	NA	NA	11.6	NA	NA	NA	0.7	NA	NA	hr	NA
+Devineni2015b	all	9.0	CAN300	vd	canagliflozin	plasma	LC MS/MS	NA	NA	NA	NA	NA	NA	NA	NA	NA	l	NA
+Devineni2015b	all	9.0	CAN300	vd_ss	canagliflozin	plasma	LC MS/MS	NA	NA	NA	NA	NA	NA	NA	NA	NA	l	NA
+Devineni2015b	all	9.0	CAN300	clearance	canagliflozin	plasma	LC MS/MS	NA	NA	NA	NA	NA	NA	NA	NA	NA	l/hr	NA
+Devineni2015b	all	9.0	14C_CAN10	tmax	total canagliflozin	plasma	LC MS/MS	NA	NA	NA	0.28	0.23	0.32	NA	NA	NA	hr	total
+Devineni2015b	all	9.0	14C_CAN10	cmax	total canagliflozin	plasma	LC MS/MS	NA	NA	0.5327	NA	NA	NA	0.0907	NA	NA	ng/ml	total
+Devineni2015b	all	9.0	14C_CAN10	auc_end	total canagliflozin	plasma	LC MS/MS	70.25	hr	1.61386666666667	NA	NA	NA	0.506433333333333	NA	NA	ng/ml*hr	total
+Devineni2015b	all	9.0	14C_CAN10	auc_inf	total canagliflozin	plasma	LC MS/MS	NA	NA	1.79183333333333	NA	NA	NA	0.519566666666667	NA	NA	ng/ml*hr	total
+Devineni2015b	all	9.0	14C_CAN10	thalf	total canagliflozin	plasma	LC MS/MS	NA	NA	9.5	NA	NA	NA	2.26	NA	NA	hr	total
+Devineni2015b	all	9.0	14C_CAN10	vd	total canagliflozin	plasma	LC MS/MS	NA	NA	NA	NA	NA	NA	NA	NA	NA	l	total
+Devineni2015b	all	9.0	14C_CAN10	vd_ss	total canagliflozin	plasma	LC MS/MS	NA	NA	NA	NA	NA	NA	NA	NA	NA	l	total
+Devineni2015b	all	9.0	14C_CAN10	clearance	total canagliflozin	plasma	LC MS/MS	NA	NA	NA	NA	NA	NA	NA	NA	NA	l/hr	total
+Devineni2015b	all	9.0	14C_CAN10	recovery	total canagliflozin	urine	LC MS/MS	70.0	hr	34.5	NA	NA	NA	8.6	NA	NA	percent	total
+Devineni2015b	all	9.0	14C_CAN10	recovery	total canagliflozin	feces	LC MS/MS	70.0	hr	34.1	NA	NA	NA	14.5	NA	NA	percent	total
+Devineni2015b	all	9.0	14C_CAN10	recovery	total canagliflozin	feces_urine	LC MS/MS	70.0	hr	68.6	NA	NA	NA	17.18	NA	NA	percent	total
+Devineni2015b	all	5.0	14C_CAN10	tmax	canagliflozin	plasma	LC MS/MS	NA	NA	NA	0.25	0.23	0.3	NA	NA	NA	hr	unchanged
+Devineni2015b	all	5.0	14C_CAN10	cmax	canagliflozin	plasma	LC MS/MS	NA	NA	0.586833333333333	NA	NA	NA	0.230033333333333	NA	NA	ng/ml	unchanged
+Devineni2015b	all	5.0	14C_CAN10	auc_end	canagliflozin	plasma	LC MS/MS	70.25	hr	0.922366666666667	NA	NA	NA	0.331233333333333	NA	NA	ng/ml*hr	unchanged
+Devineni2015b	all	5.0	14C_CAN10	auc_inf	canagliflozin	plasma	LC MS/MS	NA	NA	0.903333333333333	NA	NA	NA	0.359266666666667	NA	NA	ng/ml*hr	unchanged
+Devineni2015b	all	5.0	14C_CAN10	thalf	canagliflozin	plasma	LC MS/MS	NA	NA	6.9	NA	NA	NA	1.41	NA	NA	hr	unchanged
+Devineni2015b	all	5.0	14C_CAN10	vd	canagliflozin	plasma	LC MS/MS	NA	NA	119.0	NA	NA	NA	41.6	NA	NA	l	unchanged
+Devineni2015b	all	5.0	14C_CAN10	vd_ss	canagliflozin	plasma	LC MS/MS	NA	NA	83.5	NA	NA	NA	29.2	NA	NA	l	unchanged
+Devineni2015b	all	5.0	14C_CAN10	clearance	canagliflozin	plasma	LC MS/MS	NA	NA	12.2	NA	NA	NA	3.79	NA	NA	l/hr	unchanged

@@ -1,0 +1,57 @@
+study	group	count	intervention	measurement_type	substance	tissue	method	time	time_unit	mean	median	min	max	sd	se	cv	unit	comments
+Iijima2015	CAN25	12.0	CAN25_d1	cmax	canagliflozin	plasma	LC MS/MS	NA	NA	248.0	NA	NA	NA	55.0	NA	NA	ng/ml	NA
+Iijima2015	CAN25	12.0	CAN25_d1	auc_end	canagliflozin	plasma	LC MS/MS	24.0	hr	1295.0	NA	NA	NA	240.0	NA	NA	ng/ml*hr	NA
+Iijima2015	CAN25	12.0	CAN25_d1	tmax	canagliflozin	plasma	LC MS/MS	NA	NA	NA	1.0	1.0	2.0	NA	NA	NA	hr	NA
+Iijima2015	CAN25	12.0	CAN25_d1	thalf	canagliflozin	plasma	LC MS/MS	NA	NA	10.7	NA	NA	NA	1.76	NA	NA	hr	NA
+Iijima2015	CAN25	12.0	CAN25_d1	recovery	canagliflozin	plasma	LC MS/MS	24.0	hr	0.387	NA	NA	NA	0.07	NA	NA	percent	NA
+Iijima2015	CAN25	12.0	CAN25_d1	cumulative amount	canagliflozin	plasma	LC MS/MS	0.0	hr	0.0	NA	NA	NA	0.0	NA	NA	g	NA
+Iijima2015	CAN25	12.0	CAN25_d1	cumulative amount	canagliflozin	plasma	LC MS/MS	24.0	hr	0.09675	NA	NA	NA	0.0175	NA	NA	g	NA
+Iijima2015	CAN100	12.0	CAN100_d1	cmax	canagliflozin	plasma	LC MS/MS	NA	NA	1126.0	NA	NA	NA	228.0	NA	NA	ng/ml	NA
+Iijima2015	CAN100	12.0	CAN100_d1	auc_end	canagliflozin	plasma	LC MS/MS	24.0	hr	5468.0	NA	NA	NA	899.0	NA	NA	ng/ml*hr	NA
+Iijima2015	CAN100	12.0	CAN100_d1	tmax	canagliflozin	plasma	LC MS/MS	NA	NA	NA	1.0	1.0	1.5	NA	NA	NA	hr	NA
+Iijima2015	CAN100	12.0	CAN100_d1	thalf	canagliflozin	plasma	LC MS/MS	NA	NA	10.22	NA	NA	NA	1.89	NA	NA	hr	NA
+Iijima2015	CAN100	12.0	CAN100_d1	recovery	canagliflozin	plasma	LC MS/MS	24.0	hr	0.384	NA	NA	NA	0.084	NA	NA	percent	NA
+Iijima2015	CAN100	12.0	CAN100_d1	cumulative amount	canagliflozin	plasma	LC MS/MS	0.0	hr	0.0	NA	NA	NA	0.0	NA	NA	g	NA
+Iijima2015	CAN100	12.0	CAN100_d1	cumulative amount	canagliflozin	plasma	LC MS/MS	24.0	hr	0.384	NA	NA	NA	0.084	NA	NA	g	NA
+Iijima2015	CAN200	14.0	CAN200_d1	cmax	canagliflozin	plasma	LC MS/MS	NA	NA	2304.0	NA	NA	NA	539.0	NA	NA	ng/ml	NA
+Iijima2015	CAN200	14.0	CAN200_d1	auc_end	canagliflozin	plasma	LC MS/MS	24.0	hr	11991.0	NA	NA	NA	3042.0	NA	NA	ng/ml*hr	NA
+Iijima2015	CAN200	14.0	CAN200_d1	tmax	canagliflozin	plasma	LC MS/MS	NA	NA	NA	1.0	1.0	1.5	NA	NA	NA	hr	NA
+Iijima2015	CAN200	14.0	CAN200_d1	thalf	canagliflozin	plasma	LC MS/MS	NA	NA	13.26	NA	NA	NA	4.96	NA	NA	hr	NA
+Iijima2015	CAN200	14.0	CAN200_d1	recovery	canagliflozin	plasma	LC MS/MS	24.0	hr	0.424	NA	NA	NA	0.107	NA	NA	percent	NA
+Iijima2015	CAN200	14.0	CAN200_d1	cumulative amount	canagliflozin	plasma	LC MS/MS	0.0	hr	0.0	NA	NA	NA	0.0	NA	NA	g	NA
+Iijima2015	CAN200	14.0	CAN200_d1	cumulative amount	canagliflozin	plasma	LC MS/MS	24.0	hr	0.848	NA	NA	NA	0.214	NA	NA	g	NA
+Iijima2015	CAN400	13.0	CAN400_d1	cmax	canagliflozin	plasma	LC MS/MS	NA	NA	5028.0	NA	NA	NA	1733.0	NA	NA	ng/ml	NA
+Iijima2015	CAN400	13.0	CAN400_d1	auc_end	canagliflozin	plasma	LC MS/MS	24.0	hr	21836.0	NA	NA	NA	4983.0	NA	NA	ng/ml*hr	NA
+Iijima2015	CAN400	13.0	CAN400_d1	tmax	canagliflozin	plasma	LC MS/MS	NA	NA	NA	1.0	1.0	3.0	NA	NA	NA	hr	NA
+Iijima2015	CAN400	13.0	CAN400_d1	thalf	canagliflozin	plasma	LC MS/MS	NA	NA	12.15	NA	NA	NA	2.34	NA	NA	hr	NA
+Iijima2015	CAN400	13.0	CAN400_d1	recovery	canagliflozin	plasma	LC MS/MS	24.0	hr	0.385	NA	NA	NA	0.097	NA	NA	percent	NA
+Iijima2015	CAN400	13.0	CAN400_d1	cumulative amount	canagliflozin	plasma	LC MS/MS	0.0	hr	0.0	NA	NA	NA	0.0	NA	NA	g	NA
+Iijima2015	CAN400	13.0	CAN400_d1	cumulative amount	canagliflozin	plasma	LC MS/MS	24.0	hr	1.54	NA	NA	NA	0.388	NA	NA	g	NA
+Iijima2015	CAN25	12.0	CAN25_d16	cmax	canagliflozin	plasma	LC MS/MS	NA	NA	263.0	NA	NA	NA	91.0	NA	NA	ng/ml	NA
+Iijima2015	CAN25	12.0	CAN25_d16	auc_end	canagliflozin	plasma	LC MS/MS	24.0	hr	1556.0	NA	NA	NA	387.0	NA	NA	ng/ml*hr	NA
+Iijima2015	CAN25	12.0	CAN25_d16	tmax	canagliflozin	plasma	LC MS/MS	NA	NA	NA	1.0	1.0	3.0	NA	NA	NA	hr	NA
+Iijima2015	CAN25	12.0	CAN25_d16	thalf	canagliflozin	plasma	LC MS/MS	NA	NA	14.21	NA	NA	NA	7.46	NA	NA	hr	NA
+Iijima2015	CAN25	12.0	CAN25_d16	recovery	canagliflozin	plasma	LC MS/MS	24.0	hr	0.599	NA	NA	NA	0.183	NA	NA	percent	NA
+Iijima2015	CAN25	12.0	CAN25_d16	cumulative amount	canagliflozin	plasma	LC MS/MS	0.0	hr	0.0	NA	NA	NA	0.0	NA	NA	g	NA
+Iijima2015	CAN25	12.0	CAN25_d16	cumulative amount	canagliflozin	plasma	LC MS/MS	24.0	hr	0.14975	NA	NA	NA	0.04575	NA	NA	g	NA
+Iijima2015	CAN100	12.0	CAN100_d16	cmax	canagliflozin	plasma	LC MS/MS	NA	NA	1136.0	NA	NA	NA	330.0	NA	NA	ng/ml	NA
+Iijima2015	CAN100	12.0	CAN100_d16	auc_end	canagliflozin	plasma	LC MS/MS	24.0	hr	6635.0	NA	NA	NA	1367.0	NA	NA	ng/ml*hr	NA
+Iijima2015	CAN100	12.0	CAN100_d16	tmax	canagliflozin	plasma	LC MS/MS	NA	NA	NA	1.0	1.0	1.5	NA	NA	NA	hr	NA
+Iijima2015	CAN100	12.0	CAN100_d16	thalf	canagliflozin	plasma	LC MS/MS	NA	NA	11.81	NA	NA	NA	3.22	NA	NA	hr	NA
+Iijima2015	CAN100	12.0	CAN100_d16	recovery	canagliflozin	plasma	LC MS/MS	24.0	hr	0.641	NA	NA	NA	0.204	NA	NA	percent	NA
+Iijima2015	CAN100	12.0	CAN100_d16	cumulative amount	canagliflozin	plasma	LC MS/MS	0.0	hr	0.0	NA	NA	NA	0.0	NA	NA	g	NA
+Iijima2015	CAN100	12.0	CAN100_d16	cumulative amount	canagliflozin	plasma	LC MS/MS	24.0	hr	0.641	NA	NA	NA	0.204	NA	NA	g	NA
+Iijima2015	CAN200	14.0	CAN200_d16	cmax	canagliflozin	plasma	LC MS/MS	NA	NA	2688.0	NA	NA	NA	805.0	NA	NA	ng/ml	NA
+Iijima2015	CAN200	14.0	CAN200_d16	auc_end	canagliflozin	plasma	LC MS/MS	24.0	hr	16716.0	NA	NA	NA	5464.0	NA	NA	ng/ml*hr	NA
+Iijima2015	CAN200	14.0	CAN200_d16	tmax	canagliflozin	plasma	LC MS/MS	NA	NA	NA	1.3	1.0	1.5	NA	NA	NA	hr	NA
+Iijima2015	CAN200	14.0	CAN200_d16	thalf	canagliflozin	plasma	LC MS/MS	NA	NA	16.16	NA	NA	NA	5.87	NA	NA	hr	NA
+Iijima2015	CAN200	14.0	CAN200_d16	recovery	canagliflozin	plasma	LC MS/MS	24.0	hr	0.614	NA	NA	NA	0.195	NA	NA	percent	NA
+Iijima2015	CAN200	14.0	CAN200_d16	cumulative amount	canagliflozin	plasma	LC MS/MS	0.0	hr	0.0	NA	NA	NA	0.0	NA	NA	g	NA
+Iijima2015	CAN200	14.0	CAN200_d16	cumulative amount	canagliflozin	plasma	LC MS/MS	24.0	hr	1.228	NA	NA	NA	0.39	NA	NA	g	NA
+Iijima2015	CAN400	13.0	CAN400_d16	cmax	canagliflozin	plasma	LC MS/MS	NA	NA	5236.0	NA	NA	NA	1123.0	NA	NA	ng/ml	NA
+Iijima2015	CAN400	13.0	CAN400_d16	auc_end	canagliflozin	plasma	LC MS/MS	24.0	hr	30766.0	NA	NA	NA	7916.0	NA	NA	ng/ml*hr	NA
+Iijima2015	CAN400	13.0	CAN400_d16	tmax	canagliflozin	plasma	LC MS/MS	NA	NA	NA	1.0	1.0	1.5	NA	NA	NA	hr	NA
+Iijima2015	CAN400	13.0	CAN400_d16	thalf	canagliflozin	plasma	LC MS/MS	NA	NA	15.76	NA	NA	NA	5.56	NA	NA	hr	NA
+Iijima2015	CAN400	13.0	CAN400_d16	recovery	canagliflozin	plasma	LC MS/MS	24.0	hr	0.495	NA	NA	NA	0.153	NA	NA	percent	NA
+Iijima2015	CAN400	13.0	CAN400_d16	cumulative amount	canagliflozin	plasma	LC MS/MS	0.0	hr	0.0	NA	NA	NA	0.0	NA	NA	g	NA
+Iijima2015	CAN400	13.0	CAN400_d16	cumulative amount	canagliflozin	plasma	LC MS/MS	24.0	hr	1.9799999999999998	NA	NA	NA	0.612	NA	NA	g	NA

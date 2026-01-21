@@ -86,8 +86,6 @@ class Kinoshita2015(CanagliflozinSimulationExperiment):
 
     info = {"CAN200": "can200", "CAN200_TNL40": "can200_tnl40"}
 
-    colors = {"CAN200": "black", "CAN200_TNL40": "tab:red"}
-
     bodyweight = 61.57  # [kg]
     fpg = 5  # [mM] healthy
 
@@ -205,39 +203,38 @@ class Kinoshita2015(CanagliflozinSimulationExperiment):
         fig = Figure(
             experiment=self,
             sid="Fig1",
-            name=f"{self.__class__.__name__} (healthy)",
+            name=f"{self.__class__.__name__} (Healthy)",
         )
-        plots = fig.create_plots(xaxis=Axis(self.label_time, unit=self.unit_time, min=-80, max=80), legend=True)
+        plots = fig.create_plots(xaxis=Axis(self.label_time, unit=self.unit_time, min=-1, max=80), legend=True)
         plots[0].set_yaxis(self.label_can, unit=self.unit_can)
 
+        # simulation
+        plots[0].add_data(
+            task=f"task_po_can200_single",
+            xid="time",
+            yid=f"[Cve_can]",
+            label=f"200 mg PO",
+            color="black",
+        )
+
+        # data
         for group, dosing in self.groups.items():
+            color = "black" if group == "CAN200" else "tab:blue"
+            label = "200 mg PO" if group == "CAN200" else "200 mg PO + TNL"
 
-            sim = self.info[group]
-
-            # simulation
-            plots[0].add_data(
-                task=f"task_po_{sim}_{dosing}",
-                xid="time",
-                yid=f"[Cve_can]",
-                label=f"Sim can 200",
-                color=self.colors[group],
-            )
-
-            # data
             plots[0].add_data(
                 dataset=f"canagliflozin_{group}",
                 xid="time",
                 yid="mean",
                 yid_sd="mean_sd",
                 count="count",
-                label=f"{group}",
-                color=self.colors[group],
+                label=label,
+                color=color,
             )
 
         return {
             fig.sid: fig,
         }
-
 
 if __name__ == "__main__":
     run_experiments(Kinoshita2015, output_dir=Kinoshita2015.__name__)

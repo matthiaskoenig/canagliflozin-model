@@ -1,0 +1,221 @@
+study	class	condition	parameter	dose	dose_unit	substance	n	mean	sd	median	Q1	Q3	min	max	unit	day	diabetes	hba1c	fpg
+Devineni2015c	renal	normal	cmax	200	mg	canagliflozin	8	1475	669						ng/ml		N		
+Devineni2015c	renal	normal	aucinf	200	mg	canagliflozin	8	14345	3605						ng/ml*hr		N		
+Devineni2015c	renal	normal	tmax	200	mg	canagliflozin	8			1.75			0.5	5	hr		N		
+Devineni2015c	renal	normal	thalf	200	mg	canagliflozin	8	17.4	5.4						hr		N		
+Devineni2015c	renal	normal	oral-clearance	200	mg	canagliflozin	8	14.8	3.93						l/hr		N		
+Devineni2015c	renal	normal	recovery_24hr_plasma	200	mg	canagliflozin	8	0.6	0.26						percent		N		
+Devineni2015c	renal	normal	clearance_renal	200	mg	canagliflozin	8	0.09	68						l/hr		N		
+Devineni2015c	renal	normal	protein binding	200	mg	canagliflozin	8	99.2	0.1						percent		N		
+#																			
+Devineni2015c	renal	mild	cmax	200	mg	canagliflozin	8	1574	482						ng/ml		N		
+Devineni2015c	renal	mild	aucinf	200	mg	canagliflozin	8	16719	3721						ng/ml*hr		N		
+Devineni2015c	renal	mild	tmax	200	mg	canagliflozin	8			3.5			1.5	5	hr		N		
+Devineni2015c	renal	mild	thalf	200	mg	canagliflozin	8	22.7	10.3						hr		N		
+Devineni2015c	renal	mild	oral-clearance	200	mg	canagliflozin	8	12.5	2.65						l/hr		N		
+Devineni2015c	renal	mild	recovery_24hr_plasma	200	mg	canagliflozin	8	0.3	0.09						percent		N		
+Devineni2015c	renal	mild	clearance_renal	200	mg	canagliflozin	8	0.04	14						l/hr		N		
+Devineni2015c	renal	mild	protein binding	200	mg	canagliflozin	8	99.1	0.21						percent		N		
+#																			
+Devineni2015c	renal	moderate	cmax	200	mg	canagliflozin	8	1773	439						ng/ml		N		
+Devineni2015c	renal	moderate	aucinf	200	mg	canagliflozin	8	23311	5475						ng/ml*hr		N		
+Devineni2015c	renal	moderate	tmax	200	mg	canagliflozin	8			1.75			1	5	hr		N		
+Devineni2015c	renal	moderate	thalf	200	mg	canagliflozin	8	21.7	10.9						hr		N		
+Devineni2015c	renal	moderate	oral-clearance	200	mg	canagliflozin	8	9	2.23						l/hr		N		
+Devineni2015c	renal	moderate	recovery_24hr_plasma	200	mg	canagliflozin	8	0.3	0.15						percent		N		
+Devineni2015c	renal	moderate	clearance_renal	200	mg	canagliflozin	8	0.03	21						l/hr		N		
+Devineni2015c	renal	moderate	protein binding	200	mg	canagliflozin	8	99.1	0.13						percent		N		
+#																			
+Devineni2015c	renal	severe	cmax	200	mg	canagliflozin	8	1834	732						ng/ml		N		
+Devineni2015c	renal	severe	aucinf	200	mg	canagliflozin	8	21596	5485						ng/ml*hr		N		
+Devineni2015c	renal	severe	tmax	200	mg	canagliflozin	8			1.5			1	5	hr		N		
+Devineni2015c	renal	severe	thalf	200	mg	canagliflozin	8	21.6	9.2						hr		N		
+Devineni2015c	renal	severe	oral-clearance	200	mg	canagliflozin	8	9.8	2.53						l/hr		N		
+Devineni2015c	renal	severe	recovery_24hr_plasma	200	mg	canagliflozin	8	0.1	0.04						percent		N		
+Devineni2015c	renal	severe	clearance_renal	200	mg	canagliflozin	8	0.01	7						l/hr		N		
+Devineni2015c	renal	severe	protein binding	200	mg	canagliflozin	8	99	0.09						percent		N		
+#																			
+Devineni2015c	renal	ESRD_pre	cmax	200	mg	canagliflozin	8	1433	509						ng/ml		N		
+Devineni2015c	renal	ESRD_pre	aucinf	200	mg	canagliflozin	8	14205	3648						ng/ml*hr		N		
+Devineni2015c	renal	ESRD_pre	tmax	200	mg	canagliflozin	8			2.25			1	6	hr		N		
+Devineni2015c	renal	ESRD_pre	thalf	200	mg	canagliflozin	8	21.4	12						hr		N		
+Devineni2015c	renal	ESRD_pre	oral-clearance	200	mg	canagliflozin	8	15	4.05						l/hr		N		
+Devineni2015c	renal	ESRD_pre	recovery_24hr_plasma	200	mg	canagliflozin	8								percent		N		
+Devineni2015c	renal	ESRD_pre	clearance_renal	200	mg	canagliflozin	8								l/hr		N		
+Devineni2015c	renal	ESRD_pre	protein binding	200	mg	canagliflozin	8	99.1	0.11						percent		N		
+#																			
+Devineni2015c	renal	ESRD_post	cmax	200	mg	canagliflozin	8	1287	277						ng/ml		N		
+Devineni2015c	renal	ESRD_post	aucinf	200	mg	canagliflozin	8	13587	3216						ng/ml*hr		N		
+Devineni2015c	renal	ESRD_post	tmax	200	mg	canagliflozin	8			2			1.5	5	hr		N		
+Devineni2015c	renal	ESRD_post	thalf	200	mg	canagliflozin	8	17.2	4.9						hr		N		
+Devineni2015c	renal	ESRD_post	oral-clearance	200	mg	canagliflozin	8	15.4	3.22						l/hr		N		
+Devineni2015c	renal	ESRD_post	recovery_24hr_plasma	200	mg	canagliflozin	8								percent		N		
+Devineni2015c	renal	ESRD_post	clearance_renal	200	mg	canagliflozin	8								l/hr		N		
+#Devineni2015c	renal	ESRD_post	protein binding	200	mg	canagliflozin	8	99.1	0.11						percent		N		
+#																			
+Devineni2015c	renal	normal	cmax	200	mg	M7	8	1159	380						ng/ml		N		
+Devineni2015c	renal	normal	aucinf	200	mg	M7	8	15949	4717						ng/ml*hr		N		
+Devineni2015c	renal	normal	tmax	200	mg	M7	8			3.5			2	6	hr		N		
+Devineni2015c	renal	normal	thalf	200	mg	M7	8	19.1	9.9						hr		N		
+Devineni2015c	renal	normal	recovery_24hr_plasma	200	mg	M7	8	17.7	3.6						percent		N		
+#						M7													
+Devineni2015c	renal	mild	cmax	200	mg	M7	8	1831	712						ng/ml		N		
+Devineni2015c	renal	mild	aucinf	200	mg	M7	8	22435	6972						ng/ml*hr		N		
+Devineni2015c	renal	mild	tmax	200	mg	M7	8			3.5			2	6	hr		N		
+Devineni2015c	renal	mild	thalf	200	mg	M7	8	22.7	9.6						hr		N		
+#Devineni2015c	renal	mild	recovery_24hr_plasma	200	mg	M7	8	14.2	2.45						percent		N		
+#						M7													
+Devineni2015c	renal	moderate	cmax	200	mg	M7	8	2437	1179						ng/ml		N		
+Devineni2015c	renal	moderate	aucinf	200	mg	M7	8	41103	19486						ng/ml*hr		N		
+Devineni2015c	renal	moderate	tmax	200	mg	M7	8			3.5			2	6	hr		N		
+Devineni2015c	renal	moderate	thalf	200	mg	M7	8	18	5.2						hr		N		
+Devineni2015c	renal	moderate	recovery_24hr_plasma	200	mg	M7	8	8.4	3.9						percent		N		
+#						M7													
+Devineni2015c	renal	severe	cmax	200	mg	M7	8	2216	1565						ng/ml		N		
+Devineni2015c	renal	severe	aucinf	200	mg	M7	8	39743	38407						ng/ml*hr		N		
+Devineni2015c	renal	severe	tmax	200	mg	M7	8			3.5			2	6	hr		N		
+Devineni2015c	renal	severe	thalf	200	mg	M7	8	25.3	16.5						hr		N		
+Devineni2015c	renal	severe	recovery_24hr_plasma	200	mg	M7	8	4.4	2.9						percent		N		
+#						M7													
+Devineni2015c	renal	ESRD_pre	cmax	200	mg	M7	8	2313	1372						ng/ml		N		
+Devineni2015c	renal	ESRD_pre	aucinf	200	mg	M7	8	35120	29380						ng/ml*hr		N		
+Devineni2015c	renal	ESRD_pre	tmax	200	mg	M7	8			3.52			0.2	6	hr		N		
+Devineni2015c	renal	ESRD_pre	thalf	200	mg	M7	8	22.5	12.8						hr		N		
+Devineni2015c	renal	ESRD_pre	recovery_24hr_plasma	200	mg	M7	8								percent		N		
+#						M7													
+Devineni2015c	renal	ESRD_post	cmax	200	mg	M7	8	2038	1197						ng/ml		N		
+Devineni2015c	renal	ESRD_post	aucinf	200	mg	M7	8	32229	25524						ng/ml*hr		N		
+Devineni2015c	renal	ESRD_post	tmax	200	mg	M7	8			3			2	6	hr		N		
+Devineni2015c	renal	ESRD_post	thalf	200	mg	M7	8	17.9	7.1						hr		N		
+Devineni2015c	renal	ESRD_post	recovery_24hr_plasma	200	mg	M7	8								percent		N		
+#																			
+Devineni2015c	renal	normal	cmax	200	mg	M5	8	703	175						ng/ml		N		
+Devineni2015c	renal	normal	aucinf	200	mg	M5	8	13467	6211						ng/ml*hr		N		
+Devineni2015c	renal	normal	tmax	200	mg	M5	8			4			2	8	hr		N		
+Devineni2015c	renal	normal	thalf	200	mg	M5	8	14	3.2						hr		N		
+Devineni2015c	renal	normal	recovery_24hr_plasma	200	mg	M5	8	8.5	2.5						percent		N		
+#						M5													
+Devineni2015c	renal	mild	cmax	200	mg	M5	8	1023	383						ng/ml		N		
+Devineni2015c	renal	mild	aucinf	200	mg	M5	8	16019	3922						ng/ml*hr		N		
+Devineni2015c	renal	mild	tmax	200	mg	M5	8			4			2	6	hr		N		
+Devineni2015c	renal	mild	thalf	200	mg	M5	8	22.4	11.2						hr		N		
+Devineni2015c	renal	mild	recovery_24hr_plasma	200	mg	M5	8	7.6	2.5						percent		N		
+#						M5													
+Devineni2015c	renal	moderate	cmax	200	mg	M5	8	1431	591						ng/ml		N		
+Devineni2015c	renal	moderate	aucinf	200	mg	M5	8	36297	23661						ng/ml*hr		N		
+Devineni2015c	renal	moderate	tmax	200	mg	M5	8			4.5			3	24.1	hr		N		
+Devineni2015c	renal	moderate	thalf	200	mg	M5	8	18.3	4.4						hr		N		
+Devineni2015c	renal	moderate	recovery_24hr_plasma	200	mg	M5	8	4.4	2.4						percent		N		
+#						M5													
+Devineni2015c	renal	severe	cmax	200	mg	M5	8	1651	1135						ng/ml		N		
+Devineni2015c	renal	severe	aucinf	200	mg	M5	8	40046	31479						ng/ml*hr		N		
+Devineni2015c	renal	severe	tmax	200	mg	M5	8			4			4	12	hr		N		
+Devineni2015c	renal	severe	thalf	200	mg	M5	8	22.4	9.7						hr		N		
+Devineni2015c	renal	severe	recovery_24hr_plasma	200	mg	M5	8	3.2	3.8						percent		N		
+#						M5													
+Devineni2015c	renal	ESRD_pre	cmax	200	mg	M5	8	1628	689						ng/ml		N		
+Devineni2015c	renal	ESRD_pre	aucinf	200	mg	M5	8	32238	22600						ng/ml*hr		N		
+Devineni2015c	renal	ESRD_pre	tmax	200	mg	M5	8			6			6	6	hr		N		
+Devineni2015c	renal	ESRD_pre	thalf	200	mg	M5	8	19.4	9.7						hr		N		
+Devineni2015c	renal	ESRD_pre	recovery_24hr_plasma	200	mg	M5	8								percent		N		
+#						M5													
+Devineni2015c	renal	ESRD_post	cmax	200	mg	M5	8	1725	687						ng/ml		N		
+Devineni2015c	renal	ESRD_post	aucinf	200	mg	M5	8	33625	19683						ng/ml*hr		N		
+Devineni2015c	renal	ESRD_post	tmax	200	mg	M5	8			6			5	6	hr		N		
+Devineni2015c	renal	ESRD_post	thalf	200	mg	M5	8	16.9	6.2						hr		N		
+#																			
+Inagaki2014	renal	normal	cmax	100	mg	canagliflozin	12	1213.66	337.87						ng/ml				
+Inagaki2014	renal	normal	aucinf	100	mg	canagliflozin	12	6929	1734						ng/ml*hr				
+Inagaki2014	renal	normal	tmax	100	mg	canagliflozin	12			1			1	3	hr				
+Inagaki2014	renal	normal	thalf	100	mg	canagliflozin	12	12.58	3.14						hr				
+#																			
+Inagaki2014	renal	moderate	cmax	100	mg	canagliflozin	12	1197.13	310.56						ng/ml				
+Inagaki2014	renal	moderate	aucinf	100	mg	canagliflozin	12	8766	2551						ng/ml*hr				
+Inagaki2014	renal	moderate	tmax	100	mg	canagliflozin	12			1			1	3	hr				
+Inagaki2014	renal	moderate	thalf	100	mg	canagliflozin	12	12.5	4.35						hr				
+#																			
+Inagaki2014	renal	normal	cmax	200	mg	canagliflozin	12	2415.61	739.88						ng/ml				
+Inagaki2014	renal	normal	aucinf	200	mg	canagliflozin	12	14815	4162						ng/ml*hr				
+Inagaki2014	renal	normal	tmax	200	mg	canagliflozin	12			1			1	6	hr				
+Inagaki2014	renal	normal	thalf	200	mg	canagliflozin	12	12.1	2.66						hr				
+#																			
+Inagaki2014	renal	moderate	cmax	200	mg	canagliflozin	12	2333.36	414.9						ng/ml				
+Inagaki2014	renal	moderate	aucinf	200	mg	canagliflozin	12	17835	4434						ng/ml*hr				
+Inagaki2014	renal	moderate	tmax	200	mg	canagliflozin	12			1			1	2	hr				
+Inagaki2014	renal	moderate	thalf	200	mg	canagliflozin	12	15.15	6.68						hr				
+#																			
+Inagaki2014	renal	normal	cmax	100	mg	M5	12	546.5	153.46						ng/ml				
+Inagaki2014	renal	normal	aucinf	100	mg	M5	12	6454	2047						ng/ml*hr				
+Inagaki2014	renal	normal	tmax	100	mg	M5	12			2			1.5	4	hr				
+Inagaki2014	renal	normal	thalf	100	mg	M5	12	12.28	2.42						hr				
+#																			
+Inagaki2014	renal	moderate	cmax	100	mg	M5	12	630.42	153.46						ng/ml				
+Inagaki2014	renal	moderate	aucinf	100	mg	M5	12	11132	4798						ng/ml*hr				
+Inagaki2014	renal	moderate	tmax	100	mg	M5	12			2			1.5	4	hr				
+Inagaki2014	renal	moderate	thalf	100	mg	M5	12	14.79	4.44						hr				
+#																			
+Inagaki2014	renal	normal	cmax	200	mg	M5	12	1032.92	247.63						ng/ml				
+Inagaki2014	renal	normal	aucinf	200	mg	M5	12	13487	4124						ng/ml*hr				
+Inagaki2014	renal	normal	tmax	200	mg	M5	12			2			1.5	6	hr				
+Inagaki2014	renal	normal	thalf	200	mg	M5	12	12.33	2.32						hr				
+#																			
+Inagaki2014	renal	moderate	cmax	200	mg	M5	12	1267.33	365.18						ng/ml				
+Inagaki2014	renal	moderate	aucinf	200	mg	M5	12	22729	8912						ng/ml*hr				
+Inagaki2014	renal	moderate	tmax	200	mg	M5	12			2			1.5	4	hr				
+Inagaki2014	renal	moderate	thalf	200	mg	M5	12	14.63	5.45						hr				
+#																			
+Inagaki2014	renal	normal	cmax	100	mg	M7	12	1092.08	333.58						ng/ml				
+Inagaki2014	renal	normal	aucinf	100	mg	M7	12	10152	3659						ng/ml*hr				
+Inagaki2014	renal	normal	tmax	100	mg	M7	12			2			2	4	hr				
+Inagaki2014	renal	normal	thalf	100	mg	M7	12	12.13	2.74						hr				
+#																			
+Inagaki2014	renal	moderate	cmax	100	mg	M7	12	1461.67	565.5						ng/ml				
+Inagaki2014	renal	moderate	aucinf	100	mg	M7	12	18205	9025						ng/ml*hr				
+Inagaki2014	renal	moderate	tmax	100	mg	M7	12			2			2	4	hr				
+Inagaki2014	renal	moderate	thalf	100	mg	M7	12	15.62	4.35						hr				
+#																			
+Inagaki2014	renal	normal	cmax	200	mg	M7	12	2040	780.85						ng/ml				
+Inagaki2014	renal	normal	aucinf	200	mg	M7	12	20307	8333						ng/ml*hr				
+Inagaki2014	renal	normal	tmax	200	mg	M7	12			2			1.5	6	hr				
+Inagaki2014	renal	normal	thalf	200	mg	M7	12	12.07	2.21						hr				
+#																			
+Inagaki2014	renal	moderate	cmax	200	mg	M7	12	2715.83	898.3						ng/ml				
+Inagaki2014	renal	moderate	aucinf	200	mg	M7	12	33927	13214						ng/ml*hr				
+Inagaki2014	renal	moderate	tmax	200	mg	M7	12			2			2	4	hr				
+Inagaki2014	renal	moderate	thalf	200	mg	M7	12	15.26	6.57						hr				
+#																			
+Devineni2015c	renal	normal	UGE_24hr	200	mg	glucose	1	22.7							g	1	N		
+Devineni2015c	renal	normal	UGE_24hr	200	mg	glucose	1	50.2							g	1	N		
+Devineni2015c	renal	normal	UGE_24hr	200	mg	glucose	1	41.3							g	1	N		
+Devineni2015c	renal	normal	UGE_24hr	200	mg	glucose	1	53.6							g	1	N		
+Devineni2015c	renal	normal	UGE_24hr	200	mg	glucose	1	53.4							g	1	N		
+Devineni2015c	renal	normal	UGE_24hr	200	mg	glucose	1	67.1							g	1	N		
+Devineni2015c	renal	normal	UGE_24hr	200	mg	glucose	1	71							g	1	N		
+Devineni2015c	renal	normal	UGE_24hr	200	mg	glucose	1	47.6							g	1	N		
+#																			
+Devineni2015c	renal	mild	UGE_24hr	200	mg	glucose	1	15.7							g	1	N		
+Devineni2015c	renal	mild	UGE_24hr	200	mg	glucose	1	16.3							g	1	N		
+Devineni2015c	renal	mild	UGE_24hr	200	mg	glucose	1	27							g	1	N		
+Devineni2015c	renal	mild	UGE_24hr	200	mg	glucose	1	30.9							g	1	N		
+Devineni2015c	renal	mild	UGE_24hr	200	mg	glucose	1	27.4							g	1	N		
+Devineni2015c	renal	mild	UGE_24hr	200	mg	glucose	1	27.9							g	1	N		
+Devineni2015c	renal	mild	UGE_24hr	200	mg	glucose	1	38.4							g	1	N		
+Devineni2015c	renal	mild	UGE_24hr	200	mg	glucose	1	24.3							g	1	N		
+#																			
+Devineni2015c	renal	moderate	UGE_24hr	200	mg	glucose	1	30.7							g	1	N		
+Devineni2015c	renal	moderate	UGE_24hr	200	mg	glucose	1	23.7							g	1	N		
+Devineni2015c	renal	moderate	UGE_24hr	200	mg	glucose	1	14.7							g	1	N		
+Devineni2015c	renal	moderate	UGE_24hr	200	mg	glucose	1	6							g	1	N		
+Devineni2015c	renal	moderate	UGE_24hr	200	mg	glucose	1	3.1							g	1	N		
+Devineni2015c	renal	moderate	UGE_24hr	200	mg	glucose	1	1.8							g	1	N		
+Devineni2015c	renal	moderate	UGE_24hr	200	mg	glucose	1	3.5							g	1	N		
+Devineni2015c	renal	moderate	UGE_24hr	200	mg	glucose	1	5							g	1	N		
+#																			
+Devineni2015c	renal	severe	UGE_24hr	200	mg	glucose	1	8.4							g	1	N		
+Devineni2015c	renal	severe	UGE_24hr	200	mg	glucose	1	6.6							g	1	N		
+Devineni2015c	renal	severe	UGE_24hr	200	mg	glucose	1	5.4							g	1	N		
+Devineni2015c	renal	severe	UGE_24hr	200	mg	glucose	1	4							g	1	N		
+Devineni2015c	renal	severe	UGE_24hr	200	mg	glucose	1	3.2							g	1	N		
+Devineni2015c	renal	severe	UGE_24hr	200	mg	glucose	1	1.8							g	1	N		
+Devineni2015c	renal	severe	UGE_24hr	200	mg	glucose	1	3							g	1	N		
+Devineni2015c	renal	severe	UGE_24hr	200	mg	glucose	1	6.4							g	1	N		

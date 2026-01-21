@@ -1,0 +1,121 @@
+from typing import Dict
+
+from sbmlsim.data import DataSet, load_pkdb_dataframe
+from sbmlsim.fit import FitMapping, FitData
+from sbmlutils.console import console
+
+from pkdb_models.models.canagliflozin.experiments.base_experiment import (
+    CanagliflozinSimulationExperiment,
+)
+from pkdb_models.models.canagliflozin.experiments.metadata import Tissue, Route, Dosing, ApplicationForm, Health, \
+    Fasting, CanagliflozinMappingMetaData, Coadministration
+
+from sbmlsim.plot import Axis, Figure
+from sbmlsim.simulation import Timecourse, TimecourseSim
+
+from pkdb_models.models.canagliflozin.helpers import run_experiments
+
+
+class Mohamed2019(CanagliflozinSimulationExperiment):
+    """Simulation experiment of Mohamed2019."""
+
+    fpg = 5  # [mM]
+    bodyweight = 75  # [kg] (no bodyweight given)
+
+    def datasets(self) -> Dict[str, DataSet]:
+        dsets = {}
+        for fig_id in ["Fig4"]:
+            df = load_pkdb_dataframe(f"{self.sid}_{fig_id}", data_path=self.data_path)
+            for label, df_label in df.groupby("label"):
+                dset = DataSet.from_df(df_label, self.ureg)
+
+                # unit conversion to mole/l
+                if label.startswith("canagliflozin_"):
+                    dset.unit_conversion("mean", 1 / self.Mr.can)
+                dsets[f"{label}"] = dset
+
+        # console.print(dsets)
+        # console.print(dsets.keys())
+        return dsets
+
+    def simulations(self) -> Dict[str, TimecourseSim]:
+        Q_ = self.Q_
+        tcsims = {}
+        tcsims[f"po_can50"] = TimecourseSim(
+            [Timecourse(
+                start=0,
+                end=80 * 60,  # [min]
+                steps=500,
+                changes={
+                    **self.default_changes(),
+                    "BW": Q_(self.bodyweight, "kg"),
+                    "PODOSE_can": Q_(50, "mg"),
+                    "[KI__fpg]": Q_(self.fpg, "mM"),
+                },
+            )]
+        )
+        return tcsims
+
+    def fit_mappings(self) -> Dict[str, FitMapping]:
+        mappings = {}
+        mappings[f"fm_po_can50"] = FitMapping(
+            self,
+            reference=FitData(
+                self,
+                dataset=f"canagliflozin_CAN50",
+                xid="time",
+                yid="mean",
+                yid_sd="mean_sd",
+                count="count",
+            ),
+            observable=FitData(
+                self, task=f"task_po_can50", xid="time", yid=f"[Cve_can]",
+            ),
+            metadata=CanagliflozinMappingMetaData(
+                tissue=Tissue.PLASMA,
+                route=Route.PO,
+                application_form=ApplicationForm.TABLET,
+                dosing=Dosing.SINGLE,
+                health=Health.HEALTHY,
+                fasting=Fasting.FASTED,
+                coadministration=Coadministration.METFORMIN
+            ),
+        )
+        # console.print(mappings)
+        return mappings
+
+    def figures(self) -> Dict[str, Figure]:
+        fig = Figure(
+            experiment=self,
+            sid="Fig4",
+            name=f"{self.__class__.__name__} (Healthy)",
+        )
+        plots = fig.create_plots(xaxis=Axis(self.label_time, unit=self.unit_time), legend=True)
+        plots[0].set_yaxis(self.label_can, unit=self.unit_can)
+
+        # simulation
+        plots[0].add_data(
+            task=f"task_po_can50",
+            xid="time",
+            yid=f"[Cve_can]",
+            label=f"50 mg PO",
+            color="black",
+        )
+        # data
+        plots[0].add_data(
+            dataset=f"canagliflozin_CAN50",
+            xid="time",
+            yid="mean",
+            yid_sd="mean_sd",
+            count="count",
+            label=f"50 mg PO",
+            color="black",
+        )
+
+        return {
+            fig.sid: fig,
+        }
+
+
+if __name__ == "__main__":
+    run_experiments(Mohamed2019, output_dir=Mohamed2019.__name__)

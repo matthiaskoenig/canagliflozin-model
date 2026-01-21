@@ -1,7 +1,7 @@
 {
   "experiment_id": "Inagaki2014",
   "base_path": "/home/mkoenig/git/pkdb_models/pkdb_models/models/canagliflozin",
-  "data_path": "[PosixPath('/home/mkoenig/git/pkdb_data/studies/canagliflozin')]",
+  "data_path": "[PosixPath('/home/mkoenig/git/pkdb_models/pkdb_models/models/canagliflozin/data/canagliflozin')]",
   "models": {
     "model": {
       "sid": null,
@@ -46,100 +46,12 @@
           "end": 4380,
           "steps": 500,
           "changes": {
-            "ftissue_can": {
-              "_magnitude": 0.5907025360669715,
-              "_units": "l_per_min"
-            },
-            "Kp_can": {
-              "_magnitude": 1.002186894659328,
-              "_units": "dimensionless"
-            },
-            "LI__CANIM_Vmax": {
-              "_magnitude": 0.6724144350621387,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "KI__CANEX_k": {
-              "_magnitude": 0.003620232018677586,
-              "_units": "KI__per_min"
-            },
-            "GU__CANABS_k": {
-              "_magnitude": 0.014857823531040652,
-              "_units": "GU__per_min"
-            },
-            "LI__CAN2M5_Vmax": {
-              "_magnitude": 0.004471516434657664,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "LI__CAN2M5_Km_can": {
-              "_magnitude": 0.29493539325204393,
-              "_units": "LI__mM"
-            },
-            "LI__M5EX_Km_m5": {
-              "_magnitude": 0.18169494628559774,
-              "_units": "LI__mM"
-            },
-            "LI__M5EX_Vmax": {
-              "_magnitude": 0.448042513666378,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "KI__M5EX_k": {
-              "_magnitude": 0.10556919062775157,
-              "_units": "KI__per_min"
-            },
-            "ftissue_m5": {
-              "_magnitude": 0.0034928983363240276,
-              "_units": "l_per_min"
-            },
-            "Kp_m5": {
-              "_magnitude": 3.9832348764531975,
-              "_units": "dimensionless"
-            },
-            "LI__CAN2M7_Vmax": {
-              "_magnitude": 0.002145888093579888,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "LI__M7EX_Vmax": {
-              "_magnitude": 0.1258350901232781,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "KI__M7EX_k": {
-              "_magnitude": 0.18975923261901775,
-              "_units": "KI__per_min"
-            },
-            "ftissue_m7": {
-              "_magnitude": 0.00012251814828952693,
-              "_units": "l_per_min"
-            },
-            "Kp_m7": {
-              "_magnitude": 2.7484358268874036,
-              "_units": "dimensionless"
-            },
-            "LI__CAN2M9_Vmax": {
-              "_magnitude": 0.005649017628006681,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "KI__RTG_E50": {
-              "_magnitude": 1.7058500169355005e-05,
-              "_units": "KI__mM"
-            },
-            "KI__RTG_base": {
-              "_magnitude": 9.00528652661515,
-              "_units": "KI__mM"
-            },
-            "KI__RTG_max_inhibition": {
-              "_magnitude": 0.6244535441073977,
-              "_units": "dimensionless"
-            },
-            "KI__RTG_m_fpg": {
-              "_magnitude": 0.7189836466732434,
-              "_units": "dimensionless"
-            },
             "BW": {
               "_magnitude": 75.33,
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 10.172222222222224,
+              "_magnitude": 10.172222222222222,
               "_units": "KI__mmole / liter"
             },
             "KI__f_renal_function": {
@@ -168,100 +80,12 @@
           "end": 4380,
           "steps": 500,
           "changes": {
-            "ftissue_can": {
-              "_magnitude": 0.5907025360669715,
-              "_units": "l_per_min"
-            },
-            "Kp_can": {
-              "_magnitude": 1.002186894659328,
-              "_units": "dimensionless"
-            },
-            "LI__CANIM_Vmax": {
-              "_magnitude": 0.6724144350621387,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "KI__CANEX_k": {
-              "_magnitude": 0.003620232018677586,
-              "_units": "KI__per_min"
-            },
-            "GU__CANABS_k": {
-              "_magnitude": 0.014857823531040652,
-              "_units": "GU__per_min"
-            },
-            "LI__CAN2M5_Vmax": {
-              "_magnitude": 0.004471516434657664,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "LI__CAN2M5_Km_can": {
-              "_magnitude": 0.29493539325204393,
-              "_units": "LI__mM"
-            },
-            "LI__M5EX_Km_m5": {
-              "_magnitude": 0.18169494628559774,
-              "_units": "LI__mM"
-            },
-            "LI__M5EX_Vmax": {
-              "_magnitude": 0.448042513666378,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "KI__M5EX_k": {
-              "_magnitude": 0.10556919062775157,
-              "_units": "KI__per_min"
-            },
-            "ftissue_m5": {
-              "_magnitude": 0.0034928983363240276,
-              "_units": "l_per_min"
-            },
-            "Kp_m5": {
-              "_magnitude": 3.9832348764531975,
-              "_units": "dimensionless"
-            },
-            "LI__CAN2M7_Vmax": {
-              "_magnitude": 0.002145888093579888,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "LI__M7EX_Vmax": {
-              "_magnitude": 0.1258350901232781,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "KI__M7EX_k": {
-              "_magnitude": 0.18975923261901775,
-              "_units": "KI__per_min"
-            },
-            "ftissue_m7": {
-              "_magnitude": 0.00012251814828952693,
-              "_units": "l_per_min"
-            },
-            "Kp_m7": {
-              "_magnitude": 2.7484358268874036,
-              "_units": "dimensionless"
-            },
-            "LI__CAN2M9_Vmax": {
-              "_magnitude": 0.005649017628006681,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "KI__RTG_E50": {
-              "_magnitude": 1.7058500169355005e-05,
-              "_units": "KI__mM"
-            },
-            "KI__RTG_base": {
-              "_magnitude": 9.00528652661515,
-              "_units": "KI__mM"
-            },
-            "KI__RTG_max_inhibition": {
-              "_magnitude": 0.6244535441073977,
-              "_units": "dimensionless"
-            },
-            "KI__RTG_m_fpg": {
-              "_magnitude": 0.7189836466732434,
-              "_units": "dimensionless"
-            },
             "BW": {
               "_magnitude": 74.85,
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 9.305555555555557,
+              "_magnitude": 9.305555555555555,
               "_units": "KI__mmole / liter"
             },
             "KI__f_renal_function": {
@@ -290,100 +114,12 @@
           "end": 4380,
           "steps": 500,
           "changes": {
-            "ftissue_can": {
-              "_magnitude": 0.5907025360669715,
-              "_units": "l_per_min"
-            },
-            "Kp_can": {
-              "_magnitude": 1.002186894659328,
-              "_units": "dimensionless"
-            },
-            "LI__CANIM_Vmax": {
-              "_magnitude": 0.6724144350621387,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "KI__CANEX_k": {
-              "_magnitude": 0.003620232018677586,
-              "_units": "KI__per_min"
-            },
-            "GU__CANABS_k": {
-              "_magnitude": 0.014857823531040652,
-              "_units": "GU__per_min"
-            },
-            "LI__CAN2M5_Vmax": {
-              "_magnitude": 0.004471516434657664,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "LI__CAN2M5_Km_can": {
-              "_magnitude": 0.29493539325204393,
-              "_units": "LI__mM"
-            },
-            "LI__M5EX_Km_m5": {
-              "_magnitude": 0.18169494628559774,
-              "_units": "LI__mM"
-            },
-            "LI__M5EX_Vmax": {
-              "_magnitude": 0.448042513666378,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "KI__M5EX_k": {
-              "_magnitude": 0.10556919062775157,
-              "_units": "KI__per_min"
-            },
-            "ftissue_m5": {
-              "_magnitude": 0.0034928983363240276,
-              "_units": "l_per_min"
-            },
-            "Kp_m5": {
-              "_magnitude": 3.9832348764531975,
-              "_units": "dimensionless"
-            },
-            "LI__CAN2M7_Vmax": {
-              "_magnitude": 0.002145888093579888,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "LI__M7EX_Vmax": {
-              "_magnitude": 0.1258350901232781,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "KI__M7EX_k": {
-              "_magnitude": 0.18975923261901775,
-              "_units": "KI__per_min"
-            },
-            "ftissue_m7": {
-              "_magnitude": 0.00012251814828952693,
-              "_units": "l_per_min"
-            },
-            "Kp_m7": {
-              "_magnitude": 2.7484358268874036,
-              "_units": "dimensionless"
-            },
-            "LI__CAN2M9_Vmax": {
-              "_magnitude": 0.005649017628006681,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "KI__RTG_E50": {
-              "_magnitude": 1.7058500169355005e-05,
-              "_units": "KI__mM"
-            },
-            "KI__RTG_base": {
-              "_magnitude": 9.00528652661515,
-              "_units": "KI__mM"
-            },
-            "KI__RTG_max_inhibition": {
-              "_magnitude": 0.6244535441073977,
-              "_units": "dimensionless"
-            },
-            "KI__RTG_m_fpg": {
-              "_magnitude": 0.7189836466732434,
-              "_units": "dimensionless"
-            },
             "BW": {
               "_magnitude": 75.33,
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 10.172222222222224,
+              "_magnitude": 10.172222222222222,
               "_units": "KI__mmole / liter"
             },
             "KI__f_renal_function": {
@@ -412,100 +148,12 @@
           "end": 4380,
           "steps": 500,
           "changes": {
-            "ftissue_can": {
-              "_magnitude": 0.5907025360669715,
-              "_units": "l_per_min"
-            },
-            "Kp_can": {
-              "_magnitude": 1.002186894659328,
-              "_units": "dimensionless"
-            },
-            "LI__CANIM_Vmax": {
-              "_magnitude": 0.6724144350621387,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "KI__CANEX_k": {
-              "_magnitude": 0.003620232018677586,
-              "_units": "KI__per_min"
-            },
-            "GU__CANABS_k": {
-              "_magnitude": 0.014857823531040652,
-              "_units": "GU__per_min"
-            },
-            "LI__CAN2M5_Vmax": {
-              "_magnitude": 0.004471516434657664,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "LI__CAN2M5_Km_can": {
-              "_magnitude": 0.29493539325204393,
-              "_units": "LI__mM"
-            },
-            "LI__M5EX_Km_m5": {
-              "_magnitude": 0.18169494628559774,
-              "_units": "LI__mM"
-            },
-            "LI__M5EX_Vmax": {
-              "_magnitude": 0.448042513666378,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "KI__M5EX_k": {
-              "_magnitude": 0.10556919062775157,
-              "_units": "KI__per_min"
-            },
-            "ftissue_m5": {
-              "_magnitude": 0.0034928983363240276,
-              "_units": "l_per_min"
-            },
-            "Kp_m5": {
-              "_magnitude": 3.9832348764531975,
-              "_units": "dimensionless"
-            },
-            "LI__CAN2M7_Vmax": {
-              "_magnitude": 0.002145888093579888,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "LI__M7EX_Vmax": {
-              "_magnitude": 0.1258350901232781,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "KI__M7EX_k": {
-              "_magnitude": 0.18975923261901775,
-              "_units": "KI__per_min"
-            },
-            "ftissue_m7": {
-              "_magnitude": 0.00012251814828952693,
-              "_units": "l_per_min"
-            },
-            "Kp_m7": {
-              "_magnitude": 2.7484358268874036,
-              "_units": "dimensionless"
-            },
-            "LI__CAN2M9_Vmax": {
-              "_magnitude": 0.005649017628006681,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "KI__RTG_E50": {
-              "_magnitude": 1.7058500169355005e-05,
-              "_units": "KI__mM"
-            },
-            "KI__RTG_base": {
-              "_magnitude": 9.00528652661515,
-              "_units": "KI__mM"
-            },
-            "KI__RTG_max_inhibition": {
-              "_magnitude": 0.6244535441073977,
-              "_units": "dimensionless"
-            },
-            "KI__RTG_m_fpg": {
-              "_magnitude": 0.7189836466732434,
-              "_units": "dimensionless"
-            },
             "BW": {
               "_magnitude": 74.85,
               "_units": "kilogram"
             },
             "[KI__fpg]": {
-              "_magnitude": 9.305555555555557,
+              "_magnitude": 9.305555555555555,
               "_units": "KI__mmole / liter"
             },
             "KI__f_renal_function": {
@@ -1394,10 +1042,10 @@
     "Fig_single": {
       "sid": "Fig_single",
       "name": "Inagaki2014 (T2DM)",
-      "num_rows": 3,
-      "num_cols": 1,
-      "width": 7.0,
-      "height": 15.0,
+      "num_rows": 1,
+      "num_cols": 3,
+      "width": 21.0,
+      "height": 5.0,
       "subplots": [
         {
           "sid": null,
@@ -1407,8 +1055,8 @@
             "name": null,
             "xaxis": {
               "sid": "Fig_single__plot0_xaxis",
-              "name": "time [hr]",
-              "label": "time",
+              "name": "Time [hr]",
+              "label": "Time",
               "unit": "hr",
               "scale": "LINEAR",
               "min": null,
@@ -1419,8 +1067,8 @@
             },
             "yaxis": {
               "sid": "Fig_single__plot0_yaxis",
-              "name": "canagliflozin [\u00b5M]",
-              "label": "canagliflozin",
+              "name": "Canagliflozin [\u00b5M]",
+              "label": "Canagliflozin",
               "unit": "\u00b5M",
               "scale": "LINEAR",
               "min": null,
@@ -1436,7 +1084,7 @@
             "curves": [
               {
                 "sid": "Fig_single__plot0_curve0",
-                "name": "Sim NRF 100 mg",
+                "name": "100 mg PO (NRF)",
                 "x": "task_po_can100_normal__time",
                 "y": "task_po_can100_normal__Cve_can",
                 "xerr": null,
@@ -1449,7 +1097,7 @@
                   "line": {
                     "type": "SOLID",
                     "color": "#000000ff",
-                    "thickness": 2.0
+                    "thickness": 2
                   },
                   "marker": {
                     "size": null,
@@ -1467,7 +1115,7 @@
               },
               {
                 "sid": "Fig_single__plot0_curve1",
-                "name": "NRF 100 mg\u00b1SD (n=12)",
+                "name": "100 mg PO (NRF)\u00b1SD (n=12)",
                 "x": "canagliflozin_CAN100_normal__time",
                 "y": "canagliflozin_CAN100_normal__mean",
                 "xerr": null,
@@ -1498,7 +1146,7 @@
               },
               {
                 "sid": "Fig_single__plot0_curve2",
-                "name": "Sim NRF 200 mg",
+                "name": "200 mg PO (NRF)",
                 "x": "task_po_can200_normal__time",
                 "y": "task_po_can200_normal__Cve_can",
                 "xerr": null,
@@ -1511,7 +1159,7 @@
                   "line": {
                     "type": "SOLID",
                     "color": "#000000ff",
-                    "thickness": 2.0
+                    "thickness": 3
                   },
                   "marker": {
                     "size": null,
@@ -1529,7 +1177,7 @@
               },
               {
                 "sid": "Fig_single__plot0_curve3",
-                "name": "NRF 200 mg\u00b1SD (n=12)",
+                "name": "200 mg PO (NRF)\u00b1SD (n=12)",
                 "x": "canagliflozin_CAN200_normal__time",
                 "y": "canagliflozin_CAN200_normal__mean",
                 "xerr": null,
@@ -1546,7 +1194,7 @@
                   },
                   "marker": {
                     "size": null,
-                    "type": "CIRCLE",
+                    "type": "DIAMOND",
                     "fill": "#000000ff",
                     "line_color": "#000000ff",
                     "line_thickness": null
@@ -1560,7 +1208,7 @@
               },
               {
                 "sid": "Fig_single__plot0_curve4",
-                "name": "Sim MRI 100 mg",
+                "name": "100 mg PO (MRI)",
                 "x": "task_po_can100_moderate__time",
                 "y": "task_po_can100_moderate__Cve_can",
                 "xerr": null,
@@ -1573,7 +1221,7 @@
                   "line": {
                     "type": "SOLID",
                     "color": "#2ca25fff",
-                    "thickness": 2.0
+                    "thickness": 2
                   },
                   "marker": {
                     "size": null,
@@ -1591,7 +1239,7 @@
               },
               {
                 "sid": "Fig_single__plot0_curve5",
-                "name": "MRI 100 mg\u00b1SD (n=12)",
+                "name": "100 mg PO (MRI)\u00b1SD (n=12)",
                 "x": "canagliflozin_CAN100_moderate__time",
                 "y": "canagliflozin_CAN100_moderate__mean",
                 "xerr": null,
@@ -1622,7 +1270,7 @@
               },
               {
                 "sid": "Fig_single__plot0_curve6",
-                "name": "Sim MRI 200 mg",
+                "name": "200 mg PO (MRI)",
                 "x": "task_po_can200_moderate__time",
                 "y": "task_po_can200_moderate__Cve_can",
                 "xerr": null,
@@ -1635,7 +1283,7 @@
                   "line": {
                     "type": "SOLID",
                     "color": "#2ca25fff",
-                    "thickness": 2.0
+                    "thickness": 3
                   },
                   "marker": {
                     "size": null,
@@ -1653,7 +1301,7 @@
               },
               {
                 "sid": "Fig_single__plot0_curve7",
-                "name": "MRI 200 mg\u00b1SD (n=12)",
+                "name": "200 mg PO (MRI)\u00b1SD (n=12)",
                 "x": "canagliflozin_CAN200_moderate__time",
                 "y": "canagliflozin_CAN200_moderate__mean",
                 "xerr": null,
@@ -1670,7 +1318,7 @@
                   },
                   "marker": {
                     "size": null,
-                    "type": "CIRCLE",
+                    "type": "DIAMOND",
                     "fill": "#2ca25fff",
                     "line_color": "#000000ff",
                     "line_thickness": null
@@ -1698,8 +1346,8 @@
             "name": null,
             "xaxis": {
               "sid": "Fig_single__plot1_xaxis",
-              "name": "time [hr]",
-              "label": "time",
+              "name": "Time [hr]",
+              "label": "Time",
               "unit": "hr",
               "scale": "LINEAR",
               "min": null,
@@ -1727,7 +1375,7 @@
             "curves": [
               {
                 "sid": "Fig_single__plot1_curve0",
-                "name": "Sim NRF 100 mg",
+                "name": "100 mg PO (NRF)",
                 "x": "task_po_can100_normal__time",
                 "y": "task_po_can100_normal__Cve_m5",
                 "xerr": null,
@@ -1740,7 +1388,7 @@
                   "line": {
                     "type": "SOLID",
                     "color": "#000000ff",
-                    "thickness": 2.0
+                    "thickness": 2
                   },
                   "marker": {
                     "size": null,
@@ -1758,7 +1406,7 @@
               },
               {
                 "sid": "Fig_single__plot1_curve1",
-                "name": "NRF 100 mg\u00b1SD (n=12)",
+                "name": "100 mg PO (NRF)\u00b1SD (n=12)",
                 "x": "M5_CAN100_normal__time",
                 "y": "M5_CAN100_normal__mean",
                 "xerr": null,
@@ -1789,7 +1437,7 @@
               },
               {
                 "sid": "Fig_single__plot1_curve2",
-                "name": "Sim NRF 200 mg",
+                "name": "200 mg PO (NRF)",
                 "x": "task_po_can200_normal__time",
                 "y": "task_po_can200_normal__Cve_m5",
                 "xerr": null,
@@ -1802,7 +1450,7 @@
                   "line": {
                     "type": "SOLID",
                     "color": "#000000ff",
-                    "thickness": 2.0
+                    "thickness": 3
                   },
                   "marker": {
                     "size": null,
@@ -1820,7 +1468,7 @@
               },
               {
                 "sid": "Fig_single__plot1_curve3",
-                "name": "NRF 200 mg\u00b1SD (n=12)",
+                "name": "200 mg PO (NRF)\u00b1SD (n=12)",
                 "x": "M5_CAN200_normal__time",
                 "y": "M5_CAN200_normal__mean",
                 "xerr": null,
@@ -1837,7 +1485,7 @@
                   },
                   "marker": {
                     "size": null,
-                    "type": "CIRCLE",
+                    "type": "DIAMOND",
                     "fill": "#000000ff",
                     "line_color": "#000000ff",
                     "line_thickness": null
@@ -1851,7 +1499,7 @@
               },
               {
                 "sid": "Fig_single__plot1_curve4",
-                "name": "Sim MRI 100 mg",
+                "name": "100 mg PO (MRI)",
                 "x": "task_po_can100_moderate__time",
                 "y": "task_po_can100_moderate__Cve_m5",
                 "xerr": null,
@@ -1864,7 +1512,7 @@
                   "line": {
                     "type": "SOLID",
                     "color": "#2ca25fff",
-                    "thickness": 2.0
+                    "thickness": 2
                   },
                   "marker": {
                     "size": null,
@@ -1882,7 +1530,7 @@
               },
               {
                 "sid": "Fig_single__plot1_curve5",
-                "name": "MRI 100 mg\u00b1SD (n=12)",
+                "name": "100 mg PO (MRI)\u00b1SD (n=12)",
                 "x": "M5_CAN100_moderate__time",
                 "y": "M5_CAN100_moderate__mean",
                 "xerr": null,
@@ -1913,7 +1561,7 @@
               },
               {
                 "sid": "Fig_single__plot1_curve6",
-                "name": "Sim MRI 200 mg",
+                "name": "200 mg PO (MRI)",
                 "x": "task_po_can200_moderate__time",
                 "y": "task_po_can200_moderate__Cve_m5",
                 "xerr": null,
@@ -1926,7 +1574,7 @@
                   "line": {
                     "type": "SOLID",
                     "color": "#2ca25fff",
-                    "thickness": 2.0
+                    "thickness": 3
                   },
                   "marker": {
                     "size": null,
@@ -1944,7 +1592,7 @@
               },
               {
                 "sid": "Fig_single__plot1_curve7",
-                "name": "MRI 200 mg\u00b1SD (n=12)",
+                "name": "200 mg PO (MRI)\u00b1SD (n=12)",
                 "x": "M5_CAN200_moderate__time",
                 "y": "M5_CAN200_moderate__mean",
                 "xerr": null,
@@ -1961,7 +1609,7 @@
                   },
                   "marker": {
                     "size": null,
-                    "type": "CIRCLE",
+                    "type": "DIAMOND",
                     "fill": "#2ca25fff",
                     "line_color": "#000000ff",
                     "line_thickness": null
@@ -1976,8 +1624,8 @@
             ],
             "areas": []
           },
-          "row": 2,
-          "col": 1,
+          "row": 1,
+          "col": 2,
           "row_span": 1,
           "col_span": 1
         },
@@ -1989,8 +1637,8 @@
             "name": null,
             "xaxis": {
               "sid": "Fig_single__plot2_xaxis",
-              "name": "time [hr]",
-              "label": "time",
+              "name": "Time [hr]",
+              "label": "Time",
               "unit": "hr",
               "scale": "LINEAR",
               "min": null,
@@ -2018,7 +1666,7 @@
             "curves": [
               {
                 "sid": "Fig_single__plot2_curve0",
-                "name": "Sim NRF 100 mg",
+                "name": "100 mg PO (NRF)",
                 "x": "task_po_can100_normal__time",
                 "y": "task_po_can100_normal__Cve_m7",
                 "xerr": null,
@@ -2031,7 +1679,7 @@
                   "line": {
                     "type": "SOLID",
                     "color": "#000000ff",
-                    "thickness": 2.0
+                    "thickness": 2
                   },
                   "marker": {
                     "size": null,
@@ -2049,7 +1697,7 @@
               },
               {
                 "sid": "Fig_single__plot2_curve1",
-                "name": "NRF 100 mg\u00b1SD (n=12)",
+                "name": "100 mg PO (NRF)\u00b1SD (n=12)",
                 "x": "M7_CAN100_normal__time",
                 "y": "M7_CAN100_normal__mean",
                 "xerr": null,
@@ -2080,7 +1728,7 @@
               },
               {
                 "sid": "Fig_single__plot2_curve2",
-                "name": "Sim NRF 200 mg",
+                "name": "200 mg PO (NRF)",
                 "x": "task_po_can200_normal__time",
                 "y": "task_po_can200_normal__Cve_m7",
                 "xerr": null,
@@ -2093,7 +1741,7 @@
                   "line": {
                     "type": "SOLID",
                     "color": "#000000ff",
-                    "thickness": 2.0
+                    "thickness": 3
                   },
                   "marker": {
                     "size": null,
@@ -2111,7 +1759,7 @@
               },
               {
                 "sid": "Fig_single__plot2_curve3",
-                "name": "NRF 200 mg\u00b1SD (n=12)",
+                "name": "200 mg PO (NRF)\u00b1SD (n=12)",
                 "x": "M7_CAN200_normal__time",
                 "y": "M7_CAN200_normal__mean",
                 "xerr": null,
@@ -2128,7 +1776,7 @@
                   },
                   "marker": {
                     "size": null,
-                    "type": "CIRCLE",
+                    "type": "DIAMOND",
                     "fill": "#000000ff",
                     "line_color": "#000000ff",
                     "line_thickness": null
@@ -2142,7 +1790,7 @@
               },
               {
                 "sid": "Fig_single__plot2_curve4",
-                "name": "Sim MRI 100 mg",
+                "name": "100 mg PO (MRI)",
                 "x": "task_po_can100_moderate__time",
                 "y": "task_po_can100_moderate__Cve_m7",
                 "xerr": null,
@@ -2155,7 +1803,7 @@
                   "line": {
                     "type": "SOLID",
                     "color": "#2ca25fff",
-                    "thickness": 2.0
+                    "thickness": 2
                   },
                   "marker": {
                     "size": null,
@@ -2173,7 +1821,7 @@
               },
               {
                 "sid": "Fig_single__plot2_curve5",
-                "name": "MRI 100 mg\u00b1SD (n=12)",
+                "name": "100 mg PO (MRI)\u00b1SD (n=12)",
                 "x": "M7_CAN100_moderate__time",
                 "y": "M7_CAN100_moderate__mean",
                 "xerr": null,
@@ -2204,7 +1852,7 @@
               },
               {
                 "sid": "Fig_single__plot2_curve6",
-                "name": "Sim MRI 200 mg",
+                "name": "200 mg PO (MRI)",
                 "x": "task_po_can200_moderate__time",
                 "y": "task_po_can200_moderate__Cve_m7",
                 "xerr": null,
@@ -2217,7 +1865,7 @@
                   "line": {
                     "type": "SOLID",
                     "color": "#2ca25fff",
-                    "thickness": 2.0
+                    "thickness": 3
                   },
                   "marker": {
                     "size": null,
@@ -2235,7 +1883,7 @@
               },
               {
                 "sid": "Fig_single__plot2_curve7",
-                "name": "MRI 200 mg\u00b1SD (n=12)",
+                "name": "200 mg PO (MRI)\u00b1SD (n=12)",
                 "x": "M7_CAN200_moderate__time",
                 "y": "M7_CAN200_moderate__mean",
                 "xerr": null,
@@ -2252,7 +1900,7 @@
                   },
                   "marker": {
                     "size": null,
-                    "type": "CIRCLE",
+                    "type": "DIAMOND",
                     "fill": "#2ca25fff",
                     "line_color": "#000000ff",
                     "line_thickness": null
@@ -2267,8 +1915,8 @@
             ],
             "areas": []
           },
-          "row": 3,
-          "col": 1,
+          "row": 1,
+          "col": 3,
           "row_span": 1,
           "col_span": 1
         }
@@ -2290,8 +1938,8 @@
             "name": null,
             "xaxis": {
               "sid": "Fig_urine__plot0_xaxis",
-              "name": "time [hr]",
-              "label": "time",
+              "name": "Time [hr]",
+              "label": "Time",
               "unit": "hr",
               "scale": "LINEAR",
               "min": null,
@@ -2302,8 +1950,8 @@
             },
             "yaxis": {
               "sid": "Fig_urine__plot0_yaxis",
-              "name": "canagliflozin urine [\u00b5mole]",
-              "label": "canagliflozin urine",
+              "name": "Canagliflozin Urine [\u00b5mole]",
+              "label": "Canagliflozin Urine",
               "unit": "\u00b5mole",
               "scale": "LINEAR",
               "min": null,
@@ -2319,7 +1967,7 @@
             "curves": [
               {
                 "sid": "Fig_urine__plot0_curve0",
-                "name": "Sim NRF 100 mg",
+                "name": "100 mg PO (NRF)",
                 "x": "task_po_can100_normal__time",
                 "y": "task_po_can100_normal__Aurine_can",
                 "xerr": null,
@@ -2332,7 +1980,7 @@
                   "line": {
                     "type": "SOLID",
                     "color": "#000000ff",
-                    "thickness": 2.0
+                    "thickness": 2
                   },
                   "marker": {
                     "size": null,
@@ -2350,7 +1998,7 @@
               },
               {
                 "sid": "Fig_urine__plot0_curve1",
-                "name": "NRF 100 mg\u00b1SD (n=12)",
+                "name": "100 mg PO (NRF)\u00b1SD (n=12)",
                 "x": "canagliflozin_urine_CAN100_normal__time",
                 "y": "canagliflozin_urine_CAN100_normal__mean",
                 "xerr": null,
@@ -2361,7 +2009,7 @@
                   "name": null,
                   "base_style": null,
                   "line": {
-                    "type": "DASH",
+                    "type": "NONE",
                     "color": "#000000ff",
                     "thickness": 1.0
                   },
@@ -2381,7 +2029,7 @@
               },
               {
                 "sid": "Fig_urine__plot0_curve2",
-                "name": "Sim MRI 100 mg",
+                "name": "100 mg PO (MRI)",
                 "x": "task_po_can100_moderate__time",
                 "y": "task_po_can100_moderate__Aurine_can",
                 "xerr": null,
@@ -2394,7 +2042,7 @@
                   "line": {
                     "type": "SOLID",
                     "color": "#2ca25fff",
-                    "thickness": 2.0
+                    "thickness": 2
                   },
                   "marker": {
                     "size": null,
@@ -2412,7 +2060,7 @@
               },
               {
                 "sid": "Fig_urine__plot0_curve3",
-                "name": "MRI 100 mg\u00b1SD (n=12)",
+                "name": "100 mg PO (MRI)\u00b1SD (n=12)",
                 "x": "canagliflozin_urine_CAN100_moderate__time",
                 "y": "canagliflozin_urine_CAN100_moderate__mean",
                 "xerr": null,
@@ -2423,7 +2071,7 @@
                   "name": null,
                   "base_style": null,
                   "line": {
-                    "type": "DASH",
+                    "type": "NONE",
                     "color": "#2ca25fff",
                     "thickness": 1.0
                   },
@@ -2443,7 +2091,7 @@
               },
               {
                 "sid": "Fig_urine__plot0_curve4",
-                "name": "Sim NRF 200 mg",
+                "name": "200 mg PO (NRF)",
                 "x": "task_po_can200_normal__time",
                 "y": "task_po_can200_normal__Aurine_can",
                 "xerr": null,
@@ -2456,7 +2104,7 @@
                   "line": {
                     "type": "SOLID",
                     "color": "#000000ff",
-                    "thickness": 2.0
+                    "thickness": 3
                   },
                   "marker": {
                     "size": null,
@@ -2474,7 +2122,7 @@
               },
               {
                 "sid": "Fig_urine__plot0_curve5",
-                "name": "NRF 200 mg\u00b1SD (n=12)",
+                "name": "200 mg PO (NRF)\u00b1SD (n=12)",
                 "x": "canagliflozin_urine_CAN200_normal__time",
                 "y": "canagliflozin_urine_CAN200_normal__mean",
                 "xerr": null,
@@ -2485,13 +2133,13 @@
                   "name": null,
                   "base_style": null,
                   "line": {
-                    "type": "DASH",
+                    "type": "NONE",
                     "color": "#000000ff",
                     "thickness": 1.0
                   },
                   "marker": {
                     "size": null,
-                    "type": "CIRCLE",
+                    "type": "DIAMOND",
                     "fill": "#000000ff",
                     "line_color": "#000000ff",
                     "line_thickness": null
@@ -2505,7 +2153,7 @@
               },
               {
                 "sid": "Fig_urine__plot0_curve6",
-                "name": "Sim MRI 200 mg",
+                "name": "200 mg PO (MRI)",
                 "x": "task_po_can200_moderate__time",
                 "y": "task_po_can200_moderate__Aurine_can",
                 "xerr": null,
@@ -2518,7 +2166,7 @@
                   "line": {
                     "type": "SOLID",
                     "color": "#2ca25fff",
-                    "thickness": 2.0
+                    "thickness": 3
                   },
                   "marker": {
                     "size": null,
@@ -2536,7 +2184,7 @@
               },
               {
                 "sid": "Fig_urine__plot0_curve7",
-                "name": "MRI 200 mg\u00b1SD (n=12)",
+                "name": "200 mg PO (MRI)\u00b1SD (n=12)",
                 "x": "canagliflozin_urine_CAN200_moderate__time",
                 "y": "canagliflozin_urine_CAN200_moderate__mean",
                 "xerr": null,
@@ -2547,13 +2195,13 @@
                   "name": null,
                   "base_style": null,
                   "line": {
-                    "type": "DASH",
+                    "type": "NONE",
                     "color": "#2ca25fff",
                     "thickness": 1.0
                   },
                   "marker": {
                     "size": null,
-                    "type": "CIRCLE",
+                    "type": "DIAMOND",
                     "fill": "#2ca25fff",
                     "line_color": "#000000ff",
                     "line_thickness": null
@@ -2591,8 +2239,8 @@
             "name": null,
             "xaxis": {
               "sid": "Fig_uge__plot0_xaxis",
-              "name": "time [hr]",
-              "label": "time",
+              "name": "Time [hr]",
+              "label": "Time",
               "unit": "hr",
               "scale": "LINEAR",
               "min": null,
@@ -2603,8 +2251,8 @@
             },
             "yaxis": {
               "sid": "Fig_uge__plot0_yaxis",
-              "name": "urinary glucose excretion\n(UGE) [g]",
-              "label": "urinary glucose excretion\n(UGE)",
+              "name": "UGE [g]",
+              "label": "UGE",
               "unit": "g",
               "scale": "LINEAR",
               "min": null,
@@ -2620,7 +2268,7 @@
             "curves": [
               {
                 "sid": "Fig_uge__plot0_curve0",
-                "name": "Sim normal 100 mg",
+                "name": "100 mg PO (NRF)",
                 "x": "task_po_can100_normal__time",
                 "y": "task_po_can100_normal__KI__UGE",
                 "xerr": null,
@@ -2633,7 +2281,7 @@
                   "line": {
                     "type": "SOLID",
                     "color": "#000000ff",
-                    "thickness": 2.0
+                    "thickness": 2
                   },
                   "marker": {
                     "size": null,
@@ -2651,7 +2299,7 @@
               },
               {
                 "sid": "Fig_uge__plot0_curve1",
-                "name": "can normal 100 mg\u00b1SD (n=12)",
+                "name": "100 mg PO (NRF)\u00b1SD (n=12)",
                 "x": "glucose_cumulative_amount_CAN100_normal__time",
                 "y": "glucose_cumulative_amount_CAN100_normal__mean",
                 "xerr": null,
@@ -2682,7 +2330,7 @@
               },
               {
                 "sid": "Fig_uge__plot0_curve2",
-                "name": "Sim normal 200 mg",
+                "name": "200 mg PO (NRF)",
                 "x": "task_po_can200_normal__time",
                 "y": "task_po_can200_normal__KI__UGE",
                 "xerr": null,
@@ -2695,7 +2343,7 @@
                   "line": {
                     "type": "SOLID",
                     "color": "#000000ff",
-                    "thickness": 2.0
+                    "thickness": 3
                   },
                   "marker": {
                     "size": null,
@@ -2713,7 +2361,7 @@
               },
               {
                 "sid": "Fig_uge__plot0_curve3",
-                "name": "can normal 200 mg\u00b1SD (n=12)",
+                "name": "200 mg PO (NRF)\u00b1SD (n=12)",
                 "x": "glucose_cumulative_amount_CAN200_normal__time",
                 "y": "glucose_cumulative_amount_CAN200_normal__mean",
                 "xerr": null,
@@ -2730,7 +2378,7 @@
                   },
                   "marker": {
                     "size": null,
-                    "type": "CIRCLE",
+                    "type": "DIAMOND",
                     "fill": "#000000ff",
                     "line_color": "#000000ff",
                     "line_thickness": null
@@ -2744,7 +2392,7 @@
               },
               {
                 "sid": "Fig_uge__plot0_curve4",
-                "name": "Sim moderate 100 mg",
+                "name": "100 mg PO (MRI)",
                 "x": "task_po_can100_moderate__time",
                 "y": "task_po_can100_moderate__KI__UGE",
                 "xerr": null,
@@ -2757,7 +2405,7 @@
                   "line": {
                     "type": "SOLID",
                     "color": "#2ca25fff",
-                    "thickness": 2.0
+                    "thickness": 2
                   },
                   "marker": {
                     "size": null,
@@ -2775,7 +2423,7 @@
               },
               {
                 "sid": "Fig_uge__plot0_curve5",
-                "name": "can moderate 100 mg\u00b1SD (n=12)",
+                "name": "100 mg PO (MRI)\u00b1SD (n=12)",
                 "x": "glucose_cumulative_amount_CAN100_moderate__time",
                 "y": "glucose_cumulative_amount_CAN100_moderate__mean",
                 "xerr": null,
@@ -2806,7 +2454,7 @@
               },
               {
                 "sid": "Fig_uge__plot0_curve6",
-                "name": "Sim moderate 200 mg",
+                "name": "200 mg PO (MRI)",
                 "x": "task_po_can200_moderate__time",
                 "y": "task_po_can200_moderate__KI__UGE",
                 "xerr": null,
@@ -2819,7 +2467,7 @@
                   "line": {
                     "type": "SOLID",
                     "color": "#2ca25fff",
-                    "thickness": 2.0
+                    "thickness": 3
                   },
                   "marker": {
                     "size": null,
@@ -2837,7 +2485,7 @@
               },
               {
                 "sid": "Fig_uge__plot0_curve7",
-                "name": "can moderate 200 mg\u00b1SD (n=12)",
+                "name": "200 mg PO (MRI)\u00b1SD (n=12)",
                 "x": "glucose_cumulative_amount_CAN200_moderate__time",
                 "y": "glucose_cumulative_amount_CAN200_moderate__mean",
                 "xerr": null,
@@ -2854,7 +2502,7 @@
                   },
                   "marker": {
                     "size": null,
-                    "type": "CIRCLE",
+                    "type": "DIAMOND",
                     "fill": "#2ca25fff",
                     "line_color": "#000000ff",
                     "line_thickness": null

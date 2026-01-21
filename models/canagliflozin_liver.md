@@ -11,18 +11,18 @@ length: [m]
 
 ## Parameters `p`
 ```
-CAN2M5_Km_can = 0.0153033781969423  # [mmol/l] Km canagliflozin UGT2B4  
-CAN2M5_Vmax = 0.0385420217598341  # [mmol/min/l] Vmax canagliflozin conversion  
+CAN2M5_Km_can = 3.49336492335385  # [mmol/l] Km canagliflozin UGT2B4  
+CAN2M5_Vmax = 0.0545767793949823  # [mmol/min/l] Vmax canagliflozin conversion  
 CAN2M7_Km_can = 0.1  # [mmol/l] Km canagliflozin UGT1A9  
-CAN2M7_Vmax = 0.387578347044511  # [mmol/min/l] Vmax canagliflozin conversion  
+CAN2M7_Vmax = 0.00128707038109908  # [mmol/min/l] Vmax canagliflozin conversion  
 CAN2M9_Km_can = 0.1  # [mmol/l] Km canagliflozin CYP3A4  
-CAN2M9_Vmax = 0.353165313526834  # [mmol/min/l] Vmax canagliflozin conversion  
+CAN2M9_Vmax = 0.00520907991201598  # [mmol/min/l] Vmax canagliflozin conversion  
 CANIM_Km_can = 0.1  # [mmol/l] Km canagliflozin import  
-CANIM_Vmax = 0.00946628716549535  # [mmol/min/l] Vmax canagliflozin import  
-M5EX_Km_m5 = 0.0628302366140825  # [mmol/l] Km M5 export  
-M5EX_Vmax = 42.5965219576554  # [mmol/min/l] Vmax M5 export  
+CANIM_Vmax = 4.02601953082094  # [mmol/min/l] Vmax canagliflozin import  
+M5EX_Km_m5 = 1.20833792136722  # [mmol/l] Km M5 export  
+M5EX_Vmax = 61.8741571292691  # [mmol/min/l] Vmax M5 export  
 M7EX_Km_m7 = 0.1  # [mmol/l] Km M7 export  
-M7EX_Vmax = 27.9277803462939  # [mmol/min/l] Vmax M7 export  
+M7EX_Vmax = 0.313852880688601  # [mmol/min/l] Vmax M7 export  
 MBIEX_k = 0.0001  # [1/min] rate for M7 and M9 export in bile  
 Vapical = nan  # [m^2] apical membrane  
 Vbi = 1.0  # [l] bile  
@@ -53,16 +53,16 @@ m9_lumen = 0.0  # [mmol/l] M9 (lumen) in Vlumen
 ## ODE system
 ```
 # y
-CAN2M5 = f_ugt2b4 * CAN2M5_Vmax * Vli * can / (can + CAN2M5_Km_can)  # [mmol/min] canagliflozin conversion (CAN2M5) UGT2B4  
-CAN2M7 = f_ugt1a9 * CAN2M7_Vmax * Vli * can / (can + CAN2M7_Km_can)  # [mmol/min] canagliflozin conversion (CAN2M7) UGT1A9  
-CAN2M9 = f_cyp3a4 * CAN2M9_Vmax * Vli * can / (can + CAN2M9_Km_can)  # [mmol/min] canagliflozin conversion (CAN2M9) CYP3A4  
-CANIM = (CANIM_Vmax / CANIM_Km_can) * Vli * (can_ext - can) / (1 + can_ext / CANIM_Km_can + can / CANIM_Km_can)  # [mmol/min] canagliflozin import (CANIM)  
-M5EX = (M5EX_Vmax / M5EX_Km_m5) * Vli * (m5 - m5_ext) / (1 + m5_ext / M5EX_Km_m5 + m5 / M5EX_Km_m5)  # [mmol/min] M5 export (M5EX)  
-M7BIEX = MBIEX_k * Vli * m7  # [mmol/min] M7 bile export  
-M7EX = (M7EX_Vmax / M7EX_Km_m7) * Vli * (m7 - m7_ext) / (1 + m7_ext / M7EX_Km_m7 + m7 / M7EX_Km_m7)  # [mmol/min] M7 export (M7EX)  
-M9BIEX = MBIEX_k * Vli * m9  # [mmol/min] M9 bile export  
-M7EHC = M7BIEX  # [mmol/min] M7 enterohepatic circulation  
-M9EHC = M9BIEX  # [mmol/min] M9 enterohepatic circulation  
+CAN2M5 = f_ugt2b4 * CAN2M5_Vmax * Vli * can / (can + CAN2M5_Km_can)  # [mmol/min] CAN2M5 (UGT2B4)  
+CAN2M7 = f_ugt1a9 * CAN2M7_Vmax * Vli * can / (can + CAN2M7_Km_can)  # [mmol/min] CAN2M7 (UGT1A9)  
+CAN2M9 = f_cyp3a4 * CAN2M9_Vmax * Vli * can / (can + CAN2M9_Km_can)  # [mmol/min] CAN2M9 (CYP3A4)  
+CANIM = (CANIM_Vmax / CANIM_Km_can) * Vli * (can_ext - can) / (1 + can_ext / CANIM_Km_can + can / CANIM_Km_can)  # [mmol/min] CANIM  
+M5EX = (M5EX_Vmax / M5EX_Km_m5) * Vli * (m5 - m5_ext) / (1 + m5_ext / M5EX_Km_m5 + m5 / M5EX_Km_m5)  # [mmol/min] M5EX  
+M7BIEX = MBIEX_k * Vli * m7  # [mmol/min] M7BIEX (bile)  
+M7EX = (M7EX_Vmax / M7EX_Km_m7) * Vli * (m7 - m7_ext) / (1 + m7_ext / M7EX_Km_m7 + m7 / M7EX_Km_m7)  # [mmol/min] M7EX  
+M9BIEX = MBIEX_k * Vli * m9  # [mmol/min] M9BIEX (bile)  
+M7EHC = M7BIEX  # [mmol/min] M7EHC (enterohepatic circulation)  
+M9EHC = M9BIEX  # [mmol/min] M9EHC (enterohepatic circulation)  
 
 # odes
 d can/dt = CANIM / Vli - CAN2M5 / Vli - CAN2M7 / Vli - CAN2M9 / Vli  # [mmol/l/min] canagliflozin (liver)  

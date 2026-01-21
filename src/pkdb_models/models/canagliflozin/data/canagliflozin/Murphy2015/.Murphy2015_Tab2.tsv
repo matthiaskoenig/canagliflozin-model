@@ -1,0 +1,11 @@
+study	group	count	intervention	measurement_type	substance	tissue	method	time	time_unit	mean	median	min	max	sd	se	cv	unit	comments
+Murphy2015	all	24.0	CAN150, MET1000, FED	cmax	metformin	plasma	LC MS/MS	NA	NA	1373.0	NA	NA	NA	NA	NA	NA	ng/ml	geometric mean, fed
+Murphy2015	all	24.0	CAN150, MET1000, FED	auc_end	metformin	plasma	LC MS/MS	24.0	hr	10908.0	NA	NA	NA	NA	NA	NA	ng/ml*hr	geometric mean, fed
+Murphy2015	all	24.0	CAN150, MET1000, FED	auc_inf	metformin	plasma	LC MS/MS	NA	NA	11222.0	NA	NA	NA	NA	NA	NA	ng/ml*hr	geometric mean, fed
+Murphy2015	all	24.0	CAN150, MET1000, FED	tmax	metformin	plasma	LC MS/MS	NA	NA	NA	3.0	1.5	5.0	NA	NA	NA	hr	geometric mean, fed
+Murphy2015	all	24.0	CAN150, MET1000, FED	thalf	metformin	plasma	LC MS/MS	NA	NA	4.3	NA	NA	NA	0.41	NA	NA	hr	geometric mean, fed
+Murphy2015	all	24.0	CAN150, MET1000	cmax	metformin	plasma	LC MS/MS	NA	NA	1631.0	NA	NA	NA	NA	NA	NA	ng/ml	geometric mean, fasted
+Murphy2015	all	24.0	CAN150, MET1000	auc_end	metformin	plasma	LC MS/MS	24.0	hr	10951.0	NA	NA	NA	NA	NA	NA	ng/ml*hr	geometric mean, fasted
+Murphy2015	all	24.0	CAN150, MET1000	auc_inf	metformin	plasma	LC MS/MS	NA	NA	11228.0	NA	NA	NA	NA	NA	NA	ng/ml*hr	geometric mean, fasted
+Murphy2015	all	24.0	CAN150, MET1000	tmax	metformin	plasma	LC MS/MS	NA	NA	NA	2.0	1.0	3.0	NA	NA	NA	hr	geometric mean, fasted
+Murphy2015	all	24.0	CAN150, MET1000	thalf	metformin	plasma	LC MS/MS	NA	NA	4.5	NA	NA	NA	0.71	NA	NA	hr	geometric mean, fasted

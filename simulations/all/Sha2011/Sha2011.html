@@ -271,9 +271,10 @@ class Sha2011(CanagliflozinSimulationExperiment):
         fig = Figure(
             experiment=self,
             sid="Fig_uge",
-            name=f"{self.__class__.__name__} (healthy)",
+            name=f"{self.__class__.__name__} (Healthy)",
         )
-        plots = fig.create_plots(xaxis=Axis(self.label_time, unit=self.unit_time), legend=False)
+        Figure.legend_fontsize = 9
+        plots = fig.create_plots(xaxis=Axis(self.label_time, unit=self.unit_time), legend=True)
         plots[0].set_yaxis(self.label_uge, unit=self.unit_uge)
 
         for dose in self.doses:
@@ -282,16 +283,19 @@ class Sha2011(CanagliflozinSimulationExperiment):
                 task=f"task_po_can{dose}_single",
                 xid="time",
                 yid=f"KI__UGE",
-                label=f"Sim {dose} mg",
-                color=self.colors[dose],
+                label=f"{dose} mg PO",
+                color=self.dose_colors[dose],
             )
+
+        # 400 mg BID (twice daily)
         plots[0].add_data(
             task=f"task_po_can400_multi",
             xid="time",
             yid=f"KI__UGE",
-            label=f"Sim 400_BID mg",
-            color=self.colors["400_BID"],
-            )
+            label=f"400 mg PO BID",
+            color=self.dose_colors[400],
+            linestyle="--",
+        )
 
         for dose in self.doses:
             # data
@@ -301,17 +305,18 @@ class Sha2011(CanagliflozinSimulationExperiment):
                 yid="mean",
                 yid_sd="mean_sd",
                 count="count",
-                label=f"UGE {dose} mg",
-                color=self.colors[dose],
+                label=f"{dose} mg PO",
+                color=self.dose_colors[dose],
             )
+
         plots[0].add_data(
             dataset=f"cumulative_amount_CAN400_BID",
             xid="time",
             yid="mean",
             yid_sd="mean_sd",
             count="count",
-            label=f"UGE 400_BID mg",
-            color=self.colors["400_BID"],
+            label=f"400 mg PO BID",
+            color=self.dose_colors[400],
         )
 
         return {
@@ -322,30 +327,33 @@ class Sha2011(CanagliflozinSimulationExperiment):
         fig = Figure(
             experiment=self,
             sid="Fig_rtg",
-            name=f"{self.__class__.__name__} (healthy)",
+            name=f"{self.__class__.__name__} (Healthy)",
         )
-        plots = fig.create_plots(xaxis=Axis(self.label_time, unit=self.unit_time), legend=False)
+        Figure.legend_fontsize=9
+        plots = fig.create_plots(xaxis=Axis(self.label_time, unit=self.unit_time), legend=True)
         plots[0].set_yaxis(self.label_rtg, unit=self.unit_rtg)
 
-        for dose in self.doses[1:]:
+        for dose in self.doses[1:]:  # Skip 0 mg dose
             # simulation
             plots[0].add_data(
                 task=f"task_po_can{dose}_single",
                 xid="time",
                 yid=f"KI__RTG",
-                label=f"Sim {dose} mg",
-                color=self.colors[dose],
+                label=f"{dose} mg PO",
+                color=self.dose_colors[dose],
             )
 
+        # 400 mg BID (twice daily)
         plots[0].add_data(
             task=f"task_po_can400_multi",
             xid="time",
             yid=f"KI__RTG",
-            label=f"Sim 400_BID mg",
-            color=self.colors["400_BID"],
+            label=f"400 mg PO BID",
+            color=self.dose_colors[400],
+            linestyle="--",
         )
 
-        for dose in self.doses[1:]:
+        for dose in self.doses[1:]:  # Skip 0 mg dose
             # data
             plots[0].add_data(
                 dataset=f"renal_threshold_CAN{dose}",
@@ -353,8 +361,8 @@ class Sha2011(CanagliflozinSimulationExperiment):
                 yid="mean",
                 yid_sd="mean_sd",
                 count="count",
-                label=f"RTG {dose} mg",
-                color=self.colors[dose],
+                label=f"{dose} mg PO",
+                color=self.dose_colors[dose],
             )
 
         plots[0].add_data(
@@ -363,8 +371,8 @@ class Sha2011(CanagliflozinSimulationExperiment):
             yid="mean",
             yid_sd="mean_sd",
             count="count",
-            label=f"RTG 400_BID mg",
-            color=self.colors["400_BID"],
+            label=f"400 mg PO BID",
+            color=self.dose_colors[400],
         )
 
         return {

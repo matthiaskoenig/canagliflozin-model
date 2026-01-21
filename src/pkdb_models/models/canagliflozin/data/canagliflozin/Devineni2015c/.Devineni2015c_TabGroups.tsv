@@ -1,0 +1,116 @@
+study	name	group_count	parent	measurement_type	count	substance	choice	mean	median	sd	se	min	max	unit	comments
+Devineni2015c	all	64.0	NA	species	64.0	NA	homo sapiens	NA	NA	NA	NA	NA	NA	NA	nondiabetic
+Devineni2015c	all	64.0	NA	healthy 	48.0	NA	N	NA	NA	NA	NA	NA	NA	NA	NA
+Devineni2015c	all	64.0	NA	sex	64.0	NA	MF	NA	NA	NA	NA	NA	NA	NA	NA
+Devineni2015c	all	64.0	NA	alcohol	64.0	NA	N	NA	NA	NA	NA	NA	NA	NA	NA
+Devineni2015c	all	64.0	NA	pregnant 	64.0	NA	N	NA	NA	NA	NA	NA	NA	NA	NA
+Devineni2015c	all	64.0	NA	breastfeeding	64.0	NA	N	NA	NA	NA	NA	NA	NA	NA	NA
+Devineni2015c	all	64.0	NA	age	64.0	NA	NA	NA	NA	NA	NA	18.0	79.0	yr	NA
+Devineni2015c	all	64.0	NA	bmi	64.0	NA	NA	NA	NA	NA	NA	18.0	40.0	kg/m^2	NA
+Devineni2015c	all	64.0	NA	weight	64.0	NA	NA	NA	NA	NA	NA	50.0	NA	kg	NA
+Devineni2015c	hepatic	24.0	all	species	24.0	NA	homo sapiens	NA	NA	NA	NA	NA	NA	NA	NA
+Devineni2015c	hepatic	24.0	all	healthy	16.0	NA	N	NA	NA	NA	NA	NA	NA	NA	NA
+Devineni2015c	hepatic	24.0	all	disease	16.0	NA	liver disease	NA	NA	NA	NA	NA	NA	NA	NA
+Devineni2015c	hepatic	24.0	all	sex	24.0	NA	MF	NA	NA	NA	NA	NA	NA	NA	NA
+Devineni2015c	hepatic	24.0	all	age	24.0	NA	NA	NA	NA	NA	NA	18.0	70.0	yr	NA
+Devineni2015c	hepatic	24.0	all	bmi	24.0	NA	NA	NA	NA	NA	NA	18.0	33.0	kg/m^2	NA
+Devineni2015c	hepatic	24.0	all	weight	24.0	NA	NA	NA	NA	NA	NA	50.0	NA	kg	NA
+Devineni2015c	hepatic	24.0	all	alcohol	24.0	NA	N	NA	NA	NA	NA	NA	NA	NA	NA
+Devineni2015c	hepatic	24.0	all	pregnant 	24.0	NA	N	NA	NA	NA	NA	NA	NA	NA	NA
+Devineni2015c	hepatic	24.0	all	breastfeeding	24.0	NA	N	NA	NA	NA	NA	NA	NA	NA	NA
+Devineni2015c	hepatic	24.0	all	clearance	24.0	creatinine	NA	NA	NA	NA	NA	60.0	NA	ml/min	NA
+Devineni2015c	normal_hepatic	8.0	hepatic	species	8.0	NA	homo sapiens	NA	NA	NA	NA	NA	NA	NA	NA
+Devineni2015c	normal_hepatic	8.0	hepatic	healthy	8.0	NA	Y	NA	NA	NA	NA	NA	NA	NA	NA
+Devineni2015c	normal_hepatic	8.0	hepatic	sex	5.0	NA	M 	NA	NA	NA	NA	NA	NA	NA	NA
+Devineni2015c	normal_hepatic	9.0	hepatic	sex	3.0	NA	F 	NA	NA	NA	NA	NA	NA	NA	NA
+Devineni2015c	normal_hepatic	8.0	hepatic	age	8.0	NA	NA	46.5	47.0	4.75	NA	40.0	56.0	yr	NA
+Devineni2015c	normal_hepatic	8.0	hepatic	bmi	8.0	NA	NA	27.5	27.0	3.28	NA	23.3	32.7	kg/m^2	NA
+Devineni2015c	normal_hepatic	8.0	hepatic	weight	8.0	NA	NA	78.3	80.2	9.15	NA	64.0	91.2	kg	NA
+Devineni2015c	normal_hepatic	8.0	hepatic	ethnicity	1.0	NA	black	NA	NA	NA	NA	NA	NA	NA	NA
+Devineni2015c	mild_hepatic	8.0	hepatic	species	8.0	NA	homo sapiens	NA	NA	NA	NA	NA	NA	NA	NA
+Devineni2015c	mild_hepatic	8.0	hepatic	healthy	8.0	NA	N	NA	NA	NA	NA	NA	NA	NA	NA
+Devineni2015c	mild_hepatic	8.0	hepatic	disease	8.0	NA	liver disease (mild)	NA	NA	NA	NA	NA	NA	NA	NA
+Devineni2015c	mild_hepatic	8.0	hepatic	sex	5.0	NA	M 	NA	NA	NA	NA	NA	NA	NA	NA
+Devineni2015c	mild_hepatic	9.0	hepatic	sex	3.0	NA	F 	NA	NA	NA	NA	NA	NA	NA	NA
+Devineni2015c	mild_hepatic	8.0	hepatic	age	8.0	NA	NA	50.1	53.0	6.96	NA	36.0	56.0	yr	NA
+Devineni2015c	mild_hepatic	8.0	hepatic	bmi	8.0	NA	NA	26.8	27.8	3.95	NA	19.5	31.3	kg/m^2	NA
+Devineni2015c	mild_hepatic	8.0	hepatic	weight	8.0	NA	NA	79.0	78.5	10.97	NA	60.5	97.0	kg	NA
+Devineni2015c	mild_hepatic	8.0	hepatic	ethnicity	1.0	NA	black	NA	NA	NA	NA	NA	NA	NA	NA
+Devineni2015c	mild_hepatic	8.0	hepatic	child-pugh score	8.0	NA	child-pugh class A	5.3	5.0	0.46	NA	5.0	6.0	NA	NA
+Devineni2015c	moderate_hepatic	8.0	hepatic	species	8.0	NA	homo sapiens	NA	NA	NA	NA	NA	NA	NA	NA
+Devineni2015c	moderate_hepatic	8.0	hepatic	healthy	8.0	NA	N	NA	NA	NA	NA	NA	NA	NA	NA
+Devineni2015c	moderate_hepatic	8.0	hepatic	disease	8.0	NA	liver disease (moderate)	NA	NA	NA	NA	NA	NA	NA	NA
+Devineni2015c	moderate_hepatic	8.0	hepatic	sex	5.0	NA	M 	NA	NA	NA	NA	NA	NA	NA	NA
+Devineni2015c	moderate_hepatic	9.0	hepatic	sex	3.0	NA	F 	NA	NA	NA	NA	NA	NA	NA	NA
+Devineni2015c	moderate_hepatic	8.0	hepatic	age	8.0	NA	NA	55.4	55.0	5.07	NA	50.0	62.0	yr	NA
+Devineni2015c	moderate_hepatic	8.0	hepatic	bmi	8.0	NA	NA	24.9	23.7	3.45	NA	20.6	29.9	kg/m^2	NA
+Devineni2015c	moderate_hepatic	8.0	hepatic	weight	8.0	NA	NA	74.7	75.2	13.78	NA	53.0	98.0	kg	NA
+Devineni2015c	moderate_hepatic	8.0	hepatic	ethnicity	1.0	NA	black	NA	NA	NA	NA	NA	NA	NA	NA
+Devineni2015c	moderate_hepatic	8.0	hepatic	child-pugh score	8.0	NA	child-pugh class B	7.9	8.0	0.83	NA	7.0	9.0	NA	NA
+Devineni2015c	renal	40.0	all	species	40.0	NA	homo sapiens	NA	NA	NA	NA	NA	NA	NA	NA
+Devineni2015c	renal	40.0	all	healthy	32.0	NA	N	NA	NA	NA	NA	NA	NA	NA	NA
+Devineni2015c	renal	40.0	all	disease	32.0	NA	renal disease	NA	NA	NA	NA	NA	NA	NA	NA
+Devineni2015c	renal	40.0	all	sex	40.0	NA	MF	NA	NA	NA	NA	NA	NA	NA	NA
+Devineni2015c	renal	40.0	all	age	40.0	NA	NA	NA	NA	NA	NA	18.0	79.0	yr	NA
+Devineni2015c	renal	40.0	all	bmi	40.0	NA	NA	NA	NA	NA	NA	20.0	40.0	kg/m^2	NA
+Devineni2015c	renal	40.0	all	weight	40.0	NA	NA	NA	NA	NA	NA	50.0	NA	kg	NA
+Devineni2015c	renal	40.0	all	alcohol	40.0	NA	N	NA	NA	NA	NA	NA	NA	NA	NA
+Devineni2015c	renal	40.0	all	pregnant 	40.0	NA	N	NA	NA	NA	NA	NA	NA	NA	NA
+Devineni2015c	renal	40.0	all	breastfeeding	40.0	NA	N	NA	NA	NA	NA	NA	NA	NA	NA
+Devineni2015c	normal_renal	8.0	renal	species	8.0	NA	homo sapiens	NA	NA	NA	NA	NA	NA	NA	NA
+Devineni2015c	normal_renal	8.0	renal	healthy	8.0	NA	Y	NA	NA	NA	NA	NA	NA	NA	NA
+Devineni2015c	normal_renal	8.0	renal	sex	5.0	NA	M 	NA	NA	NA	NA	NA	NA	NA	NA
+Devineni2015c	normal_renal	9.0	renal	sex	3.0	NA	F 	NA	NA	NA	NA	NA	NA	NA	NA
+Devineni2015c	normal_renal	8.0	renal	age	8.0	NA	NA	52.0	50.5	8.3	NA	42.0	65.0	yr	NA
+Devineni2015c	normal_renal	8.0	renal	bmi	8.0	NA	NA	31.2	31.6	1.93	NA	27.0	33.0	kg/m^2	NA
+Devineni2015c	normal_renal	8.0	renal	weight	8.0	NA	NA	92.5	92.3	8.88	NA	82.4	105.9	kg	NA
+Devineni2015c	normal_renal	8.0	renal	ethnicity	1.0	NA	black	NA	NA	NA	NA	NA	NA	NA	NA
+Devineni2015c	normal_renal	8.0	renal	clearance	8.0	creatinine	NA	NA	NA	NA	NA	80.0	NA	ml/min	NA
+Devineni2015c	mild_renal	8.0	renal	species	8.0	NA	homo sapiens	NA	NA	NA	NA	NA	NA	NA	NA
+Devineni2015c	mild_renal	8.0	renal	healthy	8.0	NA	N	NA	NA	NA	NA	NA	NA	NA	NA
+Devineni2015c	mild_renal	8.0	renal	disease	8.0	NA	renal disease	NA	NA	NA	NA	NA	NA	NA	NA
+Devineni2015c	mild_renal	8.0	renal	sex	3.0	NA	M 	NA	NA	NA	NA	NA	NA	NA	NA
+Devineni2015c	mild_renal	9.0	renal	sex	5.0	NA	F 	NA	NA	NA	NA	NA	NA	NA	NA
+Devineni2015c	mild_renal	8.0	renal	age	8.0	NA	NA	59.8	67.0	16.65	NA	31.0	75.0	yr	NA
+Devineni2015c	mild_renal	8.0	renal	bmi	8.0	NA	NA	25.7	26.2	1.97	NA	22.0	28.0	kg/m^2	NA
+Devineni2015c	mild_renal	8.0	renal	weight	8.0	NA	NA	70.1	67.25	8.45	NA	61.0	85.4	kg	NA
+Devineni2015c	mild_renal	8.0	renal	ethnicity	2.0	NA	black	NA	NA	NA	NA	NA	NA	NA	NA
+Devineni2015c	mild_renal	8.0	renal	clearance	8.0	creatinine	NA	NA	NA	NA	NA	50.0	80.0	ml/min	NA
+Devineni2015c	moderate_renal	8.0	renal	species	8.0	NA	homo sapiens	NA	NA	NA	NA	NA	NA	NA	NA
+Devineni2015c	moderate_renal	8.0	renal	healthy	8.0	NA	N	NA	NA	NA	NA	NA	NA	NA	NA
+Devineni2015c	moderate_renal	8.0	renal	disease	8.0	NA	renal disease	NA	NA	NA	NA	NA	NA	NA	NA
+Devineni2015c	moderate_renal	8.0	renal	sex	2.0	NA	M 	NA	NA	NA	NA	NA	NA	NA	NA
+Devineni2015c	moderate_renal	9.0	renal	sex	6.0	NA	F 	NA	NA	NA	NA	NA	NA	NA	NA
+Devineni2015c	moderate_renal	8.0	renal	age	8.0	NA	NA	62.6	67.5	15.46	NA	29.0	77.0	yr	NA
+Devineni2015c	moderate_renal	8.0	renal	bmi	8.0	NA	NA	28.1	28.1	5.64	NA	20.0	36.0	kg/m^2	NA
+Devineni2015c	moderate_renal	8.0	renal	weight	8.0	NA	NA	77.7	74.9	15.22	NA	54.0	97.3	kg	NA
+Devineni2015c	moderate_renal	8.0	renal	ethnicity	1.0	NA	black	NA	NA	NA	NA	NA	NA	NA	NA
+Devineni2015c	moderate_renal	8.0	renal	clearance	8.0	creatinine	NA	NA	NA	NA	NA	30.0	50.0	ml/min	NA
+Devineni2015c	severe_renal	8.0	renal	species	8.0	NA	homo sapiens	NA	NA	NA	NA	NA	NA	NA	NA
+Devineni2015c	severe_renal	8.0	renal	healthy	8.0	NA	N	NA	NA	NA	NA	NA	NA	NA	NA
+Devineni2015c	severe_renal	8.0	renal	disease	8.0	NA	renal disease	NA	NA	NA	NA	NA	NA	NA	NA
+Devineni2015c	severe_renal	8.0	renal	sex	5.0	NA	M 	NA	NA	NA	NA	NA	NA	NA	NA
+Devineni2015c	severe_renal	9.0	renal	sex	3.0	NA	F 	NA	NA	NA	NA	NA	NA	NA	NA
+Devineni2015c	severe_renal	8.0	renal	age	8.0	NA	NA	61.3	63.5	11.55	NA	45.0	77.0	yr	NA
+Devineni2015c	severe_renal	8.0	renal	bmi	8.0	NA	NA	24.8	25.5	3.56	NA	20.0	28.0	kg/m^2	NA
+Devineni2015c	severe_renal	8.0	renal	weight	8.0	NA	NA	72.7	74.6	12.15	NA	51.5	88.1	kg	NA
+Devineni2015c	severe_renal	8.0	renal	ethnicity	1.0	NA	black	NA	NA	NA	NA	NA	NA	NA	NA
+Devineni2015c	severe_renal	8.0	renal	clearance	8.0	creatinine	NA	NA	NA	NA	NA	NA	30.0	ml/min	NA
+Devineni2015c	ESRD_pre	8.0	renal	species	8.0	NA	homo sapiens	NA	NA	NA	NA	NA	NA	NA	NA
+Devineni2015c	ESRD_pre	8.0	renal	healthy	8.0	NA	N	NA	NA	NA	NA	NA	NA	NA	NA
+Devineni2015c	ESRD_pre	8.0	renal	disease	8.0	NA	renal disease	NA	NA	NA	NA	NA	NA	NA	NA
+Devineni2015c	ESRD_pre	8.0	renal	sex	7.0	NA	M 	NA	NA	NA	NA	NA	NA	NA	NA
+Devineni2015c	ESRD_pre	9.0	renal	sex	1.0	NA	F 	NA	NA	NA	NA	NA	NA	NA	NA
+Devineni2015c	ESRD_pre	8.0	renal	age	8.0	NA	NA	43.8	44.5	7.3	NA	31.0	56.0	yr	NA
+Devineni2015c	ESRD_pre	8.0	renal	bmi	8.0	NA	NA	32.8	33.8	6.21	NA	23.0	40.0	kg/m^2	NA
+Devineni2015c	ESRD_pre	8.0	renal	weight	8.0	NA	NA	104.0	105.45	22.9	NA	70.0	137.7	kg	NA
+Devineni2015c	ESRD_pre	8.0	renal	ethnicity	6.0	NA	black	NA	NA	NA	NA	NA	NA	NA	NA
+Devineni2015c	ESRD_post	8.0	renal	species	8.0	NA	homo sapiens	NA	NA	NA	NA	NA	NA	NA	NA
+Devineni2015c	ESRD_post	8.0	renal	healthy	8.0	NA	N	NA	NA	NA	NA	NA	NA	NA	NA
+Devineni2015c	ESRD_post	8.0	renal	disease	8.0	NA	renal disease	NA	NA	NA	NA	NA	NA	NA	NA
+Devineni2015c	ESRD_post	8.0	renal	sex	7.0	NA	M 	NA	NA	NA	NA	NA	NA	NA	NA
+Devineni2015c	ESRD_post	9.0	renal	sex	1.0	NA	F 	NA	NA	NA	NA	NA	NA	NA	NA
+Devineni2015c	ESRD_post	8.0	renal	age	8.0	NA	NA	43.8	44.5	7.3	NA	31.0	56.0	yr	NA
+Devineni2015c	ESRD_post	8.0	renal	bmi	8.0	NA	NA	32.8	33.8	6.21	NA	23.0	40.0	kg/m^2	NA
+Devineni2015c	ESRD_post	8.0	renal	weight	8.0	NA	NA	104.0	105.45	22.9	NA	70.0	137.7	kg	NA
+Devineni2015c	ESRD_post	8.0	renal	ethnicity	6.0	NA	black	NA	NA	NA	NA	NA	NA	NA	NA

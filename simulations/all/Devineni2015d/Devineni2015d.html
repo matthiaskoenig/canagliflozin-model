@@ -146,9 +146,6 @@ class Devineni2015d(CanagliflozinSimulationExperiment):
               "CAN300_2": "can300_2_multi", "CAN300_2_PRO500": "can300_2_pro500_multi",
               "CAN300_3": "can300_3_multi", "CAN300_3_CYC400": "can300_3_cyc400_multi"}
 
-    colors = {"CAN300": "black", "CAN300_RIF600": "tab:red", "CAN300_2": "black", "CAN300_2_PRO500": "tab:red",
-              "CAN300_3": "black", "CAN300_3_CYC400": "tab:red"}
-
     info = {
         "can": "canagliflozin",
         "m5": "M5",
@@ -161,7 +158,7 @@ class Devineni2015d(CanagliflozinSimulationExperiment):
         "can300_3": 80.5, "can300_3_cyc400": 80.5
     }
 
-    fpg = 5  # [mM] (healthy)
+    fpg = 5  # [mM] (Healthy)
 
     coadministration = [Coadministration.NONE, Coadministration.RIFAMPICIN,
                         Coadministration.NONE, Coadministration.PROBENECID,
@@ -365,35 +362,46 @@ class Devineni2015d(CanagliflozinSimulationExperiment):
         fig = Figure(
             experiment=self,
             sid="can multi",
-            num_rows=3,
-            num_cols=1,
-            name=f"{self.__class__.__name__} (healthy)",
+            num_rows=1,
+            num_cols=3,
+            name=f"{self.__class__.__name__} (Healthy)",
         )
         plots = fig.create_plots(xaxis=Axis(self.label_time, unit=self.unit_time), legend=True)
         plots[0].set_yaxis(self.label_can, unit=self.unit_can)
         plots[1].set_yaxis(self.label_can, unit=self.unit_can)
         plots[2].set_yaxis(self.label_can, unit=self.unit_can)
 
-        # simulation
-        for k, (group, sim) in enumerate(self.groups.items()):
-            plots[k//2].add_data(
-                task=f"task_po_{sim}",
+        # Define pairs and labels
+        pairs = [
+            (["CAN300", "CAN300_RIF600"], ["can300_single", "can300_single"], ["300 mg PO", "300 mg PO + RIF"], 0),
+            (["CAN300_2", "CAN300_2_PRO500"], ["can300_2_multi", "can300_2_multi"], ["300 mg PO", "300 mg PO + PRO"],
+             1),
+            (["CAN300_3", "CAN300_3_CYC400"], ["can300_3_multi", "can300_3_multi"], ["300 mg PO", "300 mg PO + CYC"],
+             2),
+        ]
+
+        for groups, sims, labels, plot_idx in pairs:
+            # simulation
+            plots[plot_idx].add_data(
+                task=f"task_po_{sims[0]}",
                 xid="time",
                 yid=f"[Cve_can]",
-                label=f"Sim {sim}",
-                color=self.colors[group],
+                label=labels[0],
+                color="black",
             )
 
             # data
-            plots[k//2].add_data(
-                dataset=f"canagliflozin_{group}",
-                xid="time",
-                yid="mean",
-                yid_sd="mean_sd",
-                count="count",
-                label=f"{group}",
-                color=self.colors[group],
-            )
+            for group, label in zip(groups, labels):
+                color = "black" if group == groups[0] else "tab:blue"
+                plots[plot_idx].add_data(
+                    dataset=f"canagliflozin_{group}",
+                    xid="time",
+                    yid="mean",
+                    yid_sd="mean_sd",
+                    count="count",
+                    label=label,
+                    color=color,
+                )
 
         return {
             fig.sid: fig,
@@ -403,9 +411,9 @@ class Devineni2015d(CanagliflozinSimulationExperiment):
         fig = Figure(
             experiment=self,
             sid="Fig_urine_rif",
-            num_rows=3,
-            num_cols=1,
-            name=f"{self.__class__.__name__} (healthy)",
+            num_rows=1,
+            num_cols=3,
+            name=f"{self.__class__.__name__} (Healthy)",
         )
         plots = fig.create_plots(xaxis=Axis(self.label_time, unit="day"), legend=True)
         plots[0].set_yaxis(self.label_can_urine, unit=self.unit_can_urine)
@@ -413,16 +421,18 @@ class Devineni2015d(CanagliflozinSimulationExperiment):
         plots[2].set_yaxis(self.label_m7_urine, unit=self.unit_m7_urine)
 
         for k, sid in enumerate(self.info):
-            for group, sim in {"CAN300": "can300", "CAN300_RIF600": "can300_rif600"}.items():
-                # simulation
-                plots[k].add_data(
-                    task=f"task_po_{sim}_single",
-                    xid="time",
-                    yid=f"Aurine_{sid}",
-                    label=f"Sim {sim}",
-                    color=self.colors[group],
-                )
-        # data
+            # simulation (only once)
+            plots[k].add_data(
+                task=f"task_po_can300_single",
+                xid="time",
+                yid=f"Aurine_{sid}",
+                label="300 mg PO",
+                color="black",
+            )
+
+            # data (both conditions)
+            for group, label, color in [("CAN300", "300 mg PO", "black"),
+                                        ("CAN300_RIF600", "300 mg PO + RIF", "tab:blue")]:
                 did = self.info[sid]
                 plots[k].add_data(
                     dataset=f"{did}_urine_{group}",
@@ -430,9 +440,9 @@ class Devineni2015d(CanagliflozinSimulationExperiment):
                     yid="mean",
                     yid_sd="mean_sd",
                     count="count",
-                    label=f"{did} {group}",
-                    color=self.colors[group],
-            )
+                    label=label,
+                    color=color,
+                )
 
         return {
             fig.sid: fig,
@@ -442,9 +452,9 @@ class Devineni2015d(CanagliflozinSimulationExperiment):
         fig = Figure(
             experiment=self,
             sid="Fig_urine_pro",
-            num_rows=3,
-            num_cols=1,
-            name=f"{self.__class__.__name__} (healthy)",
+            num_rows=1,
+            num_cols=3,
+            name=f"{self.__class__.__name__} (Healthy)",
         )
         plots = fig.create_plots(xaxis=Axis(self.label_time, unit="day"), legend=True)
         plots[0].set_yaxis(self.label_can_urine, unit=self.unit_can_urine)
@@ -452,16 +462,18 @@ class Devineni2015d(CanagliflozinSimulationExperiment):
         plots[2].set_yaxis(self.label_m7_urine, unit=self.unit_m7_urine)
 
         for k, sid in enumerate(self.info):
-            for group, sim in {"CAN300_2": "can300_2", "CAN300_2_PRO500": "can300_2_pro500"}.items():
-                # simulation
-                plots[k].add_data(
-                    task=f"task_po_can300_2_multi",
-                    xid="time",
-                    yid=f"Aurine_{sid}",
-                    label=f"Sim {sim}",
-                    color=self.colors[group],
-                )
-        # data
+            # simulation (only once)
+            plots[k].add_data(
+                task=f"task_po_can300_2_multi",
+                xid="time",
+                yid=f"Aurine_{sid}",
+                label="300 mg PO",
+                color="black",
+            )
+
+            # data (both conditions)
+            for group, label, color in [("CAN300_2", "300 mg PO", "black"),
+                                        ("CAN300_2_PRO500", "300 mg PO + PRO", "tab:blue")]:
                 did = self.info[sid]
                 plots[k].add_data(
                     dataset=f"{did}_urine_{group}",
@@ -469,14 +481,14 @@ class Devineni2015d(CanagliflozinSimulationExperiment):
                     yid="mean",
                     yid_sd="mean_sd",
                     count="count",
-                    label=f"{did} {group}",
-                    color=self.colors[group],
-            )
+                    label=label,
+                    color=color,
+                )
 
         return {
             fig.sid: fig,
         }
-
+    
 
 if __name__ == "__main__":
     run_experiments(Devineni2015d, output_dir=Devineni2015d.__name__)</code>

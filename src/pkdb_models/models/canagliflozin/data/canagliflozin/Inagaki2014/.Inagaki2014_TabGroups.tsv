@@ -1,0 +1,36 @@
+study	name	group_count	parent	measurement_type	count	substance	choice	mean	median	sd	se	min	max	unit	comments
+Inagaki2014	all	24.0	NA	species	24.0	NA	homo sapiens	NA	NA	NA	NA	NA	NA	NA	NA
+Inagaki2014	all	24.0	NA	healthy 	24.0	NA	N	NA	NA	NA	NA	NA	NA	NA	NA
+Inagaki2014	all	24.0	NA	disease	24.0	NA	t2dm	NA	NA	NA	NA	NA	NA	NA	NA
+Inagaki2014	all	24.0	NA	disease	12.0	NA	renal disease (mild)	NA	NA	NA	NA	NA	NA	NA	NA
+Inagaki2014	all	24.0	NA	sex	24.0	NA	M	NA	NA	NA	NA	NA	NA	NA	NA
+Inagaki2014	all	24.0	NA	alcohol	24.0	NA	N	NA	NA	NA	NA	NA	NA	NA	NA
+Inagaki2014	all	24.0	NA	smoking	24.0	NA	N	NA	NA	NA	NA	NA	NA	NA	NA
+Inagaki2014	all	24.0	NA	pregnant 	24.0	NA	N	NA	NA	NA	NA	NA	NA	NA	NA
+Inagaki2014	all	24.0	NA	breastfeeding	24.0	NA	N	NA	NA	NA	NA	NA	NA	NA	NA
+Inagaki2014	all	24.0	NA	age	24.0	NA	NA	NA	NA	NA	NA	40.0	79.0	yr	NA
+Inagaki2014	all	24.0	NA	bmi	24.0	NA	NA	NA	NA	NA	NA	18.5	39.9	kg/m^2	NA
+Inagaki2014	all	24.0	NA	concentration	24.0	glucose	NA	NA	NA	NA	NA	140.0	240.0	mg/dl	FPG
+Inagaki2014	all	24.0	NA	hba1c	24.0	NA	NA	NA	NA	NA	NA	6.5	10.6	percent	NA
+Inagaki2014	all	24.0	NA	blood pressure systolic	24.0	NA	NA	NA	NA	NA	NA	90.0	160.0	mmHg	NA
+Inagaki2014	all	24.0	NA	blood pressure diastolic	24.0	NA	NA	NA	NA	NA	NA	45.0	100.0	mmHg	NA
+Inagaki2014	all	24.0	NA	medication	24.0	NA	N	NA	NA	NA	NA	NA	NA	NA	NA
+Inagaki2014	all	24.0	NA	heart rate	24.0	NA	NA	NA	NA	NA	NA	40.0	NA	1/s	NA
+Inagaki2014	all	24.0	NA	fasting	24.0	NA	N	NA	NA	NA	NA	NA	NA	NA	Dosing 10 min before breakfast; Breakfast, lunch, and dinner were served at 10 min, 4 h 30 min, and 10 h 30 min after the scheduled study drug administration, and all meals were to be consumed within 20 min of serving.
+Inagaki2014	all	24.0	NA	overnight fast	24.0	NA	Y	NA	NA	NA	NA	NA	NA	NA	Dosing 10 min before breakfast; Breakfast, lunch, and dinner were served at 10 min, 4 h 30 min, and 10 h 30 min after the scheduled study drug administration, and all meals were to be consumed within 20 min of serving.
+Inagaki2014	moderate renal	12.0	all	sex	12.0	NA	M	NA	NA	NA	NA	NA	NA	NA	NA
+Inagaki2014	moderate renal	12.0	all	age	12.0	NA	NA	63.7	NA	10.2	NA	NA	NA	yr	NA
+Inagaki2014	moderate renal	12.0	all	height	12.0	NA	NA	168.59	NA	6.28	NA	NA	NA	cm	NA
+Inagaki2014	moderate renal	12.0	all	weight	12.0	NA	NA	74.85	NA	7.01	NA	NA	NA	kg	NA
+Inagaki2014	moderate renal	12.0	all	bmi	12.0	NA	NA	26.33	NA	1.98	NA	NA	NA	kg/m^2	NA
+Inagaki2014	moderate renal	12.0	all	concentration	12.0	glucose	NA	167.5	NA	21.5	NA	NA	NA	mg/dl	NA
+Inagaki2014	moderate renal	12.0	all	hba1c	12.0	NA	NA	7.97	NA	1.27	NA	NA	NA	percent	NA
+Inagaki2014	moderate renal	12.0	all	gfr	12.0	NA	NA	39.7	NA	6.6	NA	30.0	49.0	ml/min/(1.73*m^2)	NA
+Inagaki2014	normal renal	12.0	all	sex	12.0	NA	M	NA	NA	NA	NA	NA	NA	NA	NA
+Inagaki2014	normal renal	12.0	all	age	12.0	NA	NA	57.8	NA	9.7	NA	NA	NA	yr	NA
+Inagaki2014	normal renal	12.0	all	height	12.0	NA	NA	171.11	NA	8.32	NA	NA	NA	cm	NA
+Inagaki2014	normal renal	12.0	all	weight	12.0	NA	NA	75.33	NA	10.38	NA	NA	NA	kg	NA
+Inagaki2014	normal renal	12.0	all	bmi	12.0	NA	NA	25.75	NA	3.22	NA	NA	NA	kg/m^2	NA
+Inagaki2014	normal renal	12.0	all	concentration	12.0	glucose	NA	183.1	NA	21.8	NA	NA	NA	mg/dl	NA
+Inagaki2014	normal renal	12.0	all	hba1c	12.0	NA	NA	8.68	NA	1.34	NA	NA	NA	percent	NA
+Inagaki2014	normal renal	12.0	all	gfr	12.0	NA	NA	92.7	NA	10.7	NA	80.0	108.0	ml/min/(1.73*m^2)	NA

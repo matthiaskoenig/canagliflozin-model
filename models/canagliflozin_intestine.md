@@ -11,9 +11,9 @@ length: [m]
 
 ## Parameters `p`
 ```
-CANABS_k = 0.00587583148158321  # [1/min] rate of canagliflozin absorption  
+CANABS_k = 0.0159322050133891  # [1/min] rate of canagliflozin absorption  
 F_can_abs = 0.59  # [-] fraction absorbed canagliflozin  
-Ka_dis_can = 2.0  # [1/hr] Ka_dis [1/hr] dissolution canagliflozin  
+Ka_dis_can = 2.0  # [1/hr] dissolution rate canagliflozin  
 Mr_can = 444.518  # [g/mol] Molecular weight canagliflozin [g/mole]  
 Vapical = nan  # [m^2] apical membrane (intestinal membrane enterocytes)  
 Vbaso = nan  # [m^2] basolateral membrane (intestinal membrane enterocytes)  
@@ -23,7 +23,7 @@ Vfeces = 1.0  # [l] feces
 Vgu = 1.2825  # [l] intestine  
 Vlumen = 1.15425  # [l] intestinal lumen (inner part of intestine)  
 Vstomach = 1.0  # [l] stomach  
-f_absorption = 1.0  # [-] scaling factor for absorption rate  
+f_absorption = 1.0  # [-] scaling factor absorption rate  
 ```
 
 ## Initial conditions `x0`
@@ -31,33 +31,33 @@ f_absorption = 1.0  # [-] scaling factor for absorption rate
 PODOSE_can = 0.0  # [mg] oral dose canagliflozin [mg]  
 can_ext = 0.0  # [mmol/l] canagliflozin (plasma) in Vext  
 can_feces = 0.0  # [mmol] canagliflozin (feces) in Vfeces  
-can_lumen = 0.0  # [mmol/l] canagliflozin (intestinal volume) in Vlumen  
+can_lumen = 0.0  # [mmol/l] canagliflozin (intestinal lumen) in Vlumen  
 can_stomach = 0.0  # [mmol] canagliflozin (stomach) in Vstomach  
 m7_feces = 0.0  # [mmol] M7 (feces) in Vfeces  
-m7_lumen = 0.0  # [mmol/l] M7 (intestinal volume) in Vlumen  
+m7_lumen = 0.0  # [mmol/l] M7 (intestinal lumen) in Vlumen  
 m9_feces = 0.0  # [mmol] M9 (feces) in Vfeces  
-m9_lumen = 0.0  # [mmol/l] M9 (intestinal volume) in Vlumen  
+m9_lumen = 0.0  # [mmol/l] M9 (intestinal lumen) in Vlumen  
 ```
 
 ## ODE system
 ```
 # y
-M7EXC = CANABS_k * Vgu * m7_lumen  # [mmol/min] excretion M7 (feces)  
-M9EXC = CANABS_k * Vgu * m9_lumen  # [mmol/min] excretion M9 (feces)  
+M7EXC = CANABS_k * Vgu * m7_lumen  # [mmol/min] M7EXC (feces)  
+M9EXC = CANABS_k * Vgu * m9_lumen  # [mmol/min] M9EXC (feces)  
 absorption = f_absorption * CANABS_k * Vgu * can_lumen  # [mmol/min] absorption canagliflozin  
 cantot_feces = can_feces + m7_feces + m9_feces  # [mmol] total canagliflozin (feces)  
 dissolution_can = (Ka_dis_can / 60) * PODOSE_can / Mr_can  # [mmol/min] dissolution canagliflozin  
-CANABS = F_can_abs * absorption  # [mmol/min] absorption canagliflozin  
-CANEXC = (1 - F_can_abs) * absorption  # [mmol/min] excretion canagliflozin (feces)  
+CANABS = F_can_abs * absorption  # [mmol/min] CANABS  
+CANEXC = (1 - F_can_abs) * absorption  # [mmol/min] CANEXC (feces)  
 
 # odes
 d PODOSE_can/dt = -dissolution_can * Mr_can  # [mg/min] oral dose canagliflozin [mg]  
 d can_ext/dt = CANABS / Vext  # [mmol/l/min] canagliflozin (plasma)  
 d can_feces/dt = CANEXC  # [mmol/min] canagliflozin (feces)  
-d can_lumen/dt = (-CANABS / Vlumen - CANEXC / Vlumen) + dissolution_can / Vlumen  # [mmol/l/min] canagliflozin (intestinal volume)  
+d can_lumen/dt = (-CANABS / Vlumen - CANEXC / Vlumen) + dissolution_can / Vlumen  # [mmol/l/min] canagliflozin (intestinal lumen)  
 d can_stomach/dt = 0  # [mmol/min] canagliflozin (stomach)  
 d m7_feces/dt = M7EXC  # [mmol/min] M7 (feces)  
-d m7_lumen/dt = -M7EXC / Vlumen  # [mmol/l/min] M7 (intestinal volume)  
+d m7_lumen/dt = -M7EXC / Vlumen  # [mmol/l/min] M7 (intestinal lumen)  
 d m9_feces/dt = M9EXC  # [mmol/min] M9 (feces)  
-d m9_lumen/dt = -M9EXC / Vlumen  # [mmol/l/min] M9 (intestinal volume)  
+d m9_lumen/dt = -M9EXC / Vlumen  # [mmol/l/min] M9 (intestinal lumen)  
 ```

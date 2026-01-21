@@ -282,9 +282,9 @@ class Mamidi2014(CanagliflozinSimulationExperiment):
         fig = Figure(
             experiment=self,
             sid="Fig2",
-            num_rows=4,
-            num_cols=1,
-            name=f"{self.__class__.__name__} (healthy)",
+            num_rows=2,
+            num_cols=2,
+            name=f"{self.__class__.__name__} (Healthy)",
         )
         plots = fig.create_plots(xaxis=Axis(self.label_time, unit=self.unit_time), legend=True)
         plots[0].set_yaxis(self.label_cantot, unit=self.unit_cantot)
@@ -293,14 +293,13 @@ class Mamidi2014(CanagliflozinSimulationExperiment):
         plots[3].set_yaxis(self.label_m7, unit=self.unit_m7)
 
         for k, sid in enumerate(self.info):
-
             # simulation
             plots[k].add_data(
                 task=f"task_po_can_CAN188",
                 xid="time",
                 yid=f"[Cve_{sid}]",
-                label=f"sim {sid}",
-                color=self.colors[sid],
+                label=f"188 mg PO",
+                color="black",
             )
 
             # data
@@ -311,8 +310,8 @@ class Mamidi2014(CanagliflozinSimulationExperiment):
                 yid="mean",
                 yid_sd="mean_sd",
                 count="count",
-                label=f"{did}",
-                color=self.colors[sid],
+                label=f"188 mg PO",
+                color="black",
             )
 
         return {
@@ -324,9 +323,9 @@ class Mamidi2014(CanagliflozinSimulationExperiment):
         fig = Figure(
             experiment=self,
             sid="urine",
-            num_rows=3,
-            num_cols=1,
-            name=f"{self.__class__.__name__} (healthy)",
+            num_rows=1,
+            num_cols=3,
+            name=f"{self.__class__.__name__} (Healthy)",
         )
         plots = fig.create_plots(xaxis=Axis(self.label_time, unit=self.unit_time), legend=True)
         plots[0].set_yaxis(self.label_cantot_urine, unit=self.unit_cantot_urine)
@@ -339,8 +338,8 @@ class Mamidi2014(CanagliflozinSimulationExperiment):
                 task=f"task_po_can_CAN188",
                 xid="time",
                 yid=f"Aurine_{sid}",
-                label=f"sim {sid}",
-                color=self.colors[sid],
+                label=f"188 mg PO",
+                color="black",
             )
             # data
             did = self.info[sid]
@@ -350,8 +349,9 @@ class Mamidi2014(CanagliflozinSimulationExperiment):
                 yid="mean",
                 yid_sd="mean_sd",
                 count="count",
-                label=f"{did}",
-                color=self.colors[sid],
+                label=f"188 mg PO",
+                color="black",
+                linestyle=""
             )
         return {
             fig.sid: fig,
@@ -362,9 +362,9 @@ class Mamidi2014(CanagliflozinSimulationExperiment):
         fig = Figure(
             experiment=self,
             sid="feces",
-            num_rows=4,
-            num_cols=1,
-            name=f"{self.__class__.__name__} (healthy)",
+            num_rows=2,
+            num_cols=2,
+            name=f"{self.__class__.__name__} (Healthy)",
         )
         plots = fig.create_plots(xaxis=Axis(self.label_time, unit=self.unit_time), legend=True)
         plots[0].set_yaxis(self.label_cantot_feces, unit=self.unit_cantot_urine)
@@ -378,8 +378,8 @@ class Mamidi2014(CanagliflozinSimulationExperiment):
                 task=f"task_po_can_CAN188",
                 xid="time",
                 yid=f"Afeces_{sid}",
-                label=f"sim {sid}",
-                color=self.colors[sid],
+                label=f"188 mg PO",
+                color="black",
             )
             # data
             did = self.info_feces[sid]
@@ -389,8 +389,9 @@ class Mamidi2014(CanagliflozinSimulationExperiment):
                 yid="mean",
                 yid_sd="mean_sd",
                 count="count",
-                label=f"{did}",
-                color=self.colors[sid],
+                label=f"188 mg PO",
+                color="black",
+                linestyle=""
             )
         return {
             fig.sid: fig,

@@ -1,0 +1,20 @@
+study	group	count	intervention	measurement_type	substance	tissue	method	label	time	time_unit	mean	median	min	max	sd	se	cv	unit	comments
+Chen2015	all	14.0	CAN0	cumulative amount	glucose	urine	LC MS/MS	glucose_cumulative_amount_CAN0	0.0	hr	0.0	NA	NA	NA	0.0	NA	NA	g	placebo
+Chen2015	all	14.0	CAN0	cumulative amount	glucose	urine	LC MS/MS	glucose_cumulative_amount_CAN0	24.0	hr	0.009	NA	NA	NA	0.01	NA	NA	g	placebo
+Chen2015	all	14.0	CAN0	concentration	glucose	plasma	LC MS/MS	glucose_mpg_CAN0	24.0	hr	99.4	NA	NA	NA	6.56	NA	NA	mg/dl	placebo
+Chen2015	all	14.0	CAN0	concentration	glucose	plasma	LC MS/MS	glucose_mpg_CAN0	2.0	hr	30.5	NA	NA	NA	17.6	NA	NA	mg/dl	concentration change absolute
+Chen2015	all	14.0	CAN0	concentration	glucose	plasma	LC MS/MS	glucose_mpg_CAN0	4.0	hr	20.5	NA	NA	NA	12.5	NA	NA	mg/dl	concentration change absolute
+Chen2015	all	14.0	CAN100	renal threshold	glucose	urine	LC MS/MS	glucose_RT_MDRD_CAN100	24.0	hr	76.2	NA	NA	NA	8.65	NA	NA	mg/dl	RT MDRD
+Chen2015	all	14.0	CAN100	renal threshold	glucose	urine	LC MS/MS	glucose_RT_McrCl_CAN100	24.0	hr	67.9	NA	NA	NA	14.1	NA	NA	mg/dl	RT MCrCl
+Chen2015	all	14.0	CAN100	cumulative amount	glucose	urine	LC MS/MS	glucose_cumulative_amount_CAN100	0.0	hr	0.0	NA	NA	NA	0.0	NA	NA	g	NA
+Chen2015	all	14.0	CAN100	cumulative amount	glucose	urine	LC MS/MS	glucose_cumulative_amount_CAN100	24.0	hr	33.8	NA	NA	NA	10.4	NA	NA	g	NA
+Chen2015	all	14.0	CAN100	concentration	glucose	plasma	LC MS/MS	glucose_mpg_CAN100	24.0	hr	98.2	NA	NA	NA	6.34	NA	NA	mg/dl	NA
+Chen2015	all	14.0	CAN100	concentration	glucose	plasma	LC MS/MS	glucose_mpg_CAN100	2.0	hr	23.0	NA	NA	NA	10.6	NA	NA	mg/dl	concentration change absolute
+Chen2015	all	14.0	CAN100	concentration	glucose	plasma	LC MS/MS	glucose_mpg_CAN100	4.0	hr	16.0	NA	NA	NA	7.03	NA	NA	mg/dl	concentration change absolute
+Chen2015	all	14.0	CAN300	renal threshold	glucose	urine	LC MS/MS	glucose_RT_MDRD_CAN300	24.0	hr	67.4	NA	NA	NA	5.14	NA	NA	mg/dl	RT MDRD
+Chen2015	all	14.0	CAN300	renal threshold	glucose	urine	LC MS/MS	glucose_RT_McrCl_CAN300	24.0	hr	60.7	NA	NA	NA	9.58	NA	NA	mg/dl	RT MCrCl
+Chen2015	all	14.0	CAN300	cumulative amount	glucose	urine	LC MS/MS	glucose_cumulative_amount_CAN300	0.0	hr	0.0	NA	NA	NA	0.0	NA	NA	g	NA
+Chen2015	all	14.0	CAN300	cumulative amount	glucose	urine	LC MS/MS	glucose_cumulative_amount_CAN300	24.0	hr	42.9	NA	NA	NA	6.67	NA	NA	g	NA
+Chen2015	all	14.0	CAN300	concentration	glucose	plasma	LC MS/MS	glucose_mpg_CAN300	24.0	hr	96.9	NA	NA	NA	4.64	NA	NA	mg/dl	NA
+Chen2015	all	14.0	CAN300	concentration	glucose	plasma	LC MS/MS	glucose_mpg_CAN300	2.0	hr	15.5	NA	NA	NA	10.0	NA	NA	mg/dl	concentration change absolute
+Chen2015	all	14.0	CAN300	concentration	glucose	plasma	LC MS/MS	glucose_mpg_CAN300	4.0	hr	14.2	NA	NA	NA	9.37	NA	NA	mg/dl	concentration change absolute
