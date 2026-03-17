@@ -65,8 +65,7 @@ pip install -e .
 ```
 Run the complete analysis in the environment via:
 ```bash
-uv sync
-uv run run_canagliflozin -a all -r results
+run_canagliflozin -a all -r results
 ```
 
 ### docker
