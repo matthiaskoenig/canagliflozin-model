@@ -56,15 +56,15 @@ implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.</p></bo
                   <vCard4:given-name>Matthias</vCard4:given-name>
                 </vCard4:hasName>
                 <vCard4:hasEmail>koenigmx@hu-berlin.de</vCard4:hasEmail>
-                <vCard4:organization-name>Humboldt-University Berlin, Institute for Theoretical Biology</vCard4:organization-name>
+                <vCard4:organization-name>Humboldt-Universität zu Berlin, Faculty of Life Sciences, Department of Biology, Institute of Theoretical Biology, Systems Medicine of the Liver; University of Stuttgart, Institute of Structural Mechanics and Dynamics in Aerospace Engineering</vCard4:organization-name>
               </rdf:li>
             </rdf:Bag>
           </dcterms:creator>
           <dcterms:created rdf:parseType="Resource">
-            <dcterms:W3CDTF>2026-01-21T14:24:43Z</dcterms:W3CDTF>
+            <dcterms:W3CDTF>2026-03-17T17:58:29Z</dcterms:W3CDTF>
           </dcterms:created>
           <dcterms:modified rdf:parseType="Resource">
-            <dcterms:W3CDTF>2026-01-21T14:24:43Z</dcterms:W3CDTF>
+            <dcterms:W3CDTF>2026-03-17T17:58:29Z</dcterms:W3CDTF>
           </dcterms:modified>
           <bqbiol:hasTaxon>
             <rdf:Bag>
@@ -86,6 +86,7 @@ implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.</p></bo
           </bqbiol:hasProperty>
           <bqbiol:isDescribedBy>
             <rdf:Bag>
+              <rdf:li rdf:resource="https://identifiers.org/doi/10.20944/preprints202601.2095.v1"/>
               <rdf:li rdf:resource="https://identifiers.org/doi/10.5281/zenodo.13759839"/>
             </rdf:Bag>
           </bqbiol:isDescribedBy>

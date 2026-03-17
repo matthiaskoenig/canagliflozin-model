@@ -1,6 +1,6 @@
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.13759839.svg)](https://doi.org/10.5281/zenodo.13759839)
 [![GitHub Action](https://github.com/matthiaskoenig/canagliflozin-model/actions/workflows/python.yml/badge.svg)](https://github.com/matthiaskoenig/canagliflozin-model/actions/workflows/python.yml)
-[![GitHub Action](https://github.com/matthiaskoenig/canagliflozin-model/actions/workflows/docker.yml/badge.svg)](https://github.com/matthiaskoenig/sorafenib-model/actions/workflows/docker.yml)
+[![GitHub Action](https://github.com/matthiaskoenig/canagliflozin-model/actions/workflows/docker.yml/badge.svg)](https://github.com/matthiaskoenig/canagliflozin-model/actions/workflows/docker.yml)
 
 # canagliflozin model
 This repository provides the canagliflozin physiologically based pharmacokinetics/ pharmacodynamics (PBPK/PD) model.
@@ -9,6 +9,7 @@ The model is distributed as [SBML](http://sbml.org) format available from [`cana
 corresponding [SBML4humans model report](https://sbml4humans.de/model_url?url=https://raw.githubusercontent.com/matthiaskoenig/canagliflozin-model/main/models/canagliflozin_body_flat.xml) and [model equations](./models/canagliflozin_body_flat.md).
 
 The COMBINE archive is available from [`canagliflozin_model.omex`](./canagliflozin_model.omex).
+The FAIR assessment is available from [`canagliflozin_model_fair.xlsx`](./losartan_model_fair.xlsx).
 
 ![model overview](./figures/canagliflozin_model.png)
 
@@ -19,11 +20,17 @@ The COMBINE archive is available from [`canagliflozin_model.omex`](./canaglifloz
 * **whole-body** submodel [`canagliflozin_body.xml`](./models/canagliflozin_body.xml) with [SBML4humans report](https://sbml4humans.de/model_url?url=https://raw.githubusercontent.com/matthiaskoenig/canagliflozin-model/main/models/canagliflozin_body.xml) and [equations](./models/canagliflozin_body.md).
 
 ## How to cite
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.13758627.svg)](https://doi.org/10.5281/zenodo.13758627)
+To cite the model repository
 
 > Tereshchuk, V., Elias, M. & König, M. (2026).
 > *Physiologically based pharmacokinetic/pharmacodynamic (PBPK) model of canagliflozin.*   
 > Zenodo. [https://doi.org/10.5281/zenodo.13759839](https://doi.org/10.5281/zenodo.13759839)
+
+To cite the preprint
+
+> Vera Tereshchuk, Michelle Elias, Matthias König
+> A Digital Twin of Canagliflozin Pharmacokinetics and Pharmacodynamics in Type 2 Diabetes Mellitus
+> Preprints 2026, 10.20944/preprints202601.2095.v1 (preprint). [doi:10.20944/preprints202601.2095.v1](https://doi.org/10.20944/preprints202601.2095.v1)
 
 ## License
 
@@ -47,6 +54,7 @@ cd canagliflozin-model
 #### uv
 Run the complete analysis with uv (https://docs.astral.sh/uv/getting-started/installation/):
 ```bash
+uv sync
 uv run run_canagliflozin -a all -r results
 ```
 
@@ -57,7 +65,8 @@ pip install -e .
 ```
 Run the complete analysis in the environment via:
 ```bash
-run_canagliflozin -a all -r results
+uv sync
+uv run run_canagliflozin -a all -r results
 ```
 
 ### docker
@@ -81,6 +90,5 @@ sudo chmod 775 "${PWD}/results"
 
 ## Funding
 Matthias König was supported by the Federal Ministry of Research, Technology and Space (BMFTR, Germany) within ATLAS by grant number 031L0304B and by the German Research Foundation (DFG) within the Research Unit Program FOR 5151 QuaLiPerF (Quantifying Liver Perfusion-Function Relationship in Complex Resection - A Systems Medicine Approach) by grant number 436883643 and by grant number 465194077 (Priority Programme SPP 2311, Subproject SimLivA). This work was supported by the BMBF-funded de.NBI Cloud within the German Network for Bioinformatics Infrastructure (de.NBI) (031A537B, 031A533A, 031A538A, 031A533B, 031A535A, 031A537C, 031A534A, 031A532B).
-
 
 © 2023-2026 Vera Tereshchuk, Michelle Elias, and Matthias König, [Systems Medicine of the Liver](https://livermetabolism.com)

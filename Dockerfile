@@ -1,15 +1,16 @@
-# -----------------------
+# --------------------------------------------------------
 # Dockerfile
-# -----------------------
+# --------------------------------------------------------
 # Build and push image
-#   docker build -f Dockerfile -t matthiaskoenig/canagliflozin:0.7.0 -t matthiaskoenig/canagliflozin:latest .
+#   docker build -f Dockerfile -t matthiaskoenig/canagliflozin:0.7.1 -t matthiaskoenig/canagliflozin:latest .
 #   docker login
 #   docker push --all-tags matthiaskoenig/canagliflozin
+# --------------------------------------------------------
 
 FROM python:3.14-slim
 
 # install uv
-COPY --from=ghcr.io/astral-sh/uv:0.9.26 /uv /bin/uv
+COPY --from=ghcr.io/astral-sh/uv:0.10.10 /uv /bin/uv
 ENV UV_SYSTEM_PYTHON=1
 
 # install git
