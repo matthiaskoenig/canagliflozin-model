@@ -1,56 +1,46 @@
 """Canagliflozin body model."""
 
-from sbmlutils.cytoscape import visualize_sbml
-from sbmlutils.factory import *
-from sbmlutils.metadata import *
-from pkdb_models.models.canagliflozin.models import annotations
-from pkdb_models.models.canagliflozin.models import templates
+from typing import NotRequired, TypedDict
+
+import numpy as np
+from sbmlutils.factory import (
+    PORT_SUFFIX,
+    AssignmentRule,
+    Compartment,
+    ExternalModelDefinition,
+    Model,
+    Parameter,
+    RateRule,
+    Reaction,
+    ReplacedElement,
+    Species,
+    Submodel,
+    UnitDefinition,
+    create_model,
+)
+from sbmlutils.metadata import (
+    BQB,
+    SBO,
+)
+
+from pkdb_models.models.canagliflozin.models import annotations, templates
+from pkdb_models.models.canagliflozin.models.fits import FITS
 
 
 # -----------------------------------------------------------------------------
 # Whole Body Metabolism
 # -----------------------------------------------------------------------------
 class U(templates.U):
-    """UnitsDefinitions."""
+    """Units of the whole-body model."""
 
-    cm = UnitDefinition("cm")
-    hr = UnitDefinition("hr")
     kg = UnitDefinition("kg")
-
-    l_per_hr = UnitDefinition("l_per_hr", "l/hr")
     l_per_kg = UnitDefinition("l_per_kg", "l/kg")
-    l_per_min_kg = UnitDefinition("l_per_min_kg", "l/min/kg")
-    l_per_ml = UnitDefinition("l_per_ml", "l/ml")
-
-    m2_per_kg = UnitDefinition("m2_per_kg", "meter^2/kg")
-
-    mg_per_day = UnitDefinition("mg_per_day", "mg/day")
-    mg_per_g = UnitDefinition("mg_per_g", "mg/g")
-    mg_per_hr = UnitDefinition("mg_per_hr", "mg/hr")
-    mg_per_l = UnitDefinition("mg_per_l", "mg/l")
     mg_per_min = UnitDefinition("mg_per_min", "mg/min")
-
-    min_per_day = UnitDefinition("min_per_day", "min/day")
-    min_per_hr = UnitDefinition("min_per_hr", "min/hr")
-
-    ml = UnitDefinition("ml")
     ml_per_l = UnitDefinition("ml_per_l", "ml/l")
+    ml_per_min = UnitDefinition("ml_per_min", "ml/min")
     ml_per_s = UnitDefinition("ml_per_s", "ml/s")
     ml_per_s_kg = UnitDefinition("ml_per_s_kg", "ml/s/kg")
-
-    mmole_per_hr = UnitDefinition("mmole_per_hr", "mmole/hr")
-    mmole_per_l = UnitDefinition("mmole_per_l", "mmole/l")
-    mmole_per_min_kg = UnitDefinition("mmole_per_min_kg", "mmole/min/kg")
-    mmole_per_hr_ml = UnitDefinition("mmole_per_hr_ml", "mmole/hr/ml")
-
-    mul_per_g = UnitDefinition("mulitre_per_g", "microlitre/g")
-    mul_per_min_mg = UnitDefinition("mul_per_min_mg", "microliter/min/mg")
-
-    per_hr = UnitDefinition("per_hr", "1/hr")
-    per_min_kg = UnitDefinition("per_min_kg", "1/min/kg")
-
     s_per_min = UnitDefinition("s_per_min", "s/min")
-    mmHg = UnitDefinition("mmHg", "133.32239 N/m^2")
 
 
 _m = Model(
@@ -58,30 +48,47 @@ _m = Model(
     name="Canagliflozin body model",
     notes="""
     # Canagliflozin body model
-    
-    Distribution of canagliflozin and metabolites M5 and M7 via the bloodflow.
+
+    Distribution of canagliflozin and its glucuronides M5 and M7 with the
+    blood flow, the tissue distribution of canagliflozin, the hepatic and renal
+    metabolism, the biliary excretion of the metabolites with the hydrolysis of
+    the glucuronides in the intestine, and the renal excretion.
     """
     + templates.terms_of_use,
     units=U,
     model_units=templates.model_units,
     creators=templates.creators,
-    annotations=annotations.model + [
+    annotations=[
+        *annotations.model,
         # tissue
-        (BQB.OCCURS_IN, "BTO:0001489"),  # whole body
-        (BQB.OCCURS_IN, "FMA:256135"),  # body
-
+        (BQB.OCCURS_IN, "bto/BTO:0001489"),  # whole body
+        (BQB.OCCURS_IN, "fma/FMA:256135"),  # body
         (BQB.HAS_PROPERTY, "NCIT:C79369"),  # Pharmacokinetics: Absorption
         (BQB.HAS_PROPERTY, "NCIT:C79371"),  # Pharmacokinetics: Metabolism
         (BQB.HAS_PROPERTY, "NCIT:C79372"),  # Pharmacokinetics: Excretion
         (BQB.HAS_PROPERTY, "NCIT:C79370"),  # Pharmacokinetics: Distribution
-    ]
+    ],
 )
 
 _m.ports = []
 _m.deletions = []
 _m.replaced_elements = []
 
-SUBSTANCES_BODY = {
+
+class SubstanceBody(TypedDict):
+    """Definition of a substance transported in the whole-body model."""
+
+    name: str
+    unit: UnitDefinition
+    cinit: float  # initial concentration [mmole/l]
+    Mr: float  # molecular weight [g/mole]
+    IVDOSE: NotRequired[float]  # intravenous dose [mg]
+    PODOSE: NotRequired[float]  # oral dose [mg]
+    tissue_distribution: NotRequired[bool]  # distribution in tissues (fitted)
+    tissue_deep: NotRequired[bool]  # deep tissue pool of the rest (fitted)
+
+
+SUBSTANCES_BODY: dict[str, SubstanceBody] = {
     "can": {
         "name": "canagliflozin",
         "unit": U.mmole,
@@ -93,12 +100,23 @@ SUBSTANCES_BODY = {
         "IVDOSE": 0,  # venous plasma
         # oral absorption
         "PODOSE": 0,  # dose
-        'ftissue': 0.6668666338129446,  # [litre_per_min] distribution in tissues
-        "Kp": 1.0025087991468038,  # [-] tissue/plasma partition coefficient
-        # logP = 3.44; Claassen2013;  P = 10^3.44 = 2754.23  (drug bank), https://www.tga.gov.au/file/824/download
-        # logP 3.09 (1230); (drug bank, ALOGPS prediction)
-        # logP 3.52 (3311); (drug bank, Chemaxon prediction)
+        # distribution into the tissues: Vss 83.5 l, Vz 119 l after the
+        # intravenous dose, a distribution phase (IV t1/2 6.9 hr, oral 11-16 hr)
+        # [Devineni2015b]; logP 3.44 [Claassen2013]
+        # the exchange flows (ftissue, ftissue_deep) and the partition
+        # coefficients (Kp, Kp_deep) of both pools are fitted, see `fits.FITS`
+        "tissue_distribution": True,
+        # a deep, slowly equilibrating pool of the rest of the body: after the
+        # intravenous dose the plasma falls 6-fold within 1 hr (fast
+        # distribution), then with a half-life of 5-9 hr; after an oral dose the
+        # terminal half-life is 11-16 hr (Devineni2015b: "bi-exponential", the
+        # shorter t1/2 after the microdose from its shorter sampling); one
+        # tissue pool gives one of the two
+        "tissue_deep": True,
     },
+    # the glucuronides are hydrophilic, they have no tissue distribution: their
+    # kinetics are limited by their formation (t1/2 14-17 hr as canagliflozin)
+    # [Chen2015, Devineni2013]
     "m5": {
         "name": "M5",
         "unit": U.mmole,
@@ -106,8 +124,6 @@ SUBSTANCES_BODY = {
         "cinit": 0.0,  # [mmole/l]
         # Molecular weight
         "Mr": 620.6,  # [g/mole]
-        'ftissue': 0.0071365605418970465,  # [litre_per_min] distribution in tissues
-        "Kp": 2.5413820798849263,  # [-] tissue/plasma partition coefficient
     },
     "m7": {
         "name": "M7",
@@ -116,23 +132,13 @@ SUBSTANCES_BODY = {
         "cinit": 0.0,  # [mmole/l]
         # Molecular weight
         "Mr": 620.6,  # [g/mole]
-        'ftissue': 0.00015407040706317475,  # [litre_per_min] distribution in tissues
-        "Kp": 39.878498027455976,  # [-] tissue/plasma partition coefficient
     },
-    # "m9": {
-    #     "name": "M9",
-    #     "unit": U.mmole,
-    #     # initial concentration
-    #     "cinit": 0.0,  # [mmole/l]
-    #     # Molecular weight
-    #     "Mr": 460.5,  # [g/mole]
-    # },
 }
 
 # -----------------------------------------------------------------------------
 # Submodels
 # -----------------------------------------------------------------------------
-COMPARTMENTS_BODY = {
+COMPARTMENTS_BODY: dict[str, str] = {
     "ki": "kidney",
     "li": "liver",
     "lu": "lung",
@@ -144,7 +150,7 @@ COMPARTMENTS_BODY = {
     "hv": "hepatic vein",
 }
 
-SUBMODEL_SID_DICT = {  # tissue to submodel mapping
+SUBMODEL_SID_DICT: dict[str, str] = {  # tissue to submodel mapping
     "ki": "KI",  # kidney
     "li": "LI",  # liver
     "gu": "GU",  # gut/intestine
@@ -168,7 +174,7 @@ _m.external_model_definitions = [
         modelRef=liver_id,
     ),
     ExternalModelDefinition(
-         sid="gut", name="gut model definition", source=f"{gut_id}.xml", modelRef=gut_id
+        sid="gut", name="gut model definition", source=f"{gut_id}.xml", modelRef=gut_id
     ),
 ]
 
@@ -283,6 +289,16 @@ _m.compartments = [
         annotations=annotations.compartments["stomach"],
     ),
     Compartment(
+        "Vlumen",
+        metaId="meta_Vlumen",
+        value=1,
+        unit=U.liter,
+        constant=False,
+        name="intestinal lumen (inner part of intestine)",
+        sboTerm=SBO.PHYSICAL_COMPARTMENT,
+        annotations=annotations.compartments["gu_lumen"],
+    ),
+    Compartment(
         "Vpo",
         metaId="meta_Vpo",
         value=1,
@@ -305,7 +321,7 @@ _m.compartments = [
 ]
 
 # create plasma and tissue compartments (for correct blood volume)
-for cid in COMPARTMENTS_BODY.keys():
+for cid in COMPARTMENTS_BODY:
     if cid not in ["ar", "ve", "po", "hv"]:
         _m.compartments.extend(
             [
@@ -404,6 +420,28 @@ _m.replaced_elements.extend(
             submodelRef=SUBMODEL_SID_DICT["gu"],
             portRef=f"Vfeces{PORT_SUFFIX}",
         ),
+        ReplacedElement(
+            sid="Vstomach_RE",
+            metaId="Vstomach_RE",
+            elementRef="Vstomach",
+            submodelRef=SUBMODEL_SID_DICT["gu"],
+            portRef=f"Vstomach{PORT_SUFFIX}",
+        ),
+        # the lumen of the intestine and of the bile flow of the liver
+        ReplacedElement(
+            sid="Vlumen_RE",
+            metaId="Vlumen_RE",
+            elementRef="Vlumen",
+            submodelRef=SUBMODEL_SID_DICT["gu"],
+            portRef=f"Vlumen{PORT_SUFFIX}",
+        ),
+        ReplacedElement(
+            sid="Vlumen_RE2",
+            metaId="Vlumen_RE2",
+            elementRef="Vlumen",
+            submodelRef=SUBMODEL_SID_DICT["li"],
+            portRef=f"Vlumen{PORT_SUFFIX}",
+        ),
     ]
 )
 
@@ -438,137 +476,141 @@ for sid, sdict in SUBSTANCES_BODY.items():
 
     # tissue species
     for cid, cname in COMPARTMENTS_BODY.items():
-        if "ftissue" in sdict:
-            if cid not in ["ve", "ar", "li", "ki", "gu", "po", "hv"]:
-                sid_ex = f"C{cid}_{sid}"
-                cid_ex = f"V{cid}_tissue"
+        if "tissue_distribution" in sdict and cid not in [
+            "ve",
+            "ar",
+            "li",
+            "ki",
+            "gu",
+            "po",
+            "hv",
+        ]:
+            sid_ex = f"C{cid}_{sid}"
+            cid_ex = f"V{cid}_tissue"
 
-                _m.species.extend(
-                    [
-                        Species(
-                            sid_ex,
-                            metaId=f"meta_{sid_ex}",
-                            initialConcentration=sdict["cinit"],
-                            compartment=cid_ex,
-                            substanceUnit=sdict["unit"],
-                            name=f"{sdict['name']} ({cname})",
-                            hasOnlySubstanceUnits=False,
-                            port=True,
-                            sboTerm=SBO.SIMPLE_CHEMICAL,
-                            annotations=annotations.species[sid],
-                        )
-                    ]
-                )
+            _m.species.extend(
+                [
+                    Species(
+                        sid_ex,
+                        metaId=f"meta_{sid_ex}",
+                        initialConcentration=sdict["cinit"],
+                        compartment=cid_ex,
+                        substanceUnit=sdict["unit"],
+                        name=f"{sdict['name']} ({cname})",
+                        hasOnlySubstanceUnits=False,
+                        port=True,
+                        sboTerm=SBO.SIMPLE_CHEMICAL,
+                        annotations=annotations.species[sid],
+                    )
+                ]
+            )
 
-    # urine metabolites dummy species
-    if sid in ["can", "m5", "m7"]:
-        _m.species.extend([
+    # deep tissue of the rest of the body
+    if "tissue_deep" in sdict:
+        _m.species.append(
             Species(
-                f"Aurine_{sid}",
-                metaId=f"meta_Aurine_{sid}",
-                initialConcentration=0,
-                compartment="Vurine",
+                f"Cre_deep_{sid}",
+                metaId=f"meta_Cre_deep_{sid}",
+                initialConcentration=sdict["cinit"],
+                compartment="Vre_tissue",
                 substanceUnit=sdict["unit"],
-                name=f"{sdict['name']} (urine)",
-                hasOnlySubstanceUnits=True,
+                name=f"{sdict['name']} (rest, deep tissue)",
+                hasOnlySubstanceUnits=False,
                 sboTerm=SBO.SIMPLE_CHEMICAL,
                 annotations=annotations.species[sid],
-            ),
-        ])
+            )
+        )
 
-    # feces metabolites
-    if sid in ["can", "m7"]:
+    # urine
+    _m.species.append(
+        Species(
+            f"Aurine_{sid}",
+            metaId=f"meta_Aurine_{sid}",
+            initialConcentration=0,
+            compartment="Vurine",
+            substanceUnit=sdict["unit"],
+            name=f"{sdict['name']} (urine)",
+            hasOnlySubstanceUnits=True,
+            sboTerm=SBO.SIMPLE_CHEMICAL,
+            annotations=annotations.species[sid],
+        )
+    )
+
+# intestinal lumen and feces: canagliflozin and the metabolites of the bile
+LUMEN_SUBSTANCES: dict[str, str] = {
+    "can": "canagliflozin",
+    "m5": "M5",
+    "m7": "M7",
+    "m9": "M9",
+}
+#: the substances of the feces, the M5 of the bile is hydrolysed
+FECES_SUBSTANCES: list[str] = ["can", "m7", "m9"]
+for sid, name in LUMEN_SUBSTANCES.items():
+    _m.species.append(
+        Species(
+            f"Cgu_{sid}",
+            metaId=f"meta_Cgu_{sid}",
+            initialConcentration=0,
+            compartment="Vlumen",
+            substanceUnit=U.mmole,
+            name=f"{name} (intestinal lumen)",
+            hasOnlySubstanceUnits=False,
+            sboTerm=SBO.SIMPLE_CHEMICAL,
+            annotations=annotations.species[sid],
+        )
+    )
+    if sid in FECES_SUBSTANCES:
         _m.species.append(
             Species(
                 f"Afeces_{sid}",
                 metaId=f"meta_Afeces_{sid}",
                 initialConcentration=0,
                 compartment="Vfeces",
-                substanceUnit=sdict["unit"],
-                name=f"{sdict['name']} (feces)",
+                substanceUnit=U.mmole,
+                name=f"{name} (feces)",
                 hasOnlySubstanceUnits=True,
                 sboTerm=SBO.SIMPLE_CHEMICAL,
                 annotations=annotations.species[sid],
             )
         )
 
-for sid in ["can", "m7"]:
-    _m.species.append(
-        Species(
-            f"Cgu_{sid}",
-            metaId=f"meta_Cgu_{sid}",
-            initialConcentration=0,
-            compartment="Vgu",
-            substanceUnit=sdict["unit"],
-            name=f"{sdict['name']} (gut)",
-            hasOnlySubstanceUnits=False,
-            sboTerm=SBO.SIMPLE_CHEMICAL,
-            annotations=annotations.species[sid],
-        )
-    )
-
-_m.species.append(
-    Species(
-        f"Cgu_m9",
-        metaId=f"meta_Cgu_m9",
-        initialConcentration=0,
-        compartment="Vgu",
-        substanceUnit=U.mmole,
-        name=f"M9 (gut)",
-        hasOnlySubstanceUnits=False,
-        sboTerm=SBO.SIMPLE_CHEMICAL,
-        annotations=annotations.species["m9"],
-    )
-)
-_m.species.append(
-    Species(
-        f"Afeces_m9",
-        metaId=f"meta_Afeces_m9",
-        initialConcentration=0,
-        compartment="Vfeces",
-        substanceUnit=U.mmole,
-        name=f"M9 (feces)",
-        hasOnlySubstanceUnits=True,
-        sboTerm=SBO.SIMPLE_CHEMICAL,
-        annotations=annotations.species["m9"],
-    )
-)
-
 _m.species.extend(
     [
         Species(
-            f"Cve_cantot",
-            metaId=f"meta_Cve_cantot",
+            "Cve_cantot",
+            metaId="meta_Cve_cantot",
             initialConcentration=0,
             compartment="Vve",
             substanceUnit=U.mmole,
-            name=f"total canagliflozin (plasma)",
+            name="total canagliflozin (plasma)",
+            notes="""Canagliflozin, M5 and M7 in the plasma, compared with the
+            total radioactivity of the plasma.""",
             hasOnlySubstanceUnits=False,
             sboTerm=SBO.SIMPLE_CHEMICAL,
             annotations=annotations.species["cantot"],
         ),
         Species(
-            f"Aurine_cantot",
-            metaId=f"meta_Aurine_cantot",
+            "Aurine_cantot",
+            metaId="meta_Aurine_cantot",
             initialConcentration=0,
             compartment="Vurine",
             substanceUnit=U.mmole,
-            name=f"total canagliflozin (urine)",
+            name="total canagliflozin (urine)",
             hasOnlySubstanceUnits=True,
             sboTerm=SBO.SIMPLE_CHEMICAL,
             annotations=annotations.species["cantot"],
         ),
         Species(
-            f"Afeces_cantot",
-            metaId=f"meta_Afeces_cantot",
+            "Afeces_cantot",
+            metaId="meta_Afeces_cantot",
             initialConcentration=0,
             compartment="Vfeces",
             substanceUnit=U.mmole,
-            name=f"total canagliflozin (feces)",
+            name="total canagliflozin (feces)",
             hasOnlySubstanceUnits=True,
             sboTerm=SBO.SIMPLE_CHEMICAL,
             annotations=annotations.species["cantot"],
-        )
+        ),
     ]
 )
 
@@ -607,7 +649,7 @@ for skey in ["can", "m5", "m7", "cantot"]:
     )
 
 # feces species replacements
-for skey in ["can", "m7", "m9", "cantot"]:
+for skey in [*FECES_SUBSTANCES, "cantot"]:
     _m.replaced_elements.append(
         ReplacedElement(
             sid=f"Afeces_{skey}_RE",
@@ -618,29 +660,29 @@ for skey in ["can", "m7", "m9", "cantot"]:
         )
     )
 
-# intestine species replacements
-for skey in ["can", "m7", "m9"]:
-    _m.replaced_elements.extend([
+# intestinal lumen species replacements
+for skey in LUMEN_SUBSTANCES:
+    _m.replaced_elements.append(
         ReplacedElement(
             sid=f"Cgu_{skey}_RE",
             metaId=f"Cgu_{skey}_RE",
             elementRef=f"Cgu_{skey}",
             submodelRef=SUBMODEL_SID_DICT["gu"],
             portRef=f"{skey}_lumen{PORT_SUFFIX}",
-        ),
-    ])
+        )
+    )
 
-# liver species replacement
-for skey in ["m7", "m9"]:
-    _m.replaced_elements.extend([
+# the metabolites of the bile flow into the intestinal lumen
+for skey in ["m5", "m7", "m9"]:
+    _m.replaced_elements.append(
         ReplacedElement(
             sid=f"Cgu_{skey}_RE2",
             metaId=f"Cgu_{skey}_RE2",
             elementRef=f"Cgu_{skey}",
             submodelRef=SUBMODEL_SID_DICT["li"],
             portRef=f"{skey}_lumen{PORT_SUFFIX}",
-        ),
-    ])
+        )
+    )
 
 # -------------------------------------------------------------------------------------------------
 # Parameters
@@ -655,6 +697,20 @@ _m.parameters.extend(
             constant=True,
             name="body weight",
             sboTerm=SBO.QUANTITATIVE_SYSTEMS_DESCRIPTION_PARAMETER,
+        ),
+        Parameter(
+            "BW_ref",
+            75,
+            U.kg,
+            constant=True,
+            name="reference body weight [kg]",
+            sboTerm=SBO.QUANTITATIVE_SYSTEMS_DESCRIPTION_PARAMETER,
+            notes=(
+                "Body weight at which the exchange flows of the tissue "
+                "distribution (`ftissue_<sid>`) are given; they scale with the "
+                "body weight as the volumes, the blood flows and the renal "
+                "clearance do."
+            ),
         ),
         Parameter(
             "COBW",
@@ -674,7 +730,7 @@ _m.parameters.extend(
             notes="""
             1.0: normal function;
             <1.0: reduced function as reduced cardiac output;
-            """
+            """,
         ),
         Parameter(
             "CO",
@@ -686,10 +742,10 @@ _m.parameters.extend(
         ),
         Parameter(
             "QC",
-            108.33 * 1000 * 60,
+            108.33 / 1000 * 60,
             U.l_per_min,
             constant=False,
-            name="cardiac output [L/hr]",
+            name="cardiac output [l/min]",
             sboTerm=SBO.QUANTITATIVE_SYSTEMS_DESCRIPTION_PARAMETER,
         ),
         # fractional tissue volumes
@@ -794,7 +850,7 @@ _m.parameters.extend(
             sboTerm=SBO.QUANTITATIVE_SYSTEMS_DESCRIPTION_PARAMETER,
             notes="""
         Assumed FQgu is the sum of FQgu + FQsp + FQpa for correct portal blood flow.
-        with FQgu=0.146, FQsp=0.017, FQpa=0.017 
+        with FQgu=0.146, FQsp=0.017, FQpa=0.017
         """,
         ),
         Parameter(
@@ -830,14 +886,6 @@ _m.parameters.extend(
             sboTerm=SBO.QUANTITATIVE_SYSTEMS_DESCRIPTION_PARAMETER,
         ),
         Parameter(
-            "conversion_min_per_day",
-            1440,
-            U.min_per_day,
-            constant=True,
-            name="Conversion factor min to hours",
-            sboTerm=SBO.QUANTITATIVE_SYSTEMS_DESCRIPTION_PARAMETER,
-        ),
-        Parameter(
             "f_cirrhosis",
             0,
             U.dimensionless,
@@ -857,7 +905,10 @@ _m.parameters.extend(
             name="fraction of portal venous blood shunted by the liver",
             sboTerm=SBO.QUANTITATIVE_SYSTEMS_DESCRIPTION_PARAMETER,
             annotations=[
-                (BQB.IS, "hp/HP:0002629"),  # Gastrointestinal arteriovenous malformation
+                (
+                    BQB.IS,
+                    "hp/HP:0002629",
+                ),  # Gastrointestinal arteriovenous malformation
             ],
         ),
         Parameter(
@@ -872,37 +923,111 @@ _m.parameters.extend(
 )
 
 
+# renal function and the activity of UGT1A9 of liver and kidney
+_m.parameters.extend(
+    [
+        Parameter(
+            "f_GFR_Qki",
+            101 / 1.32354,
+            U.ml_per_l,
+            constant=True,
+            name="relationship GFR and Qki",
+            sboTerm=SBO.QUANTITATIVE_SYSTEMS_DESCRIPTION_PARAMETER,
+            notes="""
+            GFR per renal blood flow (76.3 ml/l, a ratio of 0.0763). Calibrated
+            so that the healthy GFR is 101 ml/min at the renal blood flow of
+            1.32354 l/min of 75 kg, the normal GFR of the classes of renal
+            impairment (`pkpdsim.impairment`).
+            """,
+        ),
+        Parameter(
+            "GFR_base",
+            np.nan,
+            U.ml_per_min,
+            constant=False,
+            name="glomerular filtration rate (healthy)",
+            sboTerm=SBO.QUANTITATIVE_SYSTEMS_DESCRIPTION_PARAMETER,
+            notes="""
+            The GFR of healthy kidneys, which scales with the renal blood flow
+            and so with the body weight; the GFR is `KI__f_renal_function`
+            times this rate.
+            """,
+        ),
+        Parameter(
+            "f_ugt1a9",
+            1.0,
+            U.dimensionless,
+            constant=True,
+            name="scaling factor UGT1A9 activity",
+            sboTerm=SBO.QUANTITATIVE_SYSTEMS_DESCRIPTION_PARAMETER,
+            notes="""
+            Scaling factor of the UGT1A9 activity of the liver and the kidney,
+            which form M7; an inducer or inhibitor changes both.
+            1.0: normal activity; <1.0 decreased activity; >1.0 increased activity.
+            """,
+        ),
+    ]
+)
+_m.replaced_elements.extend(
+    [
+        ReplacedElement(
+            sid="GFR_base_RE",
+            metaId="GFR_base_RE",
+            elementRef="GFR_base",
+            submodelRef=SUBMODEL_SID_DICT["ki"],
+            portRef=f"GFR_base{PORT_SUFFIX}",
+        ),
+        ReplacedElement(
+            sid="f_ugt1a9_ki_RE",
+            metaId="f_ugt1a9_ki_RE",
+            elementRef="f_ugt1a9",
+            submodelRef=SUBMODEL_SID_DICT["ki"],
+            portRef=f"f_ugt1a9{PORT_SUFFIX}",
+        ),
+        ReplacedElement(
+            sid="f_ugt1a9_li_RE",
+            metaId="f_ugt1a9_li_RE",
+            elementRef="f_ugt1a9",
+            submodelRef=SUBMODEL_SID_DICT["li"],
+            portRef=f"f_ugt1a9{PORT_SUFFIX}",
+        ),
+    ]
+)
+
 for sid, sdict in SUBSTANCES_BODY.items():
     if "PODOSE" in sdict:
         # Parameter for intestine model
-        _m.parameters.extend([
-            Parameter(
-                f"PODOSE_{sid}",
-                sdict["PODOSE"],
-                U.mg,
-                constant=False,
-                sboTerm=SBO.QUANTITATIVE_SYSTEMS_DESCRIPTION_PARAMETER,
-                name=f"oral dose {sid} [mg]",
-            ),
+        _m.parameters.extend(
+            [
+                Parameter(
+                    f"PODOSE_{sid}",
+                    sdict["PODOSE"],
+                    U.mg,
+                    constant=False,
+                    sboTerm=SBO.QUANTITATIVE_SYSTEMS_DESCRIPTION_PARAMETER,
+                    name=f"oral dose {sid} [mg]",
+                ),
             ]
         )
-        _m.replaced_elements.extend([
-            ReplacedElement(
-                sid=f"PODOSE_{sid}_RE",
-                metaId=f"PODOSE_{sid}_RE",
-                elementRef=f"PODOSE_{sid}",
-                submodelRef=SUBMODEL_SID_DICT["gu"],
-                portRef=f"PODOSE_{sid}{PORT_SUFFIX}",
-            ),
+        _m.replaced_elements.extend(
+            [
+                ReplacedElement(
+                    sid=f"PODOSE_{sid}_RE",
+                    metaId=f"PODOSE_{sid}_RE",
+                    elementRef=f"PODOSE_{sid}",
+                    submodelRef=SUBMODEL_SID_DICT["gu"],
+                    portRef=f"PODOSE_{sid}{PORT_SUFFIX}",
+                ),
             ]
         )
 
-_m.rules = _m.rules + [
+_m.rules = [
+    *_m.rules,
     AssignmentRule("f_shunts", "f_cirrhosis", unit=U.dimensionless),
     AssignmentRule("f_tissue_loss", "f_cirrhosis", unit=U.dimensionless),
 ]
 
-replaced_parameters = {
+replaced_parameters: dict[str, list[str]] = {
     "li": [],
     "gu": ["Mr_can"],
     "ki": [],
@@ -937,25 +1062,49 @@ for sid, sdict in SUBSTANCES_BODY.items():
     )
 
     # tissue distribution
-    if "ftissue" in sdict:
-        _m.parameters.extend([
-            Parameter(
-                f"ftissue_{sid}",
-                sdict["ftissue"],
-                U.l_per_min,
-                constant=True,
-                sboTerm=SBO.QUANTITATIVE_SYSTEMS_DESCRIPTION_PARAMETER,
-                name=f"tissue distribution {sid}",
-            ),
-            Parameter(
-                f"Kp_{sid}",
-                sdict["Kp"],
-                U.dimensionless,
-                constant=True,
-                sboTerm=SBO.QUANTITATIVE_SYSTEMS_DESCRIPTION_PARAMETER,
-                name=f"tissue/plasma partition coefficient {sid}",
-            ),
-        ])
+    if "tissue_distribution" in sdict:
+        _m.parameters.extend(
+            [
+                Parameter(
+                    f"ftissue_{sid}",
+                    **FITS.parameter(f"ftissue_{sid}", unit=U.l_per_min),
+                    constant=True,
+                    sboTerm=SBO.QUANTITATIVE_SYSTEMS_DESCRIPTION_PARAMETER,
+                    name=f"tissue distribution {sid}",
+                    notes="Exchange flow at the reference body weight `BW_ref`.",
+                ),
+                Parameter(
+                    f"Kp_{sid}",
+                    **FITS.parameter(f"Kp_{sid}", unit=U.dimensionless),
+                    constant=True,
+                    sboTerm=SBO.QUANTITATIVE_SYSTEMS_DESCRIPTION_PARAMETER,
+                    name=f"tissue/plasma partition coefficient {sid}",
+                ),
+            ]
+        )
+    if "tissue_deep" in sdict:
+        _m.parameters.extend(
+            [
+                Parameter(
+                    f"ftissue_deep_{sid}",
+                    **FITS.parameter(f"ftissue_deep_{sid}", unit=U.l_per_min),
+                    constant=True,
+                    sboTerm=SBO.QUANTITATIVE_SYSTEMS_DESCRIPTION_PARAMETER,
+                    name=f"deep tissue distribution {sid}",
+                    notes=(
+                        "Exchange flow of the deep tissue pool of the rest of the "
+                        "body at the reference body weight `BW_ref`."
+                    ),
+                ),
+                Parameter(
+                    f"Kp_deep_{sid}",
+                    **FITS.parameter(f"Kp_deep_{sid}", unit=U.dimensionless),
+                    constant=True,
+                    sboTerm=SBO.QUANTITATIVE_SYSTEMS_DESCRIPTION_PARAMETER,
+                    name=f"deep tissue/plasma partition coefficient {sid}",
+                ),
+            ]
+        )
 
     # dosing
     if "IVDOSE" in sdict:
@@ -995,7 +1144,6 @@ for sid, sdict in SUBSTANCES_BODY.items():
                     sboTerm=SBO.QUANTITATIVE_SYSTEMS_DESCRIPTION_PARAMETER,
                     name=f"Ri [mg/min] rate of infusion {sid}",
                 ),
-
                 Parameter(
                     f"cum_dose_{sid}",
                     0,
@@ -1010,12 +1158,13 @@ for sid, sdict in SUBSTANCES_BODY.items():
 # -------------------------------------------------------------------------------------------------
 # AssignmentRules
 # -------------------------------------------------------------------------------------------------
-_m.rules = _m.rules + [
+_m.rules = [
+    *_m.rules,
     AssignmentRule(
         "Cve_cantot",
         "Cve_can + Cve_m5 + Cve_m7",
         unit=U.mM,
-        name="Sum of unchanged canagliflozin and M5, M7, M9",
+        name="sum of canagliflozin, M5 and M7 (plasma)",
     ),
     # Rest body volume
     AssignmentRule(
@@ -1068,12 +1217,25 @@ _m.rules = _m.rules + [
     AssignmentRule("Qlu", "QC*FQlu", U.l_per_min, name="lung blood flow"),
     AssignmentRule("Qre", "QC*FQre", U.l_per_min, name="rest of body blood flow"),
     AssignmentRule("Qpo", "Qgu", U.l_per_min, name="portal blood flow"),
+    # glomerular filtration rate of healthy kidneys
+    AssignmentRule(
+        "GFR_base",
+        "f_GFR_Qki * Qki",
+        U.ml_per_min,
+        name="glomerular filtration rate (healthy)",
+    ),
+    # the lumen is the inner part of the intestine
+    AssignmentRule(
+        "Vlumen",
+        "0.9 dimensionless * Vgu",
+        U.liter,
+        name="volume of the intestinal lumen",
+    ),
 ]
 
 # Volumes for explicit tissue models
 for cid, cname in COMPARTMENTS_BODY.items():
     if cid not in ["ve", "ar", "po", "hv"]:
-
         _m.rules.append(
             # plasma volume associated with tissue
             AssignmentRule(
@@ -1105,8 +1267,6 @@ for cid, cname in COMPARTMENTS_BODY.items():
             )
 
 for sid, sdict in SUBSTANCES_BODY.items():
-    sname = sdict["name"]
-
     # injection
     if "IVDOSE" in sdict:
         _m.rules.extend(
@@ -1135,15 +1295,15 @@ for sid, sdict in SUBSTANCES_BODY.items():
     # --------------------
     # tissue distribution
     # --------------------
-    if "ftissue" in sdict:
-        for cid in COMPARTMENTS_BODY.keys():
+    if "tissue_distribution" in sdict:
+        for cid in COMPARTMENTS_BODY:
             if cid not in ["ve", "ar", "li", "gu", "ki", "po", "hv"]:
                 _m.reactions.append(
                     Reaction(
                         sid=f"transport_{cid}_{sid}",
                         name=f"transport {sname}",
                         formula=(
-                            f"ftissue_{sid} * (C{cid}_plasma_{sid}*Kp_{sid} - C{cid}_{sid})",
+                            f"ftissue_{sid} * BW/BW_ref * (C{cid}_plasma_{sid}*Kp_{sid} - C{cid}_{sid})",
                             U.mmole_per_min,
                         ),
                         equation=f"C{cid}_plasma_{sid} <-> C{cid}_{sid}",
@@ -1151,6 +1311,22 @@ for sid, sdict in SUBSTANCES_BODY.items():
                         sboTerm=SBO.TRANSPORT_REACTION,
                     ),
                 )
+
+    if "tissue_deep" in sdict:
+        _m.reactions.append(
+            Reaction(
+                sid=f"transport_re_deep_{sid}",
+                name=f"transport {sname} (deep tissue)",
+                formula=(
+                    f"ftissue_deep_{sid} * BW/BW_ref * "
+                    f"(Cre_plasma_{sid}*Kp_deep_{sid} - Cre_deep_{sid})",
+                    U.mmole_per_min,
+                ),
+                equation=f"Cre_plasma_{sid} <-> Cre_deep_{sid}",
+                compartment="Vre_tissue",
+                sboTerm=SBO.TRANSPORT_REACTION,
+            ),
+        )
 
     if "IVDOSE" in sdict:
         _m.reactions.extend(
@@ -1288,12 +1464,11 @@ for sid, sdict in SUBSTANCES_BODY.items():
                     # shunted arterial flow
                     Reaction(
                         sid=f"Flow_arli_hv_{sid}",
-                        name=f"flow arterial shunts",
+                        name="flow arterial shunts",
                         formula=(f"f_shunts*Qha*Car_{sid}", U.mmole_per_min),
                         equation=f"Car_{sid} -> Chv_{sid}",
                         sboTerm=SBO.TRANSPORT_REACTION,
                     ),
-
                     # (unshunted) portal flow
                     Reaction(
                         sid=f"Flow_po_li_{sid}",
@@ -1308,7 +1483,7 @@ for sid, sdict in SUBSTANCES_BODY.items():
                     # portal shunts
                     Reaction(
                         sid=f"Flow_po_hv_{sid}",
-                        name=f"flow portal shunts",
+                        name="flow portal shunts",
                         formula=(f"f_shunts*Qpo*Cpo_{sid}", U.mmole_per_min),
                         equation=f"Cpo_{sid} -> Chv_{sid}",
                         sboTerm=SBO.TRANSPORT_REACTION,
@@ -1359,6 +1534,7 @@ if __name__ == "__main__":
 
     result = create_model(
         filepath=MODEL_BASE_PATH / f"{model_body.sid}.xml",
-        model=model_body, sbml_level=3, sbml_version=2
+        model=model_body,
+        sbml_level=3,
+        sbml_version=2,
     )
-    visualize_sbml(result.sbml_path, delete_session=False)

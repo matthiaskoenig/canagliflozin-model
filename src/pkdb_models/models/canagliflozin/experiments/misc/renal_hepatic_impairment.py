@@ -1,65 +1,72 @@
-from typing import Dict
+"""Pharmacokinetics and pharmacodynamics in hepatic and renal impairment."""
+
+from collections.abc import Mapping
+from typing import ClassVar, override
+
+from sbmlsim import Q
 from sbmlsim.plot import Axis, Figure
-from sbmlsim.simulation import Timecourse, TimecourseSim
-from pkdb_models.models.canagliflozin.experiments.base_experiment import CanagliflozinSimulationExperiment
-from pkdb_models.models.canagliflozin.helpers import run_experiments
+from sbmlsim.simulation import Simulation
+
+from pkdb_models.models.canagliflozin import MODEL
+from pkdb_models.models.canagliflozin.experiments.base_experiment import (
+    CanagliflozinSimulationExperiment,
+)
 
 
 class HepaticRenalImpairment(CanagliflozinSimulationExperiment):
     """Hepatic and renal impairment."""
 
-    maps = {
+    maps: ClassVar[dict[str, Mapping[str, float]]] = {
         "hepatic": CanagliflozinSimulationExperiment.cirrhosis_map,
         "renal": CanagliflozinSimulationExperiment.renal_map,
     }
-    colors = {
+    colors: ClassVar[dict[str, Mapping[str, str]]] = {
         "hepatic": CanagliflozinSimulationExperiment.cirrhosis_colors,
         "renal": CanagliflozinSimulationExperiment.renal_colors,
     }
-    parameters = {
+    parameters: ClassVar[dict[str, str]] = {
         "hepatic": "f_cirrhosis",
         "renal": "KI__f_renal_function",
     }
 
     dose_mg = 100
-    dpi = 300
-    legend_font_size = 10
 
-    def simulations(self) -> Dict[str, TimecourseSim]:
-        Q_ = self.Q_
-        tcsims: Dict[str, TimecourseSim] = {}
+    @staticmethod
+    def _key(impairment: str, group: str) -> str:
+        """Key of the simulation of a group of the impairment."""
+        return f"can_{impairment}_{group.replace(' ', '_').replace('/', '_').lower()}"
+
+    @override
+    def simulations(self) -> dict[str, Simulation]:
+        tcsims: dict[str, Simulation] = {}
 
         for impairment in ["hepatic", "renal"]:
             map_ = self.maps[impairment]
             parameter = self.parameters[impairment]
 
             for group, value in map_.items():
-                key = f"can_{impairment}_{group.replace(' ', '_').replace('/', '_').lower()}"
-                tcsims[key] = TimecourseSim(
-                    Timecourse(
-                        start=0,
-                        end=24 * 60,  # minutes
-                        steps=6000,
-                        changes={
-                            **self.default_changes(),
-                            "PODOSE_can": Q_(self.dose_mg, "mg"),
-                            parameter: Q_(value, "dimensionless"),
-                        },
-                    )
+                tcsims[self._key(impairment, group)] = Simulation(
+                    time_unit="min",
+                    end=24 * 60,
+                    preinit_changes={
+                        **self.default_changes(),
+                        "PODOSE_can": Q(self.dose_mg, "mg"),
+                        parameter: Q(value, "dimensionless"),
+                    },
                 )
 
         return tcsims
 
-    def figures(self) -> Dict[str, Figure]:
+    @override
+    def figures(self) -> dict[str, Figure]:
         return {
             **self.figure_pk(),
             **self.figure_pd(),
         }
 
-    def figure_pk(self) -> Dict[str, Figure]:
-        figures: Dict[str, Figure] = {}
-        Figure.legend_fontsize = self.legend_font_size
-        Figure.fig_dpi = self.dpi
+    def figure_pk(self) -> dict[str, Figure]:
+        """Timecourses of canagliflozin and its metabolites in plasma, urine and feces."""
+        figures: list[Figure] = []
 
         sids = [
             # plasma
@@ -91,13 +98,15 @@ class HepaticRenalImpairment(CanagliflozinSimulationExperiment):
                 num_cols=4,
                 name=f"Pharmacokinetics: {impairment.title()} impairment",
             )
-            plots = fig.create_plots(xaxis=Axis(self.label_time, unit=self.unit_time), legend=True)
+            plots = fig.create_plots(
+                xaxis=Axis(self.label_time, unit=self.unit_time), legend=True
+            )
 
             for ksid, sid in enumerate(sids):
                 plots[ksid].set_yaxis(label=self.labels[sid], unit=self.units[sid])
 
-                for group, _ in map_.items():
-                    task_id = f"task_can_{impairment}_{group.replace(' ', '_').replace('/', '_').lower()}"
+                for group in map_:
+                    task_id = f"task_{self._key(impairment, group)}"
                     plots[ksid].add_data(
                         task=task_id,
                         xid="time",
@@ -106,14 +115,13 @@ class HepaticRenalImpairment(CanagliflozinSimulationExperiment):
                         color=colors[group],
                     )
 
-            figures[fig.sid] = fig
+            figures.append(fig)
 
-        return figures
+        return self.figures_by_sid(*figures)
 
-    def figure_pd(self) -> Dict[str, Figure]:
-        figures: Dict[str, Figure] = {}
-        Figure.legend_fontsize = self.legend_font_size
-        Figure.fig_dpi = self.dpi
+    def figure_pd(self) -> dict[str, Figure]:
+        """Timecourses of the glucose excretion and its dependency on canagliflozin."""
+        figures: list[Figure] = []
 
         time_sids = ["KI__UGE", "KI__RTG", "[KI__fpg]"]
         xid_plasma = "[Cve_can]"
@@ -130,7 +138,9 @@ class HepaticRenalImpairment(CanagliflozinSimulationExperiment):
                 num_cols=3,
                 name=f"Pharmacodynamics: {impairment.title()} impairment",
             )
-            plots = fig.create_plots(xaxis=Axis(self.label_time, unit=self.unit_time), legend=True)
+            plots = fig.create_plots(
+                xaxis=Axis(self.label_time, unit=self.unit_time), legend=True
+            )
 
             plots[3].set_xaxis(label=self.label_can, unit=self.unit_can)
             plots[3].set_yaxis(label="Rate glucose excretion", unit="mmole/min")
@@ -142,8 +152,8 @@ class HepaticRenalImpairment(CanagliflozinSimulationExperiment):
             for ksid, sid in enumerate(time_sids):
                 plots[ksid].set_yaxis(label=self.labels[sid], unit=self.units[sid])
 
-            for group, _ in map_.items():
-                task_id = f"task_can_{impairment}_{group.replace(' ', '_').replace('/', '_').lower()}"
+            for group in map_:
+                task_id = f"task_{self._key(impairment, group)}"
                 color = colors[group]
 
                 for ksid, sid in enumerate(time_sids):
@@ -155,14 +165,34 @@ class HepaticRenalImpairment(CanagliflozinSimulationExperiment):
                         color=color,
                     )
 
-                plots[3].add_data(task=task_id, xid=xid_plasma, yid="KI__GLCEX", label=group, color=color)
-                plots[4].add_data(task=task_id, xid=xid_plasma, yid="KI__RTG",   label=group, color=color)
-                plots[5].add_data(task=task_id, xid=xid_plasma, yid="KI__UGE",   label=group, color=color)
+                plots[3].add_data(
+                    task=task_id,
+                    xid=xid_plasma,
+                    yid="KI__GLCEX",
+                    label=group,
+                    color=color,
+                )
+                plots[4].add_data(
+                    task=task_id,
+                    xid=xid_plasma,
+                    yid="KI__RTG",
+                    label=group,
+                    color=color,
+                )
+                plots[5].add_data(
+                    task=task_id,
+                    xid=xid_plasma,
+                    yid="KI__UGE",
+                    label=group,
+                    color=color,
+                )
 
-            figures[fig.sid] = fig
+            figures.append(fig)
 
-        return figures
+        return self.figures_by_sid(*figures)
 
 
 if __name__ == "__main__":
-    run_experiments(HepaticRenalImpairment, output_dir=HepaticRenalImpairment.__name__)
+    MODEL.run_experiments(
+        HepaticRenalImpairment, output_dir=HepaticRenalImpairment.__name__
+    )

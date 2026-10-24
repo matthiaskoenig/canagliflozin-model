@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<sbml xmlns="http://www.sbml.org/sbml/level3/version2/core" xmlns:comp="http://www.sbml.org/sbml/level3/version1/comp/version1" level="3" version="2" comp:required="true">
+<sbml xmlns="http://www.sbml.org/sbml/level3/version2/core" xmlns:comp="http://www.sbml.org/sbml/level3/version1/comp/version1" xmlns:distrib="http://www.sbml.org/sbml/level3/version1/distrib/version1" level="3" version="2" comp:required="true" distrib:required="true">
   <notes>
     <body xmlns="http://www.w3.org/1999/xhtml">
       <p>Created with <a href="https://github.com/matthiaskoenig/sbmlutils">https://github.com/matthiaskoenig/sbmlutils</a>.
@@ -7,22 +7,32 @@
         <img src="https://zenodo.org/badge/DOI/10.5281/zenodo.5525390.svg" alt="DOI"/></a></p>
       </body>
     </notes>
-  <model metaid="meta_canagliflozin_kidney" id="canagliflozin_kidney" name="Model for renal canagliflozin, M5 and M7 excretion." substanceUnits="mmole" timeUnits="min" volumeUnits="litre" areaUnits="m2" lengthUnits="metre" extentUnits="mmole">
+  <model metaid="meta_canagliflozin_kidney" id="canagliflozin_kidney" name="Model for the renal excretion of canagliflozin, M5 and M7 and the urinary glucose excretion." substanceUnits="mmole" timeUnits="min" volumeUnits="litre" areaUnits="m2" lengthUnits="metre" extentUnits="mmole">
     <notes>
       <body xmlns="http://www.w3.org/1999/xhtml">
-        <p>Model for renal canagliflozin, M5 and M7 excretion.</p>
+        <p>Model for the renal excretion of canagliflozin, M5 and M7, the renal
+glucuronidation of canagliflozin to M7 and the urinary glucose excretion.</p>
         <ul>
-          <li>Canagliflozin is eliminated urine (33%, mainly O-glucuronide metabolites) [Deeks2017]</li>
-          <li>~33 % of the oral dose was excreted in urine (M5: 13.3 %, M7: 17.2 %, canagliflozin &lt;1%) [Devineni2015h]</li>
+          <li>About 33 % of an oral dose is excreted in the urine, mainly as the
+O-glucuronides M5 (13.7 %) and M7 (18.2 %), unchanged canagliflozin
+&lt; 0.5 % [Mamidi2014, Devineni2015b].</li>
+          <li>The renal excretion is relative to the glomerular filtration rate (GFR),
+canagliflozin is 99 % bound to plasma proteins, its renal clearance of
+0.8-1.4 ml/min is the filtration of its unbound fraction
+[Devineni2015c, Inagaki2014].</li>
+          <li>UGT1A9 of the kidney forms M7 [Francke2015]; the renal glucuronidation
+scales with the renal function, which makes the exposure of
+canagliflozin increase in renal impairment [Devineni2015c].</li>
+          <li>Canagliflozin lowers the renal threshold of glucose (RTG) by the
+inhibition of SGLT2; glucose above the RTG is excreted with the GFR.</li>
         </ul>
-        <p>=&gt; mainly renal excretion of M5 and M7, small excretion of can</p>
         <p>The content of this model has been carefully created in a manual research effort.</p>
         <h2>Terms of use</h2>
         <p>Copyright © 2026 <a href="https://livermetabolism.com" title="Matthias König" target="_blank">Matthias König</a>.</p>
-        <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
-          <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png"/>
+        <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">
+          <img alt="Creative Commons License" style="border-width:0" src="https://mirrors.creativecommons.org/presskit/buttons/88x31/png/by-sa.png"/>
         </a>
-        <br/>This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+        <br/>This work is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
 <p>Redistribution and use of any part of this model, with or without modification, are permitted provided
 that the following conditions are met:</p>
         <ul>
@@ -44,7 +54,7 @@ implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.</p></bo
                   <vCard4:family-name>Tereshchuk</vCard4:family-name>
                   <vCard4:given-name>Vera</vCard4:given-name>
                 </vCard4:hasName>
-                <vCard4:hasEmail>pikilla2017@gmail.com </vCard4:hasEmail>
+                <vCard4:hasEmail>pikilla2017@gmail.com</vCard4:hasEmail>
                 <vCard4:organization-name>Moscow Institute of Physics and Technology</vCard4:organization-name>
               </rdf:li>
               <rdf:li rdf:parseType="Resource">
@@ -66,40 +76,40 @@ implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.</p></bo
             </rdf:Bag>
           </dcterms:creator>
           <dcterms:created rdf:parseType="Resource">
-            <dcterms:W3CDTF>2026-03-17T17:58:29Z</dcterms:W3CDTF>
+            <dcterms:W3CDTF>2026-10-24T12:08:29Z</dcterms:W3CDTF>
           </dcterms:created>
           <dcterms:modified rdf:parseType="Resource">
-            <dcterms:W3CDTF>2026-03-17T17:58:29Z</dcterms:W3CDTF>
+            <dcterms:W3CDTF>2026-10-24T12:08:29Z</dcterms:W3CDTF>
           </dcterms:modified>
           <bqbiol:hasTaxon>
             <rdf:Bag>
-              <rdf:li rdf:resource="https://identifiers.org/taxonomy/9606"/>
-              <rdf:li rdf:resource="https://identifiers.org/snomedct/337915000"/>
+              <rdf:li rdf:resource="https://identifiers.org/taxonomy:9606"/>
+              <rdf:li rdf:resource="https://identifiers.org/snomedct:337915000"/>
             </rdf:Bag>
           </bqbiol:hasTaxon>
           <bqbiol:hasProperty>
             <rdf:Bag>
-              <rdf:li rdf:resource="https://identifiers.org/mamo/MAMO_0000046"/>
-              <rdf:li rdf:resource="https://identifiers.org/ncit/C91018"/>
-              <rdf:li rdf:resource="https://identifiers.org/ncit/C98083"/>
-              <rdf:li rdf:resource="https://identifiers.org/ncit/C15299"/>
-              <rdf:li rdf:resource="https://identifiers.org/ncit/C2985"/>
-              <rdf:li rdf:resource="https://identifiers.org/ncit/C99532"/>
-              <rdf:li rdf:resource="https://identifiers.org/ncit/C79372"/>
-              <rdf:li rdf:resource="https://identifiers.org/ncit/C79371"/>
+              <rdf:li rdf:resource="https://identifiers.org/mamo:MAMO_0000046"/>
+              <rdf:li rdf:resource="https://identifiers.org/ncit:C91018"/>
+              <rdf:li rdf:resource="https://identifiers.org/ncit:C98083"/>
+              <rdf:li rdf:resource="https://identifiers.org/ncit:C15299"/>
+              <rdf:li rdf:resource="https://identifiers.org/ncit:C2985"/>
+              <rdf:li rdf:resource="https://identifiers.org/ncit:C99532"/>
+              <rdf:li rdf:resource="https://identifiers.org/ncit:C79372"/>
+              <rdf:li rdf:resource="https://identifiers.org/ncit:C79371"/>
             </rdf:Bag>
           </bqbiol:hasProperty>
           <bqbiol:isDescribedBy>
             <rdf:Bag>
-              <rdf:li rdf:resource="https://identifiers.org/doi/10.20944/preprints202601.2095.v1"/>
-              <rdf:li rdf:resource="https://identifiers.org/doi/10.5281/zenodo.13759839"/>
+              <rdf:li rdf:resource="https://identifiers.org/doi:10.20944/preprints202601.2095.v1"/>
+              <rdf:li rdf:resource="https://identifiers.org/doi:10.5281/zenodo.13759839"/>
             </rdf:Bag>
           </bqbiol:isDescribedBy>
           <bqbiol:occursIn>
             <rdf:Bag>
               <rdf:li rdf:resource="https://identifiers.org/FMA:7203"/>
               <rdf:li rdf:resource="https://identifiers.org/BTO:0000671"/>
-              <rdf:li rdf:resource="https://identifiers.org/ncit/C12415"/>
+              <rdf:li rdf:resource="https://identifiers.org/ncit:C12415"/>
             </rdf:Bag>
           </bqbiol:occursIn>
         </rdf:Description>
@@ -118,6 +128,12 @@ implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.</p></bo
           <unit kind="second" exponent="-1" scale="0" multiplier="60"/>
         </listOfUnits>
       </unitDefinition>
+      <unitDefinition id="l_per_ml" name="l/ml">
+        <listOfUnits>
+          <unit kind="litre" exponent="1" scale="0" multiplier="1"/>
+          <unit kind="litre" exponent="-1" scale="0" multiplier="0.001"/>
+        </listOfUnits>
+      </unitDefinition>
       <unitDefinition id="m2" name="meter^2">
         <listOfUnits>
           <unit kind="metre" exponent="2" scale="0" multiplier="1"/>
@@ -127,6 +143,13 @@ implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.</p></bo
         <listOfUnits>
           <unit kind="mole" exponent="1" scale="0" multiplier="0.001"/>
           <unit kind="litre" exponent="-1" scale="0" multiplier="1"/>
+        </listOfUnits>
+      </unitDefinition>
+      <unitDefinition id="mM_min" name="mmole/l*min">
+        <listOfUnits>
+          <unit kind="mole" exponent="1" scale="0" multiplier="0.001"/>
+          <unit kind="litre" exponent="-1" scale="0" multiplier="1"/>
+          <unit kind="second" exponent="1" scale="0" multiplier="60"/>
         </listOfUnits>
       </unitDefinition>
       <unitDefinition id="mg" name="mg">
@@ -156,12 +179,6 @@ implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.</p></bo
         <listOfUnits>
           <unit kind="second" exponent="1" scale="0" multiplier="60"/>
           <unit kind="second" exponent="-1" scale="0" multiplier="3600"/>
-        </listOfUnits>
-      </unitDefinition>
-      <unitDefinition id="ml_per_l" name="ml/l">
-        <listOfUnits>
-          <unit kind="litre" exponent="1" scale="0" multiplier="0.001"/>
-          <unit kind="litre" exponent="-1" scale="0" multiplier="1"/>
         </listOfUnits>
       </unitDefinition>
       <unitDefinition id="ml_per_min" name="ml/min">
@@ -200,14 +217,13 @@ implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.</p></bo
       </unitDefinition>
     </listOfUnitDefinitions>
     <listOfCompartments>
-      <compartment metaid="meta_Vext" sboTerm="SBO:0000290" id="Vext" name="plasma" spatialDimensions="3" size="1.5" units="litre" constant="true">
+      <compartment metaid="meta_Vext" sboTerm="SBO:0000290" id="Vext" name="plasma" size="1.5" units="litre" constant="true">
         <annotation>
           <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
             <rdf:Description rdf:about="#meta_Vext">
               <bqbiol:is>
                 <rdf:Bag>
-                  <rdf:li rdf:resource="https://identifiers.org/SBO:0000290"/>
-                  <rdf:li rdf:resource="https://identifiers.org/ncit/C13356"/>
+                  <rdf:li rdf:resource="https://identifiers.org/ncit:C13356"/>
                   <rdf:li rdf:resource="https://identifiers.org/BTO:0000131"/>
                 </rdf:Bag>
               </bqbiol:is>
@@ -215,47 +231,29 @@ implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.</p></bo
           </rdf:RDF>
         </annotation>
       </compartment>
-      <compartment metaid="meta_Vki" sboTerm="SBO:0000290" id="Vki" name="kidney" spatialDimensions="3" size="0.3" units="litre" constant="true">
+      <compartment metaid="meta_Vki" sboTerm="SBO:0000290" id="Vki" name="kidney" size="0.3" units="litre" constant="true">
         <annotation>
           <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
             <rdf:Description rdf:about="#meta_Vki">
               <bqbiol:is>
                 <rdf:Bag>
-                  <rdf:li rdf:resource="https://identifiers.org/SBO:0000290"/>
                   <rdf:li rdf:resource="https://identifiers.org/FMA:7203"/>
                   <rdf:li rdf:resource="https://identifiers.org/BTO:0000671"/>
-                  <rdf:li rdf:resource="https://identifiers.org/ncit/C12415"/>
+                  <rdf:li rdf:resource="https://identifiers.org/ncit:C12415"/>
                 </rdf:Bag>
               </bqbiol:is>
             </rdf:Description>
           </rdf:RDF>
         </annotation>
       </compartment>
-      <compartment metaid="meta_Vmem" sboTerm="SBO:0000290" id="Vmem" name="plasma membrane" spatialDimensions="2" size="NaN" units="m2" constant="true">
-        <annotation>
-          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
-            <rdf:Description rdf:about="#meta_Vmem">
-              <bqbiol:is>
-                <rdf:Bag>
-                  <rdf:li rdf:resource="https://identifiers.org/SBO:0000290"/>
-                  <rdf:li rdf:resource="https://identifiers.org/ncit/C13735"/>
-                  <rdf:li rdf:resource="https://identifiers.org/FMA:63841"/>
-                  <rdf:li rdf:resource="https://identifiers.org/GO:0005886"/>
-                </rdf:Bag>
-              </bqbiol:is>
-            </rdf:Description>
-          </rdf:RDF>
-        </annotation>
-      </compartment>
-      <compartment metaid="meta_Vurine" sboTerm="SBO:0000290" id="Vurine" name="urine" spatialDimensions="3" size="1" units="litre" constant="true">
+      <compartment metaid="meta_Vurine" sboTerm="SBO:0000290" id="Vurine" name="urine" size="1" units="litre" constant="true">
         <annotation>
           <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
             <rdf:Description rdf:about="#meta_Vurine">
               <bqbiol:is>
                 <rdf:Bag>
-                  <rdf:li rdf:resource="https://identifiers.org/SBO:0000290"/>
                   <rdf:li rdf:resource="https://identifiers.org/FMA:12274"/>
-                  <rdf:li rdf:resource="https://identifiers.org/ncit/C13283"/>
+                  <rdf:li rdf:resource="https://identifiers.org/ncit:C13283"/>
                   <rdf:li rdf:resource="https://identifiers.org/BTO:0001419"/>
                 </rdf:Bag>
               </bqbiol:is>
@@ -271,26 +269,9 @@ implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.</p></bo
             <rdf:Description rdf:about="#meta_can_ext">
               <bqbiol:is>
                 <rdf:Bag>
-                  <rdf:li rdf:resource="https://identifiers.org/SBO:0000247"/>
-                  <rdf:li rdf:resource="https://identifiers.org/pubchem.compound/24812758"/>
+                  <rdf:li rdf:resource="https://identifiers.org/pubchem.compound:24812758"/>
                   <rdf:li rdf:resource="https://identifiers.org/CHEBI:73274"/>
-                  <rdf:li rdf:resource="https://identifiers.org/ncit/C91018"/>
-                </rdf:Bag>
-              </bqbiol:is>
-            </rdf:Description>
-          </rdf:RDF>
-        </annotation>
-      </species>
-      <species metaid="meta_can" sboTerm="SBO:0000247" id="can" name="canagliflozin (kidney)" compartment="Vki" initialConcentration="0" substanceUnits="mmole" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
-        <annotation>
-          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
-            <rdf:Description rdf:about="#meta_can">
-              <bqbiol:is>
-                <rdf:Bag>
-                  <rdf:li rdf:resource="https://identifiers.org/SBO:0000247"/>
-                  <rdf:li rdf:resource="https://identifiers.org/pubchem.compound/24812758"/>
-                  <rdf:li rdf:resource="https://identifiers.org/CHEBI:73274"/>
-                  <rdf:li rdf:resource="https://identifiers.org/ncit/C91018"/>
+                  <rdf:li rdf:resource="https://identifiers.org/ncit:C91018"/>
                 </rdf:Bag>
               </bqbiol:is>
             </rdf:Description>
@@ -303,10 +284,9 @@ implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.</p></bo
             <rdf:Description rdf:about="#meta_can_urine">
               <bqbiol:is>
                 <rdf:Bag>
-                  <rdf:li rdf:resource="https://identifiers.org/SBO:0000247"/>
-                  <rdf:li rdf:resource="https://identifiers.org/pubchem.compound/24812758"/>
+                  <rdf:li rdf:resource="https://identifiers.org/pubchem.compound:24812758"/>
                   <rdf:li rdf:resource="https://identifiers.org/CHEBI:73274"/>
-                  <rdf:li rdf:resource="https://identifiers.org/ncit/C91018"/>
+                  <rdf:li rdf:resource="https://identifiers.org/ncit:C91018"/>
                 </rdf:Bag>
               </bqbiol:is>
             </rdf:Description>
@@ -319,9 +299,8 @@ implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.</p></bo
             <rdf:Description rdf:about="#meta_m5_ext">
               <bqbiol:is>
                 <rdf:Bag>
-                  <rdf:li rdf:resource="https://identifiers.org/SBO:0000247"/>
-                  <rdf:li rdf:resource="https://identifiers.org/pubchem.compound/169502150"/>
-                  <rdf:li rdf:resource="https://identifiers.org/inchikey/TZIBMGFJORCASO-DUGGDNAASA-N"/>
+                  <rdf:li rdf:resource="https://identifiers.org/pubchem.compound:169502150"/>
+                  <rdf:li rdf:resource="https://identifiers.org/inchikey:TZIBMGFJORCASO-DUGGDNAASA-N"/>
                 </rdf:Bag>
               </bqbiol:is>
             </rdf:Description>
@@ -334,9 +313,8 @@ implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.</p></bo
             <rdf:Description rdf:about="#meta_m5_urine">
               <bqbiol:is>
                 <rdf:Bag>
-                  <rdf:li rdf:resource="https://identifiers.org/SBO:0000247"/>
-                  <rdf:li rdf:resource="https://identifiers.org/pubchem.compound/169502150"/>
-                  <rdf:li rdf:resource="https://identifiers.org/inchikey/TZIBMGFJORCASO-DUGGDNAASA-N"/>
+                  <rdf:li rdf:resource="https://identifiers.org/pubchem.compound:169502150"/>
+                  <rdf:li rdf:resource="https://identifiers.org/inchikey:TZIBMGFJORCASO-DUGGDNAASA-N"/>
                 </rdf:Bag>
               </bqbiol:is>
             </rdf:Description>
@@ -349,24 +327,8 @@ implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.</p></bo
             <rdf:Description rdf:about="#meta_m7_ext">
               <bqbiol:is>
                 <rdf:Bag>
-                  <rdf:li rdf:resource="https://identifiers.org/SBO:0000247"/>
-                  <rdf:li rdf:resource="https://identifiers.org/pubchem.compound/169502148"/>
-                  <rdf:li rdf:resource="https://identifiers.org/inchikey/TYOYRLJPOYQWCE-OGMAXQODSA-N"/>
-                </rdf:Bag>
-              </bqbiol:is>
-            </rdf:Description>
-          </rdf:RDF>
-        </annotation>
-      </species>
-      <species metaid="meta_m7" sboTerm="SBO:0000247" id="m7" name="M7 (kidney)" compartment="Vki" initialConcentration="0" substanceUnits="mmole" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
-        <annotation>
-          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
-            <rdf:Description rdf:about="#meta_m7">
-              <bqbiol:is>
-                <rdf:Bag>
-                  <rdf:li rdf:resource="https://identifiers.org/SBO:0000247"/>
-                  <rdf:li rdf:resource="https://identifiers.org/pubchem.compound/169502148"/>
-                  <rdf:li rdf:resource="https://identifiers.org/inchikey/TYOYRLJPOYQWCE-OGMAXQODSA-N"/>
+                  <rdf:li rdf:resource="https://identifiers.org/pubchem.compound:169502148"/>
+                  <rdf:li rdf:resource="https://identifiers.org/inchikey:TYOYRLJPOYQWCE-OGMAXQODSA-N"/>
                 </rdf:Bag>
               </bqbiol:is>
             </rdf:Description>
@@ -379,42 +341,29 @@ implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.</p></bo
             <rdf:Description rdf:about="#meta_m7_urine">
               <bqbiol:is>
                 <rdf:Bag>
-                  <rdf:li rdf:resource="https://identifiers.org/SBO:0000247"/>
-                  <rdf:li rdf:resource="https://identifiers.org/pubchem.compound/169502148"/>
-                  <rdf:li rdf:resource="https://identifiers.org/inchikey/TYOYRLJPOYQWCE-OGMAXQODSA-N"/>
+                  <rdf:li rdf:resource="https://identifiers.org/pubchem.compound:169502148"/>
+                  <rdf:li rdf:resource="https://identifiers.org/inchikey:TYOYRLJPOYQWCE-OGMAXQODSA-N"/>
                 </rdf:Bag>
               </bqbiol:is>
             </rdf:Description>
           </rdf:RDF>
         </annotation>
       </species>
-      <species metaid="meta_cantot_urine" sboTerm="SBO:0000247" id="cantot_urine" name="total canagliflozin (urine)" compartment="Vurine" initialConcentration="0" substanceUnits="mmole" hasOnlySubstanceUnits="true" boundaryCondition="false" constant="false">
+      <species sboTerm="SBO:0000247" id="cantot_urine" name="total canagliflozin (urine)" compartment="Vurine" initialConcentration="0" substanceUnits="mmole" hasOnlySubstanceUnits="true" boundaryCondition="false" constant="false">
         <notes>
           <body xmlns="http://www.w3.org/1999/xhtml">
-            <p>Used for comparison with total radioactivity in urine.</p>
+            <p>Canagliflozin, M5 and M7 in the urine, compared with the total
+radioactivity in the urine.</p>
           </body>
         </notes>
-        <annotation>
-          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
-            <rdf:Description rdf:about="#meta_cantot_urine">
-              <bqbiol:is>
-                <rdf:Bag>
-                  <rdf:li rdf:resource="https://identifiers.org/SBO:0000247"/>
-                </rdf:Bag>
-              </bqbiol:is>
-            </rdf:Description>
-          </rdf:RDF>
-        </annotation>
       </species>
       <species metaid="meta_fpg" sboTerm="SBO:0000247" id="fpg" name="fasting plasma glucose (FPG)" compartment="Vext" initialConcentration="5" substanceUnits="mmole" hasOnlySubstanceUnits="false" boundaryCondition="true" constant="false">
         <notes>
           <body xmlns="http://www.w3.org/1999/xhtml">
-            <p>Fasting plasma glucose (FPG).
-Model depends on the fasting plasma glucose:</p>
-            <ul>
-              <li>as a proxy of the daily glucose variation in the glucose excretion</li>
-              <li>to set the glucose dependent RTG values (i.e. T2DM have higher SGLT2 amounts, and consequently higher RTG values)</li>
-            </ul>
+            <p>Fasting plasma glucose (FPG), set by the studies. It shifts the RTG
+(SGLT2 is induced in type 2 diabetes) and, with the difference of
+the mean plasma glucose of the day to the FPG (<code>PG_delta</code>), gives
+the glucose which is filtered.</p>
           </body>
         </notes>
         <annotation>
@@ -422,9 +371,8 @@ Model depends on the fasting plasma glucose:</p>
             <rdf:Description rdf:about="#meta_fpg">
               <bqbiol:is>
                 <rdf:Bag>
-                  <rdf:li rdf:resource="https://identifiers.org/SBO:0000247"/>
                   <rdf:li rdf:resource="https://identifiers.org/CHEBI:4167"/>
-                  <rdf:li rdf:resource="https://identifiers.org/ncit/C2831"/>
+                  <rdf:li rdf:resource="https://identifiers.org/ncit:C2831"/>
                 </rdf:Bag>
               </bqbiol:is>
             </rdf:Description>
@@ -437,9 +385,8 @@ Model depends on the fasting plasma glucose:</p>
             <rdf:Description rdf:about="#meta_glc_urine">
               <bqbiol:is>
                 <rdf:Bag>
-                  <rdf:li rdf:resource="https://identifiers.org/SBO:0000247"/>
                   <rdf:li rdf:resource="https://identifiers.org/CHEBI:4167"/>
-                  <rdf:li rdf:resource="https://identifiers.org/ncit/C2831"/>
+                  <rdf:li rdf:resource="https://identifiers.org/ncit:C2831"/>
                 </rdf:Bag>
               </bqbiol:is>
             </rdf:Description>
@@ -448,261 +395,451 @@ Model depends on the fasting plasma glucose:</p>
       </species>
     </listOfSpecies>
     <listOfParameters>
-      <parameter metaid="meta_f_renal_function" sboTerm="SBO:0000009" id="f_renal_function" name="scaling factor renal function" value="1" units="dimensionless" constant="true">
+      <parameter sboTerm="SBO:0000002" id="f_renal_function" name="renal function" value="1" units="dimensionless" constant="true">
         <notes>
           <body xmlns="http://www.w3.org/1999/xhtml">
-            <p>scaling factor for renal function. 1.0: normal renal function;
-&lt;1.0: reduced renal function</p>
+            <blockquote>
+              <p>1.0: increased kidney function
+1.0: normal kidney function (healthy control)
+&lt;1.0: decreased kidney function</p>
+            </blockquote>
+            <p>Renal function relative to the healthy glomerular filtration rate
+GFR_base, which is 101 ml/min at 75 kg; a measured creatinine
+clearance or GFR of X ml/min is the renal function X/101. It scales
+the filtration (renal excretion, glucose excretion) and the renal
+glucuronidation (the functional renal mass).</p>
           </body>
         </notes>
-        <annotation>
-          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
-            <rdf:Description rdf:about="#meta_f_renal_function">
-              <bqbiol:is>
-                <rdf:Bag>
-                  <rdf:li rdf:resource="https://identifiers.org/SBO:0000009"/>
-                </rdf:Bag>
-              </bqbiol:is>
-            </rdf:Description>
-          </rdf:RDF>
-        </annotation>
       </parameter>
-      <parameter metaid="meta_f_ugt1a9" sboTerm="SBO:0000002" id="f_ugt1a9" name="scaling factor UGT1A9 activity" value="1" units="dimensionless" constant="true">
+      <parameter sboTerm="SBO:0000002" id="GFR_base" name="glomerular filtration rate (healthy)" value="101" units="ml_per_min" constant="true"/>
+      <parameter sboTerm="SBO:0000002" id="f_ugt1a9" name="scaling factor UGT1A9 activity" value="1" units="dimensionless" constant="true">
         <notes>
           <body xmlns="http://www.w3.org/1999/xhtml">
-            <p>Scaling factor to vary UGT1A9 activity in kidney.
+            <p>Scaling factor of the UGT1A9 activity of the kidney (and the
+liver, the parameter of the whole-body model replaces both).
 1.0: normal activity; &lt;1.0 decreased activity; &gt;1.0 increased activity.</p>
           </body>
         </notes>
-        <annotation>
-          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
-            <rdf:Description rdf:about="#meta_f_ugt1a9">
-              <bqbiol:is>
-                <rdf:Bag>
-                  <rdf:li rdf:resource="https://identifiers.org/SBO:0000002"/>
-                </rdf:Bag>
-              </bqbiol:is>
-            </rdf:Description>
-          </rdf:RDF>
-        </annotation>
       </parameter>
-      <parameter metaid="meta_CAN2M7_Vmax" sboTerm="SBO:0000186" id="CAN2M7_Vmax" name="Vmax canagliflozin to M7" value="0.0387578347044511" units="mmole_per_min_l" constant="true">
-        <annotation>
-          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
-            <rdf:Description rdf:about="#meta_CAN2M7_Vmax">
-              <bqbiol:is>
-                <rdf:Bag>
-                  <rdf:li rdf:resource="https://identifiers.org/SBO:0000186"/>
-                </rdf:Bag>
-              </bqbiol:is>
-            </rdf:Description>
-          </rdf:RDF>
-        </annotation>
-      </parameter>
-      <parameter metaid="meta_CAN2M7_Km_can" sboTerm="SBO:0000027" id="CAN2M7_Km_can" name="Km canagliflozin UGT1A9" value="0.1" units="mM" constant="true">
-        <annotation>
-          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
-            <rdf:Description rdf:about="#meta_CAN2M7_Km_can">
-              <bqbiol:is>
-                <rdf:Bag>
-                  <rdf:li rdf:resource="https://identifiers.org/SBO:0000027"/>
-                </rdf:Bag>
-              </bqbiol:is>
-            </rdf:Description>
-          </rdf:RDF>
-        </annotation>
-      </parameter>
-      <parameter metaid="meta_Mr_glc" sboTerm="SBO:0000647" id="Mr_glc" name="molecular weight glc" value="180" units="g_per_mole" constant="true">
-        <annotation>
-          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
-            <rdf:Description rdf:about="#meta_Mr_glc">
-              <bqbiol:is>
-                <rdf:Bag>
-                  <rdf:li rdf:resource="https://identifiers.org/SBO:0000647"/>
-                </rdf:Bag>
-              </bqbiol:is>
-            </rdf:Description>
-          </rdf:RDF>
-        </annotation>
-      </parameter>
-      <parameter id="cf_mg_per_g" name="Conversion factor mg per g" value="1000" units="mg_per_g" constant="true"/>
-      <parameter id="cf_ml_per_l" name="Conversion factor ml per l" value="1000" units="ml_per_l" constant="true"/>
-      <parameter id="GFR_healthy" name="Glomerular filtration rate (healthy)" value="100" units="ml_per_min" constant="true"/>
-      <parameter metaid="meta_RTG_E50" sboTerm="SBO:0000009" id="RTG_E50" name="EC50 reduction in RTG" value="1.67206914596964e-05" units="mM" constant="true">
+      <parameter sboTerm="SBO:0000002" id="f_oat" name="scaling factor renal anion transport of the glucuronides" value="1" units="dimensionless" constant="true">
         <notes>
           <body xmlns="http://www.w3.org/1999/xhtml">
-            <p>estimated EC50 value was 32 ng/mL (95% CI = 19–45 ng/mL). [Devineni2013]</p>
-          </body>
-        </notes>
-        <annotation>
-          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
-            <rdf:Description rdf:about="#meta_RTG_E50">
-              <bqbiol:is>
-                <rdf:Bag>
-                  <rdf:li rdf:resource="https://identifiers.org/SBO:0000009"/>
-                </rdf:Bag>
-              </bqbiol:is>
-            </rdf:Description>
-          </rdf:RDF>
-        </annotation>
-      </parameter>
-      <parameter metaid="meta_RTG_gamma" sboTerm="SBO:0000009" id="RTG_gamma" name="hill coefficient reduction in RTG" value="1" units="dimensionless" constant="true">
-        <annotation>
-          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
-            <rdf:Description rdf:about="#meta_RTG_gamma">
-              <bqbiol:is>
-                <rdf:Bag>
-                  <rdf:li rdf:resource="https://identifiers.org/SBO:0000009"/>
-                </rdf:Bag>
-              </bqbiol:is>
-            </rdf:Description>
-          </rdf:RDF>
-        </annotation>
-      </parameter>
-      <parameter id="RTG_base" name="Baseline RTG value" value="9.00393167066264" units="mM" constant="true">
-        <notes>
-          <body xmlns="http://www.w3.org/1999/xhtml">
-            <p>Typical RTG value without SGLT2 inhibitors in healthy subjects.</p>
-            <pre>
-              <code>    This corresponds to the SGLT2 concentrations.
-</code>
-            </pre>
+            <p>Scaling factor of the renal clearance of the glucuronides M5
+and M7, which are secreted by the organic anion transporters
+(OAT1/OAT3) of the proximal tubule. Probenecid, an inhibitor of
+OAT1/OAT3, lowers the renal clearance of M5 by 82 % and of M7 by 58 %
+[Devineni2015d]. 1.0: normal activity; &lt;1.0 inhibited.</p>
           </body>
         </notes>
       </parameter>
-      <parameter id="RTG_m_fpg" name="FPG effect on RTG" value="0.710409847698281" units="dimensionless" constant="true">
+      <parameter sboTerm="SBO:0000002" id="fu_can" name="fraction unbound in plasma canagliflozin" value="0.01" units="dimensionless" constant="true">
         <notes>
           <body xmlns="http://www.w3.org/1999/xhtml">
-            <p>Effect of the FPG on the change in RTG_base.</p>
+            <p>Canagliflozin is 99 % bound to plasma proteins, mainly
+albumin, independent of the renal and hepatic function
+[Devineni2015c, Devineni2015b].</p>
           </body>
         </notes>
       </parameter>
-      <parameter id="RTG_max_inhibition" name="RTG maximum inhibition" value="0.627269730954541" units="dimensionless" constant="true">
+      <parameter sboTerm="SBO:0000009" id="CANEX_f" name="renal clearance of unbound canagliflozin relative to the GFR" value="1.27293622415953" units="dimensionless" constant="true">
         <notes>
           <body xmlns="http://www.w3.org/1999/xhtml">
-            <p>maximum inhibition of RTG via SGLT2</p>
+            <p>The renal clearance of canagliflozin is CANEX_f times the filtration
+of its unbound fraction, fu_can * GFR: 1 is filtration alone. The
+renal clearance of 0.8-1.4 ml/min [Chen2015, Inagaki2014,
+Devineni2015d] is about the filtration of the unbound fraction.</p>
+          </body>
+        </notes>
+        <distrib:listOfUncertainties>
+          <distrib:uncertainty distrib:name="fit PK_20261019_103422__858e3">
+            <notes>
+              <body xmlns="http://www.w3.org/1999/xhtml">
+                <p>The value of <code>KI__CANEX_f</code> is the result of the fit <code>PK_20261019_103422__858e3</code>, its uncertainty is the profile likelihood of the fit.</p>
+                <p>| | |
+|---|---|
+| fit | <code>PK_20261019_103422__858e3</code> |
+| record | <code>PK_20261019_103422__858e3/</code> |
+| cost | 129.123 |
+| data points | 1013 |
+| value | 1.27294 dimensionless |
+| bounds | [0.2, 5] |
+| scale | LOG10 |
+| method | profile likelihood |
+| identifiability | identifiable |
+| 95 % confidence interval | [1.15621, 1.38378] |
+| Fisher confidence interval | [1.21754, 1.33086] |
+| distribution of the draws | <code>lognormal(0.24132621946680413, 0.04583580376733485, 0.2, 5.0)</code> |</p>
+              </body>
+            </notes>
+            <distrib:uncertSpan distrib:name="95 % confidence interval (profile likelihood)" distrib:units="dimensionless" distrib:type="confidenceInterval" distrib:valueLower="1.1562052509026" distrib:valueUpper="1.38377650087291"/>
+            <distrib:uncertParameter distrib:name="standard error (Fisher information)" distrib:value="0.028863944233157" distrib:units="dimensionless" distrib:type="standardError"/>
+            <distrib:uncertParameter distrib:name="distribution of the draws" distrib:type="distribution">
+              <math xmlns="http://www.w3.org/1998/Math/MathML">
+                <apply>
+                  <csymbol encoding="text" definitionURL="http://www.sbml.org/sbml/symbols/distrib/lognormal"> lognormal </csymbol>
+                  <cn> 0.241326219466804 </cn>
+                  <cn> 0.0458358037673348 </cn>
+                  <cn> 0.2 </cn>
+                  <cn> 5 </cn>
+                </apply>
+              </math>
+            </distrib:uncertParameter>
+          </distrib:uncertainty>
+        </distrib:listOfUncertainties>
+      </parameter>
+      <parameter sboTerm="SBO:0000009" id="M5EX_f" name="renal clearance of M5 relative to the GFR" value="0.551071893208109" units="dimensionless" constant="true">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <p>The renal clearance of M5 is M5EX_f times the GFR, 1.87 l/hr
+(31 ml/min) [Devineni2015d].</p>
+          </body>
+        </notes>
+        <distrib:listOfUncertainties>
+          <distrib:uncertainty distrib:name="fit PK_20261019_103422__858e3">
+            <notes>
+              <body xmlns="http://www.w3.org/1999/xhtml">
+                <p>The value of <code>KI__M5EX_f</code> is the result of the fit <code>PK_20261019_103422__858e3</code>, its uncertainty is the profile likelihood of the fit.</p>
+                <p>| | |
+|---|---|
+| fit | <code>PK_20261019_103422__858e3</code> |
+| record | <code>PK_20261019_103422__858e3/</code> |
+| cost | 129.123 |
+| data points | 1013 |
+| value | 0.551072 dimensionless |
+| bounds | [0.05, 2] |
+| scale | LOG10 |
+| method | profile likelihood |
+| identifiability | identifiable |
+| 95 % confidence interval | [0.470937, 0.628115] |
+| Fisher confidence interval | [0.512849, 0.592144] |
+| distribution of the draws | <code>lognormal(-0.5958900006490288, 0.07347043870550232, 0.05, 2.0)</code> |</p>
+              </body>
+            </notes>
+            <distrib:uncertSpan distrib:name="95 % confidence interval (profile likelihood)" distrib:units="dimensionless" distrib:type="confidenceInterval" distrib:valueLower="0.470936829560178" distrib:valueUpper="0.628114699793364"/>
+            <distrib:uncertParameter distrib:name="standard error (Fisher information)" distrib:value="0.0201866336885836" distrib:units="dimensionless" distrib:type="standardError"/>
+            <distrib:uncertParameter distrib:name="distribution of the draws" distrib:type="distribution">
+              <math xmlns="http://www.w3.org/1998/Math/MathML">
+                <apply>
+                  <csymbol encoding="text" definitionURL="http://www.sbml.org/sbml/symbols/distrib/lognormal"> lognormal </csymbol>
+                  <apply>
+                    <minus/>
+                    <cn> 0.595890000649029 </cn>
+                  </apply>
+                  <cn> 0.0734704387055023 </cn>
+                  <cn> 0.05 </cn>
+                  <cn> 2 </cn>
+                </apply>
+              </math>
+            </distrib:uncertParameter>
+          </distrib:uncertainty>
+        </distrib:listOfUncertainties>
+      </parameter>
+      <parameter sboTerm="SBO:0000009" id="M7EX_f" name="renal clearance of M7 relative to the GFR" value="0.801255192259492" units="dimensionless" constant="true">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <p>The renal clearance of M7 is M7EX_f times the GFR, 4.62 l/hr
+(77 ml/min) [Devineni2015d].</p>
+          </body>
+        </notes>
+        <distrib:listOfUncertainties>
+          <distrib:uncertainty distrib:name="fit PK_20261019_103422__858e3">
+            <notes>
+              <body xmlns="http://www.w3.org/1999/xhtml">
+                <p>The value of <code>KI__M7EX_f</code> is the result of the fit <code>PK_20261019_103422__858e3</code>, its uncertainty is the profile likelihood of the fit.</p>
+                <p>| | |
+|---|---|
+| fit | <code>PK_20261019_103422__858e3</code> |
+| record | <code>PK_20261019_103422__858e3/</code> |
+| cost | 129.123 |
+| data points | 1013 |
+| value | 0.801255 dimensionless |
+| bounds | [0.05, 2] |
+| scale | LOG10 |
+| method | profile likelihood |
+| identifiability | identifiable |
+| 95 % confidence interval | [0.699244, 0.917541] |
+| Fisher confidence interval | [0.74832, 0.857935] |
+| distribution of the draws | <code>lognormal(-0.22157579056919963, 0.06931164677663579, 0.05, 2.0)</code> |</p>
+              </body>
+            </notes>
+            <distrib:uncertSpan distrib:name="95 % confidence interval (profile likelihood)" distrib:units="dimensionless" distrib:type="confidenceInterval" distrib:valueLower="0.699244454072312" distrib:valueUpper="0.917540814659429"/>
+            <distrib:uncertParameter distrib:name="standard error (Fisher information)" distrib:value="0.0279078558424653" distrib:units="dimensionless" distrib:type="standardError"/>
+            <distrib:uncertParameter distrib:name="distribution of the draws" distrib:type="distribution">
+              <math xmlns="http://www.w3.org/1998/Math/MathML">
+                <apply>
+                  <csymbol encoding="text" definitionURL="http://www.sbml.org/sbml/symbols/distrib/lognormal"> lognormal </csymbol>
+                  <apply>
+                    <minus/>
+                    <cn> 0.2215757905692 </cn>
+                  </apply>
+                  <cn> 0.0693116467766358 </cn>
+                  <cn> 0.05 </cn>
+                  <cn> 2 </cn>
+                </apply>
+              </math>
+            </distrib:uncertParameter>
+          </distrib:uncertainty>
+        </distrib:listOfUncertainties>
+      </parameter>
+      <parameter sboTerm="SBO:0000009" id="CAN2M7_k" name="rate of the renal glucuronidation of canagliflozin to M7 (UGT1A9)" value="0.133" units="per_min" constant="true">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <p>First-order rate of the renal UGT1A9, relative to the volume of the
+kidney: canagliflozin is far below the Km of UGT1A9, its
+pharmacokinetics are dose proportional from 50 to 300 mg
+[Devineni2015e]. The renal share of the clearance is identified by
+the exposure in renal impairment [Devineni2015c].</p>
           </body>
         </notes>
       </parameter>
+      <parameter sboTerm="SBO:0000647" id="Mr_glc" name="molecular weight glucose" value="180.16" units="g_per_mole" constant="true"/>
+      <parameter id="cf_mg_per_g" name="conversion factor mg per g" value="1000" units="mg_per_g" constant="true"/>
       <parameter id="fpg_healthy" name="fasting plasma glucose (healthy)" value="5" units="mM" constant="true"/>
-      <parameter metaid="meta_CANIM_Vmax" sboTerm="SBO:0000186" id="CANIM_Vmax" name="Vmax canagliflozin import" value="10" units="mmole_per_min_l" constant="true">
-        <annotation>
-          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
-            <rdf:Description rdf:about="#meta_CANIM_Vmax">
-              <bqbiol:is>
-                <rdf:Bag>
-                  <rdf:li rdf:resource="https://identifiers.org/SBO:0000186"/>
-                </rdf:Bag>
-              </bqbiol:is>
-            </rdf:Description>
-          </rdf:RDF>
-        </annotation>
-      </parameter>
-      <parameter metaid="meta_CANIM_Km_can" sboTerm="SBO:0000027" id="CANIM_Km_can" name="Km canagliflozin import" value="0.1" units="mM" constant="true">
-        <annotation>
-          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
-            <rdf:Description rdf:about="#meta_CANIM_Km_can">
-              <bqbiol:is>
-                <rdf:Bag>
-                  <rdf:li rdf:resource="https://identifiers.org/SBO:0000027"/>
-                </rdf:Bag>
-              </bqbiol:is>
-            </rdf:Description>
-          </rdf:RDF>
-        </annotation>
-      </parameter>
-      <parameter metaid="meta_M7IM_Vmax" sboTerm="SBO:0000186" id="M7IM_Vmax" name="Vmax M7 transport" value="10" units="mmole_per_min_l" constant="true">
-        <annotation>
-          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
-            <rdf:Description rdf:about="#meta_M7IM_Vmax">
-              <bqbiol:is>
-                <rdf:Bag>
-                  <rdf:li rdf:resource="https://identifiers.org/SBO:0000186"/>
-                </rdf:Bag>
-              </bqbiol:is>
-            </rdf:Description>
-          </rdf:RDF>
-        </annotation>
-      </parameter>
-      <parameter metaid="meta_M7IM_Km_m7" sboTerm="SBO:0000027" id="M7IM_Km_m7" name="Km M7 transport" value="0.1" units="mM" constant="true">
-        <annotation>
-          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
-            <rdf:Description rdf:about="#meta_M7IM_Km_m7">
-              <bqbiol:is>
-                <rdf:Bag>
-                  <rdf:li rdf:resource="https://identifiers.org/SBO:0000027"/>
-                </rdf:Bag>
-              </bqbiol:is>
-            </rdf:Description>
-          </rdf:RDF>
-        </annotation>
-      </parameter>
-      <parameter metaid="meta_f_CAN2M7" sboTerm="SBO:0000002" id="f_CAN2M7" name="scaling factor CAN2M7 kidney vs liver" value="0.13941425128974" units="dimensionless" constant="true">
+      <parameter sboTerm="SBO:0000002" id="PG_delta" name="mean plasma glucose of the day minus the fasting plasma glucose" value="0.85" units="mM" constant="true">
         <notes>
           <body xmlns="http://www.w3.org/1999/xhtml">
-            <p>Scaling factor relative to liver UGT1A9 activity.
-1.0 = equal to liver, &lt; 1.0 = lower, &gt; 1.0 = higher.</p>
+            <p>The glucose which is filtered over the day is the mean plasma glucose
+of the day, above the fasting plasma glucose by the meals. In healthy
+subjects about 0.85 mM: the urinary glucose excretion of 285 mmol/day
+over a GFR of 139 l/day with a 24-hr mean RTG of 3.79 mM is a mean
+plasma glucose of 5.85 mM [Sha2015]. Studies which report the 24-hr
+mean plasma glucose set the difference to the FPG.</p>
           </body>
         </notes>
-        <annotation>
-          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
-            <rdf:Description rdf:about="#meta_f_CAN2M7">
-              <bqbiol:is>
-                <rdf:Bag>
-                  <rdf:li rdf:resource="https://identifiers.org/SBO:0000002"/>
-                </rdf:Bag>
-              </bqbiol:is>
-            </rdf:Description>
-          </rdf:RDF>
-        </annotation>
       </parameter>
-      <parameter metaid="meta_CANEX_k" sboTerm="SBO:0000009" id="CANEX_k" name="rate urinary excretion of canagliflozin" value="0.00374581660737891" units="per_min" constant="true">
-        <annotation>
-          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
-            <rdf:Description rdf:about="#meta_CANEX_k">
-              <bqbiol:is>
-                <rdf:Bag>
-                  <rdf:li rdf:resource="https://identifiers.org/SBO:0000009"/>
-                </rdf:Bag>
-              </bqbiol:is>
-            </rdf:Description>
-          </rdf:RDF>
-        </annotation>
+      <parameter sboTerm="SBO:0000009" id="RTG_E50" name="EC50 reduction in RTG" value="7.58654838673793e-05" units="mM" constant="true">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <p>EC50 of the reduction of the RTG by plasma canagliflozin (total),
+32 ng/ml (95 % CI 19-45 ng/ml) = 7.2e-5 mM [Devineni2013]; the
+fitted value is 34 ng/ml (fit PD_20261019_201254__61546).</p>
+          </body>
+        </notes>
+        <distrib:listOfUncertainties>
+          <distrib:uncertainty distrib:name="fit PD_20261019_201254__61546">
+            <notes>
+              <body xmlns="http://www.w3.org/1999/xhtml">
+                <p>The value of <code>KI__RTG_E50</code> is the result of the fit <code>PD_20261019_201254__61546</code>, its uncertainty is the profile likelihood of the fit.</p>
+                <p>| | |
+|---|---|
+| fit | <code>PD_20261019_201254__61546</code> |
+| record | <code>PD_20261019_201254__61546/</code> |
+| cost | 168.838 |
+| data points | 227 |
+| value | 7.58655e-05 mmol/l |
+| bounds | [1e-06, 0.0002] |
+| scale | LOG10 |
+| method | profile likelihood |
+| identifiability | identifiable |
+| 95 % confidence interval | [5.85631e-05, 9.60571e-05] |
+| Fisher confidence interval | [5.64698e-05, 0.000101923] |
+| distribution of the draws | <code>lognormal(-9.486548735002014, 0.1262367450517167, 1e-06, 0.0002)</code> |</p>
+              </body>
+            </notes>
+            <distrib:uncertSpan distrib:name="95 % confidence interval (profile likelihood)" distrib:units="mM" distrib:type="confidenceInterval" distrib:valueLower="5.85630560101592e-05" distrib:valueUpper="9.6057118788296e-05"/>
+            <distrib:uncertParameter distrib:name="standard error (Fisher information)" distrib:value="1.13666376970667e-05" distrib:units="mM" distrib:type="standardError"/>
+            <distrib:uncertParameter distrib:name="distribution of the draws" distrib:type="distribution">
+              <math xmlns="http://www.w3.org/1998/Math/MathML">
+                <apply>
+                  <csymbol encoding="text" definitionURL="http://www.sbml.org/sbml/symbols/distrib/lognormal"> lognormal </csymbol>
+                  <apply>
+                    <minus/>
+                    <cn> 9.48654873500201 </cn>
+                  </apply>
+                  <cn> 0.126236745051717 </cn>
+                  <cn type="e-notation"> 1 <sep/> -6 </cn>
+                  <cn> 0.0002 </cn>
+                </apply>
+              </math>
+            </distrib:uncertParameter>
+          </distrib:uncertainty>
+        </distrib:listOfUncertainties>
       </parameter>
-      <parameter metaid="meta_M5EX_k" sboTerm="SBO:0000009" id="M5EX_k" name="rate urinary excretion of m5" value="0.110954456979074" units="per_min" constant="true">
-        <annotation>
-          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
-            <rdf:Description rdf:about="#meta_M5EX_k">
-              <bqbiol:is>
-                <rdf:Bag>
-                  <rdf:li rdf:resource="https://identifiers.org/SBO:0000009"/>
-                </rdf:Bag>
-              </bqbiol:is>
-            </rdf:Description>
-          </rdf:RDF>
-        </annotation>
+      <parameter sboTerm="SBO:0000009" id="RTG_gamma" name="hill coefficient reduction in RTG" value="1" units="dimensionless" constant="true"/>
+      <parameter sboTerm="SBO:0000002" id="RTG_base" name="baseline RTG" value="8.93271199710849" units="mM" constant="true">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <p>RTG without SGLT2 inhibition in healthy subjects (FPG 5 mM),
+which corresponds to the SGLT2 capacity; 12.3-13.5 mM in type 2
+diabetes with an FPG of about 10 mM [Devineni2012, Devineni2013].</p>
+          </body>
+        </notes>
+        <distrib:listOfUncertainties>
+          <distrib:uncertainty distrib:name="fit PD_20261019_201254__61546">
+            <notes>
+              <body xmlns="http://www.w3.org/1999/xhtml">
+                <p>The value of <code>KI__RTG_base</code> is the result of the fit <code>PD_20261019_201254__61546</code>, its uncertainty is the profile likelihood of the fit.</p>
+                <p>| | |
+|---|---|
+| fit | <code>PD_20261019_201254__61546</code> |
+| record | <code>PD_20261019_201254__61546/</code> |
+| cost | 168.838 |
+| data points | 227 |
+| value | 8.93271 mmol/l |
+| bounds | [6, 13] |
+| scale | LOG10 |
+| method | profile likelihood |
+| identifiability | identifiable |
+| 95 % confidence interval | [8.45637, 9.46468] |
+| Fisher confidence interval | [8.3256, 9.58409] |
+| distribution of the draws | <code>lognormal(2.1897200438673274, 0.028737139292210456, 6.0, 13.0)</code> |</p>
+              </body>
+            </notes>
+            <distrib:uncertSpan distrib:name="95 % confidence interval (profile likelihood)" distrib:units="mM" distrib:type="confidenceInterval" distrib:valueLower="8.45636983457299" distrib:valueUpper="9.46468496615203"/>
+            <distrib:uncertParameter distrib:name="standard error (Fisher information)" distrib:value="0.319044089730392" distrib:units="mM" distrib:type="standardError"/>
+            <distrib:uncertParameter distrib:name="distribution of the draws" distrib:type="distribution">
+              <math xmlns="http://www.w3.org/1998/Math/MathML">
+                <apply>
+                  <csymbol encoding="text" definitionURL="http://www.sbml.org/sbml/symbols/distrib/lognormal"> lognormal </csymbol>
+                  <cn> 2.18972004386733 </cn>
+                  <cn> 0.0287371392922105 </cn>
+                  <cn> 6 </cn>
+                  <cn> 13 </cn>
+                </apply>
+              </math>
+            </distrib:uncertParameter>
+          </distrib:uncertainty>
+        </distrib:listOfUncertainties>
       </parameter>
-      <parameter metaid="meta_M7EX_k" sboTerm="SBO:0000009" id="M7EX_k" name="rate urinary excretion of m7" value="0.186734796391971" units="per_min" constant="true">
-        <annotation>
-          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
-            <rdf:Description rdf:about="#meta_M7EX_k">
-              <bqbiol:is>
-                <rdf:Bag>
-                  <rdf:li rdf:resource="https://identifiers.org/SBO:0000009"/>
-                </rdf:Bag>
-              </bqbiol:is>
-            </rdf:Description>
-          </rdf:RDF>
-        </annotation>
+      <parameter sboTerm="SBO:0000002" id="RTG_m_fpg" name="FPG effect on RTG" value="0.667145959612092" units="dimensionless" constant="true">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <p>Increase of the RTG per mM of FPG above the healthy FPG:
+SGLT2 is induced in type 2 diabetes [Rahmoune2005].</p>
+          </body>
+        </notes>
+        <distrib:listOfUncertainties>
+          <distrib:uncertainty distrib:name="fit PD_20261019_201254__61546">
+            <notes>
+              <body xmlns="http://www.w3.org/1999/xhtml">
+                <p>The value of <code>KI__RTG_m_fpg</code> is the result of the fit <code>PD_20261019_201254__61546</code>, its uncertainty is the profile likelihood of the fit.</p>
+                <p>| | |
+|---|---|
+| fit | <code>PD_20261019_201254__61546</code> |
+| record | <code>PD_20261019_201254__61546/</code> |
+| cost | 168.838 |
+| data points | 227 |
+| value | 0.667146 dimensionless |
+| bounds | [0.05, 2] |
+| scale | LOG10 |
+| method | profile likelihood |
+| identifiability | identifiable |
+| 95 % confidence interval | [0.604124, 0.749275] |
+| Fisher confidence interval | [0.581387, 0.765555] |
+| distribution of the draws | <code>lognormal(-0.40474642700317026, 0.05493134111654758, 0.05, 2.0)</code> |</p>
+              </body>
+            </notes>
+            <distrib:uncertSpan distrib:name="95 % confidence interval (profile likelihood)" distrib:units="dimensionless" distrib:type="confidenceInterval" distrib:valueLower="0.60412381394485" distrib:valueUpper="0.74927499624152"/>
+            <distrib:uncertParameter distrib:name="standard error (Fisher information)" distrib:value="0.0465802323736332" distrib:units="dimensionless" distrib:type="standardError"/>
+            <distrib:uncertParameter distrib:name="distribution of the draws" distrib:type="distribution">
+              <math xmlns="http://www.w3.org/1998/Math/MathML">
+                <apply>
+                  <csymbol encoding="text" definitionURL="http://www.sbml.org/sbml/symbols/distrib/lognormal"> lognormal </csymbol>
+                  <apply>
+                    <minus/>
+                    <cn> 0.40474642700317 </cn>
+                  </apply>
+                  <cn> 0.0549313411165476 </cn>
+                  <cn> 0.05 </cn>
+                  <cn> 2 </cn>
+                </apply>
+              </math>
+            </distrib:uncertParameter>
+          </distrib:uncertainty>
+        </distrib:listOfUncertainties>
       </parameter>
-      <parameter id="RTG_fpg" name="RTG value (FPG)" value="NaN" units="mM" constant="false"/>
-      <parameter id="RTG_delta" name="RTG value" value="NaN" units="mM" constant="false"/>
-      <parameter id="RTG" name="renal threshold glucose (RTG)" value="NaN" units="mM" constant="false"/>
-      <parameter id="GFR" name="glomerular filtration rate" value="NaN" units="ml_per_min" constant="false"/>
-      <parameter id="UGE" name="urinary glucose excretion (UGE)" value="NaN" units="gram" constant="false"/>
+      <parameter sboTerm="SBO:0000002" id="RTG_max_inhibition" name="maximal relative reduction of the RTG" value="0.64508284571308" units="dimensionless" constant="true">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <p>Maximal reduction of the RTG by SGLT2 inhibition relative to
+the RTG without inhibition, 64 % [Devineni2013]: SGLT1 reabsorbs the
+glucose which SGLT2 does not.</p>
+          </body>
+        </notes>
+        <distrib:listOfUncertainties>
+          <distrib:uncertainty distrib:name="fit PD_20261019_201254__61546">
+            <notes>
+              <body xmlns="http://www.w3.org/1999/xhtml">
+                <p>The value of <code>KI__RTG_max_inhibition</code> is the result of the fit <code>PD_20261019_201254__61546</code>, its uncertainty is the profile likelihood of the fit.</p>
+                <p>| | |
+|---|---|
+| fit | <code>PD_20261019_201254__61546</code> |
+| record | <code>PD_20261019_201254__61546/</code> |
+| cost | 168.838 |
+| data points | 227 |
+| value | 0.645083 dimensionless |
+| bounds | [0.3, 0.9] |
+| scale | LOG10 |
+| method | profile likelihood |
+| identifiability | identifiable |
+| 95 % confidence interval | [0.62388, 0.664098] |
+| Fisher confidence interval | [0.618297, 0.673029] |
+| distribution of the draws | <code>lognormal(-0.43837652746844064, 0.01593676970465037, 0.3, 0.9)</code> |</p>
+              </body>
+            </notes>
+            <distrib:uncertSpan distrib:name="95 % confidence interval (profile likelihood)" distrib:units="dimensionless" distrib:type="confidenceInterval" distrib:valueLower="0.623880066473362" distrib:valueUpper="0.664097607575634"/>
+            <distrib:uncertParameter distrib:name="standard error (Fisher information)" distrib:value="0.0138825171693747" distrib:units="dimensionless" distrib:type="standardError"/>
+            <distrib:uncertParameter distrib:name="distribution of the draws" distrib:type="distribution">
+              <math xmlns="http://www.w3.org/1998/Math/MathML">
+                <apply>
+                  <csymbol encoding="text" definitionURL="http://www.sbml.org/sbml/symbols/distrib/lognormal"> lognormal </csymbol>
+                  <apply>
+                    <minus/>
+                    <cn> 0.438376527468441 </cn>
+                  </apply>
+                  <cn> 0.0159367697046504 </cn>
+                  <cn> 0.3 </cn>
+                  <cn> 0.9 </cn>
+                </apply>
+              </math>
+            </distrib:uncertParameter>
+          </distrib:uncertainty>
+        </distrib:listOfUncertainties>
+      </parameter>
+      <parameter sboTerm="SBO:0000002" id="RTG_splay" name="splay of the glucose excretion around the RTG" value="1" units="mM" constant="true">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <p>The thresholds of the nephrons differ, so the glucose
+excretion rises smoothly around the RTG (splay) instead of at a
+sharp threshold; the softplus with a width of 1 mM.</p>
+          </body>
+        </notes>
+      </parameter>
+      <parameter sboTerm="SBO:0000002" id="RTG_int" name="integral of the RTG over the collection interval" value="0" units="mM_min" constant="false">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <p>Reset to 0 with <code>RTG_time</code> at the start of a collection
+interval of the urine, see <code>RTG_mean</code>.</p>
+          </body>
+        </notes>
+      </parameter>
+      <parameter sboTerm="SBO:0000002" id="RTG_time" name="duration of the collection interval of the RTG" value="0" units="min" constant="false">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <p>Reset to 0 with <code>RTG_int</code> at the start of a collection
+interval of the urine, see <code>RTG_mean</code>.</p>
+          </body>
+        </notes>
+      </parameter>
+      <parameter id="GFR" name="glomerular filtration rate" units="ml_per_min" constant="false"/>
+      <parameter id="pg" name="mean plasma glucose of the day" units="mM" constant="false"/>
+      <parameter id="RTG_fpg" name="RTG without SGLT2 inhibition" units="mM" constant="false"/>
+      <parameter id="RTG_delta" name="maximal reduction of the RTG" units="mM" constant="false"/>
+      <parameter id="RTG" name="renal threshold glucose (RTG)" units="mM" constant="false"/>
+      <parameter id="RTG_mean" name="mean RTG of the collection interval" units="mM" constant="false"/>
+      <parameter id="UGE" name="urinary glucose excretion (UGE)" units="gram" constant="false"/>
     </listOfParameters>
     <listOfRules>
-      <assignmentRule variable="cantot_urine">
+      <assignmentRule name="glomerular filtration rate" variable="GFR">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <times/>
+            <ci> f_renal_function </ci>
+            <ci> GFR_base </ci>
+          </apply>
+        </math>
+      </assignmentRule>
+      <assignmentRule name="total canagliflozin (urine)" variable="cantot_urine">
         <math xmlns="http://www.w3.org/1998/Math/MathML">
           <apply>
             <plus/>
@@ -712,10 +849,25 @@ Model depends on the fasting plasma glucose:</p>
           </apply>
         </math>
       </assignmentRule>
-      <assignmentRule name="RTG value (FPG)" variable="RTG_fpg">
+      <assignmentRule name="mean plasma glucose of the day" variable="pg">
         <notes>
           <body xmlns="http://www.w3.org/1999/xhtml">
-            <p>FPG dependent base RTG value. SGLT2 is induced in T2DM [Rahmoune2005]</p>
+            <p>The glucose which is filtered.</p>
+          </body>
+        </notes>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <plus/>
+            <ci> fpg </ci>
+            <ci> PG_delta </ci>
+          </apply>
+        </math>
+      </assignmentRule>
+      <assignmentRule name="RTG without SGLT2 inhibition" variable="RTG_fpg">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <p>FPG dependent RTG without SGLT2 inhibition. SGLT2 is induced in T2DM
+[Rahmoune2005].</p>
           </body>
         </notes>
         <math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -734,13 +886,7 @@ Model depends on the fasting plasma glucose:</p>
           </apply>
         </math>
       </assignmentRule>
-      <assignmentRule name="RTG value" variable="RTG_delta">
-        <notes>
-          <body xmlns="http://www.w3.org/1999/xhtml">
-            <p>ΔRTG, maximum reduction in RTG due to SGLT2 inhibition.
-Normally around 7 - 10 mM.</p>
-          </body>
-        </notes>
+      <assignmentRule name="maximal reduction of the RTG" variable="RTG_delta">
         <math xmlns="http://www.w3.org/1998/Math/MathML">
           <apply>
             <times/>
@@ -753,10 +899,11 @@ Normally around 7 - 10 mM.</p>
         <notes>
           <body xmlns="http://www.w3.org/1999/xhtml">
             <p>Renal threshold glucose.</p>
-            <p>The renal threshold for glucose (RTG) is the plasma glucose concentration at which tubular reabsorption of
-glucose begins to saturate; glucose is excreted into the urine in direct proportion
-to the glucose concentration above this threshold.
-12.3 - 12.7 mM RTG (placebo) [Devineni2012]</p>
+            <p>The renal threshold for glucose (RTG) is the plasma glucose
+concentration at which the tubular reabsorption of glucose begins to
+saturate; glucose is excreted into the urine in proportion to the
+glucose concentration above this threshold.
+12.3 - 12.7 mM RTG (placebo, T2DM) [Devineni2012]</p>
           </body>
         </notes>
         <math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -791,19 +938,39 @@ to the glucose concentration above this threshold.
           </apply>
         </math>
       </assignmentRule>
-      <assignmentRule name="glomerular filtration rate" variable="GFR">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <ci> f_renal_function </ci>
-            <ci> GFR_healthy </ci>
-          </apply>
+      <assignmentRule name="mean RTG of the collection interval" variable="RTG_mean">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <p>The studies report the RTG of a collection interval of the urine (the
+24-hr mean RTG or the RTG of the intervals of the day), the mean of
+the RTG since the last reset of <code>RTG_int</code> and <code>RTG_time</code>.</p>
+          </body>
+        </notes>
+        <math xmlns="http://www.w3.org/1998/Math/MathML" xmlns:sbml="http://www.sbml.org/sbml/level3/version2/core">
+          <piecewise>
+            <piece>
+              <apply>
+                <divide/>
+                <ci> RTG_int </ci>
+                <ci> RTG_time </ci>
+              </apply>
+              <apply>
+                <gt/>
+                <ci> RTG_time </ci>
+                <cn sbml:units="min" type="integer"> 0 </cn>
+              </apply>
+            </piece>
+            <otherwise>
+              <ci> RTG </ci>
+            </otherwise>
+          </piecewise>
         </math>
       </assignmentRule>
       <assignmentRule name="urinary glucose excretion (UGE)" variable="UGE">
         <notes>
           <body xmlns="http://www.w3.org/1999/xhtml">
-            <p>Urinary glucose excretion is calculated from cumulative amount of glucose in urine.</p>
+            <p>Urinary glucose excretion, the cumulative amount of glucose in the
+urine.</p>
           </body>
         </notes>
         <math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -818,176 +985,45 @@ to the glucose concentration above this threshold.
           </apply>
         </math>
       </assignmentRule>
+      <rateRule variable="RTG_int">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <ci> RTG </ci>
+        </math>
+      </rateRule>
+      <rateRule variable="RTG_time">
+        <math xmlns="http://www.w3.org/1998/Math/MathML" xmlns:sbml="http://www.sbml.org/sbml/level3/version2/core">
+          <cn sbml:units="dimensionless" type="integer"> 1 </cn>
+        </math>
+      </rateRule>
     </listOfRules>
     <listOfReactions>
-      <reaction metaid="meta_CANIM" sboTerm="SBO:0000655" id="CANIM" name="CANIM" reversible="true" compartment="Vmem">
-        <annotation>
-          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
-            <rdf:Description rdf:about="#meta_CANIM">
-              <bqbiol:is>
-                <rdf:Bag>
-                  <rdf:li rdf:resource="https://identifiers.org/SBO:0000655"/>
-                </rdf:Bag>
-              </bqbiol:is>
-            </rdf:Description>
-          </rdf:RDF>
-        </annotation>
+      <reaction sboTerm="SBO:0000176" id="CAN2M7" name="UGT1A9 (can -&gt; m7)" reversible="false" compartment="Vki">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <p>The glucuronidation of the canagliflozin of the renal plasma;
+the uptake into the tubular cells and the export of M7 are fast.</p>
+          </body>
+        </notes>
         <listOfReactants>
           <speciesReference species="can_ext" stoichiometry="1" constant="true"/>
         </listOfReactants>
         <listOfProducts>
-          <speciesReference species="can" stoichiometry="1" constant="true"/>
-        </listOfProducts>
-        <kineticLaw>
-          <math xmlns="http://www.w3.org/1998/Math/MathML" xmlns:sbml="http://www.sbml.org/sbml/level3/version2/core">
-            <apply>
-              <divide/>
-              <apply>
-                <times/>
-                <apply>
-                  <divide/>
-                  <apply>
-                    <times/>
-                    <ci> f_renal_function </ci>
-                    <ci> CANIM_Vmax </ci>
-                  </apply>
-                  <ci> CANIM_Km_can </ci>
-                </apply>
-                <ci> Vki </ci>
-                <apply>
-                  <minus/>
-                  <ci> can_ext </ci>
-                  <ci> can </ci>
-                </apply>
-              </apply>
-              <apply>
-                <plus/>
-                <cn sbml:units="dimensionless" type="integer"> 1 </cn>
-                <apply>
-                  <divide/>
-                  <ci> can_ext </ci>
-                  <ci> CANIM_Km_can </ci>
-                </apply>
-                <apply>
-                  <divide/>
-                  <ci> can </ci>
-                  <ci> CANIM_Km_can </ci>
-                </apply>
-              </apply>
-            </apply>
-          </math>
-        </kineticLaw>
-      </reaction>
-      <reaction metaid="meta_M7IM" sboTerm="SBO:0000655" id="M7IM" name="M7IM" reversible="true" compartment="Vmem">
-        <annotation>
-          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
-            <rdf:Description rdf:about="#meta_M7IM">
-              <bqbiol:is>
-                <rdf:Bag>
-                  <rdf:li rdf:resource="https://identifiers.org/SBO:0000655"/>
-                </rdf:Bag>
-              </bqbiol:is>
-            </rdf:Description>
-          </rdf:RDF>
-        </annotation>
-        <listOfReactants>
           <speciesReference species="m7_ext" stoichiometry="1" constant="true"/>
-        </listOfReactants>
-        <listOfProducts>
-          <speciesReference species="m7" stoichiometry="1" constant="true"/>
-        </listOfProducts>
-        <kineticLaw>
-          <math xmlns="http://www.w3.org/1998/Math/MathML" xmlns:sbml="http://www.sbml.org/sbml/level3/version2/core">
-            <apply>
-              <divide/>
-              <apply>
-                <times/>
-                <apply>
-                  <divide/>
-                  <apply>
-                    <times/>
-                    <ci> f_renal_function </ci>
-                    <ci> M7IM_Vmax </ci>
-                  </apply>
-                  <ci> M7IM_Km_m7 </ci>
-                </apply>
-                <ci> Vki </ci>
-                <apply>
-                  <minus/>
-                  <ci> m7_ext </ci>
-                  <ci> m7 </ci>
-                </apply>
-              </apply>
-              <apply>
-                <plus/>
-                <cn sbml:units="dimensionless" type="integer"> 1 </cn>
-                <apply>
-                  <divide/>
-                  <ci> m7_ext </ci>
-                  <ci> M7IM_Km_m7 </ci>
-                </apply>
-                <apply>
-                  <divide/>
-                  <ci> m7 </ci>
-                  <ci> M7IM_Km_m7 </ci>
-                </apply>
-              </apply>
-            </apply>
-          </math>
-        </kineticLaw>
-      </reaction>
-      <reaction metaid="meta_CAN2M7" sboTerm="SBO:0000176" id="CAN2M7" name="UGT1A9 (can -&gt; m7)" reversible="false" compartment="Vki">
-        <annotation>
-          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
-            <rdf:Description rdf:about="#meta_CAN2M7">
-              <bqbiol:is>
-                <rdf:Bag>
-                  <rdf:li rdf:resource="https://identifiers.org/SBO:0000176"/>
-                </rdf:Bag>
-              </bqbiol:is>
-            </rdf:Description>
-          </rdf:RDF>
-        </annotation>
-        <listOfReactants>
-          <speciesReference species="can" stoichiometry="1" constant="true"/>
-        </listOfReactants>
-        <listOfProducts>
-          <speciesReference species="m7" stoichiometry="1" constant="true"/>
         </listOfProducts>
         <kineticLaw>
           <math xmlns="http://www.w3.org/1998/Math/MathML">
             <apply>
-              <divide/>
-              <apply>
-                <times/>
-                <ci> f_renal_function </ci>
-                <ci> f_ugt1a9 </ci>
-                <ci> f_CAN2M7 </ci>
-                <ci> CAN2M7_Vmax </ci>
-                <ci> Vki </ci>
-                <ci> can </ci>
-              </apply>
-              <apply>
-                <plus/>
-                <ci> can </ci>
-                <ci> CAN2M7_Km_can </ci>
-              </apply>
+              <times/>
+              <ci> f_renal_function </ci>
+              <ci> f_ugt1a9 </ci>
+              <ci> CAN2M7_k </ci>
+              <ci> Vki </ci>
+              <ci> can_ext </ci>
             </apply>
           </math>
         </kineticLaw>
       </reaction>
-      <reaction metaid="meta_CANEX" sboTerm="SBO:0000655" id="CANEX" name="canagliflozin excretion (CANEX)" reversible="false" compartment="Vki">
-        <annotation>
-          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
-            <rdf:Description rdf:about="#meta_CANEX">
-              <bqbiol:is>
-                <rdf:Bag>
-                  <rdf:li rdf:resource="https://identifiers.org/SBO:0000655"/>
-                </rdf:Bag>
-              </bqbiol:is>
-            </rdf:Description>
-          </rdf:RDF>
-        </annotation>
+      <reaction sboTerm="SBO:0000655" id="CANEX" name="canagliflozin excretion (CANEX)" reversible="false" compartment="Vki">
         <listOfReactants>
           <speciesReference species="can_ext" stoichiometry="1" constant="true"/>
         </listOfReactants>
@@ -995,29 +1031,19 @@ to the glucose concentration above this threshold.
           <speciesReference species="can_urine" stoichiometry="1" constant="true"/>
         </listOfProducts>
         <kineticLaw>
-          <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <math xmlns="http://www.w3.org/1998/Math/MathML" xmlns:sbml="http://www.sbml.org/sbml/level3/version2/core">
             <apply>
               <times/>
-              <ci> f_renal_function </ci>
-              <ci> CANEX_k </ci>
-              <ci> Vki </ci>
+              <ci> GFR </ci>
+              <cn sbml:units="l_per_ml"> 0.001 </cn>
+              <ci> fu_can </ci>
+              <ci> CANEX_f </ci>
               <ci> can_ext </ci>
             </apply>
           </math>
         </kineticLaw>
       </reaction>
-      <reaction metaid="meta_M5EX" sboTerm="SBO:0000655" id="M5EX" name="M5 excretion (M5EX)" reversible="false" compartment="Vki">
-        <annotation>
-          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
-            <rdf:Description rdf:about="#meta_M5EX">
-              <bqbiol:is>
-                <rdf:Bag>
-                  <rdf:li rdf:resource="https://identifiers.org/SBO:0000655"/>
-                </rdf:Bag>
-              </bqbiol:is>
-            </rdf:Description>
-          </rdf:RDF>
-        </annotation>
+      <reaction sboTerm="SBO:0000655" id="M5EX" name="M5 excretion (M5EX)" reversible="false" compartment="Vki">
         <listOfReactants>
           <speciesReference species="m5_ext" stoichiometry="1" constant="true"/>
         </listOfReactants>
@@ -1025,29 +1051,19 @@ to the glucose concentration above this threshold.
           <speciesReference species="m5_urine" stoichiometry="1" constant="true"/>
         </listOfProducts>
         <kineticLaw>
-          <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <math xmlns="http://www.w3.org/1998/Math/MathML" xmlns:sbml="http://www.sbml.org/sbml/level3/version2/core">
             <apply>
               <times/>
-              <ci> f_renal_function </ci>
-              <ci> M5EX_k </ci>
-              <ci> Vki </ci>
+              <ci> GFR </ci>
+              <cn sbml:units="l_per_ml"> 0.001 </cn>
+              <ci> f_oat </ci>
+              <ci> M5EX_f </ci>
               <ci> m5_ext </ci>
             </apply>
           </math>
         </kineticLaw>
       </reaction>
-      <reaction metaid="meta_M7EX" sboTerm="SBO:0000655" id="M7EX" name="M7 excretion (M7EX)" reversible="false" compartment="Vki">
-        <annotation>
-          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
-            <rdf:Description rdf:about="#meta_M7EX">
-              <bqbiol:is>
-                <rdf:Bag>
-                  <rdf:li rdf:resource="https://identifiers.org/SBO:0000655"/>
-                </rdf:Bag>
-              </bqbiol:is>
-            </rdf:Description>
-          </rdf:RDF>
-        </annotation>
+      <reaction sboTerm="SBO:0000655" id="M7EX" name="M7 excretion (M7EX)" reversible="false" compartment="Vki">
         <listOfReactants>
           <speciesReference species="m7_ext" stoichiometry="1" constant="true"/>
         </listOfReactants>
@@ -1055,29 +1071,26 @@ to the glucose concentration above this threshold.
           <speciesReference species="m7_urine" stoichiometry="1" constant="true"/>
         </listOfProducts>
         <kineticLaw>
-          <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <math xmlns="http://www.w3.org/1998/Math/MathML" xmlns:sbml="http://www.sbml.org/sbml/level3/version2/core">
             <apply>
               <times/>
-              <ci> f_renal_function </ci>
-              <ci> M7EX_k </ci>
-              <ci> Vki </ci>
+              <ci> GFR </ci>
+              <cn sbml:units="l_per_ml"> 0.001 </cn>
+              <ci> f_oat </ci>
+              <ci> M7EX_f </ci>
               <ci> m7_ext </ci>
             </apply>
           </math>
         </kineticLaw>
       </reaction>
-      <reaction metaid="meta_GLCEX" sboTerm="SBO:0000655" id="GLCEX" name="glucose excretion (GLCEX)" reversible="false" compartment="Vki">
-        <annotation>
-          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
-            <rdf:Description rdf:about="#meta_GLCEX">
-              <bqbiol:is>
-                <rdf:Bag>
-                  <rdf:li rdf:resource="https://identifiers.org/SBO:0000655"/>
-                </rdf:Bag>
-              </bqbiol:is>
-            </rdf:Description>
-          </rdf:RDF>
-        </annotation>
+      <reaction sboTerm="SBO:0000655" id="GLCEX" name="glucose excretion (GLCEX)" reversible="false" compartment="Vki">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <p>The filtered glucose above the RTG, the softplus of the
+difference with the width <code>RTG_splay</code>: the excretion approaches
+GFR * (pg - RTG) above the RTG and zero below it.</p>
+          </body>
+        </notes>
         <listOfReactants>
           <speciesReference species="fpg" stoichiometry="1" constant="true"/>
         </listOfReactants>
@@ -1089,38 +1102,38 @@ to the glucose concentration above this threshold.
         </listOfModifiers>
         <kineticLaw>
           <math xmlns="http://www.w3.org/1998/Math/MathML" xmlns:sbml="http://www.sbml.org/sbml/level3/version2/core">
-            <piecewise>
-              <piece>
+            <apply>
+              <times/>
+              <ci> GFR </ci>
+              <cn sbml:units="l_per_ml"> 0.001 </cn>
+              <ci> RTG_splay </ci>
+              <apply>
+                <ln/>
                 <apply>
-                  <times/>
+                  <plus/>
+                  <cn sbml:units="dimensionless" type="integer"> 1 </cn>
                   <apply>
-                    <divide/>
-                    <ci> GFR </ci>
-                    <ci> cf_ml_per_l </ci>
-                  </apply>
-                  <apply>
-                    <minus/>
-                    <ci> fpg </ci>
-                    <ci> RTG </ci>
+                    <exp/>
+                    <apply>
+                      <divide/>
+                      <apply>
+                        <minus/>
+                        <ci> pg </ci>
+                        <ci> RTG </ci>
+                      </apply>
+                      <ci> RTG_splay </ci>
+                    </apply>
                   </apply>
                 </apply>
-                <apply>
-                  <gt/>
-                  <ci> fpg </ci>
-                  <ci> RTG </ci>
-                </apply>
-              </piece>
-              <otherwise>
-                <cn sbml:units="mmole_per_min" type="integer"> 0 </cn>
-              </otherwise>
-            </piecewise>
+              </apply>
+            </apply>
           </math>
         </kineticLaw>
       </reaction>
     </listOfReactions>
     <comp:listOfPorts>
-      <comp:port metaid="CAN2M7_Vmax_port" sboTerm="SBO:0000599" comp:idRef="CAN2M7_Vmax" comp:id="CAN2M7_Vmax_port" comp:name="Port of CAN2M7_Vmax"/>
-      <comp:port metaid="CAN2M7_Km_can_port" sboTerm="SBO:0000599" comp:idRef="CAN2M7_Km_can" comp:id="CAN2M7_Km_can_port" comp:name="Port of CAN2M7_Km_can"/>
+      <comp:port metaid="GFR_base_port" sboTerm="SBO:0000599" comp:idRef="GFR_base" comp:id="GFR_base_port" comp:name="Port of GFR_base"/>
+      <comp:port metaid="f_ugt1a9_port" sboTerm="SBO:0000599" comp:idRef="f_ugt1a9" comp:id="f_ugt1a9_port" comp:name="Port of f_ugt1a9"/>
       <comp:port metaid="Vext_port" sboTerm="SBO:0000599" comp:idRef="Vext" comp:id="Vext_port" comp:name="Port of Vext"/>
       <comp:port metaid="Vki_port" sboTerm="SBO:0000599" comp:idRef="Vki" comp:id="Vki_port" comp:name="Port of Vki"/>
       <comp:port metaid="Vurine_port" sboTerm="SBO:0000599" comp:idRef="Vurine" comp:id="Vurine_port" comp:name="Port of Vurine"/>
@@ -1129,7 +1142,6 @@ to the glucose concentration above this threshold.
       <comp:port metaid="m5_ext_port" sboTerm="SBO:0000599" comp:idRef="m5_ext" comp:id="m5_ext_port" comp:name="Port of m5_ext"/>
       <comp:port metaid="m5_urine_port" sboTerm="SBO:0000599" comp:idRef="m5_urine" comp:id="m5_urine_port" comp:name="Port of m5_urine"/>
       <comp:port metaid="m7_ext_port" sboTerm="SBO:0000599" comp:idRef="m7_ext" comp:id="m7_ext_port" comp:name="Port of m7_ext"/>
-      <comp:port metaid="m7_port" sboTerm="SBO:0000599" comp:idRef="m7" comp:id="m7_port" comp:name="Port of m7"/>
       <comp:port metaid="m7_urine_port" sboTerm="SBO:0000599" comp:idRef="m7_urine" comp:id="m7_urine_port" comp:name="Port of m7_urine"/>
       <comp:port metaid="cantot_urine_port" sboTerm="SBO:0000599" comp:idRef="cantot_urine" comp:id="cantot_urine_port" comp:name="Port of cantot_urine"/>
       <comp:port metaid="glc_urine_port" sboTerm="SBO:0000599" comp:idRef="glc_urine" comp:id="glc_urine_port" comp:name="Port of glc_urine"/>

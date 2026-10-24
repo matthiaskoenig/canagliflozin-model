@@ -1,39 +1,72 @@
-from typing import Dict
-from sbmlsim.data import DataSet, load_pkdb_dataframe
-from sbmlsim.fit import FitMapping, FitData
+"""Simulation experiment of the study Devineni2013."""
+
+from typing import ClassVar, override
+
+from pkpdsim.metadata import (
+    ApplicationForm,
+    Dosing,
+    Fasting,
+    Health,
+    PKPDMappingMetaData,
+    Route,
+    Tissue,
+)
+from sbmlsim import Q
+from sbmlsim.data import DataSet
+from sbmlsim.fit import FitData, FitMapping
 from sbmlsim.plot import Axis, Figure
-from sbmlsim.simulation import Timecourse, TimecourseSim
-from sbmlutils.console import console
-from pkdb_models.models.canagliflozin.experiments.base_experiment import CanagliflozinSimulationExperiment
-from pkdb_models.models.canagliflozin.experiments.metadata import Tissue, Route, Dosing, ApplicationForm, Health, \
-    Fasting, CanagliflozinMappingMetaData
-from pkdb_models.models.canagliflozin.helpers import run_experiments
+from sbmlsim.simulation import Change, Simulation
+from sbmlsim.units import Quantity
+
+from pkdb_models.models.canagliflozin import MODEL
+from pkdb_models.models.canagliflozin.experiments.base_experiment import (
+    CanagliflozinSimulationExperiment,
+)
 
 
 class Devineni2013(CanagliflozinSimulationExperiment):
     """Simulation experiment of Devineni2013."""
 
-    bodyweights = {0: 84.2, 50: 82.9,  100: 82.2, 300: 83.2}
-    fpg = {0: 182, 50: 189, 100: 182, 300: 185}  # [mg/dl]
-    gfr = {0: 117.9, 50: 110.1, 100: 106.3, 300: 121.8}  # [ml/min]
+    bodyweights: ClassVar[dict[int, float]] = {0: 84.2, 50: 82.9, 100: 82.2, 300: 83.2}
+    #: FPG on day -2 [mg/dl]
+    fpg: ClassVar[dict[int, float]] = {0: 182, 50: 189, 100: 182, 300: 185}
+    #: mean plasma glucose of 0-24 hr (MPG0-24) on day -1 (baseline), day 1 and
+    #: day 7 [mg/dl] (Table 3), the glucose which is filtered
+    mpg: ClassVar[dict[int, dict[str, float]]] = {
+        0: {"d0": 207, "d1": 214, "d7": 215},
+        50: {"d0": 217, "d1": 190, "d7": 185},
+        100: {"d0": 195, "d1": 169, "d7": 158},
+        300: {"d0": 197, "d1": 164, "d7": 151},
+    }
+    #: eGFR on day 1 [ml/min/1.73 m^2]
+    gfr: ClassVar[dict[int, float]] = {0: 117.9, 50: 110.1, 100: 106.3, 300: 121.8}
 
-    doses = [0, 50, 100, 300]
-    interventions = ["CAN0", "CAN50", "CAN100", "CAN300"]
+    doses: ClassVar[list[int]] = [0, 50, 100, 300]
 
-    info = {
+    info: ClassVar[dict[str, str]] = {
         "can": "canagliflozin",
         "m5": "M5",
         "m7": "M7",
     }
 
-    def datasets(self) -> Dict[str, DataSet]:
+    @override
+    def datasets(self) -> dict[str, DataSet]:
         dsets = {}
         for fig_id in ["Fig1", "Tab2A", "Tab3A"]:
-            df = load_pkdb_dataframe(f"{self.sid}_{fig_id}", data_path=self.data_path)
+            df = self.load_dataframe(fig_id)
+            # the zero amounts at the start of the urine collection of day 7 lie
+            # at the reset of the collection of day 6 and carry no information
+            if fig_id == "Tab2A":
+                df = df[~(df.label.str.endswith("_d7") & (df.time == 0))]
             for label, df_label in df.groupby("label"):
+                label = str(label)
                 dset = DataSet.from_df(df_label, self.ureg)
-                # unit conversion to mole/l
-                if label.startswith("canagliflozin_"):
+                # unit conversion to mole/l; the amounts of the metabolites in
+                # the urine are canagliflozin equivalents (% of the dose with
+                # the molecular weight of canagliflozin, Table 2)
+                if label.startswith(
+                    ("canagliflozin_", "M5_cumulative_amount", "M7_cumulative_amount")
+                ):
                     dset.unit_conversion("mean", 1 / self.Mr.can)
                 elif label.startswith("M5_"):
                     dset.unit_conversion("mean", 1 / self.Mr.m5)
@@ -41,89 +74,108 @@ class Devineni2013(CanagliflozinSimulationExperiment):
                     dset.unit_conversion("mean", 1 / self.Mr.m7)
                 elif label.startswith("glucose_renal_threshold"):
                     dset.unit_conversion("mean", 1 / self.Mr.glc)
-                dsets[f"{label}"] = dset
-        # console.print(dsets)
-        # console.print(dsets.keys())
+                dsets[label] = dset
         return dsets
 
-    def simulations(self) -> Dict[str, TimecourseSim]:
-        Q_ = self.Q_
+    def _group_changes(self, dose: int, day: str) -> dict[str, Quantity]:
+        """Get the characteristics of a group.
+
+        Args:
+            dose: the dose of the group [mg].
+            day: the day of the mean plasma glucose (`d0`, `d1`, `d7`).
+
+        Returns:
+            The body weight, FPG, mean plasma glucose and renal function.
+        """
+        fpg = (Q(self.fpg[dose], "mg/dl") / self.Mr.glc).to("mM")
+        mpg = (Q(self.mpg[dose][day], "mg/dl") / self.Mr.glc).to("mM")
+        return {
+            "BW": Q(self.bodyweights[dose], "kg"),
+            "[KI__fpg]": fpg,
+            "KI__PG_delta": mpg - fpg,
+            "KI__f_renal_function": Q(self.gfr[dose] / 101, "dimensionless"),
+        }
+
+    @override
+    def simulations(self) -> dict[str, Simulation]:
         tcsims = {}
 
         # single dose
         for dose in self.doses:
-            tcsims[f"po_can{dose}_single"] = TimecourseSim(
-                Timecourse(
-                    start=0,
-                    end=25 * 60,  # [min]
-                    steps=500,
-                    changes={
-                        **self.default_changes(),
-                        "BW": Q_(self.bodyweights[dose], "kg"),
-                        "[KI__fpg]": Q_(self.fpg[dose] / 18, "mM"),
-                        "KI__f_renal_function": Q_(self.gfr[dose] / 100, "dimensionless"),  # [0, 1]  <=> [0, 100] gfr
-                        "PODOSE_can": Q_(dose, "mg"),
-                    },
-                )
-            )
-
-        # multiple dose
-        for dose in self.doses:
-            tc0 = Timecourse(
-                start=0,
-                end=24 * 60,  # [min]
-                steps=500,
-                changes={
+            tcsims[f"po_can{dose}_single"] = Simulation(
+                time_unit="hr",
+                end=25,
+                preinit_changes={
                     **self.default_changes(),
-                    "PODOSE_can": Q_(0, "mg"),
+                    **self._group_changes(dose, "d1"),
+                    "PODOSE_can": Q(dose, "mg"),
                 },
             )
-            changes_multi = {
-                "BW": Q_(self.bodyweights[dose], "kg"),
-                "[KI__fpg]": Q_(self.fpg[dose] / 18, "mM"),
-                "KI__f_renal_function": Q_(self.gfr[dose] / 100, "dimensionless"),  # [0, 1]  <=> [0, 100] gfr
-                "KI__glc_urine": Q_(0, "mmole"),  # reset UGE
-                "Aurine_can": Q_(0, "mmole"),  # reset canagliflozin
-                "Aurine_m5": Q_(0, "mmole"),  # reset M5
-                "Aurine_m7": Q_(0, "mmole"),  # reset M7
-                "PODOSE_can": Q_(dose, "mg"),
-            }
-            tc1 = Timecourse(
-                start=0,
-                end=24 * 60,  # [min]
-                steps=500,
-                changes=changes_multi
-            )
-            tc2 = Timecourse(
-                start=0,
-                end=25 * 60,  # [min]
-                steps=500,
-                changes=changes_multi
-            )
 
-            tcsims[f"po_can{dose}_multi"] = TimecourseSim(
-                [tc0] + [tc1 for _ in range(6)] + [tc2],
-                time_offset=-7 * 24 * 60,
+        # multiple dose: the placebo baseline day -1, then doses every 24 hr from
+        # 24 to 168 hr (days 1 to 7); the urine and the RTG are collected from
+        # dose to dose, the data at the end of a collection is compared with
+        # the state before the reset. The mean plasma glucose of day 7 holds
+        # from day 2 on.
+        resets = {
+            "KI__glc_urine": Q(0, "mmole"),  # reset UGE
+            "KI__RTG_int": Q(0, "mM*min"),  # reset RTG
+            "KI__RTG_time": Q(0, "min"),
+            "Aurine_can": Q(0, "mmole"),  # reset canagliflozin
+            "Aurine_m5": Q(0, "mmole"),  # reset M5
+            "Aurine_m7": Q(0, "mmole"),  # reset M7
+        }
+        for dose in self.doses:
+            tcsims[f"po_can{dose}_multi"] = Simulation(
+                time_unit="hr",
+                end=193,
+                preinit_changes={
+                    **self.default_changes(),
+                    **self._group_changes(dose, "d0"),
+                    "PODOSE_can": Q(0, "mg"),
+                },
+                changes=[
+                    Change(
+                        24,
+                        {
+                            **resets,
+                            "KI__PG_delta": self._group_changes(dose, "d1")[
+                                "KI__PG_delta"
+                            ],
+                        },
+                    ),
+                    Change(
+                        [24 * k for k in range(2, 8)],
+                        {
+                            **resets,
+                            "KI__PG_delta": self._group_changes(dose, "d7")[
+                                "KI__PG_delta"
+                            ],
+                        },
+                    ),
+                    self.add_doses(
+                        [24 * k for k in range(1, 8)], {"PODOSE_can": Q(dose, "mg")}
+                    ),
+                ],
+                time_shift=-7 * 24,
             )
 
         return tcsims
 
-    def fit_mappings(self) -> Dict[str, FitMapping]:
-
+    @override
+    def fit_mappings(self) -> dict[str, FitMapping]:
         mappings = {}
 
         for name, sid in [
-            ('canagliflozin', '[Cve_can]'),
-            ('canagliflozin_cumulative_amount', 'Aurine_can'),
-            ('M5_cumulative_amount', 'Aurine_m5'),
-            ('M7_cumulative_amount', 'Aurine_m7')
+            ("canagliflozin", "[Cve_can]"),
+            ("canagliflozin_cumulative_amount", "Aurine_can"),
+            ("M5_cumulative_amount", "Aurine_m5"),
+            ("M7_cumulative_amount", "Aurine_m7"),
         ]:
-            for day in ['d1', 'd7']:
-                dosing = Dosing.SINGLE if day == 'd1' else Dosing.MULTIPLE
-                type_dosing = 'single' if day == 'd1' else 'multi'
-
+            for day in ["d1", "d7"]:
+                type_dosing = "single" if day == "d1" else "multi"
                 for dose in self.doses[1:]:
-                    mappings[f"task_po_can{dose}_{name}"] = FitMapping(
+                    mappings[f"fm_po_can{dose}_{name}_{day}"] = FitMapping(
                         self,
                         reference=FitData(
                             self,
@@ -134,23 +186,33 @@ class Devineni2013(CanagliflozinSimulationExperiment):
                             count="count",
                         ),
                         observable=FitData(
-                            self, task=f"task_po_can{dose}_{type_dosing}", xid="time", yid=sid,
+                            self,
+                            task=f"task_po_can{dose}_{type_dosing}",
+                            xid="time",
+                            yid=sid,
                         ),
-                        metadata=CanagliflozinMappingMetaData(
-                            tissue=Tissue.URINE if "cumulative" in name else Tissue.PLASMA,
+                        # dosed 10 min before a standardized breakfast, the
+                        # convention of the studies is fasted
+                        metadata=PKPDMappingMetaData(
+                            tissue=Tissue.URINE
+                            if "cumulative" in name
+                            else Tissue.PLASMA,
                             route=Route.PO,
                             application_form=ApplicationForm.TABLET,
-                            dosing=dosing,
+                            dosing=Dosing.SINGLE if day == "d1" else Dosing.MULTIPLE,
                             health=Health.T2DM,
                             fasting=Fasting.FASTED,
                         ),
                     )
-        for name, sid in [
-            ('glucose_cumulative_amount', 'KI__UGE'),
-            ('glucose_renal_threshold', 'KI__RTG'),
+
+        # the baseline day, day 1 and day 7 of the multiple dose simulation
+        for name, sid, tissue in [
+            ("glucose_cumulative_amount", "KI__UGE", Tissue.URINE),
+            # the 24-hr mean RTG
+            ("glucose_renal_threshold", "KI__RTG_mean", Tissue.PLASMA),
         ]:
             for dose in self.doses:
-                mappings[f"task_po_can{dose}_{name}"] = FitMapping(
+                mappings[f"fm_po_can{dose}_{name}"] = FitMapping(
                     self,
                     reference=FitData(
                         self,
@@ -161,50 +223,58 @@ class Devineni2013(CanagliflozinSimulationExperiment):
                         count="count",
                     ),
                     observable=FitData(
-                        self, task=f"task_po_can{dose}_{type_dosing}", xid="time", yid=sid,
+                        self,
+                        task=f"task_po_can{dose}_multi",
+                        xid="time",
+                        yid=sid,
                     ),
-                    metadata=CanagliflozinMappingMetaData(
-                        tissue=Tissue.URINE,
+                    metadata=PKPDMappingMetaData(
+                        tissue=tissue,
                         route=Route.PO,
                         application_form=ApplicationForm.TABLET,
-                        dosing=dosing,
+                        dosing=Dosing.MULTIPLE,
                         health=Health.T2DM,
                         fasting=Fasting.FASTED,
                     ),
                 )
 
-        # console.print(mappings)
         return mappings
 
-    def figures(self) -> Dict[str, Figure]:
-        return {
-            **self.figure_single_multi(),
-            **self.figures_urine(),
-            **self.figure_uge(),
-            **self.figure_rtg()
-        }
+    @override
+    def figures(self) -> dict[str, Figure]:
+        return self.figures_by_sid(
+            self._figure_single_multi(),
+            *self._figures_urine(),
+            self._figure_uge(),
+            self._figure_rtg(),
+        )
 
-    def figure_single_multi(self) -> Dict[str, Figure]:
+    def _figure_single_multi(self) -> Figure:
+        """Plasma concentrations of canagliflozin after the first and last dose."""
         fig = Figure(
             experiment=self,
-            sid="urine single",
+            sid="Fig_plasma",
             num_rows=1,
             num_cols=2,
             name=f"{self.__class__.__name__} (T2DM)",
         )
-        plots = fig.create_plots(xaxis=Axis(self.label_time, unit=self.unit_time), legend=True)
+        plots = fig.create_plots(
+            xaxis=Axis(self.label_time, unit=self.unit_time), legend=True
+        )
         plots[0].set_yaxis(self.label_can, unit=self.unit_can)
         plots[1].set_yaxis(self.label_can, unit=self.unit_can)
+        # the day before and day 7, the data of day 7 cover 0-24 hr
+        plots[1].set_xaxis(self.label_time, unit=self.unit_time, min=-24, max=25)
 
         for dose in self.doses[1:]:
-            for k, day in enumerate(['d1', 'd7']):
-                type_dosing = 'single' if day == 'd1' else 'multi'
+            for k, day in enumerate(["d1", "d7"]):
+                type_dosing = "single" if day == "d1" else "multi"
 
                 # simulation
                 plots[k].add_data(
                     task=f"task_po_can{dose}_{type_dosing}",
                     xid="time",
-                    yid=f"[Cve_can]",
+                    yid="[Cve_can]",
                     label=f"{dose} mg PO",
                     color=self.dose_colors[dose],
                 )
@@ -220,12 +290,11 @@ class Devineni2013(CanagliflozinSimulationExperiment):
                     color=self.dose_colors[dose],
                 )
 
-        return {
-            fig.sid: fig,
-        }
+        return fig
 
-    def figures_urine(self) -> Dict[str, Figure]:
-        figures = {}
+    def _figures_urine(self) -> list[Figure]:
+        """Cumulative amounts in the urine after the first and the last dose."""
+        figures = []
         for dosing in ["single", "multi"]:
             day = "d1" if dosing == "single" else "d7"
 
@@ -236,13 +305,24 @@ class Devineni2013(CanagliflozinSimulationExperiment):
                 num_cols=3,
                 name=f"{self.__class__.__name__} (T2DM)",
             )
-            plots = fig.create_plots(xaxis=Axis(self.label_time, unit=self.unit_time), legend=True)
+            # the legends inside the panels cover data
+            fig.settings = {**fig.settings, "legend_position": "outside"}
+            # the day before and day 7 of the multiple dose
+            plots = fig.create_plots(
+                xaxis=Axis(
+                    self.label_time,
+                    unit=self.unit_time,
+                    min=-24 if dosing == "multi" else None,
+                    max=25,
+                ),
+                legend=True,
+            )
             plots[0].set_yaxis(self.label_can_urine, unit=self.unit_can_urine)
             plots[1].set_yaxis(self.label_m5_urine, unit=self.unit_m5_urine)
             plots[2].set_yaxis(self.label_m7_urine, unit=self.unit_m7_urine)
 
             for dose in self.doses[1:]:
-                for k, sid in enumerate(self.info):
+                for k, (sid, did) in enumerate(self.info.items()):
                     # simulation
                     plots[k].add_data(
                         task=f"task_po_can{dose}_{dosing}",
@@ -253,7 +333,6 @@ class Devineni2013(CanagliflozinSimulationExperiment):
                     )
 
                     # data
-                    did = self.info[sid]
                     plots[k].add_data(
                         dataset=f"{did}_cumulative_amount_CAN{dose}_{day}",
                         xid="time",
@@ -264,16 +343,19 @@ class Devineni2013(CanagliflozinSimulationExperiment):
                         color=self.dose_colors[dose],
                         linestyle="",
                     )
-            figures[fig.sid] = fig
+            figures.append(fig)
 
         return figures
 
-    def figure_uge(self) -> Dict[str, Figure]:
+    def _figure_uge(self) -> Figure:
+        """Urinary glucose excretion."""
         fig = Figure(
             experiment=self,
             sid="Fig_uge",
             name=f"{self.__class__.__name__} (T2DM)",
         )
+        # the legends inside the panel cover data
+        fig.settings = {**fig.settings, "legend_position": "outside"}
         plots = fig.create_plots(xaxis=Axis(self.label_time, unit="day"), legend=True)
         plots[0].set_yaxis(self.label_uge, unit=self.unit_uge)
 
@@ -282,7 +364,7 @@ class Devineni2013(CanagliflozinSimulationExperiment):
             plots[0].add_data(
                 task=f"task_po_can{dose}_multi",
                 xid="time",
-                yid=f"KI__UGE",
+                yid="KI__UGE",
                 label=f"{dose} mg PO",
                 color=self.dose_colors[dose],
             )
@@ -298,25 +380,28 @@ class Devineni2013(CanagliflozinSimulationExperiment):
                 linestyle="",
             )
 
-        return {
-            fig.sid: fig,
-        }
+        return fig
 
-    def figure_rtg(self) -> Dict[str, Figure]:
+    def _figure_rtg(self) -> Figure:
+        """Renal threshold of glucose."""
         fig = Figure(
             experiment=self,
             sid="Fig_rtg",
             name=f"{self.__class__.__name__} (T2DM)",
         )
-        plots = fig.create_plots(xaxis=Axis(self.label_time, unit=self.unit_time), legend=True)
-        plots[0].set_yaxis(self.label_rtg, unit=self.unit_rtg)
+        # the legends inside the panel cover data
+        fig.settings = {**fig.settings, "legend_position": "outside"}
+        plots = fig.create_plots(
+            xaxis=Axis(self.label_time, unit=self.unit_time), legend=True
+        )
+        plots[0].set_yaxis(self.label_rtg_mean, unit=self.unit_rtg)
 
         for dose in self.doses:
             # simulation
             plots[0].add_data(
                 task=f"task_po_can{dose}_multi",
                 xid="time",
-                yid=f"KI__RTG",
+                yid="KI__RTG_mean",
                 label=f"{dose} mg PO",
                 color=self.dose_colors[dose],
             )
@@ -333,10 +418,8 @@ class Devineni2013(CanagliflozinSimulationExperiment):
                 linestyle="",
             )
 
-        return {
-            fig.sid: fig,
-        }
+        return fig
 
 
 if __name__ == "__main__":
-    run_experiments(Devineni2013, output_dir=Devineni2013.__name__)
+    MODEL.run_experiments(Devineni2013, output_dir=Devineni2013.__name__)

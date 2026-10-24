@@ -1,59 +1,62 @@
-from typing import Dict
+"""Dependency of the pharmacokinetics and pharmacodynamics on the dose and glucose."""
+
+from typing import ClassVar, override
+
+from sbmlsim import Q
 from sbmlsim.plot import Axis, Figure
-from sbmlsim.simulation import Timecourse, TimecourseSim
-from pkdb_models.models.canagliflozin.experiments.base_experiment import CanagliflozinSimulationExperiment
-from pkdb_models.models.canagliflozin.helpers import run_experiments
+from sbmlsim.simulation import Simulation
+
+from pkdb_models.models.canagliflozin import MODEL
+from pkdb_models.models.canagliflozin.experiments.base_experiment import (
+    CanagliflozinSimulationExperiment,
+)
 
 
 class DoseDependencyExperiment(CanagliflozinSimulationExperiment):
     """Dose and glucose dependency experiment."""
 
-    doses = [0, 10, 50, 100, 300, 600, 800]  # [mg]
-    glucoses = [5, 6, 7, 8, 9, 10, 11]       # [mM]
+    doses: ClassVar[list[int]] = [0, 10, 50, 100, 300, 600, 800]  # [mg]
+    glucoses: ClassVar[list[int]] = [5, 6, 7, 8, 9, 10, 11]  # [mM]
 
-    def simulations(self) -> Dict[str, TimecourseSim]:
-        Q_ = self.Q_
-        tcsims: Dict[str, TimecourseSim] = {}
+    @override
+    def simulations(self) -> dict[str, Simulation]:
+        tcsims: dict[str, Simulation] = {}
 
         # Dose dependency
         for dose in self.doses:
-            tcsims[f"can_dose_{dose}"] = TimecourseSim(
-                Timecourse(
-                    start=0,
-                    end=24 * 60,
-                    steps=5000,
-                    changes={
-                        **self.default_changes(),
-                        "PODOSE_can": Q_(dose, "mg"),
-                    },
-                )
+            tcsims[f"can_dose_{dose}"] = Simulation(
+                time_unit="min",
+                end=24 * 60,
+                preinit_changes={
+                    **self.default_changes(),
+                    "PODOSE_can": Q(dose, "mg"),
+                },
             )
 
         # Glucose dependency
         for glc in self.glucoses:
-            tcsims[f"can_glucose_{glc}"] = TimecourseSim(
-                Timecourse(
-                    start=0,
-                    end=24 * 60,
-                    steps=5000,
-                    changes={
-                        **self.default_changes(),
-                        "PODOSE_can": Q_(100, "mg"),
-                        "[KI__fpg]": Q_(glc, "mM"),
-                    },
-                )
+            tcsims[f"can_glucose_{glc}"] = Simulation(
+                time_unit="min",
+                end=24 * 60,
+                preinit_changes={
+                    **self.default_changes(),
+                    "PODOSE_can": Q(100, "mg"),
+                    "[KI__fpg]": Q(glc, "mM"),
+                },
             )
 
         return tcsims
 
-    def figures(self) -> Dict[str, Figure]:
+    @override
+    def figures(self) -> dict[str, Figure]:
         return {
             **self.figure_pk(),
             **self.figure_pd(),
         }
 
-    def figure_pk(self) -> Dict[str, Figure]:
-        figures: Dict[str, Figure] = {}
+    def figure_pk(self) -> dict[str, Figure]:
+        """Timecourses of canagliflozin and its metabolites in plasma, urine and feces."""
+        figures: list[Figure] = []
 
         sids = [
             # plasma
@@ -89,6 +92,7 @@ class DoseDependencyExperiment(CanagliflozinSimulationExperiment):
                 num_rows=3,
                 num_cols=4,
                 name=title,
+                settings={"legend_scope": "row"},
             )
 
             plots = fig.create_plots(
@@ -113,12 +117,13 @@ class DoseDependencyExperiment(CanagliflozinSimulationExperiment):
                         color=color_map.get(value, "black"),
                     )
 
-            figures[fig.sid] = fig
+            figures.append(fig)
 
-        return figures
+        return self.figures_by_sid(*figures)
 
-    def figure_pd(self) -> Dict[str, Figure]:
-        figures: Dict[str, Figure] = {}
+    def figure_pd(self) -> dict[str, Figure]:
+        """Timecourses of the glucose excretion and its dependency on canagliflozin."""
+        figures: list[Figure] = []
 
         for key in ["dose", "glucose"]:
             if key == "dose":
@@ -136,6 +141,7 @@ class DoseDependencyExperiment(CanagliflozinSimulationExperiment):
                 num_rows=2,
                 num_cols=3,
                 name=title,
+                settings={"legend_scope": "row"},
             )
 
             plots = fig.create_plots(
@@ -192,10 +198,12 @@ class DoseDependencyExperiment(CanagliflozinSimulationExperiment):
                     color=color_map.get(value, "black"),
                 )
 
-            figures[fig.sid] = fig
+            figures.append(fig)
 
-        return figures
+        return self.figures_by_sid(*figures)
 
 
 if __name__ == "__main__":
-    run_experiments(DoseDependencyExperiment, output_dir=DoseDependencyExperiment.__name__)
+    MODEL.run_experiments(
+        DoseDependencyExperiment, output_dir=DoseDependencyExperiment.__name__
+    )

@@ -1,0 +1,805 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sbml xmlns="http://www.sbml.org/sbml/level3/version2/core" xmlns:comp="http://www.sbml.org/sbml/level3/version1/comp/version1" xmlns:distrib="http://www.sbml.org/sbml/level3/version1/distrib/version1" level="3" version="2" comp:required="true" distrib:required="true">
+  <notes>
+    <body xmlns="http://www.w3.org/1999/xhtml">
+      <p>Created with <a href="https://github.com/matthiaskoenig/sbmlutils">https://github.com/matthiaskoenig/sbmlutils</a>.
+<a href="https://doi.org/10.5281/zenodo.5525390">
+        <img src="https://zenodo.org/badge/DOI/10.5281/zenodo.5525390.svg" alt="DOI"/></a></p>
+      </body>
+    </notes>
+  <model metaid="meta_canagliflozin_intestine" id="canagliflozin_intestine" name="Model for canagliflozin absorption in the small intestine" substanceUnits="mmole" timeUnits="min" volumeUnits="litre" areaUnits="m2" lengthUnits="metre" extentUnits="mmole">
+    <notes>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <h1>Model for canagliflozin absorption</h1>
+        <ul>
+          <li>Dissolution of the oral dose and absorption of canagliflozin; the
+fraction absorbed <code>F_can_abs</code> of the canagliflozin of the lumen is
+absorbed, the rest is excreted in the feces. The absolute
+bioavailability is 65 % (90 % CI 55-76 %) [Devineni2015b].</li>
+          <li>The glucuronides M5 and M7 of the bile are hydrolysed to canagliflozin in
+the lumen (enterohepatic circulation), the source of most of the
+canagliflozin of the feces (39-41.5 % of the dose). M7 which is not
+hydrolysed is excreted in the feces (2-3 % of the dose), M5 is not
+found in the feces [Mamidi2014, Devineni2015b]. M9 of the bile is
+excreted in the feces (7-8 %).</li>
+          <li>The absorption of canagliflozin is not changed by food: a high fat
+breakfast changes neither the AUC (+8 %) nor Cmax (+0.5 %)
+[Devineni2015e], so the model has no food effect.</li>
+        </ul>
+        <p>The content of this model has been carefully created in a manual research effort.</p>
+        <h2>Terms of use</h2>
+        <p>Copyright © 2026 <a href="https://livermetabolism.com" title="Matthias König" target="_blank">Matthias König</a>.</p>
+        <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">
+          <img alt="Creative Commons License" style="border-width:0" src="https://mirrors.creativecommons.org/presskit/buttons/88x31/png/by-sa.png"/>
+        </a>
+        <br/>This work is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+<p>Redistribution and use of any part of this model, with or without modification, are permitted provided
+that the following conditions are met:</p>
+        <ul>
+          <li>Redistributions of this SBML file must retain the above copyright notice, this list of conditions and the following disclaimer.</li>
+          <li>Redistributions in a different form must reproduce the above copyright notice, this list of conditions
+and the following disclaimer in the documentation and/or other materials provided
+with the distribution.</li>
+        </ul>
+        <p>This model is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the
+implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.</p></body>
+      </notes>
+    <annotation>
+      <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+        <rdf:Description rdf:about="#meta_canagliflozin_intestine">
+          <dcterms:creator>
+            <rdf:Bag>
+              <rdf:li rdf:parseType="Resource">
+                <vCard4:hasName rdf:parseType="Resource">
+                  <vCard4:family-name>Tereshchuk</vCard4:family-name>
+                  <vCard4:given-name>Vera</vCard4:given-name>
+                </vCard4:hasName>
+                <vCard4:hasEmail>pikilla2017@gmail.com</vCard4:hasEmail>
+                <vCard4:organization-name>Moscow Institute of Physics and Technology</vCard4:organization-name>
+              </rdf:li>
+              <rdf:li rdf:parseType="Resource">
+                <vCard4:hasName rdf:parseType="Resource">
+                  <vCard4:family-name>Elias</vCard4:family-name>
+                  <vCard4:given-name>Michelle</vCard4:given-name>
+                </vCard4:hasName>
+                <vCard4:hasEmail>michelleelias66@gmail.com</vCard4:hasEmail>
+                <vCard4:organization-name>Humboldt-University Berlin, Institute for Biology</vCard4:organization-name>
+              </rdf:li>
+              <rdf:li rdf:parseType="Resource">
+                <vCard4:hasName rdf:parseType="Resource">
+                  <vCard4:family-name>König</vCard4:family-name>
+                  <vCard4:given-name>Matthias</vCard4:given-name>
+                </vCard4:hasName>
+                <vCard4:hasEmail>koenigmx@hu-berlin.de</vCard4:hasEmail>
+                <vCard4:organization-name>Humboldt-Universität zu Berlin, Faculty of Life Sciences, Department of Biology, Institute of Theoretical Biology, Systems Medicine of the Liver; University of Stuttgart, Institute of Structural Mechanics and Dynamics in Aerospace Engineering</vCard4:organization-name>
+              </rdf:li>
+            </rdf:Bag>
+          </dcterms:creator>
+          <dcterms:created rdf:parseType="Resource">
+            <dcterms:W3CDTF>2026-10-24T12:08:30Z</dcterms:W3CDTF>
+          </dcterms:created>
+          <dcterms:modified rdf:parseType="Resource">
+            <dcterms:W3CDTF>2026-10-24T12:08:30Z</dcterms:W3CDTF>
+          </dcterms:modified>
+          <bqbiol:hasTaxon>
+            <rdf:Bag>
+              <rdf:li rdf:resource="https://identifiers.org/taxonomy:9606"/>
+              <rdf:li rdf:resource="https://identifiers.org/snomedct:337915000"/>
+            </rdf:Bag>
+          </bqbiol:hasTaxon>
+          <bqbiol:hasProperty>
+            <rdf:Bag>
+              <rdf:li rdf:resource="https://identifiers.org/mamo:MAMO_0000046"/>
+              <rdf:li rdf:resource="https://identifiers.org/ncit:C91018"/>
+              <rdf:li rdf:resource="https://identifiers.org/ncit:C98083"/>
+              <rdf:li rdf:resource="https://identifiers.org/ncit:C15299"/>
+              <rdf:li rdf:resource="https://identifiers.org/ncit:C2985"/>
+              <rdf:li rdf:resource="https://identifiers.org/ncit:C99532"/>
+              <rdf:li rdf:resource="https://identifiers.org/ncit:C79369"/>
+              <rdf:li rdf:resource="https://identifiers.org/ncit:C79372"/>
+            </rdf:Bag>
+          </bqbiol:hasProperty>
+          <bqbiol:isDescribedBy>
+            <rdf:Bag>
+              <rdf:li rdf:resource="https://identifiers.org/doi:10.20944/preprints202601.2095.v1"/>
+              <rdf:li rdf:resource="https://identifiers.org/doi:10.5281/zenodo.13759839"/>
+            </rdf:Bag>
+          </bqbiol:isDescribedBy>
+          <bqbiol:occursIn>
+            <rdf:Bag>
+              <rdf:li rdf:resource="https://identifiers.org/BTO:0000545"/>
+              <rdf:li rdf:resource="https://identifiers.org/ncit:C12736"/>
+              <rdf:li rdf:resource="https://identifiers.org/FMA:7199"/>
+              <rdf:li rdf:resource="https://identifiers.org/BTO:0000648"/>
+            </rdf:Bag>
+          </bqbiol:occursIn>
+        </rdf:Description>
+      </rdf:RDF>
+    </annotation>
+    <listOfUnitDefinitions>
+      <unitDefinition id="g_per_mole" name="g/mole">
+        <listOfUnits>
+          <unit kind="gram" exponent="1" scale="0" multiplier="1"/>
+          <unit kind="mole" exponent="-1" scale="0" multiplier="1"/>
+        </listOfUnits>
+      </unitDefinition>
+      <unitDefinition id="l_per_min" name="l/min">
+        <listOfUnits>
+          <unit kind="litre" exponent="1" scale="0" multiplier="1"/>
+          <unit kind="second" exponent="-1" scale="0" multiplier="60"/>
+        </listOfUnits>
+      </unitDefinition>
+      <unitDefinition id="m2" name="meter^2">
+        <listOfUnits>
+          <unit kind="metre" exponent="2" scale="0" multiplier="1"/>
+        </listOfUnits>
+      </unitDefinition>
+      <unitDefinition id="mM" name="mmole/liter">
+        <listOfUnits>
+          <unit kind="mole" exponent="1" scale="0" multiplier="0.001"/>
+          <unit kind="litre" exponent="-1" scale="0" multiplier="1"/>
+        </listOfUnits>
+      </unitDefinition>
+      <unitDefinition id="mg" name="mg">
+        <listOfUnits>
+          <unit kind="gram" exponent="1" scale="0" multiplier="0.001"/>
+        </listOfUnits>
+      </unitDefinition>
+      <unitDefinition id="mg_per_min" name="mg/min">
+        <listOfUnits>
+          <unit kind="gram" exponent="1" scale="0" multiplier="0.001"/>
+          <unit kind="second" exponent="-1" scale="0" multiplier="60"/>
+        </listOfUnits>
+      </unitDefinition>
+      <unitDefinition id="mg_per_s_l" name="mg/s/l">
+        <listOfUnits>
+          <unit kind="gram" exponent="1" scale="0" multiplier="0.001"/>
+          <unit kind="second" exponent="-1" scale="0" multiplier="1"/>
+          <unit kind="litre" exponent="-1" scale="0" multiplier="1"/>
+        </listOfUnits>
+      </unitDefinition>
+      <unitDefinition id="min" name="min">
+        <listOfUnits>
+          <unit kind="second" exponent="1" scale="0" multiplier="60"/>
+        </listOfUnits>
+      </unitDefinition>
+      <unitDefinition id="min_per_hr" name="min/hour">
+        <listOfUnits>
+          <unit kind="second" exponent="1" scale="0" multiplier="60"/>
+          <unit kind="second" exponent="-1" scale="0" multiplier="3600"/>
+        </listOfUnits>
+      </unitDefinition>
+      <unitDefinition id="mmole" name="mmole">
+        <listOfUnits>
+          <unit kind="mole" exponent="1" scale="0" multiplier="0.001"/>
+        </listOfUnits>
+      </unitDefinition>
+      <unitDefinition id="mmole_per_min" name="mmole/min">
+        <listOfUnits>
+          <unit kind="mole" exponent="1" scale="0" multiplier="0.001"/>
+          <unit kind="second" exponent="-1" scale="0" multiplier="60"/>
+        </listOfUnits>
+      </unitDefinition>
+      <unitDefinition id="mmole_per_min_l" name="mmole/min/l">
+        <listOfUnits>
+          <unit kind="mole" exponent="1" scale="0" multiplier="0.001"/>
+          <unit kind="second" exponent="-1" scale="0" multiplier="60"/>
+          <unit kind="litre" exponent="-1" scale="0" multiplier="1"/>
+        </listOfUnits>
+      </unitDefinition>
+      <unitDefinition id="per_hr" name="1/hr">
+        <listOfUnits>
+          <unit kind="second" exponent="-1" scale="0" multiplier="3600"/>
+        </listOfUnits>
+      </unitDefinition>
+      <unitDefinition id="per_min" name="1/min">
+        <listOfUnits>
+          <unit kind="second" exponent="-1" scale="0" multiplier="60"/>
+        </listOfUnits>
+      </unitDefinition>
+      <unitDefinition id="per_mmole" name="1/mmole">
+        <listOfUnits>
+          <unit kind="mole" exponent="-1" scale="0" multiplier="0.001"/>
+        </listOfUnits>
+      </unitDefinition>
+    </listOfUnitDefinitions>
+    <listOfCompartments>
+      <compartment metaid="meta_Vext" sboTerm="SBO:0000290" id="Vext" name="plasma" size="1" units="litre" constant="true">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#meta_Vext">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/ncit:C13356"/>
+                  <rdf:li rdf:resource="https://identifiers.org/BTO:0000131"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+      </compartment>
+      <compartment metaid="meta_Vgu" sboTerm="SBO:0000290" id="Vgu" name="intestine" size="1.2825" units="litre" constant="true">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#meta_Vgu">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/BTO:0000545"/>
+                  <rdf:li rdf:resource="https://identifiers.org/ncit:C12736"/>
+                  <rdf:li rdf:resource="https://identifiers.org/FMA:7199"/>
+                  <rdf:li rdf:resource="https://identifiers.org/BTO:0000648"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+      </compartment>
+      <compartment metaid="meta_Vlumen" sboTerm="SBO:0000290" id="Vlumen" name="intestinal lumen (inner part of intestine)" size="1.15425" units="litre" constant="false">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#meta_Vlumen">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/FMA:14586"/>
+                  <rdf:li rdf:resource="https://identifiers.org/UBERON:0018543"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+      </compartment>
+      <compartment metaid="meta_Vfeces" sboTerm="SBO:0000290" id="Vfeces" name="feces" size="1" units="litre" constant="true">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#meta_Vfeces">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/FMA:64183"/>
+                  <rdf:li rdf:resource="https://identifiers.org/ncit:C13234"/>
+                  <rdf:li rdf:resource="https://identifiers.org/BTO:0000440"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+      </compartment>
+      <compartment metaid="meta_Vapical" sboTerm="SBO:0000290" id="Vapical" name="apical membrane (intestinal membrane enterocytes)" spatialDimensions="2" size="NaN" units="m2" constant="true">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#meta_Vapical">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/FMA:84666"/>
+                  <rdf:li rdf:resource="https://identifiers.org/GO:0016324"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+      </compartment>
+      <compartment metaid="meta_Vstomach" sboTerm="SBO:0000290" id="Vstomach" name="stomach" size="1" units="litre" constant="true">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#meta_Vstomach">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/FMA:7148"/>
+                  <rdf:li rdf:resource="https://identifiers.org/ncit:C12391"/>
+                  <rdf:li rdf:resource="https://identifiers.org/UBERON:0000945"/>
+                  <rdf:li rdf:resource="https://identifiers.org/BTO:0001307"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+      </compartment>
+    </listOfCompartments>
+    <listOfSpecies>
+      <species metaid="meta_can_stomach" sboTerm="SBO:0000247" id="can_stomach" name="canagliflozin (stomach)" compartment="Vstomach" initialConcentration="0" substanceUnits="mmole" hasOnlySubstanceUnits="true" boundaryCondition="true" constant="false">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#meta_can_stomach">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/pubchem.compound:24812758"/>
+                  <rdf:li rdf:resource="https://identifiers.org/CHEBI:73274"/>
+                  <rdf:li rdf:resource="https://identifiers.org/ncit:C91018"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+      </species>
+      <species metaid="meta_can_lumen" sboTerm="SBO:0000247" id="can_lumen" name="canagliflozin (intestinal lumen)" compartment="Vlumen" initialConcentration="0" substanceUnits="mmole" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#meta_can_lumen">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/pubchem.compound:24812758"/>
+                  <rdf:li rdf:resource="https://identifiers.org/CHEBI:73274"/>
+                  <rdf:li rdf:resource="https://identifiers.org/ncit:C91018"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+      </species>
+      <species metaid="meta_can_ext" sboTerm="SBO:0000247" id="can_ext" name="canagliflozin (plasma)" compartment="Vext" initialConcentration="0" substanceUnits="mmole" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#meta_can_ext">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/pubchem.compound:24812758"/>
+                  <rdf:li rdf:resource="https://identifiers.org/CHEBI:73274"/>
+                  <rdf:li rdf:resource="https://identifiers.org/ncit:C91018"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+      </species>
+      <species metaid="meta_can_feces" sboTerm="SBO:0000247" id="can_feces" name="canagliflozin (feces)" compartment="Vfeces" initialConcentration="0" substanceUnits="mmole" hasOnlySubstanceUnits="true" boundaryCondition="false" constant="false">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#meta_can_feces">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/pubchem.compound:24812758"/>
+                  <rdf:li rdf:resource="https://identifiers.org/CHEBI:73274"/>
+                  <rdf:li rdf:resource="https://identifiers.org/ncit:C91018"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+      </species>
+      <species metaid="meta_m5_lumen" sboTerm="SBO:0000247" id="m5_lumen" name="M5 (intestinal lumen)" compartment="Vlumen" initialConcentration="0" substanceUnits="mmole" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#meta_m5_lumen">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/pubchem.compound:169502150"/>
+                  <rdf:li rdf:resource="https://identifiers.org/inchikey:TZIBMGFJORCASO-DUGGDNAASA-N"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+      </species>
+      <species metaid="meta_m7_lumen" sboTerm="SBO:0000247" id="m7_lumen" name="M7 (intestinal lumen)" compartment="Vlumen" initialConcentration="0" substanceUnits="mmole" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#meta_m7_lumen">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/pubchem.compound:169502148"/>
+                  <rdf:li rdf:resource="https://identifiers.org/inchikey:TYOYRLJPOYQWCE-OGMAXQODSA-N"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+      </species>
+      <species metaid="meta_m9_lumen" sboTerm="SBO:0000247" id="m9_lumen" name="M9 (intestinal lumen)" compartment="Vlumen" initialConcentration="0" substanceUnits="mmole" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#meta_m9_lumen">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/pubchem.compound:121428312"/>
+                  <rdf:li rdf:resource="https://identifiers.org/inchikey:IXYKXBFQESXJOP-WNTZTFLTSA-N"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+      </species>
+      <species metaid="meta_m7_feces" sboTerm="SBO:0000247" id="m7_feces" name="M7 (feces)" compartment="Vfeces" initialConcentration="0" substanceUnits="mmole" hasOnlySubstanceUnits="true" boundaryCondition="false" constant="false">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#meta_m7_feces">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/pubchem.compound:169502148"/>
+                  <rdf:li rdf:resource="https://identifiers.org/inchikey:TYOYRLJPOYQWCE-OGMAXQODSA-N"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+      </species>
+      <species metaid="meta_m9_feces" sboTerm="SBO:0000247" id="m9_feces" name="M9 (feces)" compartment="Vfeces" initialConcentration="0" substanceUnits="mmole" hasOnlySubstanceUnits="true" boundaryCondition="false" constant="false">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#meta_m9_feces">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/pubchem.compound:121428312"/>
+                  <rdf:li rdf:resource="https://identifiers.org/inchikey:IXYKXBFQESXJOP-WNTZTFLTSA-N"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+      </species>
+      <species sboTerm="SBO:0000247" id="cantot_feces" name="total canagliflozin (feces)" compartment="Vfeces" initialConcentration="0" substanceUnits="mmole" hasOnlySubstanceUnits="true" boundaryCondition="false" constant="false">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <p>Canagliflozin, M7 and M9 in the feces, compared with the
+total radioactivity in the feces.</p>
+          </body>
+        </notes>
+      </species>
+    </listOfSpecies>
+    <listOfParameters>
+      <parameter sboTerm="SBO:0000002" id="F_can_abs" name="fraction absorbed canagliflozin" value="0.665659728244104" units="dimensionless" constant="true">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <p>Fraction absorbed: <code>F_can_abs</code> of the canagliflozin of the intestinal
+lumen is absorbed, <code>(1 - F_can_abs)</code> is excreted in the feces. The
+absolute bioavailability of 65 % [Devineni2015b] is the fraction
+absorbed times the fraction which escapes the hepatic first pass.</p>
+          </body>
+        </notes>
+        <distrib:listOfUncertainties>
+          <distrib:uncertainty distrib:name="fit PK_20261019_103422__858e3">
+            <notes>
+              <body xmlns="http://www.w3.org/1999/xhtml">
+                <p>The value of <code>GU__F_can_abs</code> is the result of the fit <code>PK_20261019_103422__858e3</code>, its uncertainty is the profile likelihood of the fit.</p>
+                <p>| | |
+|---|---|
+| fit | <code>PK_20261019_103422__858e3</code> |
+| record | <code>PK_20261019_103422__858e3/</code> |
+| cost | 129.123 |
+| data points | 1013 |
+| value | 0.66566 dimensionless |
+| bounds | [0.4, 0.99] |
+| scale | LOG10 |
+| method | profile likelihood |
+| identifiability | identifiable |
+| 95 % confidence interval | [0.613622, 0.713175] |
+| Fisher confidence interval | [0.632363, 0.70071] |
+| distribution of the draws | <code>lognormal(-0.40697665755750145, 0.038354525834573064, 0.4, 0.99)</code> |</p>
+              </body>
+            </notes>
+            <distrib:uncertSpan distrib:name="95 % confidence interval (profile likelihood)" distrib:units="dimensionless" distrib:type="confidenceInterval" distrib:valueLower="0.613622139468892" distrib:valueUpper="0.713174627110061"/>
+            <distrib:uncertParameter distrib:name="standard error (Fisher information)" distrib:value="0.0174068655588161" distrib:units="dimensionless" distrib:type="standardError"/>
+            <distrib:uncertParameter distrib:name="distribution of the draws" distrib:type="distribution">
+              <math xmlns="http://www.w3.org/1998/Math/MathML">
+                <apply>
+                  <csymbol encoding="text" definitionURL="http://www.sbml.org/sbml/symbols/distrib/lognormal"> lognormal </csymbol>
+                  <apply>
+                    <minus/>
+                    <cn> 0.406976657557501 </cn>
+                  </apply>
+                  <cn> 0.0383545258345731 </cn>
+                  <cn> 0.4 </cn>
+                  <cn> 0.99 </cn>
+                </apply>
+              </math>
+            </distrib:uncertParameter>
+          </distrib:uncertainty>
+        </distrib:listOfUncertainties>
+      </parameter>
+      <parameter sboTerm="SBO:0000009" id="CANABS_k" name="rate of canagliflozin absorption" value="0.0152774444477217" units="per_min" constant="true">
+        <distrib:listOfUncertainties>
+          <distrib:uncertainty distrib:name="fit PK_20261019_103422__858e3">
+            <notes>
+              <body xmlns="http://www.w3.org/1999/xhtml">
+                <p>The value of <code>GU__CANABS_k</code> is the result of the fit <code>PK_20261019_103422__858e3</code>, its uncertainty is the profile likelihood of the fit.</p>
+                <p>| | |
+|---|---|
+| fit | <code>PK_20261019_103422__858e3</code> |
+| record | <code>PK_20261019_103422__858e3/</code> |
+| cost | 129.123 |
+| data points | 1013 |
+| value | 0.0152774 1/(min) |
+| bounds | [0.001, 0.2] |
+| scale | LOG10 |
+| method | profile likelihood |
+| identifiability | identifiable |
+| 95 % confidence interval | [0.0123742, 0.0230478] |
+| Fisher confidence interval | [0.0132367, 0.0176329] |
+| distribution of the draws | <code>lognormal(-4.181377757417056, 0.15866465999110008, 0.001, 0.2)</code> |</p>
+              </body>
+            </notes>
+            <distrib:uncertSpan distrib:name="95 % confidence interval (profile likelihood)" distrib:units="per_min" distrib:type="confidenceInterval" distrib:valueLower="0.012374223814821" distrib:valueUpper="0.0230477839277287"/>
+            <distrib:uncertParameter distrib:name="standard error (Fisher information)" distrib:value="0.00111631299556787" distrib:units="per_min" distrib:type="standardError"/>
+            <distrib:uncertParameter distrib:name="distribution of the draws" distrib:type="distribution">
+              <math xmlns="http://www.w3.org/1998/Math/MathML">
+                <apply>
+                  <csymbol encoding="text" definitionURL="http://www.sbml.org/sbml/symbols/distrib/lognormal"> lognormal </csymbol>
+                  <apply>
+                    <minus/>
+                    <cn> 4.18137775741706 </cn>
+                  </apply>
+                  <cn> 0.1586646599911 </cn>
+                  <cn> 0.001 </cn>
+                  <cn> 0.2 </cn>
+                </apply>
+              </math>
+            </distrib:uncertParameter>
+          </distrib:uncertainty>
+        </distrib:listOfUncertainties>
+      </parameter>
+      <parameter sboTerm="SBO:0000009" id="GLUHYD_k" name="rate of the hydrolysis of the glucuronides in the lumen" value="0.006979255151286" units="per_min" constant="true">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <p>Hydrolysis of M5 and M7 of the bile to canagliflozin by the
+beta-glucuronidases of the gut bacteria; the glucuronides are unstable
+in the feces [Mamidi2014].</p>
+          </body>
+        </notes>
+        <distrib:listOfUncertainties>
+          <distrib:uncertainty distrib:name="fit PK_20261019_103422__858e3">
+            <notes>
+              <body xmlns="http://www.w3.org/1999/xhtml">
+                <p>The value of <code>GU__GLUHYD_k</code> is the result of the fit <code>PK_20261019_103422__858e3</code>, its uncertainty is the profile likelihood of the fit.</p>
+                <p>| | |
+|---|---|
+| fit | <code>PK_20261019_103422__858e3</code> |
+| record | <code>PK_20261019_103422__858e3/</code> |
+| cost | 129.123 |
+| data points | 1013 |
+| value | 0.00697926 1/(min) |
+| bounds | [0.0001, 1] |
+| scale | LOG10 |
+| method | profile likelihood |
+| identifiability | identifiable |
+| 95 % confidence interval | [0.00282954, 0.0132363] |
+| Fisher confidence interval | [0.00464151, 0.0104944] |
+| distribution of the draws | <code>lognormal(-4.964813079752114, 0.3935909217766683, 0.0001, 1.0)</code> |</p>
+              </body>
+            </notes>
+            <distrib:uncertSpan distrib:name="95 % confidence interval (profile likelihood)" distrib:units="per_min" distrib:type="confidenceInterval" distrib:valueLower="0.002829535122105" distrib:valueUpper="0.0132362660852322"/>
+            <distrib:uncertParameter distrib:name="standard error (Fisher information)" distrib:value="0.00145074533055365" distrib:units="per_min" distrib:type="standardError"/>
+            <distrib:uncertParameter distrib:name="distribution of the draws" distrib:type="distribution">
+              <math xmlns="http://www.w3.org/1998/Math/MathML">
+                <apply>
+                  <csymbol encoding="text" definitionURL="http://www.sbml.org/sbml/symbols/distrib/lognormal"> lognormal </csymbol>
+                  <apply>
+                    <minus/>
+                    <cn> 4.96481307975211 </cn>
+                  </apply>
+                  <cn> 0.393590921776668 </cn>
+                  <cn> 0.0001 </cn>
+                  <cn> 1 </cn>
+                </apply>
+              </math>
+            </distrib:uncertParameter>
+          </distrib:uncertainty>
+        </distrib:listOfUncertainties>
+      </parameter>
+      <parameter sboTerm="SBO:0000009" id="METEXC_k" name="rate of the fecal excretion of the metabolites" value="0.001" units="per_min" constant="true">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <p>Transit of the metabolites of the bile through the intestine into the
+feces (half-life of about 12 hr); M5 is hydrolysed in the feces and
+excreted as canagliflozin.</p>
+          </body>
+        </notes>
+      </parameter>
+      <parameter sboTerm="SBO:0000002" id="PODOSE_can" name="oral dose canagliflozin [mg]" value="0" units="mg" constant="false"/>
+      <parameter sboTerm="SBO:0000002" id="Ka_dis_can" name="dissolution rate canagliflozin" value="2" units="per_hr" constant="true"/>
+      <parameter sboTerm="SBO:0000647" id="Mr_can" name="Molecular weight canagliflozin [g/mole]" value="444.518" units="g_per_mole" constant="true"/>
+      <parameter id="absorption" name="absorption canagliflozin" units="mmole_per_min" constant="false"/>
+    </listOfParameters>
+    <listOfRules>
+      <assignmentRule name="absorption canagliflozin" variable="absorption">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <times/>
+            <ci> CANABS_k </ci>
+            <ci> Vlumen </ci>
+            <ci> can_lumen </ci>
+          </apply>
+        </math>
+      </assignmentRule>
+      <assignmentRule name="total canagliflozin (feces)" variable="cantot_feces">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <plus/>
+            <ci> can_feces </ci>
+            <ci> m7_feces </ci>
+            <ci> m9_feces </ci>
+          </apply>
+        </math>
+      </assignmentRule>
+      <rateRule variable="PODOSE_can">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <times/>
+            <apply>
+              <minus/>
+              <ci> dissolution_can </ci>
+            </apply>
+            <ci> Mr_can </ci>
+          </apply>
+        </math>
+      </rateRule>
+    </listOfRules>
+    <listOfReactions>
+      <reaction sboTerm="SBO:0000655" id="CANABS" name="CANABS" reversible="false" compartment="Vapical">
+        <listOfReactants>
+          <speciesReference species="can_lumen" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="can_ext" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> F_can_abs </ci>
+              <ci> absorption </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction sboTerm="SBO:0000655" id="CANEXC" name="CANEXC (feces)" reversible="false" compartment="Vlumen">
+        <listOfReactants>
+          <speciesReference species="can_lumen" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="can_feces" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML" xmlns:sbml="http://www.sbml.org/sbml/level3/version2/core">
+            <apply>
+              <times/>
+              <apply>
+                <minus/>
+                <cn sbml:units="dimensionless" type="integer"> 1 </cn>
+                <ci> F_can_abs </ci>
+              </apply>
+              <ci> absorption </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction sboTerm="SBO:0000176" id="M5HYD" name="M5 hydrolysis (M5HYD)" reversible="false" compartment="Vlumen">
+        <listOfReactants>
+          <speciesReference species="m5_lumen" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="can_lumen" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> GLUHYD_k </ci>
+              <ci> Vlumen </ci>
+              <ci> m5_lumen </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction sboTerm="SBO:0000176" id="M7HYD" name="M7 hydrolysis (M7HYD)" reversible="false" compartment="Vlumen">
+        <listOfReactants>
+          <speciesReference species="m7_lumen" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="can_lumen" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> GLUHYD_k </ci>
+              <ci> Vlumen </ci>
+              <ci> m7_lumen </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction sboTerm="SBO:0000655" id="M5EXC" name="M5 excretion (M5EXC, feces, hydrolysed to canagliflozin)" reversible="false" compartment="Vlumen">
+        <listOfReactants>
+          <speciesReference species="m5_lumen" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="can_feces" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> METEXC_k </ci>
+              <ci> Vlumen </ci>
+              <ci> m5_lumen </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction sboTerm="SBO:0000655" id="M7EXC" name="M7 excretion (M7EXC, feces)" reversible="false" compartment="Vlumen">
+        <listOfReactants>
+          <speciesReference species="m7_lumen" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="m7_feces" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> METEXC_k </ci>
+              <ci> Vlumen </ci>
+              <ci> m7_lumen </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction sboTerm="SBO:0000655" id="M9EXC" name="M9 excretion (M9EXC, feces)" reversible="false" compartment="Vlumen">
+        <listOfReactants>
+          <speciesReference species="m9_lumen" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="m9_feces" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> METEXC_k </ci>
+              <ci> Vlumen </ci>
+              <ci> m9_lumen </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="dissolution_can" name="dissolution canagliflozin" reversible="false" compartment="Vgu">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <p>Swallowing, dissolution of tablet, and transport into intestine.
+Overall process describing the rates of this processes.</p>
+          </body>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="can_stomach" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="can_lumen" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML" xmlns:sbml="http://www.sbml.org/sbml/level3/version2/core">
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <apply>
+                  <divide/>
+                  <ci> Ka_dis_can </ci>
+                  <cn sbml:units="min_per_hr" type="integer"> 60 </cn>
+                </apply>
+                <ci> PODOSE_can </ci>
+              </apply>
+              <ci> Mr_can </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+    </listOfReactions>
+    <comp:listOfPorts>
+      <comp:port metaid="PODOSE_can_port" sboTerm="SBO:0000599" comp:idRef="PODOSE_can" comp:id="PODOSE_can_port" comp:name="Port of PODOSE_can"/>
+      <comp:port metaid="Ka_dis_can_port" sboTerm="SBO:0000599" comp:idRef="Ka_dis_can" comp:id="Ka_dis_can_port" comp:name="Port of Ka_dis_can"/>
+      <comp:port metaid="Mr_can_port" sboTerm="SBO:0000599" comp:idRef="Mr_can" comp:id="Mr_can_port" comp:name="Port of Mr_can"/>
+      <comp:port metaid="Vext_port" sboTerm="SBO:0000599" comp:idRef="Vext" comp:id="Vext_port" comp:name="Port of Vext"/>
+      <comp:port metaid="Vgu_port" sboTerm="SBO:0000599" comp:idRef="Vgu" comp:id="Vgu_port" comp:name="Port of Vgu"/>
+      <comp:port metaid="Vlumen_port" sboTerm="SBO:0000599" comp:idRef="Vlumen" comp:id="Vlumen_port" comp:name="Port of Vlumen"/>
+      <comp:port metaid="Vfeces_port" sboTerm="SBO:0000599" comp:idRef="Vfeces" comp:id="Vfeces_port" comp:name="Port of Vfeces"/>
+      <comp:port metaid="Vstomach_port" sboTerm="SBO:0000599" comp:idRef="Vstomach" comp:id="Vstomach_port" comp:name="Port of Vstomach"/>
+      <comp:port metaid="can_lumen_port" sboTerm="SBO:0000599" comp:idRef="can_lumen" comp:id="can_lumen_port" comp:name="Port of can_lumen"/>
+      <comp:port metaid="can_ext_port" sboTerm="SBO:0000599" comp:idRef="can_ext" comp:id="can_ext_port" comp:name="Port of can_ext"/>
+      <comp:port metaid="can_feces_port" sboTerm="SBO:0000599" comp:idRef="can_feces" comp:id="can_feces_port" comp:name="Port of can_feces"/>
+      <comp:port metaid="m5_lumen_port" sboTerm="SBO:0000599" comp:idRef="m5_lumen" comp:id="m5_lumen_port" comp:name="Port of m5_lumen"/>
+      <comp:port metaid="m7_lumen_port" sboTerm="SBO:0000599" comp:idRef="m7_lumen" comp:id="m7_lumen_port" comp:name="Port of m7_lumen"/>
+      <comp:port metaid="m9_lumen_port" sboTerm="SBO:0000599" comp:idRef="m9_lumen" comp:id="m9_lumen_port" comp:name="Port of m9_lumen"/>
+      <comp:port metaid="m7_feces_port" sboTerm="SBO:0000599" comp:idRef="m7_feces" comp:id="m7_feces_port" comp:name="Port of m7_feces"/>
+      <comp:port metaid="m9_feces_port" sboTerm="SBO:0000599" comp:idRef="m9_feces" comp:id="m9_feces_port" comp:name="Port of m9_feces"/>
+      <comp:port metaid="cantot_feces_port" sboTerm="SBO:0000599" comp:idRef="cantot_feces" comp:id="cantot_feces_port" comp:name="Port of cantot_feces"/>
+    </comp:listOfPorts>
+  </model>
+</sbml>

@@ -1,32 +1,71 @@
-"""
-Reusable functionality for multiple simulation experiments.
-"""
-from collections import namedtuple
-from typing import Dict
+"""Base class of the canagliflozin simulation experiments."""
+
+from collections.abc import Iterable, Mapping
+from typing import ClassVar, NamedTuple
 
 import pandas as pd
-
-from pkdb_models.models.canagliflozin import MODEL_PATH
-from sbmlsim.experiment import SimulationExperiment
-from sbmlsim.model import AbstractModel
-from sbmlsim.task import Task
-
 from matplotlib.colors import LinearSegmentedColormap
+from pkpdsim.experiment import PKPDSimulationExperiment
+from pkpdsim.impairment import RENAL_COLORS_END_STAGE, RENAL_FUNCTION_GFR
+from sbmlsim import Q
+from sbmlsim.units import Quantity
 
-# Constants for conversion
+from pkdb_models.models.canagliflozin import MODEL
 from pkdb_models.models.canagliflozin.canagliflozin_pk import calculate_canagliflozin_pk
 
-MolecularWeights = namedtuple("MolecularWeights", "can m5 m7 m9 glc")
+
+class MolecularWeights(NamedTuple):
+    """Molecular weights for the conversion of the data."""
+
+    can: Quantity
+    m5: Quantity
+    m7: Quantity
+    m9: Quantity
+    glc: Quantity
 
 
-class CanagliflozinSimulationExperiment(SimulationExperiment):
-    """Base class for all SimulationExperiments."""
+class CanagliflozinSimulationExperiment(PKPDSimulationExperiment):
+    """Base class of the canagliflozin simulation experiments."""
 
-    font = {"weight": "bold", "size": 22}
-    scan_font = {"weight": "bold", "size": 15}
+    pkpd_model = MODEL
+    selections = (
+        "time",
+        # dosing
+        "IVDOSE_can",
+        "PODOSE_can",
+        # venous
+        "[Cve_can]",
+        "[Cve_cantot]",
+        "[Cve_m5]",
+        "[Cve_m7]",
+        "[KI__fpg]",
+        "KI__pg",
+        # urine
+        "Aurine_can",
+        "Aurine_cantot",
+        "Aurine_m7",
+        "Aurine_m5",
+        "KI__glc_urine",
+        "KI__GLCEX",
+        "KI__UGE",
+        "KI__RTG",
+        "KI__RTG_mean",
+        # feces
+        "Afeces_can",
+        "Afeces_m7",
+        "Afeces_m9",
+        "Afeces_cantot",
+        # renal excretion rate
+        "KI__CANEX",
+        # cases
+        "KI__f_renal_function",
+        "KI__GFR",
+        "f_cirrhosis",
+    )
+
+    font: ClassVar[dict[str, str | int]] = {"weight": "bold", "size": 22}
+    scan_font: ClassVar[dict[str, str | int]] = {"weight": "bold", "size": 15}
     tick_font_size = 15
-    legend_font_size = 9
-    suptitle_font_size = 25
 
     # labels
     label_time = "Time"
@@ -39,6 +78,8 @@ class CanagliflozinSimulationExperiment(SimulationExperiment):
     label_glc = "Glucose"
     label_uge = "UGE"
     label_rtg = "RTG"
+    label_rtg_mean = "RTG (mean)"
+    label_pg = "Mean Glucose"
 
     label_can_urine = label_can + " Urine"
     label_cantot_urine = label_cantot + "\nUrine"
@@ -51,7 +92,7 @@ class CanagliflozinSimulationExperiment(SimulationExperiment):
     label_m9_feces = label_m9 + " Feces"
     label_cantot_feces = label_cantot + "\nFeces"
 
-    labels: Dict[str, str] = {
+    labels: ClassVar[Mapping[str, str]] = {
         "time": "Time",
         "[Cve_can]": label_can,
         "[Cve_cantot]": label_cantot,
@@ -65,6 +106,8 @@ class CanagliflozinSimulationExperiment(SimulationExperiment):
         "KI__glc_urine": label_glc_urine,
         "KI__UGE": label_uge,
         "KI__RTG": label_rtg,
+        "KI__RTG_mean": label_rtg_mean,
+        "KI__pg": label_pg,
         "Afeces_can": label_can_feces,
         "Afeces_m7": label_m7_feces,
         "Afeces_m9": label_m9_feces,
@@ -95,7 +138,7 @@ class CanagliflozinSimulationExperiment(SimulationExperiment):
     unit_m9_feces = unit_metabolite_feces
     unit_cantot_feces = unit_metabolite_feces
 
-    units: Dict[str, str] = {
+    units: ClassVar[Mapping[str, str]] = {
         "time": unit_time,
         "[Cve_can]": unit_can,
         "[Cve_cantot]": unit_cantot,
@@ -109,6 +152,8 @@ class CanagliflozinSimulationExperiment(SimulationExperiment):
         "KI__glc_urine": unit_glc_urine,
         "KI__UGE": unit_uge,
         "KI__RTG": unit_rtg,
+        "KI__RTG_mean": unit_rtg,
+        "KI__pg": unit_glc,
         "Afeces_can": unit_can_feces,
         "Afeces_m7": unit_m7_feces,
         "Afeces_m9": unit_m9_feces,
@@ -117,95 +162,113 @@ class CanagliflozinSimulationExperiment(SimulationExperiment):
         "KI__GLCEX": "mmol/min",
     }
 
-    # ----------- Fasting plasma glucose -----
-    fpg_healthy = 5.0  # [mM]
-    fpg_t2dm = 8  # [mM]
-    fpg_t1dm = 8  # [mM]
-
     # ----------- Fasting/food -----
-    fasting_map = {
-        "fasted": 1.0,
-        "fed": 0.9,
-    }
-    fasting_colors = {
+    #: the model has no food effect: a high fat breakfast changes neither the
+    #: AUC (+8 %) nor Cmax (+0.5 %) of 300 mg [Devineni2015e]; the fed arms
+    #: are validation of it. The colors of the fed and fasted arms
+    fasting_colors: ClassVar[dict[str, str]] = {
         "fasted": "black",
         "fed": "tab:red",
     }
 
-    # ----------- Renal map --------------
-    renal_map = {
-        "Normal renal function": 101.0 / 101.0,  # 1.0,
-        "Mild renal impairment": 69.5 / 101.0,  # 0.69
-        "Moderate renal impairment": 32.5 / 101.0,  # 0.32
-        "Severe renal impairment": 19.5 / 101.0,  # 0.19
+    # ----------- Renal function --------------
+    #: the classes of the GFR with the end stage renal disease; a measured
+    #: creatinine clearance or GFR of X ml/min is the renal function X/101
+    renal_map = RENAL_FUNCTION_GFR
+    renal_colors = RENAL_COLORS_END_STAGE
+
+    # ----------- Interactions --------------
+    #: the activities of the enzymes and transporters of a coadministered drug
+    #: (`f_ugt1a9` of liver and kidney, `LI__f_ugt2b4`, `LI__f_cyp3a4`,
+    #: `KI__f_oat`), from the mechanism and the observed change of the
+    #: exposure, never fitted; the arms are validation data [Devineni2015d]:
+    #: - rifampicin 600 mg QD induces the UGTs and CYP3A4 (PXR), the AUC of
+    #:   canagliflozin falls to 0.49 (Cmax 0.72)
+    #: - probenecid 500 mg BID inhibits the UGTs and the renal secretion of the
+    #:   glucuronides by OAT1/OAT3 (renal clearance of M5 -82 %, M7 -58 %), the
+    #:   AUC of canagliflozin rises to 1.21
+    #: - cyclosporine 400 mg inhibits the glucuronidation (and P-gp, which the
+    #:   model has not), the AUC of canagliflozin rises to 1.23
+    interactions: ClassVar[dict[str, dict[str, float]]] = {
+        "rifampicin": {"f_ugt1a9": 1.8, "LI__f_ugt2b4": 1.8, "LI__f_cyp3a4": 4.0},
+        "probenecid": {"f_ugt1a9": 0.9, "LI__f_ugt2b4": 0.9, "KI__f_oat": 0.3},
+        "cyclosporine": {"f_ugt1a9": 0.8, "LI__f_ugt2b4": 0.8},
     }
 
-    renal_colors = {
-        "Normal renal function": "black",
-        "Mild renal impairment": "#66c2a4",
-        "Moderate renal impairment": "#2ca25f",
-        "Severe renal impairment": "#006d2c",
-    }
+    def interaction_changes(self, drug: str) -> dict[str, Quantity]:
+        """Get the changes of the model of a coadministered drug.
 
-    # ----------- Cirrhosis map --------------
-    cirrhosis_map = {
-        "Control": 0,
-        "Mild cirrhosis": 0.3994897959183674,  # CPT A
-        "Moderate cirrhosis": 0.6979591836734694,  # CPT B
-        "Severe cirrhosis": 0.8127551020408164,  # CPT C
-    }
-    cirrhosis_colors = {
-        "Control": "black",
-        "Mild cirrhosis": "#74a9cf",  # CPT A
-        "Moderate cirrhosis": "#2b8cbe",  # CPT B
-        "Severe cirrhosis": "#045a8d",  # CPT C
-    }
+        Args:
+            drug: the drug, a key of `interactions`.
+
+        Returns:
+            The activities of the enzymes and transporters by parameter id.
+        """
+        return {
+            pid: Q(value, "dimensionless")
+            for pid, value in self.interactions[drug].items()
+        }
 
     # ----------- Cmaps --------------
     @property
-    def renal_cmap(self):
+    def renal_cmap(self) -> LinearSegmentedColormap:
+        """Colormap of the renal function, from impaired (dark) to normal (light)."""
         return LinearSegmentedColormap.from_list(
-            'renal_function',
+            "renal_function",
             ["#013817", "#006d2c", "#2ca25f", "#66c2a4", "#8AEDCC", "#D5F0E7"],
-            N=256
+            N=256,
         )
 
     @property
-    def cirrhosis_cmap(self):
+    def cirrhosis_cmap(self) -> LinearSegmentedColormap:
+        """Colormap of the degree of cirrhosis, from none (light) to severe (dark)."""
         return LinearSegmentedColormap.from_list(
-            'cirrhosis_severity',
+            "cirrhosis_severity",
             ["#CEE2F0", "#74a9cf", "#2b8cbe", "#045a8d", "#003352"],
-            N=256
+            N=256,
         )
 
     @property
-    def doses_cmap(self):
+    def doses_cmap(self) -> LinearSegmentedColormap:
+        """Colormap of the doses, from low (light) to high (dark)."""
         return LinearSegmentedColormap.from_list(
-            'doses',
-            ["#FFE5B4", "#FFD18A", "#FFBD66", "#FFA53A", "#FF931F",
-             "#FF7A16","#FF660D", "#F4530A", "#E04407", "#CC3705"],
-            N=256
+            "doses",
+            [
+                "#FFE5B4",
+                "#FFD18A",
+                "#FFBD66",
+                "#FFA53A",
+                "#FF931F",
+                "#FF7A16",
+                "#FF660D",
+                "#F4530A",
+                "#E04407",
+                "#CC3705",
+            ],
+            N=256,
         )
-    # ----------- Dose map --------------
 
-    dose_colors = {
+    # ----------- Dose map --------------
+    # from light to dark with the hue turning from yellow over red to violet:
+    # the lightness (OKLab) falls by 0.055 from dose to dose, adjacent doses
+    # differ by about 7 (OKLab distance x 100)
+    dose_colors: ClassVar[dict[float, str]] = {
         0: "black",
-        10: "#FFE5B4",
-        25: "#FFD18A",
-        30: "#FFBD66",
-        50: "#FFA53A",
-        100: "#FF931F",
-        200: "#FF7A16",
-        300: "#FF660D",
-        400: "#F4530A",
-        600: "#E04407",
-        800: "#CC3705",
+        10: "#F4D665",
+        25: "#F9B946",
+        30: "#FA9A3A",
+        50: "#F47C44",
+        100: "#E76157",
+        200: "#D24C6A",
+        300: "#B73C7A",
+        400: "#973384",
+        600: "#752D88",
+        800: "#542783",
     }
 
     # ----------- Glucose map --------------
-
-    glucose_colors = {
-        5:  "black",
+    glucose_colors: ClassVar[dict[float, str]] = {
+        5: "black",
         6: "#F5B8D8",
         7: "#EFA3CB",
         8: "#E88EBE",
@@ -214,161 +277,56 @@ class CanagliflozinSimulationExperiment(SimulationExperiment):
         11: "#D44F97",
     }
 
-
-    pk_labels = {
-        "auc": "AUCend",
-        "aucinf": "AUCinf",
+    # keys are the parameters of the non-compartmental analysis of pkpdutils,
+    # see `canagliflozin_pk`
+    pk_labels: ClassVar[Mapping[str, str]] = {
+        "auc_last": "AUCend",
+        "auc_inf_obs": "AUCinf",
         "tmax": "Tmax",
-        "cl": "Total Clearance",
-        # "cl_renal": "Renal clearance",
-        "cl_hepatic": "Hepatic Clearance",
+        "cl_f": "Apparent Clearance",
         "cmax": "Cmax",
         "thalf": "Half-life",
-        "kel": "kel",
-        "vd": "vd",
-        "Aurine_can": "Canagliflozin Urine",
+        "lambda_z": "Elimination Rate",
+        "vz_f": "Apparent Volume",
     }
 
-    pk_units = {
-        "auc": "µmole/l*hr",
-        "aucinf": "ng/ml*hr",
+    pk_units: ClassVar[Mapping[str, str]] = {
+        "auc_last": "µmole/l*hr",
+        "auc_inf_obs": "ng/ml*hr",
         "tmax": "hr",
-        "cl": "ml/min",
-        # "cl_renal": "ml/min",
-        "cl_hepatic": "ml/min",
+        "cl_f": "ml/min",
         "cmax": "ng/ml",
         "thalf": "hr",
-        "kel": "1/hr",
-        "vd": "l",
-        "Aurine_can": "µmole",
+        "lambda_z": "1/hr",
+        "vz_f": "l",
     }
 
-    def models(self) -> Dict[str, AbstractModel]:
-        Q_ = self.Q_
+    # molecular weights of canagliflozin, its metabolites and glucose
+    Mr: ClassVar[MolecularWeights] = MolecularWeights(
+        can=Q(444.518, "g/mole"),
+        m5=Q(620.6, "g/mole"),
+        m7=Q(620.6, "g/mole"),
+        m9=Q(460.5, "g/mole"),
+        glc=Q(180.16, "g/mole"),
+    )
+
+    def calculate_canagliflozin_pk(
+        self, scans: Iterable[str] | None = None
+    ) -> dict[str, pd.DataFrame]:
+        """Calculate the pharmacokinetic parameters of the scans.
+
+        Args:
+            scans: keys of the simulations, all simulations by default.
+
+        Returns:
+            The parameters of every scan by simulation key, per draw of the
+            fitted parameters in a run over them (`uncertainty`).
+        """
+        keys = self._simulations if scans is None else scans
+        across = None if self.uncertainty is None else self.uncertainty.id
         return {
-            "model": AbstractModel(
-                source=MODEL_PATH,
-                language_type=AbstractModel.LanguageType.SBML,
-                changes={},
+            key: calculate_canagliflozin_pk(
+                experiment=self, res=self.results[f"task_{key}"], across=across
             )
+            for key in keys
         }
-
-    @staticmethod
-    def _default_changes(Q_):
-        """Default changes to simulations."""
-
-        changes = {
-
-            # ============ Pharmacokinetics ============
-            # 20251123_221326__d6e52
-            #	>>> !Optimal parameter 'Kp_can' within 5% of lower bound! <<<
-            # 'ftissue_can': Q_(0.6668666338129446, 'l/min'),  # [0.01 - 10]
-            # 'Kp_can': Q_(1.0025087991468038, 'dimensionless'),  # [1 - 50]
-            # 'LI__CANIM_Vmax': Q_(4.026019530820937, 'mmol/min/l'),  # [0.001 - 100]
-            # 'KI__CANEX_k': Q_(0.003745816607378912, '1/min'),  # [0.0001 - 1]
-            # 'GU__CANABS_k': Q_(0.015932205013389062, '1/min'),  # [0.0001 - 1]
-            # 'LI__CAN2M5_Vmax': Q_(0.05457677939498227, 'mmol/min/l'),  # [0.001 - 100]
-            # 'LI__CAN2M5_Km_can': Q_(3.4933649233538513, 'mM'),  # [0.001 - 100]
-            # 'LI__M5EX_Km_m5': Q_(1.2083379213672167, 'mM'),  # [0.01 - 100]
-            # 'LI__M5EX_Vmax': Q_(61.874157129269065, 'mmol/min/l'),  # [0.01 - 200]
-            # 'KI__M5EX_k': Q_(0.11095445697907381, '1/min'),  # [0.01 - 10]
-            # 'ftissue_m5': Q_(0.0071365605418970465, 'l/min'),  # [0.001 - 10]
-            # 'Kp_m5': Q_(2.5413820798849263, 'dimensionless'),  # [1 - 50]
-            # 'LI__CAN2M7_Vmax': Q_(0.0012870703810990754, 'mmol/min/l'),  # [0.0001 - 100]
-            # 'LI__M7EX_Vmax': Q_(0.3138528806886005, 'mmol/min/l'),  # [0.001 - 100]
-            # 'KI__M7EX_k': Q_(0.18673479639197138, '1/min'),  # [0.1 - 10]
-            # 'ftissue_m7': Q_(0.00015407040706317475, 'l/min'),  # [0.0001 - 10]
-            # 'Kp_m7': Q_(39.878498027455976, 'dimensionless'),  # [1 - 250]
-            # 'KI__f_CAN2M7': Q_(0.13941425128973972, 'dimensionless'),  # [0.1 - 10]
-            # 'LI__CAN2M9_Vmax': Q_(0.005209079912015983, 'mmol/min/l'),  # [0.001 - 100]
-
-            # ============ Pharmacodynamics ============
-            # 20251125_214528__b00c9
-            # >>> !Optimal parameter 'KI__RTG_base' within 5% of lower bound! <<<
-            # 'KI__RTG_E50': Q_(1.672069145969639e-05, 'mM'),  # [1e-08 - 44]
-            # 'KI__RTG_base': Q_(9.003931670662638, 'mM'),  # [9 - 14]
-            # 'KI__RTG_max_inhibition': Q_(0.6272697309545409, 'dimensionless'),  # [0.2 - 1.0]
-            # 'KI__RTG_m_fpg': Q_(0.7104098476982807, 'dimensionless'),  # [0.2 - 3]
-        }
-
-        return changes
-
-    def default_changes(self: SimulationExperiment) -> Dict:
-        """Default changes to simulations."""
-        return CanagliflozinSimulationExperiment._default_changes(Q_=self.Q_)
-
-    def tasks(self) -> Dict[str, Task]:
-        if self.simulations():
-            return {
-                f"task_{key}": Task(model="model", simulation=key)
-                for key in self.simulations()
-            }
-        return {}
-
-    def data(self) -> Dict:
-        self.add_selections_data(
-            selections=[
-                "time",
-                # dosing
-                "IVDOSE_can",
-                "PODOSE_can",
-
-                # venous
-                "[Cve_can]",
-                "[Cve_cantot]",
-                "[Cve_m5]",
-                "[Cve_m7]",
-                "[KI__fpg]",
-
-                # urine
-                "Aurine_can",
-                "Aurine_cantot",
-                "Aurine_m7",
-                "Aurine_m5",
-
-                "KI__glc_urine",
-                "KI__GLCEX",
-                "KI__UGE",
-                "KI__RTG",
-
-                # feces
-                "Afeces_can",
-                "Afeces_m7",
-                "Afeces_m9",
-                "Afeces_cantot",
-
-                # renal excretion rate
-                "KI__CANEX",
-
-                # cases
-                'KI__f_renal_function',
-                'f_cirrhosis',
-                'GU__f_absorption',
-            ]
-        )
-        return {}
-
-    @property
-    def Mr(self):
-        return MolecularWeights(
-            can=self.Q_(444.518, "g/mole"),
-            m5=self.Q_(620.6, "g/mole"),
-            m7=self.Q_(620.6, "g/mole"),
-            m9=self.Q_(460.5, "g/mole"),
-            glc=self.Q_(180.16, "g/mole"),
-        )
-
-    def calculate_canagliflozin_pk(self, scans: list = []) -> Dict[str, pd.DataFrame]:
-       """Calculate canagliflozin parameters for simulations (scans)"""
-       pk_dfs = {}
-       if scans:
-           for sim_key in scans:
-               xres = self.results[f"task_{sim_key}"]
-               df = calculate_canagliflozin_pk(experiment=self, xres=xres)
-               pk_dfs[sim_key] = df
-       else:
-           for sim_key in self._simulations.keys():
-               xres = self.results[f"task_{sim_key}"]
-               df = calculate_canagliflozin_pk(experiment=self, xres=xres)
-               pk_dfs[sim_key] = df
-       return pk_dfs

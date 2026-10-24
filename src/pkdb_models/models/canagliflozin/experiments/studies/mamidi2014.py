@@ -1,172 +1,195 @@
-from typing import Dict
+"""Simulation experiment of the study Mamidi2014."""
 
-from sbmlsim.data import DataSet, load_pkdb_dataframe
-from sbmlsim.fit import FitMapping, FitData
-from sbmlutils.console import console
+from typing import ClassVar, override
 
+from pkpdsim.metadata import (
+    ApplicationForm,
+    Dosing,
+    Fasting,
+    Health,
+    PKPDMappingMetaData,
+    Route,
+    Tissue,
+)
+from sbmlsim import Q
+from sbmlsim.data import DataSet
+from sbmlsim.fit import FitData, FitMapping
+from sbmlsim.plot import Axis, Figure
+from sbmlsim.simulation import Simulation
+
+from pkdb_models.models.canagliflozin import MODEL
 from pkdb_models.models.canagliflozin.experiments.base_experiment import (
     CanagliflozinSimulationExperiment,
 )
-from pkdb_models.models.canagliflozin.experiments.metadata import Tissue, Route, Dosing, ApplicationForm, Health, \
-    Fasting, CanagliflozinMappingMetaData
-
-from sbmlsim.plot import Axis, Figure
-from sbmlsim.simulation import Timecourse, TimecourseSim
-
-from pkdb_models.models.canagliflozin.helpers import run_experiments
 
 
 class Mamidi2014(CanagliflozinSimulationExperiment):
-    """Simulation experiment of Mamidi2014."""
+    """Simulation experiment of Mamidi2014.
 
-    bodyweight = 62  # [kg]
+    Mass balance of a single oral dose of 188 mg [14C]canagliflozin (0.5 %
+    hypromellose suspension) in 6 healthy men (19-45 years, BW 62-87 kg),
+    overnight fast >= 8 h, lunch at 4 h, dinner at 10 h. Plasma radioactivity
+    and the radio-HPLC profiles of canagliflozin, M5, M7 and M9 in pooled
+    samples to 24 h (Fig 3), urine and feces pooled 0-48 h by metabolite
+    (Tables 5 and 6) and the total radioactivity in urine and feces 0-168 h
+    (Table 1).
+
+    All data are radioactivity in canagliflozin equivalents (ng-eq/ml,
+    percent of the dose), converted with the molecular weight of
+    canagliflozin. The total of the model in plasma and urine is
+    canagliflozin + M5 + M7, in feces canagliflozin + M7 + M9.
+    """
+
+    bodyweight = 75  # [kg] reference, the range 62-87 kg is reported
     fpg = 5  # mM (healthy)
 
-    info = {
+    info: ClassVar[dict[str, str]] = {
         "cantot": "canagliflozin_total",
         "can": "canagliflozin",
         "m5": "M5",
         "m7": "M7",
     }
 
-    info_urine = {
+    info_urine: ClassVar[dict[str, str]] = {
+        "cantot": "canagliflozin_total",
         "m5": "M5",
         "m7": "M7",
-        "cantot": "canagliflozin_total",
     }
 
-    info_feces = {
+    info_feces: ClassVar[dict[str, str]] = {
         "cantot": "canagliflozin_total",
         "can": "canagliflozin",
         "m9": "M9",
         "m7": "M7",
     }
 
-    colors = {"cantot": "black", "can": "tab:red", "m5": "tab:blue", "m7": "tab:green", "m9": "purple"}
-
-    def datasets(self) -> Dict[str, DataSet]:
+    @override
+    def datasets(self) -> dict[str, DataSet]:
         dsets = {}
-        for fig_id in ["Fig3", "Tab5A", "Tab6A"]:
-            df = load_pkdb_dataframe(f"{self.sid}_{fig_id}", data_path=self.data_path)
+        for fig_id in ["Fig3", "Tab5A", "Tab6A", "Tab1A"]:
+            df = self.load_dataframe(fig_id)
+            # the amounts (the recovery in percent of the dose repeats them);
+            # no observable for M9 in plasma and the sum of urine and feces
+            df = df[
+                df.measurement_type.isin(["concentration", "cumulative amount"])
+                & (df.label != "M9_CAN188")
+                & (df.tissue != "feces_urine")
+            ]
             for label, df_label in df.groupby("label"):
+                label = str(label)
                 dset = DataSet.from_df(df_label, self.ureg)
 
-                # unit conversion to mole/l
-                if label.startswith("canagliflozin_"):
-                    dset.unit_conversion("mean", 1 / self.Mr.can)
-                elif label.startswith("M7_"):
-                    dset.unit_conversion("mean", 1 / self.Mr.m7)
-                elif label.startswith("M5_"):
-                    dset.unit_conversion("mean", 1 / self.Mr.m5)
-                elif label.startswith("M9_"):
-                    dset.unit_conversion("mean", 1 / self.Mr.m9)
+                # radioactivity in canagliflozin equivalents to mole/l and mole
+                dset.unit_conversion("mean", 1 / self.Mr.can)
 
-                dsets[f"{label}"] = dset
+                dsets[self.to_sid(label)] = dset
 
-        # console.print(dsets)
-        # console.print(dsets.keys())
         return dsets
 
-    def simulations(self) -> Dict[str, TimecourseSim]:
-        Q_ = self.Q_
+    @override
+    def simulations(self) -> dict[str, Simulation]:
         tcsims = {}
 
-        tcsims[f"po_can_CAN188"] = TimecourseSim(
-            [Timecourse(
-                start=0,
-                end=50 * 60,  # [min]
-                steps=500,
-                changes={
-                    **self.default_changes(),
-                    "BW": Q_(self.bodyweight, "kg"),
-                    "[KI__fpg]": Q_(self.fpg, "mM"),
-                    "PODOSE_can": Q_(188, "mg"),
-                },
-            )]
+        tcsims["po_can_CAN188"] = Simulation(
+            time_unit="hr",
+            end=170,
+            preinit_changes={
+                **self.default_changes(),
+                "BW": Q(self.bodyweight, "kg"),
+                "[KI__fpg]": Q(self.fpg, "mM"),
+                "PODOSE_can": Q(188, "mg"),
+            },
         )
 
         return tcsims
 
-    def fit_mappings(self) -> Dict[str, FitMapping]:
-
+    @override
+    def fit_mappings(self) -> dict[str, FitMapping]:
         mappings = {}
         for name, sid in [
-            ('canagliflozin_total_CAN188', '[Cve_cantot]'),
-            ('canagliflozin_CAN188', '[Cve_can]'),
-            ('M5_CAN188', '[Cve_m5]'),
-            ('M7_CAN188', '[Cve_m7]'),
-
+            ("canagliflozin_total_CAN188", "[Cve_cantot]"),
+            ("canagliflozin_CAN188", "[Cve_can]"),
+            ("M5_CAN188", "[Cve_m5]"),
+            ("M7_CAN188", "[Cve_m7]"),
         ]:
-
-            mappings[f"fm_CAN188_{name}"] = FitMapping(
+            mappings[self.to_sid(f"fm_CAN188_{name}")] = FitMapping(
                 self,
                 reference=FitData(
                     self,
-                    dataset=f"{name}",
+                    dataset=self.to_sid(name),
                     xid="time",
                     yid="mean",
                     yid_sd="mean_sd",
                     count="count",
                 ),
                 observable=FitData(
-                    self, task=f"task_po_can_CAN188", xid="time", yid=f"{sid}",
+                    self,
+                    task="task_po_can_CAN188",
+                    xid="time",
+                    yid=sid,
                 ),
-                metadata=CanagliflozinMappingMetaData(
+                metadata=PKPDMappingMetaData(
                     tissue=Tissue.PLASMA,
                     route=Route.PO,
-                    application_form=ApplicationForm.SOLUTION,
+                    application_form=ApplicationForm.SUSPENSION,
                     dosing=Dosing.SINGLE,
                     health=Health.HEALTHY,
-                    fasting=Fasting.FASTED
+                    fasting=Fasting.FASTED,
                 ),
             )
 
-            for name, sid in [
-                ('canagliflozin_total_cumulative amount_urine', 'Aurine_cantot'),
-                ('M5_cumulative amount_urine', 'Aurine_m5'),
-                ('M7_cumulative amount_urine', 'Aurine_m7'),
-                ('canagliflozin_total_cumulative amount_feces', 'Afeces_cantot'),
-                ('canagliflozin_cumulative amount_feces', 'Afeces_can'),
-                ('M7_cumulative amount_feces', 'Afeces_m7'),
-                ('M9_cumulative amount_feces', 'Afeces_m9'),
-
-            ]:
-                tissue = Tissue.URINE if "urine" in name else Tissue.FECES
-                mappings[f"fm_CAN188_{name}"] = FitMapping(
+        # the cumulative amounts in the urine and feces
+        for name_excreta, sid_excreta in [
+            ("canagliflozin_total_cumulative amount_urine", "Aurine_cantot"),
+            ("M5_cumulative amount_urine", "Aurine_m5"),
+            ("M7_cumulative amount_urine", "Aurine_m7"),
+            ("canagliflozin_total_cumulative amount_feces", "Afeces_cantot"),
+            # the total radioactivity 0-168 h (Table 1)
+            ("canagliflozin_total_cumulative amount_168h_urine", "Aurine_cantot"),
+            ("canagliflozin_total_cumulative amount_168h_feces", "Afeces_cantot"),
+            ("canagliflozin_cumulative amount_feces", "Afeces_can"),
+            ("M7_cumulative amount_feces", "Afeces_m7"),
+            ("M9_cumulative amount_feces", "Afeces_m9"),
+        ]:
+            tissue = Tissue.URINE if "urine" in name_excreta else Tissue.FECES
+            mappings[self.to_sid(f"fm_CAN188_{name_excreta}")] = FitMapping(
+                self,
+                reference=FitData(
                     self,
-                    reference=FitData(
-                        self,
-                        dataset=f"{name}",
-                        xid="time",
-                        yid="mean",
-                        yid_sd="mean_sd",
-                        count="count",
-                    ),
-                    observable=FitData(
-                        self, task=f"task_po_can_CAN188", xid="time", yid=f"{sid}",
-                    ),
-                    metadata=CanagliflozinMappingMetaData(
-                        tissue=tissue,
-                        route=Route.PO,
-                        application_form=ApplicationForm.SOLUTION,
-                        dosing=Dosing.SINGLE,
-                        health=Health.HEALTHY,
-                        fasting=Fasting.FASTED
-                    ),
-                )
+                    dataset=self.to_sid(name_excreta),
+                    xid="time",
+                    yid="mean",
+                    yid_sd="mean_sd",
+                    count="count",
+                ),
+                observable=FitData(
+                    self,
+                    task="task_po_can_CAN188",
+                    xid="time",
+                    yid=sid_excreta,
+                ),
+                metadata=PKPDMappingMetaData(
+                    tissue=tissue,
+                    route=Route.PO,
+                    application_form=ApplicationForm.SUSPENSION,
+                    dosing=Dosing.SINGLE,
+                    health=Health.HEALTHY,
+                    fasting=Fasting.FASTED,
+                ),
+            )
 
-        # console.print(mappings)
         return mappings
 
-    def figures(self) -> Dict[str, Figure]:
-        return {
-            **self.figure_conc(),
-            **self.figure_urine(),
-            **self.figure_feces(),
-        }
+    @override
+    def figures(self) -> dict[str, Figure]:
+        return self.figures_by_sid(
+            self._figure_conc(),
+            self._figure_urine(),
+            self._figure_feces(),
+        )
 
-    def figure_conc(self) -> Dict[str, Figure]:
-
+    def _figure_conc(self) -> Figure:
+        """Plasma concentrations."""
         fig = Figure(
             experiment=self,
             sid="Fig2",
@@ -174,7 +197,10 @@ class Mamidi2014(CanagliflozinSimulationExperiment):
             num_cols=2,
             name=f"{self.__class__.__name__} (Healthy)",
         )
-        plots = fig.create_plots(xaxis=Axis(self.label_time, unit=self.unit_time), legend=True)
+        plots = fig.create_plots(
+            xaxis=Axis(self.label_time, unit=self.unit_time, min=0, max=26),
+            legend=True,
+        )
         plots[0].set_yaxis(self.label_cantot, unit=self.unit_cantot)
         plots[1].set_yaxis(self.label_can, unit=self.unit_can)
         plots[2].set_yaxis(self.label_m5, unit=self.unit_m5)
@@ -183,31 +209,29 @@ class Mamidi2014(CanagliflozinSimulationExperiment):
         for k, sid in enumerate(self.info):
             # simulation
             plots[k].add_data(
-                task=f"task_po_can_CAN188",
+                task="task_po_can_CAN188",
                 xid="time",
                 yid=f"[Cve_{sid}]",
-                label=f"188 mg PO",
+                label="188 mg PO",
                 color="black",
             )
 
             # data
             did = self.info[sid]
             plots[k].add_data(
-                dataset=f"{did}_CAN188",
+                dataset=self.to_sid(f"{did}_CAN188"),
                 xid="time",
                 yid="mean",
                 yid_sd="mean_sd",
                 count="count",
-                label=f"188 mg PO",
+                label="188 mg PO",
                 color="black",
             )
 
-        return {
-            fig.sid: fig,
-        }
+        return fig
 
-    def figure_urine(self):
-
+    def _figure_urine(self) -> Figure:
+        """Urinary excretion."""
         fig = Figure(
             experiment=self,
             sid="urine",
@@ -215,7 +239,9 @@ class Mamidi2014(CanagliflozinSimulationExperiment):
             num_cols=3,
             name=f"{self.__class__.__name__} (Healthy)",
         )
-        plots = fig.create_plots(xaxis=Axis(self.label_time, unit=self.unit_time), legend=True)
+        plots = fig.create_plots(
+            xaxis=Axis(self.label_time, unit=self.unit_time), legend=True
+        )
         plots[0].set_yaxis(self.label_cantot_urine, unit=self.unit_cantot_urine)
         plots[1].set_yaxis(self.label_m5_urine, unit=self.unit_m5_urine)
         plots[2].set_yaxis(self.label_m7_urine, unit=self.unit_m7_urine)
@@ -223,30 +249,37 @@ class Mamidi2014(CanagliflozinSimulationExperiment):
         for k, sid in enumerate(self.info_urine):
             # simulation
             plots[k].add_data(
-                task=f"task_po_can_CAN188",
+                task="task_po_can_CAN188",
                 xid="time",
                 yid=f"Aurine_{sid}",
-                label=f"188 mg PO",
+                label="188 mg PO",
                 color="black",
             )
             # data
             did = self.info[sid]
             plots[k].add_data(
-                dataset=f"{did}_cumulative amount_urine",
+                dataset=self.to_sid(f"{did}_cumulative amount_urine"),
                 xid="time",
                 yid="mean",
                 yid_sd="mean_sd",
                 count="count",
-                label=f"188 mg PO",
+                label="188 mg PO (0-48 h)",
                 color="black",
-                linestyle=""
+                linestyle="",
             )
-        return {
-            fig.sid: fig,
-        }
+        plots[0].add_data(
+            dataset=self.to_sid("canagliflozin_total_cumulative amount_168h_urine"),
+            xid="time",
+            yid="mean",
+            count="count",
+            label="188 mg PO (0-168 h)",
+            color="tab:blue",
+            linestyle="",
+        )
+        return fig
 
-    def figure_feces(self):
-
+    def _figure_feces(self) -> Figure:
+        """Fecal excretion."""
         fig = Figure(
             experiment=self,
             sid="feces",
@@ -254,37 +287,46 @@ class Mamidi2014(CanagliflozinSimulationExperiment):
             num_cols=2,
             name=f"{self.__class__.__name__} (Healthy)",
         )
-        plots = fig.create_plots(xaxis=Axis(self.label_time, unit=self.unit_time), legend=True)
-        plots[0].set_yaxis(self.label_cantot_feces, unit=self.unit_cantot_urine)
-        plots[1].set_yaxis(self.label_can_feces, unit=self.unit_can_urine)
-        plots[2].set_yaxis(self.label_m7_feces, unit=self.unit_m7_feces)
-        plots[3].set_yaxis(self.label_m9_feces, unit=self.unit_m9_feces)
+        plots = fig.create_plots(
+            xaxis=Axis(self.label_time, unit=self.unit_time), legend=True
+        )
+        plots[0].set_yaxis(self.label_cantot_feces, unit=self.unit_cantot_feces)
+        plots[1].set_yaxis(self.label_can_feces, unit=self.unit_can_feces)
+        plots[2].set_yaxis(self.label_m9_feces, unit=self.unit_m9_feces)
+        plots[3].set_yaxis(self.label_m7_feces, unit=self.unit_m7_feces)
 
         for k, sid in enumerate(self.info_feces):
             # simulation
             plots[k].add_data(
-                task=f"task_po_can_CAN188",
+                task="task_po_can_CAN188",
                 xid="time",
                 yid=f"Afeces_{sid}",
-                label=f"188 mg PO",
+                label="188 mg PO",
                 color="black",
             )
             # data
             did = self.info_feces[sid]
             plots[k].add_data(
-                dataset=f"{did}_cumulative amount_feces",
+                dataset=self.to_sid(f"{did}_cumulative amount_feces"),
                 xid="time",
                 yid="mean",
                 yid_sd="mean_sd",
                 count="count",
-                label=f"188 mg PO",
+                label="188 mg PO (0-48 h)",
                 color="black",
-                linestyle=""
+                linestyle="",
             )
-        return {
-            fig.sid: fig,
-        }
+        plots[0].add_data(
+            dataset=self.to_sid("canagliflozin_total_cumulative amount_168h_feces"),
+            xid="time",
+            yid="mean",
+            count="count",
+            label="188 mg PO (0-168 h)",
+            color="tab:blue",
+            linestyle="",
+        )
+        return fig
 
 
 if __name__ == "__main__":
-    run_experiments(Mamidi2014, output_dir=Mamidi2014.__name__)
+    MODEL.run_experiments(Mamidi2014, output_dir=Mamidi2014.__name__)

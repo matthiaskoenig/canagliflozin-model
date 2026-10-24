@@ -1,0 +1,21 @@
+{
+  "sets": [
+    {
+      "sid": "PD_20261019_201254__61546_0",
+      "values": {
+        "KI__RTG_E50": 7.58654838673793e-05,
+        "KI__RTG_base": 8.932711997108493,
+        "KI__RTG_m_fpg": 0.6671459596120916,
+        "KI__RTG_max_inhibition": 0.6450828457130799
+      },
+      "units": {
+        "KI__RTG_E50": "mmol/l",
+        "KI__RTG_base": "mmol/l",
+        "KI__RTG_m_fpg": "dimensionless",
+        "KI__RTG_max_inhibition": "dimensionless"
+      },
+      "cost": 168.83805352493695,
+      "provenance": "optimization 'PD_20261019_201254__61546', run '0'"
+    }
+  ]
+}

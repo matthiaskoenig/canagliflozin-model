@@ -1,0 +1,49 @@
+[project]
+site_name = "Physiologically based pharmacokinetic/pharmacodynamic (PBPK/PD) model of canagliflozin"
+site_url = "https://matthiaskoenig.github.io/canagliflozin-model/"
+site_description = "This repository provides the canagliflozin physiologically based pharmacokinetic/pharmacodynamic (PBPK/PD) model: the absorption, the tissue distribution, the hepatic and renal glucuronidation to M5 and M7, the oxidation to M9, the biliary excretion of the metabolites with the enterohepatic circulation and the renal excretion of canagliflozin, and the inhibition of SGLT2, which lowers the renal threshold of glucose and increases the urinary glucose excretion."
+site_author = "Vera Tereshchuk, Michelle Elias and Matthias König"
+
+copyright = "Copyright &copy; 2023-2026 Vera Tereshchuk, Michelle Elias and Matthias König"
+
+# pages as `simulations.html`, so the reports which the docs workflow copies into
+# the site (`simulations/`, `fit/`) do not replace the pages of the same name
+use_directory_urls = false
+
+repo_url = "https://github.com/matthiaskoenig/canagliflozin-model"
+repo_name = "matthiaskoenig/canagliflozin-model"
+
+nav = [
+  { "Home" = "index.md" },
+  { "Running the model" = "running.md" },
+  { "Models" = "models.md" },
+  { "Simulations" = "simulations.md" },
+  { "Fit" = "fit.md" },
+  { "Release notes" = "release-notes.md" },
+]
+
+[project.theme]
+language = "en"
+features = [
+  "content.code.copy",
+  "navigation.footer",
+  "navigation.top",
+  "search.highlight",
+  "toc.follow",
+]
+
+[[project.theme.palette]]
+media = "(prefers-color-scheme: light)"
+scheme = "default"
+primary = "teal"
+accent = "teal"
+
+[[project.theme.palette]]
+media = "(prefers-color-scheme: dark)"
+scheme = "slate"
+primary = "teal"
+accent = "teal"
+
+[[project.extra.social]]
+icon = "fontawesome/brands/github"
+link = "https://github.com/matthiaskoenig/canagliflozin-model"

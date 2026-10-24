@@ -1,174 +1,216 @@
-from typing import Dict
+"""Simulation experiment of the study Devineni2015d."""
 
-from sbmlsim.data import DataSet, load_pkdb_dataframe
-from sbmlsim.fit import FitMapping, FitData
-from sbmlutils.console import console
+from typing import ClassVar, NamedTuple, override
 
-from pkdb_models.models.canagliflozin.experiments.base_experiment import (
-    CanagliflozinSimulationExperiment
+from pkpdsim.metadata import (
+    ApplicationForm,
+    Coadministration,
+    Dosing,
+    Fasting,
+    Health,
+    PKPDMappingMetaData,
+    Route,
+    Tissue,
 )
-from pkdb_models.models.canagliflozin.experiments.metadata import Tissue, Route, Dosing, ApplicationForm, Health, \
-    Fasting, CanagliflozinMappingMetaData, Coadministration
-
+from sbmlsim import Q
+from sbmlsim.data import DataSet
+from sbmlsim.fit import FitData, FitMapping
 from sbmlsim.plot import Axis, Figure
-from sbmlsim.simulation import Timecourse, TimecourseSim
+from sbmlsim.simulation import Change, Simulation
+from sbmlsim.units import Quantity
 
-from pkdb_models.models.canagliflozin.helpers import run_experiments
+from pkdb_models.models.canagliflozin import MODEL
+from pkdb_models.models.canagliflozin.experiments.base_experiment import (
+    CanagliflozinSimulationExperiment,
+)
+
+
+class Arm(NamedTuple):
+    """An arm of the study: the data are of the last dose of canagliflozin."""
+
+    #: the key of the simulation
+    sim: str
+    #: the number of doses of canagliflozin 300 mg QD
+    doses: int
+    #: body weight [kg]
+    bodyweight: float
+    #: the coadministered drug, a key of `interactions` of the base
+    drug: str | None
+    #: the time of the start of the coadministered drug [hr] relative to the
+    #: first dose of canagliflozin
+    drug_start: float
+    coadministration: Coadministration
 
 
 class Devineni2015d(CanagliflozinSimulationExperiment):
-    """Simulation experiment of Devineni2015d."""
+    """Simulation experiment of Devineni2015d.
 
-    groups = {"CAN300": "can300_single", "CAN300_RIF600": "can300_rif600_single",
-              "CAN300_2": "can300_2_multi", "CAN300_2_PRO500": "can300_2_pro500_multi",
-              "CAN300_3": "can300_3_multi", "CAN300_3_CYC400": "can300_3_cyc400_multi"}
+    Canagliflozin 300 mg in healthy subjects, fasted, with three
+    coadministered drugs, simulated with the activities of the enzymes and
+    transporters of `interactions` of the base (never fitted):
+    - study 1: a single dose alone (day 1) and with rifampicin 600 mg QD at
+      steady state (days 4-12, canagliflozin on day 10)
+    - study 2: QD on days 1-17, probenecid 500 mg BID on days 15-17; the data
+      are of day 14 (alone) and day 17 (with probenecid)
+    - study 3: QD on days 1-8, cyclosporine 400 mg 30 min before the dose of
+      day 8; the data are of day 7 (alone) and day 8 (with cyclosporine)
+    """
 
-    info = {
+    arms: ClassVar[dict[str, Arm]] = {
+        "CAN300": Arm("can300_single", 1, 75.0, None, 0, Coadministration.NONE),
+        # induction at steady state, set from the start
+        "CAN300_RIF600": Arm(
+            "can300_rif600_single",
+            1,
+            75.0,
+            "rifampicin",
+            0,
+            Coadministration.RIFAMPICIN,
+        ),
+        "CAN300_2": Arm("can300_2_multi", 14, 79.6, None, 0, Coadministration.NONE),
+        # probenecid from the dose of day 15
+        "CAN300_2_PRO500": Arm(
+            "can300_2_pro500_multi",
+            17,
+            79.6,
+            "probenecid",
+            14 * 24,
+            Coadministration.PROBENECID,
+        ),
+        "CAN300_3": Arm("can300_3_multi", 7, 80.5, None, 0, Coadministration.NONE),
+        # cyclosporine 30 min before the dose of day 8
+        "CAN300_3_CYC400": Arm(
+            "can300_3_cyc400_multi",
+            8,
+            80.5,
+            "cyclosporine",
+            7 * 24 - 0.5,
+            Coadministration.CYCLOSPORINE,
+        ),
+    }
+
+    #: the arms with urinary amounts: study 1 0-72 hr, study 2 0-24 hr
+    urine_groups: ClassVar[list[str]] = [
+        "CAN300",
+        "CAN300_RIF600",
+        "CAN300_2",
+        "CAN300_2_PRO500",
+    ]
+
+    info: ClassVar[dict[str, str]] = {
         "can": "canagliflozin",
         "m5": "M5",
         "m7": "M7",
     }
 
-    bodyweights = {
-        "can300": 75, "can300_rif600": 75,
-        "can300_2": 79.6, "can300_2_pro500": 79.6,
-        "can300_3": 80.5, "can300_3_cyc400": 80.5
-    }
+    fpg = 5  # [mM] (healthy)
 
-    fpg = 5  # [mM] (Healthy)
-
-    coadministration = [Coadministration.NONE, Coadministration.RIFAMPICIN,
-                        Coadministration.NONE, Coadministration.PROBENECID,
-                        Coadministration.NONE, Coadministration.CYCLOSPORINE]
-
-    def datasets(self) -> Dict[str, DataSet]:
+    @override
+    def datasets(self) -> dict[str, DataSet]:
         dsets = {}
         for fig_id in ["Fig2", "Fig3", "Fig4", "Tab2A", "Tab3A"]:
-            df = load_pkdb_dataframe(f"{self.sid}_{fig_id}", data_path=self.data_path)
+            df = self.load_dataframe(fig_id)
+            if fig_id == "Tab3A":
+                # the start of the collection at the dose of day 14/17 is
+                # compared with the state before the reset, i.e. the urine of
+                # the day before
+                df = df[df["time"] > 0]
             for label, df_label in df.groupby("label"):
+                label = str(label)
                 dset = DataSet.from_df(df_label, self.ureg)
 
-                # unit conversion to mole/l
-                if label.startswith("canagliflozin_"):
+                # unit conversion to mole/l and mole; the urinary amounts of M5
+                # and M7 are % dose corrected for the molecular weight, i.e.
+                # canagliflozin equivalents
+                if label.startswith(("canagliflozin_", "M5_urine", "M7_urine")):
                     dset.unit_conversion("mean", 1 / self.Mr.can)
-                elif label.startswith("M5_"):
-                    dset.unit_conversion("mean", 1 / self.Mr.m5)
-                elif label.startswith("M7_"):
-                    dset.unit_conversion("mean", 1 / self.Mr.m7)
 
-                dsets[f"{label}"] = dset
+                dsets[label] = dset
 
-        # console.print(dsets)
-        # console.print(dsets.keys())
         return dsets
 
-    def simulations(self) -> Dict[str, TimecourseSim]:
-        Q_ = self.Q_
+    def _dose_changes(self, arm: Arm, time: float) -> dict[str, Quantity]:
+        """Get the changes at a dose of an arm.
+
+        The reset of the urine (collected from dose to dose) and the activities
+        of the coadministered drug; the dose itself adds to the dose state
+        (`add_doses`).
+
+        Args:
+            arm: the arm.
+            time: the time of the dose [hr] after the first dose.
+
+        Returns:
+            The changes by id.
+        """
+        changes: dict[str, Quantity] = {
+            "Aurine_can": Q(0, "mmole"),
+            "Aurine_m5": Q(0, "mmole"),
+            "Aurine_m7": Q(0, "mmole"),
+        }
+        if arm.drug and time >= arm.drug_start:
+            changes.update(self.interaction_changes(arm.drug))
+        return changes
+
+    @override
+    def simulations(self) -> dict[str, Simulation]:
         tcsims = {}
 
-        # single dose
-        for sim in ["can300", "can300_rif600"]:
-            tcsims[f"po_{sim}_single"] = TimecourseSim(
-                Timecourse(
-                    start=0,
-                    end=73 * 60,  # [min]
-                    steps=500,
-                    changes={
-                        **self.default_changes(),
-                        "BW": Q_(self.bodyweights[sim], "kg"),
-                        "[KI__fpg]": Q_(self.fpg, "mM"),
-                        "PODOSE_can": Q_(300, "mg"),
-                    },
+        for arm in self.arms.values():
+            # the last dose of canagliflozin is at time 0
+            last = 24 * (arm.doses - 1)
+            changes = [
+                Change(24 * k, self._dose_changes(arm, 24 * k))
+                for k in range(1, arm.doses)
+            ]
+            if arm.doses > 1:
+                changes.append(
+                    self.add_doses(
+                        [24 * k for k in range(1, arm.doses)],
+                        {"PODOSE_can": Q(300, "mg")},
+                    )
                 )
-            )
-
-        # multiple dose 2
-        for sim in ["can300_2", "can300_2_pro500"]:
-            tc0 = Timecourse(
-                start=0,
-                end=24 * 60,  # [min]
-                steps=500,
-                changes={
-                    **self.default_changes(),
-                    "BW": Q_(self.bodyweights[sim], "kg"),
-                    "[KI__fpg]": Q_(5, "mM"),
-                    "PODOSE_can": Q_(300, "mg"),
-                },
-            )
-            changes_multi = {
-                "BW": Q_(self.bodyweights[sim], "kg"),
-                "[KI__fpg]": Q_(5, "mM"),
-                "Aurine_can": Q_(0, "mmole"),  # reset canagliflozin
-                "Aurine_m5": Q_(0, "mmole"),  # reset M5
-                "Aurine_m7": Q_(0, "mmole"),  # reset M7
-                "PODOSE_can": Q_(300, "mg"),
+            if arm.drug and arm.drug_start > 0 and arm.drug_start % 24:
+                changes.append(
+                    Change(arm.drug_start, self.interaction_changes(arm.drug))
+                )
+            preinit_changes = {
+                **self.default_changes(),
+                "BW": Q(arm.bodyweight, "kg"),
+                "[KI__fpg]": Q(self.fpg, "mM"),
+                "PODOSE_can": Q(300, "mg"),
             }
-            tc1 = Timecourse(
-                start=0,
-                end=24 * 60,  # [min]
-                steps=500,
-                changes=changes_multi
-            )
-            tc2 = Timecourse(
-                start=0,
-                end=25 * 60,  # [min]
-                steps=500,
-                changes=changes_multi
-            )
-
-            tcsims[f"po_{sim}_multi"] = TimecourseSim(
-                [tc0] + [tc1 for _ in range(15)] + [tc2],
-                time_offset=-16 * 24 * 60,
-            )
-
-        # multiple dose 3
-        for sim in ["can300_3", "can300_3_cyc400"]:
-            tc0 = Timecourse(
-                start=0,
-                end=24 * 60,  # [min]
-                steps=500,
-                changes={
-                    **self.default_changes(),
-                    "PODOSE_can": Q_(300, "mg"),
-                },
-            )
-            changes_multi = {
-                "BW": Q_(self.bodyweights[sim], "kg"),
-                "[KI__fpg]": Q_(5, "mM"),
-                "Aurine_can": Q_(0, "mmole"),  # reset canagliflozin
-                "Aurine_m5": Q_(0, "mmole"),  # reset M5
-                "Aurine_m7": Q_(0, "mmole"),  # reset M7
-                "PODOSE_can": Q_(300, "mg"),
-            }
-            tc1 = Timecourse(
-                start=0,
-                end=24 * 60,  # [min]
-                steps=500,
-                changes=changes_multi
-            )
-            tc2 = Timecourse(
-                start=0,
-                end=25 * 60,  # [min]
-                steps=500,
-                changes=changes_multi
-            )
-
-            tcsims[f"po_{sim}_multi"] = TimecourseSim(
-                [tc0] + [tc1 for _ in range(6)] + [tc2],
-                time_offset=-7 * 24 * 60,
+            if arm.drug and arm.drug_start == 0:
+                preinit_changes.update(self.interaction_changes(arm.drug))
+            end = last + (73 if arm.doses == 1 else 25)
+            tcsims[f"po_{arm.sim}"] = Simulation(
+                time_unit="hr",
+                end=end,
+                preinit_changes=preinit_changes,
+                changes=changes,
+                time_shift=-last,
             )
 
         return tcsims
 
-    def fit_mappings(self) -> Dict[str, FitMapping]:
+    def _metadata(self, arm: Arm, tissue: Tissue) -> PKPDMappingMetaData:
+        """Metadata of the mappings of an arm."""
+        return PKPDMappingMetaData(
+            tissue=tissue,
+            route=Route.PO,
+            application_form=ApplicationForm.TABLET,
+            dosing=Dosing.SINGLE if arm.doses == 1 else Dosing.MULTIPLE,
+            health=Health.HEALTHY,
+            fasting=Fasting.FASTED,
+            coadministration=arm.coadministration,
+        )
 
+    @override
+    def fit_mappings(self) -> dict[str, FitMapping]:
         mappings = {}
 
-        for k, (group, sim) in enumerate(list(self.groups.items())):
-
-            dosing = Dosing.SINGLE if "single" in sim else Dosing.MULTIPLE
-
-            mappings[f"task_po_{sim}_{group}"] = FitMapping(
+        for group, arm in self.arms.items():
+            mappings[f"fm_{group}_canagliflozin"] = FitMapping(
                 self,
                 reference=FitData(
                     self,
@@ -179,193 +221,158 @@ class Devineni2015d(CanagliflozinSimulationExperiment):
                     count="count",
                 ),
                 observable=FitData(
-                    self, task=f"task_po_{sim}", xid="time", yid="[Cve_can]",
+                    self,
+                    task=f"task_po_{arm.sim}",
+                    xid="time",
+                    yid="[Cve_can]",
                 ),
-                metadata=CanagliflozinMappingMetaData(
-                    tissue=Tissue.PLASMA,
-                    route=Route.PO,
-                    application_form=ApplicationForm.TABLET,
-                    dosing=dosing,
-                    health=Health.HEALTHY,
-                    fasting=Fasting.FASTED,
-                    coadministration=self.coadministration[k]
-                ),
+                metadata=self._metadata(arm, Tissue.PLASMA),
             )
 
-        for name, sid in [
-            ('canagliflozin_urine', 'Aurine_can'),
-            ('M5_urine', 'Aurine_m5'),
-            ('M7_urine', 'Aurine_m7')
-        ]:
-            for k, (group, sim) in enumerate(list(self.groups.items())[:2]):
-
-                dosing = Dosing.SINGLE if "single" in sim else Dosing.MULTIPLE
-
-                mappings[f"task_po_{sim}_{name}"] = FitMapping(
+        for group in self.urine_groups:
+            arm = self.arms[group]
+            for sid, name in self.info.items():
+                mappings[f"fm_{group}_{name}_urine"] = FitMapping(
                     self,
                     reference=FitData(
                         self,
-                        dataset=f"{name}_{group}",
+                        dataset=f"{name}_urine_{group}",
                         xid="time",
                         yid="mean",
                         yid_sd="mean_sd",
                         count="count",
                     ),
                     observable=FitData(
-                        self, task=f"task_po_{sim}", xid="time", yid="Aurine_can",
+                        self,
+                        task=f"task_po_{arm.sim}",
+                        xid="time",
+                        yid=f"Aurine_{sid}",
                     ),
-                    metadata=CanagliflozinMappingMetaData(
-                        tissue=Tissue.URINE,
-                        route=Route.PO,
-                        application_form=ApplicationForm.TABLET,
-                        dosing=dosing,
-                        health=Health.HEALTHY,
-                        fasting=Fasting.FASTED,
-                        coadministration=self.coadministration[k]
-                    ),
+                    metadata=self._metadata(arm, Tissue.URINE),
                 )
 
-        # console.print(mappings)
         return mappings
 
-    def figures(self) -> Dict[str, Figure]:
-        return {
-            **self.figure_multi(),
-            **self.figure_urine_rif(),
-            **self.figure_urine_pro()
-        }
+    @override
+    def figures(self) -> dict[str, Figure]:
+        return self.figures_by_sid(
+            self._figure_plasma(),
+            self._figure_urine("Fig_urine_rif", ["CAN300", "CAN300_RIF600"]),
+            self._figure_urine("Fig_urine_pro", ["CAN300_2", "CAN300_2_PRO500"]),
+        )
 
-    def figure_multi(self) -> Dict[str, Figure]:
+    arm_labels: ClassVar[dict[str, str]] = {
+        "CAN300": "300 mg PO",
+        "CAN300_RIF600": "300 mg PO + RIF",
+        "CAN300_2": "300 mg PO (day 14)",
+        "CAN300_2_PRO500": "300 mg PO + PRO (day 17)",
+        "CAN300_3": "300 mg PO (day 7)",
+        "CAN300_3_CYC400": "300 mg PO + CYC (day 8)",
+    }
+
+    arm_colors: ClassVar[dict[str, str]] = {
+        "CAN300": "black",
+        "CAN300_RIF600": "tab:blue",
+        "CAN300_2": "black",
+        "CAN300_2_PRO500": "tab:blue",
+        "CAN300_3": "black",
+        "CAN300_3_CYC400": "tab:blue",
+    }
+
+    def _figure_plasma(self) -> Figure:
+        """Plasma concentrations without and with the coadministration."""
         fig = Figure(
             experiment=self,
-            sid="can multi",
+            sid="Fig_plasma",
             num_rows=1,
             num_cols=3,
             name=f"{self.__class__.__name__} (Healthy)",
         )
-        plots = fig.create_plots(xaxis=Axis(self.label_time, unit=self.unit_time), legend=True)
-        plots[0].set_yaxis(self.label_can, unit=self.unit_can)
-        plots[1].set_yaxis(self.label_can, unit=self.unit_can)
-        plots[2].set_yaxis(self.label_can, unit=self.unit_can)
-
-        # Define pairs and labels
-        pairs = [
-            (["CAN300", "CAN300_RIF600"], ["can300_single", "can300_single"], ["300 mg PO", "300 mg PO + RIF"], 0),
-            (["CAN300_2", "CAN300_2_PRO500"], ["can300_2_multi", "can300_2_multi"], ["300 mg PO", "300 mg PO + PRO"],
-             1),
-            (["CAN300_3", "CAN300_3_CYC400"], ["can300_3_multi", "can300_3_multi"], ["300 mg PO", "300 mg PO + CYC"],
-             2),
-        ]
-
-        for groups, sims, labels, plot_idx in pairs:
-            # simulation
-            plots[plot_idx].add_data(
-                task=f"task_po_{sims[0]}",
-                xid="time",
-                yid=f"[Cve_can]",
-                label=labels[0],
-                color="black",
+        plots = fig.create_plots(
+            xaxis=Axis(self.label_time, unit=self.unit_time), legend=True
+        )
+        for k, groups in enumerate(
+            [
+                ["CAN300", "CAN300_RIF600"],
+                ["CAN300_2", "CAN300_2_PRO500"],
+                ["CAN300_3", "CAN300_3_CYC400"],
+            ]
+        ):
+            plots[k].set_yaxis(self.label_can, unit=self.unit_can)
+            plots[k].set_xaxis(
+                self.label_time, unit=self.unit_time, min=0, max=73 if k == 0 else 25
             )
-
-            # data
-            for group, label in zip(groups, labels):
-                color = "black" if group == groups[0] else "tab:blue"
-                plots[plot_idx].add_data(
+            for group in groups:
+                arm = self.arms[group]
+                # simulation
+                plots[k].add_data(
+                    task=f"task_po_{arm.sim}",
+                    xid="time",
+                    yid="[Cve_can]",
+                    label=self.arm_labels[group],
+                    color=self.arm_colors[group],
+                )
+                # data
+                plots[k].add_data(
                     dataset=f"canagliflozin_{group}",
                     xid="time",
                     yid="mean",
                     yid_sd="mean_sd",
                     count="count",
-                    label=label,
-                    color=color,
+                    label=self.arm_labels[group],
+                    color=self.arm_colors[group],
                 )
 
-        return {
-            fig.sid: fig,
-        }
+        return fig
 
-    def figure_urine_rif(self) -> Dict[str, Figure]:
+    def _figure_urine(self, sid: str, groups: list[str]) -> Figure:
+        """Urinary amounts without and with the coadministration."""
         fig = Figure(
             experiment=self,
-            sid="Fig_urine_rif",
+            sid=sid,
             num_rows=1,
             num_cols=3,
             name=f"{self.__class__.__name__} (Healthy)",
         )
-        plots = fig.create_plots(xaxis=Axis(self.label_time, unit="day"), legend=True)
-        plots[0].set_yaxis(self.label_can_urine, unit=self.unit_can_urine)
-        plots[1].set_yaxis(self.label_m5_urine, unit=self.unit_m5_urine)
-        plots[2].set_yaxis(self.label_m7_urine, unit=self.unit_m7_urine)
-
-        for k, sid in enumerate(self.info):
-            # simulation (only once)
-            plots[k].add_data(
-                task=f"task_po_can300_single",
-                xid="time",
-                yid=f"Aurine_{sid}",
-                label="300 mg PO",
-                color="black",
-            )
-
-            # data (both conditions)
-            for group, label, color in [("CAN300", "300 mg PO", "black"),
-                                        ("CAN300_RIF600", "300 mg PO + RIF", "tab:blue")]:
-                did = self.info[sid]
-                plots[k].add_data(
-                    dataset=f"{did}_urine_{group}",
-                    xid="time",
-                    yid="mean",
-                    yid_sd="mean_sd",
-                    count="count",
-                    label=label,
-                    color=color,
-                )
-
-        return {
-            fig.sid: fig,
-        }
-
-    def figure_urine_pro(self) -> Dict[str, Figure]:
-        fig = Figure(
-            experiment=self,
-            sid="Fig_urine_pro",
-            num_rows=1,
-            num_cols=3,
-            name=f"{self.__class__.__name__} (Healthy)",
+        # the legends inside the panels cover data
+        fig.settings = {**fig.settings, "legend_position": "outside"}
+        plots = fig.create_plots(
+            xaxis=Axis(
+                self.label_time,
+                unit=self.unit_time,
+                min=0,
+                max=73 if self.arms[groups[0]].doses == 1 else 25,
+            ),
+            legend=True,
         )
-        plots = fig.create_plots(xaxis=Axis(self.label_time, unit="day"), legend=True)
         plots[0].set_yaxis(self.label_can_urine, unit=self.unit_can_urine)
         plots[1].set_yaxis(self.label_m5_urine, unit=self.unit_m5_urine)
         plots[2].set_yaxis(self.label_m7_urine, unit=self.unit_m7_urine)
 
-        for k, sid in enumerate(self.info):
-            # simulation (only once)
-            plots[k].add_data(
-                task=f"task_po_can300_2_multi",
-                xid="time",
-                yid=f"Aurine_{sid}",
-                label="300 mg PO",
-                color="black",
-            )
-
-            # data (both conditions)
-            for group, label, color in [("CAN300_2", "300 mg PO", "black"),
-                                        ("CAN300_2_PRO500", "300 mg PO + PRO", "tab:blue")]:
-                did = self.info[sid]
+        for k, (substance, name) in enumerate(self.info.items()):
+            for group in groups:
+                arm = self.arms[group]
+                # simulation
                 plots[k].add_data(
-                    dataset=f"{did}_urine_{group}",
+                    task=f"task_po_{arm.sim}",
+                    xid="time",
+                    yid=f"Aurine_{substance}",
+                    label=self.arm_labels[group],
+                    color=self.arm_colors[group],
+                )
+                # data
+                plots[k].add_data(
+                    dataset=f"{name}_urine_{group}",
                     xid="time",
                     yid="mean",
                     yid_sd="mean_sd",
                     count="count",
-                    label=label,
-                    color=color,
+                    label=self.arm_labels[group],
+                    color=self.arm_colors[group],
                 )
 
-        return {
-            fig.sid: fig,
-        }
-    
+        return fig
+
 
 if __name__ == "__main__":
-    run_experiments(Devineni2015d, output_dir=Devineni2015d.__name__)
+    MODEL.run_experiments(Devineni2015d, output_dir=Devineni2015d.__name__)

@@ -1,36 +1,29 @@
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.13759839.svg)](https://doi.org/10.5281/zenodo.13759839)
-[![GitHub Action](https://github.com/matthiaskoenig/canagliflozin-model/actions/workflows/python.yml/badge.svg)](https://github.com/matthiaskoenig/canagliflozin-model/actions/workflows/python.yml)
-[![GitHub Action](https://github.com/matthiaskoenig/canagliflozin-model/actions/workflows/docker.yml/badge.svg)](https://github.com/matthiaskoenig/canagliflozin-model/actions/workflows/docker.yml)
+[![Release](https://img.shields.io/github/v/release/matthiaskoenig/canagliflozin-model)](https://github.com/matthiaskoenig/canagliflozin-model/releases)
+[![Documentation](https://github.com/matthiaskoenig/canagliflozin-model/actions/workflows/docs.yml/badge.svg)](https://matthiaskoenig.github.io/canagliflozin-model/)
+[![CI](https://github.com/matthiaskoenig/canagliflozin-model/actions/workflows/ci.yml/badge.svg)](https://github.com/matthiaskoenig/canagliflozin-model/actions/workflows/ci.yml)
+[![Docker](https://img.shields.io/docker/v/matthiaskoenig/canagliflozin?sort=semver&label=docker)](https://hub.docker.com/r/matthiaskoenig/canagliflozin)
+[![Python](https://img.shields.io/badge/python-3.14-blue)](https://www.python.org)
+[![Code license: MIT](https://img.shields.io/badge/code%20license-MIT-blue)](https://opensource.org/license/MIT)
+[![Model license: CC BY-SA 4.0](https://img.shields.io/badge/model%20license-CC%20BY--SA%204.0-lightgrey)](https://creativecommons.org/licenses/by-sa/4.0/)
 
-# canagliflozin model
-This repository provides the canagliflozin physiologically based pharmacokinetics/ pharmacodynamics (PBPK/PD) model.
+# Physiologically based pharmacokinetic/pharmacodynamic (PBPK/PD) model of canagliflozin
 
-The model is distributed as [SBML](http://sbml.org) format available from [`canagliflozin_body_flat.xml`](./models/canagliflozin_body_flat.xml) with 
-corresponding [SBML4humans model report](https://sbml4humans.de/model_url?url=https://raw.githubusercontent.com/matthiaskoenig/canagliflozin-model/main/models/canagliflozin_body_flat.xml) and [model equations](./models/canagliflozin_body_flat.md).
+This repository provides the canagliflozin physiologically based pharmacokinetic/pharmacodynamic (PBPK/PD) model: the absorption, the tissue distribution, the hepatic and renal glucuronidation to M5 and M7, the oxidation to M9, the biliary excretion of the metabolites with the enterohepatic circulation and the renal excretion of canagliflozin, and the inhibition of SGLT2, which lowers the renal threshold of glucose and increases the urinary glucose excretion.
 
-The COMBINE archive is available from [`canagliflozin_model.omex`](./canagliflozin_model.omex).
-The FAIR assessment is available from [`canagliflozin_model_fair.xlsx`](./losartan_model_fair.xlsx).
+Documentation: <https://matthiaskoenig.github.io/canagliflozin-model/>
 
-![model overview](./figures/canagliflozin_model.png)
+## Quick start
 
-### Comp submodels
-* **liver** submodel [`canagliflozin_liver.xml`](./models/canagliflozin_liver.xml) with [SBML4humans report](https://sbml4humans.de/model_url?url=https://raw.githubusercontent.com/matthiaskoenig/canagliflozin-model/main/models/canagliflozin_liver.xml) and [equations](./models/canagliflozin_liver.md).
-* **kidney** submodel [`canagliflozin_kidney.xml`](./models/canagliflozin_kidney.xml) with [SBML4humans report](https://sbml4humans.de/model_url?url=https://raw.githubusercontent.com/matthiaskoenig/canagliflozin-model/main/models/canagliflozin_kidney.xml) and [equations](./models/canagliflozin_kidney.md).
-* **intestine** submodel [`canagliflozin_intestine.xml`](./models/canagliflozin_intestine.xml) with [SBML4humans report](https://sbml4humans.de/model_url?url=https://raw.githubusercontent.com/matthiaskoenig/canagliflozin-model/main/models/canagliflozin_intestine.xml) and [equations](./models/canagliflozin_intestine.md).
-* **whole-body** submodel [`canagliflozin_body.xml`](./models/canagliflozin_body.xml) with [SBML4humans report](https://sbml4humans.de/model_url?url=https://raw.githubusercontent.com/matthiaskoenig/canagliflozin-model/main/models/canagliflozin_body.xml) and [equations](./models/canagliflozin_body.md).
+```bash
+git clone https://github.com/matthiaskoenig/canagliflozin-model.git && cd canagliflozin-model
+uv sync
+uv run run_simulation pkdb_models.models.canagliflozin --action all -r results
+```
 
 ## How to cite
-To cite the model repository
 
-> Tereshchuk, V., Elias, M. & König, M. (2026).
-> *Physiologically based pharmacokinetic/pharmacodynamic (PBPK) model of canagliflozin.*   
-> Zenodo. [https://doi.org/10.5281/zenodo.13759839](https://doi.org/10.5281/zenodo.13759839)
-
-To cite the preprint
-
-> Vera Tereshchuk, Michelle Elias, Matthias König
-> A Digital Twin of Canagliflozin Pharmacokinetics and Pharmacodynamics in Type 2 Diabetes Mellitus
-> Preprints 2026, 10.20944/preprints202601.2095.v1 (preprint). [doi:10.20944/preprints202601.2095.v1](https://doi.org/10.20944/preprints202601.2095.v1)
+> Tereshchuk, V., Elias, M. & König, M. (2026). *Physiologically based pharmacokinetic/pharmacodynamic (PBPK/PD) model of canagliflozin*. Zenodo. https://doi.org/10.5281/zenodo.13759839
 
 ## License
 
@@ -38,56 +31,4 @@ To cite the preprint
 * Documentation: [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)
 * Models: [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)
 
-This program is distributed in the hope that it will be useful, but WITHOUT ANY
-WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
-PARTICULAR PURPOSE.
-
-
-## Run simulations
-### python
-Clone the repository 
-```bash
-git clone https://github.com/matthiaskoenig/canagliflozin-model.git
-cd canagliflozin-model
-```
-
-#### uv
-Run the complete analysis with uv (https://docs.astral.sh/uv/getting-started/installation/):
-```bash
-uv sync
-uv run run_canagliflozin -a all -r results
-```
-
-#### pip
-If you use pip install the package via
-```bash
-pip install -e .
-```
-Run the complete analysis in the environment via:
-```bash
-run_canagliflozin -a all -r results
-```
-
-### docker
-Simulations can also be run within a docker container:
-
-```bash
-docker run -v "${PWD}/results:/results" -it matthiaskoenig/canagliflozin:latest /bin/bash
-```
-
-Run the complete analysis:
-```bash
-uv run run_canagliflozin -a all -r /results
-```
-The results are written into the mounted `/results` folder on the host.
-
-In case of permission issues with the mounted folder, adjust ownership and access rights with:
-```bash
-sudo chown $(id -u):$(id -g) -R "${PWD}/results"
-sudo chmod 775 "${PWD}/results"
-```
-
-## Funding
-Matthias König was supported by the Federal Ministry of Research, Technology and Space (BMFTR, Germany) within ATLAS by grant number 031L0304B and by the German Research Foundation (DFG) within the Research Unit Program FOR 5151 QuaLiPerF (Quantifying Liver Perfusion-Function Relationship in Complex Resection - A Systems Medicine Approach) by grant number 436883643 and by grant number 465194077 (Priority Programme SPP 2311, Subproject SimLivA). This work was supported by the BMBF-funded de.NBI Cloud within the German Network for Bioinformatics Infrastructure (de.NBI) (031A537B, 031A533A, 031A538A, 031A533B, 031A535A, 031A537C, 031A534A, 031A532B).
-
-© 2023-2026 Vera Tereshchuk, Michelle Elias, and Matthias König, [Systems Medicine of the Liver](https://livermetabolism.com)
+&copy; 2023-2026 Vera Tereshchuk, Michelle Elias and Matthias König

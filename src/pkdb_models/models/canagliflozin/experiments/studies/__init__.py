@@ -1,3 +1,5 @@
+"""Simulation experiments of the clinical studies, one module per publication."""
+
 from .chen2015 import Chen2015
 from .devineni2012 import Devineni2012
 from .devineni2013 import Devineni2013
@@ -20,3 +22,28 @@ from .sha2014 import Sha2014
 from .sha2015 import Sha2015
 from .tamborlane2018 import Tamborlane2018
 from .wattamwar2020 import Wattamwar2020
+
+__all__ = [
+    "Chen2015",
+    "Devineni2012",
+    "Devineni2013",
+    "Devineni2014",
+    "Devineni2015",
+    "Devineni2015a",
+    "Devineni2015b",
+    "Devineni2015c",
+    "Devineni2015d",
+    "Devineni2015e",
+    "Devineni2016",
+    "Iijima2015",
+    "Inagaki2014",
+    "Kinoshita2015",
+    "Mamidi2014",
+    "Mohamed2019",
+    "Murphy2015",
+    "Sha2011",
+    "Sha2014",
+    "Sha2015",
+    "Tamborlane2018",
+    "Wattamwar2020",
+]

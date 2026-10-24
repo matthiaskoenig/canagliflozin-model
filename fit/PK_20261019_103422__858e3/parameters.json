@@ -1,0 +1,43 @@
+{
+  "sets": [
+    {
+      "sid": "PK_20261019_103422__858e3_0",
+      "values": {
+        "ftissue_can": 1.0893058899054946,
+        "Kp_can": 0.685123325515857,
+        "ftissue_deep_can": 0.006630067063189844,
+        "Kp_deep_can": 9.542774086910649,
+        "GU__CANABS_k": 0.01527744444772165,
+        "GU__F_can_abs": 0.6656597282441039,
+        "LI__CAN2M5_k": 0.025421458923289893,
+        "LI__CAN2M7_k": 0.035147180170869013,
+        "LI__CAN2M9_k": 0.016766979616006854,
+        "LI__M5BIEX_k": 0.02812054069184065,
+        "LI__M7BIEX_k": 0.05692839302268507,
+        "GU__GLUHYD_k": 0.006979255151285999,
+        "KI__CANEX_f": 1.2729362241595252,
+        "KI__M5EX_f": 0.5510718932081088,
+        "KI__M7EX_f": 0.801255192259492
+      },
+      "units": {
+        "ftissue_can": "l/(min)",
+        "Kp_can": "dimensionless",
+        "ftissue_deep_can": "l/(min)",
+        "Kp_deep_can": "dimensionless",
+        "GU__CANABS_k": "1/(min)",
+        "GU__F_can_abs": "dimensionless",
+        "LI__CAN2M5_k": "1/(min)",
+        "LI__CAN2M7_k": "1/(min)",
+        "LI__CAN2M9_k": "1/(min)",
+        "LI__M5BIEX_k": "1/(min)",
+        "LI__M7BIEX_k": "1/(min)",
+        "GU__GLUHYD_k": "1/(min)",
+        "KI__CANEX_f": "dimensionless",
+        "KI__M5EX_f": "dimensionless",
+        "KI__M7EX_f": "dimensionless"
+      },
+      "cost": 129.12256107136875,
+      "provenance": "optimization 'PK_20261019_103422__858e3', run '1'"
+    }
+  ]
+}

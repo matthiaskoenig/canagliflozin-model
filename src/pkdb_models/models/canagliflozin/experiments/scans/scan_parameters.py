@@ -1,55 +1,323 @@
-"""Parameter scans canagliflozin."""
+"""Parameter scans of the canagliflozin model.
+
+The renal function, the degree of cirrhosis and the oral dose are scanned after
+a single oral dose of canagliflozin, every scan again for fasting plasma glucose
+levels from 5 to 11 mM for the urinary glucose excretion (UGE). The matplotlib
+figures show the timecourses of the scans and the pharmacokinetic parameters of
+`canagliflozin_pk` together with the data of the studies.
+
+In a run over the draws of the fitted parameters (`run_simulation
+pkdb_models.models.canagliflozin --uncertainty`) every point of a scan is
+simulated for every draw; the figures draw the median of the draws with the
+band of their quantiles.
+"""
 
 from pathlib import Path
-from typing import Dict
-import matplotlib.axes
-import matplotlib.cm as cm
-import matplotlib.colors
-import pandas as pd
+from typing import Any, ClassVar, Literal, NotRequired, TypedDict, override
+
+import matplotlib.pyplot as plt
 import numpy as np
-from pint import UnitRegistry
-from sbmlsim.simulation import Timecourse, TimecourseSim, ScanSim, Dimension
-from sbmlsim.plot.serialization_matplotlib import FigureMPL, MatplotlibFigureSerializer
-from sbmlsim.plot.serialization_matplotlib import plt
-from sbmlutils.console import console
+import pandas as pd
+from matplotlib.axes import Axes
+from matplotlib.cm import ScalarMappable
+from matplotlib.colors import Colormap, LogNorm, Normalize
+from matplotlib.figure import Figure as MPLFigure
+from matplotlib.lines import Line2D
+from matplotlib.ticker import ScalarFormatter
 from mpl_toolkits.axes_grid1.inset_locator import inset_axes
-from pkdb_models.models.canagliflozin.experiments.base_experiment import CanagliflozinSimulationExperiment
-from pkdb_models.models.canagliflozin.helpers import run_experiments
+from pkpdsim.scan import point_band, point_timecourse, scan_dimensions, start_values
+from sbmlsim import Q
+from sbmlsim.plot.serialization_matplotlib import FigureMPL
+from sbmlsim.result import ScanResult
+from sbmlsim.simulation import Dimension, Scan, Simulation
+from sbmlsim.units import Quantity
+
+from pkdb_models.models.canagliflozin import MODEL
+from pkdb_models.models.canagliflozin.canagliflozin_pk import summarize
+from pkdb_models.models.canagliflozin.experiments.base_experiment import (
+    CanagliflozinSimulationExperiment,
+)
+
+#: pharmacokinetic parameters and UGE of the studies, one file per scan
+STUDY_DATA_PATH = Path(__file__).parent / "study_data"
+
+#: markers of the studies, in the order of the studies in the data
+STUDY_MARKERS = ("s", "^", "D", "v", "<", ">", "p", "*", "h", "X")
+
+#: the substances of the panels of the pharmacokinetic parameters
+SUBSTANCES = ("canagliflozin", "M5", "M7")
+
+#: pharmacokinetic parameters which scale with the dose
+SCALABLE_PARAMETERS = ("cmax", "auc_inf_obs")
+
+#: glucose of the subjects in the UGE data by diabetes status [mM]
+DIABETES_GLUCOSE: dict[str, float] = {
+    "N": 5.0,  # normal/healthy
+    "T2DM": 8.0,  # type 2 diabetes
+    "T1DM": 8.0,  # type 1 diabetes
+}
+
+
+class ScanSpec(TypedDict):
+    """Definition of a single parameter scan."""
+
+    parameter: str
+    #: value of the reference simulation; the dose scan has none
+    default: NotRequired[float]
+    range: np.ndarray
+    scale: Literal["linear", "log"]
+    #: name of the colormap property of the experiment
+    colormap: str
+    units: str
+    label: str
+
+
+def _default(spec: ScanSpec) -> float:
+    """Get the value of the reference simulation of a scan.
+
+    Raises:
+        ValueError: for a scan without reference, i.e., the dose scan.
+    """
+    if "default" not in spec:
+        raise ValueError(f"The scan of '{spec['parameter']}' has no default.")
+    return spec["default"]
+
+
+def _norm(spec: ScanSpec) -> Normalize:
+    """Get the normalization of the colors of a scan."""
+    rmin, rmax = float(spec["range"][0]), float(spec["range"][-1])
+    if spec["scale"] == "log":
+        return LogNorm(vmin=rmin, vmax=rmax, clip=False)
+    return Normalize(vmin=rmin, vmax=rmax, clip=False)
+
+
+def _color_value(spec: ScanSpec, value: float) -> float:
+    """Get the position of a value of a scan in its colormap, between 0 and 1."""
+    rmin, rmax = spec["range"][0], spec["range"][-1]
+    if spec["scale"] == "log":
+        return (np.log10(value) - np.log10(rmin)) / np.abs(
+            np.log10(rmax) - np.log10(rmin)
+        )
+    return (value - rmin) / np.abs(rmax - rmin)
+
+
+def _dose_box(ax: Axes, dose_mg: float) -> None:
+    """Annotate the oral dose of a scan in the lower right corner of a panel."""
+    ax.text(
+        0.98,
+        0.02,
+        f"Dose: {dose_mg:.0f} mg",
+        transform=ax.transAxes,
+        fontsize=12,
+        verticalalignment="bottom",
+        horizontalalignment="right",
+        bbox={
+            "boxstyle": "round",
+            "facecolor": "white",
+            "alpha": 0.8,
+            "edgecolor": "gray",
+        },
+    )
+
+
+def _log_xaxis(ax: Axes, ticks: list[int] | None) -> None:
+    """Set a logarithmic x-axis with plain numbers as labels."""
+    ax.set_xscale("log")
+    formatter = ScalarFormatter()
+    ax.xaxis.set_major_formatter(formatter)
+    formatter.set_scientific(False)
+    if ticks is not None:
+        ax.set_xticks(ticks)
+        ax.set_xticklabels([str(tick) for tick in ticks])
+
+
+def _studies_legend(
+    ax: Axes, study_markers: dict[str, str], bbox_x: float, fontsize: int
+) -> None:
+    """Add the legend of the markers of the studies to a panel."""
+    handles = [
+        Line2D(
+            [],
+            [],
+            marker=study_markers[study],
+            color="white",
+            markerfacecolor="white",
+            markeredgecolor="black",
+            markeredgewidth=0.8,
+            markersize=8,
+            linestyle="",
+            label=study,
+        )
+        for study in sorted(study_markers)
+    ]
+    ax.legend(
+        handles,
+        sorted(study_markers),
+        title="Studies",
+        loc="upper left",
+        bbox_to_anchor=(bbox_x, 0.97),
+        fontsize=fontsize,
+        title_fontsize=10,
+        framealpha=0.9,
+    )
+
+
+def _plot_study_point(
+    ax: Axes,
+    row: pd.Series,
+    x_pos: float,
+    marker: str,
+    face_color: str,
+    factor: float = 1.0,
+) -> float | None:
+    """Plot a value of a study: mean with SD, median with range or a range.
+
+    Args:
+        ax: the panel.
+        row: the row of the study data.
+        x_pos: position on the x-axis.
+        marker: marker of the study.
+        face_color: face color of the marker.
+        factor: scaling of the values to the dose of the scan, 1 for none.
+
+    Returns:
+        The largest value of the plotted point, `None` if nothing was plotted.
+    """
+
+    def scaled(value: float) -> float:
+        return value * factor if factor != 1.0 else value
+
+    def errorbar(y: float, yerr: float | list[list[float]], capsize: float) -> None:
+        ax.errorbar(
+            x_pos,
+            y,
+            yerr=yerr,
+            fmt=marker,
+            markerfacecolor=face_color,
+            markeredgecolor="black",
+            markeredgewidth=0.8,
+            markersize=8,
+            ecolor="black",
+            capsize=capsize,
+            capthick=2,
+            alpha=0.9,
+        )
+
+    def point(y: float) -> None:
+        ax.plot(
+            x_pos,
+            y,
+            marker=marker,
+            markerfacecolor=face_color,
+            markeredgecolor="black",
+            markeredgewidth=0.8,
+            markersize=8,
+            alpha=0.9,
+            linestyle="",
+        )
+
+    has_min_max = pd.notna(row["min"]) and pd.notna(row["max"])
+
+    if pd.notna(row["mean"]):
+        y_value = scaled(row["mean"])
+        if pd.notna(row["sd"]):
+            y_err = scaled(row["sd"])
+            errorbar(y_value, y_err, capsize=5)
+            return y_value + y_err
+        point(y_value)
+        return y_value
+
+    if pd.notna(row["median"]):
+        y_value = scaled(row["median"])
+        if has_min_max:
+            y_min, y_max = scaled(row["min"]), scaled(row["max"])
+            errorbar(y_value, [[y_value - y_min], [y_max - y_value]], capsize=0)
+            return y_max
+        point(y_value)
+        return y_value
+
+    if has_min_max:
+        # only a range, plotted as a bar around its middle
+        y_min, y_max = scaled(row["min"]), scaled(row["max"])
+        y_mid = (y_min + y_max) / 2
+        errorbar(y_mid, [[y_mid - y_min], [y_max - y_mid]], capsize=5)
+        return y_max
+
+    return None
 
 
 class CanagliflozinParameterScan(CanagliflozinSimulationExperiment):
     """Scan the effect of parameters on pharmacokinetics and pharmacodynamics."""
 
-    num_points = 15
-    glucoses = [5, 6, 7, 8, 9, 10, 11]  # [mM]
+    #: pharmacokinetic parameters of the scans by simulation key, set by
+    #: `figures_mpl`
+    pk_dfs: dict[str, pd.DataFrame]
 
-    # Substance colors
-    substance_colors = {
+    num_points = 15
+    glucoses: ClassVar[list[int]] = [5, 6, 7, 8, 9, 10, 11]  # [mM]
+
+    #: the end of the scans of the pharmacokinetics [hr]: the terminal phase
+    #: (half-life about 12-17 hr) for the half-life and the AUC, as sampled by
+    #: the studies (72-96 hr); the scans of the glucose give the UGE of the
+    #: first day and end with it
+    tend_pk = 96
+    tend_uge = 24
+    #: the end of the timecourses of the figures [hr], the first day
+    tend_shown = 24
+    #: the output steps of the simulations per hour, every 0.3 min
+    steps_per_hr = 200
+
+    @staticmethod
+    def _times_uncertainty(tend: float) -> tuple[float, ...]:
+        """Get the output times of a run over the draws to `tend` hr [min].
+
+        Every 2 min in the first 6 hr (absorption and maximum, tmax about 1.5
+        hr), every 15 min after them. The grid of `steps_per_hr` for every
+        draw of every point of the 24 scans would need about 70 GB, this grid
+        2.3 GB.
+        """
+        end = tend * 60
+        return tuple(
+            np.unique(
+                np.concatenate(
+                    [
+                        np.linspace(0, 360, 181),
+                        np.linspace(360, end, int((end - 360) / 15) + 1),
+                    ]
+                )
+            ).tolist()
+        )
+
+    #: the opacity of the bands of the draws of the fitted parameters
+    band_alpha = 0.15
+    #: the upper limit of the axes of the parameters relative to the largest
+    #: value, room for the legends above the curves
+    legend_headroom = 1.45
+
+    substance_colors: ClassVar[dict[str, str]] = {
         "canagliflozin": "black",
         "M5": "#4A6FA5",
         "M7": "#3D7B5E",
     }
 
-    study_data_files = {
-        "renal_scan": str(Path(__file__).parent / "study_data" / "parameters_renal.tsv"),
-        "hepatic_scan": str(Path(__file__).parent / "study_data" / "parameters_hepatic.tsv"),
-        "dose_scan": str(Path(__file__).parent / "study_data" / "parameters_dose.tsv"),
+    study_data_files: ClassVar[dict[str, str]] = {
+        "renal_scan": str(STUDY_DATA_PATH / "parameters_renal.tsv"),
+        "hepatic_scan": str(STUDY_DATA_PATH / "parameters_hepatic.tsv"),
+        "dose_scan": str(STUDY_DATA_PATH / "parameters_dose.tsv"),
     }
 
-    scan_map = {
-
+    scan_map: ClassVar[dict[str, ScanSpec]] = {
         "renal_scan": {
             "parameter": "KI__f_renal_function",
             "default": 1.0,
             "range": np.sort(
                 np.append(np.logspace(-1, np.log10(2.0), num=num_points), [1.0])
-            ),  # [10^-1=0.1, 10^1=10]
+            ),  # [0.1, 2.0]
             "scale": "log",
             "colormap": "renal_cmap",
             "units": "dimensionless",
             "label": "Renal Function [-]",
         },
-
         "hepatic_scan": {
             "parameter": "f_cirrhosis",
             "default": 0.0,
@@ -59,198 +327,145 @@ class CanagliflozinParameterScan(CanagliflozinSimulationExperiment):
             "units": "dimensionless",
             "label": "Cirrhosis Degree [-]",
         },
-
         "dose_scan": {
             "parameter": "PODOSE_can",
             "range": np.sort(
-                np.append(np.logspace(np.log10(0.1), np.log10(800), num=num_points), [100])
-            ),  # [10, 800] mg
+                np.append(
+                    np.logspace(np.log10(0.1), np.log10(800), num=num_points), [100]
+                )
+            ),  # [0.1, 800] mg
             "scale": "log",
             "colormap": "doses_cmap",
             "units": "mg",
             "label": "Oral Dose [mg]",
         },
-
     }
 
-    def simulations(self) -> Dict[str, ScanSim]:
-        Q_ = self.Q_
-        tcscans = {}
+    #: oral dose of the scans [mg]; the dose scan scans the dose
+    scan_doses: ClassVar[dict[str, float]] = {
+        "renal_scan": 200,
+        "hepatic_scan": 300,
+    }
 
-        # Renal simulation
-        scan_data = self.scan_map["renal_scan"]
-        tcscans["scan_po_renal"] = ScanSim(
-            simulation=TimecourseSim(
-                Timecourse(
-                    start=0,
-                    end=24 * 60,  # 24 hours
-                    steps=5000,
-                    changes={
-                        **self.default_changes(),
-                        "PODOSE_can": Q_(200, "mg"),
-                    },
-                )
+    @staticmethod
+    def _sim_key(scan_key: str) -> str:
+        """Key of the simulation of a scan, e.g. `scan_po_renal`."""
+        return f"scan_po_{scan_key.removesuffix('_scan')}"
+
+    def _scan(
+        self,
+        scan_key: str,
+        tend: float,
+        changes: dict[str, Quantity] | None = None,
+    ) -> Scan:
+        """Get the simulation of a scan, a single oral dose.
+
+        Args:
+            scan_key: key of the scan in `scan_map`.
+            tend: the end of the simulation [hr].
+            changes: further changes before the simulation, e.g. the glucose.
+        """
+        spec = self.scan_map[scan_key]
+        preinit_changes: dict[str, Quantity | float] = {**self.default_changes()}
+        if scan_key in self.scan_doses:
+            preinit_changes["PODOSE_can"] = Q(self.scan_doses[scan_key], "mg")
+        if changes:
+            preinit_changes.update(changes)
+        grid: dict[str, Any] = (
+            {"steps": int(self.steps_per_hr * tend)}
+            if self.uncertainty is None
+            else {"times": self._times_uncertainty(tend)}
+        )
+        return Scan(
+            simulation=Simulation(
+                time_unit="min",
+                end=tend * 60,
+                preinit_changes=preinit_changes,
+                **grid,
             ),
             dimensions=[
                 Dimension(
                     "dim_scan",
-                    changes={
-                        scan_data["parameter"]: Q_(
-                            scan_data["range"], scan_data["units"]
-                        )
-                    },
+                    values={spec["parameter"]: Q(spec["range"], spec["units"])},
                 ),
             ],
         )
 
-        # Hepatic simulation
-        scan_data = self.scan_map["hepatic_scan"]
-        tcscans["scan_po_hepatic"] = ScanSim(
-            simulation=TimecourseSim(
-                Timecourse(
-                    start=0,
-                    end=24 * 60,  # 24 hours
-                    steps=5000,
-                    changes={
-                        **self.default_changes(),
-                        "PODOSE_can": Q_(300, "mg"),
-                    },
-                )
-            ),
-            dimensions=[
-                Dimension(
-                    "dim_scan",
-                    changes={
-                        scan_data["parameter"]: Q_(
-                            scan_data["range"], scan_data["units"]
-                        )
-                    },
-                ),
-            ],
-        )
-
-        # Dose simulation
-        scan_data = self.scan_map["dose_scan"]
-        tcscans["scan_po_dose"] = ScanSim(
-            simulation=TimecourseSim(
-                Timecourse(
-                    start=0,
-                    end=24 * 60,  # 24 hours
-                    steps=5000,
-                    changes={
-                        **self.default_changes(),
-                    },
-                )
-            ),
-            dimensions=[
-                Dimension(
-                    "dim_scan",
-                    changes={
-                        scan_data["parameter"]: Q_(
-                            scan_data["range"], scan_data["units"]
-                        )
-                    },
-                ),
-            ],
-        )
+    @override
+    def simulations(self) -> dict[str, Scan]:
+        scans: dict[str, Scan] = {}
+        for scan_key in self.scan_map:
+            scans[self._sim_key(scan_key)] = self._scan(scan_key, self.tend_pk)
 
         # scans with different glucose levels for UGE
         for glc in self.glucoses:
-            # Renal scan with glucose
-            scan_data = self.scan_map["renal_scan"]
-            tcscans[f"scan_po_renal_glc{glc}"] = ScanSim(
-                simulation=TimecourseSim(
-                    Timecourse(
-                        start=0,
-                        end=24 * 60,
-                        steps=5000,
-                        changes={
-                            **self.default_changes(),
-                            "PODOSE_can": Q_(200, "mg"),
-                            "[KI__fpg]": Q_(glc, "mM"),
-                        },
-                    )
-                ),
-                dimensions=[
-                    Dimension(
-                        "dim_scan",
-                        changes={
-                            scan_data["parameter"]: Q_(
-                                scan_data["range"], scan_data["units"]
-                            )
-                        },
-                    ),
-                ],
-            )
+            for scan_key in self.scan_map:
+                scans[f"{self._sim_key(scan_key)}_glc{glc}"] = self._scan(
+                    scan_key, self.tend_uge, changes={"[KI__fpg]": Q(glc, "mM")}
+                )
 
-            # Hepatic scan with glucose
-            scan_data = self.scan_map["hepatic_scan"]
-            tcscans[f"scan_po_hepatic_glc{glc}"] = ScanSim(
-                simulation=TimecourseSim(
-                    Timecourse(
-                        start=0,
-                        end=24 * 60,
-                        steps=5000,
-                        changes={
-                            **self.default_changes(),
-                            "PODOSE_can": Q_(300, "mg"),
-                            "[KI__fpg]": Q_(glc, "mM"),
-                        },
-                    )
-                ),
-                dimensions=[
-                    Dimension(
-                        "dim_scan",
-                        changes={
-                            scan_data["parameter"]: Q_(
-                                scan_data["range"], scan_data["units"]
-                            )
-                        },
-                    ),
-                ],
-            )
+        return scans
 
-            # Dose scan with glucose
-            scan_data = self.scan_map["dose_scan"]
-            tcscans[f"scan_po_dose_glc{glc}"] = ScanSim(
-                simulation=TimecourseSim(
-                    Timecourse(
-                        start=0,
-                        end=24 * 60,
-                        steps=5000,
-                        changes={
-                            **self.default_changes(),
-                            "[KI__fpg]": Q_(glc, "mM"),
-                        },
-                    )
-                ),
-                dimensions=[
-                    Dimension(
-                        "dim_scan",
-                        changes={
-                            scan_data["parameter"]: Q_(
-                                scan_data["range"], scan_data["units"]
-                            )
-                        },
-                    ),
-                ],
-            )
-
-        return tcscans
-
-    def figures_mpl(self) -> Dict[str, FigureMPL]:
-        """Matplotlib figures."""
-
-        # calculate pharmacokinetic parameters
-        self.pk_dfs = self.calculate_canagliflozin_pk()
+    @override
+    def figures_mpl(self) -> dict[str, FigureMPL]:
+        # the pharmacokinetic parameters of the scans of `scan_map`, the scans
+        # of the glucose are only used for the UGE
+        self.pk_dfs = self.calculate_canagliflozin_pk(
+            scans=[self._sim_key(scan_key) for scan_key in self.scan_map]
+        )
 
         return {
             **self.figures_mpl_timecourses(),
             **self.figures_mpl_pharmacokinetics(),
         }
 
-    def _plot_timecourse_scan(self, scan_key: str, sim_key: str, figure_name: str) -> FigureMPL:
-        """Create timecourse plot for a parameter scan."""
+    def _cmap(self, spec: ScanSpec) -> Colormap:
+        """Get the colormap of a scan."""
+        cmap: Colormap = getattr(self, spec["colormap"])
+        return cmap
+
+    def _across(self) -> str | None:
+        """Get the dimension of the draws of the fitted parameters, `None` without."""
+        return None if self.uncertainty is None else self.uncertainty.id
+
+    def _scan_dimension(self, res: ScanResult) -> str:
+        """Get the dimension of the scanned parameter, besides the draws."""
+        (scandim,) = scan_dimensions(res, self._across())
+        return scandim
+
+    def _scan_values(self, res: ScanResult, spec: ScanSpec) -> Quantity:
+        """Get the values of the scanned parameter at the points of a scan."""
+        parameter_id = spec["parameter"]
+        values = start_values(res, parameter_id)
+        across = self._across()
+        if across is not None:
+            values = values.isel({across: 0})
+        return Q(values.values, res.units[parameter_id])
+
+    def _band(
+        self, res: ScanResult, sid: str, point: dict[str, int]
+    ) -> tuple[np.ndarray, np.ndarray, np.ndarray, np.ndarray]:
+        """Get the timecourse of a point of a scan with the band of its draws.
+
+        Returns:
+            The time, the lower quantile, the values (the median of the draws
+            in a run over them) and the upper quantile; without draws the
+            quantiles are the values.
+        """
+        run = self.uncertainty
+        if run is None:
+            time, values = point_timecourse(res, sid, **point)
+            return time, values, values, values
+        return point_band(res, sid, across=run.id, quantiles=run.quantiles, **point)
+
+    def _scan_dose(self, res: ScanResult) -> float:
+        """Get the oral dose of a scan [mg], of its first simulation."""
+        values = start_values(res, "PODOSE_can").values
+        dose = Q(values.flat[0], res.units["PODOSE_can"])
+        return float(dose.to("mg").magnitude)
+
+    def _plot_timecourse_scan(self, scan_key: str, sim_key: str) -> MPLFigure:
+        """Create the timecourses of the first day of a parameter scan."""
         sids = [
             "[Cve_can]",
             "Aurine_can",
@@ -259,14 +474,11 @@ class CanagliflozinParameterScan(CanagliflozinSimulationExperiment):
             "[Cve_m7]",
         ]
 
-        scan_data = self.scan_map[scan_key]
-        range = scan_data["range"]
-        rmin, rmax = range[0], range[-1]
+        spec = self.scan_map[scan_key]
+        rmin, rmax = spec["range"][0], spec["range"][-1]
+        cmap = self._cmap(spec)
 
-        cmap_name = scan_data["colormap"]
-        cmap = getattr(self, cmap_name)
-
-        # 1 row × multiple columns
+        # 1 row x multiple columns
         nrows = 1
         ncols = len(sids)
         figsize = (6 * ncols, 6 * nrows)
@@ -280,77 +492,62 @@ class CanagliflozinParameterScan(CanagliflozinSimulationExperiment):
             dpi=150,
             squeeze=False,
         )
-        plt.subplots_adjust(top=0.88, bottom=0.1, left=0.08, right=0.98, hspace=0.3, wspace=0.35)
-
-        # get data
-        Q_ = self.Q_
-        xres = self.results[f"task_{sim_key}"]
-
-        # scanned dimension
-        scandim = xres._redop_dims()[0]
-        parameter_id = scan_data["parameter"]
-        par_vec = Q_(
-            xres[parameter_id].values[0], xres.uinfo[parameter_id]
+        plt.subplots_adjust(
+            top=0.88, bottom=0.1, left=0.08, right=0.98, hspace=0.3, wspace=0.35
         )
-        t_vec = xres.dim_mean("time").to(self.units["time"])
+
+        res = self.results[f"task_{sim_key}"]
+        units = res.units
+        scandim = self._scan_dimension(res)
+        par_vec = self._scan_values(res, spec)
 
         for k_sid, sid in enumerate(sids):
-            ax = axes[0, k_sid]
+            ax: Axes = axes[0, k_sid]
 
             ymax = 0.0
+            t_vec_default: Quantity | None = None
+            c_vec_default: Quantity | None = None
             for k_par, par in enumerate(par_vec):
-                c_vec = Q_(
-                    xres[sid].sel({scandim: k_par}).values,
-                    xres.uinfo[sid],
-                ).to(self.units[sid])
+                time, lower, values, upper = self._band(res, sid, {scandim: k_par})
+                t_vec = Q(time, units["time"]).to(self.units["time"])
+                c_vec = Q(values, units[sid]).to(self.units[sid])
+                c_upper = Q(upper, units[sid]).to(self.units[sid])
 
-                # update ymax
-                cmax = np.nanmax(c_vec.magnitude)
-                if cmax > ymax:
-                    ymax = cmax
+                shown = t_vec.magnitude <= self.tend_shown
+                ymax = max(ymax, np.nanmax(c_upper.magnitude[shown]))
 
-                linewidth = 2.0
-
-                if scan_key == "dose_scan":
-                    if scan_data["scale"] == "linear":
-                        par_value = par.magnitude if hasattr(par, 'magnitude') else par
-                        cvalue = (par_value-rmin)/np.abs(rmax-rmin)
-                    elif scan_data["scale"] == "log":
-                        par_value = par.magnitude if hasattr(par, 'magnitude') else par
-                        cvalue = (np.log10(par_value) - np.log10(rmin)) / np.abs(np.log10(rmax) - np.log10(rmin))
-                    color = cmap(cvalue)
+                par_value = par.magnitude if hasattr(par, "magnitude") else par
+                if scan_key != "dose_scan" and np.isclose(_default(spec), par_value):
+                    color = "black"
+                    t_vec_default, c_vec_default = t_vec, c_vec
                 else:
-                    par_value = par.magnitude if hasattr(par, 'magnitude') else par
-                    default_value = scan_data["default"]
+                    # color by the position in the scan range
+                    color = cmap(_color_value(spec, par_value))
 
-                    if np.isclose(default_value, par_value):
-                        color = "black"
-                        t_vec_default = t_vec
-                        c_vec_default = c_vec
-                    else:
-                        # calculate color based on position in scan range
-                        if scan_data["scale"] == "linear":
-                            cvalue = (par_value-rmin)/np.abs(rmax-rmin)
-                        elif scan_data["scale"] == "log":
-                            cvalue = (np.log10(par_value) - np.log10(rmin)) / np.abs(np.log10(rmax) - np.log10(rmin))
-                        color = cmap(cvalue)
-
+                if self.uncertainty is not None:
+                    ax.fill_between(
+                        t_vec.magnitude,
+                        Q(lower, units[sid]).to(self.units[sid]).magnitude,
+                        c_upper.magnitude,
+                        color=color,
+                        alpha=self.band_alpha,
+                        linewidth=0,
+                    )
                 ax.plot(
                     t_vec.magnitude,
                     c_vec.magnitude,
                     color=color,
-                    linewidth=linewidth,
+                    linewidth=2.0,
                 )
 
-            if scan_key != "dose_scan":
+            # the reference simulation on top
+            if t_vec_default is not None and c_vec_default is not None:
                 ax.plot(
                     t_vec_default.magnitude,
                     c_vec_default.magnitude,
                     color="black",
                     linewidth=2.0,
                 )
-
-            ax: matplotlib.axes.Axes
 
             ax.set_xlabel(
                 f"{self.label_time} [{self.units['time']}]",
@@ -365,466 +562,275 @@ class CanagliflozinParameterScan(CanagliflozinSimulationExperiment):
             )
 
             ax.set_ylim(bottom=0.0, top=1.05 * ymax)
-            ax.set_xlim(right=24)
+            ax.set_xlim(0, self.tend_shown)
 
-            # Add dose annotation for renal and hepatic scans
-            if scan_key in ["renal_scan", "hepatic_scan"]:
-                dose_value = Q_(xres["PODOSE_can"].values[0][0], xres.uinfo["PODOSE_can"])
-                dose_mg = dose_value.to("mg").magnitude
-
-                ax.text(
-                    0.98, 0.02,
-                    f"Dose: {dose_mg:.0f} mg",
-                    transform=ax.transAxes,
-                    fontsize=12,
-                    verticalalignment='bottom',
-                    horizontalalignment='right',
-                    bbox=dict(boxstyle='round', facecolor='white', alpha=0.8, edgecolor='gray')
-                )
+            if scan_key in self.scan_doses:
+                _dose_box(ax, self._scan_dose(res))
 
         # add colorbar
-        cb_ax = f.add_axes(rect=[0.1, 1.0, 0.85, 0.03])
+        cb_ax = f.add_axes(rect=(0.1, 1.0, 0.85, 0.03))
         cb_ax.set_in_layout(True)
 
-        # colorbar range
-        if scan_data["scale"] == "linear":
-            norm = matplotlib.colors.Normalize(vmin=rmin, vmax=rmax, clip=False)
-        elif scan_data["scale"] == "log":
-            norm = matplotlib.colors.LogNorm(vmin=rmin, vmax=rmax, clip=False)
-
         cbar = f.colorbar(
-            cm.ScalarMappable(norm=norm, cmap=cmap),
+            ScalarMappable(norm=_norm(spec), cmap=cmap),
             cax=cb_ax,
             orientation="horizontal",
         )
+        # the gradient as vector cells: matplotlib rasterizes it into an
+        # embedded image, which some SVG viewers do not show; the edges of
+        # the cells in their color close the seams between them
+        if cbar.solids is not None:
+            cbar.solids.set_rasterized(False)
+            cbar.solids.set_edgecolor("face")
 
         # ticks
         ticks = [rmin, rmax]
-        if scan_key != "dose_scan" and scan_data["default"] not in ticks:
-            ticks.append(scan_data["default"])
+        if scan_key != "dose_scan" and _default(spec) not in ticks:
+            ticks.append(_default(spec))
             ticks = sorted(ticks)
         cbar.set_ticks(ticks)
-
-        if scan_key == "dose_scan":
-            tick_labels = [f"{int(tick)}" for tick in ticks]
-        else:
-            tick_labels = ticks
-
-        cbar.set_ticklabels(
-            tick_labels, **{"size": 15, "weight": "medium"}
-        )
-        cbar.ax.set_xlabel(
-            scan_data["label"], **{"size": 15, "weight": "bold"}
-        )
+        # three significant digits, e.g. 0.1 for the lowest dose
+        tick_labels = [f"{tick:.3g}" for tick in ticks]
+        cbar.set_ticklabels(tick_labels, size=15, weight="normal")
+        cbar.ax.set_xlabel(spec["label"], size=15, weight="bold")
 
         if scan_key != "dose_scan":
-            cbar.ax.axvline(x=scan_data["default"], color="black", linewidth=2)
+            cbar.ax.axvline(x=_default(spec), color="black", linewidth=2)
 
         return f
 
-    def figures_mpl_timecourses(self) -> Dict[str, FigureMPL]:
+    def figures_mpl_timecourses(self) -> dict[str, MPLFigure]:
         """Timecourse plots for key variables as parameter scan."""
-        figures = {}
-
-        # Renal scan
-        figures["fig_can_po__renal__timecourse"] = self._plot_timecourse_scan(
-            "renal_scan", "scan_po_renal", "fig_can_po__renal__timecourse"
-        )
-
-        # Hepatic scan
-        figures["fig_can_po__hepatic__timecourse"] = self._plot_timecourse_scan(
-            "hepatic_scan", "scan_po_hepatic", "fig_can_po__hepatic__timecourse"
-        )
-
-        # Dose scan
-        figures["fig_can_po__dose__timecourse"] = self._plot_timecourse_scan(
-            "dose_scan", "scan_po_dose", "fig_can_po__dose__timecourse"
-        )
-
-        return figures
-
-    def _add_study_data_to_plot(self, ax, scan_key: str, substance: str, parameter: str, study_data_file: str,
-                                studies_in_legend: set):
-
-        # Read study data
-        df = pd.read_csv(study_data_file, sep='\t', comment='#')
-
-        # Filter for relevant data
-        df_filtered = df[
-            (df['substance'] == substance) &
-            (df['parameter'] == parameter)
-            ].copy()
-
-        if len(df_filtered) == 0:
-            return None, None
-
-        # Get simulation dose for this scan
-        Q_ = self.Q_
-        # Derive sim_key from scan_key
-        if scan_key == "renal_scan":
-            sim_key = "scan_po_renal"
-        elif scan_key == "hepatic_scan":
-            sim_key = "scan_po_hepatic"
-        elif scan_key == "dose_scan":
-            sim_key = "scan_po_dose"
-
-        xres = self.results[f"task_{sim_key}"]
-
-        # Get simulation dose (for renal/hepatic scans for scaling)
-        if scan_key in ["renal_scan", "hepatic_scan"]:
-            sim_dose_value = Q_(xres["PODOSE_can"].values[0][0], xres.uinfo["PODOSE_can"]).to("mg").magnitude
-
-        # Get condition to x-axis mapping
-        condition_map = None
-        if scan_key == "renal_scan":
-            # renal_map from base experiment
-            condition_map = {
-                "normal": self.renal_map["Normal renal function"],
-                "mild": self.renal_map["Mild renal impairment"],
-                "moderate": self.renal_map["Moderate renal impairment"],
-                "severe": self.renal_map["Severe renal impairment"],
-            }
-        elif scan_key == "hepatic_scan":
-            # cirrhosis_map from base experiment
-            condition_map = {
-                "normal": self.cirrhosis_map["Control"],
-                "mild": self.cirrhosis_map["Mild cirrhosis"],
-                "moderate": self.cirrhosis_map["Moderate cirrhosis"],
-                "severe": self.cirrhosis_map["Severe cirrhosis"],
-            }
-        elif scan_key == "dose_scan":
-            # For dose scan x-position comes directly from the dose value
-            pass
-        else:
-            return None, None
-
-        # Define scalable parameters
-        scalable_params = ["cmax", "aucinf"]
-
-        # Get unique studies for different markers
-        studies = df_filtered['study'].unique()
-        markers = ['s', '^', 'D', 'v', '<', '>', 'p', '*', 'h', 'X']
-        study_marker_map = {study: markers[i % len(markers)] for i, study in enumerate(studies)}
-
-        # Track maximum y-value for axis scaling
-        max_y = 0.0
-
-        # Get substance color
-        substance_color = self.substance_colors.get(substance, "black")
-
-        # Plot each data point
-        for idx, row in df_filtered.iterrows():
-            # Get x-position based on scan type
-            if scan_key == "dose_scan":
-                x_pos = row['dose']
-                dose_ratio = 1.0  # No scaling for dose scan
-            else:
-                # For renal/hepatic scans, map condition to x-position
-                condition = row['condition'].lower() if pd.notna(row['condition']) else None
-
-                if condition not in condition_map:
-                    continue
-
-                x_pos = condition_map[condition]
-
-                # Get dose and check if scaling is needed
-                study_dose = row['dose']
-                dose_ratio = sim_dose_value / study_dose if study_dose > 0 else 1.0
-
-                if not pd.isna(study_dose) and study_dose != sim_dose_value:
-                    if parameter not in scalable_params:
-                        continue
-
-            # Get study marker
-            marker = study_marker_map.get(row['study'], 's')
-
-            # Track this study for legend purposes
-            if row['study'] not in studies_in_legend:
-                studies_in_legend.add(row['study'])
-
-            has_mean = pd.notna(row['mean'])
-            has_sd = pd.notna(row['sd'])
-            has_median = pd.notna(row['median'])
-            has_min = pd.notna(row['min'])
-            has_max = pd.notna(row['max'])
-
-            if has_mean:
-                y_value = row['mean']
-
-                if parameter in scalable_params and dose_ratio != 1.0:
-                    y_value = y_value * dose_ratio
-
-                # Plot mean with optional SD error bars
-                if has_sd:
-                    y_err = row['sd']
-                    if parameter in scalable_params and dose_ratio != 1.0:
-                        y_err = y_err * dose_ratio
-                    ax.errorbar(x_pos, y_value, yerr=y_err,
-                                fmt=marker, markerfacecolor=substance_color, markeredgecolor='black',
-                                markeredgewidth=0.8, markersize=8, ecolor='black',
-                                capsize=5, capthick=2, alpha=0.9)
-                    max_y = max(max_y, y_value + y_err)
-                else:
-                    ax.plot(x_pos, y_value, marker=marker, markerfacecolor=substance_color,
-                            markeredgecolor='black', markeredgewidth=0.8,
-                            markersize=8, alpha=0.9, linestyle='')
-                    max_y = max(max_y, y_value)
-
-            elif has_median:
-                y_value = row['median']
-
-                if parameter in scalable_params and dose_ratio != 1.0:
-                    y_value = y_value * dose_ratio
-
-                # Plot median with optional min/max range
-                if has_min and has_max:
-                    y_min = row['min']
-                    y_max = row['max']
-                    if parameter in scalable_params and dose_ratio != 1.0:
-                        y_min = y_min * dose_ratio
-                        y_max = y_max * dose_ratio
-                    y_err = [[y_value - y_min], [y_max - y_value]]
-                    ax.errorbar(x_pos, y_value, yerr=y_err,
-                                fmt=marker, markerfacecolor=substance_color, markeredgecolor='black',
-                                markeredgewidth=0.8, markersize=8, ecolor='black',
-                                capsize=0, capthick=2, alpha=0.9)
-                    max_y = max(max_y, y_max)
-                else:
-                    ax.plot(x_pos, y_value, marker=marker, markerfacecolor=substance_color,
-                            markeredgecolor='black', markeredgewidth=0.8,
-                            markersize=8, alpha=0.9, linestyle='')
-                    max_y = max(max_y, y_value)
-
-            elif has_min and has_max:
-                # Only have range, plot as a bar
-                y_min = row['min']
-                y_max = row['max']
-                if parameter in scalable_params and dose_ratio != 1.0:
-                    y_min = y_min * dose_ratio
-                    y_max = y_max * dose_ratio
-                y_mid = (y_min + y_max) / 2
-                y_err = [[y_mid - y_min], [y_max - y_mid]]
-                ax.errorbar(x_pos, y_mid, yerr=y_err,
-                            fmt=marker, markerfacecolor=substance_color, markeredgecolor='black',
-                            markeredgewidth=0.8, markersize=8, ecolor='black',
-                            capsize=5, capthick=2, alpha=0.9)
-                max_y = max(max_y, y_max)
-
-        return max_y, study_marker_map
-
-    def _add_uge_study_data_to_plot(self, ax, scan_key: str, study_data_file: str, studies_in_legend: set):
-
-        # Read study data
-        df = pd.read_csv(study_data_file, sep='\t', comment='#')
-
-        # Filter for UGE data
-        df_filtered = df[df['parameter'] == 'UGE_24hr'].copy()
-
-        if len(df_filtered) == 0:
-            return None, None
-
-        # Get simulation dose for this scan
-        Q_ = self.Q_
-        # Derive sim_key from scan_key
-        if scan_key == "renal_scan":
-            sim_key = "scan_po_renal"
-        elif scan_key == "hepatic_scan":
-            sim_key = "scan_po_hepatic"
-        elif scan_key == "dose_scan":
-            sim_key = "scan_po_dose"
-
-        # Get simulation dose
-        sim_dose_value = None
-        if scan_key in ["renal_scan", "hepatic_scan"]:
-            glc_first = self.glucoses[0]
-            sim_key_glc = f"{sim_key}_glc{glc_first}"
-            xres_glc = self.results[f"task_{sim_key_glc}"]
-            sim_dose_value = Q_(xres_glc["PODOSE_can"].values[0][0], xres_glc.uinfo["PODOSE_can"]).to("mg").magnitude
-
-        # Get condition to x-axis mapping
-        condition_map = None
-        if scan_key == "renal_scan":
-            condition_map = {
-                "normal": self.renal_map["Normal renal function"],
-                "mild": self.renal_map["Mild renal impairment"],
-                "moderate": self.renal_map["Moderate renal impairment"],
-                "severe": self.renal_map["Severe renal impairment"],
-            }
-        elif scan_key == "hepatic_scan":
-            condition_map = {
-                "normal": self.cirrhosis_map["Control"],
-                "mild": self.cirrhosis_map["Mild cirrhosis"],
-                "moderate": self.cirrhosis_map["Moderate cirrhosis"],
-                "severe": self.cirrhosis_map["Severe cirrhosis"],
-            }
-
-        # Map diabetes status to glucose levels and colors
-        diabetes_map = {
-            "N": 5.0,  # Normal/healthy
-            "T2DM": 8.0,  # Type 2 diabetes
-            "T1DM": 8.0,  # Type 1 diabetes
+        return {
+            f"fig_can_po__{scan_key.removesuffix('_scan')}__timecourse": (
+                self._plot_timecourse_scan(scan_key, self._sim_key(scan_key))
+            )
+            for scan_key in self.scan_map
         }
 
-        # Get unique studies for different markers
-        studies = df_filtered['study'].unique()
-        markers = ['s', '^', 'D', 'v', '<', '>', 'p', '*', 'h', 'X']
-        study_marker_map = {study: markers[i % len(markers)] for i, study in enumerate(studies)}
+    def _condition_map(self, scan_key: str) -> dict[str, float]:
+        """Get the value of the scanned parameter of the conditions of the studies."""
+        if scan_key == "renal_scan":
+            return {
+                "normal": self.renal_map["Normal renal function"],
+                "mild": self.renal_map["Mild renal impairment"],
+                "moderate": self.renal_map["Moderate renal impairment"],
+                "severe": self.renal_map["Severe renal impairment"],
+            }
+        if scan_key == "hepatic_scan":
+            return {
+                "normal": self.cirrhosis_map["Control"],
+                "mild": self.cirrhosis_map["Mild cirrhosis"],
+                "moderate": self.cirrhosis_map["Moderate cirrhosis"],
+                "severe": self.cirrhosis_map["Severe cirrhosis"],
+            }
+        return {}
+
+    @staticmethod
+    def _condition(row: pd.Series) -> str | None:
+        """Get the condition of a row of the study data in lower case."""
+        return str(row["condition"]).lower() if pd.notna(row["condition"]) else None
+
+    def _add_study_data_to_plot(
+        self,
+        ax: Axes,
+        scan_key: str,
+        substance: str,
+        parameter: str,
+        study_data_file: str,
+    ) -> tuple[float, dict[str, str]] | None:
+        """Plot a pharmacokinetic parameter of a substance of the studies.
+
+        The values of studies with another dose than the scan are scaled to the
+        dose of the scan where the parameter scales with the dose, and left out
+        otherwise.
+
+        Returns:
+            The largest value and the markers of the studies by study, `None`
+            if the studies have no data of the parameter.
+        """
+        df = pd.read_csv(study_data_file, sep="\t", comment="#")
+        df_filtered = df[
+            (df["substance"] == substance) & (df["parameter"] == parameter)
+        ].copy()
+        if len(df_filtered) == 0:
+            return None
+
+        res = self.results[f"task_{self._sim_key(scan_key)}"]
+        condition_map = self._condition_map(scan_key)
+        study_marker_map = {
+            str(study): STUDY_MARKERS[i % len(STUDY_MARKERS)]
+            for i, study in enumerate(df_filtered["study"].unique())
+        }
+        face_color = self.substance_colors.get(substance, "black")
 
         max_y = 0.0
-        # Plot each data point
-        for idx, row in df_filtered.iterrows():
-            # Get x-position based on scan type
+        for _, row in df_filtered.iterrows():
             if scan_key == "dose_scan":
-                x_pos = row['dose']
+                x_pos = row["dose"]
+                dose_ratio = 1.0  # no scaling for dose scan
             else:
-                # For renal/hepatic scans, check dose match
-                study_dose = row['dose']
-                if pd.isna(study_dose) or study_dose != sim_dose_value:
-                    continue  # Skip if dose doesn't match
-
-                # Map condition to x-position
-                condition = row['condition'].lower() if pd.notna(row['condition']) else None
-
+                # renal/hepatic scans: the condition is the position
+                condition = self._condition(row)
                 if condition not in condition_map:
                     continue
-
                 x_pos = condition_map[condition]
 
-            # Get diabetes status and corresponding color
-            diabetes_status = row.get('diabetes', 'N')
-            if pd.isna(diabetes_status):
-                diabetes_status = 'N'
+                # scaling to the dose of the scan
+                sim_dose_value = self._scan_dose(res)
+                study_dose = row["dose"]
+                dose_ratio = sim_dose_value / study_dose if study_dose > 0 else 1.0
+                if (
+                    not pd.isna(study_dose)
+                    and study_dose != sim_dose_value
+                    and parameter not in SCALABLE_PARAMETERS
+                ):
+                    continue
 
-            glucose_level = diabetes_map.get(diabetes_status, 5.0)
-            face_color = self.glucose_colors.get(glucose_level, self.glucose_colors[5])
-
-            # Get study marker
-            marker = study_marker_map.get(row['study'], 's')
-
-            if row['study'] not in studies_in_legend:
-                studies_in_legend.add(row['study'])
-
-            has_mean = pd.notna(row['mean'])
-            has_sd = pd.notna(row['sd'])
-            has_median = pd.notna(row['median'])
-            has_min = pd.notna(row['min'])
-            has_max = pd.notna(row['max'])
-
-            if has_mean:
-                y_value = row['mean']
-
-                # Plot mean with optional SD error bars
-                if has_sd:
-                    y_err = row['sd']
-                    ax.errorbar(x_pos, y_value, yerr=y_err,
-                                fmt=marker, markerfacecolor=face_color, markeredgecolor='black',
-                                markeredgewidth=0.8, markersize=8, ecolor='black',
-                                capsize=5, capthick=2, alpha=0.9)
-                    max_y = max(max_y, y_value + y_err)
-                else:
-                    ax.plot(x_pos, y_value, marker=marker, markerfacecolor=face_color,
-                            markeredgecolor='black', markeredgewidth=0.8,
-                            markersize=8, alpha=0.9, linestyle='')
-                    max_y = max(max_y, y_value)
-
-            elif has_median:
-                y_value = row['median']
-
-                # Plot median with optional min/max range
-                if has_min and has_max:
-                    y_min = row['min']
-                    y_max = row['max']
-                    y_err = [[y_value - y_min], [y_max - y_value]]
-                    ax.errorbar(x_pos, y_value, yerr=y_err,
-                                fmt=marker, markerfacecolor=face_color, markeredgecolor='black',
-                                markeredgewidth=0.8, markersize=8, ecolor='black',
-                                capsize=0, capthick=2, alpha=0.9)
-                    max_y = max(max_y, y_max)
-                else:
-                    ax.plot(x_pos, y_value, marker=marker, markerfacecolor=face_color,
-                            markeredgecolor='black', markeredgewidth=0.8,
-                            markersize=8, alpha=0.9, linestyle='')
-                    max_y = max(max_y, y_value)
-
-            elif has_min and has_max:
-                y_min = row['min']
-                y_max = row['max']
-                y_mid = (y_min + y_max) / 2
-                y_err = [[y_mid - y_min], [y_max - y_mid]]
-                ax.errorbar(x_pos, y_mid, yerr=y_err,
-                            fmt=marker, markerfacecolor=face_color, markeredgecolor='black',
-                            markeredgewidth=0.8, markersize=8, ecolor='black',
-                            capsize=5, capthick=2, alpha=0.9)
-                max_y = max(max_y, y_max)
+            factor = dose_ratio if parameter in SCALABLE_PARAMETERS else 1.0
+            y_top = _plot_study_point(
+                ax,
+                row,
+                x_pos,
+                marker=study_marker_map.get(str(row["study"]), "s"),
+                face_color=face_color,
+                factor=factor,
+            )
+            if y_top is not None:
+                max_y = max(max_y, y_top)
 
         return max_y, study_marker_map
-    def _plot_scan_combined(self, scan_key: str, sim_key: str, pk_parameters: list) -> FigureMPL:
-        """Create combined figure with all PK parameters and UGE for a single scan type."""
-        scan_data = self.scan_map[scan_key]
-        scan_name = scan_key.replace("_scan", "").capitalize()
 
+    def _add_uge_study_data_to_plot(
+        self, ax: Axes, scan_key: str, study_data_file: str
+    ) -> tuple[float, dict[str, str]] | None:
+        """Plot the 24 hr UGE of the studies, colored by the glucose of the subjects.
+
+        For the renal and hepatic scans only the studies with the dose of the
+        scan are shown.
+
+        Returns:
+            The largest value and the markers of the studies by study, `None`
+            if the studies have no UGE data.
+        """
+        df = pd.read_csv(study_data_file, sep="\t", comment="#")
+        df_filtered = df[df["parameter"] == "UGE_24hr"].copy()
+        if len(df_filtered) == 0:
+            return None
+
+        sim_dose_value = None
+        if scan_key in self.scan_doses:
+            res_glc = self.results[
+                f"task_{self._sim_key(scan_key)}_glc{self.glucoses[0]}"
+            ]
+            sim_dose_value = self._scan_dose(res_glc)
+
+        condition_map = self._condition_map(scan_key)
+        study_marker_map = {
+            str(study): STUDY_MARKERS[i % len(STUDY_MARKERS)]
+            for i, study in enumerate(df_filtered["study"].unique())
+        }
+
+        max_y = 0.0
+        for _, row in df_filtered.iterrows():
+            if scan_key == "dose_scan":
+                x_pos = row["dose"]
+            else:
+                # renal/hepatic scans: only the dose of the scan
+                study_dose = row["dose"]
+                if pd.isna(study_dose) or study_dose != sim_dose_value:
+                    continue
+                condition = self._condition(row)
+                if condition not in condition_map:
+                    continue
+                x_pos = condition_map[condition]
+
+            # the glucose of the subjects gives the color
+            diabetes_status = row.get("diabetes", "N")
+            if pd.isna(diabetes_status):
+                diabetes_status = "N"
+            glucose_level = DIABETES_GLUCOSE.get(str(diabetes_status), 5.0)
+            face_color = self.glucose_colors.get(glucose_level, self.glucose_colors[5])
+
+            y_top = _plot_study_point(
+                ax,
+                row,
+                x_pos,
+                marker=study_marker_map.get(str(row["study"]), "s"),
+                face_color=face_color,
+            )
+            if y_top is not None:
+                max_y = max(max_y, y_top)
+
+        return max_y, study_marker_map
+
+    def _plot_scan_combined(self, scan_key: str, pk_parameters: list[str]) -> MPLFigure:
+        """Create combined figure with all PK parameters and UGE for a single scan type."""
         ncols = 5
         f, axes = plt.subplots(
-            nrows=1, ncols=ncols, figsize=(6 * ncols, 6), dpi=150,
+            nrows=1,
+            ncols=ncols,
+            figsize=(6 * ncols, 6),
+            dpi=150,
             layout="constrained",
             squeeze=False,
         )
         axes = axes.flatten()
 
-        # Plot PK parameters
         for k, pk_key in enumerate(pk_parameters):
-            self._plot_pk_subplot(axes[k], scan_key, sim_key, pk_key, scan_data)
-
-        # Plot UGE
-        self._plot_uge_subplot(axes[4], scan_key, sim_key, scan_data)
+            self._plot_pk_subplot(axes[k], scan_key, pk_key)
+        self._plot_uge_subplot(axes[4], scan_key)
 
         return f
 
-    def _plot_pk_subplot(self, ax, scan_key: str, sim_key: str, pk_key: str, scan_data: dict):
+    def _plot_pk_subplot(self, ax: Axes, scan_key: str, pk_key: str) -> None:
         """Plot a single PK parameter subplot with all three substances."""
-        Q_ = self.Q_
+        spec = self.scan_map[scan_key]
+        sim_key = self._sim_key(scan_key)
 
-        # Only show reference line for non-dose scans
+        # only show reference line for non-dose scans
         if scan_key != "dose_scan":
-            ax.axvline(x=scan_data["default"], color="grey", linestyle="--", linewidth=1.5)
+            ax.axvline(x=_default(spec), color="grey", linestyle="--", linewidth=1.5)
 
-        xres = self.results[f"task_{sim_key}"]
-        parameter_id = scan_data["parameter"]
-        x_vec = Q_(
-            xres[parameter_id].values[0], xres.uinfo[parameter_id]
-        )
+        res = self.results[f"task_{sim_key}"]
+        x_vec = self._scan_values(res, spec)
+        molecular_weights = {
+            "canagliflozin": self.Mr.can,
+            "M5": self.Mr.m5,
+            "M7": self.Mr.m7,
+        }
 
-        substances = ["canagliflozin", "M5", "M7"]
         ymax = 0.0
-
-        # Plot all three substances
-        for substance in substances:
-            df = self.pk_dfs[sim_key]
+        df = self.pk_dfs[sim_key]
+        for substance in SUBSTANCES:
             df_sub = df[df.substance == substance].copy()
-
             if len(df_sub) == 0:
                 continue
 
-            pk_vec = df_sub[f"{pk_key}"].to_numpy()
-            y = Q_(pk_vec, df_sub[f"{pk_key}_unit"].values[0])
+            unit = df_sub[f"{pk_key}_unit"].to_numpy()[0]
+            y, y_lower, y_upper = self._summary(df_sub, pk_key, unit)
+            # convert from molar to mass units
+            if pk_key in SCALABLE_PARAMETERS:
+                y, y_lower, y_upper = (
+                    v * molecular_weights[substance] for v in (y, y_lower, y_upper)
+                )
+            y, y_lower, y_upper = (
+                v.to(self.pk_units[pk_key]) for v in (y, y_lower, y_upper)
+            )
 
-            # Convert from molar to mass units if needed
-            if pk_key in ["cmax", "aucinf"]:
-                if substance == "canagliflozin":
-                    mr = self.Mr.can
-                elif substance == "M5":
-                    mr = self.Mr.m5
-                elif substance == "M7":
-                    mr = self.Mr.m7
-                y = y * mr
-
-            y = y.to(self.pk_units[pk_key])
             color = self.substance_colors[substance]
-
-            # Plot simulation line
+            if self.uncertainty is not None:
+                ax.fill_between(
+                    x_vec.magnitude,
+                    y_lower.magnitude,
+                    y_upper.magnitude,
+                    color=color,
+                    alpha=self.band_alpha,
+                    linewidth=0,
+                )
             ax.plot(
-                x_vec,
-                y,
+                x_vec.magnitude,
+                y.magnitude,
                 marker="o",
                 linestyle="-",
                 color=color,
@@ -833,164 +839,146 @@ class CanagliflozinParameterScan(CanagliflozinSimulationExperiment):
                 markersize=7,
                 label=substance.capitalize(),
             )
+            ymax = max(ymax, np.nanmax(y_upper.magnitude))
 
-            ymax = max(ymax, np.nanmax(y.magnitude))
-
-        # Track which studies have been added to legend across all substances
-        studies_in_legend = set()
-        study_markers = {}  # Map study name to marker symbol
-
-        # Add study data for all substances
+        # the study data of all substances, the markers by study
+        study_markers: dict[str, str] = {}
         study_max_y = 0.0
-        if scan_key in self.study_data_files and self.study_data_files[scan_key] is not None:
-            for substance in substances:
-                max_y_sub, study_info = self._add_study_data_to_plot(
-                    ax, scan_key, substance, pk_key,
-                    self.study_data_files[scan_key], studies_in_legend
-                )
-                if max_y_sub is not None:
-                    study_max_y = max(study_max_y, max_y_sub)
-                if study_info is not None:
-                    study_markers.update(study_info)
-
+        for substance in SUBSTANCES:
+            study_data = self._add_study_data_to_plot(
+                ax, scan_key, substance, pk_key, self.study_data_files[scan_key]
+            )
+            if study_data is not None:
+                study_max_y = max(study_max_y, study_data[0])
+                study_markers.update(study_data[1])
         ymax = max(ymax, study_max_y)
 
-        # Formatting
         ax.tick_params(axis="x", labelsize=self.tick_font_size)
         ax.tick_params(axis="y", labelsize=self.tick_font_size)
-        ax.set_xlabel(scan_data["label"], fontdict=self.scan_font)
+        ax.set_xlabel(spec["label"], fontdict=self.scan_font)
         ax.set_ylabel(
             f"{self.pk_labels[pk_key].capitalize()} [{self.pk_units[pk_key]}]",
             fontdict=self.scan_font,
         )
-        ax.set_ylim(bottom=0.0, top=1.05 * ymax)
+        ax.set_ylim(bottom=0.0, top=self.legend_headroom * ymax)
 
-        if scan_data["scale"] == "log":
-            ax.set_xscale("log")
-            from matplotlib.ticker import ScalarFormatter
-            ax.xaxis.set_major_formatter(ScalarFormatter())
-            ax.xaxis.get_major_formatter().set_scientific(False)
-            if scan_key == "dose_scan":
-                ax.set_xticks([1, 10, 100, 800])
-                ax.set_xticklabels([1, 10, 100, 800])
+        if spec["scale"] == "log":
+            _log_xaxis(ax, [1, 10, 100, 800] if scan_key == "dose_scan" else None)
 
-        # Add dose annotation for renal and hepatic scans
-        if scan_key in ["renal_scan", "hepatic_scan"]:
-            dose_value = Q_(xres["PODOSE_can"].values[0][0], xres.uinfo["PODOSE_can"])
-            dose_mg = dose_value.to("mg").magnitude
-            ax.text(
-                0.98, 0.02,
-                f"Dose: {dose_mg:.0f} mg",
-                transform=ax.transAxes,
-                fontsize=12,
-                verticalalignment='bottom',
-                horizontalalignment='right',
-                bbox=dict(boxstyle='round', facecolor='white', alpha=0.8, edgecolor='gray')
-            )
+        if scan_key in self.scan_doses:
+            _dose_box(ax, self._scan_dose(res))
 
-        # Add legends
+        # legends
         handles, labels = ax.get_legend_handles_labels()
         if labels:
-            substance_labels = ["Canagliflozin", "M5", "M7"]
-            substance_handles = [h for h, l in zip(handles, labels) if l in substance_labels]
-            substance_leg_labels = [l for l in labels if l in substance_labels]
-
+            substance_labels = [substance.capitalize() for substance in SUBSTANCES]
+            substance_handles = [
+                handle
+                for handle, label in zip(handles, labels, strict=True)
+                if label in substance_labels
+            ]
             if substance_handles:
                 leg1 = ax.legend(
-                    substance_handles, substance_leg_labels,
+                    substance_handles,
+                    [label for label in labels if label in substance_labels],
                     title="Substance",
-                    loc='upper left',
+                    loc="upper left",
                     bbox_to_anchor=(0, 0.97),
                     fontsize=10,
                     title_fontsize=11,
-                    framealpha=0.9
+                    framealpha=0.9,
                 )
                 ax.add_artist(leg1)
 
-            # Create custom legend handles for studies 
             if study_markers:
-                import matplotlib.lines as mlines
-                study_legend_handles = []
-                study_legend_labels = []
-                for study_name in sorted(study_markers.keys()):
-                    marker = study_markers[study_name]
-                    handle = mlines.Line2D(
-                        [], [],
-                        marker=marker,
-                        color='white',
-                        markerfacecolor='white',
-                        markeredgecolor='black',
-                        markeredgewidth=0.8,
-                        markersize=8,
-                        linestyle='',
-                        label=study_name
-                    )
-                    study_legend_handles.append(handle)
-                    study_legend_labels.append(study_name)
+                _studies_legend(ax, study_markers, bbox_x=0.28, fontsize=9)
 
-                ax.legend(
-                    study_legend_handles, study_legend_labels,
-                    title="Studies",
-                    loc='upper left',
-                    bbox_to_anchor=(0.28, 0.97),
-                    fontsize=9,
-                    title_fontsize=10,
-                    framealpha=0.9
-                )
+        self._add_colorbar_strip(ax, spec)
 
-        # Add colorbar
-        self._add_colorbar_strip(ax, scan_data)
+    def _summary(
+        self, df: pd.DataFrame, key: str, unit: str
+    ) -> tuple[Quantity, Quantity, Quantity]:
+        """Get a parameter at the points of a scan, the median and the band of the draws.
 
+        Returns:
+            The values (the median of the draws in a run over them), and the
+            lower and the upper quantile, the values without draws.
+        """
+        run = self.uncertainty
+        if run is None:
+            values = Q(df[key].to_numpy(dtype=float), unit)
+            return values, values, values
+        summary = summarize(df, key, run.quantiles)
+        median, lower, upper = (
+            Q(summary[column].to_numpy(), unit)
+            for column in ["median", "lower", "upper"]
+        )
+        return median, lower, upper
 
-    def _plot_uge_subplot(self, ax, scan_key: str, sim_key: str, scan_data: dict):
+    def _uge_24h(self, res: ScanResult, k_par: int) -> tuple[float, float, float]:
+        """Get the UGE after 24 hr of a point of a scan with the band of its draws.
+
+        Returns:
+            The lower quantile, the value (the median of the draws in a run
+            over them) and the upper quantile [g].
+        """
+        time, lower, values, upper = self._band(
+            res, "KI__UGE", {self._scan_dimension(res): k_par}
+        )
+        k_24h = int(np.argmin(np.abs(time - 24 * 60)))
+        unit = res.units["KI__UGE"]
+        lower_24h, value_24h, upper_24h = (
+            Q(v[k_24h], unit).to(self.units["KI__UGE"]).magnitude
+            for v in (lower, values, upper)
+        )
+        return float(lower_24h), float(value_24h), float(upper_24h)
+
+    def _plot_uge_subplot(self, ax: Axes, scan_key: str) -> None:
         """Plot UGE subplot with multiple glucose levels."""
-        Q_ = self.Q_
+        spec = self.scan_map[scan_key]
+        sim_key = self._sim_key(scan_key)
 
         if scan_key != "dose_scan":
-            ax.axvline(x=scan_data["default"], color="grey", linestyle="--", linewidth=1.5)
+            ax.axvline(x=_default(spec), color="grey", linestyle="--", linewidth=1.5)
 
-        # Get x-axis values
-        sim_key_sample = f"{sim_key}_glc{self.glucoses[0]}"
-        xres_sample = self.results[f"task_{sim_key_sample}"]
-        parameter_id = scan_data["parameter"]
-        x_vec = Q_(
-            xres_sample[parameter_id].values[0], xres_sample.uinfo[parameter_id]
-        )
+        res_sample = self.results[f"task_{sim_key}_glc{self.glucoses[0]}"]
+        x_vec = self._scan_values(res_sample, spec)
 
-        # Plot UGE for each glucose level
+        # UGE at 24 hr for each glucose level
         for glc in self.glucoses:
-            sim_key_glc = f"{sim_key}_glc{glc}"
-            xres_glc = self.results[f"task_{sim_key_glc}"]
-
-            # Get UGE at t=24h
-            time_vec = xres_glc.dim_mean("time").magnitude
-            t_24h_idx = np.argmin(np.abs(time_vec - 1440))
-
-            # Get UGE values across scan dimension
-            scandim = xres_glc._redop_dims()[0]
-            uge_values = []
-            for k_par in range(len(x_vec)):
-                uge_val = Q_(
-                    xres_glc["KI__UGE"].sel({scandim: k_par}).values[t_24h_idx],
-                    xres_glc.uinfo["KI__UGE"]
+            res_glc = self.results[f"task_{sim_key}_glc{glc}"]
+            uge_lower, uge_values, uge_upper = (
+                np.array(v)
+                for v in zip(
+                    *(
+                        self._uge_24h(res_glc, k_par)
+                        for k_par in range(len(x_vec.magnitude))
+                    ),
+                    strict=True,
                 )
-                uge_val = uge_val.to(self.units["KI__UGE"])
-                uge_values.append(uge_val.magnitude)
+            )
+            if self.uncertainty is not None:
+                ax.fill_between(
+                    x_vec.magnitude,
+                    uge_lower,
+                    uge_upper,
+                    color=self.glucose_colors[glc],
+                    alpha=self.band_alpha,
+                    linewidth=0,
+                )
 
-            color = self.glucose_colors[glc]
             ax.plot(
                 x_vec.magnitude,
                 uge_values,
                 marker="o",
                 linestyle="-",
-                color=color,
+                color=self.glucose_colors[glc],
                 linewidth=2,
                 markersize=6,
-                label=f"{glc} mM"
+                label=f"{glc} mM",
             )
 
-        # Formatting
-        ax.set_xlabel(scan_data["label"], fontdict=self.scan_font)
+        ax.set_xlabel(spec["label"], fontdict=self.scan_font)
         ax.set_ylabel(
             f"{self.labels['KI__UGE']} (24h) [{self.units['KI__UGE']}]",
             fontdict=self.scan_font,
@@ -999,148 +987,97 @@ class CanagliflozinParameterScan(CanagliflozinSimulationExperiment):
         ax.tick_params(axis="y", labelsize=self.tick_font_size)
         ymax = ax.get_ylim()[1]
 
-        # Track which studies have been added to legend
-        studies_in_legend = set()
-        study_markers = {}
+        study_markers: dict[str, str] = {}
+        study_data = self._add_uge_study_data_to_plot(
+            ax, scan_key, self.study_data_files[scan_key]
+        )
+        if study_data is not None:
+            ymax = max(ymax, study_data[0])
+            study_markers.update(study_data[1])
 
-        # Add study data if available
-        if scan_key in self.study_data_files and self.study_data_files[scan_key] is not None:
-            study_max_y, study_info = self._add_uge_study_data_to_plot(
-                ax, scan_key, self.study_data_files[scan_key], studies_in_legend
-            )
-            if study_max_y is not None:
-                ymax = max(ymax, study_max_y)
-            if study_info is not None:
-                study_markers.update(study_info)
+        ax.set_ylim(bottom=0.0, top=self.legend_headroom * ymax)
 
-        ax.set_ylim(bottom=0.0, top=1.05 * ymax)
+        if spec["scale"] == "log":
+            _log_xaxis(ax, [10, 30, 100, 300, 800] if scan_key == "dose_scan" else None)
 
-        # Set x-scale
-        if scan_data["scale"] == "log":
-            ax.set_xscale("log")
-            from matplotlib.ticker import ScalarFormatter
-            ax.xaxis.set_major_formatter(ScalarFormatter())
-            ax.xaxis.get_major_formatter().set_scientific(False)
-            if scan_key == "dose_scan":
-                ax.set_xticks([10, 30, 100, 300, 800])
-                ax.set_xticklabels([10, 30, 100, 300, 800])
+        if scan_key in self.scan_doses:
+            res_glc = self.results[f"task_{sim_key}_glc{self.glucoses[0]}"]
+            _dose_box(ax, self._scan_dose(res_glc))
 
-        # Add dose annotation for renal and hepatic scans
-        if scan_key in ["renal_scan", "hepatic_scan"]:
-            xres_glc = self.results[f"task_{sim_key}_glc{self.glucoses[0]}"]
-            dose_value = Q_(xres_glc["PODOSE_can"].values[0][0], xres_glc.uinfo["PODOSE_can"])
-            dose_mg = dose_value.to("mg").magnitude
-            ax.text(
-                0.98, 0.02,
-                f"Dose: {dose_mg:.0f} mg",
-                transform=ax.transAxes,
-                fontsize=12,
-                verticalalignment='bottom',
-                horizontalalignment='right',
-                bbox=dict(boxstyle='round', facecolor='white', alpha=0.8, edgecolor='gray')
-            )
-
-        # Add legends
+        # legends
         handles, labels = ax.get_legend_handles_labels()
-        glucose_handles = [h for h, l in zip(handles, labels) if 'mM' in l]
-        glucose_labels = [l for l in labels if 'mM' in l]
-
+        glucose_handles = [
+            handle
+            for handle, label in zip(handles, labels, strict=True)
+            if "mM" in label
+        ]
         if glucose_handles:
             leg1 = ax.legend(
-                glucose_handles, glucose_labels,
+                glucose_handles,
+                [label for label in labels if "mM" in label],
                 title="Plasma Glucose",
-                loc='upper left',
+                loc="upper left",
                 bbox_to_anchor=(0, 0.97),
                 fontsize=9,
                 title_fontsize=10,
-                framealpha=0.9
+                framealpha=0.9,
             )
             ax.add_artist(leg1)
 
         if study_markers:
-            import matplotlib.lines as mlines
-            study_legend_handles = []
-            study_legend_labels = []
-            for study_name in sorted(study_markers.keys()):
-                marker = study_markers[study_name]
-                handle = mlines.Line2D(
-                    [], [],
-                    marker=marker,
-                    color='white',
-                    markerfacecolor='white',
-                    markeredgecolor='black',
-                    markeredgewidth=0.8,
-                    markersize=8,
-                    linestyle='',
-                    label=study_name
-                )
-                study_legend_handles.append(handle)
-                study_legend_labels.append(study_name)
+            _studies_legend(ax, study_markers, bbox_x=0.24, fontsize=9)
 
-            ax.legend(
-                study_legend_handles, study_legend_labels,
-                title="Studies",
-                loc='upper left',
-                bbox_to_anchor=(0.24, 0.97),
-                fontsize=9,
-                title_fontsize=10,
-                framealpha=0.9
-            )
+        self._add_colorbar_strip(ax, spec)
 
-        # Add colorbar
-        self._add_colorbar_strip(ax, scan_data)
-
-    def _add_colorbar_strip(self, ax, scan_data: dict):
+    def _add_colorbar_strip(self, ax: Axes, spec: ScanSpec) -> None:
         """Add a colorbar strip at the top of a subplot."""
         height_frac = 0.03
-        range_vals = scan_data["range"]
-        rmin, rmax = range_vals[0], range_vals[-1]
-        cmap_name = scan_data["colormap"]
-        cmap = getattr(self, cmap_name)
+        rmin, rmax = spec["range"][0], spec["range"][-1]
+        norm = _norm(spec)
 
-        # Create colorbar normalization
-        if scan_data["scale"] == "linear":
-            norm = matplotlib.colors.Normalize(vmin=rmin, vmax=rmax, clip=False)
-        elif scan_data["scale"] == "log":
-            norm = matplotlib.colors.LogNorm(vmin=rmin, vmax=rmax, clip=False)
+        strip_ax = inset_axes(
+            ax,
+            width="100%",
+            height=f"{height_frac * 100:.2f}%",
+            loc="upper center",
+            borderpad=0,
+        )
 
-        # Create inset axes for colorbar strip
-        strip_ax = inset_axes(ax, width="100%", height=f"{height_frac * 100:.2f}%", loc="upper center", borderpad=0)
-
-        # Draw colorbar gradient
-        if isinstance(norm, matplotlib.colors.LogNorm) or scan_data["scale"] == "log":
+        # colorbar gradient as vector cells: an image would be embedded as a
+        # raster, which some SVG viewers do not show; the edges of the cells in
+        # their color close the seams between them
+        if spec["scale"] == "log":
             xs = np.geomspace(max(rmin, 1e-12), rmax, 256)
         else:
             xs = np.linspace(rmin, rmax, 256)
 
-        strip_ax.imshow(xs[np.newaxis, :], aspect="auto", cmap=cmap, norm=norm, origin="lower", extent=(0, 1, 0, 1))
+        strip_ax.pcolormesh(
+            np.linspace(0, 1, len(xs) + 1),
+            [0, 1],
+            xs[np.newaxis, :],
+            cmap=self._cmap(spec),
+            norm=norm,
+            shading="flat",
+            edgecolors="face",
+            rasterized=False,
+        )
+        strip_ax.set_xlim(0, 1)
+        strip_ax.set_ylim(0, 1)
         strip_ax.set_axis_off()
         strip_ax.set_zorder(ax.get_zorder() + 1)
 
-    def figures_mpl_pharmacokinetics(self):
+    def figures_mpl_pharmacokinetics(self) -> dict[str, MPLFigure]:
         """Visualize dependency of pharmacokinetics parameters."""
-        figures = {}
-
-        pk_parameters = ["aucinf", "cmax", "tmax", "thalf"]
-
-        # Scan types
-        scan_types = {
-            "renal": "renal_scan",
-            "hepatic": "hepatic_scan",
-            "dose": "dose_scan",
-        }
-
-        # Create one figure per scan type
-        for scan_label, scan_key in scan_types.items():
-            sim_key = f"scan_po_{scan_label}"
-
-            fig_key = f"fig_can_po__{scan_label}"
-            figures[fig_key] = self._plot_scan_combined(
-                scan_key, sim_key, pk_parameters
+        pk_parameters = ["auc_inf_obs", "cmax", "tmax", "thalf"]
+        return {
+            f"fig_can_po__{scan_key.removesuffix('_scan')}": self._plot_scan_combined(
+                scan_key, pk_parameters
             )
-
-        return figures
+            for scan_key in self.scan_map
+        }
 
 
 if __name__ == "__main__":
-    run_experiments(CanagliflozinParameterScan, output_dir=CanagliflozinParameterScan.__name__)
+    MODEL.run_experiments(
+        CanagliflozinParameterScan, output_dir=CanagliflozinParameterScan.__name__
+    )

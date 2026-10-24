@@ -1,0 +1,595 @@
+--------------------------------------------------------------------------------
+OptimizationProblem: PD_20261019_201254__61546
+--------------------------------------------------------------------------------
+Experiments
+	*** FitMappingCollection ***
+experiment: Chen2015
+mappings: ['fm_po_can_CAN100_glucose_cumulative_amount', 'fm_po_can_CAN300_glucose_cumulative_amount', 'fm_po_can_CAN100_glucose_RT_McrCl', 'fm_po_can_CAN300_glucose_RT_McrCl']
+weights: [14.0, 14.0, 14.0, 14.0]
+use_mapping_weights: True
+kind: training
+fit_parameters: {}
+	*** FitMappingCollection ***
+experiment: Chen2015
+mappings: ['fm_po_can_CAN0_glucose_cumulative_amount']
+weights: [14.0]
+use_mapping_weights: True
+kind: validation
+fit_parameters: {}
+	*** FitMappingCollection ***
+experiment: Chen2015
+mappings: ['fm_po_can_CAN100_canagliflozin', 'fm_po_can_CAN300_canagliflozin', 'fm_po_can_CAN100_M5', 'fm_po_can_CAN300_M5', 'fm_po_can_CAN100_M7', 'fm_po_can_CAN300_M7', 'fm_po_can_CAN100_canagliflozin_cumulative_amount', 'fm_po_can_CAN300_canagliflozin_cumulative_amount', 'fm_po_can_CAN100_M5_cumulative_amount', 'fm_po_can_CAN300_M5_cumulative_amount', 'fm_po_can_CAN100_M7_cumulative_amount', 'fm_po_can_CAN300_M7_cumulative_amount', 'fm_po_can_CAN100_glucose_RT_MDRD', 'fm_po_can_CAN300_glucose_RT_MDRD']
+weights: [None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+use_mapping_weights: True
+kind: excluded
+fit_parameters: {}
+	*** FitMappingCollection ***
+experiment: Devineni2012
+mappings: ['fm_po_QD100_glucose_cumulative_amount', 'fm_po_BID300_glucose_cumulative_amount', 'fm_po_CAN0_glucose_RT', 'fm_po_QD100_glucose_RT', 'fm_po_BID300_glucose_RT']
+weights: [10.0, 10.0, 9.0, 10.0, 10.0]
+use_mapping_weights: True
+kind: training
+fit_parameters: {}
+	*** FitMappingCollection ***
+experiment: Devineni2012
+mappings: ['fm_po_CAN0_glucose_cumulative_amount']
+weights: [10.0]
+use_mapping_weights: True
+kind: validation
+fit_parameters: {}
+	*** FitMappingCollection ***
+experiment: Devineni2012
+mappings: ['fm_po_QD100_canagliflozin', 'fm_po_BID300_canagliflozin']
+weights: [None, None]
+use_mapping_weights: True
+kind: excluded
+fit_parameters: {}
+	*** FitMappingCollection ***
+experiment: Devineni2013
+mappings: ['fm_po_can50_glucose_cumulative_amount', 'fm_po_can100_glucose_cumulative_amount', 'fm_po_can300_glucose_cumulative_amount', 'fm_po_can0_glucose_renal_threshold', 'fm_po_can50_glucose_renal_threshold', 'fm_po_can100_glucose_renal_threshold', 'fm_po_can300_glucose_renal_threshold']
+weights: [9.0, 8.0, 10.0, 9.0, 9.0, 8.0, 10.0]
+use_mapping_weights: True
+kind: training
+fit_parameters: {}
+	*** FitMappingCollection ***
+experiment: Devineni2013
+mappings: ['fm_po_can0_glucose_cumulative_amount']
+weights: [9.0]
+use_mapping_weights: True
+kind: validation
+fit_parameters: {}
+	*** FitMappingCollection ***
+experiment: Devineni2013
+mappings: ['fm_po_can50_canagliflozin_d1', 'fm_po_can100_canagliflozin_d1', 'fm_po_can300_canagliflozin_d1', 'fm_po_can50_canagliflozin_d7', 'fm_po_can100_canagliflozin_d7', 'fm_po_can300_canagliflozin_d7', 'fm_po_can50_canagliflozin_cumulative_amount_d1', 'fm_po_can100_canagliflozin_cumulative_amount_d1', 'fm_po_can300_canagliflozin_cumulative_amount_d1', 'fm_po_can50_canagliflozin_cumulative_amount_d7', 'fm_po_can100_canagliflozin_cumulative_amount_d7', 'fm_po_can300_canagliflozin_cumulative_amount_d7', 'fm_po_can50_M5_cumulative_amount_d1', 'fm_po_can100_M5_cumulative_amount_d1', 'fm_po_can300_M5_cumulative_amount_d1', 'fm_po_can50_M5_cumulative_amount_d7', 'fm_po_can100_M5_cumulative_amount_d7', 'fm_po_can300_M5_cumulative_amount_d7', 'fm_po_can50_M7_cumulative_amount_d1', 'fm_po_can100_M7_cumulative_amount_d1', 'fm_po_can300_M7_cumulative_amount_d1', 'fm_po_can50_M7_cumulative_amount_d7', 'fm_po_can100_M7_cumulative_amount_d7', 'fm_po_can300_M7_cumulative_amount_d7']
+weights: [None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+use_mapping_weights: True
+kind: excluded
+fit_parameters: {}
+	*** FitMappingCollection ***
+experiment: Devineni2014
+mappings: ['fm_po_can300_glucose_cumulative_amount', 'fm_po_can300_glucose_renal_threshold']
+weights: [28.0, 28.0]
+use_mapping_weights: True
+kind: training
+fit_parameters: {}
+	*** FitMappingCollection ***
+experiment: Devineni2014
+mappings: ['fm_po_can300_hctz25_glucose_cumulative_amount', 'fm_po_can300_hctz25_glucose_renal_threshold']
+weights: [28.0, 28.0]
+use_mapping_weights: True
+kind: validation
+fit_parameters: {}
+	*** FitMappingCollection ***
+experiment: Devineni2014
+mappings: ['fm_po_can300_canagliflozin', 'fm_po_can300_hctz25_canagliflozin']
+weights: [None, None]
+use_mapping_weights: True
+kind: excluded
+fit_parameters: {}
+	*** FitMappingCollection ***
+experiment: Devineni2015
+mappings: ['fm_po_can300_canagliflozin', 'fm_po_can300_met2000_canagliflozin']
+weights: [None, None]
+use_mapping_weights: True
+kind: excluded
+fit_parameters: {}
+	*** FitMappingCollection ***
+experiment: Devineni2015a
+mappings: ['fm_po_can_50_glucose_cumulative_amount_multi', 'fm_po_can_100_glucose_cumulative_amount_multi', 'fm_po_can_300_glucose_cumulative_amount_multi', 'fm_po_can_50_glucose_renal_threshold_multi', 'fm_po_can_100_glucose_renal_threshold_multi', 'fm_po_can_300_glucose_renal_threshold_multi']
+weights: [9.0, 9.0, 9.0, 9.0, 9.0, 9.0]
+use_mapping_weights: True
+kind: training
+fit_parameters: {}
+	*** FitMappingCollection ***
+experiment: Devineni2015a
+mappings: ['fm_po_can_50_canagliflozin_single', 'fm_po_can_100_canagliflozin_single', 'fm_po_can_300_canagliflozin_single', 'fm_po_can_50_canagliflozin_multi', 'fm_po_can_100_canagliflozin_multi', 'fm_po_can_300_canagliflozin_multi', 'fm_po_can_50_M5_single', 'fm_po_can_100_M5_single', 'fm_po_can_300_M5_single', 'fm_po_can_50_M5_multi', 'fm_po_can_100_M5_multi', 'fm_po_can_300_M5_multi', 'fm_po_can_50_M7_single', 'fm_po_can_100_M7_single', 'fm_po_can_300_M7_single', 'fm_po_can_50_M7_multi', 'fm_po_can_100_M7_multi', 'fm_po_can_300_M7_multi', 'fm_po_can_50_canagliflozin_cumulative_amount_single', 'fm_po_can_100_canagliflozin_cumulative_amount_single', 'fm_po_can_300_canagliflozin_cumulative_amount_single', 'fm_po_can_50_canagliflozin_cumulative_amount_multi', 'fm_po_can_100_canagliflozin_cumulative_amount_multi', 'fm_po_can_300_canagliflozin_cumulative_amount_multi', 'fm_po_can_50_M5_cumulative_amount_single', 'fm_po_can_100_M5_cumulative_amount_single', 'fm_po_can_300_M5_cumulative_amount_single', 'fm_po_can_50_M5_cumulative_amount_multi', 'fm_po_can_100_M5_cumulative_amount_multi', 'fm_po_can_300_M5_cumulative_amount_multi', 'fm_po_can_50_M7_cumulative_amount_single', 'fm_po_can_100_M7_cumulative_amount_single', 'fm_po_can_300_M7_cumulative_amount_single', 'fm_po_can_50_M7_cumulative_amount_multi', 'fm_po_can_100_M7_cumulative_amount_multi', 'fm_po_can_300_M7_cumulative_amount_multi']
+weights: [None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+use_mapping_weights: True
+kind: excluded
+fit_parameters: {}
+	*** FitMappingCollection ***
+experiment: Devineni2015b
+mappings: ['fm_CAN300_canagliflozin', 'fm_unchanged_C14CAN10_canagliflozin', 'fm_total_C14CAN10_canagliflozin', 'fm_urine_canagliflozin_total', 'fm_feces_canagliflozin_total']
+weights: [None, None, None, None, None]
+use_mapping_weights: True
+kind: excluded
+fit_parameters: {}
+	*** FitMappingCollection ***
+experiment: Devineni2015c
+mappings: ['fm_po_can200_normal_renal_glucose_cumulative_amount', 'fm_po_can200_normal_renal_glucose_RT']
+weights: [8.0, 8.0]
+use_mapping_weights: True
+kind: training
+fit_parameters: {}
+	*** FitMappingCollection ***
+experiment: Devineni2015c
+mappings: ['fm_po_can200_mild_renal_glucose_cumulative_amount', 'fm_po_can200_mild_renal_glucose_RT', 'fm_po_can200_moderate_renal_glucose_cumulative_amount', 'fm_po_can200_moderate_renal_glucose_RT', 'fm_po_can200_severe_renal_glucose_cumulative_amount', 'fm_po_can200_severe_renal_glucose_RT']
+weights: [8.0, 8.0, 8.0, 8.0, 8.0, 8.0]
+use_mapping_weights: True
+kind: validation
+fit_parameters: {}
+	*** FitMappingCollection ***
+experiment: Devineni2015c
+mappings: ['fm_po_can200_normal_renal_canagliflozin', 'fm_po_can200_normal_renal_M5', 'fm_po_can200_normal_renal_M7', 'fm_po_can200_normal_renal_canagliflozin_cumulative_amount', 'fm_po_can200_normal_renal_M5_cumulative_amount', 'fm_po_can200_normal_renal_M7_cumulative_amount', 'fm_po_can200_normal_renal_glucose_RT_mean', 'fm_po_can200_mild_renal_canagliflozin', 'fm_po_can200_mild_renal_M5', 'fm_po_can200_mild_renal_M7', 'fm_po_can200_mild_renal_canagliflozin_cumulative_amount', 'fm_po_can200_mild_renal_M5_cumulative_amount', 'fm_po_can200_mild_renal_M7_cumulative_amount', 'fm_po_can200_mild_renal_glucose_RT_mean', 'fm_po_can200_moderate_renal_canagliflozin', 'fm_po_can200_moderate_renal_M5', 'fm_po_can200_moderate_renal_M7', 'fm_po_can200_moderate_renal_canagliflozin_cumulative_amount', 'fm_po_can200_moderate_renal_M5_cumulative_amount', 'fm_po_can200_moderate_renal_M7_cumulative_amount', 'fm_po_can200_moderate_renal_glucose_RT_mean', 'fm_po_can200_severe_renal_canagliflozin', 'fm_po_can200_severe_renal_M5', 'fm_po_can200_severe_renal_M7', 'fm_po_can200_severe_renal_canagliflozin_cumulative_amount', 'fm_po_can200_severe_renal_M5_cumulative_amount', 'fm_po_can200_severe_renal_M7_cumulative_amount', 'fm_po_can200_severe_renal_glucose_RT_mean', 'fm_po_can300_normal_hepatic_canagliflozin', 'fm_po_can300_normal_hepatic_M5', 'fm_po_can300_normal_hepatic_M7', 'fm_po_can300_normal_hepatic_canagliflozin_cumulative_amount', 'fm_po_can300_normal_hepatic_M5_cumulative_amount', 'fm_po_can300_normal_hepatic_M7_cumulative_amount', 'fm_po_can300_mild_hepatic_canagliflozin', 'fm_po_can300_mild_hepatic_M5', 'fm_po_can300_mild_hepatic_M7', 'fm_po_can300_mild_hepatic_canagliflozin_cumulative_amount', 'fm_po_can300_mild_hepatic_M5_cumulative_amount', 'fm_po_can300_mild_hepatic_M7_cumulative_amount', 'fm_po_can300_moderate_hepatic_canagliflozin', 'fm_po_can300_moderate_hepatic_M5', 'fm_po_can300_moderate_hepatic_M7', 'fm_po_can300_moderate_hepatic_canagliflozin_cumulative_amount', 'fm_po_can300_moderate_hepatic_M5_cumulative_amount', 'fm_po_can300_moderate_hepatic_M7_cumulative_amount']
+weights: [None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+use_mapping_weights: True
+kind: excluded
+fit_parameters: {}
+	*** FitMappingCollection ***
+experiment: Devineni2015d
+mappings: ['fm_CAN300_canagliflozin', 'fm_CAN300_RIF600_canagliflozin', 'fm_CAN300_2_canagliflozin', 'fm_CAN300_2_PRO500_canagliflozin', 'fm_CAN300_3_canagliflozin', 'fm_CAN300_3_CYC400_canagliflozin', 'fm_CAN300_canagliflozin_urine', 'fm_CAN300_M5_urine', 'fm_CAN300_M7_urine', 'fm_CAN300_RIF600_canagliflozin_urine', 'fm_CAN300_RIF600_M5_urine', 'fm_CAN300_RIF600_M7_urine', 'fm_CAN300_2_canagliflozin_urine', 'fm_CAN300_2_M5_urine', 'fm_CAN300_2_M7_urine', 'fm_CAN300_2_PRO500_canagliflozin_urine', 'fm_CAN300_2_PRO500_M5_urine', 'fm_CAN300_2_PRO500_M7_urine']
+weights: [None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+use_mapping_weights: True
+kind: excluded
+fit_parameters: {}
+	*** FitMappingCollection ***
+experiment: Devineni2015e
+mappings: ['fm_po_can300_fasted', 'fm_po_can300_fed', 'fm_po_can50_single_fasted', 'fm_po_can100_single_fasted', 'fm_po_can300_single_fasted']
+weights: [None, None, None, None, None]
+use_mapping_weights: True
+kind: excluded
+fit_parameters: {}
+	*** FitMappingCollection ***
+experiment: Devineni2016
+mappings: ['fm_po_can200_glucose_cumulative_amount', 'fm_po_can300_glucose_cumulative_amount', 'fm_po_can200_glucose_renal_threshold', 'fm_po_can300_glucose_renal_threshold']
+weights: [15.0, 14.0, 15.0, 14.0]
+use_mapping_weights: True
+kind: training
+fit_parameters: {}
+	*** FitMappingCollection ***
+experiment: Devineni2016
+mappings: ['fm_po_can200_canagliflozin', 'fm_po_can300_canagliflozin']
+weights: [None, None]
+use_mapping_weights: True
+kind: excluded
+fit_parameters: {}
+	*** FitMappingCollection ***
+experiment: Iijima2015
+mappings: ['fm_po_can0_rtg_mean', 'fm_po_can25_rtg_mean', 'fm_po_can100_rtg_mean', 'fm_po_can200_rtg_mean', 'fm_po_can400_rtg_mean']
+weights: [10.0, 12.0, 12.0, 14.0, 13.0]
+use_mapping_weights: True
+kind: training
+fit_parameters: {}
+	*** FitMappingCollection ***
+experiment: Iijima2015
+mappings: ['fm_po_can25_uge_change', 'fm_po_can100_uge_change', 'fm_po_can200_uge_change', 'fm_po_can400_uge_change']
+weights: [12.0, 12.0, 14.0, 13.0]
+use_mapping_weights: True
+kind: validation
+fit_parameters: {}
+	*** FitMappingCollection ***
+experiment: Iijima2015
+mappings: ['fm_po_can25_d1_canagliflozin', 'fm_po_can25_d1_canagliflozin_urine', 'fm_po_can25_d16_canagliflozin', 'fm_po_can25_d16_canagliflozin_urine', 'fm_po_can100_d1_canagliflozin', 'fm_po_can100_d1_canagliflozin_urine', 'fm_po_can100_d16_canagliflozin', 'fm_po_can100_d16_canagliflozin_urine', 'fm_po_can200_d1_canagliflozin', 'fm_po_can200_d1_canagliflozin_urine', 'fm_po_can200_d16_canagliflozin', 'fm_po_can200_d16_canagliflozin_urine', 'fm_po_can400_d1_canagliflozin', 'fm_po_can400_d1_canagliflozin_urine', 'fm_po_can400_d16_canagliflozin', 'fm_po_can400_d16_canagliflozin_urine']
+weights: [None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+use_mapping_weights: True
+kind: excluded
+fit_parameters: {}
+	*** FitMappingCollection ***
+experiment: Inagaki2014
+mappings: ['fm_po_can_glucose_excretion_daily_100_normal', 'fm_po_can_glucose_excretion_daily_200_normal']
+weights: [12.0, 12.0]
+use_mapping_weights: True
+kind: training
+fit_parameters: {}
+	*** FitMappingCollection ***
+experiment: Inagaki2014
+mappings: ['fm_po_can_glucose_excretion_daily_100_moderate', 'fm_po_can_glucose_excretion_daily_200_moderate']
+weights: [12.0, 12.0]
+use_mapping_weights: True
+kind: validation
+fit_parameters: {}
+	*** FitMappingCollection ***
+experiment: Inagaki2014
+mappings: ['fm_po_can_canagliflozin_100_normal', 'fm_po_can_canagliflozin_200_normal', 'fm_po_can_canagliflozin_100_moderate', 'fm_po_can_canagliflozin_200_moderate', 'fm_po_can_M5_100_normal', 'fm_po_can_M5_200_normal', 'fm_po_can_M5_100_moderate', 'fm_po_can_M5_200_moderate', 'fm_po_can_M7_100_normal', 'fm_po_can_M7_200_normal', 'fm_po_can_M7_100_moderate', 'fm_po_can_M7_200_moderate', 'fm_po_can_canagliflozin_urine_100_normal', 'fm_po_can_canagliflozin_urine_200_normal', 'fm_po_can_canagliflozin_urine_100_moderate', 'fm_po_can_canagliflozin_urine_200_moderate']
+weights: [None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+use_mapping_weights: True
+kind: excluded
+fit_parameters: {}
+	*** FitMappingCollection ***
+experiment: Kinoshita2015
+mappings: ['fm_po_can200', 'fm_po_can200_tnl40']
+weights: [None, None]
+use_mapping_weights: True
+kind: excluded
+fit_parameters: {}
+	*** FitMappingCollection ***
+experiment: Mamidi2014
+mappings: ['fm_CAN188_canagliflozin_total_CAN188', 'fm_CAN188_canagliflozin_CAN188', 'fm_CAN188_M5_CAN188', 'fm_CAN188_M7_CAN188', 'fm_CAN188_canagliflozin_total_cumulative_amount_urine', 'fm_CAN188_M5_cumulative_amount_urine', 'fm_CAN188_M7_cumulative_amount_urine', 'fm_CAN188_canagliflozin_total_cumulative_amount_feces', 'fm_CAN188_canagliflozin_total_cumulative_amount_168h_urine', 'fm_CAN188_canagliflozin_total_cumulative_amount_168h_feces', 'fm_CAN188_canagliflozin_cumulative_amount_feces', 'fm_CAN188_M7_cumulative_amount_feces', 'fm_CAN188_M9_cumulative_amount_feces']
+weights: [None, None, None, None, None, None, None, None, None, None, None, None, None]
+use_mapping_weights: True
+kind: excluded
+fit_parameters: {}
+	*** FitMappingCollection ***
+experiment: Mohamed2019
+mappings: ['fm_po_can50']
+weights: [None]
+use_mapping_weights: True
+kind: excluded
+fit_parameters: {}
+	*** FitMappingCollection ***
+experiment: Murphy2015
+mappings: ['fm_po_can150_fasted', 'fm_po_can150_fed']
+weights: [None, None]
+use_mapping_weights: True
+kind: excluded
+fit_parameters: {}
+	*** FitMappingCollection ***
+experiment: Sha2011
+mappings: ['fm_can10_uge', 'fm_can30_uge', 'fm_can100_uge', 'fm_can200_uge', 'fm_can400_uge', 'fm_can600_uge', 'fm_can800_uge', 'fm_can10_rtg', 'fm_can30_rtg', 'fm_can100_rtg', 'fm_can200_rtg', 'fm_can400_rtg', 'fm_can600_rtg', 'fm_can800_rtg']
+weights: [6.0, 6.0, 6.0, 6.0, 6.0, 6.0, 6.0, 6.0, 6.0, 6.0, 6.0, 6.0, 6.0, 6.0]
+use_mapping_weights: True
+kind: training
+fit_parameters: {}
+	*** FitMappingCollection ***
+experiment: Sha2011
+mappings: ['fm_can0_uge', 'fm_can400bid_uge', 'fm_can400bid_rtg']
+weights: [15.0, 6.0, 6.0]
+use_mapping_weights: True
+kind: validation
+fit_parameters: {}
+	*** FitMappingCollection ***
+experiment: Sha2014
+mappings: ['fm_pbo_rtg_baseline', 'fm_pbo_rtg_intervals', 'fm_can30_uge', 'fm_can30_rtg_baseline', 'fm_can30_rtg_intervals', 'fm_can100_uge', 'fm_can100_rtg_baseline', 'fm_can100_rtg_intervals', 'fm_can200_uge', 'fm_can200_rtg_baseline', 'fm_can200_rtg_intervals', 'fm_can400_uge', 'fm_can400_rtg_baseline', 'fm_can400_rtg_intervals']
+weights: [18.0, 18.0, 16.0, 16.0, 16.0, 16.0, 16.0, 16.0, 16.0, 16.0, 16.0, 16.0, 16.0, 16.0]
+use_mapping_weights: True
+kind: training
+fit_parameters: {}
+	*** FitMappingCollection ***
+experiment: Sha2014
+mappings: ['fm_pbo_uge', 'fm_pbo_k_uge', 'fm_pbo_k_rtg_baseline', 'fm_pbo_k_rtg_d16', 'fm_can30_k_uge', 'fm_can30_k_rtg_baseline', 'fm_can30_k_rtg_d16', 'fm_can300_bid_uge', 'fm_can300_bid_rtg_baseline', 'fm_can300_bid_rtg_intervals']
+weights: [18.0, 4.0, 4.0, 4.0, 15.0, 15.0, 15.0, 13.0, 13.0, 13.0]
+use_mapping_weights: True
+kind: validation
+fit_parameters: {}
+	*** FitMappingCollection ***
+experiment: Sha2015
+mappings: ['fm_can300_uge', 'fm_can300_rtg']
+weights: [54.0, 54.0]
+use_mapping_weights: True
+kind: training
+fit_parameters: {}
+	*** FitMappingCollection ***
+experiment: Sha2015
+mappings: ['fm_can300_plasma']
+weights: [None]
+use_mapping_weights: True
+kind: excluded
+fit_parameters: {}
+	*** FitMappingCollection ***
+experiment: Tamborlane2018
+mappings: ['fm_can100_uge_baseline', 'fm_can300_uge_baseline', 'fm_can100_uge', 'fm_can300_uge', 'fm_can100_rtg', 'fm_can300_rtg']
+weights: [8.0, 9.0, 8.0, 9.0, 8.0, 9.0]
+use_mapping_weights: True
+kind: validation
+fit_parameters: {}
+	*** FitMappingCollection ***
+experiment: Tamborlane2018
+mappings: ['fm_can100_plasma', 'fm_can300_plasma']
+weights: [None, None]
+use_mapping_weights: True
+kind: excluded
+fit_parameters: {}
+	*** FitMappingCollection ***
+experiment: Wattamwar2020
+mappings: ['fm_can150_fdc_fasted', 'fm_can150_fdc_fed']
+weights: [None, None]
+use_mapping_weights: True
+kind: excluded
+fit_parameters: {}
+Parameters
+	FitParameter<KI__RTG_E50 = 4.5e-05 [1e-06 - 0.0002]>
+	FitParameter<KI__RTG_base = 9.0 [6 - 13]>
+	FitParameter<KI__RTG_m_fpg = 0.75 [0.05 - 2]>
+	FitParameter<KI__RTG_max_inhibition = 0.6 [0.3 - 0.9]>
+FitSettings:
+	residual: NORMALIZED
+	parameter_scale: LOG10
+	loss_function: LINEAR
+	weighting_curves: ['MAPPING', 'POINTS']
+	weighting_points: ERROR_WEIGHTING
+	variable_step_size: True
+	relative_tolerance: 1e-06
+	absolute_tolerance: {'amount': 1e-12, 'concentration': 1e-12, 'other': 1e-06, 'ids': {}}
+	initial_time_step: 0.0
+	data_at_change: before
+Mappings: 103 (67 training, 36 validation)
+Data
+	experiment_keys: ['Chen2015', 'Chen2015', 'Chen2015', 'Chen2015', 'Chen2015', 'Devineni2012', 'Devineni2012', 'Devineni2012', 'Devineni2012', 'Devineni2012', 'Devineni2012', 'Devineni2013', 'Devineni2013', 'Devineni2013', 'Devineni2013', 'Devineni2013', 'Devineni2013', 'Devineni2013', 'Devineni2013', 'Devineni2014', 'Devineni2014', 'Devineni2014', 'Devineni2014', 'Devineni2015a', 'Devineni2015a', 'Devineni2015a', 'Devineni2015a', 'Devineni2015a', 'Devineni2015a', 'Devineni2015c', 'Devineni2015c', 'Devineni2015c', 'Devineni2015c', 'Devineni2015c', 'Devineni2015c', 'Devineni2015c', 'Devineni2015c', 'Devineni2016', 'Devineni2016', 'Devineni2016', 'Devineni2016', 'Iijima2015', 'Iijima2015', 'Iijima2015', 'Iijima2015', 'Iijima2015', 'Iijima2015', 'Iijima2015', 'Iijima2015', 'Iijima2015', 'Inagaki2014', 'Inagaki2014', 'Inagaki2014', 'Inagaki2014', 'Sha2011', 'Sha2011', 'Sha2011', 'Sha2011', 'Sha2011', 'Sha2011', 'Sha2011', 'Sha2011', 'Sha2011', 'Sha2011', 'Sha2011', 'Sha2011', 'Sha2011', 'Sha2011', 'Sha2011', 'Sha2011', 'Sha2011', 'Sha2014', 'Sha2014', 'Sha2014', 'Sha2014', 'Sha2014', 'Sha2014', 'Sha2014', 'Sha2014', 'Sha2014', 'Sha2014', 'Sha2014', 'Sha2014', 'Sha2014', 'Sha2014', 'Sha2014', 'Sha2014', 'Sha2014', 'Sha2014', 'Sha2014', 'Sha2014', 'Sha2014', 'Sha2014', 'Sha2014', 'Sha2014', 'Sha2015', 'Sha2015', 'Tamborlane2018', 'Tamborlane2018', 'Tamborlane2018', 'Tamborlane2018', 'Tamborlane2018', 'Tamborlane2018']
+	mapping_keys: ['fm_po_can_CAN100_glucose_cumulative_amount', 'fm_po_can_CAN300_glucose_cumulative_amount', 'fm_po_can_CAN100_glucose_RT_McrCl', 'fm_po_can_CAN300_glucose_RT_McrCl', 'fm_po_can_CAN0_glucose_cumulative_amount', 'fm_po_QD100_glucose_cumulative_amount', 'fm_po_BID300_glucose_cumulative_amount', 'fm_po_CAN0_glucose_RT', 'fm_po_QD100_glucose_RT', 'fm_po_BID300_glucose_RT', 'fm_po_CAN0_glucose_cumulative_amount', 'fm_po_can50_glucose_cumulative_amount', 'fm_po_can100_glucose_cumulative_amount', 'fm_po_can300_glucose_cumulative_amount', 'fm_po_can0_glucose_renal_threshold', 'fm_po_can50_glucose_renal_threshold', 'fm_po_can100_glucose_renal_threshold', 'fm_po_can300_glucose_renal_threshold', 'fm_po_can0_glucose_cumulative_amount', 'fm_po_can300_glucose_cumulative_amount', 'fm_po_can300_glucose_renal_threshold', 'fm_po_can300_hctz25_glucose_cumulative_amount', 'fm_po_can300_hctz25_glucose_renal_threshold', 'fm_po_can_50_glucose_cumulative_amount_multi', 'fm_po_can_100_glucose_cumulative_amount_multi', 'fm_po_can_300_glucose_cumulative_amount_multi', 'fm_po_can_50_glucose_renal_threshold_multi', 'fm_po_can_100_glucose_renal_threshold_multi', 'fm_po_can_300_glucose_renal_threshold_multi', 'fm_po_can200_normal_renal_glucose_cumulative_amount', 'fm_po_can200_normal_renal_glucose_RT', 'fm_po_can200_mild_renal_glucose_cumulative_amount', 'fm_po_can200_mild_renal_glucose_RT', 'fm_po_can200_moderate_renal_glucose_cumulative_amount', 'fm_po_can200_moderate_renal_glucose_RT', 'fm_po_can200_severe_renal_glucose_cumulative_amount', 'fm_po_can200_severe_renal_glucose_RT', 'fm_po_can200_glucose_cumulative_amount', 'fm_po_can300_glucose_cumulative_amount', 'fm_po_can200_glucose_renal_threshold', 'fm_po_can300_glucose_renal_threshold', 'fm_po_can0_rtg_mean', 'fm_po_can25_rtg_mean', 'fm_po_can100_rtg_mean', 'fm_po_can200_rtg_mean', 'fm_po_can400_rtg_mean', 'fm_po_can25_uge_change', 'fm_po_can100_uge_change', 'fm_po_can200_uge_change', 'fm_po_can400_uge_change', 'fm_po_can_glucose_excretion_daily_100_normal', 'fm_po_can_glucose_excretion_daily_200_normal', 'fm_po_can_glucose_excretion_daily_100_moderate', 'fm_po_can_glucose_excretion_daily_200_moderate', 'fm_can10_uge', 'fm_can30_uge', 'fm_can100_uge', 'fm_can200_uge', 'fm_can400_uge', 'fm_can600_uge', 'fm_can800_uge', 'fm_can10_rtg', 'fm_can30_rtg', 'fm_can100_rtg', 'fm_can200_rtg', 'fm_can400_rtg', 'fm_can600_rtg', 'fm_can800_rtg', 'fm_can0_uge', 'fm_can400bid_uge', 'fm_can400bid_rtg', 'fm_pbo_rtg_baseline', 'fm_pbo_rtg_intervals', 'fm_can30_uge', 'fm_can30_rtg_baseline', 'fm_can30_rtg_intervals', 'fm_can100_uge', 'fm_can100_rtg_baseline', 'fm_can100_rtg_intervals', 'fm_can200_uge', 'fm_can200_rtg_baseline', 'fm_can200_rtg_intervals', 'fm_can400_uge', 'fm_can400_rtg_baseline', 'fm_can400_rtg_intervals', 'fm_pbo_uge', 'fm_pbo_k_uge', 'fm_pbo_k_rtg_baseline', 'fm_pbo_k_rtg_d16', 'fm_can30_k_uge', 'fm_can30_k_rtg_baseline', 'fm_can30_k_rtg_d16', 'fm_can300_bid_uge', 'fm_can300_bid_rtg_baseline', 'fm_can300_bid_rtg_intervals', 'fm_can300_uge', 'fm_can300_rtg', 'fm_can100_uge_baseline', 'fm_can300_uge_baseline', 'fm_can100_uge', 'fm_can300_uge', 'fm_can100_rtg', 'fm_can300_rtg']
+	xid_observable: ['time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time']
+	yid_observable: ['KI__UGE', 'KI__UGE', 'KI__RTG_mean', 'KI__RTG_mean', 'KI__UGE', 'KI__UGE', 'KI__UGE', 'KI__RTG_mean', 'KI__RTG_mean', 'KI__RTG_mean', 'KI__UGE', 'KI__UGE', 'KI__UGE', 'KI__UGE', 'KI__RTG_mean', 'KI__RTG_mean', 'KI__RTG_mean', 'KI__RTG_mean', 'KI__UGE', 'KI__UGE', 'KI__RTG_mean', 'KI__UGE', 'KI__RTG_mean', 'KI__UGE', 'KI__UGE', 'KI__UGE', 'KI__RTG_mean', 'KI__RTG_mean', 'KI__RTG_mean', 'KI__UGE', 'KI__RTG_mean', 'KI__UGE', 'KI__RTG_mean', 'KI__UGE', 'KI__RTG_mean', 'KI__UGE', 'KI__RTG_mean', 'KI__UGE', 'KI__UGE', 'KI__RTG_mean', 'KI__RTG_mean', 'KI__RTG_mean', 'KI__RTG_mean', 'KI__RTG_mean', 'KI__RTG_mean', 'KI__RTG_mean', 'KI__UGE', 'KI__UGE', 'KI__UGE', 'KI__UGE', 'KI__UGE', 'KI__UGE', 'KI__UGE', 'KI__UGE', 'KI__UGE', 'KI__UGE', 'KI__UGE', 'KI__UGE', 'KI__UGE', 'KI__UGE', 'KI__UGE', 'KI__RTG_mean', 'KI__RTG_mean', 'KI__RTG_mean', 'KI__RTG_mean', 'KI__RTG_mean', 'KI__RTG_mean', 'KI__RTG_mean', 'KI__UGE', 'KI__UGE', 'KI__RTG_mean', 'KI__RTG_mean', 'KI__RTG_mean', 'KI__UGE', 'KI__RTG_mean', 'KI__RTG_mean', 'KI__UGE', 'KI__RTG_mean', 'KI__RTG_mean', 'KI__UGE', 'KI__RTG_mean', 'KI__RTG_mean', 'KI__UGE', 'KI__RTG_mean', 'KI__RTG_mean', 'KI__UGE', 'KI__UGE', 'KI__RTG_mean', 'KI__RTG_mean', 'KI__UGE', 'KI__RTG_mean', 'KI__RTG_mean', 'KI__UGE', 'KI__RTG_mean', 'KI__RTG_mean', 'KI__UGE', 'KI__RTG_mean', 'KI__UGE', 'KI__UGE', 'KI__UGE', 'KI__UGE', 'KI__RTG_mean', 'KI__RTG_mean']
+	x_references: [array([   0., 1440.]), array([   0., 1440.]), array([1440.]), array([1440.]), array([   0., 1440.]), array([1440.]), array([1440.]), array([-37440., -36000.,   1440.]), array([-37440., -36000.,   1440.]), array([-37440., -36000.,   1440.]), array([1440.]), array([-10080.,  -8640.,  -7200.,   1440.]), array([-10080.,  -8640.,  -7200.,   1440.]), array([-10080.,  -8640.,  -7200.,   1440.]), array([-8640., -7200.,  1440.]), array([-8640., -7200.,  1440.]), array([-8640., -7200.,  1440.]), array([-8640., -7200.,  1440.]), array([-10080.,  -8640.,  -7200.,   1440.]), array([1440.]), array([1440.]), array([1440.]), array([1440.]), array([-10080.,   1440.,   2880.]), array([-10080.,   1440.,   2880.]), array([-10080.,   1440.,   2880.]), array([-10080.,   1440.,   2880.]), array([-10080.,   1440.,   2880.]), array([-10080.,   1440.,   2880.]), array([   0., 1440.]), array([ 240.,  600., 1440.]), array([   0., 1440.]), array([ 240.,  600., 1440.]), array([   0., 1440.]), array([ 240.,  600., 1440.]), array([   0., 1440.]), array([ 240.,  600., 1440.]), array([   0.,  120.,  240.,  420.,  600.,  780., 1440., 2880., 4320.]), array([   0.,  120.,  240.,  420.,  600.,  780., 1440., 2880., 4320.]), array([240.]), array([240.]), array([-20160.,   1440.]), array([-20160.,   1440.]), array([-20160.,   1440.]), array([-20160.,   1440.]), array([-20160.,   1440.]), array([-20160., -18720., -17280., -15840., -14400., -12960.,      0.,
+         1440.,   2880.,   4320.]), array([-20160., -18720., -17280., -15840., -14400., -12960.,      0.,
+         1440.,   2880.,   4320.]), array([-20160., -18720., -17280., -15840., -14400., -12960.,      0.,
+         1440.,   2880.,   4320.]), array([-20160., -18720., -17280., -15840., -14400., -12960.,      0.,
+         1440.,   2880.,   4320.]), array([1440., 2880., 4320.]), array([1440., 2880., 4320.]), array([1440., 2880., 4320.]), array([1440., 2880., 4320.]), array([   0., 1440.]), array([   0., 1440.]), array([   0., 1440.]), array([   0., 1440.]), array([   0., 1440.]), array([   0., 1440.]), array([   0., 1440.]), array([1440.]), array([1440.]), array([1440.]), array([1440.]), array([1440.]), array([1440.]), array([1440.]), array([   0., 1440.]), array([   0., 1440.]), array([1440.]), array([-23040.]), array([-660.,    0.]), array([-23040., -21600., -20160., -18720., -17280., -15840., -14400.,
+       -12960., -11520., -10080.,  -8640.,  -7200.,  -5760.,  -4320.,
+        -2880.,  -1440.,      0.,   1440.,   2880.,   4320.]), array([-23040.]), array([-660.,    0.]), array([-23040., -21600., -20160., -18720., -17280., -15840., -14400.,
+       -12960., -11520., -10080.,  -8640.,  -7200.,  -5760.,  -4320.,
+        -2880.,  -1440.,      0.,   1440.,   2880.,   4320.]), array([-23040.]), array([-660.,    0.]), array([-23040., -21600., -20160., -18720., -17280., -15840., -14400.,
+       -12960., -11520., -10080.,  -8640.,  -7200.,  -5760.,  -4320.,
+        -2880.,  -1440.,      0.,   1440.,   2880.,   4320.]), array([-23040.]), array([-660.,    0.]), array([-23040., -21600., -20160., -18720., -17280., -15840., -14400.,
+       -12960., -11520., -10080.,  -8640.,  -7200.,  -5760.,  -4320.,
+        -2880.,  -1440.,      0.,   1440.,   2880.,   4320.]), array([-23040.]), array([-660.,    0.]), array([-23040., -21600., -20160., -18720., -17280., -15840., -14400.,
+       -12960., -11520., -10080.,  -8640.,  -7200.,  -5760.,  -4320.,
+        -2880.,  -1440.,      0.,   1440.,   2880.,   4320.]), array([-23040., -21600., -20160., -18720., -17280., -15840., -14400.,
+       -12960., -11520., -10080.,  -8640.,  -7200.,  -5760.,  -4320.,
+        -2880.,  -1440.,      0.,   1440.,   2880.,   4320.]), array([-23040.]), array([0.]), array([-23040., -21600., -20160., -18720., -17280., -15840., -14400.,
+       -12960., -11520., -10080.,  -8640.,  -7200.,  -5760.,  -4320.,
+        -2880.,  -1440.,      0.,   1440.,   2880.,   4320.]), array([-23040.]), array([0.]), array([-23040., -21600., -20160., -18720., -17280., -15840., -14400.,
+       -12960., -11520., -10080.,  -8640.,  -7200.,  -5760.,  -4320.,
+        -2880.,  -1440.,      0.,   1440.,   2880.,   4320.]), array([-23040.]), array([-660.,    0.]), array([ 139.998,  259.998,  619.998,  859.998, 1459.998]), array([ 259.998,  619.998,  859.998, 1459.998]), array([-19440., -18720.]), array([-19440., -18720.]), array([ 720., 1440.]), array([ 720., 1440.]), array([ 720., 1440.]), array([ 720., 1440.])]
+	y_references: [array([ 0. , 33.8]), array([ 0. , 42.9]), array([3.76887211]), array([3.36922735]), array([0.   , 0.009]), array([77.11]), array([156.7]), array([12.7       , 12.4       , 13.23138833]), array([12.33320785,  5.9102136 ,  5.65355612]), array([12.27866085,  5.41297616,  4.17607558]), array([8.1]), array([ 0. , 14.5, 80.8, 99.3]), array([  0. ,  15.6, 117.3, 119.1]), array([  0. ,  10.5, 113.1, 111.5]), array([13.04396092, 13.54351687, 13.04396092]), array([13.54351687,  7.93738899,  6.60523979]), array([11.76731794,  5.41185613,  4.26287744]), array([13.15497336,  5.77264654,  4.71802842]), array([ 0. ,  9.8, 12.4, 16.2]), array([42.34]), array([3.22]), array([41.34]), array([3.48]), array([34.5, 28.9, 35.5]), array([48.1, 44.6, 67. ]), array([ 62. ,  60.9, 104.6]), array([4.18516874, 4.55706039, 5.63943162]), array([3.23046181, 3.49689165, 4.31838366]), array([2.51998224, 2.60879218, 3.39142984]), array([ 0. , 50.7]), array([4.14742451, 3.82215808, 4.55428508]), array([ 0. , 26.1]), array([3.92817496, 3.10279751, 3.99700266]), array([ 0. , 10.9]), array([5.72990675, 5.24533748, 5.37355684]), array([0. , 4.7]), array([5.1892762 , 4.98778863, 5.20481794]), array([ 0.        ,  2.82980178,  6.92071087, 14.61038961, 19.87012987,
+       25.71428571, 37.83321941, 59.5796309 , 65.30075188]), array([ 0.        ,  2.03007519,  6.88995215, 15.31784005, 21.80792891,
+       28.17498291, 40.38619275, 69.4531784 , 77.81954887]), array([3.37477798]), array([3.39698046]), array([13.74333925, 12.910746  ]), array([6.98823268, 6.05572824]), array([5.43960924, 4.75133215]), array([5.33414742, 4.26842806]), array([4.02420071, 3.6634103 ]), array([57.5, 18.4, 60.9, 60.1, 57.7, 54. , 63. , 61.3, 19.6,  8.7]), array([ 93.7,  57.5,  98.8, 100.8, 103.4,  93.6, 104.6,  98. ,  53.8,
+        27.3]), array([83.4, 60.9, 90.2, 82.2, 82.7, 82.7, 67.3, 71. , 56.6, 40. ]), array([110.1,  81.9, 100.6,  96.2,  95.1,  84.4,  80.2,  80.2,  73.3,
+        53.7]), array([87., 36.,  4.]), array([103.,  59.,  24.]), array([61., 34., 14.]), array([71., 48., 26.]), array([0., 8.]), array([ 0. , 17.5]), array([ 0. , 43.6]), array([ 0. , 48.6]), array([ 0. , 65.1]), array([ 0. , 69.2]), array([ 0. , 65.5]), array([6.30203081]), array([5.63621647]), array([3.87749864]), array([3.95568744]), array([3.73285582]), array([3.40055768]), array([3.42401357]), array([0. , 0.1]), array([ 0. , 58.7]), array([3.45601979]), array([13.2]), array([12.86713287, 12.982     ]), array([ 10.9  ,  74.827,  35.354,  70.287,  69.498,  72.656,  94.957,
+        90.813,  90.221,  86.471,  82.524,  83.905,  85.879,  90.813,
+       100.681,  87.852,  79.761,  45.814,  28.249,  17.987]), array([14.4]), array([7.98098305, 8.864     ]), array([ 11.5  ,  95.557,  71.677, 111.346, 112.728, 111.346, 115.096,
+       115.886, 120.622, 122.201, 106.61 , 118.451, 110.557, 105.031,
+       112.925, 106.412,  88.255,  68.519,  44.243,  26.678]), array([13.]), array([4.62346457, 6.431     ]), array([ 22.2  , 129.151, 102.902, 150.269, 136.454, 143.164, 116.125,
+        99.744, 104.88 ,  88.692,  92.047, 107.836, 134.085, 137.243,
+       122.63 , 125.401, 110.205,  99.35 ,  79.614,  58.496]), array([13.5]), array([4.58492447, 5.298     ]), array([ 43.7  , 169.598, 114.337, 149.862, 154.401, 157.559, 181.637,
+       171.769, 146.704, 157.164, 155.783, 150.1  , 167.624, 196.439,
+       164.861, 166.638, 156.77 , 128.744, 109.403,  73.68 ]), array([14.]), array([3.76192353, 4.497     ]), array([24.5  , 21.126, 24.284, 20.929, 28.231, 27.442, 24.087, 22.508,
+       20.337, 17.179, 16.39 , 14.614, 23.495, 26.455, 30.6  , 22.705,
+       14.219, 14.614, 16.192, 21.916]), array([17.4  , 19.947, 12.448, 12.45 , 16.789, 10.079, 15.61 , 15.6  ,
+        8.303,  5.343,  5.54 ,  7.7  ,  3.764,  3.764,  3.764,  4.553,
+        6.13 ,  6.13 ,  8.5  , 11.066]), array([14.9]), array([14.4]), array([17.5  , 44.915, 24.587, 46.494, 38.402, 39.586, 47.678, 53.007,
+       50.441, 49.257, 47.678, 47.678, 44.52 , 40.178, 37.612, 41.757,
+       47.086, 23.995, 12.942,  9.785]), array([14.1]), array([7.6]), array([ 12.5  , 118.465, 105.636, 108.202, 106.82 , 109.781, 124.78 ,
+       101.097,  98.531,  87.9  ,  98.728, 100.307, 107.61 , 103.86 ,
+       104.254, 105.044, 101.097,  85.308,  80.374,  51.362]), array([13.3]), array([4.61724427, 5.188     ]), array([ 7.27, 12.83, 29.16, 40.09, 51.37]), array([3.33103448, 3.41517241, 3.9137931 , 4.13172414]), array([4. , 5.3]), array([0.1, 0.1]), array([50.8, 74.1]), array([43.4, 68.6]), array([4.11301066, 5.27864121]), array([3.70226465, 3.96869449])]
+	y_errors: [array([10.4, 10.4]), array([6.67, 6.67]), array([0.78263766]), array([0.53174956]), array([0.01, 0.01]), array([33.85]), array([65.89]), array([1.64      , 1.77      , 1.54527163]), array([1.83380894, 1.32816845, 1.35969205]), array([0.85356583, 1.67599665, 1.23320907]), array([15.64]), array([26.8, 19.1, 26.8, 17.5]), array([30.7, 12.4, 18.8, 30.7]), array([27.2,  9.2, 27.2, 24.3]), array([1.49866785, 1.44316163, 1.77619893]), array([1.94271758, 1.6651865 , 1.83170515]), array([1.22113677, 1.16563055, 0.88809947]), array([1.83170515, 1.49866785, 1.11012433]), array([14. ,  6.6,  8.6, 14. ]), None, None, None, None, array([10.3 ,  9.9 ,  7.01]), array([12.3 , 16.5 ,  6.59]), array([10.9 , 18.7 , 20.17]), array([0.29418295, 0.50510657, 0.68439165]), array([0.89920071, 1.11567496, 0.48234902]), array([0.84924512, 0.96025755, 1.02242451]), array([10.04, 10.04]), array([1.12733126, 0.62222469, 0.46736234]), array([10.04, 10.04]), array([0.51953819, 0.6910524 , 0.25199822]), array([10.04, 10.04]), array([1.35546181, 1.47480018, 1.45703819]), array([10.04, 10.04]), array([0.62833037, 0.6616341 , 0.64442718]), array([11.91279908,  0.51102005,  1.24977731,  2.63841876,  3.58824952,
+        4.64361702,  6.79      ,  9.41111128, 11.91279908]), array([16.2274888 ,  0.42621479,  1.44654717,  3.21598433,  4.5785801 ,
+        5.40916293,  8.44      , 14.73133735, 16.2274888 ]), array([0.49400533]), array([0.39076377]), array([1.79840142, 1.59857904]), array([0.75488455, 0.93805506]), array([1.21558615, 1.32659858]), array([1.53197158, 0.78263766]), array([0.90475133, 1.02686501]), array([ 9.5, 13.6, 14.2, 17.4, 16.5, 13.8, 16.5, 16.7, 17.5, 20.6]), array([11.1, 16.7, 23.1, 23.5, 21.2, 20.6, 21.7, 20.3, 16.2, 23.1]), array([32.1, 17.2, 13.2, 29.7, 25.6, 19.2, 15. , 13.2, 13.2, 18.6]), array([21. , 18.6, 19.8, 15.6, 18.8, 18.5, 25.3, 29.2, 13.5, 22.7]), array([16.88992828, 24.3916548 , 31.47345259]), array([22.60907552, 15.8685141 , 18.70767319]), array([18.65973071, 11.29343419,  8.26457024]), array([18.41324436, 13.97452146, 11.37103358]), array([1.46969385, 1.46969385]), array([6.85857128, 6.85857128]), array([6.36867333, 6.36867333]), array([8.81816307, 8.81816307]), array([11.26765282, 11.26765282]), array([11.26765282, 11.26765282]), array([12.49239769, 12.49239769]), array([0.05446464]), array([0.4189392]), array([0.33515002]), array([0.26393257]), array([0.38124077]), array([0.38543525]), array([0.33934618]), array([0.77459667, 0.77459667]), array([8.08331615, 8.08331615]), array([0.410572]), array([1.7]), array([1.52913753, 1.548     ]), array([11.9, 11.9, 11.9, 11.9, 11.9, 11.9, 11.9, 11.9, 11.9, 11.9, 11.9,
+       11.9, 11.9, 11.9, 11.9, 11.9, 11.9, 11.9, 11.9, 11.9]), array([1.5]), array([1.26806527, 1.492     ]), array([11.5, 11.5, 11.5, 11.5, 11.5, 11.5, 11.5, 11.5, 11.5, 11.5, 11.5,
+       11.5, 11.5, 11.5, 11.5, 11.5, 11.5, 11.5, 11.5, 11.5]), array([1.6]), array([1.19346461, 1.051     ]), array([32.9, 32.9, 32.9, 32.9, 32.9, 32.9, 32.9, 32.9, 32.9, 32.9, 32.9,
+       32.9, 32.9, 32.9, 32.9, 32.9, 32.9, 32.9, 32.9, 32.9]), array([1.6]), array([1.67833026, 1.437     ]), array([67.9, 67.9, 67.9, 67.9, 67.9, 67.9, 67.9, 67.9, 67.9, 67.9, 67.9,
+       67.9, 67.9, 67.9, 67.9, 67.9, 67.9, 67.9, 67.9, 67.9]), array([1.8]), array([1.30536131, 1.105     ]), array([31.9, 31.9, 31.9, 31.9, 31.9, 31.9, 31.9, 31.9, 31.9, 31.9, 31.9,
+       31.9, 31.9, 31.9, 31.9, 31.9, 31.9, 31.9, 31.9, 31.9]), array([11.6, 11.6, 11.6, 11.6, 11.6, 11.6, 11.6, 11.6, 11.6, 11.6, 11.6,
+       11.6, 11.6, 11.6, 11.6, 11.6, 11.6, 11.6, 11.6, 11.6]), array([2.6]), array([2.2]), array([14.5, 14.5, 14.5, 14.5, 14.5, 14.5, 14.5, 14.5, 14.5, 14.5, 14.5,
+       14.5, 14.5, 14.5, 14.5, 14.5, 14.5, 14.5, 14.5, 14.5]), array([1.]), array([1.4]), array([16.4, 16.4, 16.4, 16.4, 16.4, 16.4, 16.4, 16.4, 16.4, 16.4, 16.4,
+       16.4, 16.4, 16.4, 16.4, 16.4, 16.4, 16.4, 16.4, 16.4]), array([1.8]), array([1.08158508, 1.299     ]), array([ 4.63310301,  3.3974483 ,  7.72205452,  9.88366282, 13.04      ]), array([0.76018647, 0.67403201, 0.75511856, 0.4155686 ]), array([ 7.28888889, 10.5       ]), array([0.05, 0.05]), array([29. , 37.4]), array([18.4, 26.5]), array([0.71047957, 0.95470693]), array([0.43849911, 0.80484014])]
+	y_errors_type: ['SD', 'SD', 'SD', 'SD', 'SD', 'SD', 'SD', 'SD', 'SD', 'SD', 'SD', 'SD', 'SD', 'SD', 'SD', 'SD', 'SD', 'SD', 'SD', None, None, None, None, 'SD', 'SD', 'SD', 'SD', 'SD', 'SD', 'SD', 'SD', 'SD', 'SD', 'SD', 'SD', 'SD', 'SD', 'SD', 'SD', 'SD', 'SD', 'SD', 'SD', 'SD', 'SD', 'SD', 'SD', 'SD', 'SD', 'SD', 'SD', 'SD', 'SD', 'SD', 'SD', 'SD', 'SD', 'SD', 'SD', 'SD', 'SD', 'SD', 'SD', 'SD', 'SD', 'SD', 'SD', 'SD', 'SD', 'SD', 'SD', 'SD', 'SD', 'SD', 'SD', 'SD', 'SD', 'SD', 'SD', 'SD', 'SD', 'SD', 'SD', 'SD', 'SD', 'SD', 'SD', 'SD', 'SD', 'SD', 'SD', 'SD', 'SD', 'SD', 'SD', 'SD', 'SD', 'SD', 'SD', 'SD', 'SD', 'SD', 'SD']
+	weights: [array([ 0.  , 22.75]), array([ 0.        , 45.02248876]), array([67.41843972]), array([88.70563674]), array([0. , 6.3]), array([22.77991137]), array([23.78206101]), array([23.23170732, 21.01694915, 25.6875    ]), array([22.41819851, 14.832992  , 13.85989354]), array([47.9504543 , 10.76568613, 11.28782806]), array([5.17902813]), array([ 0.        ,  1.70811518,  6.78358209, 12.76714286]), array([ 0.        ,  2.51612903, 12.4787234 ,  7.75895765]), array([ 0.        ,  2.85326087, 10.39522059, 11.47119342]), array([26.11111111, 28.15384615, 22.03125   ]), array([20.91428571, 14.3       , 10.81818182]), array([25.6969697 , 12.38095238, 12.8       ]), array([23.93939394, 12.83950617, 14.16666667]), array([0.        , 3.34090909, 3.24418605, 2.60357143]), array([56.]), array([56.]), array([56.]), array([56.]), array([10.04854369,  8.75757576, 15.19258203]), array([11.73170732,  8.10909091, 30.50075873]), array([17.06422018,  9.77005348, 15.55775905]), array([42.67924528, 27.06593407, 24.72019465]), array([10.77777778,  9.40298507, 26.858458  ]), array([8.90196078, 8.15028902, 9.95114007]), array([ 0.        , 20.19920319]), array([ 9.81060233, 16.38061255, 25.98574822]), array([ 0.        , 10.39840637]), array([20.16239316, 11.97322624, 42.29662261]), array([0.        , 4.34262948]), array([11.27272727,  9.48438088,  9.83466667]), array([0.        , 1.87250996]), array([22.02355713, 20.10290828, 21.53775481]), array([ 0.        ,  9.22925871,  9.22925871,  9.22925871,  9.22925871,
+        9.22925871,  9.28650452, 10.55129218,  9.13593738]), array([0.        , 7.40916272, 7.40916272, 7.40916272, 7.40916272,
+       8.10250158, 7.44347944, 7.33390832, 7.4597267 ]), array([102.47191011]), array([121.70454545]), array([38.20987654, 40.38194444]), array([55.54411765, 38.73372781]), array([26.84931507, 21.48953975]), array([24.37318841, 38.17730496]), array([28.91104294, 23.18918919]), array([7.26315789, 1.62352941, 5.14647887, 4.14482759, 4.19636364,
+       4.69565217, 4.58181818, 4.40479042, 1.344     , 0.50679612]), array([10.12972973,  4.13173653,  5.13246753,  5.14723404,  5.85283019,
+        5.45242718,  5.7843318 ,  5.79310345,  3.98518519,  1.41818182]), array([3.63738318, 4.95697674, 9.56666667, 3.87474747, 4.52265625,
+       6.03020833, 6.28133333, 7.53030303, 6.0030303 , 3.01075269]), array([6.81571429, 5.72419355, 6.60505051, 8.01666667, 6.57606383,
+       5.93081081, 4.12094862, 3.57054795, 7.05851852, 3.0753304 ]), array([20.60399513,  5.90365849,  0.50836495]), array([18.22277075, 14.87221794,  5.13158419]), array([13.07628732, 12.0423954 ,  6.77591192]), array([15.42368061, 13.73928979,  9.14604634]), array([ 0.        , 16.32993162]), array([0.        , 7.65465545]), array([ 0.        , 20.53802938]), array([ 0.        , 16.53405576]), array([ 0.        , 17.33280242]), array([ 0.        , 18.42442285]), array([ 0.        , 15.72956649]), array([694.25197472]), array([80.72125742]), array([69.41665095]), array([89.92495722]), array([58.74800622]), array([52.93585914]), array([60.54018825]), array([0.        , 0.96824584]), array([ 0.        , 21.78561332]), array([50.50543766]), array([139.76470588]), array([75.73170732, 75.47674419]), array([0.73277311, 5.03038655, 2.3767395 , 4.72517647, 4.67213445,
+       4.88443697, 6.38366387, 6.10507563, 6.06527731, 5.81317647,
+       5.54783193, 5.64067227, 5.77337815, 6.10507563, 6.76847059,
+       5.90601681, 5.36208403, 3.07993277, 1.89909244, 1.20921008]), array([153.6]), array([50.35061368, 47.52815013]), array([0.8       , 6.64744348, 4.98622609, 7.7458087 , 7.84194783,
+       7.7458087 , 8.00667826, 8.06163478, 8.39109565, 8.50093913,
+       7.41634783, 8.24006957, 7.69092174, 7.30650435, 7.85565217,
+       7.40257391, 6.13947826, 4.76653913, 3.07777391, 1.85586087]), array([130.]), array([30.99188371, 48.95147479]), array([0.53981763, 3.14044985, 2.50217629, 3.65395745, 3.3180304 ,
+       3.48119149, 2.82370821, 2.42538602, 2.55027356, 2.15664438,
+       2.23822492, 2.62215198, 3.26042553, 3.33721581, 2.9818845 ,
+       3.04926444, 2.67975684, 2.41580547, 1.93590274, 1.42239514]), array([135.]), array([21.85469491, 29.49478079]), array([0.51487482, 1.99820913, 1.34712224, 1.76567894, 1.81915758,
+       1.85636524, 2.14005302, 2.02378792, 1.72847128, 1.85171134,
+       1.83544035, 1.76848306, 1.9749514 , 2.31445066, 1.94239764,
+       1.96333432, 1.84706922, 1.51686598, 1.28898969, 0.86810015]), array([124.44444444]), array([23.05521706, 32.55746606]), array([0.69122257, 0.59603135, 0.68512853, 0.59047335, 0.79648589,
+       0.77422571, 0.67957053, 0.63502194, 0.57377116, 0.48467398,
+       0.46241379, 0.41230721, 0.66286834, 0.74637931, 0.86332288,
+       0.64057994, 0.40116301, 0.41230721, 0.45682759, 0.61831975]), array([0.3       , 0.34391379, 0.21462069, 0.21465517, 0.28946552,
+       0.17377586, 0.26913793, 0.26896552, 0.14315517, 0.09212069,
+       0.09551724, 0.13275862, 0.06489655, 0.06489655, 0.06489655,
+       0.0785    , 0.10568966, 0.10568966, 0.14655172, 0.1907931 ]), array([22.92307692]), array([26.18181818]), array([0.90517241, 2.32318966, 1.27174138, 2.40486207, 1.98631034,
+       2.04755172, 2.46610345, 2.74174138, 2.60901724, 2.54777586,
+       2.46610345, 2.46610345, 2.30275862, 2.07817241, 1.94544828,
+       2.15984483, 2.43548276, 1.24112069, 0.66941379, 0.50612069]), array([211.5]), array([81.42857143]), array([0.49542683, 4.69525915, 4.18679268, 4.2884939 , 4.23371951,
+       4.35107622, 4.94554878, 4.00689329, 3.90519207, 3.48384146,
+       3.913     , 3.97558232, 4.26503049, 4.11640244, 4.13201829,
+       4.16332927, 4.00689329, 3.38110976, 3.18555488, 2.03568902]), array([96.05555556]), array([27.74824493, 25.95996921]), array([16.94674169, 40.78472661, 40.78292884, 43.80683639, 42.54570552]), array([ 59.15517729,  68.40154064,  69.97074307, 134.22158277]), array([2.19512195, 2.01904762]), array([9., 9.]), array([7.00689655, 7.92513369]), array([10.61413043, 11.6490566 ]), array([23.15625   , 22.11627907]), array([37.99367089, 22.18965517])]
+	weights_points: [array([0.  , 3.25]), array([0.        , 6.43178411]), array([4.81560284]), array([6.33611691]), array([0. , 0.9]), array([2.27799114]), array([2.3782061]), array([7.74390244, 7.00564972, 8.5625    ]), array([6.72545955, 4.4498976 , 4.15796806]), array([14.38513629,  3.22970584,  3.38634842]), array([0.51790281]), array([0.        , 0.7591623 , 3.01492537, 5.67428571]), array([0.        , 1.25806452, 6.2393617 , 3.87947883]), array([0.        , 1.14130435, 4.15808824, 4.58847737]), array([8.7037037 , 9.38461538, 7.34375   ]), array([6.97142857, 4.76666667, 3.60606061]), array([9.63636364, 4.64285714, 4.8       ]), array([7.18181818, 3.85185185, 4.25      ]), array([0.        , 1.48484848, 1.44186047, 1.15714286]), array([2.]), array([2.]), array([2.]), array([2.]), array([3.34951456, 2.91919192, 5.06419401]), array([ 3.91056911,  2.7030303 , 10.16691958]), array([5.68807339, 3.25668449, 5.18591968]), array([14.22641509,  9.02197802,  8.24006488]), array([3.59259259, 3.13432836, 8.95281933]), array([2.96732026, 2.71676301, 3.31704669]), array([0.       , 5.0498008]), array([3.67897587, 6.14272971, 9.74465558]), array([0.        , 2.59960159]), array([ 7.56089744,  4.48995984, 15.86123348]), array([0.        , 1.08565737]), array([4.22727273, 3.55664283, 3.688     ]), array([0.        , 0.46812749]), array([8.25883392, 7.5385906 , 8.07665805]), array([0.        , 5.53755523, 5.53755523, 5.53755523, 5.53755523,
+       5.53755523, 5.57190271, 6.33077531, 5.48156243]), array([0.        , 4.76303318, 4.76303318, 4.76303318, 4.76303318,
+       5.20875101, 4.78509393, 4.71465535, 4.7955386 ]), array([6.83146067]), array([8.69318182]), array([7.64197531, 8.07638889]), array([9.25735294, 6.4556213 ]), array([4.47488584, 3.58158996]), array([3.48188406, 5.45390071]), array([4.44785276, 3.56756757]), array([6.05263158, 1.35294118, 4.28873239, 3.45402299, 3.4969697 ,
+       3.91304348, 3.81818182, 3.67065868, 1.12      , 0.4223301 ]), array([8.44144144, 3.44311377, 4.27705628, 4.2893617 , 4.87735849,
+       4.54368932, 4.8202765 , 4.82758621, 3.32098765, 1.18181818]), array([2.59813084, 3.54069767, 6.83333333, 2.76767677, 3.23046875,
+       4.30729167, 4.48666667, 5.37878788, 4.28787879, 2.15053763]), array([5.24285714, 4.40322581, 5.08080808, 6.16666667, 5.05851064,
+       4.56216216, 3.16996047, 2.74657534, 5.42962963, 2.36563877]), array([5.15099878, 1.47591462, 0.12709124]), array([4.55569269, 3.71805448, 1.28289605]), array([3.26907183, 3.01059885, 1.69397798]), array([3.85592015, 3.43482245, 2.28651158]), array([0.        , 5.44331054]), array([0.        , 2.55155182]), array([0.        , 6.84600979]), array([0.        , 5.51135192]), array([0.        , 5.77760081]), array([0.        , 6.14147428]), array([0.        , 5.24318883]), array([115.70866245]), array([13.4535429]), array([11.56944183]), array([14.98749287]), array([9.79133437]), array([8.82264319]), array([10.09003137]), array([0.        , 0.12909944]), array([0.        , 7.26187111]), array([8.41757294]), array([7.76470588]), array([8.41463415, 8.38630491]), array([0.91596639, 6.28798319, 2.97092437, 5.90647059, 5.84016807,
+       6.10554622, 7.97957983, 7.63134454, 7.58159664, 7.26647059,
+       6.93478992, 7.05084034, 7.21672269, 7.63134454, 8.46058824,
+       7.38252101, 6.70260504, 3.84991597, 2.37386555, 1.51151261]), array([9.6]), array([6.29382671, 5.94101877]), array([ 1.        ,  8.30930435,  6.23278261,  9.68226087,  9.80243478,
+        9.68226087, 10.00834783, 10.07704348, 10.48886957, 10.62617391,
+        9.27043478, 10.30008696,  9.61365217,  9.13313043,  9.81956522,
+        9.25321739,  7.67434783,  5.95817391,  3.84721739,  2.31982609]), array([8.125]), array([3.87398546, 6.11893435]), array([0.67477204, 3.92556231, 3.12772036, 4.56744681, 4.14753799,
+       4.35148936, 3.52963526, 3.03173252, 3.18784195, 2.69580547,
+       2.79778116, 3.27768997, 4.07553191, 4.17151976, 3.72735562,
+       3.81158055, 3.34969605, 3.01975684, 2.41987842, 1.77799392]), array([8.4375]), array([2.73183686, 3.6868476 ]), array([0.64359352, 2.49776141, 1.6839028 , 2.20709867, 2.27394698,
+       2.32045655, 2.67506627, 2.5297349 , 2.1605891 , 2.31463918,
+       2.29430044, 2.21060383, 2.46868925, 2.89306333, 2.42799705,
+       2.45416789, 2.30883652, 1.89608247, 1.61123711, 1.08512518]), array([7.77777778]), array([2.88190213, 4.06968326]), array([0.76802508, 0.66225705, 0.76125392, 0.6560815 , 0.88498433,
+       0.86025078, 0.75507837, 0.70557994, 0.63752351, 0.53852665,
+       0.5137931 , 0.45811912, 0.73652038, 0.82931034, 0.95924765,
+       0.71175549, 0.44573668, 0.45811912, 0.50758621, 0.68702194]), array([1.5       , 1.71956897, 1.07310345, 1.07327586, 1.44732759,
+       0.86887931, 1.34568966, 1.34482759, 0.71577586, 0.46060345,
+       0.47758621, 0.6637931 , 0.32448276, 0.32448276, 0.32448276,
+       0.3925    , 0.52844828, 0.52844828, 0.73275862, 0.95396552]), array([5.73076923]), array([6.54545455]), array([1.20689655, 3.09758621, 1.69565517, 3.20648276, 2.64841379,
+       2.73006897, 3.28813793, 3.65565517, 3.47868966, 3.39703448,
+       3.28813793, 3.28813793, 3.07034483, 2.77089655, 2.59393103,
+       2.8797931 , 3.24731034, 1.65482759, 0.89255172, 0.67482759]), array([14.1]), array([5.42857143]), array([0.76219512, 7.22347561, 6.44121951, 6.59768293, 6.51341463,
+       6.69396341, 7.60853659, 6.16445122, 6.0079878 , 5.3597561 ,
+       6.02      , 6.11628049, 6.56158537, 6.33292683, 6.35695122,
+       6.40512195, 6.16445122, 5.20170732, 4.90085366, 3.13182927]), array([7.38888889]), array([4.26896076, 3.99384142]), array([1.56914275, 3.77636358, 3.77619712, 4.05618855, 3.93941718]), array([4.38186498, 5.06678079, 5.18301801, 9.94233946]), array([0.54878049, 0.5047619 ]), array([2., 2.]), array([1.75172414, 1.98128342]), array([2.35869565, 2.58867925]), array([5.7890625 , 5.52906977]), array([8.44303797, 4.93103448])]
+	weights_curves: [7.0, 7.0, 14.0, 14.0, 7.0, 10.0, 10.0, 3.0, 3.3333333333333335, 3.3333333333333335, 10.0, 2.25, 2.0, 2.5, 3.0, 3.0, 2.6666666666666665, 3.3333333333333335, 2.25, 28.0, 28.0, 28.0, 28.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 4.0, 2.6666666666666665, 4.0, 2.6666666666666665, 4.0, 2.6666666666666665, 4.0, 2.6666666666666665, 1.6666666666666667, 1.5555555555555556, 15.0, 14.0, 5.0, 6.0, 6.0, 7.0, 6.5, 1.2, 1.2, 1.4, 1.3, 4.0, 4.0, 4.0, 4.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 6.0, 6.0, 6.0, 6.0, 6.0, 6.0, 6.0, 7.5, 3.0, 6.0, 18.0, 9.0, 0.8, 16.0, 8.0, 0.8, 16.0, 8.0, 0.8, 16.0, 8.0, 0.8, 16.0, 8.0, 0.9, 0.2, 4.0, 4.0, 0.75, 15.0, 15.0, 0.65, 13.0, 6.5, 10.8, 13.5, 4.0, 4.5, 4.0, 4.5, 4.0, 4.5]
+--------------------------------------------------------------------------------
+Parameter sets: ['PD_20261019_201254__61546_0']
+--------------------------------------------------------------------------------
+             parameter          unit  PD_20261019_201254__61546_0
+           KI__RTG_E50            mM                     0.000076
+          KI__RTG_base            mM                     8.932712
+         KI__RTG_m_fpg dimensionless                     0.667146
+KI__RTG_max_inhibition dimensionless                     0.645083
+
+PD_20261019_201254__61546_0: cost = 168.838
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Metrics: PD_20261019_201254__61546_0
+--------------------------------------------------------------------------------
+              parameter_set       kind   n  k       cost        MSE      RMSE     NRMSE    RMSE_w       R2  within_2fold         AIC         BIC
+PD_20261019_201254__61546_0   training 227  4 168.838054 403.543097 20.088382  0.322441  1.219656 0.852476     95.073892 1370.064307 1383.764107
+PD_20261019_201254__61546_0 validation 174  4        NaN 769.994188 27.748769 12.274091 30.659587 0.400162     71.337580 1164.470636 1177.106857
+
+    experiment                                               mapping       kind  n         MSE      RMSE      NRMSE     RMSE_w            R2  within_2fold
+      Chen2015            fm_po_can_CAN100_glucose_cumulative_amount   training  2    0.053595  0.231506   0.013699   0.065338      0.999812    100.000000
+      Chen2015            fm_po_can_CAN300_glucose_cumulative_amount   training  2    0.003546  0.059546   0.002776   0.018627      0.999992    100.000000
+      Chen2015                     fm_po_can_CAN100_glucose_RT_McrCl   training  1    0.268354  0.518029   0.137449   1.128580           NaN    100.000000
+      Chen2015                     fm_po_can_CAN300_glucose_RT_McrCl   training  1    0.071732  0.267828   0.079492   0.748688           NaN    100.000000
+      Chen2015              fm_po_can_CAN0_glucose_cumulative_amount validation  2    0.256893  0.506846 112.632479 282.705280 -12685.075418      0.000000
+  Devineni2012                 fm_po_QD100_glucose_cumulative_amount   training  1  266.841108 16.335272   0.211844   1.011094           NaN    100.000000
+  Devineni2012                fm_po_BID300_glucose_cumulative_amount   training  1  135.089212 11.622788   0.074172   0.361715           NaN    100.000000
+  Devineni2012                                 fm_po_CAN0_glucose_RT   training  3    2.011489  1.418270   0.111001   0.546375    -16.021195    100.000000
+  Devineni2012                                fm_po_QD100_glucose_RT   training  3    0.250271  0.500271   0.062803   0.281292      0.973790    100.000000
+  Devineni2012                               fm_po_BID300_glucose_RT   training  3    0.278343  0.527582   0.072378   0.272977      0.978087    100.000000
+  Devineni2012                  fm_po_CAN0_glucose_cumulative_amount validation  1    2.176756  1.475383   0.182146   0.414519           NaN    100.000000
+  Devineni2013                 fm_po_can50_glucose_cumulative_amount   training  4  162.607054 12.751747   0.262112   0.766182      0.908803    100.000000
+  Devineni2013                fm_po_can100_glucose_cumulative_amount   training  4  272.049313 16.493917   0.261808   0.789581      0.911611     66.666667
+  Devineni2013                fm_po_can300_glucose_cumulative_amount   training  4  130.791287 11.436402   0.194579   0.626982      0.954571    100.000000
+  Devineni2013                    fm_po_can0_glucose_renal_threshold   training  3    0.819160  0.905075   0.068512   0.352628    -13.771109    100.000000
+  Devineni2013                   fm_po_can50_glucose_renal_threshold   training  3    0.392979  0.626881   0.066960   0.294109      0.956520    100.000000
+  Devineni2013                  fm_po_can100_glucose_renal_threshold   training  3    1.020140  1.010020   0.141314   0.530034      0.906341    100.000000
+  Devineni2013                  fm_po_can300_glucose_renal_threshold   training  3    0.258235  0.508168   0.064473   0.289221      0.981670    100.000000
+  Devineni2013                  fm_po_can0_glucose_cumulative_amount validation  4    6.880345  2.623041   0.273233   0.490383      0.808347    100.000000
+  Devineni2014                fm_po_can300_glucose_cumulative_amount   training  1   37.580312  6.130278   0.144787   1.083486           NaN    100.000000
+  Devineni2014                  fm_po_can300_glucose_renal_threshold   training  1    0.079310  0.281620   0.087460   0.654489           NaN    100.000000
+  Devineni2014         fm_po_can300_hctz25_glucose_cumulative_amount validation  1  193.850122 13.923007   0.336793   2.520325           NaN    100.000000
+  Devineni2014           fm_po_can300_hctz25_glucose_renal_threshold validation  1    0.000467  0.021620   0.006213   0.046492           NaN    100.000000
+ Devineni2015a          fm_po_can_50_glucose_cumulative_amount_multi   training  3  444.806415 21.090434   0.639750   2.071605    -51.729949    100.000000
+ Devineni2015a         fm_po_can_100_glucose_cumulative_amount_multi   training  3  805.590469 28.382926   0.533180   1.864174     -7.322025    100.000000
+ Devineni2015a         fm_po_can_300_glucose_cumulative_amount_multi   training  3 1417.813357 37.653862   0.496534   2.030515     -2.424982    100.000000
+ Devineni2015a            fm_po_can_50_glucose_renal_threshold_multi   training  3    2.680629  1.637263   0.341531   2.216050     -6.044583    100.000000
+ Devineni2015a           fm_po_can_100_glucose_renal_threshold_multi   training  3    2.916137  1.707670   0.463800   1.612710    -12.602741    100.000000
+ Devineni2015a           fm_po_can_300_glucose_renal_threshold_multi   training  3    1.820832  1.349382   0.475123   1.415402    -10.876458    100.000000
+ Devineni2015c   fm_po_can200_normal_renal_glucose_cumulative_amount   training  2  250.115089 15.815027   0.623867   2.803878      0.610790    100.000000
+ Devineni2015c                  fm_po_can200_normal_renal_glucose_RT   training  3    0.207858  0.455914   0.109211   0.355069     -1.317129    100.000000
+ Devineni2015c     fm_po_can200_mild_renal_glucose_cumulative_amount validation  2   27.403990  5.234882   0.401140   1.293540      0.839086    100.000000
+ Devineni2015c                    fm_po_can200_mild_renal_glucose_RT validation  3    0.152024  0.389903   0.106067   0.454408      0.079006    100.000000
+ Devineni2015c fm_po_can200_moderate_renal_glucose_cumulative_amount validation  2  103.113481 10.154481   1.863207   3.882734     -2.471542      0.000000
+ Devineni2015c                fm_po_can200_moderate_renal_glucose_RT validation  3    3.677980  1.917806   0.351917   1.138844    -86.517046    100.000000
+ Devineni2015c   fm_po_can200_severe_renal_glucose_cumulative_amount validation  2   50.971802  7.139454   3.038065   4.157279     -8.229842      0.000000
+ Devineni2015c                  fm_po_can200_severe_renal_glucose_RT validation  3    2.637457  1.624025   0.316741   1.461613   -268.922427    100.000000
+  Devineni2016                fm_po_can200_glucose_cumulative_amount   training  9   83.308304  9.127338   0.353075   1.102607      0.835439    100.000000
+  Devineni2016                fm_po_can300_glucose_cumulative_amount   training  9  107.978082 10.391250   0.357115   0.973179      0.849244    100.000000
+  Devineni2016                  fm_po_can200_glucose_renal_threshold   training  1    0.000691  0.026285   0.007789   0.078842           NaN    100.000000
+  Devineni2016                  fm_po_can300_glucose_renal_threshold   training  1    0.002698  0.051940   0.015290   0.168679           NaN    100.000000
+    Iijima2015                                   fm_po_can0_rtg_mean   training  2    0.953124  0.976281   0.073256   0.454292     -4.499761    100.000000
+    Iijima2015                                  fm_po_can25_rtg_mean   training  2    6.158978  2.481729   0.380518   2.809884    -27.331321    100.000000
+    Iijima2015                                 fm_po_can100_rtg_mean   training  2    2.804919  1.674789   0.328682   1.700534    -22.683930    100.000000
+    Iijima2015                                 fm_po_can200_rtg_mean   training  2    0.552425  0.743253   0.154803   0.782072     -0.945574    100.000000
+    Iijima2015                                 fm_po_can400_rtg_mean   training  2    1.801448  1.342180   0.349180   1.840984    -54.356887    100.000000
+    Iijima2015                                fm_po_can25_uge_change validation 10  852.666381 29.200452   0.633141   1.379569     -1.066110     77.777778
+    Iijima2015                               fm_po_can100_uge_change validation 10 1793.778926 42.353027   0.509357   1.305041     -1.757028     88.888889
+    Iijima2015                               fm_po_can200_uge_change validation 10 2225.569863 47.175946   0.657963   1.443405     -9.112641     88.888889
+    Iijima2015                               fm_po_can400_uge_change validation 10 4547.611874 67.435984   0.788080   1.856813    -19.031759     88.888889
+   Inagaki2014          fm_po_can_glucose_excretion_daily_100_normal   training  3 2657.698972 51.552875   1.217784   5.390086     -1.274994     50.000000
+   Inagaki2014          fm_po_can_glucose_excretion_daily_200_normal   training  3 3697.996771 60.811157   0.980825   4.125527     -2.539882    100.000000
+   Inagaki2014        fm_po_can_glucose_excretion_daily_100_moderate validation  3 1301.936670 36.082360   0.993092   3.583549     -2.510315    100.000000
+   Inagaki2014        fm_po_can_glucose_excretion_daily_200_moderate validation  3 1767.756730 42.044699   0.869890   3.405601     -4.236936    100.000000
+       Sha2011                                          fm_can10_uge   training  2    2.392146  1.546656   0.386664   1.562522      0.850491    100.000000
+       Sha2011                                          fm_can30_uge   training  2   20.443775  4.521479   0.516740   1.429668      0.732979    100.000000
+       Sha2011                                         fm_can100_uge   training  2    0.100358  0.316793   0.014532   0.065857      0.999789    100.000000
+       Sha2011                                         fm_can200_uge   training  2    9.188869  3.031315   0.124745   0.507241      0.984439    100.000000
+       Sha2011                                         fm_can400_uge   training  2   13.827249  3.718501   0.114240   0.475610      0.986949    100.000000
+       Sha2011                                         fm_can600_uge   training  2   21.666233  4.654700   0.134529   0.577448      0.981902    100.000000
+       Sha2011                                         fm_can800_uge   training  2    0.965196  0.982444   0.029998   0.118975      0.999100    100.000000
+       Sha2011                                          fm_can10_rtg   training  1    0.410795  0.640933   0.101703   2.679727           NaN    100.000000
+       Sha2011                                          fm_can30_rtg   training  1    0.000590  0.024299   0.004311   0.038735           NaN    100.000000
+       Sha2011                                         fm_can100_rtg   training  1    0.276349  0.525689   0.135574   1.129559           NaN    100.000000
+       Sha2011                                         fm_can200_rtg   training  1    0.002674  0.051713   0.013073   0.123970           NaN    100.000000
+       Sha2011                                         fm_can400_rtg   training  1    0.023210  0.152348   0.040813   0.312818           NaN    100.000000
+       Sha2011                                         fm_can600_rtg   training  1    0.003143  0.056062   0.016486   0.119949           NaN    100.000000
+       Sha2011                                         fm_can800_rtg   training  1    0.001096  0.033099   0.009667   0.075215           NaN    100.000000
+       Sha2011                                           fm_can0_uge validation  2    0.529350  0.727564  14.551282  14.318386   -210.739803      0.000000
+       Sha2011                                      fm_can400bid_uge validation  2   25.307650  5.030671   0.171403   0.800023      0.970621    100.000000
+       Sha2011                                      fm_can400bid_rtg validation  1    0.019111  0.138244   0.040001   0.284276           NaN    100.000000
+       Sha2014                                   fm_pbo_rtg_baseline   training  1    0.017157  0.130983   0.009923   0.117311           NaN    100.000000
+       Sha2014                                  fm_pbo_rtg_intervals   training  2    0.024165  0.155450   0.012027   0.104640     -6.325671    100.000000
+       Sha2014                                          fm_can30_uge   training 20  424.677147 20.607696   0.294512   0.630566      0.388264     84.210526
+       Sha2014                                 fm_can30_rtg_baseline   training  1    1.953559  1.397698   0.097062   1.202947           NaN    100.000000
+       Sha2014                                fm_can30_rtg_intervals   training  2    0.127613  0.357229   0.042414   0.295006      0.345340    100.000000
+       Sha2014                                         fm_can100_uge   training 20  461.770453 21.488845   0.229136   0.509475      0.539193     89.473684
+       Sha2014                                fm_can100_rtg_baseline   training  1    0.282401  0.531414   0.040878   0.466081           NaN    100.000000
+       Sha2014                               fm_can100_rtg_intervals   training  2    0.579077  0.760971   0.137677   0.789021      0.291038    100.000000
+       Sha2014                                         fm_can200_uge   training 20 1029.404579 32.084335   0.297010   0.496780     -0.154848     89.473684
+       Sha2014                                fm_can200_rtg_baseline   training  1    0.185746  0.430983   0.031925   0.370931           NaN    100.000000
+       Sha2014                               fm_can200_rtg_intervals   training  2    0.314290  0.560616   0.113451   0.543018     -1.472406    100.000000
+       Sha2014                                         fm_can400_uge   training 20 1047.401463 32.363582   0.221914   0.273800      0.168452     94.736842
+       Sha2014                                fm_can400_rtg_baseline   training  1    0.441062  0.664125   0.047437   0.529187           NaN    100.000000
+       Sha2014                               fm_can400_rtg_intervals   training  2    1.244531  1.115586   0.270153   1.363673     -8.212992    100.000000
+       Sha2014                                            fm_pbo_uge validation 20  294.228471 17.153089   0.794450   0.654061    -12.358919      0.000000
+       Sha2014                                          fm_pbo_k_uge validation 20   72.011133  8.485937   0.870888   0.452743     -1.864756     42.105263
+       Sha2014                                 fm_pbo_k_rtg_baseline validation  1    4.685303  2.164556   0.145272   0.695535           NaN    100.000000
+       Sha2014                                      fm_pbo_k_rtg_d16 validation  1    2.770747  1.664556   0.115594   0.591474           NaN    100.000000
+       Sha2014                                        fm_can30_k_uge validation 20  232.536129 15.249135   0.398619   0.528454     -0.420760     84.210526
+       Sha2014                               fm_can30_k_rtg_baseline validation  1    3.603440  1.898273   0.134629   1.957919           NaN    100.000000
+       Sha2014                                    fm_can30_k_rtg_d16 validation  1    1.484297  1.218317   0.160305   1.446556           NaN    100.000000
+       Sha2014                                     fm_can300_bid_uge validation 20  862.709226 29.371912   0.307293   0.569856     -0.474973     94.736842
+       Sha2014                            fm_can300_bid_rtg_baseline validation  1    0.691250  0.831414   0.062512   0.612671           NaN    100.000000
+       Sha2014                           fm_can300_bid_rtg_intervals validation  2    0.145136  0.380967   0.077707   0.396154     -0.782106    100.000000
+       Sha2015                                         fm_can300_uge   training  5   27.148835  5.210454   0.185136   1.201973      0.899703    100.000000
+       Sha2015                                         fm_can300_rtg   training  4    0.061800  0.248596   0.067226   0.647041      0.449856    100.000000
+Tamborlane2018                                fm_can100_uge_baseline validation  2    1.450243  1.204260   0.258981   0.382187     -2.432527    100.000000
+Tamborlane2018                                fm_can300_uge_baseline validation  2    1.676905  1.294954  12.949535  38.848605           NaN      0.000000
+Tamborlane2018                                         fm_can100_uge validation  2   41.970898  6.478495   0.103739   0.290492      0.690759    100.000000
+Tamborlane2018                                         fm_can300_uge validation  2  290.358131 17.039898   0.304284   1.033889     -0.828912    100.000000
+Tamborlane2018                                         fm_can100_rtg validation  2    0.658807  0.811670   0.172849   0.828544     -0.939531    100.000000
+Tamborlane2018                                         fm_can300_rtg validation  2    0.023537  0.153418   0.040000   0.218851     -0.326314    100.000000
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Optimization results: PD_20261019_201254__61546
+--------------------------------------------------------------------------------
+   run  success    duration        cost  KI__RTG_E50  KI__RTG_base  KI__RTG_m_fpg  KI__RTG_max_inhibition                                message                                                  x                         x0
+0    0     True  786.648012  168.838054     0.000076      8.932712       0.667146                0.645083  Optimization terminated successfully.  [7.58654838673793e-05, 8.932711997108493, 0.66...  [4.5e-05, 9.0, 0.75, 0.6]
+1    2     True  786.540023  168.905692     0.000078      8.927718       0.673074                0.647342  Optimization terminated successfully.  [7.757004768917838e-05, 8.927718461979486, 0.6...  [4.5e-05, 9.0, 0.75, 0.6]
+2    1     True  818.000552  168.934933     0.000070      9.073802       0.674401                0.648044  Optimization terminated successfully.  [7.035502603700454e-05, 9.07380194974041, 0.67...  [4.5e-05, 9.0, 0.75, 0.6]
+--------------------------------------------------------------------------------
+Optimal parameters:
+	'KI__RTG_E50': Q(7.58654838673793e-05, 'mmol/l'),  # [1e-06 - 0.0002]
+	'KI__RTG_base': Q(8.932711997108493, 'mmol/l'),  # [6 - 13]
+	'KI__RTG_m_fpg': Q(0.6671459596120916, 'dimensionless'),  # [0.05 - 2]
+	'KI__RTG_max_inhibition': Q(0.6450828457130799, 'dimensionless'),  # [0.3 - 0.9]
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Identifiability 'PD_20261019_201254__61546'
+--------------------------------------------------------------------------------
+parameter set: PD_20261019_201254__61546_0
+cost: 168.838
+cost_min: 168.838
+alpha: 0.95
+degrees of freedom: 1
+threshold: 170.759
+reoptimize: True
+duration: 497.6 s
+
+             parameter    value          unit  lower_bound  upper_bound  ci_lower  ci_upper identifiability  n_points   cost_min  converged
+           KI__RTG_E50 0.000076            mM     0.000001       0.0002  0.000059  0.000096    identifiable        15 168.838054       True
+          KI__RTG_base 8.932712            mM     6.000000      13.0000  8.456370  9.464685    identifiable         7 168.838054       True
+         KI__RTG_m_fpg 0.667146 dimensionless     0.050000       2.0000  0.604124  0.749275    identifiable        10 168.838054       True
+KI__RTG_max_inhibition 0.645083 dimensionless     0.300000       0.9000  0.623880  0.664098    identifiable         5 168.838054       True
+--------------------------------------------------------------------------------

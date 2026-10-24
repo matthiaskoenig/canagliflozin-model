@@ -1,18 +1,28 @@
-"""Canagliflozin intestine model."""
+"""Intestine model of canagliflozin: dissolution, absorption and fecal excretion."""
+
 import numpy as np
-import pandas as pd
-from sbmlutils.converters import odefac
+from sbmlutils.factory import (
+    AssignmentRule,
+    Compartment,
+    Model,
+    Parameter,
+    RateRule,
+    Reaction,
+    Species,
+    UnitDefinition,
+    create_model,
+)
+from sbmlutils.metadata import (
+    BQB,
+    SBO,
+)
 
-from sbmlutils.cytoscape import visualize_sbml
-from sbmlutils.factory import *
-from sbmlutils.metadata import *
-
-from pkdb_models.models.canagliflozin.models import annotations
-from pkdb_models.models.canagliflozin.models import templates
+from pkdb_models.models.canagliflozin.models import annotations, templates
+from pkdb_models.models.canagliflozin.models.fits import FITS
 
 
 class U(templates.U):
-    """UnitDefinitions"""
+    """Units of the intestine model."""
 
     per_hr = UnitDefinition("per_hr", "1/hr")
     mg_per_min = UnitDefinition("mg_per_min", "mg/min")
@@ -24,25 +34,34 @@ _m = Model(
     notes="""
     # Model for canagliflozin absorption
 
-    - absorption canagliflozin (can)
-    - fraction absorbed: 0.59 (41% in feces)
-    - enterohepatische circulation (M5?, M7?, M9?)
+    - Dissolution of the oral dose and absorption of canagliflozin; the
+      fraction absorbed `F_can_abs` of the canagliflozin of the lumen is
+      absorbed, the rest is excreted in the feces. The absolute
+      bioavailability is 65 % (90 % CI 55-76 %) [Devineni2015b].
+    - The glucuronides M5 and M7 of the bile are hydrolysed to canagliflozin in
+      the lumen (enterohepatic circulation), the source of most of the
+      canagliflozin of the feces (39-41.5 % of the dose). M7 which is not
+      hydrolysed is excreted in the feces (2-3 % of the dose), M5 is not
+      found in the feces [Mamidi2014, Devineni2015b]. M9 of the bile is
+      excreted in the feces (7-8 %).
+    - The absorption of canagliflozin is not changed by food: a high fat
+      breakfast changes neither the AUC (+8 %) nor Cmax (+0.5 %)
+      [Devineni2015e], so the model has no food effect.
     """
     + templates.terms_of_use,
     creators=templates.creators,
     units=U,
     model_units=templates.model_units,
-    annotations=annotations.model + [
+    annotations=[
+        *annotations.model,
         # tissue
-        (BQB.OCCURS_IN, "fma/FMA:45615"),  # gut
         (BQB.OCCURS_IN, "bto/BTO:0000545"),  # gut
         (BQB.OCCURS_IN, "NCIT:C12736"),  # intestine
         (BQB.OCCURS_IN, "fma/FMA:7199"),  # intestine
         (BQB.OCCURS_IN, "bto/BTO:0000648"),  # intestine
-
         (BQB.HAS_PROPERTY, "NCIT:C79369"),  # Pharmacokinetics: Absorption
         (BQB.HAS_PROPERTY, "NCIT:C79372"),  # Pharmacokinetics: Excretion
-    ]
+    ],
 )
 
 _m.compartments = [
@@ -86,29 +105,12 @@ _m.compartments = [
         annotations=annotations.compartments["feces"],
     ),
     Compartment(
-        "Ventero",
-        1.0,
-        name="intestinal lining (enterocytes)",
-        sboTerm=SBO.PHYSICAL_COMPARTMENT,
-        unit=U.liter,
-        constant=False,
-    ),
-    Compartment(
         "Vapical",
         np.nan,
         name="apical membrane (intestinal membrane enterocytes)",
         sboTerm=SBO.PHYSICAL_COMPARTMENT,
         unit=U.m2,
         annotations=annotations.compartments["apical"],
-        spatialDimensions=2,
-    ),
-    Compartment(
-        "Vbaso",
-        np.nan,
-        name="basolateral membrane (intestinal membrane enterocytes)",
-        sboTerm=SBO.PHYSICAL_COMPARTMENT,
-        unit=U.m2,
-        annotations=annotations.compartments["basolateral"],
         spatialDimensions=2,
     ),
     Compartment(
@@ -127,12 +129,12 @@ _m.compartments = [
 
 _m.species = [
     Species(
-        f"can_stomach",
-        metaId=f"meta_can_stomach",
+        "can_stomach",
+        metaId="meta_can_stomach",
         initialConcentration=0.0,
         compartment="Vstomach",
         substanceUnit=U.mmole,
-        name=f"canagliflozin (stomach)",
+        name="canagliflozin (stomach)",
         hasOnlySubstanceUnits=True,
         sboTerm=SBO.SIMPLE_CHEMICAL,
         annotations=annotations.species["can"],
@@ -171,52 +173,39 @@ _m.species = [
         annotations=annotations.species["can"],
         port=True,
     ),
-
-    Species(
-        "m7_lumen",
-        initialConcentration=0.0,
-        name="M7 (intestinal lumen)",
-        compartment="Vlumen",
-        substanceUnit=U.mmole,
-        hasOnlySubstanceUnits=False,
-        sboTerm=SBO.SIMPLE_CHEMICAL,
-        annotations=annotations.species["m7"],
-        port=True,
-    ),
-
-    Species(
-        "m9_lumen",
-        initialConcentration=0.0,
-        name="M9 (intestinal lumen)",
-        compartment="Vlumen",
-        substanceUnit=U.mmole,
-        hasOnlySubstanceUnits=False,
-        sboTerm=SBO.SIMPLE_CHEMICAL,
-        annotations=annotations.species["m9"],
-        port=True,
-    ),
-    Species(
-        "m7_feces",
-        initialConcentration=0.0,
-        name="M7 (feces)",
-        compartment="Vfeces",
-        substanceUnit=U.mmole,
-        hasOnlySubstanceUnits=True,
-        sboTerm=SBO.SIMPLE_CHEMICAL,
-        annotations=annotations.species["m7"],
-        port=True,
-    ),
-    Species(
-        "m9_feces",
-        initialConcentration=0.0,
-        name="M9 (feces)",
-        compartment="Vfeces",
-        substanceUnit=U.mmole,
-        hasOnlySubstanceUnits=True,
-        sboTerm=SBO.SIMPLE_CHEMICAL,
-        annotations=annotations.species["m9"],
-        port=True,
-    ),
+]
+for sid, name in [("m5", "M5"), ("m7", "M7"), ("m9", "M9")]:
+    _m.species.append(
+        Species(
+            f"{sid}_lumen",
+            initialConcentration=0.0,
+            name=f"{name} (intestinal lumen)",
+            compartment="Vlumen",
+            substanceUnit=U.mmole,
+            hasOnlySubstanceUnits=False,
+            sboTerm=SBO.SIMPLE_CHEMICAL,
+            annotations=annotations.species[sid],
+            port=True,
+        )
+    )
+# M5 is not found in the feces, the M5 of the bile is hydrolysed [Mamidi2014]
+for sid, name in [("m7", "M7"), ("m9", "M9")]:
+    _m.species.extend(
+        [
+            Species(
+                f"{sid}_feces",
+                initialConcentration=0.0,
+                name=f"{name} (feces)",
+                compartment="Vfeces",
+                substanceUnit=U.mmole,
+                hasOnlySubstanceUnits=True,
+                sboTerm=SBO.SIMPLE_CHEMICAL,
+                annotations=annotations.species[sid],
+                port=True,
+            ),
+        ]
+    )
+_m.species.append(
     Species(
         "cantot_feces",
         initialConcentration=0.0,
@@ -226,53 +215,61 @@ _m.species = [
         hasOnlySubstanceUnits=True,
         sboTerm=SBO.SIMPLE_CHEMICAL,
         annotations=annotations.species["cantot"],
-        notes="""Used for comparison with total radioactivity in feces.""",
-        port=True
-    ),
-
-]
+        notes="""Canagliflozin, M7 and M9 in the feces, compared with the
+        total radioactivity in the feces.""",
+        port=True,
+    )
+)
 
 _m.parameters = [
     Parameter(
-        f"F_can_abs",
-        0.59,
-        U.dimensionless,
+        "F_can_abs",
+        **FITS.parameter("GU__F_can_abs", unit=U.dimensionless),
         constant=True,
         sboTerm=SBO.QUANTITATIVE_SYSTEMS_DESCRIPTION_PARAMETER,
-        name=f"fraction absorbed canagliflozin",
+        name="fraction absorbed canagliflozin",
         notes="""
-        Fraction absorbed, i.e., only a fraction of the canagliflozin in the intestinal lumen
-        is absorbed. This parameter determines how much of the canagliflozin is excreted.
-        
-        `F_can_abs` of dose is absorbed. `(1-F_can_abs)` is excreted in feces.
-        
-        fraction absorbed: 0.59; ~41% in the feces
+        Fraction absorbed: `F_can_abs` of the canagliflozin of the intestinal
+        lumen is absorbed, `(1 - F_can_abs)` is excreted in the feces. The
+        absolute bioavailability of 65 % [Devineni2015b] is the fraction
+        absorbed times the fraction which escapes the hepatic first pass.
         """,
     ),
     Parameter(
         "CANABS_k",
-        0.015932205013389062,
-        unit=U.per_min,
+        **FITS.parameter("GU__CANABS_k", unit=U.per_min),
         name="rate of canagliflozin absorption",
         sboTerm=SBO.KINETIC_CONSTANT,
     ),
     Parameter(
-        "f_absorption",
-        1,
-        unit=U.dimensionless,
-        name="scaling factor absorption rate",
+        "GLUHYD_k",
+        **FITS.parameter("GU__GLUHYD_k", unit=U.per_min),
+        name="rate of the hydrolysis of the glucuronides in the lumen",
         sboTerm=SBO.KINETIC_CONSTANT,
-        notes="""1.0: normal absorption corresponding to tablet under fasting conditions.
-        
-        food decreases the absorption rate, i.e. < 1.0.
-        """
+        notes="""
+        Hydrolysis of M5 and M7 of the bile to canagliflozin by the
+        beta-glucuronidases of the gut bacteria; the glucuronides are unstable
+        in the feces [Mamidi2014].
+        """,
+    ),
+    Parameter(
+        "METEXC_k",
+        0.001,
+        unit=U.per_min,
+        name="rate of the fecal excretion of the metabolites",
+        sboTerm=SBO.KINETIC_CONSTANT,
+        notes="""
+        Transit of the metabolites of the bile through the intestine into the
+        feces (half-life of about 12 hr); M5 is hydrolysed in the feces and
+        excreted as canagliflozin.
+        """,
     ),
 ]
 
 _m.rules.append(
     AssignmentRule(
         "absorption",
-        value="f_absorption * CANABS_k * Vgu * can_lumen",
+        value="CANABS_k * Vlumen * can_lumen",
         unit=U.mmole_per_min,
         name="absorption canagliflozin",
     ),
@@ -287,79 +284,86 @@ _m.reactions = [
         compartment="Vapical",
         formula=("F_can_abs * absorption", U.mmole_per_min),
     ),
-
     Reaction(
         sid="CANEXC",
-        name=f"CANEXC (feces)",
+        name="CANEXC (feces)",
         compartment="Vlumen",
-        equation=f"can_lumen -> can_feces",
+        equation="can_lumen -> can_feces",
         sboTerm=SBO.TRANSPORT_REACTION,
-        pars=[],
         formula=(
-            f"(1 dimensionless - F_can_abs) * absorption",
+            "(1 dimensionless - F_can_abs) * absorption",
             U.mmole_per_min,
         ),
-    ),
-
-    Reaction(
-        sid="M7EXC",
-        name=f"M7EXC (feces)",
-        compartment="Vlumen",
-        equation=f"m7_lumen -> m7_feces",
-        sboTerm=SBO.TRANSPORT_REACTION,
-        pars=[],
-        formula=(
-            f"CANABS_k * Vgu * m7_lumen",
-            U.mmole_per_min,
-        ),
-        notes="""Assumption: same rate as CANABS for simplification."""
-    ),
-
-    Reaction(
-        sid="M9EXC",
-        name=f"M9EXC (feces)",
-        compartment="Vlumen",
-        equation=f"m9_lumen -> m9_feces",
-        sboTerm=SBO.TRANSPORT_REACTION,
-        pars=[],
-        formula=(
-            f"CANABS_k * Vgu * m9_lumen",
-            U.mmole_per_min,
-        ),
-        notes="""Assumption: same rate as CANABS for simplification."""
     ),
 ]
+for sid, name in [("m5", "M5"), ("m7", "M7")]:
+    _m.reactions.append(
+        Reaction(
+            sid=f"{sid.upper()}HYD",
+            name=f"{name} hydrolysis ({sid.upper()}HYD)",
+            compartment="Vlumen",
+            equation=f"{sid}_lumen -> can_lumen",
+            sboTerm=SBO.BIOCHEMICAL_REACTION,
+            formula=(f"GLUHYD_k * Vlumen * {sid}_lumen", U.mmole_per_min),
+        )
+    )
+# M5 of the bile which is not hydrolysed in the lumen is hydrolysed in the
+# feces (no M5 in the feces, Mamidi2014): it leaves the lumen with the fecal
+# transit and is fecal canagliflozin, so the lumen is no slow depot of M5
+_m.reactions.append(
+    Reaction(
+        sid="M5EXC",
+        name="M5 excretion (M5EXC, feces, hydrolysed to canagliflozin)",
+        compartment="Vlumen",
+        equation="m5_lumen -> can_feces",
+        sboTerm=SBO.TRANSPORT_REACTION,
+        formula=("METEXC_k * Vlumen * m5_lumen", U.mmole_per_min),
+    )
+)
+for sid, name in [("m7", "M7"), ("m9", "M9")]:
+    _m.reactions.append(
+        Reaction(
+            sid=f"{sid.upper()}EXC",
+            name=f"{name} excretion ({sid.upper()}EXC, feces)",
+            compartment="Vlumen",
+            equation=f"{sid}_lumen -> {sid}_feces",
+            sboTerm=SBO.TRANSPORT_REACTION,
+            formula=(f"METEXC_k * Vlumen * {sid}_lumen", U.mmole_per_min),
+        )
+    )
 
 
-_m.parameters.extend([
-    Parameter(
-        f"PODOSE_can",
-        0,
-        U.mg,
-        constant=False,
-        sboTerm=SBO.QUANTITATIVE_SYSTEMS_DESCRIPTION_PARAMETER,
-        name=f"oral dose canagliflozin [mg]",
-        port=True,
-    ),
-    Parameter(
-        f"Ka_dis_can",
-        2.0,
-        U.per_hr,
-        constant=True,
-        sboTerm=SBO.QUANTITATIVE_SYSTEMS_DESCRIPTION_PARAMETER,
-        name=f"dissolution rate canagliflozin",
-        port=True
-    ),
-    Parameter(
-        f"Mr_can",
-        444.518,
-        U.g_per_mole,
-        constant=True,
-        name=f"Molecular weight canagliflozin [g/mole]",
-        sboTerm=SBO.MOLECULAR_MASS,
-        port=True,
-    ),
-])
+_m.parameters.extend(
+    [
+        Parameter(
+            "PODOSE_can",
+            0,
+            U.mg,
+            constant=False,
+            sboTerm=SBO.QUANTITATIVE_SYSTEMS_DESCRIPTION_PARAMETER,
+            name="oral dose canagliflozin [mg]",
+            port=True,
+        ),
+        Parameter(
+            "Ka_dis_can",
+            2.0,
+            U.per_hr,
+            constant=True,
+            sboTerm=SBO.QUANTITATIVE_SYSTEMS_DESCRIPTION_PARAMETER,
+            name="dissolution rate canagliflozin",
+            port=True,
+        ),
+        Parameter(
+            "Mr_can",
+            444.518,
+            U.g_per_mole,
+            constant=True,
+            name="Molecular weight canagliflozin [g/mole]",
+            sboTerm=SBO.MOLECULAR_MASS,
+            port=True,
+        ),
+    ]
+)
 
 # -------------------------------------
 # Dissolution of tablet/dose in stomach
@@ -368,112 +372,48 @@ _m.reactions.extend(
     [
         # fraction dose available for absorption from stomach
         Reaction(
-            sid=f"dissolution_can",
-            name=f"dissolution canagliflozin",
+            sid="dissolution_can",
+            name="dissolution canagliflozin",
             formula=(
-                f"Ka_dis_can/60 min_per_hr * PODOSE_can/Mr_can",
+                "Ka_dis_can/60 min_per_hr * PODOSE_can/Mr_can",
                 U.mmole_per_min,
             ),
-            equation=f"can_stomach -> can_lumen",
+            equation="can_stomach -> can_lumen",
             compartment="Vgu",
             notes="""Swallowing, dissolution of tablet, and transport into intestine.
             Overall process describing the rates of this processes.
-            """
+            """,
         ),
     ]
 )
 _m.rate_rules.append(
-    RateRule(f"PODOSE_can", f"-dissolution_can * Mr_can", U.mg_per_min),
+    RateRule("PODOSE_can", "-dissolution_can * Mr_can", U.mg_per_min),
 )
-_m.rules.extend([
-    AssignmentRule("cantot_feces", "can_feces + m7_feces + m9_feces", U.mmole),
-])
+_m.rules.extend(
+    [
+        AssignmentRule(
+            "cantot_feces",
+            "can_feces + m7_feces + m9_feces",
+            U.mmole,
+            name="total canagliflozin (feces)",
+        ),
+    ]
+)
 model_intestine = _m
 
 
-def canagliflozin_layout(dx=200, dy=200) -> pd.DataFrame:
-    """Layout definition."""
-
-    delta_y = 0.5 * dy
-    delta_x = 1.0 * dx
-
-    positions = [
-        # sid, x, y
-        ["can_stomach",  0 * delta_x, 0 * delta_y],
-        ["can_ext",    1.5 * delta_x, 0 * delta_y],
-
-        ["dissolution_can",   0 * delta_x, 1.0 * delta_y],
-        ["CANABS",          1.5 * delta_x, 1.0 * delta_y],
-
-        ["can_lumen", 0 * delta_x, 1.5 * delta_y],
-        ["m7_lumen",  1 * delta_x, 1.5 * delta_y],
-        ["m9_lumen",  2 * delta_x, 1.5 * delta_y],
-
-        ["CANEXC", 0 * delta_x, 2.5 * delta_y],
-        ["M7EXC", 1 * delta_x, 2.5 * delta_y],
-        ["M9EXC", 2 * delta_x, 2.5 * delta_y],
-
-        ["can_feces", 0 * delta_x, 3.5 * delta_y],
-        ["m7_feces", 1 * delta_x, 3.5 * delta_y],
-        ["m9_feces", 2 * delta_x, 3.5 * delta_y],
-    ]
-
-    df = pd.DataFrame(positions, columns=["id", "x", "y"])
-    df.set_index("id", inplace=True)
-
-    return df
-
-
-def canagliflozin_annotations(dx=200, dy=200) -> list:
-    COLOR_STOMACH = "#1f77b4"
-    COLOR_INTESTINE = "#FFFFFF"
-    COLOR_BLOOD = "#FF796C"
-    COLOR_FECES = "#8c564b"
-
-    kwargs = {
-        "type": cyviz.AnnotationShapeType.ROUND_RECTANGLE,
-        "opacity": 20,
-        "border_color": "#000000",
-        "border_thickness": 2,
-    }
-
-    dy = 0.5 * dy
-    dx = 1.0 * dx
-
-    annotations = [
-        cyviz.AnnotationShape(
-            x_pos= -0.5 * dx, y_pos=-0.5 * dy, width=dx, height=1.5 * dy,
-            fill_color=COLOR_STOMACH, **kwargs
-        ),
-        cyviz.AnnotationShape(
-            x_pos= -0.5 * dx, y_pos=1.0 * dy, width=3 * dx, height=1.5* dy,
-            fill_color=COLOR_INTESTINE, **kwargs
-        ),
-        cyviz.AnnotationShape(
-            x_pos= 0.5 * dx, y_pos=-0.5 * dy, width=2 * dx, height=1.5 * dy,
-            fill_color=COLOR_BLOOD, **kwargs
-        ),
-        cyviz.AnnotationShape(
-            x_pos=-0.5 * dx, y_pos=2.5 * dy, width=3 * dx, height=1.5 * dy,
-            fill_color=COLOR_FECES, **kwargs
-        ),
-    ]
-    return annotations
-
 if __name__ == "__main__":
+    from sbmlode import OdeSystem
+
     from pkdb_models.models.canagliflozin import MODEL_BASE_PATH
-    from sbmlutils import cytoscape as cyviz
 
     results = create_model(
         filepath=MODEL_BASE_PATH / f"{model_intestine.sid}.xml",
-        model=model_intestine, sbml_level=3, sbml_version=2
+        model=model_intestine,
+        sbml_level=3,
+        sbml_version=2,
     )
 
     # ODE equations
-    ode_factory = odefac.SBML2ODE.from_file(sbml_file=results.sbml_path)
-    ode_factory.to_markdown(md_file=results.sbml_path.parent / f"{results.sbml_path.stem}.md")
-
-    # Visualize
-    cyviz.visualize_sbml(sbml_path=results.sbml_path, delete_session=True)
-    cyviz.apply_layout(layout=canagliflozin_layout())
-    cyviz.add_annotations(annotations=canagliflozin_annotations())
+    ode_system = OdeSystem.from_sbml(results.sbml_path)
+    ode_system.write(results.sbml_path.parent / f"{results.sbml_path.stem}.md")
